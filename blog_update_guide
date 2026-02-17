@@ -1,0 +1,4 @@
+cd ~/dev_ws/blog
+git add -A
+git commit -m "작업 내용 요약"
+git push

@@ -579,11 +579,11 @@ function renderRadar() {
   const container = document.getElementById('radarChart');
   const domains = DATA.domains;
   const n = domains.length;
-  const cx = 200, cy = 200, maxR = 150;
+  const cx = 550, cy = 480, maxR = 360;
   const angleStep = (2 * Math.PI) / n;
   const cs = getComputedStyle(document.querySelector('.dashboard-wrap'));
 
-  let svg = `<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">`;
+  let svg = `<svg viewBox="0 0 1100 1050" xmlns="http://www.w3.org/2000/svg">`;
 
   for (let ring = 1; ring <= 5; ring++) {
     const r = maxR * ring / 5;
@@ -592,12 +592,12 @@ function renderRadar() {
       const a = -Math.PI/2 + i * angleStep;
       pts.push(`${cx + r*Math.cos(a)},${cy + r*Math.sin(a)}`);
     }
-    svg += `<polygon points="${pts.join(' ')}" fill="none" stroke="${cs.getPropertyValue('--radar-grid').trim()}" stroke-width="0.5"/>`;
+    svg += `<polygon points="${pts.join(' ')}" fill="none" stroke="${cs.getPropertyValue('--radar-grid').trim()}" stroke-width="1"/>`;
   }
 
   for (let i = 0; i < n; i++) {
     const a = -Math.PI/2 + i * angleStep;
-    svg += `<line x1="${cx}" y1="${cy}" x2="${cx+maxR*Math.cos(a)}" y2="${cy+maxR*Math.sin(a)}" stroke="${cs.getPropertyValue('--radar-grid').trim()}" stroke-width="0.5"/>`;
+    svg += `<line x1="${cx}" y1="${cy}" x2="${cx+maxR*Math.cos(a)}" y2="${cy+maxR*Math.sin(a)}" stroke="${cs.getPropertyValue('--radar-grid').trim()}" stroke-width="1"/>`;
   }
 
   let targetPts = [];
@@ -606,7 +606,7 @@ function renderRadar() {
     const r = maxR * domains[i].learning_target / 100;
     targetPts.push(`${cx+r*Math.cos(a)},${cy+r*Math.sin(a)}`);
   }
-  svg += `<polygon points="${targetPts.join(' ')}" fill="${cs.getPropertyValue('--radar-target-fill').trim()}" stroke="${cs.getPropertyValue('--radar-target-stroke').trim()}" stroke-width="1" stroke-dasharray="4,4"/>`;
+  svg += `<polygon points="${targetPts.join(' ')}" fill="${cs.getPropertyValue('--radar-target-fill').trim()}" stroke="${cs.getPropertyValue('--radar-target-stroke').trim()}" stroke-width="2.5" stroke-dasharray="10,8"/>`;
 
   let curPts = [];
   for (let i = 0; i < n; i++) {
@@ -614,7 +614,7 @@ function renderRadar() {
     const r = maxR * domains[i].proficiency / 100;
     curPts.push(`${cx+r*Math.cos(a)},${cy+r*Math.sin(a)}`);
   }
-  svg += `<polygon points="${curPts.join(' ')}" fill="${cs.getPropertyValue('--radar-current-fill').trim()}" stroke="${cs.getPropertyValue('--radar-current-stroke').trim()}" stroke-width="2"/>`;
+  svg += `<polygon points="${curPts.join(' ')}" fill="${cs.getPropertyValue('--radar-current-fill').trim()}" stroke="${cs.getPropertyValue('--radar-current-stroke').trim()}" stroke-width="4"/>`;
 
   const dotFill = cs.getPropertyValue('--radar-dot-fill').trim();
   const dotStroke = cs.getPropertyValue('--radar-dot-stroke').trim();
@@ -624,20 +624,21 @@ function renderRadar() {
     const a = -Math.PI/2 + i * angleStep;
     const r = maxR * domains[i].proficiency / 100;
     const dx = cx + r*Math.cos(a), dy = cy + r*Math.sin(a);
-    svg += `<circle cx="${dx}" cy="${dy}" r="4" fill="${dotFill}" stroke="${dotStroke}" stroke-width="2"/>`;
+    svg += `<circle cx="${dx}" cy="${dy}" r="8" fill="${dotFill}" stroke="${dotStroke}" stroke-width="3"/>`;
 
-    const lr = maxR + 22;
+    const lr = maxR + 80;
     const lx = cx + lr*Math.cos(a), ly = cy + lr*Math.sin(a);
     const anchor = Math.abs(a) < 0.1 || Math.abs(a-Math.PI) < 0.1 ? 'middle' : (a > -Math.PI/2 && a < Math.PI/2) ? 'start' : 'end';
-    svg += `<text x="${lx}" y="${ly+4}" fill="${labelColor}" font-size="9" font-family="JetBrains Mono,monospace" text-anchor="${anchor}">${domains[i].proficiency}%</text>`;
+    svg += `<text x="${lx}" y="${ly}" fill="${labelColor}" font-size="22" font-family="JetBrains Mono,monospace" text-anchor="${anchor}" font-weight="600">${domains[i].name}</text>`;
+    svg += `<text x="${lx}" y="${ly+26}" fill="${dotFill}" font-size="20" font-family="JetBrains Mono,monospace" text-anchor="${anchor}" opacity="0.7">${domains[i].proficiency}%</text>`;
   }
 
   const curStroke = cs.getPropertyValue('--radar-current-stroke').trim();
   const tgtStroke = cs.getPropertyValue('--radar-target-stroke').trim();
-  svg += `<rect x="10" y="370" width="12" height="3" fill="${curStroke}" rx="1"/>
-    <text x="26" y="373" fill="${labelColor}" font-size="8" font-family="JetBrains Mono,monospace">Current</text>
-    <rect x="80" y="370" width="12" height="3" fill="${tgtStroke}" rx="1"/>
-    <text x="96" y="373" fill="${labelColor}" font-size="8" font-family="JetBrains Mono,monospace">Target</text>`;
+  svg += `<rect x="410" y="1010" width="24" height="5" fill="${curStroke}" rx="2"/>
+    <text x="440" y="1016" fill="${labelColor}" font-size="20" font-family="JetBrains Mono,monospace">Current</text>
+    <rect x="570" y="1010" width="24" height="5" fill="${tgtStroke}" rx="2"/>
+    <text x="600" y="1016" fill="${labelColor}" font-size="20" font-family="JetBrains Mono,monospace">Target</text>`;
 
   svg += `</svg>`;
   container.innerHTML = svg;
