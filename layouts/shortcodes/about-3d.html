@@ -1,0 +1,323 @@
+<div id="about-3d-wrapper" style="width:100%; height:480px; border-radius:12px; overflow:hidden; position:relative; background:#050508; margin-bottom:2rem;">
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;600&family=Space+Mono:wght@400;700&display=swap');
+
+  #about-3d-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 0;
+    background:
+      radial-gradient(ellipse 120% 40% at 20% 10%, rgba(16, 185, 129, 0.15) 0%, rgba(0, 200, 220, 0.08) 40%, transparent 70%),
+      radial-gradient(ellipse 60% 50% at 85% 15%, rgba(251, 191, 36, 0.12) 0%, rgba(245, 158, 11, 0.06) 30%, transparent 60%),
+      radial-gradient(ellipse 80% 60% at 50% 55%, rgba(124, 106, 239, 0.15) 0%, rgba(99, 102, 241, 0.07) 35%, transparent 65%),
+      radial-gradient(ellipse 70% 50% at 15% 80%, rgba(30, 58, 138, 0.2) 0%, rgba(17, 24, 39, 0.12) 40%, transparent 70%),
+      radial-gradient(ellipse 50% 40% at 80% 75%, rgba(168, 85, 247, 0.08) 0%, transparent 50%);
+    animation: aboutAurora 20s ease-in-out infinite alternate;
+    pointer-events: none;
+  }
+
+  @keyframes aboutAurora {
+    0% { filter: hue-rotate(0deg) brightness(1); opacity: 1; }
+    50% { filter: hue-rotate(15deg) brightness(1.15); opacity: 0.85; }
+    100% { filter: hue-rotate(-10deg) brightness(1.05); opacity: 0.95; }
+  }
+
+  #about-3d-canvas-container {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 1;
+  }
+
+  .about-3d-title-bar {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    z-index: 10;
+    text-align: center;
+    padding: 1.5rem 2rem 0;
+    pointer-events: none;
+  }
+
+  .about-3d-title-bar h2 {
+    font-family: 'Space Mono', monospace;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #e0e0e8;
+    text-shadow: 0 2px 20px rgba(124, 106, 239, 0.3);
+  }
+
+  .about-3d-label {
+    position: absolute;
+    left: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  .about-3d-label .name {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #a78bfa;
+    margin-bottom: 0.5rem;
+  }
+
+  .about-3d-label .trait {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    line-height: 1.8;
+    color: #7a7a98;
+  }
+
+  .about-3d-hint {
+    position: absolute;
+    bottom: 0.8rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.5rem;
+    letter-spacing: 0.2em;
+    color: #3a3a50;
+    pointer-events: none;
+  }
+
+  @media (max-width: 768px) {
+    #about-3d-wrapper { height: 360px; }
+    .about-3d-title-bar h2 { font-size: 1.2rem; }
+    .about-3d-label { left: 1rem; }
+    .about-3d-label .name { font-size: 0.65rem; }
+    .about-3d-label .trait { font-size: 0.55rem; }
+  }
+</style>
+
+<div class="about-3d-title-bar">
+  <h2>About Me</h2>
+</div>
+
+<div class="about-3d-label">
+  <div class="name">STEPHEN KONG</div>
+  <div class="trait">
+    Robotics Engineer<br>
+    AI Developer<br>
+    Lifelong Learner
+  </div>
+</div>
+
+<div class="about-3d-hint">DRAG TO ORBIT · SCROLL TO ZOOM</div>
+
+<div id="about-3d-canvas-container"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function() {
+const container = document.getElementById('about-3d-canvas-container');
+const wrapper = document.getElementById('about-3d-wrapper');
+if (!container || !wrapper) return;
+
+const getW = () => wrapper.clientWidth;
+const getH = () => wrapper.clientHeight;
+
+const scene = new THREE.Scene();
+scene.fog = new THREE.FogExp2(0x050508, 0.012);
+
+// ── 별빛 ──
+const starGeo = new THREE.BufferGeometry();
+const starPos = [];
+for (let i = 0; i < 1000; i++) {
+  starPos.push((Math.random()-0.5)*80, (Math.random()-0.5)*50, -10-Math.random()*40);
+}
+starGeo.setAttribute('position', new THREE.Float32BufferAttribute(starPos, 3));
+scene.add(new THREE.Points(starGeo, new THREE.PointsMaterial({ color:0xffffff, size:0.05, transparent:true, opacity:0.7 })));
+
+// ── 성운 ──
+[0x10b981,0x60a5fa,0xa78bfa,0xfbbf24,0x818cf8].forEach(col => {
+  const nGeo = new THREE.BufferGeometry(); const nPos = [];
+  for (let i=0;i<40;i++) nPos.push((Math.random()-0.5)*50,(Math.random()-0.5)*30,-5-Math.random()*25);
+  nGeo.setAttribute('position', new THREE.Float32BufferAttribute(nPos, 3));
+  scene.add(new THREE.Points(nGeo, new THREE.PointsMaterial({ color:col, size:0.2+Math.random()*0.15, transparent:true, opacity:0.1+Math.random()*0.08 })));
+});
+
+const camera = new THREE.PerspectiveCamera(50, getW()/getH(), 0.1, 200);
+camera.position.set(0, 2, 14);
+camera.lookAt(0, 0, 0);
+
+const renderer = new THREE.WebGLRenderer({ antialias:true, alpha:true });
+renderer.setSize(getW(), getH());
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.2;
+container.appendChild(renderer.domElement);
+
+// ── Lights ──
+scene.add(new THREE.AmbientLight(0x1a1a2e, 0.5));
+const claudeLight = new THREE.PointLight(0x7c6aef, 2, 20);
+claudeLight.position.set(-4, 3, 2);
+scene.add(claudeLight);
+const geminiLight = new THREE.PointLight(0xf59e0b, 2, 20);
+geminiLight.position.set(4, 3, 2);
+scene.add(geminiLight);
+scene.add(new THREE.DirectionalLight(0x4a4a6a, 0.3).position.set(0, 5, -5));
+
+// ── Grid ──
+const grid = new THREE.GridHelper(40, 60, 0x15152a, 0x0d0d1a);
+grid.position.y = -4;
+scene.add(grid);
+
+// ═══ CLAUDE (왼쪽) ═══
+const claudeGroup = new THREE.Group();
+claudeGroup.position.set(-3.5, 0, 0);
+scene.add(claudeGroup);
+
+const claudeCoreMat = new THREE.MeshPhysicalMaterial({
+  color:0x7c6aef, metalness:0.3, roughness:0.15, transmission:0.4, thickness:1.5,
+  clearcoat:1.0, clearcoatRoughness:0.1, emissive:0x3a2d7a, emissiveIntensity:0.3
+});
+const claudeCore = new THREE.Mesh(new THREE.IcosahedronGeometry(1.5, 1), claudeCoreMat);
+claudeGroup.add(claudeCore);
+
+claudeGroup.add(new THREE.Mesh(
+  new THREE.IcosahedronGeometry(1.7, 1),
+  new THREE.MeshBasicMaterial({ color:0xa78bfa, wireframe:true, transparent:true, opacity:0.15 })
+));
+
+const claudeNodes = []; const claudeLines = [];
+for (let i=0;i<40;i++) {
+  const th=Math.random()*Math.PI*2, ph=Math.acos(2*Math.random()-1), r=2+Math.random()*1.2;
+  const pos = new THREE.Vector3(r*Math.sin(ph)*Math.cos(th), r*Math.sin(ph)*Math.sin(th), r*Math.cos(ph));
+  claudeNodes.push(pos);
+  const dot = new THREE.Mesh(new THREE.SphereGeometry(0.04,6,6), new THREE.MeshBasicMaterial({color:0xa78bfa}));
+  dot.position.copy(pos); claudeGroup.add(dot);
+}
+for (let i=0;i<claudeNodes.length;i++) for (let j=i+1;j<claudeNodes.length;j++) {
+  if (claudeNodes[i].distanceTo(claudeNodes[j]) < 1.8) {
+    const g = new THREE.BufferGeometry().setFromPoints([claudeNodes[i], claudeNodes[j]]);
+    const l = new THREE.Line(g, new THREE.LineBasicMaterial({color:0x7c6aef, transparent:true, opacity:0.12}));
+    claudeGroup.add(l); claudeLines.push(l);
+  }
+}
+
+const cRing1 = new THREE.Mesh(new THREE.TorusGeometry(2.8,0.015,8,80), new THREE.MeshBasicMaterial({color:0x6d5ce8, transparent:true, opacity:0.25}));
+cRing1.rotation.x = Math.PI*0.45; claudeGroup.add(cRing1);
+const cRing2 = new THREE.Mesh(new THREE.TorusGeometry(2.5,0.01,8,80), new THREE.MeshBasicMaterial({color:0x8b7cf6, transparent:true, opacity:0.15}));
+cRing2.rotation.x = Math.PI*0.7; cRing2.rotation.y = Math.PI*0.3; claudeGroup.add(cRing2);
+
+const cpGeo = new THREE.BufferGeometry(); const cpPos = [];
+for (let i=0;i<200;i++) cpPos.push((Math.random()-0.5)*6,(Math.random()-0.5)*6,(Math.random()-0.5)*6);
+cpGeo.setAttribute('position', new THREE.Float32BufferAttribute(cpPos, 3));
+claudeGroup.add(new THREE.Points(cpGeo, new THREE.PointsMaterial({color:0xa78bfa, size:0.025, transparent:true, opacity:0.5})));
+
+// ═══ GEMINI (오른쪽) ═══
+const geminiGroup = new THREE.Group();
+geminiGroup.position.set(3.5, 0, 0);
+scene.add(geminiGroup);
+
+const geminiCoreMat = new THREE.MeshPhysicalMaterial({
+  color:0xf59e0b, metalness:0.1, roughness:0.3, transmission:0.3, thickness:2.0,
+  clearcoat:0.8, clearcoatRoughness:0.2, emissive:0x7a5a0a, emissiveIntensity:0.35
+});
+geminiGroup.add(new THREE.Mesh(new THREE.SphereGeometry(1.5, 64, 64), geminiCoreMat));
+geminiGroup.add(new THREE.Mesh(new THREE.SphereGeometry(0.8, 32, 32), new THREE.MeshBasicMaterial({color:0xfde68a, transparent:true, opacity:0.3})));
+
+const ringColors = [0xfbbf24, 0xf59e0b, 0xd97706, 0xfde68a];
+const geminiRings = [];
+for (let i=0;i<4;i++) {
+  const ring = new THREE.Mesh(
+    new THREE.TorusGeometry(2.0+i*0.4, 0.02-i*0.003, 8, 100),
+    new THREE.MeshBasicMaterial({color:ringColors[i], transparent:true, opacity:0.2-i*0.03})
+  );
+  ring.rotation.x = Math.PI*0.3 + i*0.4; ring.rotation.y = i*0.6;
+  geminiRings.push(ring); geminiGroup.add(ring);
+}
+
+const geminiFragments = [];
+for (let i=0;i<15;i++) {
+  const frag = new THREE.Mesh(
+    new THREE.TetrahedronGeometry(0.08+Math.random()*0.06, 0),
+    new THREE.MeshBasicMaterial({color:0xfbbf24, transparent:true, opacity:0.4})
+  );
+  const a = Math.random()*Math.PI*2, d = 2.5+Math.random()*1.5, h = (Math.random()-0.5)*3;
+  frag.position.set(Math.cos(a)*d, h, Math.sin(a)*d);
+  frag.userData = { angle: a, dist: d, height: h, speed: 0.2+Math.random()*0.3 };
+  geminiFragments.push(frag); geminiGroup.add(frag);
+}
+
+const gpGeo = new THREE.BufferGeometry(); const gpPos = [];
+for (let i=0;i<150;i++) gpPos.push((Math.random()-0.5)*6,(Math.random()-0.5)*6,(Math.random()-0.5)*6);
+gpGeo.setAttribute('position', new THREE.Float32BufferAttribute(gpPos, 3));
+geminiGroup.add(new THREE.Points(gpGeo, new THREE.PointsMaterial({color:0xfde68a, size:0.02, transparent:true, opacity:0.4})));
+
+// ── Orbit Drag ──
+let isDrag = false, prevM = {x:0,y:0}, orbitA = {x:0,y:0}, targetA = {x:0,y:0};
+let camDist = 14, targetDist = 14;
+const cv = renderer.domElement;
+cv.addEventListener('mousedown', e => { isDrag=true; prevM={x:e.clientX,y:e.clientY}; });
+cv.addEventListener('mousemove', e => { if(!isDrag) return; targetA.x+=(e.clientX-prevM.x)*0.005; targetA.y+=(e.clientY-prevM.y)*0.003; targetA.y=Math.max(-0.5,Math.min(0.6,targetA.y)); prevM={x:e.clientX,y:e.clientY}; });
+cv.addEventListener('mouseup', ()=>isDrag=false);
+cv.addEventListener('mouseleave', ()=>isDrag=false);
+cv.addEventListener('wheel', e => { targetDist+=e.deltaY*0.008; targetDist=Math.max(6,Math.min(22,targetDist)); });
+cv.addEventListener('touchstart', e => { isDrag=true; prevM={x:e.touches[0].clientX,y:e.touches[0].clientY}; });
+cv.addEventListener('touchmove', e => { if(!isDrag)return; targetA.x+=(e.touches[0].clientX-prevM.x)*0.005; targetA.y+=(e.touches[0].clientY-prevM.y)*0.003; targetA.y=Math.max(-0.5,Math.min(0.6,targetA.y)); prevM={x:e.touches[0].clientX,y:e.touches[0].clientY}; });
+cv.addEventListener('touchend', ()=>isDrag=false);
+
+// ── Animate ──
+const clock = new THREE.Clock();
+function animate() {
+  requestAnimationFrame(animate);
+  const t = clock.getElapsedTime();
+
+  const rect = wrapper.getBoundingClientRect();
+  if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+
+  orbitA.x += (targetA.x - orbitA.x)*0.05;
+  orbitA.y += (targetA.y - orbitA.y)*0.05;
+  camDist += (targetDist - camDist)*0.05;
+  const autoRot = t*0.08;
+  camera.position.x = Math.sin(orbitA.x+autoRot)*camDist;
+  camera.position.z = Math.cos(orbitA.x+autoRot)*camDist;
+  camera.position.y = 2 + orbitA.y*6;
+  camera.lookAt(0, 0, 0);
+
+  // Claude
+  claudeCore.rotation.x = t*0.15 + Math.sin(t*0.3)*0.2;
+  claudeCore.rotation.y = t*0.2;
+  claudeCoreMat.emissiveIntensity = 0.3 + Math.sin(t*1.5)*0.15;
+  cRing1.rotation.z = t*0.3; cRing2.rotation.z = -t*0.2;
+  claudeLines.forEach((l,i) => { l.material.opacity = 0.08 + Math.sin(t*2+i*0.5)*0.06; });
+  claudeGroup.position.y = Math.sin(t*0.5)*0.15;
+
+  // Gemini
+  geminiCoreMat.emissiveIntensity = 0.35 + Math.sin(t*0.8)*0.15;
+  geminiRings.forEach((r,i) => { r.rotation.z = t*(0.1+i*0.05)*(i%2===0?1:-1); });
+  geminiFragments.forEach(f => {
+    f.userData.angle += f.userData.speed*0.01;
+    f.position.x = Math.cos(f.userData.angle)*f.userData.dist;
+    f.position.z = Math.sin(f.userData.angle)*f.userData.dist;
+    f.position.y = f.userData.height + Math.sin(t+f.userData.angle)*0.3;
+    f.rotation.x = t; f.rotation.y = t*1.3;
+  });
+  geminiGroup.position.y = Math.sin(t*0.4+1)*0.15;
+
+  // Lights
+  claudeLight.intensity = 1.5 + Math.sin(t*0.8)*0.5;
+  geminiLight.intensity = 1.5 + Math.sin(t*0.5+1)*0.5;
+
+  renderer.render(scene, camera);
+}
+animate();
+
+window.addEventListener('resize', () => {
+  camera.aspect = getW()/getH();
+  camera.updateProjectionMatrix();
+  renderer.setSize(getW(), getH());
+});
+})();
+</script>
+</div>

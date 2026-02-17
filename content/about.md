@@ -27,11 +27,13 @@ author: ""
 
 /* ── About Intro ──────────────────────────────────────── */
 .about-intro {
-  text-align: left;
-  padding: 1rem 0 0.5rem;
+  text-align: center;
+  padding: 0.5rem 0 0;
   font-size: 1.05rem;
   line-height: 1.75;
   opacity: 0.8;
+  max-width: 620px;
+  margin: 0 auto;
 }
 
 /* ── Section Title ────────────────────────────────────── */
@@ -217,7 +219,7 @@ author: ""
 <!-- ═══ 3D 히어로 (Claude & Gemini 엔티티) ═══ -->
 {{< about-3d >}}
 
-<p class="about-intro" style="text-align:left !important; max-width:100%; margin:1rem 0;">로보틱스 소프트웨어 개발자. 자율 순찰 로봇, 컴퓨터 비전, ROS2 기반 시스템을 개발하고 있습니다.</p>
+<p class="about-intro">로보틱스 소프트웨어 개발자. 자율 순찰 로봇, 컴퓨터 비전, ROS2 기반 시스템을 개발하고 있습니다.</p>
 
 <div class="about-section-title">기술 스택</div>
 
