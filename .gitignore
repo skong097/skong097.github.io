@@ -1,0 +1,11 @@
+public/
+resources/
+.DS_Store
+Thumbs.db
+.hugo_build.lock
+*.swp
+*.swo
+*~
+*.bak
+setup_covers.py
+covers/
