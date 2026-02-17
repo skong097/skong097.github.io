@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Posts on Stephen&#39;s Robotics Lab</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in Posts on Stephen&#39;s Robotics Lab</description>
+    <generator>Hugo -- 0.155.3</generator>
+    <language>ko</language>
+    <lastBuildDate>Mon, 16 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>다중 로봇 플릿 모니터링 대시보드 만들기 — Kevin Patrol Fleet</title>
+      <link>http://localhost:1313/posts/robotics/kevin-patrol-fleet-dashboard/</link>
+      <pubDate>Mon, 16 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/robotics/kevin-patrol-fleet-dashboard/</guid>
+      <description>5~10대 자율 순찰 로봇을 하나의 화면에서 모니터링하는 PyQt6 대시보드를 설계하고 구현한 과정</description>
+    </item>
+    <item>
+      <title>ST-GCN 파인튜닝으로 낙상감지 91.89% 달성기</title>
+      <link>http://localhost:1313/posts/computer-vision/stgcn-finetuning-fall-detection/</link>
+      <pubDate>Sat, 14 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/computer-vision/stgcn-finetuning-fall-detection/</guid>
+      <description>ST-GCN 모델을 3클래스 낙상감지에 맞춰 파인튜닝하고 84.21% → 91.89%로 끌어올린 과정과 삽질 기록</description>
+    </item>
+    <item>
+      <title>PyQt6에서 3테마 다크 시스템 구축하기 — Cyber / Classic / JARVIS</title>
+      <link>http://localhost:1313/posts/dev-tools/pyqt6-dark-theme-system/</link>
+      <pubDate>Thu, 12 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/dev-tools/pyqt6-dark-theme-system/</guid>
+      <description>QSS 외부 파일 + 상수 딕셔너리 + paintEvent 동기화로 PyQt6 애플리케이션에 실시간 테마 전환을 구현한 방법</description>
+    </item>
+    <item>
+      <title>ROS2 Jazzy &#43; FastAPI로 Guard Brain 만들기</title>
+      <link>http://localhost:1313/posts/ros2/ros2-guard-brain-fastapi/</link>
+      <pubDate>Tue, 10 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/ros2/ros2-guard-brain-fastapi/</guid>
+      <description>ROS2 Jazzy의 guard_brain 노드에서 LLM과 센서 데이터를 융합하는 지능형 경비 로봇 시스템 구축 과정</description>
+    </item>
+    <item>
+      <title>Random Forest vs ST-GCN — 낙상감지 모델 비교 실전 가이드</title>
+      <link>http://localhost:1313/posts/computer-vision/rf-vs-stgcn-fall-detection/</link>
+      <pubDate>Sun, 08 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/computer-vision/rf-vs-stgcn-fall-detection/</guid>
+      <description>프레임 기반 Random Forest(93.19%)와 시계열 ST-GCN(91.89%)을 실전 낙상감지에 적용하고 비교한 결과</description>
+    </item>
+  </channel>
+</rss>

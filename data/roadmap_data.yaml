@@ -1,0 +1,350 @@
+# ═══════════════════════════════════════════════════════════
+#  Robotics Engineering Career Dashboard — Data Source
+#  File: data/roadmap_data.yaml
+#  Usage: Hugo reads this via {{ site.Data.roadmap_data }}
+#  Update: Edit values -> hugo server -D -> git push
+# ═══════════════════════════════════════════════════════════
+
+# -- 기술 영역 (12 Domains) --
+domains:
+  - id: ros2
+    name: "ROS2 / Navigation"
+    icon: "ROS2"
+    proficiency: 55
+    learning_target: 80
+    skills:
+      - { name: "ROS2 Core", level: 65 }
+      - { name: "Nav2 / SLAM", level: 45 }
+      - { name: "DDS Middleware", level: 35 }
+      - { name: "URDF / TF2", level: 30 }
+      - { name: "SROS2 Security", level: 20 }
+
+  - id: ai_ml
+    name: "AI / ML / DL"
+    icon: "AI"
+    proficiency: 60
+    learning_target: 85
+    skills:
+      - { name: "ST-GCN", level: 75 }
+      - { name: "RF / XGBoost", level: 70 }
+      - { name: "LSTM", level: 40 }
+      - { name: "Anomaly Detection", level: 35 }
+      - { name: "YOLO", level: 30 }
+
+  - id: cv
+    name: "Computer Vision"
+    icon: "CV"
+    proficiency: 55
+    learning_target: 75
+    skills:
+      - { name: "OpenCV", level: 60 }
+      - { name: "MediaPipe", level: 55 }
+      - { name: "Face Detection", level: 50 }
+      - { name: "Gesture", level: 45 }
+      - { name: "RGB-D", level: 25 }
+
+  - id: llm
+    name: "LLM / NLP"
+    icon: "LLM"
+    proficiency: 50
+    learning_target: 70
+    skills:
+      - { name: "Ollama", level: 60 }
+      - { name: "Prompt Eng.", level: 55 }
+      - { name: "RAG", level: 30 }
+      - { name: "LLMOps", level: 25 }
+
+  - id: gui
+    name: "GUI / Visualization"
+    icon: "GUI"
+    proficiency: 75
+    learning_target: 85
+    skills:
+      - { name: "PyQt6", level: 80 }
+      - { name: "PyQtGraph", level: 70 }
+      - { name: "OpenGL", level: 65 }
+      - { name: "QPainter/QSS", level: 75 }
+
+  - id: sim
+    name: "Simulation"
+    icon: "SIM"
+    proficiency: 40
+    learning_target: 70
+    skills:
+      - { name: "Custom 3D Sim", level: 65 }
+      - { name: "Isaac Sim", level: 10 }
+      - { name: "Omniverse", level: 5 }
+      - { name: "Digital Twin", level: 25 }
+
+  - id: path
+    name: "Path Planning"
+    icon: "PATH"
+    proficiency: 60
+    learning_target: 80
+    skills:
+      - { name: "A*", level: 75 }
+      - { name: "Path Smoothing", level: 70 }
+      - { name: "Occupancy Grid", level: 65 }
+      - { name: "LiDAR", level: 50 }
+      - { name: "Costmap", level: 40 }
+
+  - id: backend
+    name: "Backend / API"
+    icon: "API"
+    proficiency: 45
+    learning_target: 65
+    skills:
+      - { name: "FastAPI", level: 55 }
+      - { name: "WebSocket", level: 40 }
+      - { name: "MQTT", level: 30 }
+      - { name: "rosbridge", level: 35 }
+
+  - id: mlops
+    name: "MLOps / AIOps"
+    icon: "OPS"
+    proficiency: 30
+    learning_target: 65
+    skills:
+      - { name: "Pipeline", level: 45 }
+      - { name: "Feature Eng.", level: 40 }
+      - { name: "Model Compare", level: 50 }
+      - { name: "MLflow", level: 10 }
+
+  - id: network
+    name: "Robot Network"
+    icon: "NET"
+    proficiency: 25
+    learning_target: 60
+    skills:
+      - { name: "DDS", level: 30 }
+      - { name: "Zenoh", level: 15 }
+      - { name: "Namespace", level: 25 }
+      - { name: "Multi-Robot", level: 30 }
+
+  - id: security
+    name: "Robot Security"
+    icon: "SEC"
+    proficiency: 20
+    learning_target: 55
+    skills:
+      - { name: "SROS2", level: 20 }
+      - { name: "DDS Security", level: 15 }
+      - { name: "Supply Chain", level: 10 }
+      - { name: "IDS", level: 15 }
+
+  - id: devops
+    name: "DevOps / Tools"
+    icon: "DEV"
+    proficiency: 55
+    learning_target: 70
+    skills:
+      - { name: "Git/GitHub", level: 65 }
+      - { name: "VSCode", level: 70 }
+      - { name: "Jupyter", level: 60 }
+      - { name: "Hugo", level: 30 }
+      - { name: "Docker", level: 20 }
+
+# -- 프로젝트 (10 Projects) --
+projects:
+  - id: proj_01
+    name: "Kevin 3D Patrol Sim"
+    number: 1
+    status: done
+    progress: 100
+    domains: [gui, sim, path]
+    description: "Pygame/OpenGL 3D 순찰 시뮬레이션 - LiDAR, SLAM, A*"
+    github: "https://github.com/skong097/kevin_patrol"
+    milestones:
+      - { name: "3D 환경 구축", done: true }
+      - { name: "LiDAR + SLAM", done: true }
+      - { name: "A* + Smoothing", done: true }
+      - { name: "15 WP Patrol", done: true }
+
+  - id: proj_02
+    name: "Kevin Patrol Dashboard"
+    number: 2
+    status: active
+    progress: 85
+    domains: [gui, ros2, path]
+    description: "PyQt6 실시간 모니터링 - Single + Fleet v3.3"
+    github: "https://github.com/skong097/kevin_patrol_fleet"
+    milestones:
+      - { name: "Single v3.2.1", done: true }
+      - { name: "3 Theme", done: true }
+      - { name: "A* 최적화", done: true }
+      - { name: "Multi Fleet v3.3", done: true }
+      - { name: "Fleet Overview", done: true }
+      - { name: "실제 맵 로드", done: false }
+      - { name: "ROS2DataProvider", done: false }
+
+  - id: proj_03
+    name: "Home Safe Solution"
+    number: 3
+    status: done
+    progress: 100
+    domains: [ai_ml, cv]
+    description: "ST-GCN 낙상감지 91.89% - RF vs ST-GCN 비교"
+    github: "https://github.com/skong097/home_safe_solution"
+    milestones:
+      - { name: "ST-GCN Fine-tuning", done: true }
+      - { name: "91.89% 달성", done: true }
+      - { name: "모델 비교", done: true }
+      - { name: "GitHub 배포", done: true }
+
+  - id: proj_04
+    name: "EyeCon (피노키오)"
+    number: 4
+    status: done
+    progress: 100
+    domains: [ai_ml, llm, cv]
+    description: "실시간 심리분석 - 13 메트릭 + Ollama EXAONE"
+    github: ""
+    milestones:
+      - { name: "Phase 2-5 완료", done: true }
+      - { name: "13 메트릭 + 7 감정", done: true }
+      - { name: "LLM 대화 전략", done: true }
+      - { name: "EXAONE 연동", done: true }
+
+  - id: proj_05
+    name: "Home Guard Bot"
+    number: 5
+    status: done
+    progress: 100
+    domains: [ros2, llm, backend]
+    description: "FastAPI + ROS2 Jazzy guard_brain LLM 노드"
+    github: ""
+    milestones:
+      - { name: "FastAPI v0.2", done: true }
+      - { name: "ROS2 Jazzy", done: true }
+      - { name: "guard_brain", done: true }
+
+  - id: proj_06
+    name: "ROS2 Commander"
+    number: 6
+    status: done
+    progress: 100
+    domains: [ros2, gui]
+    description: "게임화 ROS2 학습 - 3 모드, 4 난이도"
+    github: ""
+    milestones:
+      - { name: "3 게임 모드", done: true }
+      - { name: "4단계 난이도", done: true }
+      - { name: "ROS2 마스터", done: true }
+
+  - id: proj_07
+    name: "MyPet"
+    number: 7
+    status: active
+    progress: 30
+    domains: [cv, ai_ml]
+    description: "핸드 제스처 인식 가상 반려견"
+    github: ""
+    milestones:
+      - { name: "MediaPipe 손 인식", done: true }
+      - { name: "제스처 분류", done: false }
+      - { name: "가상 반려견 UI", done: false }
+
+  - id: proj_08
+    name: "Smart Factory Dashboard"
+    number: 8
+    status: planned
+    progress: 0
+    domains: [gui, ros2, mlops, sim, backend]
+    description: "공장 모니터링 Digital Twin"
+    github: ""
+    milestones:
+      - { name: "FactoryDataProvider", done: false }
+      - { name: "Factory Floor Map", done: false }
+      - { name: "Production Monitor", done: false }
+      - { name: "Sensor Heatmap", done: false }
+      - { name: "YOLO 불량검출", done: false }
+      - { name: "MQTT 연동", done: false }
+
+  - id: proj_09
+    name: "Isaac Sim Integration"
+    number: 9
+    status: planned
+    progress: 0
+    domains: [sim, ros2]
+    description: "NVIDIA Isaac Sim + ROS2 Bridge"
+    github: ""
+    milestones:
+      - { name: "Isaac Sim 설치", done: false }
+      - { name: "URDF 제작", done: false }
+      - { name: "Warehouse 환경", done: false }
+      - { name: "ROS2 Bridge", done: false }
+      - { name: "Nav2", done: false }
+
+  - id: proj_10
+    name: "Predictive Maintenance AI"
+    number: 10
+    status: planned
+    progress: 0
+    domains: [ai_ml, mlops, backend]
+    description: "IoT 기반 설비 고장 예측 - LSTM + XGBoost"
+    github: ""
+    milestones:
+      - { name: "C-MAPSS EDA", done: false }
+      - { name: "Feature Eng.", done: false }
+      - { name: "LSTM+XGBoost", done: false }
+      - { name: "Model Compare", done: false }
+      - { name: "Dashboard 연동", done: false }
+
+# -- 블로그 포스트 (실제 파일과 동기화) --
+blog_posts:
+  - title: "ST-GCN 파인튜닝으로 낙상감지 91.89% 달성기"
+    project: proj_03
+    status: draft
+    domain: ai_ml
+    url: "/posts/computer-vision/stgcn-finetuning-fall-detection/"
+  - title: "RF vs ST-GCN 낙상감지 모델 비교 실전 가이드"
+    project: proj_03
+    status: draft
+    domain: ai_ml
+    url: "/posts/computer-vision/rf-vs-stgcn-fall-detection/"
+  - title: "다중 로봇 플릿 모니터링 대시보드 만들기"
+    project: proj_02
+    status: draft
+    domain: gui
+    url: "/posts/robotics/kevin-patrol-fleet-dashboard/"
+  - title: "PyQt6에서 3테마 다크 시스템 구축하기"
+    project: proj_02
+    status: draft
+    domain: gui
+    url: "/posts/dev-tools/pyqt6-dark-theme-system/"
+  - title: "ROS2 Jazzy + FastAPI로 Guard Brain 만들기"
+    project: proj_05
+    status: draft
+    domain: ros2
+    url: "/posts/ros2/ros2-guard-brain-fastapi/"
+  - title: "Ollama EXAONE 실시간 심리분석 구축"
+    project: proj_04
+    status: planned
+    domain: llm
+  - title: "Multi-Robot Fleet Dashboard 아키텍처"
+    project: proj_02
+    status: planned
+    domain: ros2
+  - title: "A* Pathfinding + LOS Smoothing 구현기"
+    project: proj_01
+    status: planned
+    domain: path
+  - title: "ROS2 7일 학습 프로젝트 회고"
+    project: proj_06
+    status: planned
+    domain: ros2
+  - title: "ROS2 DDS 미들웨어 비교 정리"
+    project: proj_08
+    status: planned
+    domain: network
+
+# -- 학습 로그 --
+learning_log:
+  - { date: "2026-02-10", topic: "ROS2 Core CLI + Node 통신", domain: ros2, hours: 4 }
+  - { date: "2026-02-11", topic: "ROS2 Topic/Service 패턴", domain: ros2, hours: 5 }
+  - { date: "2026-02-12", topic: "ROS2 Action Server/Client", domain: ros2, hours: 4 }
+  - { date: "2026-02-13", topic: "ROS2 Launch + Parameter", domain: ros2, hours: 3 }
+  - { date: "2026-02-14", topic: "Kevin Dashboard v3.2 테마", domain: gui, hours: 6 }
+  - { date: "2026-02-15", topic: "Fleet RobotManager 구현", domain: gui, hours: 8 }
+  - { date: "2026-02-16", topic: "Fleet Overview + Selector", domain: gui, hours: 7 }
+  - { date: "2026-02-17", topic: "A* 최적화 + MockSim 버그", domain: path, hours: 10 }

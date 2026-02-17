@@ -1,0 +1,67 @@
+baseURL: "https://skong097.github.io/"
+languageCode: "ko"
+title: "Stephen Kong — Robotics Engineering"
+theme: "PaperMod"
+
+params:
+  env: production
+  description: "ROS2 · AI/ML · Robotics · Physical AI"
+  author: "Stephen Kong"
+  ShowReadingTime: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowToc: true
+  defaultTheme: dark
+  disableThemeToggle: false
+
+  homeInfoParams:
+    Title: "🤖 Robotics Engineering Blog"
+    Content: >
+      ROS2, AI/ML, Computer Vision, Robotics 프로젝트 기록.
+      Smart Factory × Physical AI × AIOps
+
+  socialIcons:
+    - name: github
+      url: "https://github.com/skong097"
+    - name: email
+      url: "mailto:skong097@gmail.com"
+
+  assets:
+    favicon: "/favicon.ico"
+
+menu:
+  main:
+    - identifier: posts
+      name: "📝 Posts"
+      url: /posts/
+      weight: 10
+    - identifier: projects
+      name: "📦 Projects"
+      url: /projects/
+      weight: 20
+    - identifier: dashboard
+      name: "📊 Dashboard"
+      url: /dashboard/
+      weight: 30
+    - identifier: about
+      name: "👤 About"
+      url: /about/
+      weight: 40
+    - identifier: tags
+      name: "🏷️ Tags"
+      url: /tags/
+      weight: 50
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    style: dracula
