@@ -270,6 +270,16 @@ author: ""
       <span class="tech-tag">Jupyter</span>
     </div>
   </div>
+  <div class="tech-card">
+    <div class="tech-card-title">AI Agent</div>
+    <div class="tech-tags">
+      <span class="tech-tag">Tool Use</span>
+      <span class="tech-tag">LLM 제어</span>
+      <span class="tech-tag">자율 판단</span>
+      <span class="tech-tag">Agent Flow</span>
+      <span class="tech-tag">Orchestration</span>
+    </div>
+  </div>
 </div>
 
 <div class="about-section-title">주요 프로젝트</div>
@@ -314,6 +324,13 @@ author: ""
     <div>
       <div class="project-link-title">ROS2 Commander</div>
       <div class="project-link-desc">게임형 ROS2 학습 애플리케이션</div>
+    </div>
+    <span class="project-link-arrow">→</span>
+  </a>
+  <a class="project-link" href="/projects/home-guard-bot-agent/">
+    <div>
+      <div class="project-link-title">Guard Brain Agent</div>
+      <div class="project-link-desc">LLM 기반 자율 판단 AI 에이전트</div>
     </div>
     <span class="project-link-arrow">→</span>
   </a>

@@ -144,6 +144,18 @@ domains:
       - { name: "Hugo", level: 30 }
       - { name: "Docker", level: 20 }
 
+  - id: ai_agent
+    name: "AI Agent"
+    icon: "AGT"
+    proficiency: 30
+    learning_target: 75
+    skills:
+      - { name: "Tool Use", level: 40 }
+      - { name: "LLM 제어", level: 45 }
+      - { name: "자율 판단", level: 30 }
+      - { name: "Agent Flow", level: 20 }
+      - { name: "Orchestration", level: 15 }
+
 # -- 프로젝트 (10 Projects) --
 projects:
   - id: proj_01
@@ -337,6 +349,15 @@ blog_posts:
     project: proj_08
     status: planned
     domain: network
+
+  - title: "LLM 기반 Guard Brain AI 에이전트 설계"
+    project: proj_05
+    status: planned
+    domain: ai_agent
+  - title: "AI Agent 자동화 도구 개발 입문 — Tool Use 패턴"
+    project: proj_05
+    status: planned
+    domain: ai_agent
 
 # -- 학습 로그 --
 learning_log:
