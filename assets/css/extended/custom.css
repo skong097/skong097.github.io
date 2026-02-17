@@ -1,609 +1,70 @@
-/* ============================================================
-   Stephen's Robotics Lab - Custom CSS for PaperMod
-   파일 위치: assets/css/extended/custom.css
-   통합 버전 (2026-02-17)
-   ============================================================ */
-
-/* ── CSS Variables ────────────────────────────────────────────── */
-:root {
-  --accent-cyan: #00c8dc;
-  --accent-blue: #3c82f6;
-  --accent-purple: #8b5cf6;
-  --accent-green: #10b981;
-  --card-radius: 12px;
-  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* ── Global Typography ────────────────────────────────────────── */
-body {
-  letter-spacing: -0.01em;
-  word-break: keep-all;
-}
-
-.post-content {
-  line-height: 1.85;
-  font-size: 1.05rem;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-::selection {
-  background: rgba(0, 200, 220, 0.25);
-}
-
-.light ::selection,
-[data-theme="light"] ::selection {
-  background: rgba(60, 130, 246, 0.2);
-}
-
 /* ══════════════════════════════════════════════════════════════
-   CONTAINER WIDTH — 포스트 목록 확장 (1200px)
+   PAGE HEADERS — 제목 중앙 정렬 + breadcrumbs 제거
+   ⚠ 기존 custom.css 끝에 있던 PAGE HEADERS 섹션을 삭제하고
+      이 내용으로 교체하세요
    ══════════════════════════════════════════════════════════════ */
-.main {
-  max-width: 1200px !important;
-  width: 92% !important;
-  margin: 0 auto;
+
+/* ── breadcrumbs 제거 ── */
+.breadcrumbs {
+  display: none !important;
 }
 
-.nav .nav-container {
-  max-width: 1200px;
+/* ── 모든 싱글 페이지 제목 중앙 (post-single 포함 높은 specificity) ── */
+.post-single .post-header,
+.post-single header.post-header,
+article .post-header,
+.post-header {
+  text-align: center !important;
 }
 
-/* ══════════════════════════════════════════════════════════════
-   HOME INFO (Hero Section)
-   ══════════════════════════════════════════════════════════════ */
-.first-entry {
-  position: relative;
-  overflow: hidden;
-  border: none;
-  border-radius: var(--card-radius);
-  min-height: 280px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 2rem;
-  transition: var(--transition);
+.post-single .post-title,
+.post-single .post-title.entry-hint-parent,
+.post-single h1.post-title,
+article h1.post-title,
+h1.post-title {
+  text-align: center !important;
 }
 
-.first-entry .entry-cover {
-  border-radius: var(--card-radius);
+.post-single .post-meta,
+article .post-meta,
+.post-header .post-meta {
+  justify-content: center !important;
+  text-align: center !important;
+  display: flex !important;
 }
 
-.home-info {
-  padding: 3rem 2rem;
-  text-align: center;
-  position: relative;
-  z-index: 1;
-}
-
-.home-info .entry-hint {
-  font-size: 2.4rem;
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  margin-bottom: 1rem;
-  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.home-info p {
-  font-size: 1.05rem;
-  line-height: 1.8;
-  max-width: 640px;
-  margin: 0 auto;
-  opacity: 0.85;
-}
-
-/* ── Social Icons ─────────────────────────────────────────────── */
-.social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 1.5rem;
-  padding: 0;
-}
-
-.social-icons a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: var(--transition);
-}
-
-.social-icons a:hover {
-  background: var(--accent-cyan);
-  border-color: var(--accent-cyan);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(0, 200, 220, 0.3);
-}
-
-.social-icons a svg {
-  width: 20px;
-  height: 20px;
-}
-
-.light .social-icons a,
-[data-theme="light"] .social-icons a {
-  background: rgba(0, 0, 0, 0.04);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.light .social-icons a:hover,
-[data-theme="light"] .social-icons a:hover {
-  background: var(--accent-blue);
-  border-color: var(--accent-blue);
-  color: #fff;
-}
-
-/* ══════════════════════════════════════════════════════════════
-   POST LIST — Responsive Grid Cards
-   ══════════════════════════════════════════════════════════════ */
-main.main {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 1.4rem;
-  align-items: start;
-}
-
-/* 전체 너비 차지 요소들 */
-main.main > .page-header,
-main.main > header,
-main.main > .breadcrumbs,
-main.main > .pagination,
-main.main > .paginav,
-main.main > footer,
-main.main > .first-entry,
-main.main > .archive-month,
-main.main > .archive-year,
-main.main > .terms-tags {
-  grid-column: 1 / -1;
-}
-
-/* ── Post Card ────────────────────────────────────────────────── */
-.post-entry {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: var(--card-radius);
-  overflow: hidden;
-  background: rgba(255, 255, 255, 0.02);
-  transition: var(--transition);
-  margin-bottom: 0;
-}
-
-.post-entry .entry-cover {
+/* ── 리스트 페이지 (Categories, Tags, Archive 등) 제목 중앙 ── */
+.page-header {
+  text-align: center !important;
   width: 100%;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-  flex-shrink: 0;
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.post-entry .entry-cover img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 0;
-  transition: transform var(--transition);
-}
-
-.post-entry:hover .entry-cover img {
-  transform: scale(1.05);
-}
-
-.post-entry .entry-header,
-.post-entry .entry-content,
-.post-entry .entry-footer {
-  padding-left: 1.2rem;
-  padding-right: 1.2rem;
-}
-
-.post-entry .entry-header {
-  padding-top: 1rem;
-}
-
-.post-entry .entry-header h2 {
-  font-size: 1.05rem;
+.page-header h1 {
+  font-size: 2rem;
   font-weight: 700;
   letter-spacing: -0.02em;
-  line-height: 1.4;
-  margin-bottom: 0.4rem;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  transition: color var(--transition);
+  text-align: center !important;
 }
 
-.post-entry .entry-header .post-meta {
-  padding: 0;
-  margin-bottom: 0.3rem;
+.light .page-header,
+[data-theme="light"] .page-header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-.post-entry .entry-content {
-  font-size: 0.85rem;
-  opacity: 0.65;
-  line-height: 1.55;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  flex-grow: 1;
+/* ── Terms 페이지 (Categories, Tags 목록) 중앙 정렬 ── */
+.terms-tags {
+  justify-content: center !important;
 }
 
-.post-entry .post-meta {
-  font-size: 0.78rem;
-  opacity: 0.45;
-  padding: 0.6rem 1.2rem 1rem;
-  margin-top: auto;
+/* ── 검색 입력창 중앙 ── */
+#searchbox {
+  text-align: center !important;
 }
 
-/* ── Post Card Hover ──────────────────────────────────────────── */
-.post-entry:hover {
-  transform: translateY(-4px);
-  border-color: rgba(0, 200, 220, 0.3);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25),
-              0 0 0 1px rgba(0, 200, 220, 0.1);
-}
-
-.post-entry:hover .entry-header h2 {
-  color: var(--accent-cyan);
-}
-
-/* ── Post Card Light Mode ─────────────────────────────────────── */
-.light .post-entry,
-[data-theme="light"] .post-entry {
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  background: #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-}
-
-.light .post-entry:hover,
-[data-theme="light"] .post-entry:hover {
-  border-color: rgba(60, 130, 246, 0.3);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1),
-              0 0 0 1px rgba(60, 130, 246, 0.1);
-}
-
-.light .post-entry:hover .entry-header h2,
-[data-theme="light"] .post-entry:hover .entry-header h2 {
-  color: var(--accent-blue);
-}
-
-/* ── Post Grid Responsive ─────────────────────────────────────── */
-@media (min-width: 1100px) {
-  main.main {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (min-width: 580px) and (max-width: 1099px) {
-  main.main {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.2rem;
-  }
-}
-
-@media (max-width: 579px) {
-  .main {
-    width: 95% !important;
-  }
-  main.main {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-  .post-entry .entry-header h2 {
-    font-size: 1.1rem;
-  }
-  .post-entry .entry-content {
-    -webkit-line-clamp: 3;
-  }
-}
-
-/* ══════════════════════════════════════════════════════════════
-   SINGLE POST — 좁은 컨테이너로 복원 (가독성)
-   ══════════════════════════════════════════════════════════════ */
-.post-single .main,
-.post-single main.main {
-  display: block;
-  max-width: 800px !important;
-}
-
-.post-single .post-header {
-  margin-bottom: 2rem;
-}
-
-.post-single .post-title {
-  font-size: 2.2rem;
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  line-height: 1.3;
-}
-
-.post-single .post-meta {
-  font-size: 0.88rem;
-  opacity: 0.6;
-  margin-top: 0.8rem;
-}
-
-/* ══════════════════════════════════════════════════════════════
-   NAVIGATION
-   ══════════════════════════════════════════════════════════════ */
-.nav {
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-
-#menu a {
-  font-size: 0.92rem;
-  font-weight: 500;
-  padding: 6px 14px;
-  border-radius: 8px;
-  transition: var(--transition);
-}
-
-#menu a:hover,
-#menu a.active {
-  background: rgba(0, 200, 220, 0.1);
-  color: var(--accent-cyan);
-}
-
-.light #menu a:hover,
-[data-theme="light"] #menu a:hover,
-.light #menu a.active,
-[data-theme="light"] #menu a.active {
-  background: rgba(60, 130, 246, 0.08);
-  color: var(--accent-blue);
-}
-
-/* ── Breadcrumbs ──────────────────────────────────────────────── */
-.breadcrumbs {
-  font-size: 0.85rem;
-  opacity: 0.6;
-  margin-bottom: 1rem;
-}
-
-/* ── Footer ───────────────────────────────────────────────────── */
-.footer {
-  font-size: 0.82rem;
-  opacity: 0.5;
-  padding: 2rem 0;
-}
-
-/* ══════════════════════════════════════════════════════════════
-   COVER IMAGES
-   ══════════════════════════════════════════════════════════════ */
-.entry-cover {
-  border-radius: var(--card-radius);
-  overflow: hidden;
-}
-
-.entry-cover img {
-  transition: transform var(--transition);
-}
-
-/* ══════════════════════════════════════════════════════════════
-   CODE BLOCKS
-   ══════════════════════════════════════════════════════════════ */
-.post-content pre {
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  margin: 1.5rem 0;
-}
-
-.post-content code {
-  font-size: 0.9rem;
-  font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
-}
-
-.post-content :not(pre) > code {
-  padding: 2px 6px;
-  border-radius: 4px;
-  background: rgba(0, 200, 220, 0.08);
-  color: var(--accent-cyan);
-  font-size: 0.88em;
-}
-
-.light .post-content :not(pre) > code,
-[data-theme="light"] .post-content :not(pre) > code {
-  background: rgba(60, 130, 246, 0.08);
-  color: var(--accent-blue);
-}
-
-/* ══════════════════════════════════════════════════════════════
-   TOC
-   ══════════════════════════════════════════════════════════════ */
-.toc {
-  border-radius: var(--card-radius);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  background: rgba(255, 255, 255, 0.02);
-  padding: 1.2rem;
-  margin-bottom: 2rem;
-}
-
-.light .toc,
-[data-theme="light"] .toc {
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  background: rgba(0, 0, 0, 0.01);
-}
-
-.toc .inner {
-  font-size: 0.88rem;
-  line-height: 2;
-}
-
-/* ══════════════════════════════════════════════════════════════
-   TAGS
-   ══════════════════════════════════════════════════════════════ */
-.post-tags a {
-  display: inline-block;
-  padding: 4px 12px;
-  border-radius: 20px;
-  font-size: 0.82rem;
-  background: rgba(0, 200, 220, 0.08);
-  border: 1px solid rgba(0, 200, 220, 0.2);
-  transition: var(--transition);
-}
-
-.post-tags a:hover {
-  background: var(--accent-cyan);
-  color: #000;
-  border-color: var(--accent-cyan);
-}
-
-.light .post-tags a,
-[data-theme="light"] .post-tags a {
-  background: rgba(60, 130, 246, 0.06);
-  border: 1px solid rgba(60, 130, 246, 0.15);
-}
-
-.light .post-tags a:hover,
-[data-theme="light"] .post-tags a:hover {
-  background: var(--accent-blue);
-  color: #fff;
-  border-color: var(--accent-blue);
-}
-
-/* ══════════════════════════════════════════════════════════════
-   PAGINATION
-   ══════════════════════════════════════════════════════════════ */
-.pagination {
-  margin-top: 2rem;
-}
-
-.pagination a {
-  padding: 8px 16px;
-  border-radius: 8px;
-  transition: var(--transition);
-}
-
-.pagination a:hover {
-  background: rgba(0, 200, 220, 0.1);
-}
-
-.post-meta svg {
-  opacity: 0.5;
-}
-
-/* ══════════════════════════════════════════════════════════════
-   GLOBAL RESPONSIVE
-   ══════════════════════════════════════════════════════════════ */
-@media (max-width: 768px) {
-  .home-info .entry-hint {
-    font-size: 1.8rem;
-  }
-  .home-info p {
-    font-size: 0.95rem;
-  }
-  .post-single .post-title {
-    font-size: 1.7rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .home-info {
-    padding: 2rem 1rem;
-  }
-  .home-info .entry-hint {
-    font-size: 1.5rem;
-  }
-  #menu a {
-    font-size: 0.85rem;
-    padding: 4px 10px;
-  }
-}
-
-/* ══════════════════════════════════════════════════════════════
-   PAGE-SPECIFIC OVERRIDES
-   ══════════════════════════════════════════════════════════════ */
-
-/* ── Dashboard: 전체 너비 해제 ────────────────────────────────── */
-body:has(.dashboard-wrap) .main,
-body:has(.dashboard-wrap) main.main {
-  max-width: 100% !important;
-  width: 100% !important;
-  padding: 0 !important;
-  margin: 0 auto !important;
-  display: block !important;
-}
-
-body:has(.dashboard-wrap) .post-content {
-  max-width: 100% !important;
-  width: 100% !important;
-  margin: 0 auto !important;
-}
-
-body:has(.dashboard-wrap) article {
-  max-width: 100% !important;
-  width: 100% !important;
-  margin: 0 auto !important;
-}
-
-body:has(.dashboard-wrap) .dash-header-inner,
-body:has(.dashboard-wrap) .dash-nav-tabs,
-body:has(.dashboard-wrap) .dash-main {
-  max-width: 1400px;
-  width: 94%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-body:has(.dashboard-wrap) .nav .nav-container {
-  max-width: 1400px;
-}
-
-/* ── About: 넓은 컨테이너 ────────────────────────────────────── */
-body:has(.about-hero) .main,
-body:has(.about-hero) main.main {
-  max-width: 1200px !important;
-  width: 92% !important;
-  display: block !important;
-}
-
-body:has(.about-hero) .post-content {
-  max-width: 1200px !important;
-  width: 100% !important;
-}
-
-body:has(.about-hero) article {
-  max-width: 1200px !important;
-}
-
-@media (max-width: 767px) {
-  body:has(.about-hero) .main,
-  body:has(.about-hero) main.main {
-    width: 95% !important;
-  }
-}
-
-/* ── Projects: 넓은 컨테이너 ──────────────────────────────────── */
-body:has(.projects-grid) .main,
-body:has(.projects-grid) main.main {
-  max-width: 1200px !important;
-  width: 92% !important;
-  display: block !important;
-}
-
-body:has(.projects-grid) .post-content {
-  max-width: 1200px !important;
-  width: 100% !important;
-}
-
-body:has(.projects-grid) article {
-  max-width: 1200px !important;
-}
-
-@media (max-width: 767px) {
-  body:has(.projects-grid) .main,
-  body:has(.projects-grid) main.main {
-    width: 95% !important;
-  }
+/* ── 대시보드: PaperMod 기본 제목 숨김 (자체 헤더 사용) ── */
+body:has(.dashboard-wrap) .post-header {
+  display: none !important;
 }

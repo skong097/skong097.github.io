@@ -1,0 +1,1056 @@
+{
+  "collected": {
+    "/home/gjkong/dev_ws/blog/references/downloads/MyPet_DevLog_20250215.md": {
+      "source": "/home/gjkong/Downloads/0215/MyPet_DevLog_20250215.md",
+      "hash": "4a9dc9d33099f0f6f8fca8072ce0284d",
+      "collected_at": "2026-02-17T18:29:25.405723",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/blog_strategy_guide.md": {
+      "source": "/home/gjkong/Downloads/0215/blog_strategy_guide.md",
+      "hash": "86db40e623fc71d2ffaa76277e58f6ff",
+      "collected_at": "2026-02-17T18:29:25.406788",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/day1_log.md": {
+      "source": "/home/gjkong/Downloads/0215/day1_log.md",
+      "hash": "e8b8ed5fae00dc0dfe1f0e1872a3e5b4",
+      "collected_at": "2026-02-17T18:29:25.407033",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/day2_5_log.md": {
+      "source": "/home/gjkong/Downloads/0215/day2_5_log.md",
+      "hash": "861490e30de73df1c954cb089731970b",
+      "collected_at": "2026-02-17T18:29:25.407289",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/dev_log_2026-02-15.md": {
+      "source": "/home/gjkong/Downloads/0215/dev_log_2026-02-15.md",
+      "hash": "bd92367e13107c902628dae0bcb5d557",
+      "collected_at": "2026-02-17T18:29:25.408263",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/development.md": {
+      "source": "/home/gjkong/Downloads/0215/development.md",
+      "hash": "bc3246ea6a7bdcc615acedb2e76fb2db",
+      "collected_at": "2026-02-17T18:29:25.408969",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/kevin_3d_sim_dev.md": {
+      "source": "/home/gjkong/Downloads/0215/kevin_3d_sim_dev.md",
+      "hash": "1493807b831a5444aada24d61d516c78",
+      "collected_at": "2026-02-17T18:29:25.409586",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/kevin_3d_sim_dev_phaseI_finished.md": {
+      "source": "/home/gjkong/Downloads/0215/kevin_3d_sim_dev_phaseI_finished.md",
+      "hash": "5032eab61f915a2fe7b86b9fbb7a0e3c",
+      "collected_at": "2026-02-17T18:29:25.410252",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/kevin_3d_sim_guide.md": {
+      "source": "/home/gjkong/Downloads/0215/kevin_3d_sim_guide.md",
+      "hash": "07a29ce1d594e562ba68d13a50957502",
+      "collected_at": "2026-02-17T18:29:25.410921",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/kevin_patrol_dashboard_dev_250215.md": {
+      "source": "/home/gjkong/Downloads/0215/kevin_patrol_dashboard_dev_250215.md",
+      "hash": "ceee7b5e353a617cddee7aad9aa673ac",
+      "collected_at": "2026-02-17T18:29:25.411522",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/kevin_patrol_mocksim_optimization_log (1).md": {
+      "source": "/home/gjkong/Downloads/0215/kevin_patrol_mocksim_optimization_log (1).md",
+      "hash": "7a3f64c16fee4dc51a51f966ad052129",
+      "collected_at": "2026-02-17T18:29:25.412147",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/kevin_patrol_mocksim_optimization_log.md": {
+      "source": "/home/gjkong/Downloads/0215/kevin_patrol_mocksim_optimization_log.md",
+      "hash": "7a3f64c16fee4dc51a51f966ad052129",
+      "collected_at": "2026-02-17T18:29:25.412393",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/kevin_patrol_v3.2_work_log.md": {
+      "source": "/home/gjkong/Downloads/0215/kevin_patrol_v3.2_work_log.md",
+      "hash": "c374894e2d3a414be6f2e9733b96e5b6",
+      "collected_at": "2026-02-17T18:29:25.412976",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/kevin_patrol_v3_2_1_work_log.md": {
+      "source": "/home/gjkong/Downloads/0215/kevin_patrol_v3_2_1_work_log.md",
+      "hash": "56c44ef87ee7576cb46a53c575b66e91",
+      "collected_at": "2026-02-17T18:29:25.413217",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/kevin_patrol_v3_3_fleet_work_log.md": {
+      "source": "/home/gjkong/Downloads/0215/kevin_patrol_v3_3_fleet_work_log.md",
+      "hash": "4a6d67ce93cc52c60e644db303609e32",
+      "collected_at": "2026-02-17T18:29:25.413443",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/robotics_engineering_roadmap.md": {
+      "source": "/home/gjkong/Downloads/0215/robotics_engineering_roadmap.md",
+      "hash": "fa6af59286a3e298d3f48ff9f007caeb",
+      "collected_at": "2026-02-17T18:29:25.413720",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/2026-02-17_blog_design_work_log.md": {
+      "source": "/home/gjkong/Downloads/2026-02-17_blog_design_work_log.md",
+      "hash": "df60033e3148811548b2c7cda28d7095",
+      "collected_at": "2026-02-17T18:29:25.413972",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/2026-02-17_fleet_collision_avoidance_log.md": {
+      "source": "/home/gjkong/Downloads/2026-02-17_fleet_collision_avoidance_log.md",
+      "hash": "189355690cd4a7665bd2a54f7077dc75",
+      "collected_at": "2026-02-17T18:29:25.414287",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/2026-02-17_blog_dashboard_work_log.md": {
+      "source": "/home/gjkong/Downloads/blog_content/2026-02-17_blog_dashboard_work_log.md",
+      "hash": "8b652a34f60cfed83bbfa855d6d350ff",
+      "collected_at": "2026-02-17T18:29:25.414608",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/index.md": {
+      "source": "/home/gjkong/Downloads/blog_content/about/index.md",
+      "hash": "76765c8200b07e359ba6fb15e634a56b",
+      "collected_at": "2026-02-17T18:29:25.415236",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/rf-vs-stgcn-fall-detection.md": {
+      "source": "/home/gjkong/Downloads/blog_content/posts/computer-vision/rf-vs-stgcn-fall-detection.md",
+      "hash": "1f2568368f49ab894e40341f4850486f",
+      "collected_at": "2026-02-17T18:29:25.415434",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/stgcn-finetuning-fall-detection.md": {
+      "source": "/home/gjkong/Downloads/blog_content/posts/computer-vision/stgcn-finetuning-fall-detection.md",
+      "hash": "376ba20d1d315c912db48ce2a9621400",
+      "collected_at": "2026-02-17T18:29:25.415646",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/pyqt6-dark-theme-system.md": {
+      "source": "/home/gjkong/Downloads/blog_content/posts/dev-tools/pyqt6-dark-theme-system.md",
+      "hash": "f817d87899fc6e407cda7ce1eed803bc",
+      "collected_at": "2026-02-17T18:29:25.415840",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/kevin-patrol-fleet-dashboard.md": {
+      "source": "/home/gjkong/Downloads/blog_content/posts/robotics/kevin-patrol-fleet-dashboard.md",
+      "hash": "f4a07fd91d7e65923cba46dbd20be46e",
+      "collected_at": "2026-02-17T18:29:25.416042",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/ros2-guard-brain-fastapi.md": {
+      "source": "/home/gjkong/Downloads/blog_content/posts/ros2/ros2-guard-brain-fastapi.md",
+      "hash": "c13b2f60a7d50fea67712c785a5448f7",
+      "collected_at": "2026-02-17T18:29:25.416237",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/_index.md": {
+      "source": "/home/gjkong/Downloads/blog_content/projects/_index.md",
+      "hash": "8cf9ce3e6348cf6b8398bef9886eebf4",
+      "collected_at": "2026-02-17T18:29:25.416426",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/search.md": {
+      "source": "/home/gjkong/Downloads/blog_content/search.md",
+      "hash": "8afeae8798298bb8d3676cdb4d8b1405",
+      "collected_at": "2026-02-17T18:29:25.416643",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/home-safe-solution-vision-ai-project.md": {
+      "source": "/home/gjkong/Downloads/home-safe-solution-vision-ai-project.md",
+      "hash": "59fdfdb754e74ab15e8c5886cfa007d9",
+      "collected_at": "2026-02-17T18:29:25.416953",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/blog_old/SETUP.md": {
+      "source": "/home/gjkong/dev_ws/blog_old/SETUP.md",
+      "hash": "141b5d61eea052c513fd661ed9b7fee7",
+      "collected_at": "2026-02-17T18:31:32.714946",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/blog_old/default.md": {
+      "source": "/home/gjkong/dev_ws/blog_old/archetypes/default.md",
+      "hash": "9563624f5122b451a61263d21b9836c1",
+      "collected_at": "2026-02-17T18:31:32.715246",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/blog_old/index.md": {
+      "source": "/home/gjkong/dev_ws/blog_old/content/about/index.md",
+      "hash": "76765c8200b07e359ba6fb15e634a56b",
+      "collected_at": "2026-02-17T18:31:32.715433",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/blog_old/rf-vs-stgcn-fall-detection.md": {
+      "source": "/home/gjkong/dev_ws/blog_old/content/posts/computer-vision/rf-vs-stgcn-fall-detection.md",
+      "hash": "1f2568368f49ab894e40341f4850486f",
+      "collected_at": "2026-02-17T18:31:32.715617",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/blog_old/stgcn-finetuning-fall-detection.md": {
+      "source": "/home/gjkong/dev_ws/blog_old/content/posts/computer-vision/stgcn-finetuning-fall-detection.md",
+      "hash": "376ba20d1d315c912db48ce2a9621400",
+      "collected_at": "2026-02-17T18:31:32.715812",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/blog_old/pyqt6-dark-theme-system.md": {
+      "source": "/home/gjkong/dev_ws/blog_old/content/posts/dev-tools/pyqt6-dark-theme-system.md",
+      "hash": "f817d87899fc6e407cda7ce1eed803bc",
+      "collected_at": "2026-02-17T18:31:32.716002",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/blog_old/kevin-patrol-fleet-dashboard.md": {
+      "source": "/home/gjkong/dev_ws/blog_old/content/posts/robotics/kevin-patrol-fleet-dashboard.md",
+      "hash": "f4a07fd91d7e65923cba46dbd20be46e",
+      "collected_at": "2026-02-17T18:31:32.716198",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/blog_old/ros2-guard-brain-fastapi.md": {
+      "source": "/home/gjkong/dev_ws/blog_old/content/posts/ros2/ros2-guard-brain-fastapi.md",
+      "hash": "c13b2f60a7d50fea67712c785a5448f7",
+      "collected_at": "2026-02-17T18:31:32.716364",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/blog_old/_index.md": {
+      "source": "/home/gjkong/dev_ws/blog_old/content/projects/_index.md",
+      "hash": "8cf9ce3e6348cf6b8398bef9886eebf4",
+      "collected_at": "2026-02-17T18:31:32.716530",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/blog_old/search.md": {
+      "source": "/home/gjkong/dev_ws/blog_old/content/search.md",
+      "hash": "8afeae8798298bb8d3676cdb4d8b1405",
+      "collected_at": "2026-02-17T18:31:32.716716",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/eyecon_venv/AUTHORS.md": {
+      "source": "/home/gjkong/dev_ws/eyecon_venv/lib/python3.12/site-packages/pooch-1.9.0.dist-info/licenses/AUTHORS.md",
+      "hash": "63243f5c373e20059abd4ba0496256b1",
+      "collected_at": "2026-02-17T18:31:32.717031",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/eyecon_venv/best_practices.md": {
+      "source": "/home/gjkong/dev_ws/eyecon_venv/lib/python3.12/site-packages/pyparsing/ai/best_practices.md",
+      "hash": "130472ecbe642ede6d35371becbb4701",
+      "collected_at": "2026-02-17T18:31:32.717353",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/eyecon_venv/ICON_LICENSE.md": {
+      "source": "/home/gjkong/dev_ws/eyecon_venv/lib/python3.12/site-packages/werkzeug/debug/shared/ICON_LICENSE.md",
+      "hash": "44921d713d160eb0d2a7004e35675485",
+      "collected_at": "2026-02-17T18:31:32.717646",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/gaze_venv/best_practices.md": {
+      "source": "/home/gjkong/dev_ws/gaze_venv/lib/python3.12/site-packages/pyparsing/ai/best_practices.md",
+      "hash": "130472ecbe642ede6d35371becbb4701",
+      "collected_at": "2026-02-17T18:31:32.718011",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/ironman/LLM_ROS_보안관_개발계획서.md": {
+      "source": "/home/gjkong/dev_ws/ironman/docs/LLM_ROS_보안관_개발계획서.md",
+      "hash": "315f7d2e2273c5eab03e7df377c784fb",
+      "collected_at": "2026-02-17T18:31:32.718432",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/kevin_multi_patrol/development.md": {
+      "source": "/home/gjkong/dev_ws/kevin_multi_patrol/docs/development.md",
+      "hash": "66ad5fc3795d01654ecdb3da22adbae9",
+      "collected_at": "2026-02-17T18:31:32.718688",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/kevin_multi_patrol/kevin_patrol_v3_3_fleet_work_log.md": {
+      "source": "/home/gjkong/dev_ws/kevin_multi_patrol/docs/kevin_patrol_v3_3_fleet_work_log.md",
+      "hash": "bc76e08f1e6709d337af259ce4327fa4",
+      "collected_at": "2026-02-17T18:31:32.718878",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/kevin_patrol/development.md": {
+      "source": "/home/gjkong/dev_ws/kevin_patrol/docs/development.md",
+      "hash": "66ad5fc3795d01654ecdb3da22adbae9",
+      "collected_at": "2026-02-17T18:31:32.719110",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/memory_venv/best_practices.md": {
+      "source": "/home/gjkong/dev_ws/memory_venv/lib/python3.12/site-packages/pyparsing/ai/best_practices.md",
+      "hash": "130472ecbe642ede6d35371becbb4701",
+      "collected_at": "2026-02-17T18:31:32.719433",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/claude.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/01_common/claude/claude.md",
+      "hash": "8005d0e6f7118434c4344f0cf4ef9b4b",
+      "collected_at": "2026-02-17T18:31:32.719816",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/GEMINI.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/01_common/gemini/GEMINI.md",
+      "hash": "4e77fb57772a3d0b2864efdf3caaeaa2",
+      "collected_at": "2026-02-17T18:31:32.720120",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/SECURITY_RECOMMENDATIONS.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/01_common/security/SECURITY_RECOMMENDATIONS.md",
+      "hash": "636a5230a196494b89652a71a76a6ac0",
+      "collected_at": "2026-02-17T18:31:32.720721",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/MyPet_DevLog_20250215.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/coco/MyPet_DevLog_20250215.md",
+      "hash": "4a9dc9d33099f0f6f8fca8072ce0284d",
+      "collected_at": "2026-02-17T18:31:32.721048",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/MyPet_Project_Plan.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/coco/MyPet_Project_Plan.md",
+      "hash": "0343fecf9fcc5b43629b0875829145bb",
+      "collected_at": "2026-02-17T18:31:32.721405",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/dev_log_2026-02-15.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/coco/dev_log_2026-02-15.md",
+      "hash": "bd92367e13107c902628dae0bcb5d557",
+      "collected_at": "2026-02-17T18:31:32.721683",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-07_WORK_LOG_memnusu_crash_solved.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/dl_project_yoloosem/2026-02-07_WORK_LOG_memnusu_crash_solved.md",
+      "hash": "2107519f5304501337e8dedd3e6294d5",
+      "collected_at": "2026-02-17T18:31:32.722016",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/CAMERA_SELECTION_GUIDE.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/dl_project_yoloosem/CAMERA_SELECTION_GUIDE.md",
+      "hash": "63b16c8eb5b6ef1af195a81468d76dbd",
+      "collected_at": "2026-02-17T18:31:32.722333",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/EMERGENCY_CALL_INTEGRATION_GUIDE.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/dl_project_yoloosem/EMERGENCY_CALL_INTEGRATION_GUIDE.md",
+      "hash": "745d007fbc4329797a22044d8b8d2c23",
+      "collected_at": "2026-02-17T18:31:32.722852",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/FINAL_COMPLETE_GUIDE.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/dl_project_yoloosem/FINAL_COMPLETE_GUIDE.md",
+      "hash": "20d73fbf8ee2065dadc47b718eb63f5b",
+      "collected_at": "2026-02-17T18:31:32.723141",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/FIX_MYSQL_ERROR.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/dl_project_yoloosem/FIX_MYSQL_ERROR.md",
+      "hash": "c753e7cdd42b0da1d0560272ef808af4",
+      "collected_at": "2026-02-17T18:31:32.723364",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/GRAPH_INTEGRATION_GUIDE.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/dl_project_yoloosem/GRAPH_INTEGRATION_GUIDE.md",
+      "hash": "793ca59db61a3d79eb7406636fa59f36",
+      "collected_at": "2026-02-17T18:31:32.723880",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/GUI_README.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/dl_project_yoloosem/GUI_README.md",
+      "hash": "c0a27f57ecb54152dc51b8e86327607d",
+      "collected_at": "2026-02-17T18:31:32.724143",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/LOGGING_GUIDE.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/dl_project_yoloosem/LOGGING_GUIDE.md",
+      "hash": "de44ea9bb3483600f1ea72ae5fc0a31f",
+      "collected_at": "2026-02-17T18:31:32.724378",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/MODEL_TRAINING_REPORT (1).md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/dl_project_yoloosem/MODEL_TRAINING_REPORT (1).md",
+      "hash": "e001f1efda2ca9d2f68de32459f75727",
+      "collected_at": "2026-02-17T18:31:32.724704",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/OVERLAY_REMOVAL_GUIDE.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/dl_project_yoloosem/OVERLAY_REMOVAL_GUIDE.md",
+      "hash": "99d0d0d7b7f076a550c37671bc1f446e",
+      "collected_at": "2026-02-17T18:31:32.725011",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/PACKAGE_INFO.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/dl_project_yoloosem/PACKAGE_INFO.md",
+      "hash": "a41b256daf09f201560a4cf9a3ac58e7",
+      "collected_at": "2026-02-17T18:31:32.725258",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/PROJECT_DOCUMENTATION.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/04_utils/docs/PROJECT_DOCUMENTATION.md",
+      "hash": "4e77fb57772a3d0b2864efdf3caaeaa2",
+      "collected_at": "2026-02-17T18:36:57.368771",
+      "action": "updated"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/QUICKSTART.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/dl_project_yoloosem/QUICKSTART.md",
+      "hash": "7cf9a357a4d215ac818a4990360e630e",
+      "collected_at": "2026-02-17T18:31:32.725796",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/REALTIME_GUIDE.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/dl_project_yoloosem/REALTIME_GUIDE.md",
+      "hash": "b3c028a6a8e6b046268dd9e4d636db5c",
+      "collected_at": "2026-02-17T18:31:32.726069",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/STEP1_ADD_ACCURACY_COLUMN.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/dl_project_yoloosem/STEP1_ADD_ACCURACY_COLUMN.md",
+      "hash": "a90c493b634109a6be2b769273c25b15",
+      "collected_at": "2026-02-17T18:31:32.726362",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/STEP2_DATABASE_MODELS.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/dl_project_yoloosem/STEP2_DATABASE_MODELS.md",
+      "hash": "3d2e523041331014b189c5d4da369322",
+      "collected_at": "2026-02-17T18:31:32.726660",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/STEP3_MONITORING_PAGE.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/dl_project_yoloosem/STEP3_MONITORING_PAGE.md",
+      "hash": "fe404b751d9959181a363bb6511f6df6",
+      "collected_at": "2026-02-17T18:31:32.726913",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/STEP4_DASHBOARD_PAGE.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/dl_project_yoloosem/STEP4_DASHBOARD_PAGE.md",
+      "hash": "da9912238cdc739857ad83c4348f500d",
+      "collected_at": "2026-02-17T18:31:32.727226",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/UPDATE_MODEL_PATH_GUIDE.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/dl_project_yoloosem/UPDATE_MODEL_PATH_GUIDE.md",
+      "hash": "13611abd6c3405a1564f2fa0a95a3ae9",
+      "collected_at": "2026-02-17T18:31:32.727571",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/ENTRYPOINT_FIX_GUIDE.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/homeguard_robot/ENTRYPOINT_FIX_GUIDE.md",
+      "hash": "6eacdb0fbf6ff96a9607a706d44588c0",
+      "collected_at": "2026-02-17T18:31:32.727869",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/GUARD_VOICE_GUIDE.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/homeguard_robot/GUARD_VOICE_GUIDE.md",
+      "hash": "3d93010ac52bc2341cb86173797dbba9",
+      "collected_at": "2026-02-17T18:31:32.728155",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/LLM_ROS_보안관_개발계획서.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/homeguard_robot/LLM_ROS_보안관_개발계획서.md",
+      "hash": "315f7d2e2273c5eab03e7df377c784fb",
+      "collected_at": "2026-02-17T18:31:32.728375",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/ROS2_쉬운_설명_Home_Guard_Bot.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/homeguard_robot/ROS2_쉬운_설명_Home_Guard_Bot.md",
+      "hash": "ceb82059dba727c72530e9240d2618a5",
+      "collected_at": "2026-02-17T18:31:32.728554",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/RPi_탑재_계획.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/homeguard_robot/RPi_탑재_계획.md",
+      "hash": "f205486044b44538162ba4ade4b7c03c",
+      "collected_at": "2026-02-17T18:31:32.728838",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-17_fleet_collision_avoidance_log.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/kevin_patrol/2026-02-17_fleet_collision_avoidance_log.md",
+      "hash": "189355690cd4a7665bd2a54f7077dc75",
+      "collected_at": "2026-02-17T18:31:32.729013",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/2026-dev-phaseIII-Finished.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/kevin_patrol/2026-dev-phaseIII-Finished.md",
+      "hash": "66ad5fc3795d01654ecdb3da22adbae9",
+      "collected_at": "2026-02-17T18:31:32.729400",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/kevin_multi_patrol_bugfix_log.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/kevin_patrol/kevin_multi_patrol_bugfix_log.md",
+      "hash": "e7f7414d03acccc3b336d85844ac6ef4",
+      "collected_at": "2026-02-17T18:31:32.729585",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/kevin_patrol_dashboard_dev_250215.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/kevin_patrol/kevin_patrol_dashboard_dev_250215.md",
+      "hash": "ceee7b5e353a617cddee7aad9aa673ac",
+      "collected_at": "2026-02-17T18:31:32.729882",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/kevin_patrol_mocksim_optimization_log_VIP.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/kevin_patrol/kevin_patrol_mocksim_optimization_log_VIP.md",
+      "hash": "7a3f64c16fee4dc51a51f966ad052129",
+      "collected_at": "2026-02-17T18:31:32.730079",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/kevin_patrol_v3.2_work_log.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/kevin_patrol/kevin_patrol_v3.2_work_log.md",
+      "hash": "c374894e2d3a414be6f2e9733b96e5b6",
+      "collected_at": "2026-02-17T18:31:32.730391",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/kevin_patrol_v3_2_1_work_log.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/kevin_patrol/kevin_patrol_v3_2_1_work_log.md",
+      "hash": "56c44ef87ee7576cb46a53c575b66e91",
+      "collected_at": "2026-02-17T18:31:32.730562",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/kevin_patrol_v3_3_fleet_work_log.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/kevin_patrol/kevin_patrol_v3_3_fleet_work_log.md",
+      "hash": "4a6d67ce93cc52c60e644db303609e32",
+      "collected_at": "2026-02-17T18:31:32.730750",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/20260214_gui_speech_ok.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/pinocchio/20260214_gui_speech_ok.md",
+      "hash": "0353b62f7778f34e8c719bbb32510228",
+      "collected_at": "2026-02-17T18:31:32.731041",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/20260214_last_optimized_goodworking.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/pinocchio/20260214_last_optimized_goodworking.md",
+      "hash": "3d1734d73d9b465ff7665f3c04cbfafc",
+      "collected_at": "2026-02-17T18:31:32.731314",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/20260214_optimization_tuning.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/pinocchio/20260214_optimization_tuning.md",
+      "hash": "d3af3287e969015be92f07fcf73bf4f8",
+      "collected_at": "2026-02-17T18:31:32.731601",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/20260214_phase2_3_음성 인식 속도.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/pinocchio/20260214_phase2_3_음성 인식 속도.md",
+      "hash": "8d74493a925b9857d0b02e4228201931",
+      "collected_at": "2026-02-17T18:31:32.731893",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/EyeCon_프로젝트_계획서.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/pinocchio/EyeCon_프로젝트_계획서.md",
+      "hash": "54d8c35351506e199c022f1c213c25ad",
+      "collected_at": "2026-02-17T18:31:32.732140",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/kevin_3d_sim_Guide.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/ros2/kevin_3d_sim_Guide.md",
+      "hash": "07cc4042fe5276865cf7f47e27c77fcc",
+      "collected_at": "2026-02-17T18:31:32.732485",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/kevin_3d_sim_dev.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/ros2/kevin_3d_sim_dev.md",
+      "hash": "8ee0b0dcbd6677f9b08d0444f7cc5e29",
+      "collected_at": "2026-02-17T18:31:32.732763",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/kevin_3d_sim_dev_0215_last.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/ros2/kevin_3d_sim_dev_0215_last.md",
+      "hash": "6c0eeab71b232b84a6a18eac014e571c",
+      "collected_at": "2026-02-17T18:31:32.733108",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/kevin_3d_sim_dev_phaseI_finished.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/ros2/kevin_3d_sim_dev_phaseI_finished.md",
+      "hash": "5032eab61f915a2fe7b86b9fbb7a0e3c",
+      "collected_at": "2026-02-17T18:31:32.733449",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/kevin_3d_sim_dev_plan0215.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/ros2/kevin_3d_sim_dev_plan0215.md",
+      "hash": "cf601841939228e77931d31fe8ad3c91",
+      "collected_at": "2026-02-17T18:31:32.733789",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-07_WORK_LOG_FINAL_v2 (rf_stgcn_success).md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/st_gcn/2026-02-07_WORK_LOG_FINAL_v2 (rf_stgcn_success).md",
+      "hash": "201004ed9228fc497527407957dc42aa",
+      "collected_at": "2026-02-17T18:31:32.734110",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/COMPARE_MODELS_GUIDE.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/st_gcn/COMPARE_MODELS_GUIDE.md",
+      "hash": "f5e6d1679b6cd8ff47502cf07703c4f3",
+      "collected_at": "2026-02-17T18:31:32.734400",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/GUI_MODEL_DISPLAY_GUIDE.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/st_gcn/GUI_MODEL_DISPLAY_GUIDE.md",
+      "hash": "58162ff2c65723e7d49cccf0d8ed3320",
+      "collected_at": "2026-02-17T18:31:32.734681",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/PIPELINE_DESIGN.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/st_gcn/PIPELINE_DESIGN.md",
+      "hash": "8cbd8278933dd2ab652a08771bf01224",
+      "collected_at": "2026-02-17T18:31:32.734991",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/STGCN_GUI_IMPLEMENTATION_PLAN.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/st_gcn/STGCN_GUI_IMPLEMENTATION_PLAN.md",
+      "hash": "8fe25262999121fe60729b60fcc30151",
+      "collected_at": "2026-02-17T18:31:32.735343",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/STGCN_PRETRAINED_PLAN.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/st_gcn/STGCN_PRETRAINED_PLAN.md",
+      "hash": "8ba460250867c92cdacd1b1ecadfe5b5",
+      "collected_at": "2026-02-17T18:31:32.735646",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/WORK_LOG_20260205.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/st_gcn/WORK_LOG_20260205.md",
+      "hash": "fc939801f55bf91e36bd797b1f9c8045",
+      "collected_at": "2026-02-17T18:31:32.735963",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/WORK_LOG_20260205_v2(st-gcn).md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/st_gcn/WORK_LOG_20260205_v2(st-gcn).md",
+      "hash": "ca54b2af93b989a713f87fd31f14c934",
+      "collected_at": "2026-02-17T18:31:32.736254",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/ST_GCN_IMPLEMENTATION_PLAN.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/st_gcn/old/ST_GCN_IMPLEMENTATION_PLAN.md",
+      "hash": "e9dda86409f1ed05e2246f42eb408126",
+      "collected_at": "2026-02-17T18:31:32.736684",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/ST_GCN_PROJECT_REPORT (1).md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/st_gcn/old/ST_GCN_PROJECT_REPORT (1).md",
+      "hash": "02d3f6c0965d7c87a383130bec8f20f7",
+      "collected_at": "2026-02-17T18:31:32.736966",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/ST_GCN_PROJECT_REPORT.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/st_gcn/old/ST_GCN_PROJECT_REPORT.md",
+      "hash": "02d3f6c0965d7c87a383130bec8f20f7",
+      "collected_at": "2026-02-17T18:31:32.737277",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/FILE_PLACEMENT_GUIDE.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/다중 모델 기반_수집_학습_리포트_자동화/FILE_PLACEMENT_GUIDE.md",
+      "hash": "c3b75103b72e22c5c4e9c3a4f585254a",
+      "collected_at": "2026-02-17T18:31:32.737863",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/TRAINING_PIPELINE_PLAN.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/02_project/다중 모델 기반_수집_학습_리포트_자동화/TRAINING_PIPELINE_PLAN.md",
+      "hash": "79955118f0990e0ff9a9605631e748c1",
+      "collected_at": "2026-02-17T18:31:32.738217",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/robotics_engineering_roadmap.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/03_knowledge/robotics_engineering_roadmap.md",
+      "hash": "fa6af59286a3e298d3f48ff9f007caeb",
+      "collected_at": "2026-02-17T18:31:32.738559",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/ros2_commander_app_roadmap.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/03_knowledge/ros2_commander_app_roadmap.md",
+      "hash": "7881c967a473db9f64daab99a2d2d556",
+      "collected_at": "2026-02-17T18:31:32.738862",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/SITTING_FILTER_GUIDE.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/04_utils/docs/SITTING_FILTER_GUIDE.md",
+      "hash": "241f8a9419adbb75527ef8bc7cdf6459",
+      "collected_at": "2026-02-17T18:31:32.739844",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/MODEL_COMPARISON_REPORT.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/05_journal/work/MODEL_COMPARISON_REPORT.md",
+      "hash": "bffd5f092dd16d3904c52e40060aa5a7",
+      "collected_at": "2026-02-17T18:36:57.373019",
+      "action": "updated"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/RF_TUNING_EXPERIMENT_REPORT.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/05_journal/model_tunning/rf_tuning_20260206_210753/RF_TUNING_EXPERIMENT_REPORT.md",
+      "hash": "6588843cd41013ebd15986145bdc3523",
+      "collected_at": "2026-02-17T18:36:57.370959",
+      "action": "updated"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-07_WORK_LOG_FINAL_v2.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/05_journal/model_tunning/2026-02-07_WORK_LOG_FINAL_v2.md",
+      "hash": "9c17230a0cabb029d6b165e893688ec4",
+      "collected_at": "2026-02-17T18:31:32.741849",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-07_WORK_LOG_v2(rf_train_normalized).md": {
+      "source": "/home/gjkong/dev_ws/my_docs/05_journal/model_tunning/2026-02-07_WORK_LOG_v2(rf_train_normalized).md",
+      "hash": "b114cacd51b3aa815a103818b7faa7d5",
+      "collected_at": "2026-02-17T18:31:32.742170",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/MODEL_COMPARISON_REPORT_0208.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/05_journal/model_tunning/MODEL_COMPARISON_REPORT_0208.md",
+      "hash": "55b4e0c54be4559b938736adb6592282",
+      "collected_at": "2026-02-17T18:31:32.742814",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/day1_log.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/05_journal/ros2_study/day1_log.md",
+      "hash": "e8b8ed5fae00dc0dfe1f0e1872a3e5b4",
+      "collected_at": "2026-02-17T18:31:32.743555",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/day2_5_log.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/05_journal/ros2_study/day2_5_log.md",
+      "hash": "861490e30de73df1c954cb089731970b",
+      "collected_at": "2026-02-17T18:31:32.743758",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/2026-01-31_WORK_LOG.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/05_journal/work/2026-01-31_WORK_LOG.md",
+      "hash": "1ecb99a873e9caa0327ba1b018cec746",
+      "collected_at": "2026-02-17T18:31:32.744089",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-03_STGCN_WORK_SUMMARY.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/05_journal/work/2026-02-03_STGCN_WORK_SUMMARY.md",
+      "hash": "51bdddd5faecdc2ca7cb7b7227e7584c",
+      "collected_at": "2026-02-17T18:31:32.744391",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-06_AM_WORK_LOG.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/05_journal/work/2026-02-06_AM_WORK_LOG.md",
+      "hash": "fe14f771722f6cf00dcb18ffbc296faf",
+      "collected_at": "2026-02-17T18:31:32.744693",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-06_FULL_WORK_LOG.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/05_journal/work/2026-02-06_FULL_WORK_LOG.md",
+      "hash": "091b137f7051f225032d269d5696c045",
+      "collected_at": "2026-02-17T18:31:32.744870",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-06_RF_TUNING_WORK_LOG.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/05_journal/work/2026-02-06_RF_TUNING_WORK_LOG.md",
+      "hash": "427079a65397c31ea20e04c6daf2c4ad",
+      "collected_at": "2026-02-17T18:31:32.745163",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-06_WORK_LOG.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/05_journal/work/2026-02-06_WORK_LOG.md",
+      "hash": "9b5600ff006ee0931d55c73c9206249a",
+      "collected_at": "2026-02-17T18:31:32.745403",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-07_WORK_LOG_FINAL_v2_updated.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/05_journal/work/2026-02-07_WORK_LOG_FINAL_v2_updated.md",
+      "hash": "f0317b1e4f473001ce83393fa11690c4",
+      "collected_at": "2026-02-17T18:31:32.746195",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-09_WORK.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/05_journal/work/2026-02-09_WORK.md",
+      "hash": "31a6458ce6208f09f7f2dd33d5922ebc",
+      "collected_at": "2026-02-17T18:31:32.746948",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-09_WORK_LOG.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/05_journal/work/2026-02-09_WORK_LOG.md",
+      "hash": "b363512d3a318f98832d9a6e50572e35",
+      "collected_at": "2026-02-17T18:31:32.747239",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-12_작업일지.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/05_journal/work/2026-02-12_작업일지.md",
+      "hash": "03fb18b75e4d80b818803a8568cc559e",
+      "collected_at": "2026-02-17T18:31:32.747506",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-13_작업일지(tts-ros2-llm).md": {
+      "source": "/home/gjkong/dev_ws/my_docs/05_journal/work/2026-02-13_작업일지(tts-ros2-llm).md",
+      "hash": "3640c3d11f665b55fe149b4fe2777d22",
+      "collected_at": "2026-02-17T18:31:32.747814",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-13_작업일지_1.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/05_journal/work/2026-02-13_작업일지_1.md",
+      "hash": "935291f3432b6e7fe9b07e2c584d0c96",
+      "collected_at": "2026-02-17T18:31:32.748103",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-13_작업일지_2.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/05_journal/work/2026-02-13_작업일지_2.md",
+      "hash": "a4bd5244ee159e96c712b3d557758419",
+      "collected_at": "2026-02-17T18:31:32.748401",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-17_blog_design_work_log.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/05_journal/work/2026-02-17_blog_design_work_log.md",
+      "hash": "df60033e3148811548b2c7cda28d7095",
+      "collected_at": "2026-02-17T18:31:32.748583",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/RF_TUNING_GUIDE.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/05_journal/work/RF_TUNING_GUIDE.md",
+      "hash": "e1c438d1abbbf7fa77c243f2a619e52a",
+      "collected_at": "2026-02-17T18:31:32.749302",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/WORK_LOG_20260203_FINAL.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/05_journal/work/WORK_LOG_20260203_FINAL.md",
+      "hash": "387e5f3e27282f596d4105193bf95dc9",
+      "collected_at": "2026-02-17T18:31:32.749622",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/WORK_LOG_20260205_v3_final.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/05_journal/work/WORK_LOG_20260205_v3_final.md",
+      "hash": "6731329a7e82a74b232e6ea3eeb4f96f",
+      "collected_at": "2026-02-17T18:31:32.750046",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-17_blog_dashboard_work_log.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/07_blog/2026-02-17_blog_dashboard_work_log.md",
+      "hash": "8b652a34f60cfed83bbfa855d6d350ff",
+      "collected_at": "2026-02-17T18:31:32.750234",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/SETUP.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/07_blog/SETUP.md",
+      "hash": "141b5d61eea052c513fd661ed9b7fee7",
+      "collected_at": "2026-02-17T18:31:32.750608",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/blog_operation_guide.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/07_blog/blog_operation_guide.md",
+      "hash": "24811c56f316cdf3bbca634ff09f7972",
+      "collected_at": "2026-02-17T18:31:32.750791",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/blog_strategy_guide.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/07_blog/blog_strategy_guide.md",
+      "hash": "86db40e623fc71d2ffaa76277e58f6ff",
+      "collected_at": "2026-02-17T18:31:32.751101",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/home-safe-solution-vision-ai-project.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/07_blog/home-safe-solution-vision-ai-project.md",
+      "hash": "59fdfdb754e74ab15e8c5886cfa007d9",
+      "collected_at": "2026-02-17T18:31:32.751292",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/rf-stgcn-model-comparison-final.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/07_blog/rf-stgcn-model-comparison-final.md",
+      "hash": "26fd5ef1304d71cc12bd8165e415c1b7",
+      "collected_at": "2026-02-17T18:31:32.751640",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/robotics_blog_strategy.md": {
+      "source": "/home/gjkong/dev_ws/my_docs/07_blog/robotics_blog_strategy.md",
+      "hash": "0f5a6887a5d9fd646f8df094f544bffb",
+      "collected_at": "2026-02-17T18:31:32.752112",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/mypet_venv/best_practices.md": {
+      "source": "/home/gjkong/dev_ws/mypet_venv/lib/python3.12/site-packages/pyparsing/ai/best_practices.md",
+      "hash": "130472ecbe642ede6d35371becbb4701",
+      "collected_at": "2026-02-17T18:31:32.752630",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/pipeline__no_use/TRAINING_PIPELINE_PLAN.md": {
+      "source": "/home/gjkong/dev_ws/pipeline__no_use/TRAINING_PIPELINE_PLAN.md",
+      "hash": "79955118f0990e0ff9a9605631e748c1",
+      "collected_at": "2026-02-17T18:31:32.752982",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/ros2_fundamental/ros2_mini_patrol_project.md": {
+      "source": "/home/gjkong/dev_ws/ros2_fundamental/ros2_mini_patrol_project.md",
+      "hash": "265455ec0a8b979956fd7d66bbbbd0c6",
+      "collected_at": "2026-02-17T18:31:32.753326",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/ros2_venv/best_practices.md": {
+      "source": "/home/gjkong/dev_ws/ros2_venv/lib/python3.12/site-packages/pyparsing/ai/best_practices.md",
+      "hash": "130472ecbe642ede6d35371becbb4701",
+      "collected_at": "2026-02-17T18:31:32.753656",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/st_gcn_backup/FINAL_COMPLETE_GUIDE.md": {
+      "source": "/home/gjkong/dev_ws/st_gcn_backup/gui/FINAL_COMPLETE_GUIDE.md",
+      "hash": "20d73fbf8ee2065dadc47b718eb63f5b",
+      "collected_at": "2026-02-17T18:31:32.753965",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/st_gcn_backup/FIX_MYSQL_ERROR.md": {
+      "source": "/home/gjkong/dev_ws/st_gcn_backup/gui/FIX_MYSQL_ERROR.md",
+      "hash": "c753e7cdd42b0da1d0560272ef808af4",
+      "collected_at": "2026-02-17T18:31:32.754193",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/st_gcn_backup/GUI_README.md": {
+      "source": "/home/gjkong/dev_ws/st_gcn_backup/gui/GUI_README.md",
+      "hash": "c0a27f57ecb54152dc51b8e86327607d",
+      "collected_at": "2026-02-17T18:31:32.754443",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/st_gcn_backup/LOGGING_GUIDE.md": {
+      "source": "/home/gjkong/dev_ws/st_gcn_backup/gui/LOGGING_GUIDE.md",
+      "hash": "de44ea9bb3483600f1ea72ae5fc0a31f",
+      "collected_at": "2026-02-17T18:31:32.754684",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/st_gcn_backup/PACKAGE_INFO.md": {
+      "source": "/home/gjkong/dev_ws/st_gcn_backup/gui/PACKAGE_INFO.md",
+      "hash": "a41b256daf09f201560a4cf9a3ac58e7",
+      "collected_at": "2026-02-17T18:31:32.754932",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/st_gcn_backup/QUICKSTART.md": {
+      "source": "/home/gjkong/dev_ws/st_gcn_backup/gui/QUICKSTART.md",
+      "hash": "7cf9a357a4d215ac818a4990360e630e",
+      "collected_at": "2026-02-17T18:31:32.755153",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/st_gcn_backup/REALTIME_GUIDE.md": {
+      "source": "/home/gjkong/dev_ws/st_gcn_backup/gui/REALTIME_GUIDE.md",
+      "hash": "d41d8cd98f00b204e9800998ecf8427e",
+      "collected_at": "2026-02-17T18:31:32.755300",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/yolo/RF_TUNING_EXPERIMENT_REPORT.md": {
+      "source": "/home/gjkong/dev_ws/yolo/myproj_rf_stgcn(Final)/experiments/rf_tuning_20260206_210753/RF_TUNING_EXPERIMENT_REPORT.md",
+      "hash": "6588843cd41013ebd15986145bdc3523",
+      "collected_at": "2026-02-17T18:36:57.383947",
+      "action": "updated"
+    },
+    "/home/gjkong/dev_ws/blog/references/yolo/TRAINING_PIPELINE_PLAN.md": {
+      "source": "/home/gjkong/dev_ws/yolo/myproj/pipeline/TRAINING_PIPELINE_PLAN.md",
+      "hash": "79955118f0990e0ff9a9605631e748c1",
+      "collected_at": "2026-02-17T18:31:32.756342",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/yolo/REALTIME_GUIDE.md": {
+      "source": "/home/gjkong/dev_ws/yolo/yoloosem/myproj/scripts/REALTIME_GUIDE.md",
+      "hash": "b3c028a6a8e6b046268dd9e4d636db5c",
+      "collected_at": "2026-02-17T18:36:57.390703",
+      "action": "updated"
+    },
+    "/home/gjkong/dev_ws/blog/references/yolo/MODEL_COMPARISON_REPORT.md": {
+      "source": "/home/gjkong/dev_ws/yolo/myproj_with_stgcn(0206)/scripts/admin/Model_Compare_Report/20260205_194318/MODEL_COMPARISON_REPORT.md",
+      "hash": "09511c0f1e919ff1cb157dd21bc410e2",
+      "collected_at": "2026-02-17T18:36:57.388706",
+      "action": "updated"
+    },
+    "/home/gjkong/dev_ws/blog/references/yolo/MODEL_COMPARISON_REPORT_0208.md": {
+      "source": "/home/gjkong/dev_ws/yolo/myproj/scripts/admin/Model_Compare_Report/20260208_155302/MODEL_COMPARISON_REPORT_0208.md",
+      "hash": "55b4e0c54be4559b938736adb6592282",
+      "collected_at": "2026-02-17T18:31:32.760609",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/yolo/FINAL_COMPLETE_GUIDE.md": {
+      "source": "/home/gjkong/dev_ws/yolo/myproj_RF_only(0205)/gui/FINAL_COMPLETE_GUIDE.md",
+      "hash": "20d73fbf8ee2065dadc47b718eb63f5b",
+      "collected_at": "2026-02-17T18:31:32.767226",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/yolo/FIX_MYSQL_ERROR.md": {
+      "source": "/home/gjkong/dev_ws/yolo/myproj_RF_only(0205)/gui/FIX_MYSQL_ERROR.md",
+      "hash": "c753e7cdd42b0da1d0560272ef808af4",
+      "collected_at": "2026-02-17T18:31:32.767489",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/yolo/GUI_README.md": {
+      "source": "/home/gjkong/dev_ws/yolo/myproj_RF_only(0205)/gui/GUI_README.md",
+      "hash": "c0a27f57ecb54152dc51b8e86327607d",
+      "collected_at": "2026-02-17T18:31:32.767748",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/yolo/LOGGING_GUIDE.md": {
+      "source": "/home/gjkong/dev_ws/yolo/yoloosem/myproj/scripts/admin/LOGGING_GUIDE.md",
+      "hash": "5d451902f15556a4bc09001e44f3d266",
+      "collected_at": "2026-02-17T18:36:57.390946",
+      "action": "updated"
+    },
+    "/home/gjkong/dev_ws/blog/references/yolo/PACKAGE_INFO.md": {
+      "source": "/home/gjkong/dev_ws/yolo/myproj_RF_only(0205)/gui/PACKAGE_INFO.md",
+      "hash": "a41b256daf09f201560a4cf9a3ac58e7",
+      "collected_at": "2026-02-17T18:31:32.768237",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/yolo/QUICKSTART.md": {
+      "source": "/home/gjkong/dev_ws/yolo/myproj_RF_only(0205)/gui/QUICKSTART.md",
+      "hash": "7cf9a357a4d215ac818a4990360e630e",
+      "collected_at": "2026-02-17T18:31:32.768462",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/yolo/GEMINI.md": {
+      "source": "/home/gjkong/dev_ws/yolo/yoloosem/GEMINI.md",
+      "hash": "4e77fb57772a3d0b2864efdf3caaeaa2",
+      "collected_at": "2026-02-17T18:31:32.776975",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/yolo/PROJECT_DOCUMENTATION.md": {
+      "source": "/home/gjkong/dev_ws/yolo/yoloosem/PROJECT_DOCUMENTATION.md",
+      "hash": "4e77fb57772a3d0b2864efdf3caaeaa2",
+      "collected_at": "2026-02-17T18:31:32.777228",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/yolo_venv/Privacy.md": {
+      "source": "/home/gjkong/dev_ws/yolo_venv/lib/python3.12/site-packages/onnxruntime/Privacy.md",
+      "hash": "0b9af38847e428dcdff7bb01ff3c749a",
+      "collected_at": "2026-02-17T18:31:32.781643",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/yolo_venv/coreml_supported_mlprogram_ops.md": {
+      "source": "/home/gjkong/dev_ws/yolo_venv/lib/python3.12/site-packages/onnxruntime/tools/mobile_helpers/coreml_supported_mlprogram_ops.md",
+      "hash": "78914a4aceba40e88acdf27c68f4d2df",
+      "collected_at": "2026-02-17T18:31:32.781889",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/yolo_venv/coreml_supported_neuralnetwork_ops.md": {
+      "source": "/home/gjkong/dev_ws/yolo_venv/lib/python3.12/site-packages/onnxruntime/tools/mobile_helpers/coreml_supported_neuralnetwork_ops.md",
+      "hash": "e2ff27aad582de403ced9e84a14e32e1",
+      "collected_at": "2026-02-17T18:31:32.782127",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/yolo_venv/nnapi_supported_ops.md": {
+      "source": "/home/gjkong/dev_ws/yolo_venv/lib/python3.12/site-packages/onnxruntime/tools/mobile_helpers/nnapi_supported_ops.md",
+      "hash": "38c842e69907da93e225ed13957200b1",
+      "collected_at": "2026-02-17T18:31:32.782342",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/yolo_venv/best_practices.md": {
+      "source": "/home/gjkong/dev_ws/yolo_venv/lib/python3.12/site-packages/pyparsing/ai/best_practices.md",
+      "hash": "130472ecbe642ede6d35371becbb4701",
+      "collected_at": "2026-02-17T18:31:32.782648",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/yolo_venv/AGENTS.md": {
+      "source": "/home/gjkong/dev_ws/yolo_venv/lib/python3.12/site-packages/solapi/model/AGENTS.md",
+      "hash": "043cb741f751c780cf6855a593662a9b",
+      "collected_at": "2026-02-17T18:31:32.782945",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/yolo_venv/ICON_LICENSE.md": {
+      "source": "/home/gjkong/dev_ws/yolo_venv/lib/python3.12/site-packages/werkzeug/debug/shared/ICON_LICENSE.md",
+      "hash": "44921d713d160eb0d2a7004e35675485",
+      "collected_at": "2026-02-17T18:31:32.783222",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/yoloosem/ClientProgram.md": {
+      "source": "/home/gjkong/dev_ws/yoloosem/client/ClientProgram.md",
+      "hash": "7f856136a0d51c024d043ffcdb290b64",
+      "collected_at": "2026-02-17T18:31:32.783507",
+      "action": "new"
+    },
+    "/home/gjkong/dev_ws/blog/references/yoloosem/LOGGING_GUIDE.md": {
+      "source": "/home/gjkong/dev_ws/yoloosem/scripts/admin/LOGGING_GUIDE.md",
+      "hash": "5d451902f15556a4bc09001e44f3d266",
+      "collected_at": "2026-02-17T18:31:32.783798",
+      "action": "new"
+    }
+  },
+  "last_init": "2026-02-17T18:36:57.391302",
+  "last_daily": "2026-02-17T18:29:25.416975"
+}

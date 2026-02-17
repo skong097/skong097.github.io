@@ -8,7 +8,7 @@ params:
   author: Stephen Kong
   ShowReadingTime: true
   ShowPostNavLinks: true
-  ShowBreadCrumbs: false
+  ShowBreadCrumbs: true
   ShowCodeCopyButtons: true
   ShowToc: true
   defaultTheme: dark
@@ -17,6 +17,7 @@ params:
     Title: Robotics × AI × ROS2
     Content: '자율순찰 로봇, 컴퓨터 비전, 로보틱스 시뮬레이션을 다루는 개발 블로그입니다. ROS2 기반 로봇 시스템, PyQt6 대시보드,
       YOLO/ST-GCN 비전 파이프라인, LLM 통합 등 실전 프로젝트 경험을 공유합니다.
+
       '
   socialIcons:
   - name: github
@@ -46,7 +47,7 @@ menu:
     url: /posts/
     weight: 20
   - identifier: dashboard
-    name: 대시보드
+    name: Dashboard
     url: /dashboard/
     weight: 25
   - identifier: categories

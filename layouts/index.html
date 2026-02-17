@@ -1,0 +1,179 @@
+{{- define "main" }}
+
+{{/* 3D Hero Section */}}
+<div id="home-hero-wrapper">
+  {{ partial "hero-3d.html" . }}
+</div>
+
+{{/* 포스트 리스트 — 2열 그리드 */}}
+<div id="home-posts-wrapper">
+  {{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+  {{- $paginator := .Paginate $pages }}
+
+  <div class="home-post-grid">
+    {{- range $index, $page := $paginator.Pages }}
+    <article class="home-post-card">
+      <header class="entry-header">
+        <h2>
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </h2>
+      </header>
+      {{- if .Description }}
+      <section class="entry-content">
+        <p>{{ .Description | plainify | truncate 200 }}</p>
+      </section>
+      {{- else }}
+      <section class="entry-content">
+        <p>{{ .Summary | plainify | truncate 200 }}</p>
+      </section>
+      {{- end }}
+      <footer class="entry-footer">
+        <span>{{ .Date.Format "2006-01-02" }}</span>
+        {{- range .Params.categories }}
+        <span class="home-tag">{{ . }}</span>
+        {{- end }}
+      </footer>
+    </article>
+    {{- end }}
+  </div>
+
+  {{- if gt $paginator.TotalPages 1 }}
+  <nav class="home-pagination">
+    {{- if $paginator.HasPrev }}
+    <a href="{{ $paginator.Prev.URL }}">← Prev</a>
+    {{- end }}
+    {{- if $paginator.HasNext }}
+    <a href="{{ $paginator.Next.URL }}">Next →</a>
+    {{- end }}
+  </nav>
+  {{- end }}
+</div>
+
+<script>
+  // 홈페이지의 .main 컨테이너를 세로 배치로 전환
+  // 다른 페이지에는 이 스크립트가 로드되지 않으므로 영향 없음
+  (function() {
+    const main = document.querySelector('.main');
+    if (main) {
+      main.style.display = 'block';
+      main.style.maxWidth = '100%';
+      main.style.padding = '0';
+    }
+  })();
+</script>
+
+<style>
+  /* ══════════════════════════════════════════
+     홈페이지 전용 스타일
+     모든 셀렉터가 #home- 접두사 사용
+     ══════════════════════════════════════════ */
+
+  /* ── 히어로 ── */
+  #home-hero-wrapper {
+    width: calc(100% - 3rem);
+    max-width: 1200px;
+    margin: 0 auto 2rem auto;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  /* ── 포스트 섹션 ── */
+  #home-posts-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem 2rem 1.5rem;
+  }
+
+  /* ── 2열 그리드 ── */
+  .home-post-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .home-post-card {
+    border: 1px solid var(--border, #30363d);
+    border-radius: 10px;
+    padding: 1.5rem;
+    background: var(--entry, #161b22);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .home-post-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .home-post-card .entry-header h2 {
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+  }
+
+  .home-post-card .entry-header h2 a {
+    color: var(--primary, #e0e0e8);
+    text-decoration: none;
+  }
+
+  .home-post-card .entry-header h2 a:hover {
+    color: #a78bfa;
+  }
+
+  .home-post-card .entry-content p {
+    font-size: 0.88rem;
+    color: var(--secondary, #8b949e);
+    line-height: 1.6;
+    margin-bottom: 0.8rem;
+  }
+
+  .home-post-card .entry-footer {
+    font-size: 0.78rem;
+    color: var(--secondary, #6a737d);
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+  }
+
+  .home-tag {
+    background: rgba(124, 106, 239, 0.15);
+    color: #a78bfa;
+    padding: 2px 8px;
+    border-radius: 8px;
+    font-size: 0.72rem;
+  }
+
+  /* ── 페이지네이션 ── */
+  .home-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    padding: 1rem 0;
+  }
+
+  .home-pagination a {
+    color: #a78bfa;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+
+  .home-pagination a:hover {
+    color: #c4b5fd;
+  }
+
+  /* ── 반응형: 모바일 1열 ── */
+  @media (max-width: 768px) {
+    .home-post-grid {
+      grid-template-columns: 1fr;
+    }
+    #home-posts-wrapper {
+      padding: 0 1rem 1.5rem 1rem;
+    }
+    #home-hero-wrapper {
+      width: calc(100% - 1.5rem);
+    }
+  }
+</style>
+
+{{- end }}

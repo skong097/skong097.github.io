@@ -1,0 +1,440 @@
+{{/*
+  3D Hero Section — Three.js 기반 인터랙티브 히어로
+  위치: layouts/partials/hero-3d.html
+
+  사용법: layouts/index.html 또는 layouts/_default/baseof.html 에서
+    {{ partial "hero-3d.html" . }}
+
+  또는 layouts/index.html 전체를 오버라이드하는 방식 (아래 설치 가이드 참고)
+*/}}
+
+<section id="hero-3d" class="hero-3d-section">
+  <canvas id="hero-canvas"></canvas>
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <p class="hero-tag">Autonomous Robotics · Vision AI · ROS2</p>
+      <h1 class="hero-title">
+        <span class="line1">Building</span>
+        <span class="line2">Intelligent Robots</span>
+      </h1>
+      <p class="hero-desc">
+        로보틱스 엔지니어의 기술 블로그<br>
+        자율주행, 낙상 감지, Fleet 시스템 그리고 그 너머
+      </p>
+      <div class="hero-cta">
+        <a href="/posts/" class="btn-primary">Explore Posts</a>
+        <a href="/dashboard/" class="btn-secondary">Dashboard</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll-hint">
+    <span>SCROLL</span>
+    <svg width="20" height="30" viewBox="0 0 20 30">
+      <rect x="1" y="1" width="18" height="28" rx="9" fill="none" stroke="currentColor" stroke-width="1.5"/>
+      <circle class="scroll-dot" cx="10" cy="10" r="2" fill="currentColor"/>
+    </svg>
+  </div>
+</section>
+
+<style>
+  /* ── Hero 3D Section ── */
+  .hero-3d-section {
+    position: relative;
+    width: 100%;
+    height: 75vh;
+    min-height: 500px;
+    max-height: 800px;
+    overflow: hidden;
+    background: #050508;
+  }
+
+  #hero-canvas {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 1;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* 텍스트 가독성을 위한 미세 그라데이션 */
+    background: radial-gradient(ellipse at center, transparent 30%, rgba(5,5,8,0.4) 100%);
+    pointer-events: none;
+  }
+
+  .hero-content {
+    text-align: center;
+    pointer-events: auto;
+    max-width: 700px;
+    padding: 0 2rem;
+  }
+
+  .hero-tag {
+    font-family: 'JetBrains Mono', 'Fira Code', 'D2Coding', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #7c6aef;
+    margin-bottom: 1.2rem;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.3s;
+  }
+
+  .hero-title {
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 1.2rem;
+    color: #e8e8f0;
+  }
+
+  .hero-title .line1 {
+    display: block;
+    font-weight: 300;
+    font-size: 1.8rem;
+    color: #9090a8;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.5s;
+  }
+
+  .hero-title .line2 {
+    display: block;
+    background: linear-gradient(135deg, #a78bfa 0%, #7c6aef 40%, #60a5fa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.7s;
+  }
+
+  .hero-desc {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #8888a0;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.9s;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 1.1s;
+  }
+
+  .hero-cta .btn-primary {
+    padding: 0.7rem 2rem;
+    background: #7c6aef;
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid #7c6aef;
+  }
+
+  .hero-cta .btn-primary:hover {
+    background: #6d5ce8;
+    box-shadow: 0 4px 20px rgba(124, 106, 239, 0.4);
+    transform: translateY(-2px);
+  }
+
+  .hero-cta .btn-secondary {
+    padding: 0.7rem 2rem;
+    background: transparent;
+    color: #a0a0b8;
+    border: 1px solid #2a2a3a;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+
+  .hero-cta .btn-secondary:hover {
+    border-color: #5a5a7a;
+    color: #d0d0e0;
+    transform: translateY(-2px);
+  }
+
+  .hero-scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: #4a4a60;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards 1.5s;
+  }
+
+  .scroll-dot {
+    animation: scrollBounce 2s ease-in-out infinite;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 0.6; }
+  }
+
+  @keyframes scrollBounce {
+    0%, 100% { cy: 10; }
+    50% { cy: 20; }
+  }
+
+  /* ── 반응형 ── */
+  @media (max-width: 768px) {
+    .hero-title { font-size: 2.2rem; }
+    .hero-title .line1 { font-size: 1.3rem; }
+    .hero-desc { font-size: 0.9rem; }
+    .hero-cta { flex-direction: column; align-items: center; }
+  }
+
+  /* ── PaperMod 오버라이드: 히어로 뒤 콘텐츠 자연스럽게 ── */
+  .hero-3d-section + .main {
+    position: relative;
+    z-index: 5;
+  }
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function() {
+  const canvas = document.getElementById('hero-canvas');
+  if (!canvas) return;
+
+  // ── Scene ──
+  const scene = new THREE.Scene();
+  scene.fog = new THREE.FogExp2(0x050508, 0.015);
+
+  const heroSection = canvas.parentElement;
+  const getW = () => heroSection.clientWidth;
+  const getH = () => heroSection.clientHeight;
+
+  const camera = new THREE.PerspectiveCamera(50, getW() / getH(), 0.1, 200);
+  camera.position.set(0, 0.5, 10);
+
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+  renderer.setSize(getW(), getH());
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1.1;
+
+  // ── Lights ──
+  scene.add(new THREE.AmbientLight(0x1a1a2e, 0.4));
+
+  const mainLight = new THREE.PointLight(0x7c6aef, 2.5, 25);
+  mainLight.position.set(-2, 4, 3);
+  scene.add(mainLight);
+
+  const warmLight = new THREE.PointLight(0x60a5fa, 1.5, 20);
+  warmLight.position.set(3, -1, 4);
+  scene.add(warmLight);
+
+  const rimLight = new THREE.DirectionalLight(0x3a3a5a, 0.3);
+  rimLight.position.set(0, 5, -8);
+  scene.add(rimLight);
+
+  // ── 중앙 코어: Icosahedron (기술의 핵심) ──
+  const coreMat = new THREE.MeshPhysicalMaterial({
+    color: 0x7c6aef,
+    metalness: 0.35,
+    roughness: 0.12,
+    transmission: 0.45,
+    thickness: 1.5,
+    clearcoat: 1.0,
+    clearcoatRoughness: 0.08,
+    emissive: 0x3a2d7a,
+    emissiveIntensity: 0.25,
+  });
+  const core = new THREE.Mesh(new THREE.IcosahedronGeometry(1.8, 1), coreMat);
+  scene.add(core);
+
+  // ── 와이어프레임 외곽 ──
+  const wireMat = new THREE.MeshBasicMaterial({
+    color: 0xa78bfa, wireframe: true, transparent: true, opacity: 0.1
+  });
+  const wire = new THREE.Mesh(new THREE.IcosahedronGeometry(2.1, 1), wireMat);
+  scene.add(wire);
+
+  // ── 궤도 링들 (기술 스택 도메인) ──
+  const ringData = [
+    { r: 3.2, thick: 0.015, color: 0x7c6aef, opacity: 0.2, rx: 0.4, ry: 0 },
+    { r: 3.8, thick: 0.01, color: 0x60a5fa, opacity: 0.15, rx: 0.8, ry: 0.3 },
+    { r: 4.3, thick: 0.008, color: 0xa78bfa, opacity: 0.1, rx: 1.2, ry: 0.6 },
+    { r: 2.7, thick: 0.012, color: 0x818cf8, opacity: 0.18, rx: 0.2, ry: 1.0 },
+  ];
+  const rings = [];
+  ringData.forEach(d => {
+    const ring = new THREE.Mesh(
+      new THREE.TorusGeometry(d.r, d.thick, 8, 120),
+      new THREE.MeshBasicMaterial({ color: d.color, transparent: true, opacity: d.opacity })
+    );
+    ring.rotation.x = d.rx;
+    ring.rotation.y = d.ry;
+    rings.push(ring);
+    scene.add(ring);
+  });
+
+  // ── 신경망 노드 + 연결선 ──
+  const nodes = [];
+  const nodeGroup = new THREE.Group();
+  scene.add(nodeGroup);
+
+  for (let i = 0; i < 50; i++) {
+    const theta = Math.random() * Math.PI * 2;
+    const phi = Math.acos(2 * Math.random() - 1);
+    const r = 2.5 + Math.random() * 2.0;
+    const pos = new THREE.Vector3(
+      r * Math.sin(phi) * Math.cos(theta),
+      r * Math.sin(phi) * Math.sin(theta),
+      r * Math.cos(phi)
+    );
+    nodes.push(pos);
+
+    const dot = new THREE.Mesh(
+      new THREE.SphereGeometry(0.035, 6, 6),
+      new THREE.MeshBasicMaterial({ color: 0xa78bfa })
+    );
+    dot.position.copy(pos);
+    nodeGroup.add(dot);
+  }
+
+  const lines = [];
+  for (let i = 0; i < nodes.length; i++) {
+    for (let j = i + 1; j < nodes.length; j++) {
+      if (nodes[i].distanceTo(nodes[j]) < 2.2) {
+        const geom = new THREE.BufferGeometry().setFromPoints([nodes[i], nodes[j]]);
+        const line = new THREE.Line(geom, new THREE.LineBasicMaterial({
+          color: 0x6d5ce8, transparent: true, opacity: 0.06
+        }));
+        nodeGroup.add(line);
+        lines.push(line);
+      }
+    }
+  }
+
+  // ── 파티클 필드 ──
+  const pGeo = new THREE.BufferGeometry();
+  const pPos = [];
+  for (let i = 0; i < 400; i++) {
+    pPos.push(
+      (Math.random() - 0.5) * 25,
+      (Math.random() - 0.5) * 15,
+      (Math.random() - 0.5) * 20
+    );
+  }
+  pGeo.setAttribute('position', new THREE.Float32BufferAttribute(pPos, 3));
+  const particles = new THREE.Points(pGeo, new THREE.PointsMaterial({
+    color: 0x6a6a8a, size: 0.02, transparent: true, opacity: 0.5
+  }));
+  scene.add(particles);
+
+  // ── 바닥 그리드 ──
+  const grid = new THREE.GridHelper(50, 80, 0x12122a, 0x0a0a18);
+  grid.position.y = -5;
+  scene.add(grid);
+
+  // ── 마우스 인터랙션 ──
+  let mouseX = 0, mouseY = 0;
+  document.addEventListener('mousemove', (e) => {
+    mouseX = (e.clientX / getW() - 0.5) * 2;
+    mouseY = (e.clientY / getH() - 0.5) * 2;
+  });
+
+  // ── 스크롤 패럴랙스 ──
+  let scrollY = 0;
+  window.addEventListener('scroll', () => {
+    scrollY = window.pageYOffset;
+  });
+
+  // ── Animation ──
+  const clock = new THREE.Clock();
+
+  function animate() {
+    requestAnimationFrame(animate);
+    const t = clock.getElapsedTime();
+
+    // 히어로 섹션이 뷰포트 밖이면 렌더링 스킵
+    const heroRect = canvas.getBoundingClientRect();
+    if (heroRect.bottom < 0) return;
+
+    // 카메라: 마우스 추적 + 미세 자동 회전
+    const targetCamX = mouseX * 1.2 + Math.sin(t * 0.1) * 0.4;
+    const targetCamY = 0.5 - mouseY * 0.6 + Math.sin(t * 0.15) * 0.2;
+    camera.position.x += (targetCamX - camera.position.x) * 0.02;
+    camera.position.y += (targetCamY - camera.position.y) * 0.02;
+    camera.lookAt(0, 0, 0);
+
+    // 스크롤 패럴랙스
+    const scrollOffset = scrollY * 0.003;
+    camera.position.z = 10 + scrollOffset;
+    core.position.y = -scrollOffset * 0.5;
+
+    // 코어 회전 (복합적)
+    core.rotation.x = t * 0.12 + Math.sin(t * 0.3) * 0.15;
+    core.rotation.y = t * 0.18;
+    core.rotation.z = Math.sin(t * 0.2) * 0.1;
+
+    // 와이어프레임
+    wire.rotation.x = -t * 0.08;
+    wire.rotation.y = t * 0.1;
+
+    // 코어 맥동
+    coreMat.emissiveIntensity = 0.25 + Math.sin(t * 1.2) * 0.12;
+
+    // 링 회전
+    rings.forEach((ring, i) => {
+      ring.rotation.z = t * (0.04 + i * 0.015) * (i % 2 === 0 ? 1 : -1);
+    });
+
+    // 신경망 연결선 맥동
+    lines.forEach((line, i) => {
+      line.material.opacity = 0.04 + Math.sin(t * 1.5 + i * 0.3) * 0.04;
+    });
+
+    // 노드 그룹 미세 회전
+    nodeGroup.rotation.y = t * 0.03;
+    nodeGroup.rotation.x = Math.sin(t * 0.08) * 0.05;
+
+    // 파티클
+    particles.rotation.y = t * 0.008;
+
+    // 라이트 맥동
+    mainLight.intensity = 2.0 + Math.sin(t * 0.8) * 0.5;
+    warmLight.intensity = 1.2 + Math.sin(t * 0.5 + 1) * 0.3;
+
+    renderer.render(scene, camera);
+  }
+
+  animate();
+
+  // ── Resize ──
+  window.addEventListener('resize', () => {
+    camera.aspect = getW() / getH();
+    camera.updateProjectionMatrix();
+    renderer.setSize(getW(), getH());
+  });
+})();
+</script>

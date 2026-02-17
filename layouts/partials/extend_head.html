@@ -1,0 +1,49 @@
+{{/* 
+  layouts/partials/extend_head.html
+  DOM 로드 후 JS로 강제 스타일 적용 — CSS 우선순위 문제 완전 해결
+*/}}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // 제목 중앙 정렬
+  document.querySelectorAll('header.post-header').forEach(function(el) {
+    el.style.setProperty('text-align', 'center', 'important');
+  });
+  document.querySelectorAll('h1.post-title').forEach(function(el) {
+    el.style.setProperty('text-align', 'center', 'important');
+  });
+  document.querySelectorAll('.post-header .post-meta').forEach(function(el) {
+    el.style.setProperty('text-align', 'center', 'important');
+    el.style.setProperty('justify-content', 'center', 'important');
+    el.style.setProperty('display', 'flex', 'important');
+  });
+
+  // 리스트 페이지 제목
+  document.querySelectorAll('.page-header').forEach(function(el) {
+    el.style.setProperty('text-align', 'center', 'important');
+  });
+  document.querySelectorAll('.page-header h1').forEach(function(el) {
+    el.style.setProperty('text-align', 'center', 'important');
+  });
+
+  // Terms (Categories, Tags)
+  document.querySelectorAll('.terms-tags').forEach(function(el) {
+    el.style.setProperty('justify-content', 'center', 'important');
+  });
+
+  // 검색
+  var searchbox = document.getElementById('searchbox');
+  if (searchbox) searchbox.style.setProperty('text-align', 'center', 'important');
+
+  // breadcrumbs 제거
+  document.querySelectorAll('.breadcrumbs').forEach(function(el) {
+    el.style.setProperty('display', 'none', 'important');
+  });
+
+  // 대시보드: PaperMod 제목 숨김
+  if (document.querySelector('.dashboard-wrap')) {
+    document.querySelectorAll('header.post-header').forEach(function(el) {
+      el.style.setProperty('display', 'none', 'important');
+    });
+  }
+});
+</script>
