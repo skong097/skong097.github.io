@@ -12,15 +12,16 @@ author: ""
 
 <style>
 /* ── About Page - Container 확장 ──────────────────────── */
-.post-single .post-content {
-  max-width: 1200px !important;
-  width: 100% !important;
-  margin: 0 auto;
+:root {
+  --main-width: 1100px;
 }
-.post-single .main,
-.post-single main.main {
-  max-width: 1200px !important;
-  width: 92% !important;
+.main {
+  max-width: calc(var(--main-width) + var(--gap) * 2) !important;
+  width: 100% !important;
+}
+.post-single .post-content {
+  max-width: 100% !important;
+  width: 100% !important;
 }
 
 

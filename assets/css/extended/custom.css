@@ -68,3 +68,14 @@ article .post-meta,
 body:has(.dashboard-wrap) .post-header {
   display: none !important;
 }
+
+/* ── About 페이지 너비 확장 ── */
+body:has(.about-intro) .main {
+  max-width: calc(1100px + var(--gap) * 2) !important;
+}
+
+/* ── 프로젝트 페이지 제목 아래 구분선 ── */
+body:has(.projects-intro) .page-header {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+}

@@ -3,6 +3,8 @@ title: 프로젝트
 layout: single
 url: /projects/
 ShowToc: false
+ShowReadingTime: false
+hideMeta: true
 cover:
   image: images/covers/projects-cover.png
   alt: Projects
@@ -11,6 +13,22 @@ cover:
 
 <style>
 /* ── Projects Page Custom Styles ──────────────────────── */
+header.post-header {
+  text-align: center;
+  width: 100%;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+header.post-header h1 {
+  font-size: 40px;
+  text-align: center;
+}
+[data-theme="light"] header.post-header {
+  text-align: center;
+  width: 100%;
+  border-bottom-color: rgba(0,0,0,0.1);
+}
 .projects-intro {
   font-size: 1.05rem;
   opacity: 0.75;

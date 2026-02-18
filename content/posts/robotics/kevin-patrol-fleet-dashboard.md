@@ -20,9 +20,15 @@ ShowToc: true
 TocOpen: true
 ---
 
+
+---
+
 ## 배경
 
 자율 순찰 로봇 1대를 모니터링하는 대시보드(v3.2.1)는 이미 완성된 상태였습니다. 하지만 실제 운영 환경에서는 여러 대의 로봇이 동시에 순찰합니다. "로봇 3대가 건물 각 층을 돌고 있는데, 2층 로봇에서 낙상이 감지됐다" — 이런 상황을 단일 화면에서 즉시 파악하려면 다중 로봇 모니터링이 필수였습니다.
+
+
+---
 
 ### 요구사항
 
@@ -30,6 +36,9 @@ TocOpen: true
 - 로봇 선택 한 번으로 모든 패널 데이터 전환
 - Fleet Overview: 전체 로봇 위치를 하나의 맵에서 한눈에
 - 기존 단일 로봇 버전과 완전히 분리된 코드베이스
+
+
+---
 
 ## 설계 원칙
 
@@ -43,6 +52,9 @@ robot_manager.py (새로 추가 — DataProvider 위에 래핑)
 
 `RobotManager`가 `robot_id → DataProvider` 매핑을 관리하고, 대시보드는 활성 로봇의 provider만 조회합니다. 이렇게 하면 단일 로봇 버전에 영향을 주지 않으면서 다중 로봇을 지원할 수 있습니다.
 
+
+---
+
 ### 하위 호환성
 
 ```python
@@ -55,7 +67,13 @@ def __init__(self, provider_or_manager):
         self.robot_manager.register("kevin_01", provider_or_manager, ...)
 ```
 
+
+---
+
 ## 핵심 구현
+
+
+---
 
 ### RobotManager
 
@@ -77,9 +95,15 @@ class RobotManager:
         """전체 로봇의 감지 이벤트 수집"""
 ```
 
+
+---
+
 ### RobotSelectorBar
 
 타이틀바 아래에 로봇 선택 버튼을 배치합니다. `QButtonGroup(exclusive=True)`로 라디오 버튼 동작을 구현하고, 선택된 로봇은 고유 색상으로 하이라이트됩니다.
+
+
+---
 
 ### Fleet Overview 미니맵
 
@@ -96,6 +120,9 @@ alpha = 1.0 - (elapsed / duration)  # 시간에 따라 투명해짐
 painter.setBrush(QColor(255, 50, 50, int(200 * alpha)))
 ```
 
+
+---
+
 ## 프로젝트 분리 구조
 
 ```
@@ -111,6 +138,9 @@ kevin_patrol/
 
 방식 C(dashboard_fleet + core에 robot_manager 추가)를 선택한 이유는 `core/`를 공유하면서도 기존 코드에 영향을 주지 않기 때문입니다.
 
+
+---
+
 ## 결과
 
 - 3대 로봇이 각각 다른 영역/속도/반경으로 독립 순찰
@@ -118,11 +148,17 @@ kevin_patrol/
 - 로봇 클릭 한 번으로 6개 패널 데이터 즉시 전환
 - Alert History에 `[Kevin-01]` 태그로 어떤 로봇의 이벤트인지 즉시 구분
 
+
+---
+
 ## 배운 점
 
 1. **인터페이스를 건드리지 마라**: 기존 DataProvider 위에 래핑하는 방식이 가장 안전했습니다
 2. **QImage 캐시**: Fleet Overview에서 SLAM 그리드를 매 프레임 그리면 성능이 떨어집니다. 1초 주기 캐시로 해결
 3. **위젯 리셋**: 로봇 전환 시 이전 데이터가 잔류하는 문제 — `clear_data()` 메서드가 필수
+
+
+---
 
 ## 다음 단계
 
