@@ -1,12 +1,22 @@
 ---
-title: "Random Forest vs ST-GCN — 낙상감지 모델 비교 실전 가이드"
+title: Random Forest vs ST-GCN — 낙상감지 모델 비교 실전 가이드
 date: 2026-02-18
-categories: ["ai-ml"]
-tags: ["random-forest", "st-gcn", "model-comparison", "fall-detection", "python"]
-description: "프레임 기반 Random Forest(93.19%)와 시계열 ST-GCN(91.89%)을 실전 낙상감지에 적용하고 비교한 결과"
+categories:
+- ai-ml
+tags:
+- random-forest
+- st-gcn
+- model-comparison
+- fall-detection
+- python
+description: 프레임 기반 Random Forest(93.19%)와 시계열 ST-GCN(91.89%)을 실전 낙상감지에 적용하고 비교한 결과
 ShowToc: true
 ShowReadingTime: true
 draft: true
+cover:
+  image: images/covers/post-rf-vs-stgcn.png
+  alt: RF vs ST-GCN Model Comparison
+  hidden: false
 ---
 
 

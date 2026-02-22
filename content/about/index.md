@@ -7,7 +7,11 @@ ShowBreadCrumbs: false
 ShowReadingTime: false
 ShowPostNavLinks: false
 hideMeta: true
-author: ""
+author: ''
+cover:
+  image: images/covers/about-cover.png
+  alt: About Stephen
+  hidden: false
 ---
 
 <style>
