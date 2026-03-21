@@ -15,7 +15,7 @@ cover:
   image: images/covers/post-ros2-guard-brain.png
   alt: ROS2 + FastAPI Guard Brain
   hidden: false
-draft: true
+draft: false
 ShowToc: true
 TocOpen: true
 ---

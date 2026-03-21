@@ -6,7 +6,7 @@ tags: ["ai-ml", "mediapipe", "librosa", "multimodal", "psychology-ai", "ollama",
 description: "EyeCon 피노키오 멀티모달 심리 분석 AI 개발 경험 정리"
 ShowToc: true
 ShowReadingTime: true
-draft: true
+draft: false
 ---
 
 ---

@@ -6,7 +6,7 @@ tags: ["ai-agent", "llm", "fastapi", "ollama", "python", "자동화"]
 description: "레퍼런스 md 파일을 읽고 Hugo 블로그 포스트를 자동으로 작성하는 AI Agent 개발기. LLM에게 JSON을 맡기면 안 되는 이유와 역할 분리 설계를 실제 삽질 경험으로 정리했다."
 ShowToc: true
 ShowReadingTime: true
-draft: true
+draft: false
 ---
 
 ## 왜 만들었나?
@@ -184,7 +184,7 @@ tags: ["st-gcn", "computer-vision", "fall-detection", "python", "deep-learning"]
 description: "ST-GCN 모델을 3클래스 낙상감지에 맞춰 파인튜닝하고 84.21% → 91.89%로 끌어올린 과정과 삽질 기록"
 ShowToc: true
 ShowReadingTime: true
-draft: true
+draft: false
 ---
 ```
 

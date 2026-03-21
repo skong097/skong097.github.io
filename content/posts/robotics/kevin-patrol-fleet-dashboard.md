@@ -15,7 +15,7 @@ cover:
   image: images/covers/post-kevin-patrol-fleet.png
   alt: Kevin Patrol Fleet Dashboard
   hidden: false
-draft: true
+draft: false
 ShowToc: true
 TocOpen: true
 ---

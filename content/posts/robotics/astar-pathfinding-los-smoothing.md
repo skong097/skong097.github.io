@@ -6,7 +6,7 @@ tags: ["robotics", "a-star", "pathfinding", "los-smoothing", "pygame", "python"]
 description: "Kevin 3D Patrol에서 A* 알고리즘으로 경로를 찾고 LOS Smoothing으로 최적화한 구현 과정 정리"
 ShowToc: true
 ShowReadingTime: true
-draft: true
+draft: false
 
 
 ---

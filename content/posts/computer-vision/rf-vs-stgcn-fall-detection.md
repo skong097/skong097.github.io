@@ -12,7 +12,7 @@ tags:
 description: 프레임 기반 Random Forest(93.19%)와 시계열 ST-GCN(91.89%)을 실전 낙상감지에 적용하고 비교한 결과
 ShowToc: true
 ShowReadingTime: true
-draft: true
+draft: false
 cover:
   image: images/covers/post-rf-vs-stgcn.png
   alt: RF vs ST-GCN Model Comparison

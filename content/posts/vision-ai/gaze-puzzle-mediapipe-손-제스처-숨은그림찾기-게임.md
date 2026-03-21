@@ -6,7 +6,7 @@ tags: ["ai-ml"]
 description: "gaze puzzle mediapipe 손 제스처 숨은그림찾기 게임 개발 경험 정리"
 ShowToc: true
 ShowReadingTime: true
-draft: true
+draft: false
 ---
 
 ---

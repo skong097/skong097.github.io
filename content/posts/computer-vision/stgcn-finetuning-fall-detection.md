@@ -14,7 +14,7 @@ cover:
   image: images/covers/post-stgcn-finetuning.png
   alt: ST-GCN Fine-tuning for Fall Detection
   hidden: false
-draft: true
+draft: false
 ShowToc: true
 TocOpen: true
 ---

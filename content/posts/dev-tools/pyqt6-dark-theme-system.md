@@ -15,7 +15,7 @@ cover:
   image: images/covers/post-pyqt6-dark-theme.png
   alt: PyQt6 Dark Theme System
   hidden: false
-draft: true
+draft: false
 ShowToc: true
 TocOpen: true
 ---
