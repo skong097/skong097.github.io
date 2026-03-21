@@ -2,6 +2,9 @@ baseURL: https://skong097.github.io/
 languageCode: ko
 title: Stephen's Robotics Lab
 theme: PaperMod
+
+googleAnalytics: ""
+
 params:
   env: production
   description: ROS2 · AI/ML · AI Agent · Computer Vision · Robotics 프로젝트 기록
