@@ -180,6 +180,51 @@ header.post-header h1 {
 
 <div class="projects-grid">
 
+  <div class="project-card" style="--card-accent: #ec4899;">
+    <span class="project-card-status status-active">Active</span>
+    <div class="project-card-title">MOCA — Cafe Service Robot</div>
+    <div class="project-card-subtitle">카페 모객·서빙·안내 자율 로봇</div>
+    <div class="project-card-desc">
+      BehaviorTree 기반 6단계 모객 시나리오와 손님 표정 감정(Valence-Arousal) 실시간 분석을 결합한 모바일 매니퓰레이터 카페 로봇. 5가지 운영 모드(서빙·순회·안내·모객·대기)를 우선순위 기반 오케스트레이터가 자동 전환·복귀시키며, 운영자는 웹 대시보드에서 원격 관제합니다.
+    </div>
+    <div class="project-card-tags">
+      <span class="project-card-tag">ROS2 Jazzy</span>
+      <span class="project-card-tag">C++</span>
+      <span class="project-card-tag">BehaviorTree.CPP 4.8</span>
+      <span class="project-card-tag">Nav2</span>
+      <span class="project-card-tag">MediaPipe</span>
+      <span class="project-card-tag">YOLOv8n</span>
+      <span class="project-card-tag">FastAPI · WebSocket</span>
+    </div>
+    <div class="project-card-links">
+      <a class="project-card-link" href="/posts/robotics/moca-감정인식-과민반응-방지-behaviortree-설계/">감정 인식 BT →</a>
+      <a class="project-card-link" href="/posts/robotics/moca-운영모드-오케스트레이터-우선순위-선점/">운영 모드 →</a>
+      <a class="project-card-link" href="/posts/robotics/moca-colcon-symlink-정적파일-404-해결/">colcon 404 →</a>
+    </div>
+  </div>
+
+  <div class="project-card" style="--card-accent: #14b8a6;">
+    <span class="project-card-status status-done">Done</span>
+    <div class="project-card-title">ARASEO — Autonomous Taxi</div>
+    <div class="project-card-subtitle">미니시티 자율주행 택시 시스템</div>
+    <div class="project-card-desc">
+      소형 자율주행 로봇(Pinky)을 택시처럼 운용하는 미니시티 시스템. PWA 웹앱으로 목적지를 호출하면 자동 배차·자율주행·결제까지 이어지고, 관제 대시보드에서 다수 로봇 운행을 실시간으로 관제합니다. 차선 인지·추종, 좌표계 정합, 원격 기동 응답성 등 운영 안정성에 초점.
+    </div>
+    <div class="project-card-tags">
+      <span class="project-card-tag">Python</span>
+      <span class="project-card-tag">ROS2 Jazzy</span>
+      <span class="project-card-tag">FastAPI · WebSocket</span>
+      <span class="project-card-tag">OpenCV (HSV)</span>
+      <span class="project-card-tag">Vanilla JS · PWA</span>
+      <span class="project-card-tag">SQLite</span>
+    </div>
+    <div class="project-card-links">
+      <a class="project-card-link" href="/posts/robotics/araseo-관제대시보드-다수로봇-좌표계-일치시키기/">좌표계 일치 →</a>
+      <a class="project-card-link" href="/posts/robotics/araseo-ssh-원격기동-12초-멈춤-0.5초-단축/">SSH 12→0.5초 →</a>
+      <a class="project-card-link" href="/posts/robotics/araseo-차선주행-스쿨존-hsv-색공간-구분/">HSV 분리 →</a>
+    </div>
+  </div>
+
   <div class="project-card" style="--card-accent: #00c8dc;">
     <span class="project-card-status status-active">Active</span>
     <div class="project-card-title">Kevin Patrol Fleet Dashboard</div>

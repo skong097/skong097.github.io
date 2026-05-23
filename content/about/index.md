@@ -275,6 +275,22 @@ cover:
     </div>
   </div>
   <div class="tech-card">
+    <div class="tech-card-title">MLOps / AIOps</div>
+    <div class="tech-tags">
+      <span class="tech-tag">MLflow</span>
+      <span class="tech-tag">Kubeflow</span>
+      <span class="tech-tag">Airflow</span>
+      <span class="tech-tag">Prometheus</span>
+      <span class="tech-tag">Grafana</span>
+      <span class="tech-tag">ELK Stack</span>
+      <span class="tech-tag">CI/CD for ML</span>
+      <span class="tech-tag">Model Monitoring</span>
+      <span class="tech-tag">Hadoop</span>
+      <span class="tech-tag">YARN</span>
+      <span class="tech-tag">HDFS</span>
+    </div>
+  </div>
+  <div class="tech-card">
     <div class="tech-card-title">AI Agent</div>
     <div class="tech-tags">
       <span class="tech-tag">Tool Use</span>
@@ -282,6 +298,34 @@ cover:
       <span class="tech-tag">자율 판단</span>
       <span class="tech-tag">Agent Flow</span>
       <span class="tech-tag">Orchestration</span>
+    </div>
+  </div>
+  <div class="tech-card">
+    <div class="tech-card-title">Voice & LLM</div>
+    <div class="tech-tags">
+      <span class="tech-tag">faster-whisper STT</span>
+      <span class="tech-tag">Porcupine 웨이크워드</span>
+      <span class="tech-tag">Ollama</span>
+      <span class="tech-tag">한국어 자연어 제어</span>
+    </div>
+  </div>
+  <div class="tech-card">
+    <div class="tech-card-title">Edge / IoT</div>
+    <div class="tech-tags">
+      <span class="tech-tag">ESP32</span>
+      <span class="tech-tag">ESP32-CAM</span>
+      <span class="tech-tag">AES 암호화 저장</span>
+      <span class="tech-tag">TCP / 시리얼</span>
+    </div>
+  </div>
+  <div class="tech-card">
+    <div class="tech-card-title">VLA & Imitation Learning <span style="font-size:0.65rem;font-weight:500;opacity:0.7;margin-left:0.4rem;padding:2px 8px;border-radius:6px;background:rgba(255,180,0,0.12);border:1px solid rgba(255,180,0,0.25);">연구·프로젝트 진행 중</span></div>
+    <div class="tech-tags">
+      <span class="tech-tag">LeRobot</span>
+      <span class="tech-tag">ACT Policy</span>
+      <span class="tech-tag">SmolVLA</span>
+      <span class="tech-tag">Pi0</span>
+      <span class="tech-tag">CUDA 12.8</span>
     </div>
   </div>
 </div>
