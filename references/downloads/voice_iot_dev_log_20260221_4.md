@@ -1,0 +1,311 @@
+# Voice IoT Controller — 작업 기록 #4
+# STT/LLM 업그레이드, VAD 최적화 및 거실 음악 제어 추가
+
+> 작성일: 2026-02-21
+> 프로젝트: `~/dev_ws/voice_iot_controller`
+> 작업 범위: STT/LLM 업그레이드 + VAD 최적화 + 거실 패널(전등+뮤직 플레이어) + 음성 음악 제어
+
+---
+
+## 작업 요약
+
+| 단계 | 내용 | 결과 |
+|------|------|------|
+| 1 | 시스템 리소스 확인 (RAM 14GB, CPU 16코어) | ✅ 업그레이드 가능 확인 |
+| 2 | qwen2.5:7b Ollama 다운로드 | ✅ |
+| 3 | faster-whisper small 사전 캐시 | ✅ |
+| 4 | settings.yaml v0.7 — STT/LLM 설정 업그레이드 | ✅ |
+| 5 | stt_engine.py v4.2 — beam_size/cpu_threads/num_workers 최적화 | ✅ |
+| 6 | llm_engine.py v1.2 — 모델/타임아웃/시스템 프롬프트 수정 | ✅ |
+| 7 | VAD thresh 0.15 테스트 | ❌ 발화 미감지 → 0.06 원복 |
+| 8 | stt_engine.py v4.3 — VAD 대기시간 최적화 | ✅ 체감 속도 대폭 개선 |
+| 9 | main.py v0.4 — LLM 워밍업 추가 | ✅ 콜드 스타트 완전 제거 |
+| 10 | index.html — 거실 패널 추가 (전등 + 뮤직 플레이어) | ✅ |
+| 11 | index.html — 카드 재배치 + 7세그먼트 욕실 이동 | ✅ |
+| 12 | index.html — YouTube IFrame API 음악 스트리밍 | ✅ 정상 재생 확인 |
+| 13 | llm_engine.py v1.3 — music 명령 스키마 추가 | ✅ |
+| 14 | command_router.py v1.1 — music WS 브로드캐스트 처리 | ✅ |
+| 15 | 음성 음악 제어 통합 테스트 | ✅ 정상 동작 확인 |
+
+---
+
+## 최종 적용 파일
+
+| 파일 | 버전 | 변경 내용 |
+|------|------|----------|
+| `config/settings.yaml` | v0.7 | STT model_size: small, LLM: qwen2.5:7b, timeout: 30 |
+| `server/stt_engine.py` | v4.3 | beam_size: 3, cpu_threads: 6, num_workers: 2, VAD 대기시간 단축 |
+| `server/llm_engine.py` | v1.3 | qwen2.5:7b, timeout: 30s, music 명령 스키마 추가 |
+| `server/main.py` | v0.4 | LLM 워밍업 추가, 콜드 스타트 제거 |
+| `server/command_router.py` | v1.1 | music 명령 WS 브로드캐스트 처리 추가 |
+| `web/static/index.html` | - | 거실 패널, YouTube 뮤직 플레이어, 음성 제어 연동 |
+
+---
+
+## 변경 상세
+
+### settings.yaml v0.6 → v0.7
+
+```yaml
+# STT
+model_size: "base"  →  "small"     # 인식률 향상
+cpu_threads: 3      →  6           # 16코어 환경 최적화
+
+# LLM
+model: "qwen2.5:1.5b"  →  "qwen2.5:7b"   # 명령 이해도 향상
+timeout: 10            →  30              # 7b 응답 시간 대비
+```
+
+### stt_engine.py v4.1 → v4.2 → v4.3
+
+```python
+# v4.2: WhisperModel 초기화
+cpu_threads=6,    # 3 → 6
+num_workers=2,    # 1 → 2
+
+# v4.2: transcribe()
+beam_size=3,      # 1 → 3
+best_of=3,        # 1 → 3
+
+# v4.3: VAD 상수
+VAD_MAX_SPEECH_SEC = 5    # 10 → 5초 (강제 종료 대기 단축)
+VAD_SILENCE_SEC    = 0.8  # 1.2 → 0.8초 (무음 종료 판정 단축)
+```
+
+### llm_engine.py v1.1 → v1.2
+
+```python
+# 기본 모델 변경
+model: str = "qwen2.5:7b"   # exaone3.5:latest → qwen2.5:7b
+
+# 타임아웃 변경
+timeout: float = 30.0        # 10.0 → 30.0
+
+# 시스템 프롬프트 추가
+"Output only JSON. Ensure 'pin' values are integers, not floats (e.g., 2, not 2.0)."
+```
+
+### main.py v0.3 → v0.4
+
+```python
+# _warmup_llm() 함수 추가
+async def _warmup_llm(llm_engine: LLMEngine):
+    logger.info("[LLM] 워밍업 시작 — 모델 메모리 적재 중...")
+    t0 = time.time()
+    try:
+        await llm_engine.parse("테스트")   # 더미 호출로 7b 모델 메모리 적재
+    except Exception as e:
+        logger.warning(f"[LLM] 워밍업 중 예외 (무시): {e}")
+    logger.info(f"[LLM] 워밍업 완료 — {elapsed:.0f}ms")
+
+# lifespan 내 호출 위치
+available = await llm_engine.is_available()
+if available:
+    models = await llm_engine.list_models()
+    await _warmup_llm(llm_engine)   # ← 추가
+```
+
+### llm_engine.py v1.2 → v1.3
+
+```python
+# SYSTEM_PROMPT: living_room 디바이스 및 music 스키마 추가
+{"cmd": "music", "device_id": "living_room",
+ "action": "play"|"pause"|"next"|"prev"|"volume", "value": <0-100>}
+
+# parse(): music 명령 validate_command 우회 처리
+if cmd.get("cmd") == "music":
+    valid_actions = {"play", "pause", "next", "prev", "volume"}
+    if action not in valid_actions: return None
+    return cmd   # TCP 검증 없이 통과
+```
+
+### command_router.py v1.0 → v1.1
+
+```python
+# execute()에 music 분기 추가
+if data.get("cmd") == "music":
+    return await self._handle_music(data)
+
+# _handle_music(): WS 브로드캐스트
+msg = {"type": "music_control", "action": action}
+await self._tcp.ws_broadcast(json.dumps(msg))
+```
+
+### index.html — 거실 패널 및 음성 제어
+
+```
+추가된 기능:
+- 거실 카드: 전등 제어 + YouTube IFrame 뮤직 플레이어
+- 플레이리스트: Lofi / Jazz / Chillhop / Smooth Jazz / Ambient (5곡)
+- 음성 제어 흐름: WS music_control → handleMusicControl() → ytPlayer
+- 카드 재배치: 거실(2번째) / 욕실(마지막 전체너비)
+- 7세그먼트 + 희망온도: 침실 → 욕실 이동
+- 침실: 전등 + 커튼만 유지 (간소화)
+```
+
+---
+
+## 로그 분석 결과 (stt_debug_20260221_220333.log)
+
+### 파이프라인 성능 (v4.2 기준, VAD 10초 강제 종료)
+
+| 명령어 | whisper_ms | llm_ms | total_ms |
+|--------|-----------|--------|---------|
+| 침실 전등 켜줘 | 1,371ms | 5,693ms | 7,134ms |
+| 침실 커튼 열어줘 | 1,364ms | 7,526ms | 8,957ms |
+| 침실하고 전등 다 꺼줘 | 1,370ms | 582ms | 2,026ms |
+| 커튼 닫아줘 | 1,285ms | 595ms | 1,953ms |
+
+### 발견된 이슈
+
+**LLM 콜드 스타트**: 첫 1~2회 호출 시 5~7초 소요 → 이후 600ms 이하로 안정화
+- 원인: qwen2.5:7b 첫 로딩 시 메모리 적재 시간 포함
+- 해결: main.py v0.4 — 서버 시작 시 `_warmup_llm()` 더미 호출로 완전 제거 ✅
+
+**VAD 발화 미감지 (speech_dur=10080ms)**:
+- 배경음 energy: 0.113~0.148, thresh=0.06 → 배경음이 thresh 초과
+- VAD가 발화 종료를 감지 못해 10초 강제 처리
+- VAD thresh 0.15 테스트 → 발화도 SILENT 판정 → 명령 인식 불가
+- 해결: VAD_MAX_SPEECH_SEC 10→5초, VAD_SILENCE_SEC 1.2→0.8초 단축
+
+---
+
+## 작업 중 발생한 문제 및 원인
+
+### 문제 1 — VAD thresh 0.15 설정 시 명령 인식 불가
+**증상**: 웨이크 워드 감지 후 IDLE로 즉시 전환, 명령 미인식
+**원인**: 이 환경의 발화 energy(0.127~0.130)가 배경음(0.113~0.148)과 구분 불가
+→ thresh=0.15 설정 시 발화도 SILENT로 판정됨
+**해결**: 0.06 원복 + VAD 대기시간 단축으로 우회
+**교훈**: 단순 energy 임계값은 배경음이 높은 환경에서 한계 존재. 근본 해결은 Silero VAD 교체 필요
+
+---
+
+## 수정 원칙 (기존 유지)
+
+1. **원인 확정 후 수정** — 로그에서 근본 원인 100% 확인 전 코드 수정 금지
+2. **한 번에 하나씩** — 여러 파일 동시 수정 시 원인 파악이 어려워짐
+3. **배포 순서 준수** — 파일 복사 → 설정 수정 → 서버 재시작
+4. **원복 시 원본 파일 기준** — 수정본이 꼬였을 때는 원본 파일부터 시작
+
+---
+
+## 현재 시스템 구성
+
+```
+마이크 (device=11)
+    ↓
+Porcupine 웨이크 워드 ("자비스야")
+    ↓
+VAD (energy_threshold=0.06, max=5s, silence=0.8s) + noisereduce (prop=0.85)
+    ↓
+faster-whisper small (beam_size=3, cpu_threads=6, num_workers=2)
+    ↓
+_KO_CORRECTIONS 오인식 교정
+    ↓
+Ollama qwen2.5:7b (로컬, timeout=30s)
+    ↓
+validate_command + _normalize_types
+    ↓
+TCP → ESP32 (mic=11)
+```
+
+---
+
+## 향후 계획
+
+- VAD 근본 개선 검토:
+  - 방법 A: VAD_MAX_SPEECH_SEC/SILENCE_SEC 추가 튜닝
+  - 방법 B: Silero VAD 교체 (딥러닝 기반, 배경음/발화 구분 정확)
+- 음악 볼륨 세밀 제어 — "볼륨 50으로" 같은 수치 명령 지원
+- OpenAI 크레딧 충전 후 whisper-1 + gpt-4o-mini 재전환 검토
+- _KO_CORRECTIONS 패턴 지속 수집 및 확장
+
+---
+
+## UI 개선 — HOUSE MAP 패널 (2026-02-21 후반)
+
+### 센서 히스토리 차트 → 2D 평면도로 교체
+
+| 항목 | 내용 |
+|------|------|
+| 패널명 | `SENSOR HISTORY` → `HOUSE MAP` |
+| 위치 | 라벨을 패널 밖 좌측 정렬 (ESP32 DEVICES 패턴 동일) |
+| 캔버스 | 260px → 320px 높이 확장 |
+| 도면 구조 | 실제 평면도 기반 — 차고(상단 전체) / 현관+욕실(좌) / 거실(중) / 침실(우) |
+
+### 평면도 기능
+
+```
+각 방: 방별 accent 색상 구분
+  - 차고: 노란(#FFB400)  현관: 초록(#00FF88)
+  - 욕실: 시안(#00C8FF)  거실: 보라(#A060FF)  침실: 핑크(#FF6090)
+
+LED ON  → 방 배경 glow + 해 아이콘 빛남 + 광선 8개
+LED OFF → 어둡게 + 흐린 해 아이콘
+
+거실 음악 재생 시 → 파장 바 9개 (보라→시안 그라디언트) 애니메이션
+  - 속도: musicWavePhase += 0.04 (느긋한 흐름)
+```
+
+### WS 상태 동기화
+
+- `updateLedStatus()` → `houseSetLed()` 연동
+- `updateDoorStatus()` → `houseSetDoor()` 연동
+- `updateCurtainStatus()` → `houseSetCurtain()` 연동
+- `onYTStateChange()` PLAYING/PAUSED → `houseSetMusic()` 연동
+
+---
+
+## 버그픽스 — 음성 음악 제어 (2026-02-21)
+
+### 버그 1 — `ytReady` 타이밍 오류
+
+```python
+# 전: onYouTubeIframeAPIReady() 에서 설정 → 플레이어 객체 생성 전!
+ytReady = true  # ← 여기서 설정하면 안 됨
+
+# 후: onYTPlayerReady() 에서 설정 → 실제 재생 가능한 시점
+def onYTPlayerReady(e):
+    ytReady = true  # ← 플레이어 준비 완료 후
+```
+
+### 버그 2 — `window.onYTReady` 이름 충돌 (핵심 원인)
+
+```
+YouTube IFrame API 스크립트 내부:
+  window.onYTReady = function() { YT.loaded=1; ... }  ← YouTube 예약 이름!
+
+저희 콜백:
+  function onYTReady(e) { ytReady = true; ... }       ← 덮어써짐!
+
+결과: ytReady = true 가 영원히 실행되지 않음
+해결: onYTReady → onYTPlayerReady 로 rename
+```
+
+### 버그 3 — `_pendingMusicCmd` 대기 큐 추가
+
+음성 명령이 플레이어 초기화 전에 들어올 경우 큐에 저장 후 `onYTPlayerReady` 시점에 자동 실행
+
+### 최종 확인
+
+```
+"거실 음악 재생해줘" → STT → LLM → WS music_control
+  → handleMusicControl() → ytPlayer.playVideo() ✅
+  → houseSetMusic(true) → 파장 바 애니메이션 ✅
+```
+
+---
+
+## 향후 계획
+
+- VAD 근본 개선 검토:
+  - 방법 A: VAD_MAX_SPEECH_SEC/SILENCE_SEC 추가 튜닝
+  - 방법 B: Silero VAD 교체 (딥러닝 기반, 배경음/발화 구분 정확)
+- 음악 볼륨 세밀 제어 — "볼륨 50으로" 같은 수치 명령 지원
+- OpenAI 크레딧 충전 후 whisper-1 + gpt-4o-mini 재전환 검토
+- _KO_CORRECTIONS 패턴 지속 수집 및 확장
+
+---
+
+*끝 — 2026-02-21*

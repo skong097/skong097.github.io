@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Voice IoT Controller — 시나리오보드</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
+
+:root {
+  --bg0: #050810;
+  --bg1: #090d18;
+  --bg2: #0d1220;
+  --bg3: #111828;
+  --border: rgba(0,200,255,0.12);
+  --cyan: #00C8FF;
+  --cyan2: #00E5FF;
+  --green: #00FF88;
+  --yellow: #FFB400;
+  --red: #FF4060;
+  --purple: #A060FF;
+  --orange: #FF8C42;
+  --text: #C8E0F0;
+  --text2: #5A7090;
+  --font-main: 'Noto Sans KR', 'Rajdhani', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  background: var(--bg0);
+  color: var(--text);
+  font-family: var(--font-main);
+  min-height: 100vh;
+}
+
+body::before {
+  content:'';
+  position:fixed; inset:0;
+  background-image:
+    linear-gradient(rgba(0,200,255,0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,200,255,0.015) 1px, transparent 1px);
+  background-size:60px 60px;
+  pointer-events:none; z-index:0;
+}
+
+.page { position:relative; z-index:1; max-width:1400px; margin:0 auto; padding:40px 32px; }
+
+/* ── Title ── */
+.page-header { margin-bottom:48px; }
+.page-label {
+  font-family:var(--font-mono); font-size:11px; font-weight:600;
+  color:var(--cyan); letter-spacing:3px; text-transform:uppercase; margin-bottom:8px;
+}
+.page-title {
+  font-size:36px; font-weight:900; color:#e8f0fa; letter-spacing:-0.5px;
+}
+.page-sub {
+  font-family:var(--font-mono); font-size:12px; color:var(--text2); margin-top:6px;
+}
+
+/* ── Scenario Section ── */
+.scenario { margin-bottom:56px; }
+.scenario-header {
+  display:flex; align-items:baseline; gap:14px; margin-bottom:6px;
+}
+.scenario-num {
+  display:inline-flex; align-items:center; justify-content:center;
+  width:28px; height:28px; border-radius:50%;
+  font-family:var(--font-mono); font-size:14px; font-weight:700; color:#000;
+  flex-shrink:0;
+}
+.scenario-title {
+  font-size:22px; font-weight:800; letter-spacing:-0.3px;
+}
+.scenario-sub {
+  font-size:12px; color:var(--text2);
+}
+.scenario-accent {
+  width:80px; height:3px; border-radius:2px; margin-bottom:20px;
+}
+
+/* ── Flow Row ── */
+.flow-row {
+  display:flex; align-items:flex-start; gap:0;
+  overflow-x:auto; padding-bottom:12px;
+  scrollbar-width:thin;
+}
+
+/* ── Screen Card (피그마 스타일) ── */
+.screen-card {
+  flex-shrink:0; width:192px;
+  background:var(--bg1);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:0;
+  position:relative;
+  transition:border-color 0.3s, box-shadow 0.3s;
+  overflow:hidden;
+}
+.screen-card:hover {
+  box-shadow:0 0 24px rgba(0,200,255,0.08);
+}
+.screen-card .card-accent {
+  height:3px; width:100%;
+}
+.screen-card .card-body {
+  padding:16px 14px 14px;
+}
+
+.step-badge {
+  position:absolute; top:10px; left:12px;
+  width:22px; height:22px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--font-mono); font-size:11px; font-weight:800; color:#000;
+}
+
+.screen-icon {
+  text-align:center; font-size:32px; line-height:1; margin:4px 0 6px; margin-top:10px;
+}
+.screen-name {
+  text-align:center; font-size:14px; font-weight:700; margin-bottom:8px;
+}
+.screen-desc {
+  font-size:11px; color:#a0b8d0; line-height:1.45; margin-bottom:6px;
+}
+.screen-detail {
+  font-family:var(--font-mono); font-size:9px; color:#506878;
+  line-height:1.4; margin-bottom:10px;
+}
+
+/* ── UI 요소 (피그마 주석 스타일) ── */
+.ui-items { display:flex; flex-direction:column; gap:3px; }
+.ui-item {
+  background:rgba(255,255,255,0.025);
+  border:1px solid rgba(255,255,255,0.05);
+  border-left:2px solid;
+  border-radius:3px;
+  padding:4px 8px;
+  font-family:var(--font-mono); font-size:9px; color:#7a9ab0;
+  line-height:1.3;
+}
+
+/* ── Flow Arrow ── */
+.flow-arrow {
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  min-width:52px; padding:0 4px; align-self:center;
+}
+.arrow-label {
+  font-family:var(--font-mono); font-size:9px; font-weight:700;
+  letter-spacing:0.5px; margin-bottom:3px;
+}
+.arrow-svg { display:block; }
+
+/* ── Annotation (피그마 우측 주석) ── */
+.annotation-row {
+  display:flex; gap:0; margin-top:20px;
+}
+.anno-card {
+  flex:1; min-width:0;
+  padding:16px;
+  background:var(--bg2);
+  border:1px dashed;
+  border-radius:8px;
+  position:relative;
+}
+.anno-card::before {
+  content:'';
+  position:absolute; top:50%; left:-12px;
+  width:12px; height:1px;
+}
+.anno-num {
+  font-family:var(--font-mono); font-size:10px; font-weight:700;
+  margin-bottom:6px;
+}
+.anno-title {
+  font-size:13px; font-weight:700; margin-bottom:4px;
+}
+.anno-desc {
+  font-size:10px; color:var(--text2); line-height:1.5;
+}
+.anno-tech {
+  font-family:var(--font-mono); font-size:9px; color:#405868;
+  margin-top:6px; line-height:1.4;
+}
+
+/* ── 시나리오별 화면 모음 (피그마 프레임) ── */
+.figma-frame {
+  border:1px solid;
+  border-radius:16px;
+  padding:24px 20px 20px;
+  position:relative;
+  background:rgba(0,0,0,0.3);
+}
+.frame-label {
+  position:absolute; top:-11px; left:20px;
+  font-family:var(--font-mono); font-size:10px; font-weight:700;
+  padding:2px 10px;
+  border-radius:4px;
+  letter-spacing:1px;
+}
+
+/* ── Footer ── */
+.page-footer {
+  border-top:1px solid rgba(255,255,255,0.05);
+  padding-top:16px; margin-top:20px;
+  display:flex; justify-content:space-between;
+  font-family:var(--font-mono); font-size:9px; color:#2a4058;
+}
+
+/* ── Legend ── */
+.legend {
+  display:flex; gap:24px; margin-top:14px;
+  font-family:var(--font-mono); font-size:10px; color:var(--text2);
+}
+.legend-item {
+  display:flex; align-items:center; gap:6px;
+}
+.legend-dot {
+  width:10px; height:10px; border-radius:3px;
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ═══ HEADER ═══ -->
+  <div class="page-header">
+    <div class="page-label">Voice IoT Controller</div>
+    <div class="page-title">시나리오 설계도</div>
+    <div class="page-sub">Figma-style Scenario Storyboard · 2026-03-04 · Stephen · iot-repo-1</div>
+    <div class="legend">
+      <div class="legend-item"><div class="legend-dot" style="background:var(--cyan)"></div>사용자/입주자 관점</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--green)"></div>음성 인식 → 디바이스 제어</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--yellow)"></div>ESP32-CAM → 현관문 오픈</div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- SCENARIO 1: 사용자/입주자 관점                        -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <div class="scenario">
+    <div class="scenario-header">
+      <div class="scenario-num" style="background:var(--cyan)">1</div>
+      <div class="scenario-title" style="color:var(--cyan)">사용자 / 입주자 관점</div>
+      <div class="scenario-sub">일상 시나리오 — 귀가부터 취침까지</div>
+    </div>
+    <div class="scenario-accent" style="background:linear-gradient(90deg, var(--cyan), transparent)"></div>
+
+    <div class="figma-frame" style="border-color:rgba(0,200,255,0.2)">
+      <div class="frame-label" style="background:var(--bg0); color:var(--cyan)">SCENARIO_01 / RESIDENT_FLOW</div>
+
+      <div class="flow-row">
+        <!-- S1-1 -->
+        <div class="screen-card" style="--accent:var(--cyan)">
+          <div class="card-accent" style="background:var(--cyan)"></div>
+          <div class="card-body">
+            <div class="step-badge" style="background:var(--cyan)">1</div>
+            <div class="screen-icon">🏠</div>
+            <div class="screen-name" style="color:var(--cyan)">귀가 감지</div>
+            <div class="screen-desc">현관 PIR 센서가 움직임 감지<br>보안모드: 귀가 → 현관등 자동 ON</div>
+            <div class="screen-detail">PIR → security_mode check → entrance LED ON → TTS welcome</div>
+            <div class="ui-items">
+              <div class="ui-item" style="border-left-color:var(--cyan)">PIR 모드: 귀가</div>
+              <div class="ui-item" style="border-left-color:var(--green)">💡 현관등 ON</div>
+              <div class="ui-item" style="border-left-color:var(--purple)">TTS: "어서오세요"</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flow-arrow"><div class="arrow-label" style="color:var(--cyan)">PIR</div><svg class="arrow-svg" width="36" height="16" viewBox="0 0 36 16"><defs><linearGradient id="a1" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#00C8FF" stop-opacity="0.2"/><stop offset="100%" stop-color="#00C8FF"/></linearGradient></defs><line x1="0" y1="8" x2="28" y2="8" stroke="url(#a1)" stroke-width="2"/><polygon points="28,3 36,8 28,13" fill="#00C8FF"/></svg></div>
+
+        <!-- S1-2 -->
+        <div class="screen-card">
+          <div class="card-accent" style="background:var(--cyan)"></div>
+          <div class="card-body">
+            <div class="step-badge" style="background:var(--cyan)">2</div>
+            <div class="screen-icon">🎙️</div>
+            <div class="screen-name" style="color:var(--cyan)">음성 명령</div>
+            <div class="screen-desc">"자비스야, 거실 불 켜줘"<br>웨이크워드 → STT → LLM → TCP</div>
+            <div class="screen-detail">Porcupine → Silero VAD → Faster-Whisper → EXAONE 7.8B</div>
+            <div class="ui-items">
+              <div class="ui-item" style="border-left-color:var(--green)">🎙 LISTENING</div>
+              <div class="ui-item" style="border-left-color:var(--cyan)">STT: "거실 불 켜줘"</div>
+              <div class="ui-item" style="border-left-color:var(--purple)">LLM → JSON 파싱</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flow-arrow"><div class="arrow-label" style="color:var(--cyan)">TCP</div><svg class="arrow-svg" width="36" height="16" viewBox="0 0 36 16"><line x1="0" y1="8" x2="28" y2="8" stroke="url(#a1)" stroke-width="2"/><polygon points="28,3 36,8 28,13" fill="#00C8FF"/></svg></div>
+
+        <!-- S1-3 -->
+        <div class="screen-card">
+          <div class="card-accent" style="background:var(--cyan)"></div>
+          <div class="card-body">
+            <div class="step-badge" style="background:var(--cyan)">3</div>
+            <div class="screen-icon">💡</div>
+            <div class="screen-name" style="color:var(--cyan)">디바이스 제어</div>
+            <div class="screen-desc">거실 LED ON 실행<br>ESP32 TCP 명령 → ACK 수신</div>
+            <div class="screen-detail">send_command("esp32_home", cmd_light) → GPIO ON → ACK</div>
+            <div class="ui-items">
+              <div class="ui-item" style="border-left-color:var(--green)">거실: ON ✅</div>
+              <div class="ui-item" style="border-left-color:var(--cyan)">Command Log 기록</div>
+              <div class="ui-item" style="border-left-color:var(--yellow)">Toast 알림</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flow-arrow"><div class="arrow-label" style="color:var(--cyan)">조회</div><svg class="arrow-svg" width="36" height="16" viewBox="0 0 36 16"><line x1="0" y1="8" x2="28" y2="8" stroke="url(#a1)" stroke-width="2"/><polygon points="28,3 36,8 28,13" fill="#00C8FF"/></svg></div>
+
+        <!-- S1-4 -->
+        <div class="screen-card">
+          <div class="card-accent" style="background:var(--cyan)"></div>
+          <div class="card-body">
+            <div class="step-badge" style="background:var(--cyan)">4</div>
+            <div class="screen-icon">🌡️</div>
+            <div class="screen-name" style="color:var(--cyan)">온도 확인</div>
+            <div class="screen-desc">"자비스야, 욕실 온도 알려줘"<br>DS18B20 센서 데이터 조회</div>
+            <div class="screen-detail">sensor query → DS18B20 → TTS "욕실 온도는 23.1도입니다"</div>
+            <div class="ui-items">
+              <div class="ui-item" style="border-left-color:var(--orange)">🌡 욕실: 23.1°C</div>
+              <div class="ui-item" style="border-left-color:var(--cyan)">차트 실시간 업데이트</div>
+              <div class="ui-item" style="border-left-color:var(--purple)">TTS 음성 응답</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flow-arrow"><div class="arrow-label" style="color:var(--cyan)">전체</div><svg class="arrow-svg" width="36" height="16" viewBox="0 0 36 16"><line x1="0" y1="8" x2="28" y2="8" stroke="url(#a1)" stroke-width="2"/><polygon points="28,3 36,8 28,13" fill="#00C8FF"/></svg></div>
+
+        <!-- S1-5 -->
+        <div class="screen-card">
+          <div class="card-accent" style="background:var(--cyan)"></div>
+          <div class="card-body">
+            <div class="step-badge" style="background:var(--cyan)">5</div>
+            <div class="screen-icon">🌙</div>
+            <div class="screen-name" style="color:var(--cyan)">취침 모드</div>
+            <div class="screen-desc">"자비스야, 전체 불 꺼줘"<br>5실 전체 LED OFF + 보안 활성</div>
+            <div class="screen-detail">all_off → 5 rooms LED OFF → PIR mode → 취침</div>
+            <div class="ui-items">
+              <div class="ui-item" style="border-left-color:var(--red)">all_off 명령</div>
+              <div class="ui-item" style="border-left-color:var(--yellow)">PIR 모드: 취침</div>
+              <div class="ui-item" style="border-left-color:var(--green)">🔒 보안 활성화</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flow-arrow"><div class="arrow-label" style="color:var(--cyan)">WS</div><svg class="arrow-svg" width="36" height="16" viewBox="0 0 36 16"><line x1="0" y1="8" x2="28" y2="8" stroke="url(#a1)" stroke-width="2"/><polygon points="28,3 36,8 28,13" fill="#00C8FF"/></svg></div>
+
+        <!-- S1-6 -->
+        <div class="screen-card">
+          <div class="card-accent" style="background:var(--cyan)"></div>
+          <div class="card-body">
+            <div class="step-badge" style="background:var(--cyan)">6</div>
+            <div class="screen-icon">📊</div>
+            <div class="screen-name" style="color:var(--cyan)">대시보드</div>
+            <div class="screen-desc">웹/모바일에서 실시간 모니터링<br>WebSocket 실시간 동기화</div>
+            <div class="screen-detail">ws://host:8000/ws → device_list + sensor_data + cmd_result</div>
+            <div class="ui-items">
+              <div class="ui-item" style="border-left-color:var(--cyan)">디바이스 상태 카드</div>
+              <div class="ui-item" style="border-left-color:var(--green)">센서 차트 (온습도)</div>
+              <div class="ui-item" style="border-left-color:var(--yellow)">Command Log</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 피그마 주석 -->
+    <div class="annotation-row" style="gap:10px; margin-top:16px;">
+      <div class="anno-card" style="border-color:rgba(0,200,255,0.2)">
+        <div class="anno-num" style="color:var(--cyan)">← 대시보드 화면</div>
+        <div class="anno-title" style="color:var(--text)">웹 UI 구성요소</div>
+        <div class="anno-desc">Header (WS 상태) + Voice Panel (마이크/STT) + Device Cards (5실) + PIR 보안 + Camera + Command Log</div>
+        <div class="anno-tech">index_dashboard.html · WebSocket 실시간 · Toast 알림 · 한국어 UI</div>
+      </div>
+      <div class="anno-card" style="border-color:rgba(0,200,255,0.2)">
+        <div class="anno-num" style="color:var(--cyan)">← 토글 스위치 패턴</div>
+        <div class="anno-title" style="color:var(--text)">디바이스 제어 UX</div>
+        <div class="anno-desc">각 실별 LED ON/OFF 토글 + 서보 열기/닫기 + 온도 설정 (±0.5°C) + 7세그먼트 디스플레이</div>
+        <div class="anno-tech">ctrl-btn.active (green) / ctrl-btn (red) · 상태뱃지 + 토글스위치 구성</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- SCENARIO 2: 음성 인식 → 디바이스 제어                  -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <div class="scenario">
+    <div class="scenario-header">
+      <div class="scenario-num" style="background:var(--green)">2</div>
+      <div class="scenario-title" style="color:var(--green)">음성 인식 → 디바이스 제어</div>
+      <div class="scenario-sub">기술 파이프라인 — 웨이크워드부터 ESP32 실행까지</div>
+    </div>
+    <div class="scenario-accent" style="background:linear-gradient(90deg, var(--green), transparent)"></div>
+
+    <div class="figma-frame" style="border-color:rgba(0,255,136,0.2)">
+      <div class="frame-label" style="background:var(--bg0); color:var(--green)">SCENARIO_02 / VOICE_PIPELINE</div>
+
+      <div class="flow-row">
+        <!-- S2-1 -->
+        <div class="screen-card">
+          <div class="card-accent" style="background:var(--green)"></div>
+          <div class="card-body">
+            <div class="step-badge" style="background:var(--green)">1</div>
+            <div class="screen-icon">🔊</div>
+            <div class="screen-name" style="color:var(--green)">Wake Word</div>
+            <div class="screen-desc">Porcupine "자비스야" 감지<br>3회 연속 확인 → LISTENING</div>
+            <div class="screen-detail">Porcupine ONNX → 80ms block → 3회 연속 confirm</div>
+            <div class="ui-items">
+              <div class="ui-item" style="border-left-color:var(--green)">IDLE → LISTENING</div>
+              <div class="ui-item" style="border-left-color:var(--cyan)">WS: wake_detected</div>
+              <div class="ui-item" style="border-left-color:var(--yellow)">뱃지: 🎙 LISTENING</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flow-arrow"><div class="arrow-label" style="color:var(--green)">감지</div><svg class="arrow-svg" width="36" height="16" viewBox="0 0 36 16"><defs><linearGradient id="a2" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#00FF88" stop-opacity="0.2"/><stop offset="100%" stop-color="#00FF88"/></linearGradient></defs><line x1="0" y1="8" x2="28" y2="8" stroke="url(#a2)" stroke-width="2"/><polygon points="28,3 36,8 28,13" fill="#00FF88"/></svg></div>
+
+        <!-- S2-2 -->
+        <div class="screen-card">
+          <div class="card-accent" style="background:var(--green)"></div>
+          <div class="card-body">
+            <div class="step-badge" style="background:var(--green)">2</div>
+            <div class="screen-icon">🎤</div>
+            <div class="screen-name" style="color:var(--green)">VAD + STT</div>
+            <div class="screen-desc">Silero VAD → Faster-Whisper<br>에너지 감지 → 텍스트 변환</div>
+            <div class="screen-detail">energy > 0.01 → 발화시작 → 1초 침묵 → whisper 추론</div>
+            <div class="ui-items">
+              <div class="ui-item" style="border-left-color:var(--green)">VAD: 발화 시작</div>
+              <div class="ui-item" style="border-left-color:var(--yellow)">침묵 1초 → 종료</div>
+              <div class="ui-item" style="border-left-color:var(--cyan)">STT: "침실 불 켜줘"</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flow-arrow"><div class="arrow-label" style="color:var(--green)">텍스트</div><svg class="arrow-svg" width="36" height="16" viewBox="0 0 36 16"><line x1="0" y1="8" x2="28" y2="8" stroke="url(#a2)" stroke-width="2"/><polygon points="28,3 36,8 28,13" fill="#00FF88"/></svg></div>
+
+        <!-- S2-3 -->
+        <div class="screen-card">
+          <div class="card-accent" style="background:var(--green)"></div>
+          <div class="card-body">
+            <div class="step-badge" style="background:var(--green)">3</div>
+            <div class="screen-icon">🧠</div>
+            <div class="screen-name" style="color:var(--green)">LLM 파싱</div>
+            <div class="screen-desc">EXAONE 7.8B 자연어 → JSON<br>Ollama API → 구조화 명령</div>
+            <div class="screen-detail">POST ollama:11434/api/chat → JSON response parse</div>
+            <div class="ui-items">
+              <div class="ui-item" style="border-left-color:var(--purple)">{cmd: "led"}</div>
+              <div class="ui-item" style="border-left-color:var(--cyan)">{room: "bedroom"}</div>
+              <div class="ui-item" style="border-left-color:var(--green)">{state: "on"}</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flow-arrow"><div class="arrow-label" style="color:var(--green)">JSON</div><svg class="arrow-svg" width="36" height="16" viewBox="0 0 36 16"><line x1="0" y1="8" x2="28" y2="8" stroke="url(#a2)" stroke-width="2"/><polygon points="28,3 36,8 28,13" fill="#00FF88"/></svg></div>
+
+        <!-- S2-4 -->
+        <div class="screen-card">
+          <div class="card-accent" style="background:var(--green)"></div>
+          <div class="card-body">
+            <div class="step-badge" style="background:var(--green)">4</div>
+            <div class="screen-icon">🔀</div>
+            <div class="screen-name" style="color:var(--green)">Command Router</div>
+            <div class="screen-desc">명령 검증 + 디바이스 매핑<br>room 기반 라우팅 v2.4</div>
+            <div class="screen-detail">cmd_router.handle() → device_id resolve → pin mapping</div>
+            <div class="ui-items">
+              <div class="ui-item" style="border-left-color:var(--cyan)">device: esp32_home</div>
+              <div class="ui-item" style="border-left-color:var(--yellow)">room: bedroom</div>
+              <div class="ui-item" style="border-left-color:var(--green)">pin: 2, state: on</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flow-arrow"><div class="arrow-label" style="color:var(--green)">TCP</div><svg class="arrow-svg" width="36" height="16" viewBox="0 0 36 16"><line x1="0" y1="8" x2="28" y2="8" stroke="url(#a2)" stroke-width="2"/><polygon points="28,3 36,8 28,13" fill="#00FF88"/></svg></div>
+
+        <!-- S2-5 -->
+        <div class="screen-card">
+          <div class="card-accent" style="background:var(--green)"></div>
+          <div class="card-body">
+            <div class="step-badge" style="background:var(--green)">5</div>
+            <div class="screen-icon">📡</div>
+            <div class="screen-name" style="color:var(--green)">TCP 전송</div>
+            <div class="screen-desc">ESP32 소켓 명령 실행<br>JSON + \n → TCP :9000</div>
+            <div class="screen-detail">tcp_server.send_command() → ESP32 GPIO → ACK 응답</div>
+            <div class="ui-items">
+              <div class="ui-item" style="border-left-color:var(--green)">send_command()</div>
+              <div class="ui-item" style="border-left-color:var(--cyan)">ESP32 GPIO 실행</div>
+              <div class="ui-item" style="border-left-color:var(--yellow)">ACK 응답</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flow-arrow"><div class="arrow-label" style="color:var(--green)">ACK</div><svg class="arrow-svg" width="36" height="16" viewBox="0 0 36 16"><line x1="0" y1="8" x2="28" y2="8" stroke="url(#a2)" stroke-width="2"/><polygon points="28,3 36,8 28,13" fill="#00FF88"/></svg></div>
+
+        <!-- S2-6 -->
+        <div class="screen-card">
+          <div class="card-accent" style="background:var(--green)"></div>
+          <div class="card-body">
+            <div class="step-badge" style="background:var(--green)">6</div>
+            <div class="screen-icon">🔈</div>
+            <div class="screen-name" style="color:var(--green)">TTS 응답</div>
+            <div class="screen-desc">Edge TTS 한국어 피드백<br>실행 결과 → 음성 합성</div>
+            <div class="screen-detail">edge-tts ko-KR → audio play → WS cmd_result → IDLE</div>
+            <div class="ui-items">
+              <div class="ui-item" style="border-left-color:var(--purple)">"침실 조명을 켰습니다"</div>
+              <div class="ui-item" style="border-left-color:var(--cyan)">WS: cmd_result</div>
+              <div class="ui-item" style="border-left-color:var(--green)">IDLE 복귀</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="annotation-row" style="gap:10px; margin-top:16px;">
+      <div class="anno-card" style="border-color:rgba(0,255,136,0.2)">
+        <div class="anno-num" style="color:var(--green)">← Voice Command Panel</div>
+        <div class="anno-title" style="color:var(--text)">트리거 방식 3가지</div>
+        <div class="anno-desc">① 웨이크워드 "자비스야" (상시 대기) · ② 마이크 버튼 클릭 (수동) · ③ 텍스트 직접 입력 (수동)</div>
+        <div class="anno-tech">stt_engine.py v2.0 · Porcupine + Silero VAD + Faster-Whisper</div>
+      </div>
+      <div class="anno-card" style="border-color:rgba(0,255,136,0.2)">
+        <div class="anno-num" style="color:var(--green)">← LLM Fallback</div>
+        <div class="anno-title" style="color:var(--text)">키워드 폴백 동작</div>
+        <div class="anno-desc">Ollama 미연결 시 command_router가 한국어 키워드 매칭으로 직접 파싱 (불/커튼/문/온도 등)</div>
+        <div class="anno-tech">llm_engine v2.0 · EXAONE 7.8B · command_router v2.4 keyword fallback</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- SCENARIO 3: ESP32-CAM → 현관문 오픈                   -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <div class="scenario">
+    <div class="scenario-header">
+      <div class="scenario-num" style="background:var(--yellow)">3</div>
+      <div class="scenario-title" style="color:var(--yellow)">ESP32-CAM → 현관문 오픈</div>
+      <div class="scenario-sub">SmartGate 2FA — 얼굴인식 + Liveness + 제스처 → 서보</div>
+    </div>
+    <div class="scenario-accent" style="background:linear-gradient(90deg, var(--yellow), transparent)"></div>
+
+    <div class="figma-frame" style="border-color:rgba(255,180,0,0.2)">
+      <div class="frame-label" style="background:var(--bg0); color:var(--yellow)">SCENARIO_03 / SMARTGATE_2FA</div>
+
+      <div class="flow-row">
+        <!-- S3-1 -->
+        <div class="screen-card">
+          <div class="card-accent" style="background:var(--yellow)"></div>
+          <div class="card-body">
+            <div class="step-badge" style="background:var(--yellow)">1</div>
+            <div class="screen-icon">📹</div>
+            <div class="screen-name" style="color:var(--yellow)">카메라 스트리밍</div>
+            <div class="screen-desc">ESP-CAM UDP MJPEG 수신<br>QVGA 320×240 → 서버 업스케일</div>
+            <div class="screen-detail">UDP :5005 → JPEG decode → upscale 640 → frame_analyzer</div>
+            <div class="ui-items">
+              <div class="ui-item" style="border-left-color:var(--yellow)">UDP :5005 수신</div>
+              <div class="ui-item" style="border-left-color:var(--cyan)">MJPEG 디코딩</div>
+              <div class="ui-item" style="border-left-color:var(--green)">frame_analyzer 분석</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flow-arrow"><div class="arrow-label" style="color:var(--yellow)">프레임</div><svg class="arrow-svg" width="36" height="16" viewBox="0 0 36 16"><defs><linearGradient id="a3" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#FFB400" stop-opacity="0.2"/><stop offset="100%" stop-color="#FFB400"/></linearGradient></defs><line x1="0" y1="8" x2="28" y2="8" stroke="url(#a3)" stroke-width="2"/><polygon points="28,3 36,8 28,13" fill="#FFB400"/></svg></div>
+
+        <!-- S3-2 -->
+        <div class="screen-card">
+          <div class="card-accent" style="background:var(--yellow)"></div>
+          <div class="card-body">
+            <div class="step-badge" style="background:var(--yellow)">2</div>
+            <div class="screen-icon">👤</div>
+            <div class="screen-name" style="color:var(--yellow)">ARM + 얼굴 인식</div>
+            <div class="screen-desc">InsightFace ArcFace 512d<br>buffalo_sc → cosine sim ≥ 0.40</div>
+            <div class="screen-detail">ARM 버튼 → face_auth.authenticate() → sim=0.80</div>
+            <div class="ui-items">
+              <div class="ui-item" style="border-left-color:var(--red)">🔐 ARM 버튼 클릭</div>
+              <div class="ui-item" style="border-left-color:var(--yellow)">얼굴 검출 30초</div>
+              <div class="ui-item" style="border-left-color:var(--green)">sim=0.80 → KNOWN</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flow-arrow"><div class="arrow-label" style="color:var(--yellow)">인식</div><svg class="arrow-svg" width="36" height="16" viewBox="0 0 36 16"><line x1="0" y1="8" x2="28" y2="8" stroke="url(#a3)" stroke-width="2"/><polygon points="28,3 36,8 28,13" fill="#FFB400"/></svg></div>
+
+        <!-- S3-3 -->
+        <div class="screen-card">
+          <div class="card-accent" style="background:var(--yellow)"></div>
+          <div class="card-body">
+            <div class="step-badge" style="background:var(--yellow)">3</div>
+            <div class="screen-icon">🔐</div>
+            <div class="screen-name" style="color:var(--yellow)">Liveness 챌린지</div>
+            <div class="screen-desc">Face Mesh yaw 검증<br>고개 회전 감지 (ESP-CAM 프로파일)</div>
+            <div class="screen-detail">yaw Δ=±0.25 > thr 0.10 → pass (12s timeout)</div>
+            <div class="ui-items">
+              <div class="ui-item" style="border-left-color:var(--yellow)">챌린지: yaw</div>
+              <div class="ui-item" style="border-left-color:var(--cyan)">Δ=±0.25 > thr 0.10</div>
+              <div class="ui-item" style="border-left-color:var(--green)">✅ Liveness 통과</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flow-arrow"><div class="arrow-label" style="color:var(--yellow)">통과</div><svg class="arrow-svg" width="36" height="16" viewBox="0 0 36 16"><line x1="0" y1="8" x2="28" y2="8" stroke="url(#a3)" stroke-width="2"/><polygon points="28,3 36,8 28,13" fill="#FFB400"/></svg></div>
+
+        <!-- S3-4 -->
+        <div class="screen-card">
+          <div class="card-accent" style="background:var(--yellow)"></div>
+          <div class="card-body">
+            <div class="step-badge" style="background:var(--yellow)">4</div>
+            <div class="screen-icon">✋</div>
+            <div class="screen-name" style="color:var(--yellow)">제스처 2FA</div>
+            <div class="screen-desc">MediaPipe 손가락 시퀀스<br>넘버 모드: [1, 0, 3] 순차 입력</div>
+            <div class="screen-detail">gesture_auth → hold 8 frames → sequence match</div>
+            <div class="ui-items">
+              <div class="ui-item" style="border-left-color:var(--yellow)">시퀀스 [1, 0, 3]</div>
+              <div class="ui-item" style="border-left-color:var(--cyan)">hold 8프레임 확인</div>
+              <div class="ui-item" style="border-left-color:var(--green)">✅ 2FA 성공</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flow-arrow"><div class="arrow-label" style="color:var(--yellow)">서보</div><svg class="arrow-svg" width="36" height="16" viewBox="0 0 36 16"><line x1="0" y1="8" x2="28" y2="8" stroke="url(#a3)" stroke-width="2"/><polygon points="28,3 36,8 28,13" fill="#FFB400"/></svg></div>
+
+        <!-- S3-5 -->
+        <div class="screen-card">
+          <div class="card-accent" style="background:var(--yellow)"></div>
+          <div class="card-body">
+            <div class="step-badge" style="background:var(--yellow)">5</div>
+            <div class="screen-icon">🚪</div>
+            <div class="screen-name" style="color:var(--yellow)">게이트 열림</div>
+            <div class="screen-desc">ESP32 서보 90° 열림<br>5초 후 자동 닫힘 + 쿨다운 120초</div>
+            <div class="screen-detail">gate_ctrl.open_gate() → servo 90° → 5s auto close</div>
+            <div class="ui-items">
+              <div class="ui-item" style="border-left-color:var(--green)">🚪 게이트 열림</div>
+              <div class="ui-item" style="border-left-color:var(--yellow)">5초 카운트다운</div>
+              <div class="ui-item" style="border-left-color:var(--red)">🚪 게이트 닫힘</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flow-arrow"><div class="arrow-label" style="color:var(--yellow)">PIR</div><svg class="arrow-svg" width="36" height="16" viewBox="0 0 36 16"><line x1="0" y1="8" x2="28" y2="8" stroke="url(#a3)" stroke-width="2"/><polygon points="28,3 36,8 28,13" fill="#FFB400"/></svg></div>
+
+        <!-- S3-6 -->
+        <div class="screen-card">
+          <div class="card-accent" style="background:var(--yellow)"></div>
+          <div class="card-body">
+            <div class="step-badge" style="background:var(--yellow)">6</div>
+            <div class="screen-icon">🏡</div>
+            <div class="screen-name" style="color:var(--yellow)">환영 동작</div>
+            <div class="screen-desc">PIR 감지 → 현관등 + TTS 환영<br>trigger_welcome() 실행</div>
+            <div class="screen-detail">PIR → entrance LED ON → TTS "어서오세요" → cooldown 120s</div>
+            <div class="ui-items">
+              <div class="ui-item" style="border-left-color:var(--green)">💡 현관등 ON</div>
+              <div class="ui-item" style="border-left-color:var(--purple)">TTS: "어서오세요"</div>
+              <div class="ui-item" style="border-left-color:var(--yellow)">쿨다운 120초</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 피그마 주석 -->
+    <div class="annotation-row" style="gap:10px; margin-top:16px;">
+      <div class="anno-card" style="border-color:rgba(255,180,0,0.2)">
+        <div class="anno-num" style="color:var(--yellow)">← 카메라 패널</div>
+        <div class="anno-title" style="color:var(--text)">ESP32-CAM 스트리밍</div>
+        <div class="anno-desc">MJPEG 실시간 영상 + YOLO bbox + InsightFace 얼굴 bbox + SmartGate 오버레이 (한글 상태 표시)</div>
+        <div class="anno-tech">camera_stream.py v2.0 · frame_analyzer v1.2 · UDP QVGA → upscale 640</div>
+      </div>
+      <div class="anno-card" style="border-color:rgba(255,180,0,0.2)">
+        <div class="anno-num" style="color:var(--yellow)">← 실패 시나리오</div>
+        <div class="anno-title" style="color:var(--text)">보안 정책</div>
+        <div class="anno-desc">3회 실패 → 잠금 5초 · 타임아웃: 얼굴 30초 / Liveness 12초 / 제스처 7초 · 쿨다운 중 intruder 알람 억제</div>
+        <div class="anno-tech">manager.py v1.2 · liveness.py v3.1 · gate_controller.py · settings.yaml v1.2</div>
+      </div>
+      <div class="anno-card" style="border-color:rgba(255,180,0,0.2)">
+        <div class="anno-num" style="color:var(--yellow)">← Command Log</div>
+        <div class="anno-title" style="color:var(--text)">인증 로그 기록</div>
+        <div class="anno-desc">🔐 얼굴 인식 → ✅ 2FA 성공 → 🚪 게이트 열림 (5초) → 🚪 게이트 닫힘 → 대기 모드</div>
+        <div class="anno-tech">index_dashboard.html · gate_open / gate_closed / auth_success 이벤트</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ FOOTER ═══ -->
+  <div class="page-footer">
+    <div>iot-repo-1 · FastAPI + ESP32 + EXAONE 7.8B + InsightFace + MediaPipe · Python 3.11</div>
+    <div>6 steps × 3 scenarios = 18 interaction points</div>
+  </div>
+
+</div>
+</body>
+</html>

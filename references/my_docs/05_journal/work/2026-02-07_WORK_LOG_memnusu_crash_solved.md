@@ -1,0 +1,150 @@
+# 📋 Work Log — 2026-02-07
+
+## 프로젝트: Home Safe Solution - 낙상 감지 시스템
+
+---
+
+## 🎯 오늘의 목표
+
+- GUI 실시간 모니터링 시 10초 후 크래시 원인 조사 및 해결
+- RF 모델 GUI 통합 (binary 모델 적용)
+- DB 저장 에러 수정
+
+---
+
+## ✅ 완료 작업
+
+### 1. GUI 크래시 원인 조사 (체계적 단계별 테스트)
+
+카메라 + YOLO + RF + GUI 조합에서 10초 후 크래시 발생. 원본에서도 동일 증상.
+
+**단계별 테스트 결과:**
+
+| 테스트 | 구성 | 결과 |
+|--------|------|------|
+| 카메라 단독 | cv2.VideoCapture | ✅ 72초+ 정상 |
+| 카메라 + YOLO | CLI, GUI 없음 | ✅ 20초+ (26fps) |
+| 카메라 + YOLO + RF | CLI, GUI 없음 | ✅ 20초+ (26.5fps) |
+| PyQt6 + YOLO (간단 GUI) | QTimer + QLabel | ✅ 1분+ 정상 |
+| monitoring_page: YOLO만 | skeleton 없음 | ✅ 1분+ 정상 |
+| monitoring_page: + skeleton | RF 없음 | ✅ 30초+ 정상 |
+| monitoring_page: + RF 추론 | UI 업데이트 없음 | ❌ 10초 크래시 |
+| monitoring_page: + RF (n_jobs=1) | 스레드 제한 | ✅ 안정 동작 |
+
+**근본 원인:** `RandomForestClassifier`의 `n_jobs=16`이 QTimer 메인루프 안에서 매 프레임 16개 스레드를 생성 → 메모리 누수(RSS 949MB→1721MB, 10초만에 800MB 증가) → OOM Killer가 프로세스 강제 종료
+
+**해결:** `self.rf_model.n_jobs = 1` 설정
+
+---
+
+### 2. 3class 모델 손상 발견 및 binary 모델 적용
+
+**모델 상태 비교:**
+
+| 경로 | 상태 | features | classes |
+|------|------|----------|---------|
+| `models_integrated/3class/` | ❌ 손상 | 50개, 이름 없음 | [1] (class 1개) |
+| `models_integrated/binary/` | ✅ 정상 | 181개, 이름 있음 | [0, 1] |
+
+**조치:** binary 모델로 경로 변경, binary(2class) → 3class 형식 변환하여 기존 UI 호환 유지
+
+```python
+# Binary proba [0.85, 0.15] → 3class [0.85, 0.0, 0.15]
+#              Normal  Fall       Normal Falling Fallen
+```
+
+---
+
+### 3. RF 모델 실제 적용 (규칙 기반 → predict_proba)
+
+**변경 전:** `predict_fall()`이 RF 모델을 전혀 사용하지 않고, hip_height/aspect_ratio 기반 하드코딩 규칙으로 확률 반환
+
+**변경 후:** RF `predict_proba` 실제 사용, 3프레임마다 추론 (부하 경감)
+
+---
+
+### 4. 181개 Feature 전체 추출
+
+**변경 전:** `extract_simple_features()`가 2개 feature만 추출 (hip_height, aspect_ratio) → 나머지 179개 = 0 → 추론 결과 항상 동일 → 확률 바 고정
+
+**변경 후:** 181개 feature 전체 추출
+
+| 그룹 | Feature | 개수 |
+|------|---------|------|
+| Keypoint 좌표 | 17 joint × (x, y, conf) | 51 |
+| 가속도 센서 | acc_x, y, z, mag (센서 없음→0) | 4 |
+| 파생 Feature | 각도, 높이, bbox, tilt 등 | 13 |
+| 속도/가속도 | 17 joint × (vx, vy, speed, ax, ay, accel) | 102 |
+| 시계열 통계 | mean_5, std_5 등 (5프레임 윈도우) | 11 |
+
+---
+
+### 5. DB 에러 수정 (pool exhausted + numpy.float32)
+
+**원인 1: 중복 DB 호출**
+- `save_fall_event()`: Normal 5초, Fall 1초 간격
+- `save_event_to_db()`: 30프레임(~1.5초)마다 → 매번 새 EventLog 인스턴스 생성
+
+**원인 2: numpy.float32 타입**
+- DB 드라이버가 numpy float 변환 불가 → `Python type numpy.float32 cannot be converted`
+
+**해결:**
+- `save_event_to_db()` 중복 호출 제거 → `save_fall_event()`로 통합
+- 모든 값 `float()` 변환
+- 저장 간격: Normal 10초, Fall 3초로 조정
+- `spine_angle`, `hip_velocity` 실제 feature에서 추출하여 DB 저장
+
+---
+
+## 📁 수정 파일
+
+### monitoring_page.py — 원본 대비 변경점 (5곳)
+
+1. **모델 로드** (L186~): binary 경로 + `n_jobs=1` + `verbose=0` + `feature_names_in_` 사용
+2. **RF 추론 빈도** (L749~): 3프레임마다 1번 (`self.frame_count % 3`)
+3. **extract_simple_features()**: 2개 → 181개 전체 추출 (속도/가속도/시계열 포함)
+4. **predict_fall()**: 규칙 기반 → RF `predict_proba` + binary→3class 변환
+5. **DB 저장**: `save_event_to_db` 중복 제거 + `float()` 변환 + 간격 조정
+
+---
+
+## 🔍 발견한 이슈
+
+### 앉은 자세 오탐지
+- 앉아있는 상태에서 **Fallen 57%**로 감지됨
+- binary 모델이 "앉기"와 "낙상"을 구분하기 어려움
+- 모델 튜닝 필요 (다음 작업)
+
+### 가속도 센서 Feature = 0
+- 센서가 없으므로 acc_x, acc_y, acc_z, acc_mag 및 관련 시계열(acc_mag_diff, acc_mag_mean_5, acc_mag_std_5) = 0
+- 모델 학습 시 이 feature가 있었으므로 현재는 0으로 대체
+- 장기적으로 센서 없는 버전의 모델 재학습 고려
+
+---
+
+## 📊 현재 시스템 상태
+
+| 항목 | 상태 |
+|------|------|
+| GUI 안정성 | ✅ 2분+ 안정 동작 (크래시 해결) |
+| RF 추론 | ✅ 실시간 동작 (n_jobs=1, 3프레임/회) |
+| 확률 바 | ✅ 실시간 변동 |
+| Skeleton 표시 | ✅ 정상 |
+| DB 저장 | ✅ 에러 없이 정상 |
+| 대시보드 | ✅ DB 값 정상 노출 |
+
+---
+
+## 📌 다음 작업
+
+1. **RF 탐지 성능 개선** — 앉기/낙상 구분, 오탐지 감소
+2. 센서 없는 환경에 최적화된 모델 재학습 검토
+3. ST-GCN 모델 실시간 통합 테스트
+
+---
+
+## 💡 교훈
+
+- **sklearn n_jobs와 Qt 메인루프 충돌**: QTimer 안에서 멀티스레드 sklearn 추론 시 메모리 누수 발생. 반드시 `n_jobs=1` 사용
+- **체계적 단계별 테스트**: 카메라→YOLO→RF→GUI를 하나씩 추가하며 범인을 좁혀가는 방법이 효과적
+- **RSS 모니터링**: `ps -o pid,rss`로 메모리 변화 추적이 OOM 문제 진단에 핵심
