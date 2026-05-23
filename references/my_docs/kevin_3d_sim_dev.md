@@ -1,12 +1,3 @@
----
-title: "Kevin 3D Patrol Simulator — 개발 문서"
-date: 2026-03-21
-draft: true
-tags: ["ros2", "nav2"]
-categories: ["ros2"]
-description: "**프로젝트**: Kevin 3D Patrol Simulator **파일**: `kevin_3d_sim.py` (1,187 lines) **플랫폼**: Pygame + PyOpenGL"
----
-
 # Kevin 3D Patrol Simulator — 개발 문서
 
 **프로젝트**: Kevin 3D Patrol Simulator  

@@ -1,12 +1,3 @@
----
-title: "Kevin 3D Patrol Simulator — 개발 문서"
-date: 2026-03-21
-draft: true
-tags: ["robotics", "slam", "patrol"]
-categories: ["robotics"]
-description: "**날짜**: 2025-02-15 **파일**: `kevin_3d_sim.py` (1,087 lines) **플랫폼**: Pygame + PyOpenGL"
----
-
 # Kevin 3D Patrol Simulator — 개발 문서
 
 **날짜**: 2025-02-15  

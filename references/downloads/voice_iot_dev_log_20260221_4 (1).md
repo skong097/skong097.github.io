@@ -1,12 +1,3 @@
----
-title: "Voice IoT Controller — 작업 기록 #4"
-date: 2026-03-21
-draft: true
-tags: ["ai-ml", "llm", "exaone"]
-categories: ["ai-ml"]
-description: "> 작성일: 2026-02-21 > 프로젝트: `~/dev_ws/voice_iot_controller` > 작업 범위: 명령 인식률 향상을 위한 STT/LLM 업그레이드 + VAD 응답속도 최적화"
----
-
 # Voice IoT Controller — 작업 기록 #4
 # STT/LLM 업그레이드 및 VAD 최적화
 

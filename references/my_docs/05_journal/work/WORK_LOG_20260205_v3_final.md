@@ -1,12 +1,3 @@
----
-title: "Home Safe Solution 개발 기록"
-date: 2026-03-21
-draft: true
-tags: ["ai-ml", "fine-tuning"]
-categories: ["ai-ml"]
-description: "**목표:** 1. ST-GCN Pre-trained 모델 Fine-tuning으로 정확도 향상 2. GUI에서 모델 정보 명시적 표시"
----
-
 # Home Safe Solution 개발 기록
 ## 2026-02-05 (수) - ST-GCN Fine-tuning + GUI 통합 + 단일 대상자 추적
 

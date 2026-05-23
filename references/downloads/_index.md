@@ -1,5 +1,4 @@
 ---
-draft: true
 title: "프로젝트"
 layout: "single"
 url: "/projects/"
