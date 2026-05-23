@@ -1,0 +1,1889 @@
+{
+  "dev-tools": [
+    {
+      "file": "blog_old/SETUP.md",
+      "score": 36,
+      "sub": null,
+      "keywords": [
+        "hugo",
+        "github pages",
+        "블로그(title)"
+      ]
+    },
+    {
+      "file": "blog_old/_index.md",
+      "score": 64,
+      "sub": "robotics",
+      "keywords": [
+        "pyqt6",
+        "pyqt",
+        "dashboard",
+        "대시보드",
+        "fastapi"
+      ]
+    },
+    {
+      "file": "blog_old/pyqt6-dark-theme-system.md",
+      "score": 105,
+      "sub": null,
+      "keywords": [
+        "pyqt6(title)",
+        "pyqt(title)",
+        "dashboard",
+        "dark theme(title)",
+        "다크 테마"
+      ]
+    },
+    {
+      "file": "blog_old/search.md",
+      "score": 2,
+      "sub": null,
+      "keywords": [
+        "layout"
+      ]
+    },
+    {
+      "file": "downloads/2026-02-17_blog_dashboard_work_log.md",
+      "score": 156,
+      "sub": null,
+      "keywords": [
+        "pyqt6",
+        "pyqt",
+        "dashboard(title)",
+        "대시보드",
+        "fastapi"
+      ]
+    },
+    {
+      "file": "downloads/2026-02-17_blog_design_work_log.md",
+      "score": 53,
+      "sub": null,
+      "keywords": [
+        "pyqt6",
+        "pyqt",
+        "dashboard",
+        "hugo(title)",
+        "블로그"
+      ]
+    },
+    {
+      "file": "downloads/_index.md",
+      "score": 64,
+      "sub": "robotics",
+      "keywords": [
+        "pyqt6",
+        "pyqt",
+        "dashboard",
+        "대시보드",
+        "fastapi"
+      ]
+    },
+    {
+      "file": "downloads/blog_strategy_guide.md",
+      "score": 73,
+      "sub": null,
+      "keywords": [
+        "pyqt6",
+        "pyqt",
+        "dashboard",
+        "대시보드",
+        "fastapi"
+      ]
+    },
+    {
+      "file": "downloads/kevin_patrol_v3.2_work_log.md",
+      "score": 64,
+      "sub": "robotics",
+      "keywords": [
+        "pyqt",
+        "dashboard(title)",
+        "widget",
+        "qss",
+        "panel"
+      ]
+    },
+    {
+      "file": "downloads/kevin_patrol_v3_2_1_work_log.md",
+      "score": 131,
+      "sub": null,
+      "keywords": [
+        "pyqt",
+        "dashboard(title)",
+        "widget",
+        "qss",
+        "panel"
+      ]
+    },
+    {
+      "file": "downloads/pyqt6-dark-theme-system.md",
+      "score": 105,
+      "sub": null,
+      "keywords": [
+        "pyqt6(title)",
+        "pyqt(title)",
+        "dashboard",
+        "dark theme(title)",
+        "다크 테마"
+      ]
+    },
+    {
+      "file": "downloads/robotics_engineering_roadmap.md",
+      "score": 77,
+      "sub": "ros2",
+      "keywords": [
+        "pyqt6",
+        "pyqt",
+        "dashboard",
+        "대시보드",
+        "fastapi"
+      ]
+    },
+    {
+      "file": "downloads/search.md",
+      "score": 2,
+      "sub": null,
+      "keywords": [
+        "layout"
+      ]
+    },
+    {
+      "file": "my_docs/2026-02-07_WORK_LOG_FINAL_v2 (rf_stgcn_success).md",
+      "score": 50,
+      "sub": "worklog",
+      "keywords": [
+        "pyqt6",
+        "pyqt",
+        "gui",
+        "ui"
+      ]
+    },
+    {
+      "file": "my_docs/2026-02-07_WORK_LOG_FINAL_v2.md",
+      "score": 50,
+      "sub": "worklog",
+      "keywords": [
+        "pyqt6",
+        "pyqt",
+        "gui",
+        "ui"
+      ]
+    },
+    {
+      "file": "my_docs/2026-02-07_WORK_LOG_FINAL_v2_updated.md",
+      "score": 50,
+      "sub": "worklog",
+      "keywords": [
+        "pyqt6",
+        "pyqt",
+        "gui",
+        "ui"
+      ]
+    },
+    {
+      "file": "my_docs/2026-02-17_blog_dashboard_work_log.md",
+      "score": 156,
+      "sub": null,
+      "keywords": [
+        "pyqt6",
+        "pyqt",
+        "dashboard(title)",
+        "대시보드",
+        "fastapi"
+      ]
+    },
+    {
+      "file": "my_docs/2026-02-17_blog_design_work_log.md",
+      "score": 53,
+      "sub": null,
+      "keywords": [
+        "pyqt6",
+        "pyqt",
+        "dashboard",
+        "hugo(title)",
+        "블로그"
+      ]
+    },
+    {
+      "file": "my_docs/20260214_gui_speech_ok.md",
+      "score": 46,
+      "sub": null,
+      "keywords": [
+        "pyqt6",
+        "pyqt",
+        "대시보드",
+        "gui(title)",
+        "ui(title)"
+      ]
+    },
+    {
+      "file": "my_docs/EMERGENCY_CALL_INTEGRATION_GUIDE.md",
+      "score": 24,
+      "sub": "big-data",
+      "keywords": [
+        "dashboard",
+        "gui(title)",
+        "alert",
+        "ui(title)",
+        "button"
+      ]
+    },
+    {
+      "file": "my_docs/FILE_PLACEMENT_GUIDE.md",
+      "score": 65,
+      "sub": "mlops",
+      "keywords": [
+        "gui(title)",
+        "widget",
+        "ui(title)",
+        "window"
+      ]
+    },
+    {
+      "file": "my_docs/FINAL_COMPLETE_GUIDE.md",
+      "score": 103,
+      "sub": null,
+      "keywords": [
+        "pyqt6",
+        "pyqt",
+        "dashboard",
+        "대시보드",
+        "gui(title)"
+      ]
+    },
+    {
+      "file": "my_docs/GRAPH_INTEGRATION_GUIDE.md",
+      "score": 122,
+      "sub": null,
+      "keywords": [
+        "gui(title)",
+        "widget",
+        "layout",
+        "panel",
+        "plot"
+      ]
+    },
+    {
+      "file": "my_docs/GUI_README.md",
+      "score": 95,
+      "sub": "big-data",
+      "keywords": [
+        "pyqt6(title)",
+        "pyqt(title)",
+        "dashboard",
+        "대시보드",
+        "gui(title)"
+      ]
+    },
+    {
+      "file": "my_docs/PACKAGE_INFO.md",
+      "score": 80,
+      "sub": null,
+      "keywords": [
+        "pyqt6(title)",
+        "pyqt(title)",
+        "dashboard",
+        "대시보드",
+        "gui(title)"
+      ]
+    },
+    {
+      "file": "my_docs/QUICKSTART.md",
+      "score": 64,
+      "sub": "big-data",
+      "keywords": [
+        "pyqt6",
+        "pyqt",
+        "대시보드",
+        "gui(title)",
+        "ui(title)"
+      ]
+    },
+    {
+      "file": "my_docs/SETUP.md",
+      "score": 36,
+      "sub": null,
+      "keywords": [
+        "hugo",
+        "github pages",
+        "블로그(title)"
+      ]
+    },
+    {
+      "file": "my_docs/STEP4_DASHBOARD_PAGE.md",
+      "score": 45,
+      "sub": null,
+      "keywords": [
+        "dashboard(title)",
+        "widget"
+      ]
+    },
+    {
+      "file": "my_docs/STGCN_GUI_IMPLEMENTATION_PLAN.md",
+      "score": 74,
+      "sub": "ai-ml",
+      "keywords": [
+        "pyqt6",
+        "pyqt",
+        "dashboard",
+        "대시보드",
+        "gui(title)"
+      ]
+    },
+    {
+      "file": "my_docs/blog_operation_guide.md",
+      "score": 80,
+      "sub": null,
+      "keywords": [
+        "dashboard(title)",
+        "대시보드",
+        "gui(title)",
+        "hugo(title)",
+        "github pages"
+      ]
+    },
+    {
+      "file": "my_docs/blog_strategy_guide.md",
+      "score": 73,
+      "sub": null,
+      "keywords": [
+        "pyqt6",
+        "pyqt",
+        "dashboard",
+        "대시보드",
+        "fastapi"
+      ]
+    },
+    {
+      "file": "my_docs/kevin_patrol_v3.2_work_log.md",
+      "score": 64,
+      "sub": "robotics",
+      "keywords": [
+        "pyqt",
+        "dashboard(title)",
+        "widget",
+        "qss",
+        "panel"
+      ]
+    },
+    {
+      "file": "my_docs/kevin_patrol_v3_2_1_work_log.md",
+      "score": 131,
+      "sub": null,
+      "keywords": [
+        "pyqt",
+        "dashboard(title)",
+        "widget",
+        "qss",
+        "panel"
+      ]
+    },
+    {
+      "file": "my_docs/robotics_blog_strategy.md",
+      "score": 94,
+      "sub": null,
+      "keywords": [
+        "pyqt6",
+        "pyqt",
+        "dashboard",
+        "gui",
+        "hugo"
+      ]
+    },
+    {
+      "file": "my_docs/robotics_engineering_roadmap.md",
+      "score": 77,
+      "sub": "ros2",
+      "keywords": [
+        "pyqt6",
+        "pyqt",
+        "dashboard",
+        "대시보드",
+        "fastapi"
+      ]
+    },
+    {
+      "file": "st_gcn_backup/FINAL_COMPLETE_GUIDE.md",
+      "score": 103,
+      "sub": null,
+      "keywords": [
+        "pyqt6",
+        "pyqt",
+        "dashboard",
+        "대시보드",
+        "gui(title)"
+      ]
+    },
+    {
+      "file": "st_gcn_backup/GUI_README.md",
+      "score": 95,
+      "sub": "big-data",
+      "keywords": [
+        "pyqt6(title)",
+        "pyqt(title)",
+        "dashboard",
+        "대시보드",
+        "gui(title)"
+      ]
+    },
+    {
+      "file": "st_gcn_backup/PACKAGE_INFO.md",
+      "score": 80,
+      "sub": null,
+      "keywords": [
+        "pyqt6(title)",
+        "pyqt(title)",
+        "dashboard",
+        "대시보드",
+        "gui(title)"
+      ]
+    },
+    {
+      "file": "st_gcn_backup/QUICKSTART.md",
+      "score": 64,
+      "sub": "big-data",
+      "keywords": [
+        "pyqt6",
+        "pyqt",
+        "대시보드",
+        "gui(title)",
+        "ui(title)"
+      ]
+    },
+    {
+      "file": "st_gcn_backup/REALTIME_GUIDE.md",
+      "score": 10,
+      "sub": null,
+      "keywords": [
+        "gui(title)",
+        "ui(title)"
+      ]
+    },
+    {
+      "file": "yolo/FINAL_COMPLETE_GUIDE.md",
+      "score": 103,
+      "sub": null,
+      "keywords": [
+        "pyqt6",
+        "pyqt",
+        "dashboard",
+        "대시보드",
+        "gui(title)"
+      ]
+    },
+    {
+      "file": "yolo/GUI_README.md",
+      "score": 95,
+      "sub": "big-data",
+      "keywords": [
+        "pyqt6(title)",
+        "pyqt(title)",
+        "dashboard",
+        "대시보드",
+        "gui(title)"
+      ]
+    },
+    {
+      "file": "yolo/PACKAGE_INFO.md",
+      "score": 80,
+      "sub": null,
+      "keywords": [
+        "pyqt6(title)",
+        "pyqt(title)",
+        "dashboard",
+        "대시보드",
+        "gui(title)"
+      ]
+    },
+    {
+      "file": "yolo/QUICKSTART.md",
+      "score": 64,
+      "sub": "big-data",
+      "keywords": [
+        "pyqt6",
+        "pyqt",
+        "대시보드",
+        "gui(title)",
+        "ui(title)"
+      ]
+    }
+  ],
+  "vision-ai": [
+    {
+      "file": "blog_old/default.md",
+      "score": 1,
+      "sub": "project",
+      "keywords": [
+        "image"
+      ]
+    },
+    {
+      "file": "downloads/home-safe-solution-vision-ai-project.md",
+      "score": 105,
+      "sub": null,
+      "keywords": [
+        "yolo",
+        "pose estimation",
+        "keypoint",
+        "키포인트",
+        "fall detection"
+      ]
+    },
+    {
+      "file": "downloads/kevin_patrol_dashboard_dev_250215.md",
+      "score": 90,
+      "sub": null,
+      "keywords": [
+        "낙상",
+        "낙상 감지",
+        "detection",
+        "confidence"
+      ]
+    },
+    {
+      "file": "ironman/LLM_ROS_보안관_개발계획서.md",
+      "score": 39,
+      "sub": "dev-tools",
+      "keywords": [
+        "yolo",
+        "키포인트",
+        "낙상",
+        "yolo11s-pose",
+        "낙상 감지"
+      ]
+    },
+    {
+      "file": "my_docs/2026-02-09_WORK.md",
+      "score": 30,
+      "sub": null,
+      "keywords": [
+        "yolo",
+        "keypoint",
+        "낙상",
+        "opencv",
+        "mediapipe"
+      ]
+    },
+    {
+      "file": "my_docs/CAMERA_SELECTION_GUIDE.md",
+      "score": 60,
+      "sub": null,
+      "keywords": [
+        "frame",
+        "video",
+        "camera(title)"
+      ]
+    },
+    {
+      "file": "my_docs/GEMINI.md",
+      "score": 90,
+      "sub": null,
+      "keywords": [
+        "yolo",
+        "키포인트",
+        "낙상",
+        "skeleton",
+        "yolo11s-pose"
+      ]
+    },
+    {
+      "file": "my_docs/LLM_ROS_보안관_개발계획서.md",
+      "score": 39,
+      "sub": "dev-tools",
+      "keywords": [
+        "yolo",
+        "키포인트",
+        "낙상",
+        "yolo11s-pose",
+        "낙상 감지"
+      ]
+    },
+    {
+      "file": "my_docs/LOGGING_GUIDE.md",
+      "score": 63,
+      "sub": null,
+      "keywords": [
+        "yolo",
+        "낙상",
+        "낙상 감지",
+        "frame",
+        "detection"
+      ]
+    },
+    {
+      "file": "my_docs/MODEL_TRAINING_REPORT (1).md",
+      "score": 137,
+      "sub": null,
+      "keywords": [
+        "yolo",
+        "pose estimation",
+        "keypoint",
+        "키포인트",
+        "fall detection"
+      ]
+    },
+    {
+      "file": "my_docs/OVERLAY_REMOVAL_GUIDE.md",
+      "score": 75,
+      "sub": null,
+      "keywords": [
+        "yolo",
+        "keypoint",
+        "fall detection",
+        "낙상(title)",
+        "skeleton"
+      ]
+    },
+    {
+      "file": "my_docs/PROJECT_DOCUMENTATION.md",
+      "score": 90,
+      "sub": null,
+      "keywords": [
+        "yolo",
+        "키포인트",
+        "낙상",
+        "skeleton",
+        "yolo11s-pose"
+      ]
+    },
+    {
+      "file": "my_docs/REALTIME_GUIDE.md",
+      "score": 101,
+      "sub": null,
+      "keywords": [
+        "yolo",
+        "낙상(title)",
+        "skeleton",
+        "낙상 감지(title)",
+        "frame"
+      ]
+    },
+    {
+      "file": "my_docs/SITTING_FILTER_GUIDE.md",
+      "score": 55,
+      "sub": null,
+      "keywords": [
+        "keypoint",
+        "키포인트",
+        "confidence"
+      ]
+    },
+    {
+      "file": "my_docs/ST_GCN_IMPLEMENTATION_PLAN.md",
+      "score": 86,
+      "sub": null,
+      "keywords": [
+        "yolo",
+        "keypoint",
+        "낙상(title)",
+        "skeleton",
+        "낙상 감지(title)"
+      ]
+    },
+    {
+      "file": "my_docs/UPDATE_MODEL_PATH_GUIDE.md",
+      "score": 81,
+      "sub": null,
+      "keywords": [
+        "yolo",
+        "낙상",
+        "yolo11s-pose",
+        "낙상 감지"
+      ]
+    },
+    {
+      "file": "my_docs/WORK_LOG_20260205.md",
+      "score": 99,
+      "sub": "ai-ml",
+      "keywords": [
+        "yolo",
+        "keypoint",
+        "fall detection",
+        "낙상",
+        "coco 17"
+      ]
+    },
+    {
+      "file": "my_docs/claude.md",
+      "score": 33,
+      "sub": "big-data",
+      "keywords": [
+        "yolo",
+        "낙상",
+        "낙상 감지",
+        "home safe",
+        "camera"
+      ]
+    },
+    {
+      "file": "my_docs/home-safe-solution-vision-ai-project.md",
+      "score": 105,
+      "sub": null,
+      "keywords": [
+        "yolo",
+        "pose estimation",
+        "keypoint",
+        "키포인트",
+        "fall detection"
+      ]
+    },
+    {
+      "file": "my_docs/kevin_patrol_dashboard_dev_250215.md",
+      "score": 90,
+      "sub": null,
+      "keywords": [
+        "낙상",
+        "낙상 감지",
+        "detection",
+        "confidence"
+      ]
+    },
+    {
+      "file": "st_gcn_backup/LOGGING_GUIDE.md",
+      "score": 63,
+      "sub": null,
+      "keywords": [
+        "yolo",
+        "낙상",
+        "낙상 감지",
+        "frame",
+        "detection"
+      ]
+    },
+    {
+      "file": "yolo/GEMINI.md",
+      "score": 90,
+      "sub": null,
+      "keywords": [
+        "yolo",
+        "키포인트",
+        "낙상",
+        "skeleton",
+        "yolo11s-pose"
+      ]
+    },
+    {
+      "file": "yolo/LOGGING_GUIDE.md",
+      "score": 63,
+      "sub": null,
+      "keywords": [
+        "yolo",
+        "낙상",
+        "낙상 감지",
+        "frame",
+        "detection"
+      ]
+    },
+    {
+      "file": "yolo/PROJECT_DOCUMENTATION.md",
+      "score": 90,
+      "sub": null,
+      "keywords": [
+        "yolo",
+        "키포인트",
+        "낙상",
+        "skeleton",
+        "yolo11s-pose"
+      ]
+    },
+    {
+      "file": "yolo/REALTIME_GUIDE.md",
+      "score": 101,
+      "sub": null,
+      "keywords": [
+        "yolo",
+        "낙상(title)",
+        "skeleton",
+        "낙상 감지(title)",
+        "frame"
+      ]
+    },
+    {
+      "file": "yoloosem/LOGGING_GUIDE.md",
+      "score": 63,
+      "sub": null,
+      "keywords": [
+        "yolo",
+        "낙상",
+        "낙상 감지",
+        "frame",
+        "detection"
+      ]
+    }
+  ],
+  "robotics": [
+    {
+      "file": "blog_old/index.md",
+      "score": 31,
+      "sub": "ros2",
+      "keywords": [
+        "kevin patrol",
+        "slam",
+        "patrol",
+        "robot",
+        "fleet"
+      ]
+    },
+    {
+      "file": "blog_old/kevin-patrol-fleet-dashboard.md",
+      "score": 112,
+      "sub": null,
+      "keywords": [
+        "kevin patrol(title)",
+        "kevin_patrol",
+        "slam",
+        "patrol(title)",
+        "robot"
+      ]
+    },
+    {
+      "file": "downloads/2026-02-17_fleet_collision_avoidance_log.md",
+      "score": 126,
+      "sub": null,
+      "keywords": [
+        "kevin patrol",
+        "a* ",
+        "waypoint",
+        "occupancy grid",
+        "patrol(title)"
+      ]
+    },
+    {
+      "file": "downloads/development.md",
+      "score": 82,
+      "sub": null,
+      "keywords": [
+        "slam",
+        "a* ",
+        "astar",
+        "occupancy grid",
+        "patrol(title)"
+      ]
+    },
+    {
+      "file": "downloads/index.md",
+      "score": 31,
+      "sub": "ros2",
+      "keywords": [
+        "kevin patrol",
+        "slam",
+        "patrol",
+        "robot",
+        "fleet"
+      ]
+    },
+    {
+      "file": "downloads/kevin-patrol-fleet-dashboard.md",
+      "score": 112,
+      "sub": null,
+      "keywords": [
+        "kevin patrol(title)",
+        "kevin_patrol",
+        "slam",
+        "patrol(title)",
+        "robot"
+      ]
+    },
+    {
+      "file": "downloads/kevin_3d_sim_dev.md",
+      "score": 46,
+      "sub": "ros2",
+      "keywords": [
+        "slam",
+        "waypoint",
+        "occupancy grid",
+        "patrol(title)",
+        "robot"
+      ]
+    },
+    {
+      "file": "downloads/kevin_3d_sim_dev_phaseI_finished.md",
+      "score": 81,
+      "sub": null,
+      "keywords": [
+        "slam",
+        "a* ",
+        "astar",
+        "occupancy grid",
+        "patrol(title)"
+      ]
+    },
+    {
+      "file": "downloads/kevin_3d_sim_guide.md",
+      "score": 59,
+      "sub": "ros2",
+      "keywords": [
+        "slam",
+        "occupancy grid",
+        "patrol(title)",
+        "3d sim(title)",
+        "순찰"
+      ]
+    },
+    {
+      "file": "downloads/kevin_patrol_mocksim_optimization_log (1).md",
+      "score": 202,
+      "sub": null,
+      "keywords": [
+        "kevin patrol(title)",
+        "slam",
+        "a* (title)",
+        "astar",
+        "waypoint"
+      ]
+    },
+    {
+      "file": "downloads/kevin_patrol_mocksim_optimization_log.md",
+      "score": 202,
+      "sub": null,
+      "keywords": [
+        "kevin patrol(title)",
+        "slam",
+        "a* (title)",
+        "astar",
+        "waypoint"
+      ]
+    },
+    {
+      "file": "downloads/kevin_patrol_v3_3_fleet_work_log.md",
+      "score": 166,
+      "sub": null,
+      "keywords": [
+        "kevin patrol(title)",
+        "kevin_patrol",
+        "slam",
+        "patrol(title)",
+        "robot(title)"
+      ]
+    },
+    {
+      "file": "kevin_multi_patrol/development.md",
+      "score": 84,
+      "sub": null,
+      "keywords": [
+        "slam",
+        "a* ",
+        "astar",
+        "occupancy grid",
+        "patrol(title)"
+      ]
+    },
+    {
+      "file": "kevin_multi_patrol/kevin_patrol_v3_3_fleet_work_log.md",
+      "score": 184,
+      "sub": null,
+      "keywords": [
+        "kevin patrol(title)",
+        "kevin_patrol",
+        "patrol(title)",
+        "robot(title)",
+        "fleet(title)"
+      ]
+    },
+    {
+      "file": "kevin_patrol/development.md",
+      "score": 84,
+      "sub": null,
+      "keywords": [
+        "slam",
+        "a* ",
+        "astar",
+        "occupancy grid",
+        "patrol(title)"
+      ]
+    },
+    {
+      "file": "my_docs/2026-02-17_fleet_collision_avoidance_log.md",
+      "score": 126,
+      "sub": null,
+      "keywords": [
+        "kevin patrol",
+        "a* ",
+        "waypoint",
+        "occupancy grid",
+        "patrol(title)"
+      ]
+    },
+    {
+      "file": "my_docs/2026-dev-phaseIII-Finished.md",
+      "score": 84,
+      "sub": null,
+      "keywords": [
+        "slam",
+        "a* ",
+        "astar",
+        "occupancy grid",
+        "patrol(title)"
+      ]
+    },
+    {
+      "file": "my_docs/kevin_3d_sim_Guide.md",
+      "score": 94,
+      "sub": null,
+      "keywords": [
+        "slam",
+        "a* ",
+        "astar",
+        "waypoint",
+        "occupancy grid"
+      ]
+    },
+    {
+      "file": "my_docs/kevin_3d_sim_dev_0215_last.md",
+      "score": 77,
+      "sub": null,
+      "keywords": [
+        "slam",
+        "a* ",
+        "astar",
+        "occupancy grid",
+        "patrol(title)"
+      ]
+    },
+    {
+      "file": "my_docs/kevin_3d_sim_dev_phaseI_finished.md",
+      "score": 81,
+      "sub": null,
+      "keywords": [
+        "slam",
+        "a* ",
+        "astar",
+        "occupancy grid",
+        "patrol(title)"
+      ]
+    },
+    {
+      "file": "my_docs/kevin_3d_sim_dev_plan0215.md",
+      "score": 90,
+      "sub": null,
+      "keywords": [
+        "slam",
+        "waypoint",
+        "occupancy grid",
+        "patrol(title)",
+        "robot"
+      ]
+    },
+    {
+      "file": "my_docs/kevin_multi_patrol_bugfix_log.md",
+      "score": 212,
+      "sub": null,
+      "keywords": [
+        "kevin patrol",
+        "kevin_patrol",
+        "slam",
+        "a* (title)",
+        "waypoint"
+      ]
+    },
+    {
+      "file": "my_docs/kevin_patrol_mocksim_optimization_log_VIP.md",
+      "score": 202,
+      "sub": null,
+      "keywords": [
+        "kevin patrol(title)",
+        "slam",
+        "a* (title)",
+        "astar",
+        "waypoint"
+      ]
+    },
+    {
+      "file": "my_docs/kevin_patrol_v3_3_fleet_work_log.md",
+      "score": 166,
+      "sub": null,
+      "keywords": [
+        "kevin patrol(title)",
+        "kevin_patrol",
+        "slam",
+        "patrol(title)",
+        "robot(title)"
+      ]
+    }
+  ],
+  "ai-ml": [
+    {
+      "file": "blog_old/rf-vs-stgcn-fall-detection.md",
+      "score": 38,
+      "sub": null,
+      "keywords": [
+        "random forest",
+        "st-gcn",
+        "stgcn(title)",
+        "model"
+      ]
+    },
+    {
+      "file": "blog_old/stgcn-finetuning-fall-detection.md",
+      "score": 34,
+      "sub": "vision-ai",
+      "keywords": [
+        "random forest",
+        "st-gcn",
+        "stgcn(title)",
+        "pre-trained",
+        "accuracy"
+      ]
+    },
+    {
+      "file": "downloads/rf-vs-stgcn-fall-detection.md",
+      "score": 38,
+      "sub": null,
+      "keywords": [
+        "random forest",
+        "st-gcn",
+        "stgcn(title)",
+        "model"
+      ]
+    },
+    {
+      "file": "downloads/stgcn-finetuning-fall-detection.md",
+      "score": 34,
+      "sub": "vision-ai",
+      "keywords": [
+        "random forest",
+        "st-gcn",
+        "stgcn(title)",
+        "pre-trained",
+        "accuracy"
+      ]
+    },
+    {
+      "file": "my_docs/2026-02-03_STGCN_WORK_SUMMARY.md",
+      "score": 67,
+      "sub": null,
+      "keywords": [
+        "random forest",
+        "st-gcn(title)",
+        "stgcn(title)",
+        "epoch",
+        "recall"
+      ]
+    },
+    {
+      "file": "my_docs/2026-02-06_AM_WORK_LOG.md",
+      "score": 67,
+      "sub": null,
+      "keywords": [
+        "random forest",
+        "st-gcn",
+        "stgcn",
+        "fine-tuning",
+        "accuracy"
+      ]
+    },
+    {
+      "file": "my_docs/2026-02-06_FULL_WORK_LOG.md",
+      "score": 67,
+      "sub": null,
+      "keywords": [
+        "random forest",
+        "st-gcn",
+        "stgcn",
+        "fine-tuning",
+        "accuracy"
+      ]
+    },
+    {
+      "file": "my_docs/2026-02-06_RF_TUNING_WORK_LOG.md",
+      "score": 65,
+      "sub": null,
+      "keywords": [
+        "random forest",
+        "class_weight",
+        "f1-score",
+        "accuracy",
+        "precision"
+      ]
+    },
+    {
+      "file": "my_docs/2026-02-09_WORK_LOG.md",
+      "score": 34,
+      "sub": "vision-ai",
+      "keywords": [
+        "st-gcn",
+        "stgcn",
+        "roc"
+      ]
+    },
+    {
+      "file": "my_docs/COMPARE_MODELS_GUIDE.md",
+      "score": 41,
+      "sub": null,
+      "keywords": [
+        "random forest",
+        "st-gcn",
+        "confusion matrix",
+        "auc",
+        "roc"
+      ]
+    },
+    {
+      "file": "my_docs/GUI_MODEL_DISPLAY_GUIDE.md",
+      "score": 103,
+      "sub": "dev-tools",
+      "keywords": [
+        "random forest",
+        "st-gcn",
+        "stgcn",
+        "model(title)"
+      ]
+    },
+    {
+      "file": "my_docs/MODEL_COMPARISON_REPORT.md",
+      "score": 101,
+      "sub": null,
+      "keywords": [
+        "random forest",
+        "st-gcn",
+        "f1-score",
+        "confusion matrix",
+        "accuracy"
+      ]
+    },
+    {
+      "file": "my_docs/MODEL_COMPARISON_REPORT_0208.md",
+      "score": 121,
+      "sub": null,
+      "keywords": [
+        "random forest",
+        "st-gcn",
+        "f1-score",
+        "confusion matrix",
+        "accuracy"
+      ]
+    },
+    {
+      "file": "my_docs/PIPELINE_DESIGN.md",
+      "score": 86,
+      "sub": null,
+      "keywords": [
+        "random forest",
+        "st-gcn",
+        "stgcn",
+        "epoch",
+        "class_weight"
+      ]
+    },
+    {
+      "file": "my_docs/RF_TUNING_EXPERIMENT_REPORT.md",
+      "score": 84,
+      "sub": null,
+      "keywords": [
+        "random forest(title)",
+        "class_weight",
+        "f1-score",
+        "confusion matrix",
+        "accuracy"
+      ]
+    },
+    {
+      "file": "my_docs/RF_TUNING_GUIDE.md",
+      "score": 36,
+      "sub": "mlops",
+      "keywords": [
+        "random forest",
+        "class_weight",
+        "confusion matrix",
+        "accuracy",
+        "recall"
+      ]
+    },
+    {
+      "file": "my_docs/STEP3_MONITORING_PAGE.md",
+      "score": 47,
+      "sub": null,
+      "keywords": [
+        "accuracy",
+        "model",
+        "feature",
+        "predict"
+      ]
+    },
+    {
+      "file": "my_docs/STGCN_PRETRAINED_PLAN.md",
+      "score": 136,
+      "sub": null,
+      "keywords": [
+        "st-gcn(title)",
+        "stgcn(title)",
+        "fine-tuning",
+        "pretrained(title)",
+        "pre-trained(title)"
+      ]
+    },
+    {
+      "file": "my_docs/ST_GCN_PROJECT_REPORT (1).md",
+      "score": 71,
+      "sub": "vision-ai",
+      "keywords": [
+        "random forest",
+        "st-gcn(title)",
+        "learning rate",
+        "roc",
+        "train"
+      ]
+    },
+    {
+      "file": "my_docs/ST_GCN_PROJECT_REPORT.md",
+      "score": 71,
+      "sub": "vision-ai",
+      "keywords": [
+        "random forest",
+        "st-gcn(title)",
+        "learning rate",
+        "roc",
+        "train"
+      ]
+    },
+    {
+      "file": "my_docs/TRAINING_PIPELINE_PLAN.md",
+      "score": 40,
+      "sub": "mlops",
+      "keywords": [
+        "st-gcn",
+        "roc",
+        "train(title)",
+        "model",
+        "feature"
+      ]
+    },
+    {
+      "file": "my_docs/WORK_LOG_20260203_FINAL.md",
+      "score": 52,
+      "sub": "dev-tools",
+      "keywords": [
+        "random forest",
+        "st-gcn",
+        "accuracy",
+        "모델 학습",
+        "classification"
+      ]
+    },
+    {
+      "file": "my_docs/WORK_LOG_20260205_v2(st-gcn).md",
+      "score": 132,
+      "sub": null,
+      "keywords": [
+        "st-gcn",
+        "stgcn",
+        "fine-tuning",
+        "pretrained",
+        "pre-trained"
+      ]
+    },
+    {
+      "file": "my_docs/WORK_LOG_20260205_v3_final.md",
+      "score": 106,
+      "sub": "dev-tools",
+      "keywords": [
+        "st-gcn",
+        "stgcn",
+        "fine-tuning",
+        "pretrained",
+        "pre-trained"
+      ]
+    },
+    {
+      "file": "my_docs/rf-stgcn-model-comparison-final.md",
+      "score": 74,
+      "sub": null,
+      "keywords": [
+        "random forest",
+        "st-gcn(title)",
+        "stgcn(title)",
+        "class_weight",
+        "precision"
+      ]
+    },
+    {
+      "file": "pipeline__no_use/TRAINING_PIPELINE_PLAN.md",
+      "score": 40,
+      "sub": "mlops",
+      "keywords": [
+        "st-gcn",
+        "roc",
+        "train(title)",
+        "model",
+        "feature"
+      ]
+    },
+    {
+      "file": "yolo/MODEL_COMPARISON_REPORT.md",
+      "score": 95,
+      "sub": null,
+      "keywords": [
+        "random forest",
+        "st-gcn",
+        "f1-score",
+        "confusion matrix",
+        "accuracy"
+      ]
+    },
+    {
+      "file": "yolo/MODEL_COMPARISON_REPORT_0208.md",
+      "score": 121,
+      "sub": null,
+      "keywords": [
+        "random forest",
+        "st-gcn",
+        "f1-score",
+        "confusion matrix",
+        "accuracy"
+      ]
+    },
+    {
+      "file": "yolo/RF_TUNING_EXPERIMENT_REPORT.md",
+      "score": 84,
+      "sub": null,
+      "keywords": [
+        "random forest(title)",
+        "class_weight",
+        "f1-score",
+        "confusion matrix",
+        "accuracy"
+      ]
+    },
+    {
+      "file": "yolo/TRAINING_PIPELINE_PLAN.md",
+      "score": 40,
+      "sub": "mlops",
+      "keywords": [
+        "st-gcn",
+        "roc",
+        "train(title)",
+        "model",
+        "feature"
+      ]
+    }
+  ],
+  "ros2": [
+    {
+      "file": "blog_old/ros2-guard-brain-fastapi.md",
+      "score": 58,
+      "sub": null,
+      "keywords": [
+        "ros2(title)",
+        "jazzy",
+        "guard_brain",
+        "guard brain(title)",
+        "robot"
+      ]
+    },
+    {
+      "file": "downloads/day1_log.md",
+      "score": 68,
+      "sub": "robotics",
+      "keywords": [
+        "ros2(title)",
+        "colcon",
+        "launch",
+        "topic",
+        "service"
+      ]
+    },
+    {
+      "file": "downloads/day2_5_log.md",
+      "score": 155,
+      "sub": "robotics",
+      "keywords": [
+        "ros2(title)",
+        "launch",
+        "rclpy",
+        "topic",
+        "service"
+      ]
+    },
+    {
+      "file": "downloads/ros2-guard-brain-fastapi.md",
+      "score": 58,
+      "sub": null,
+      "keywords": [
+        "ros2(title)",
+        "jazzy",
+        "guard_brain",
+        "guard brain(title)",
+        "robot"
+      ]
+    },
+    {
+      "file": "my_docs/2026-02-13_작업일지(tts-ros2-llm).md",
+      "score": 111,
+      "sub": null,
+      "keywords": [
+        "ros2(title)",
+        "jazzy",
+        "humble",
+        "colcon",
+        "ament"
+      ]
+    },
+    {
+      "file": "my_docs/2026-02-13_작업일지_2.md",
+      "score": 86,
+      "sub": null,
+      "keywords": [
+        "ros2",
+        "jazzy",
+        "humble",
+        "topic",
+        "guard_brain"
+      ]
+    },
+    {
+      "file": "my_docs/ENTRYPOINT_FIX_GUIDE.md",
+      "score": 135,
+      "sub": null,
+      "keywords": [
+        "ros2(title)",
+        "jazzy",
+        "colcon",
+        "launch",
+        "guard_brain"
+      ]
+    },
+    {
+      "file": "my_docs/GUARD_VOICE_GUIDE.md",
+      "score": 30,
+      "sub": null,
+      "keywords": [
+        "ros2",
+        "jazzy",
+        "ament",
+        "topic",
+        "sensor"
+      ]
+    },
+    {
+      "file": "my_docs/RPi_탑재_계획.md",
+      "score": 82,
+      "sub": null,
+      "keywords": [
+        "ros2",
+        "jazzy",
+        "colcon",
+        "topic",
+        "service"
+      ]
+    },
+    {
+      "file": "my_docs/day1_log.md",
+      "score": 68,
+      "sub": "robotics",
+      "keywords": [
+        "ros2(title)",
+        "colcon",
+        "launch",
+        "topic",
+        "service"
+      ]
+    },
+    {
+      "file": "my_docs/day2_5_log.md",
+      "score": 155,
+      "sub": "robotics",
+      "keywords": [
+        "ros2(title)",
+        "launch",
+        "rclpy",
+        "topic",
+        "service"
+      ]
+    },
+    {
+      "file": "my_docs/kevin_3d_sim_dev.md",
+      "score": 51,
+      "sub": "robotics",
+      "keywords": [
+        "ros2",
+        "jazzy",
+        "nav2",
+        "topic",
+        "cmd_vel"
+      ]
+    },
+    {
+      "file": "ros2_fundamental/ros2_mini_patrol_project.md",
+      "score": 221,
+      "sub": null,
+      "keywords": [
+        "ros2(title)",
+        "jazzy",
+        "humble",
+        "colcon",
+        "ament"
+      ]
+    }
+  ],
+  "worklog": [
+    {
+      "file": "downloads/MyPet_DevLog_20250215.md",
+      "score": 20,
+      "sub": "project",
+      "keywords": [
+        "수정",
+        "변경",
+        "change",
+        "이슈",
+        "해결"
+      ]
+    },
+    {
+      "file": "downloads/dev_log_2026-02-15.md",
+      "score": 19,
+      "sub": null,
+      "keywords": [
+        "dev log(title)",
+        "적용",
+        "완료"
+      ]
+    },
+    {
+      "file": "my_docs/2026-01-31_WORK_LOG.md",
+      "score": 39,
+      "sub": "vision-ai",
+      "keywords": [
+        "work log(title)",
+        "수정",
+        "변경",
+        "해결",
+        "적용"
+      ]
+    },
+    {
+      "file": "my_docs/2026-02-06_WORK_LOG.md",
+      "score": 40,
+      "sub": "ai-ml",
+      "keywords": [
+        "work log(title)",
+        "수정",
+        "변경",
+        "완료"
+      ]
+    },
+    {
+      "file": "my_docs/2026-02-07_WORK_LOG_memnusu_crash_solved.md",
+      "score": 48,
+      "sub": "dev-tools",
+      "keywords": [
+        "work log(title)",
+        "수정",
+        "변경",
+        "이슈",
+        "해결"
+      ]
+    },
+    {
+      "file": "my_docs/2026-02-07_WORK_LOG_v2(rf_train_normalized).md",
+      "score": 46,
+      "sub": "dev-tools",
+      "keywords": [
+        "work log(title)",
+        "수정",
+        "변경",
+        "해결",
+        "적용"
+      ]
+    },
+    {
+      "file": "my_docs/2026-02-13_작업일지_1.md",
+      "score": 19,
+      "sub": "robot-security",
+      "keywords": [
+        "작업일지(title)",
+        "작업일(title)",
+        "적용",
+        "완료"
+      ]
+    },
+    {
+      "file": "my_docs/20260214_optimization_tuning.md",
+      "score": 29,
+      "sub": null,
+      "keywords": [
+        "변경",
+        "적용",
+        "완료"
+      ]
+    },
+    {
+      "file": "my_docs/MyPet_DevLog_20250215.md",
+      "score": 20,
+      "sub": "project",
+      "keywords": [
+        "수정",
+        "변경",
+        "change",
+        "이슈",
+        "해결"
+      ]
+    },
+    {
+      "file": "my_docs/dev_log_2026-02-15.md",
+      "score": 19,
+      "sub": null,
+      "keywords": [
+        "dev log(title)",
+        "적용",
+        "완료"
+      ]
+    }
+  ],
+  "robot-security": [
+    {
+      "file": "my_docs/2026-02-12_작업일지.md",
+      "score": 24,
+      "sub": "vision-ai",
+      "keywords": [
+        "보안관",
+        "guard bot",
+        "home guard",
+        "보안"
+      ]
+    },
+    {
+      "file": "my_docs/ROS2_쉬운_설명_Home_Guard_Bot.md",
+      "score": 48,
+      "sub": "ros2",
+      "keywords": [
+        "guard bot(title)",
+        "home guard(title)"
+      ]
+    }
+  ],
+  "project": [
+    {
+      "file": "my_docs/20260214_last_optimized_goodworking.md",
+      "score": 44,
+      "sub": null,
+      "keywords": [
+        "전략",
+        "phase",
+        "목표"
+      ]
+    },
+    {
+      "file": "my_docs/20260214_phase2_3_음성 인식 속도.md",
+      "score": 39,
+      "sub": null,
+      "keywords": [
+        "phase(title)"
+      ]
+    },
+    {
+      "file": "my_docs/EyeCon_프로젝트_계획서.md",
+      "score": 31,
+      "sub": "dev-tools",
+      "keywords": [
+        "계획서(title)",
+        "프로젝트 계획(title)",
+        "개요"
+      ]
+    },
+    {
+      "file": "my_docs/MyPet_Project_Plan.md",
+      "score": 43,
+      "sub": "robotics",
+      "keywords": [
+        "project plan(title)",
+        "phase",
+        "목표",
+        "개요"
+      ]
+    },
+    {
+      "file": "my_docs/ros2_commander_app_roadmap.md",
+      "score": 33,
+      "sub": "dev-tools",
+      "keywords": [
+        "roadmap(title)",
+        "로드맵(title)",
+        "전략",
+        "phase",
+        "설계"
+      ]
+    }
+  ],
+  "big-data": [
+    {
+      "file": "my_docs/FIX_MYSQL_ERROR.md",
+      "score": 167,
+      "sub": null,
+      "keywords": [
+        "대용량 데이터",
+        "mysql(title)",
+        "데이터베이스",
+        "database",
+        "data"
+      ]
+    },
+    {
+      "file": "my_docs/SECURITY_RECOMMENDATIONS.md",
+      "score": 73,
+      "sub": null,
+      "keywords": [
+        "mysql",
+        "데이터베이스",
+        "database",
+        "data",
+        "데이터"
+      ]
+    },
+    {
+      "file": "my_docs/STEP1_ADD_ACCURACY_COLUMN.md",
+      "score": 55,
+      "sub": null,
+      "keywords": [
+        "mysql",
+        "데이터베이스",
+        "database",
+        "data",
+        "데이터"
+      ]
+    },
+    {
+      "file": "my_docs/STEP2_DATABASE_MODELS.md",
+      "score": 56,
+      "sub": null,
+      "keywords": [
+        "database(title)",
+        "data(title)",
+        "db",
+        "query",
+        "sql"
+      ]
+    },
+    {
+      "file": "st_gcn_backup/FIX_MYSQL_ERROR.md",
+      "score": 167,
+      "sub": null,
+      "keywords": [
+        "대용량 데이터",
+        "mysql(title)",
+        "데이터베이스",
+        "database",
+        "data"
+      ]
+    },
+    {
+      "file": "yolo/FIX_MYSQL_ERROR.md",
+      "score": 167,
+      "sub": null,
+      "keywords": [
+        "대용량 데이터",
+        "mysql(title)",
+        "데이터베이스",
+        "database",
+        "data"
+      ]
+    },
+    {
+      "file": "yoloosem/ClientProgram.md",
+      "score": 2,
+      "sub": null,
+      "keywords": [
+        "데이터",
+        "db"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,3316 @@
+{
+  "generated": {
+    "/home/gjkong/dev_ws/blog/references/ai_agent/ai_agent_setup_guide.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/ai_agent/ai_agent_setup_guide.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/ai-agent-프로젝트-셋업-가이드.md",
+      "category": "ros2",
+      "title": "AI Agent 프로젝트 셋업 가이드",
+      "hash": "ae025df320abedac0d5f8f0604f389af",
+      "generated_at": "2026-03-21T13:34:11.656849"
+    },
+    "/home/gjkong/dev_ws/blog/references/blog_old/SETUP.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/blog_old/SETUP.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/stephens-robotics-lab-블로그-셋업-가이드.md",
+      "category": "dev-tools",
+      "title": "Stephen's Robotics Lab — 블로그 셋업 가이드",
+      "hash": "141b5d61eea052c513fd661ed9b7fee7",
+      "generated_at": "2026-03-21T13:34:11.658305"
+    },
+    "/home/gjkong/dev_ws/blog/references/blog_old/_index.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/blog_old/_index.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/프로젝트.md",
+      "category": "dev-tools",
+      "title": "프로젝트",
+      "hash": "8cf9ce3e6348cf6b8398bef9886eebf4",
+      "generated_at": "2026-03-21T13:34:11.659620"
+    },
+    "/home/gjkong/dev_ws/blog/references/blog_old/default.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/blog_old/default.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/vision-ai/replace-name---title.md",
+      "category": "vision-ai",
+      "title": "{{ replace .Name \"-\" \" \" | title }}",
+      "hash": "9563624f5122b451a61263d21b9836c1",
+      "generated_at": "2026-03-21T13:34:11.660759"
+    },
+    "/home/gjkong/dev_ws/blog/references/blog_old/index.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/blog_old/index.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/robotics/about.md",
+      "category": "robotics",
+      "title": "About",
+      "hash": "76765c8200b07e359ba6fb15e634a56b",
+      "generated_at": "2026-03-21T13:34:11.661925"
+    },
+    "/home/gjkong/dev_ws/blog/references/blog_old/kevin-patrol-fleet-dashboard.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/blog_old/kevin-patrol-fleet-dashboard.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/robotics/다중-로봇-플릿-모니터링-대시보드-만들기-kevin-patrol-fleet.md",
+      "category": "robotics",
+      "title": "다중 로봇 플릿 모니터링 대시보드 만들기 — Kevin Patrol Fleet",
+      "hash": "f4a07fd91d7e65923cba46dbd20be46e",
+      "generated_at": "2026-03-21T13:34:11.663281"
+    },
+    "/home/gjkong/dev_ws/blog/references/blog_old/pyqt6-dark-theme-system.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/blog_old/pyqt6-dark-theme-system.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/pyqt6에서-3테마-다크-시스템-구축하기-cyber-classic-jarvis.md",
+      "category": "dev-tools",
+      "title": "PyQt6에서 3테마 다크 시스템 구축하기 — Cyber / Classic / JARVIS",
+      "hash": "f817d87899fc6e407cda7ce1eed803bc",
+      "generated_at": "2026-03-21T13:34:11.664545"
+    },
+    "/home/gjkong/dev_ws/blog/references/blog_old/rf-vs-stgcn-fall-detection.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/blog_old/rf-vs-stgcn-fall-detection.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/random-forest-vs-st-gcn-낙상감지-모델-비교-실전-가이드.md",
+      "category": "ai-ml",
+      "title": "Random Forest vs ST-GCN — 낙상감지 모델 비교 실전 가이드",
+      "hash": "1f2568368f49ab894e40341f4850486f",
+      "generated_at": "2026-03-21T13:34:11.665611"
+    },
+    "/home/gjkong/dev_ws/blog/references/blog_old/ros2-guard-brain-fastapi.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/blog_old/ros2-guard-brain-fastapi.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/ros2-jazzy-fastapi로-guard-brain-만들기.md",
+      "category": "ros2",
+      "title": "ROS2 Jazzy + FastAPI로 Guard Brain 만들기",
+      "hash": "c13b2f60a7d50fea67712c785a5448f7",
+      "generated_at": "2026-03-21T13:34:11.666530"
+    },
+    "/home/gjkong/dev_ws/blog/references/blog_old/search.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/blog_old/search.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/검색.md",
+      "category": "dev-tools",
+      "title": "검색",
+      "hash": "8afeae8798298bb8d3676cdb4d8b1405",
+      "generated_at": "2026-03-21T13:34:11.667278"
+    },
+    "/home/gjkong/dev_ws/blog/references/blog_old/stgcn-finetuning-fall-detection.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/blog_old/stgcn-finetuning-fall-detection.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/st-gcn-파인튜닝으로-낙상감지-9189-달성기.md",
+      "category": "ai-ml",
+      "title": "ST-GCN 파인튜닝으로 낙상감지 91.89% 달성기",
+      "hash": "376ba20d1d315c912db48ce2a9621400",
+      "generated_at": "2026-03-21T13:34:11.668161"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/2026-02-17_blog_dashboard_work_log.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/2026-02-17_blog_dashboard_work_log.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/hugo-blog-career-dashboard-구축-작업-기록.md",
+      "category": "dev-tools",
+      "title": "Hugo Blog + Career Dashboard 구축 작업 기록",
+      "hash": "8b652a34f60cfed83bbfa855d6d350ff",
+      "generated_at": "2026-03-21T13:34:11.669601"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/2026-02-17_blog_design_work_log.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/2026-02-17_blog_design_work_log.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/hugo-blog-디자인-보완-작업-기록.md",
+      "category": "dev-tools",
+      "title": "Hugo Blog 디자인 보완 작업 기록",
+      "hash": "df60033e3148811548b2c7cda28d7095",
+      "generated_at": "2026-03-21T13:34:11.671062"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/2026-02-17_fleet_collision_avoidance_log.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/2026-02-17_fleet_collision_avoidance_log.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/robotics/kevin-multi-patrol-dashboard-fleet-충돌-회피-level-1-적용-기록.md",
+      "category": "robotics",
+      "title": "Kevin Multi Patrol Dashboard — Fleet 충돌 회피 (Level 1) 적용 기록",
+      "hash": "189355690cd4a7665bd2a54f7077dc75",
+      "generated_at": "2026-03-21T13:34:11.672632"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/2026-02-21_voice_iot_controller.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/2026-02-21_voice_iot_controller.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/smart-home/voice-iot-controller-일일-작업-요약.md",
+      "category": "smart-home",
+      "title": "Voice IoT Controller — 일일 작업 요약",
+      "hash": "ebfc363beddc983d7914f0fa5a4b68de",
+      "generated_at": "2026-03-21T13:34:11.674410"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/2026-02-21_voice_iot_controller_bugfix1.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/2026-02-21_voice_iot_controller_bugfix1.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/smart-home/voice-iot-controller-버그수정-1.md",
+      "category": "smart-home",
+      "title": "Voice IoT Controller — 버그수정 #1",
+      "hash": "0058e662e50b4036a63c31a3627e048b",
+      "generated_at": "2026-03-21T13:34:11.675688"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/AI_Drama_Agent_Design.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/AI_Drama_Agent_Design.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/ai-drama-youtube-content-agent-설계-문서.md",
+      "category": "ai-ml",
+      "title": "AI Drama YouTube Content Agent — 설계 문서",
+      "hash": "474ad41cd19c35cb0a0b1c640ab683c3",
+      "generated_at": "2026-03-21T13:34:11.677353"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/DEV_LOG (1).md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/DEV_LOG (1).md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/smart-home/dev-log-voice-iot-controller.md",
+      "category": "smart-home",
+      "title": "DEV_LOG — Voice IoT Controller",
+      "hash": "144ad8a0ec5acdfbd2164736f05865a9",
+      "generated_at": "2026-03-21T13:34:11.678691"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/DEV_LOG.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/DEV_LOG.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/smart-home/dev-log-voice-iot-controller-DEV_LOG.md",
+      "category": "smart-home",
+      "title": "DEV_LOG — Voice IoT Controller",
+      "hash": "476488c6b189c3b361ab4419b1c96524",
+      "generated_at": "2026-03-21T13:34:11.680308"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/DEV_LOG_BCI_20260312.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/DEV_LOG_BCI_20260312.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/dev-log-eeg-bci-로봇팔-제어-시스템.md",
+      "category": "ros2",
+      "title": "DEV_LOG — EEG BCI 로봇팔 제어 시스템",
+      "hash": "f284c091c969452372b8ebfe1dfb7915",
+      "generated_at": "2026-03-21T13:34:11.681626"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/ESP32_UPLOAD_GUIDE_0222.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/ESP32_UPLOAD_GUIDE_0222.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/smart-home/esp32-업로드-가이드-voice-iot-controller.md",
+      "category": "smart-home",
+      "title": "ESP32 업로드 가이드 — Voice IoT Controller",
+      "hash": "27eef6003b2e40d0724d6f0390db5469",
+      "generated_at": "2026-03-21T13:34:11.683007"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/ESP32_UPLOAD_GUIDE_Final.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/ESP32_UPLOAD_GUIDE_Final.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/smart-home/esp32-업로드-가이드-voice-iot-controller-ESP32_UPLO.md",
+      "category": "smart-home",
+      "title": "ESP32 업로드 가이드 — Voice IoT Controller",
+      "hash": "96218d71a627514850e747abde03babd",
+      "generated_at": "2026-03-21T13:34:11.684360"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/GHOST5_M05_slam_작업로그_20260318.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/GHOST5_M05_slam_작업로그_20260318.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/ghost-5-m05-slam-toolbox-단일-로봇-slam-작업-로그.md",
+      "category": "ros2",
+      "title": "GHOST-5 M05 — slam_toolbox 단일 로봇 SLAM 작업 로그",
+      "hash": "8803ca363b0d2c8c245935675b259bca",
+      "generated_at": "2026-03-21T13:34:11.685565"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/GHOST5_M06_nav2_ekf_작업로그_20260318.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/GHOST5_M06_nav2_ekf_작업로그_20260318.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/ghost-5-m06-nav2-ekf-inter-robot-costmap-작업-로그.md",
+      "category": "ros2",
+      "title": "GHOST-5 M06 — Nav2 + EKF + Inter-Robot Costmap 작업 로그",
+      "hash": "f49abf4659e776503ab7f7f10e080655",
+      "generated_at": "2026-03-21T13:34:11.686925"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/GHOST5_M08_leader_election_작업로그_20260318.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/GHOST5_M08_leader_election_작업로그_20260318.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/ghost-5-m08-bully-algorithm-leader-election-작업-로그.md",
+      "category": "ros2",
+      "title": "GHOST-5 M08 — Bully Algorithm Leader Election 작업 로그",
+      "hash": "76c260d87d40244d0afa6188f5a49e4f",
+      "generated_at": "2026-03-21T13:34:11.688111"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/GHOST5_M09_frontier_작업로그_20260318.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/GHOST5_M09_frontier_작업로그_20260318.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/ghost-5-m09-mmpf-frontier-탐색-작업-로그.md",
+      "category": "ros2",
+      "title": "GHOST-5 M09 — MMPF Frontier 탐색 작업 로그",
+      "hash": "de9dd412c57ec2b9edef049da61b45fd",
+      "generated_at": "2026-03-21T13:34:11.689301"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/GHOST5_M10_map_merger_작업로그_20260318 (1).md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/GHOST5_M10_map_merger_작업로그_20260318 (1).md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/ghost-5-m10-multi-robot-slam-delta-map-merger-작업-로그.md",
+      "category": "ros2",
+      "title": "GHOST-5 M10 — Multi-Robot SLAM + Delta Map Merger 작업 로그",
+      "hash": "a5cf7f55c14f408b5a6aa29d15b45d4a",
+      "generated_at": "2026-03-21T13:34:11.690459"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/GHOST5_M10_map_merger_작업로그_20260318.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/GHOST5_M10_map_merger_작업로그_20260318.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/ghost-5-m10-multi-robot-slam-delta-map-merger-작업-로그-GHOST5_M10.md",
+      "category": "ros2",
+      "title": "GHOST-5 M10 — Multi-Robot SLAM + Delta Map Merger 작업 로그",
+      "hash": "a5cf7f55c14f408b5a6aa29d15b45d4a",
+      "generated_at": "2026-03-21T13:34:11.691607"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/GHOST5_Phase2_M05_M06_세션로그_20260318 (1).md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/GHOST5_Phase2_M05_M06_세션로그_20260318 (1).md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/ghost-5-phase-2-세션-작업-로그-m05-m06.md",
+      "category": "ros2",
+      "title": "GHOST-5 Phase 2 세션 작업 로그 (M05 + M06)",
+      "hash": "fa412977e38a0388450d49b2156f20b4",
+      "generated_at": "2026-03-21T13:34:11.692918"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/GHOST5_Phase2_M05_M06_세션로그_20260318.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/GHOST5_Phase2_M05_M06_세션로그_20260318.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/ghost-5-phase-2-세션-작업-로그-m05-m06-GHOST5_Pha.md",
+      "category": "ros2",
+      "title": "GHOST-5 Phase 2 세션 작업 로그 (M05 + M06)",
+      "hash": "fa412977e38a0388450d49b2156f20b4",
+      "generated_at": "2026-03-21T13:34:11.694180"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/GHOST5_Phase3_M08_M10_세션로그_20260318.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/GHOST5_Phase3_M08_M10_세션로그_20260318.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/ghost-5-phase-3-세션-작업-로그-m08-m09-m10.md",
+      "category": "ros2",
+      "title": "GHOST-5 Phase 3 세션 작업 로그 (M08 + M09 + M10)",
+      "hash": "677a00bdcb467849bade88c940b61438",
+      "generated_at": "2026-03-21T13:34:11.695467"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/GHOST5_Phase3_UAV_Relay_Research.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/GHOST5_Phase3_UAV_Relay_Research.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/ghost-5-phase-3-참고자료.md",
+      "category": "ros2",
+      "title": "GHOST-5 Phase 3 참고자료",
+      "hash": "3f45d1e564610c1ff6464edf1f796b28",
+      "generated_at": "2026-03-21T13:34:11.697605"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/GHOST5_plan.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/GHOST5_plan.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/ghost-5-구현-계획서.md",
+      "category": "ros2",
+      "title": "GHOST-5 구현 계획서",
+      "hash": "d1bd100f85491e13e786c175547fd792",
+      "generated_at": "2026-03-21T13:34:11.705694"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/GHOST5_plan_v2.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/GHOST5_plan_v2.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/ghost-5-구현-계획서-GHOST5_pla.md",
+      "category": "ros2",
+      "title": "GHOST-5 구현 계획서",
+      "hash": "d0d67c0b3ea1b33db98c098815b230d5",
+      "generated_at": "2026-03-21T13:34:11.716122"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/GHOST5_research.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/GHOST5_research.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/ghost-5-기술-연구-보고서.md",
+      "category": "ros2",
+      "title": "GHOST-5 기술 연구 보고서",
+      "hash": "50b9b520037890ba9d14ad789f55bafe",
+      "generated_at": "2026-03-21T13:34:11.720295"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/GHOST5_research_v3_1_final.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/GHOST5_research_v3_1_final.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/ghost-5-기술-연구-보고서-GHOST5_res.md",
+      "category": "ros2",
+      "title": "GHOST-5 기술 연구 보고서",
+      "hash": "c28e43d05539c412546bed8922a69d56",
+      "generated_at": "2026-03-21T13:34:11.725201"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/GHOST5_구현단계.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/GHOST5_구현단계.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/ghost-5-구현-단계-로드맵.md",
+      "category": "ros2",
+      "title": "GHOST-5 구현 단계 로드맵",
+      "hash": "1fc7f9b8d9fd8c2689d96b526646d9c6",
+      "generated_at": "2026-03-21T13:34:11.727209"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/GHOST5_구현단계_v2 (1).md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/GHOST5_구현단계_v2 (1).md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/ghost-5-구현-단계-로드맵-GHOST5_구현단.md",
+      "category": "ros2",
+      "title": "GHOST-5 구현 단계 로드맵",
+      "hash": "3a03c036013ef6abc56d8758641660c1",
+      "generated_at": "2026-03-21T13:34:11.730078"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/GHOST5_구현단계_v2.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/GHOST5_구현단계_v2.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/ghost-5-구현-단계-로드맵-GHOST5_구현단.md",
+      "category": "ros2",
+      "title": "GHOST-5 구현 단계 로드맵",
+      "hash": "6d6834dfcf25e941055e6f484aeba62f",
+      "generated_at": "2026-03-21T13:34:11.732554"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/GHOST5_작업일지_20260317_Phase1_M01.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/GHOST5_작업일지_20260317_Phase1_M01.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/ghost-5-작업-일지-phase-1-m01-진행-중-rmw-zenoh-설치-완료-qos-profilesp.md",
+      "category": "ros2",
+      "title": "GHOST-5 작업 일지 | Phase 1 — M01 진행 중 (rmw_zenoh 설치 완료 / qos_profiles.py 작성 전)",
+      "hash": "ceab5b4135d211c5b30c37cfbdda5ee5",
+      "generated_at": "2026-03-21T13:34:11.733703"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/GHOST5_작업일지_20260318_Phase1_M01완료 (1).md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/GHOST5_작업일지_20260318_Phase1_M01완료 (1).md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/ghost-5-작업-일지-phase-1-m01-완료.md",
+      "category": "ros2",
+      "title": "GHOST-5 작업 일지 | Phase 1 — M01 완료 ✅",
+      "hash": "a1586c6669e5c1e25f6575ed0f9c50f4",
+      "generated_at": "2026-03-21T13:34:11.734611"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/GHOST5_작업일지_20260318_Phase1_M01완료 (2).md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/GHOST5_작업일지_20260318_Phase1_M01완료 (2).md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/ghost-5-작업-일지-phase-1-m01-완료-GHOST5_작업일.md",
+      "category": "ros2",
+      "title": "GHOST-5 작업 일지 | Phase 1 — M01 완료 ✅",
+      "hash": "a1586c6669e5c1e25f6575ed0f9c50f4",
+      "generated_at": "2026-03-21T13:34:11.735606"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/GHOST5_작업일지_20260318_Phase1_M01완료.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/GHOST5_작업일지_20260318_Phase1_M01완료.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/ghost-5-작업-일지-phase-1-m01-완료-GHOST5_작업일.md",
+      "category": "ros2",
+      "title": "GHOST-5 작업 일지 | Phase 1 — M01 완료",
+      "hash": "391a80cb271097b7cb6cbdf2b094afbd",
+      "generated_at": "2026-03-21T13:34:11.736847"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/GHOST5_작업일지_20260318_Phase1_M02.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/GHOST5_작업일지_20260318_Phase1_M02.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/ghost-5-작업-일지-phase-1-m02-작성-완료-빌드-검증-전.md",
+      "category": "ros2",
+      "title": "GHOST-5 작업 일지 | Phase 1 — M02 작성 완료 (빌드 검증 전)",
+      "hash": "e268f10c002f7e2357a65e7d6869a99a",
+      "generated_at": "2026-03-21T13:34:11.737981"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/GHOST5_작업일지_20260318_Phase1_M03.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/GHOST5_작업일지_20260318_Phase1_M03.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/ghost-5-작업-일지-phase-1-m03-완료.md",
+      "category": "ros2",
+      "title": "GHOST-5 작업 일지 | Phase 1 — M03 완료 ✅",
+      "hash": "953c402b07b3c508fd815b69f5da9261",
+      "generated_at": "2026-03-21T13:34:11.739035"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/GHOST5_작업일지_20260318_Phase1_M04.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/GHOST5_작업일지_20260318_Phase1_M04.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/ghost-5-작업-일지-phase-1-m04-작성-완료-검증-전.md",
+      "category": "ros2",
+      "title": "GHOST-5 작업 일지 | Phase 1 — M04 작성 완료 (검증 전)",
+      "hash": "92a2a927e8b85fc289a7b1c83266a779",
+      "generated_at": "2026-03-21T13:34:11.739995"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/GHOST5_작업일지_20260318_종합_m02.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/GHOST5_작업일지_20260318_종합_m02.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/ghost-5-작업-일지-phase-1-m01-완료-m02-완료.md",
+      "category": "ros2",
+      "title": "GHOST-5 작업 일지 | Phase 1 — M01 완료 + M02 완료",
+      "hash": "55d9b78ca3b2445f0f9e1aaf472fceb7",
+      "generated_at": "2026-03-21T13:34:11.741177"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/GHOST5_포트폴리오_20260318 (1).md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/GHOST5_포트폴리오_20260318 (1).md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/ghost-5-프로젝트-포트폴리오.md",
+      "category": "ros2",
+      "title": "GHOST-5 프로젝트 포트폴리오",
+      "hash": "6aae97cf2dd1fc8db044ba1f600a99be",
+      "generated_at": "2026-03-21T13:34:11.742523"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/GHOST5_포트폴리오_20260318.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/GHOST5_포트폴리오_20260318.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/ghost-5-프로젝트-포트폴리오-GHOST5_포트폴.md",
+      "category": "ros2",
+      "title": "GHOST-5 프로젝트 포트폴리오",
+      "hash": "6aae97cf2dd1fc8db044ba1f600a99be",
+      "generated_at": "2026-03-21T13:34:11.743754"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/Kevin_Smart_Home_DEV_LOG (1).md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/Kevin_Smart_Home_DEV_LOG (1).md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/kevin-smart-home-개발-일지.md",
+      "category": "dev-tools",
+      "title": "Kevin Smart Home — 개발 일지",
+      "hash": "66cf2ab72c797a8bbc9aa4611db8ad27",
+      "generated_at": "2026-03-21T13:34:11.744924"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/Kevin_Smart_Home_DEV_LOG.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/Kevin_Smart_Home_DEV_LOG.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/kevin-smart-home-개발-일지-Kevin_Smar.md",
+      "category": "dev-tools",
+      "title": "Kevin Smart Home — 개발 일지",
+      "hash": "66cf2ab72c797a8bbc9aa4611db8ad27",
+      "generated_at": "2026-03-21T13:34:11.746027"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/Kevin_Smart_Home_Design.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/Kevin_Smart_Home_Design.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/smart-home/kevin-smart-home-설계-문서.md",
+      "category": "smart-home",
+      "title": "Kevin Smart Home — 설계 문서",
+      "hash": "b983c60a73629d61947c5ddceb95fefb",
+      "generated_at": "2026-03-21T13:34:11.747258"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/M02_topic_panel_2026-03-18.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/M02_topic_panel_2026-03-18.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/rosforge-m02-topic-panel-구현-완료-로그.md",
+      "category": "dev-tools",
+      "title": "ROSForge M02 — Topic Panel 구현 완료 로그",
+      "hash": "29428a03f451355eed639631ec8f3c97",
+      "generated_at": "2026-03-21T13:34:11.748076"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/MyPet_DevLog_20250215.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/MyPet_DevLog_20250215.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/mypet-phase-1-개발일지-2025-02-15.md",
+      "category": "dev-tools",
+      "title": "MyPet Phase 1 개발일지 — 2025-02-15",
+      "hash": "4a9dc9d33099f0f6f8fca8072ce0284d",
+      "generated_at": "2026-03-21T13:34:11.749262"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/ROSForge_plan.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/ROSForge_plan.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/rosforge-구축-계획서.md",
+      "category": "dev-tools",
+      "title": "ROSForge — 구축 계획서",
+      "hash": "8ddeb525117af17bdfe8b32ac4962d47",
+      "generated_at": "2026-03-21T13:34:11.751628"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/ROSForge_research.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/ROSForge_research.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/rosforge-통합-리서치-문서.md",
+      "category": "ros2",
+      "title": "ROSForge — 통합 리서치 문서",
+      "hash": "d087958cb59e44677bc023ab49a20951",
+      "generated_at": "2026-03-21T13:34:11.754466"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/_index.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/_index.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/프로젝트-_index.md",
+      "category": "dev-tools",
+      "title": "프로젝트",
+      "hash": "8cf9ce3e6348cf6b8398bef9886eebf4",
+      "generated_at": "2026-03-21T13:34:11.755361"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/blog_3d_hero_setup_guide.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/blog_3d_hero_setup_guide.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/hugo-블로그-3d-히어로-섹션-설치-가이드.md",
+      "category": "dev-tools",
+      "title": "Hugo 블로그 3D 히어로 섹션 설치 가이드",
+      "hash": "b70dc50855c9ea3f3c073c75b032bd25",
+      "generated_at": "2026-03-21T13:34:11.756322"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/blog_ref_classification_design.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/blog_ref_classification_design.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/블로그-레퍼런스-자동-분류-체계-설계.md",
+      "category": "ros2",
+      "title": "블로그 레퍼런스 자동 분류 체계 설계",
+      "hash": "2c6b25d778db3c066942198844f11c4c",
+      "generated_at": "2026-03-21T13:34:11.757542"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/blog_strategy_guide.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/blog_strategy_guide.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/blog-strategy-posting-guide.md",
+      "category": "dev-tools",
+      "title": "Blog Strategy & Posting Guide",
+      "hash": "86db40e623fc71d2ffaa76277e58f6ff",
+      "generated_at": "2026-03-21T13:34:11.758915"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/day1_log.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/day1_log.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/day-1---ros2-환경-세팅-기본-통신-테스트.md",
+      "category": "ros2",
+      "title": "Day 1 - ROS2 환경 세팅 & 기본 통신 테스트",
+      "hash": "e8b8ed5fae00dc0dfe1f0e1872a3e5b4",
+      "generated_at": "2026-03-21T13:34:11.759787"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/day2_5_log.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/day2_5_log.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/day-25---ros2-미니-순찰-시스템-통합-학습-일지.md",
+      "category": "ros2",
+      "title": "Day 2~5 - ROS2 미니 순찰 시스템 통합 학습 일지",
+      "hash": "861490e30de73df1c954cb089731970b",
+      "generated_at": "2026-03-21T13:34:11.760960"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/dev_log_2026-02-15.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/dev_log_2026-02-15.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/vision-ai/mypet-개발일지-2026-02-15.md",
+      "category": "vision-ai",
+      "title": "MyPet 개발일지 — 2026-02-15",
+      "hash": "bd92367e13107c902628dae0bcb5d557",
+      "generated_at": "2026-03-21T13:34:11.761785"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/development.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/development.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/robotics/kevin-3d-patrol-simulator-개발-문서-2025-02-16-phase-3-v31.md",
+      "category": "robotics",
+      "title": "Kevin 3D Patrol Simulator — 개발 문서 (2025-02-16 / Phase 3 v3.1)",
+      "hash": "bc3246ea6a7bdcc615acedb2e76fb2db",
+      "generated_at": "2026-03-21T13:34:11.763411"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/ghost5_gcs_ui_v2.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/ghost5_gcs_ui_v2.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/ghost-5-통합-관제-gui-설계-v2.md",
+      "category": "ros2",
+      "title": "GHOST-5 통합 관제 GUI 설계 — v2",
+      "hash": "8253c1d4fdf28aa5db35d992d63b749f",
+      "generated_at": "2026-03-21T13:34:11.764493"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/home-safe-solution-vision-ai-project.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/home-safe-solution-vision-ai-project.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/vision-ai/home-safe-solution---vision-ai-프로젝트.md",
+      "category": "vision-ai",
+      "title": "Home Safe Solution - Vision AI 프로젝트",
+      "hash": "59fdfdb754e74ab15e8c5886cfa007d9",
+      "generated_at": "2026-03-21T13:34:11.765867"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/index.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/index.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/robotics/about-index.md",
+      "category": "robotics",
+      "title": "About",
+      "hash": "76765c8200b07e359ba6fb15e634a56b",
+      "generated_at": "2026-03-21T13:34:11.766610"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/kevin-patrol-fleet-dashboard.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/kevin-patrol-fleet-dashboard.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/robotics/다중-로봇-플릿-모니터링-대시보드-만들기-kevin-patrol-fleet-kevin-patr.md",
+      "category": "robotics",
+      "title": "다중 로봇 플릿 모니터링 대시보드 만들기 — Kevin Patrol Fleet",
+      "hash": "f4a07fd91d7e65923cba46dbd20be46e",
+      "generated_at": "2026-03-21T13:34:11.767661"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/kevin_3d_sim_dev.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/kevin_3d_sim_dev.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/robotics/kevin-3d-patrol-simulator-개발-문서.md",
+      "category": "robotics",
+      "title": "Kevin 3D Patrol Simulator — 개발 문서",
+      "hash": "1493807b831a5444aada24d61d516c78",
+      "generated_at": "2026-03-21T13:34:11.768565"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/kevin_3d_sim_dev_phaseI_finished.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/kevin_3d_sim_dev_phaseI_finished.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/robotics/kevin-3d-patrol-simulator-개발-문서-kevin_3d_s.md",
+      "category": "robotics",
+      "title": "Kevin 3D Patrol Simulator — 개발 문서",
+      "hash": "5032eab61f915a2fe7b86b9fbb7a0e3c",
+      "generated_at": "2026-03-21T13:34:11.770101"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/kevin_3d_sim_guide.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/kevin_3d_sim_guide.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/robotics/kevin-3d-patrol-simulator.md",
+      "category": "robotics",
+      "title": "🤖 Kevin 3D Patrol Simulator",
+      "hash": "07a29ce1d594e562ba68d13a50957502",
+      "generated_at": "2026-03-21T13:34:11.771516"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/kevin_patrol_dashboard_dev_250215.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/kevin_patrol_dashboard_dev_250215.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/vision-ai/kevin-patrol-dashboard-개발-기록.md",
+      "category": "vision-ai",
+      "title": "Kevin Patrol Dashboard — 개발 기록",
+      "hash": "ceee7b5e353a617cddee7aad9aa673ac",
+      "generated_at": "2026-03-21T13:34:11.772706"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/kevin_patrol_mocksim_optimization_log (1).md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/kevin_patrol_mocksim_optimization_log (1).md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/robotics/kevin-patrol-dashboard-mocksim-a-경로-최적화-작업-기록.md",
+      "category": "robotics",
+      "title": "Kevin Patrol Dashboard — MockSim A* 경로 최적화 작업 기록",
+      "hash": "7a3f64c16fee4dc51a51f966ad052129",
+      "generated_at": "2026-03-21T13:34:11.774152"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/kevin_patrol_mocksim_optimization_log.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/kevin_patrol_mocksim_optimization_log.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/robotics/kevin-patrol-dashboard-mocksim-a-경로-최적화-작업-기록-kevin_patr.md",
+      "category": "robotics",
+      "title": "Kevin Patrol Dashboard — MockSim A* 경로 최적화 작업 기록",
+      "hash": "7a3f64c16fee4dc51a51f966ad052129",
+      "generated_at": "2026-03-21T13:34:11.775591"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/kevin_patrol_v3.2_work_log.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/kevin_patrol_v3.2_work_log.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/kevin-patrol-dashboard-v32-작업-기록.md",
+      "category": "dev-tools",
+      "title": "Kevin Patrol Dashboard v3.2 — 작업 기록",
+      "hash": "c374894e2d3a414be6f2e9733b96e5b6",
+      "generated_at": "2026-03-21T13:34:11.776860"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/kevin_patrol_v3_2_1_work_log.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/kevin_patrol_v3_2_1_work_log.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/kevin-patrol-dashboard-v321-작업-기록.md",
+      "category": "dev-tools",
+      "title": "Kevin Patrol Dashboard v3.2.1 — 작업 기록",
+      "hash": "56c44ef87ee7576cb46a53c575b66e91",
+      "generated_at": "2026-03-21T13:34:11.777979"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/kevin_patrol_v3_3_fleet_work_log.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/kevin_patrol_v3_3_fleet_work_log.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/robotics/kevin-patrol-dashboard-v33-multi-robot-fleet-작업-기록.md",
+      "category": "robotics",
+      "title": "Kevin Patrol Dashboard v3.3 — Multi-Robot Fleet 작업 기록",
+      "hash": "4a6d67ce93cc52c60e644db303609e32",
+      "generated_at": "2026-03-21T13:34:11.779231"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/micro-ROS_ESP32_설치가이드_ROS2_Jazzy (1).md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/micro-ROS_ESP32_설치가이드_ROS2_Jazzy (1).md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/micro-ros-esp32-완벽-설치-가이드-ros-2-jazzy-ubuntu-2404-docker.md",
+      "category": "ros2",
+      "title": "micro-ROS ESP32 완벽 설치 가이드 (ROS 2 Jazzy + Ubuntu 24.04 Docker)",
+      "hash": "978a3ced8998552fa4fd3631629522c8",
+      "generated_at": "2026-03-21T13:34:11.780522"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/micro-ROS_ESP32_설치가이드_ROS2_Jazzy.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/micro-ROS_ESP32_설치가이드_ROS2_Jazzy.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/micro-ros-esp32-완벽-설치-가이드-ros-2-jazzy-ubuntu-2404-docker-micro-ROS_.md",
+      "category": "ros2",
+      "title": "micro-ROS ESP32 완벽 설치 가이드 (ROS 2 Jazzy + Ubuntu 24.04 Docker)",
+      "hash": "978a3ced8998552fa4fd3631629522c8",
+      "generated_at": "2026-03-21T13:34:11.781760"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/pyqt6-dark-theme-system.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/pyqt6-dark-theme-system.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/pyqt6에서-3테마-다크-시스템-구축하기-cyber-classic-jarvis-pyqt6-dark.md",
+      "category": "dev-tools",
+      "title": "PyQt6에서 3테마 다크 시스템 구축하기 — Cyber / Classic / JARVIS",
+      "hash": "f817d87899fc6e407cda7ce1eed803bc",
+      "generated_at": "2026-03-21T13:34:11.782629"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/rf-vs-stgcn-fall-detection.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/rf-vs-stgcn-fall-detection.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/random-forest-vs-st-gcn-낙상감지-모델-비교-실전-가이드-rf-vs-stgc.md",
+      "category": "ai-ml",
+      "title": "Random Forest vs ST-GCN — 낙상감지 모델 비교 실전 가이드",
+      "hash": "1f2568368f49ab894e40341f4850486f",
+      "generated_at": "2026-03-21T13:34:11.783401"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/robotics_engineering_roadmap.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/robotics_engineering_roadmap.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/robotics-engineering-roadmap.md",
+      "category": "dev-tools",
+      "title": "Robotics Engineering Roadmap",
+      "hash": "fa6af59286a3e298d3f48ff9f007caeb",
+      "generated_at": "2026-03-21T13:34:11.785035"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/ros2-guard-brain-fastapi.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/ros2-guard-brain-fastapi.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/ros2-jazzy-fastapi로-guard-brain-만들기-ros2-guard.md",
+      "category": "ros2",
+      "title": "ROS2 Jazzy + FastAPI로 Guard Brain 만들기",
+      "hash": "c13b2f60a7d50fea67712c785a5448f7",
+      "generated_at": "2026-03-21T13:34:11.785687"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/search.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/search.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/검색-search.md",
+      "category": "dev-tools",
+      "title": "검색",
+      "hash": "8afeae8798298bb8d3676cdb4d8b1405",
+      "generated_at": "2026-03-21T13:34:11.786246"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/session_work_log_ROSForge_2026-03-18.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/session_work_log_ROSForge_2026-03-18.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/rosforge-세션-작업-기록.md",
+      "category": "dev-tools",
+      "title": "ROSForge — 세션 작업 기록",
+      "hash": "78e62935a6326dc26dc6454d43ae3da3",
+      "generated_at": "2026-03-21T13:34:11.787509"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/session_work_log_ROSForge_UI_2026-03-19.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/session_work_log_ROSForge_UI_2026-03-19.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/rosforge-세션-작업-기록-session_wo.md",
+      "category": "dev-tools",
+      "title": "ROSForge — 세션 작업 기록",
+      "hash": "df1c62d08542c3c989ff52b8c2826cf1",
+      "generated_at": "2026-03-21T13:34:11.788523"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/stgcn-finetuning-fall-detection.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/stgcn-finetuning-fall-detection.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/st-gcn-파인튜닝으로-낙상감지-9189-달성기-stgcn-fine.md",
+      "category": "ai-ml",
+      "title": "ST-GCN 파인튜닝으로 낙상감지 91.89% 달성기",
+      "hash": "376ba20d1d315c912db48ce2a9621400",
+      "generated_at": "2026-03-21T13:34:11.789249"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/voice_iot_dev_log_20260221_2.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/voice_iot_dev_log_20260221_2.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/smart-home/voice-iot-controller-sttllm-최적화-작업-기록.md",
+      "category": "smart-home",
+      "title": "Voice IoT Controller — STT/LLM 최적화 작업 기록",
+      "hash": "aa4e5fa74f7c7f142c5c5d41fd276111",
+      "generated_at": "2026-03-21T13:34:11.790458"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/voice_iot_dev_log_20260221_3.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/voice_iot_dev_log_20260221_3.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/smart-home/voice-iot-controller-작업-기록-3.md",
+      "category": "smart-home",
+      "title": "Voice IoT Controller — 작업 기록 #3",
+      "hash": "9f985b74cbff2342fdf8a228e64a46c3",
+      "generated_at": "2026-03-21T13:34:11.791651"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/voice_iot_dev_log_20260221_4 (1).md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/voice_iot_dev_log_20260221_4 (1).md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/voice-iot-controller-작업-기록-4.md",
+      "category": "ai-ml",
+      "title": "Voice IoT Controller — 작업 기록 #4",
+      "hash": "db4c7bb65f8ae2fe12300d71dbaf6985",
+      "generated_at": "2026-03-21T13:34:11.792807"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/voice_iot_dev_log_20260221_4 (2).md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/voice_iot_dev_log_20260221_4 (2).md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/voice-iot-controller-작업-기록-4-voice_iot_.md",
+      "category": "ai-ml",
+      "title": "Voice IoT Controller — 작업 기록 #4",
+      "hash": "141e5ad7083006d8aa97bd3adc9601c4",
+      "generated_at": "2026-03-21T13:34:11.794000"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/voice_iot_dev_log_20260221_4 (3).md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/voice_iot_dev_log_20260221_4 (3).md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/voice-iot-controller-작업-기록-4-voice_iot_.md",
+      "category": "ai-ml",
+      "title": "Voice IoT Controller — 작업 기록 #4",
+      "hash": "258f52e14e03cf9f20fb618997c40364",
+      "generated_at": "2026-03-21T13:34:11.795299"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/voice_iot_dev_log_20260221_4.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/voice_iot_dev_log_20260221_4.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/voice-iot-controller-작업-기록-4-voice_iot_.md",
+      "category": "ai-ml",
+      "title": "Voice IoT Controller — 작업 기록 #4",
+      "hash": "258f52e14e03cf9f20fb618997c40364",
+      "generated_at": "2026-03-21T13:34:11.796588"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/voice_iot_dev_log_20260221_Good_Working_Version.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/voice_iot_dev_log_20260221_Good_Working_Version.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/smart-home/voice-iot-controller-개발-작업-기록.md",
+      "category": "smart-home",
+      "title": "Voice IoT Controller — 개발 작업 기록",
+      "hash": "d33633ac516bec110d91d31b926b75db",
+      "generated_at": "2026-03-21T13:34:11.797842"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/voice_iot_dev_log_20260222_5.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/voice_iot_dev_log_20260222_5.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/smart-home/voice-iot-controller-작업-기록-5.md",
+      "category": "smart-home",
+      "title": "Voice IoT Controller — 작업 기록 #5",
+      "hash": "0593d0dead8a8d2a926372bfdf826a17",
+      "generated_at": "2026-03-21T13:34:11.799021"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/voice_iot_dev_log_20260222_6.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/voice_iot_dev_log_20260222_6.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/smart-home/voice-iot-controller-개발-로그.md",
+      "category": "smart-home",
+      "title": "Voice IoT Controller 개발 로그",
+      "hash": "1ef4741210f467bf5a42c6a0ff3b69d1",
+      "generated_at": "2026-03-21T13:34:11.800133"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/voice_iot_dev_log_20260222_7.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/voice_iot_dev_log_20260222_7.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/smart-home/voice-iot-controller-개발-진행-일지.md",
+      "category": "smart-home",
+      "title": "Voice IoT Controller — 개발 진행 일지",
+      "hash": "e58816155c24e68a51cf0cafc3f4d42e",
+      "generated_at": "2026-03-21T13:34:11.801336"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/voice_iot_home.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/voice_iot_home.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/smart-home/voice-iot-controller.md",
+      "category": "smart-home",
+      "title": "🎙️ Voice IoT Controller",
+      "hash": "9d843e38d37f8f1fb7cd78e6f9140da2",
+      "generated_at": "2026-03-21T13:34:11.802714"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/코딩_스타일_가이드_v1.1.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/코딩_스타일_가이드_v1.1.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/코딩-스타일-가이드.md",
+      "category": "dev-tools",
+      "title": "📐 코딩 스타일 가이드",
+      "hash": "fe48cef0de27ba13536328ad7ce47024",
+      "generated_at": "2026-03-21T13:34:11.804030"
+    },
+    "/home/gjkong/dev_ws/blog/references/downloads/코딩_스타일_가이드_v1.2.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/downloads/코딩_스타일_가이드_v1.2.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/코딩-스타일-가이드-코딩_스타일_가이드.md",
+      "category": "dev-tools",
+      "title": "📐 코딩 스타일 가이드",
+      "hash": "808e02095a2af014fc496248541ac501",
+      "generated_at": "2026-03-21T13:34:11.805502"
+    },
+    "/home/gjkong/dev_ws/blog/references/drama/AI_Drama_Agent_Design.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/drama/AI_Drama_Agent_Design.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/ai-drama-youtube-content-agent-설계-문서-AI_Drama_A.md",
+      "category": "ai-ml",
+      "title": "AI Drama YouTube Content Agent — 설계 문서",
+      "hash": "474ad41cd19c35cb0a0b1c640ab683c3",
+      "generated_at": "2026-03-21T13:34:11.806920"
+    },
+    "/home/gjkong/dev_ws/blog/references/drama/AI_Drama_Character_Profiles.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/drama/AI_Drama_Character_Profiles.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/big-data/ai-drama-character-master-profiles.md",
+      "category": "big-data",
+      "title": "AI Drama — Character Master Profiles",
+      "hash": "202de3adc7625430c78bd1ae4f84d812",
+      "generated_at": "2026-03-21T13:34:11.808143"
+    },
+    "/home/gjkong/dev_ws/blog/references/eyecon_venv/AUTHORS.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/eyecon_venv/AUTHORS.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/project-authors.md",
+      "category": "dev-tools",
+      "title": "Project Authors",
+      "hash": "63243f5c373e20059abd4ba0496256b1",
+      "generated_at": "2026-03-21T13:34:11.809182"
+    },
+    "/home/gjkong/dev_ws/blog/references/eyecon_venv/ICON_LICENSE.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/eyecon_venv/ICON_LICENSE.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/icon-license.md",
+      "category": "dev-tools",
+      "title": "Icon License",
+      "hash": "44921d713d160eb0d2a7004e35675485",
+      "generated_at": "2026-03-21T13:34:11.809769"
+    },
+    "/home/gjkong/dev_ws/blog/references/eyecon_venv/best_practices.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/eyecon_venv/best_practices.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/big-data/best-practices.md",
+      "category": "big-data",
+      "title": "Best Practices",
+      "hash": "130472ecbe642ede6d35371becbb4701",
+      "generated_at": "2026-03-21T13:34:11.810940"
+    },
+    "/home/gjkong/dev_ws/blog/references/gaze_venv/best_practices.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/gaze_venv/best_practices.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/big-data/best-practices-best_pract.md",
+      "category": "big-data",
+      "title": "Best Practices",
+      "hash": "130472ecbe642ede6d35371becbb4701",
+      "generated_at": "2026-03-21T13:34:11.812075"
+    },
+    "/home/gjkong/dev_ws/blog/references/ironman/LLM_ROS_보안관_개발계획서.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/ironman/LLM_ROS_보안관_개발계획서.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/llm-ros-기반-자율주행-보안관-개발-계획서.md",
+      "category": "ai-ml",
+      "title": "🤖 LLM + ROS 기반 자율주행 보안관 — 개발 계획서",
+      "hash": "315f7d2e2273c5eab03e7df377c784fb",
+      "generated_at": "2026-03-21T13:34:11.813688"
+    },
+    "/home/gjkong/dev_ws/blog/references/kevin_multi_patrol/development.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/kevin_multi_patrol/development.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/robotics/kevin-3d-patrol-simulator-개발-문서-2025-02-16-phase-3-v32-완료.md",
+      "category": "robotics",
+      "title": "Kevin 3D Patrol Simulator — 개발 문서 (2025-02-16 / Phase 3 v3.2 완료)",
+      "hash": "66ad5fc3795d01654ecdb3da22adbae9",
+      "generated_at": "2026-03-21T13:34:11.815349"
+    },
+    "/home/gjkong/dev_ws/blog/references/kevin_multi_patrol/kevin_patrol_v3_3_fleet_work_log.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/kevin_multi_patrol/kevin_patrol_v3_3_fleet_work_log.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/robotics/kevin-patrol-dashboard-v33-multi-robot-fleet-작업-기록-kevin_patr.md",
+      "category": "robotics",
+      "title": "Kevin Patrol Dashboard v3.3 — Multi-Robot Fleet 작업 기록",
+      "hash": "bc76e08f1e6709d337af259ce4327fa4",
+      "generated_at": "2026-03-21T13:34:11.816637"
+    },
+    "/home/gjkong/dev_ws/blog/references/kevin_patrol/development.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/kevin_patrol/development.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/robotics/kevin-3d-patrol-simulator-개발-문서-2025-02-16-phase-3-v32-완료-developmen.md",
+      "category": "robotics",
+      "title": "Kevin 3D Patrol Simulator — 개발 문서 (2025-02-16 / Phase 3 v3.2 완료)",
+      "hash": "66ad5fc3795d01654ecdb3da22adbae9",
+      "generated_at": "2026-03-21T13:34:11.818372"
+    },
+    "/home/gjkong/dev_ws/blog/references/kevin_smarthome/DEV_RULES.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/kevin_smarthome/DEV_RULES.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/smart-home/kevin-smart-home-개발-원칙-dev-rules.md",
+      "category": "smart-home",
+      "title": "Kevin Smart Home — 개발 원칙 (DEV_RULES)",
+      "hash": "48b2983c0c58a20bb61e1323780bb91a",
+      "generated_at": "2026-03-21T13:34:11.819330"
+    },
+    "/home/gjkong/dev_ws/blog/references/kevin_smarthome/Kevin_Smart_Home_DEV_LOG.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/kevin_smarthome/Kevin_Smart_Home_DEV_LOG.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/smart-home/kevin-smart-home-dev-log.md",
+      "category": "smart-home",
+      "title": "Kevin Smart Home Dev Log",
+      "hash": "40dc7ec3634604ac066cc9c3446338a4",
+      "generated_at": "2026-03-21T13:34:11.820002"
+    },
+    "/home/gjkong/dev_ws/blog/references/kevin_smarthome/Kevin_Smart_Home_Design.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/kevin_smarthome/Kevin_Smart_Home_Design.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/smart-home/kevin-smart-home-설계-문서-Kevin_Smar.md",
+      "category": "smart-home",
+      "title": "Kevin Smart Home — 설계 문서",
+      "hash": "b983c60a73629d61947c5ddceb95fefb",
+      "generated_at": "2026-03-21T13:34:11.821281"
+    },
+    "/home/gjkong/dev_ws/blog/references/kevin_smarthome/Kevin_Smart_Home_Phase4_Dashboard_Design.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/kevin_smarthome/Kevin_Smart_Home_Phase4_Dashboard_Design.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/kevin-smart-home-phase-4-설계-문서.md",
+      "category": "dev-tools",
+      "title": "Kevin Smart Home — Phase 4 설계 문서",
+      "hash": "d4a2c530a93ef8774bea59179ac676c9",
+      "generated_at": "2026-03-21T13:34:11.822595"
+    },
+    "/home/gjkong/dev_ws/blog/references/llm_iot_home/2026-02-21_voice_iot_controller.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/llm_iot_home/2026-02-21_voice_iot_controller.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/smart-home/voice-iot-controller-일일-작업-요약-2026-02-21.md",
+      "category": "smart-home",
+      "title": "Voice IoT Controller — 일일 작업 요약",
+      "hash": "ebfc363beddc983d7914f0fa5a4b68de",
+      "generated_at": "2026-03-21T13:34:11.823781"
+    },
+    "/home/gjkong/dev_ws/blog/references/llm_iot_home/2026-02-21_voice_iot_controller_bugfix1.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/llm_iot_home/2026-02-21_voice_iot_controller_bugfix1.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/smart-home/voice-iot-controller-버그수정-1-2026-02-21.md",
+      "category": "smart-home",
+      "title": "Voice IoT Controller — 버그수정 #1",
+      "hash": "0058e662e50b4036a63c31a3627e048b",
+      "generated_at": "2026-03-21T13:34:11.824962"
+    },
+    "/home/gjkong/dev_ws/blog/references/llm_iot_home/2026-02-21_voice_iot_controller_bugfix2.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/llm_iot_home/2026-02-21_voice_iot_controller_bugfix2.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/smart-home/voice-iot-controller-버그수정-2.md",
+      "category": "smart-home",
+      "title": "Voice IoT Controller — 버그수정 #2",
+      "hash": "f78e4631f51086819f0c31a37923b18f",
+      "generated_at": "2026-03-21T13:34:11.826006"
+    },
+    "/home/gjkong/dev_ws/blog/references/llm_iot_home/BOOT_SEQUENCE.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/llm_iot_home/BOOT_SEQUENCE.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/smart-home/voice-iot-controller-전체-부팅-및-실행-순서도.md",
+      "category": "smart-home",
+      "title": "Voice IoT Controller — 전체 부팅 및 실행 순서도",
+      "hash": "f3bb73add6e30be11473e13df672d027",
+      "generated_at": "2026-03-21T13:34:11.827329"
+    },
+    "/home/gjkong/dev_ws/blog/references/llm_iot_home/CVE업그레이드_auditJSON_protobuf예외_SmartGate복구_20260307.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/llm_iot_home/CVE업그레이드_auditJSON_protobuf예외_SmartGate복구_20260307.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/robot-security/dev-log-cve-업그레이드-audit-json-로그-protobuf-예외처리-smartgate-복구.md",
+      "category": "robot-security",
+      "title": "DEV_LOG — CVE 업그레이드 + audit JSON 로그 + protobuf 예외처리 + SmartGate 복구",
+      "hash": "625ff0852fbb7ba664e0ca66baa104a3",
+      "generated_at": "2026-03-21T13:34:11.828518"
+    },
+    "/home/gjkong/dev_ws/blog/references/llm_iot_home/DEV_LOG_20260307(보안조치적용).md": {
+      "src": "/home/gjkong/dev_ws/blog/references/llm_iot_home/DEV_LOG_20260307(보안조치적용).md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/robot-security/개발-로그-2026-03-07.md",
+      "category": "robot-security",
+      "title": "개발 로그 — 2026-03-07",
+      "hash": "6b5154e75b3d483bcab2dbddaa5d89d4",
+      "generated_at": "2026-03-21T13:34:11.829708"
+    },
+    "/home/gjkong/dev_ws/blog/references/llm_iot_home/ESP32_UPLOAD_GUIDE.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/llm_iot_home/ESP32_UPLOAD_GUIDE.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/smart-home/esp32-업로드-가이드-voice-iot-controller-ESP32_UPLO.md",
+      "category": "smart-home",
+      "title": "ESP32 업로드 가이드 — Voice IoT Controller",
+      "hash": "e7e09764d80951003665453f03d6faa8",
+      "generated_at": "2026-03-21T13:34:11.831008"
+    },
+    "/home/gjkong/dev_ws/blog/references/llm_iot_home/ESP32_UPLOAD_GUIDE_0222.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/llm_iot_home/ESP32_UPLOAD_GUIDE_0222.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/smart-home/esp32-업로드-가이드-voice-iot-controller-ESP32_UPLO.md",
+      "category": "smart-home",
+      "title": "ESP32 업로드 가이드 — Voice IoT Controller",
+      "hash": "27eef6003b2e40d0724d6f0390db5469",
+      "generated_at": "2026-03-21T13:34:11.832380"
+    },
+    "/home/gjkong/dev_ws/blog/references/llm_iot_home/ESP32_UPLOAD_GUIDE_Final.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/llm_iot_home/ESP32_UPLOAD_GUIDE_Final.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/smart-home/esp32-업로드-가이드-voice-iot-controller-ESP32_UPLO.md",
+      "category": "smart-home",
+      "title": "ESP32 업로드 가이드 — Voice IoT Controller",
+      "hash": "96218d71a627514850e747abde03babd",
+      "generated_at": "2026-03-21T13:34:11.833651"
+    },
+    "/home/gjkong/dev_ws/blog/references/llm_iot_home/ESP32_UPLOAD_GUIDE_v4_workingwell.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/llm_iot_home/ESP32_UPLOAD_GUIDE_v4_workingwell.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/smart-home/esp32-업로드-가이드-voice-iot-controller-ESP32_UPLO.md",
+      "category": "smart-home",
+      "title": "ESP32 업로드 가이드 — Voice IoT Controller",
+      "hash": "a7733eec6815fcd1c24a5d29e160262e",
+      "generated_at": "2026-03-21T13:34:11.834925"
+    },
+    "/home/gjkong/dev_ws/blog/references/llm_iot_home/HIGH_Security_Guide.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/llm_iot_home/HIGH_Security_Guide.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/robot-security/high-보안-조치-적용-가이드.md",
+      "category": "robot-security",
+      "title": "🔴 HIGH 보안 조치 적용 가이드",
+      "hash": "d11b322b257afefb819353c6296b22c6",
+      "generated_at": "2026-03-21T13:34:11.836189"
+    },
+    "/home/gjkong/dev_ws/blog/references/llm_iot_home/ISSUE_WS_JWT_20260306.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/llm_iot_home/ISSUE_WS_JWT_20260306.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/robot-security/이슈-기록-websocket-jwt-인증-실패.md",
+      "category": "robot-security",
+      "title": "이슈 기록 — WebSocket JWT 인증 실패",
+      "hash": "76cc63ffae14190318f483ef6da6a930",
+      "generated_at": "2026-03-21T13:34:11.837084"
+    },
+    "/home/gjkong/dev_ws/blog/references/llm_iot_home/ISSUE_dnd모드_TTS알람미억제_20260307.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/llm_iot_home/ISSUE_dnd모드_TTS알람미억제_20260307.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/smart-home/issue-방해금지dnd-모드-미등록-인물-tts-알람-미억제.md",
+      "category": "smart-home",
+      "title": "ISSUE — 방해금지(dnd) 모드 미등록 인물 TTS 알람 미억제",
+      "hash": "aaddf4e2d7a7603cb8e104687875a3c4",
+      "generated_at": "2026-03-21T13:34:11.838116"
+    },
+    "/home/gjkong/dev_ws/blog/references/llm_iot_home/README.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/llm_iot_home/README.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/smart-home/voice-iot-controller-README.md",
+      "category": "smart-home",
+      "title": "🎙️ Voice IoT Controller",
+      "hash": "b34d2c79f7f1308d8d5160b40e98d5d4",
+      "generated_at": "2026-03-21T13:34:11.839474"
+    },
+    "/home/gjkong/dev_ws/blog/references/llm_iot_home/README_0308.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/llm_iot_home/README_0308.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/smart-home/voice-iot-controller-1인-가구-케어-홈-시스템.md",
+      "category": "smart-home",
+      "title": "Voice IoT Controller — 1인 가구 케어 홈 시스템",
+      "hash": "b88adbcd9b394f4b7a6766855bb320d8",
+      "generated_at": "2026-03-21T13:34:11.840944"
+    },
+    "/home/gjkong/dev_ws/blog/references/llm_iot_home/RESOLVE_dnd모드_TTS알람미억제_20260307.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/llm_iot_home/RESOLVE_dnd모드_TTS알람미억제_20260307.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/smart-home/resolve-방해금지dnd-모드-미등록-인물-tts-알람-미억제.md",
+      "category": "smart-home",
+      "title": "RESOLVE — 방해금지(dnd) 모드 미등록 인물 TTS 알람 미억제",
+      "hash": "6f73715428db8b3eee68688426f3cc2d",
+      "generated_at": "2026-03-21T13:34:11.842137"
+    },
+    "/home/gjkong/dev_ws/blog/references/llm_iot_home/RUN_AND_TEST.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/llm_iot_home/RUN_AND_TEST.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/smart-home/voice-iot-controller-실행-및-테스트-가이드.md",
+      "category": "smart-home",
+      "title": "Voice IoT Controller — 실행 및 테스트 가이드",
+      "hash": "e2f3ff83bfdfccc56947d06f19668aa8",
+      "generated_at": "2026-03-21T13:34:11.843319"
+    },
+    "/home/gjkong/dev_ws/blog/references/llm_iot_home/command_router_main_2026-02-22.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/llm_iot_home/command_router_main_2026-02-22.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/smart-home/command-routerpy-mainpy-개발-로그.md",
+      "category": "smart-home",
+      "title": "command_router.py / main.py — 개발 로그",
+      "hash": "4e0b30fb630034c50302b2719e30edb4",
+      "generated_at": "2026-03-21T13:34:11.844396"
+    },
+    "/home/gjkong/dev_ws/blog/references/llm_iot_home/dev_log_2026-02-22_보안모드적용.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/llm_iot_home/dev_log_2026-02-22_보안모드적용.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/smart-home/voice-iot-controller-개발-일지.md",
+      "category": "smart-home",
+      "title": "Voice IoT Controller — 개발 일지",
+      "hash": "5e0eda31111e6bbdf822ae0f6268af80",
+      "generated_at": "2026-03-21T13:34:11.845644"
+    },
+    "/home/gjkong/dev_ws/blog/references/llm_iot_home/dev_log_2026-02-24_espcam_debug.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/llm_iot_home/dev_log_2026-02-24_espcam_debug.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/smart-home/voice-iot-controller-개발-일지-dev_log_20.md",
+      "category": "smart-home",
+      "title": "Voice IoT Controller — 개발 일지",
+      "hash": "77ca2a4f7807191f45d629ef801d5678",
+      "generated_at": "2026-03-21T13:34:11.846869"
+    },
+    "/home/gjkong/dev_ws/blog/references/llm_iot_home/dev_log_2026-02-24_espcam_security.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/llm_iot_home/dev_log_2026-02-24_espcam_security.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/smart-home/voice-iot-controller-개발-일지-dev_log_20.md",
+      "category": "smart-home",
+      "title": "Voice IoT Controller — 개발 일지",
+      "hash": "3a9d8b24c2f73af631d186743a7cc8df",
+      "generated_at": "2026-03-21T13:34:11.848343"
+    },
+    "/home/gjkong/dev_ws/blog/references/llm_iot_home/dev_log_2026-02-24_evening.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/llm_iot_home/dev_log_2026-02-24_evening.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/smart-home/voice-iot-controller-개발-일지-저녁-세션.md",
+      "category": "smart-home",
+      "title": "Voice IoT Controller — 개발 일지 (저녁 세션)",
+      "hash": "4acf86ecf7c5957103b14e03e0b4c6c7",
+      "generated_at": "2026-03-21T13:34:11.849550"
+    },
+    "/home/gjkong/dev_ws/blog/references/llm_iot_home/dev_log_2026-02-24_전체작업정리.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/llm_iot_home/dev_log_2026-02-24_전체작업정리.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/smart-home/voice-iot-controller-전체-작업-진행-내역.md",
+      "category": "smart-home",
+      "title": "Voice IoT Controller — 전체 작업 진행 내역",
+      "hash": "a10090bb7d47d9720b4d790839c54f53",
+      "generated_at": "2026-03-21T13:34:11.850769"
+    },
+    "/home/gjkong/dev_ws/blog/references/llm_iot_home/esp32_client_PIR센서추가(방범모드적용).md": {
+      "src": "/home/gjkong/dev_ws/blog/references/llm_iot_home/esp32_client_PIR센서추가(방범모드적용).md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/smart-home/esp32-client-finalino-개발-로그.md",
+      "category": "smart-home",
+      "title": "esp32_client_final.ino — 개발 로그",
+      "hash": "3ed077602308d8e0c7f8b125106301e4",
+      "generated_at": "2026-03-21T13:34:11.851734"
+    },
+    "/home/gjkong/dev_ws/blog/references/llm_iot_home/index_2026-02-22.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/llm_iot_home/index_2026-02-22.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/smart-home/indexhtml-개발-로그.md",
+      "category": "smart-home",
+      "title": "index.html — 개발 로그",
+      "hash": "3e174a873f425060464c68c941353cf9",
+      "generated_at": "2026-03-21T13:34:11.852571"
+    },
+    "/home/gjkong/dev_ws/blog/references/llm_iot_home/iot_proj_dev.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/llm_iot_home/iot_proj_dev.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/smart-home/dev-log-voice-iot-controller-iot_proj_d.md",
+      "category": "smart-home",
+      "title": "DEV_LOG — Voice IoT Controller",
+      "hash": "144ad8a0ec5acdfbd2164736f05865a9",
+      "generated_at": "2026-03-21T13:34:11.853772"
+    },
+    "/home/gjkong/dev_ws/blog/references/llm_iot_home/llm_engine_2026-02-22.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/llm_iot_home/llm_engine_2026-02-22.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/smart-home/llm-enginepy-개발-로그.md",
+      "category": "smart-home",
+      "title": "llm_engine.py — 개발 로그",
+      "hash": "e6fabad30579b0dda10a48f15d0a7f55",
+      "generated_at": "2026-03-21T13:34:11.854608"
+    },
+    "/home/gjkong/dev_ws/blog/references/llm_iot_home/pipaudit_PIR영속화_dnd알람억제_20260307.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/llm_iot_home/pipaudit_PIR영속화_dnd알람억제_20260307.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/smart-home/dev-log-pip-audit-cve-자동화-pir-모드-영속화-dnd-알람-억제.md",
+      "category": "smart-home",
+      "title": "DEV_LOG — pip-audit CVE 자동화 + PIR 모드 영속화 + dnd 알람 억제",
+      "hash": "64822fd3ac5f632f05ee6dab3ad8e2fc",
+      "generated_at": "2026-03-21T13:34:11.855743"
+    },
+    "/home/gjkong/dev_ws/blog/references/llm_iot_home/tcp_server_2026-02-22.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/llm_iot_home/tcp_server_2026-02-22.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/smart-home/tcp-serverpy-개발-로그.md",
+      "category": "smart-home",
+      "title": "tcp_server.py — 개발 로그",
+      "hash": "14398a7412dca0476aad85af0a207fe4",
+      "generated_at": "2026-03-21T13:34:11.856566"
+    },
+    "/home/gjkong/dev_ws/blog/references/llm_iot_home/voice_iot_dev_log_20260221_2_llm_changetoOpenAI.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/llm_iot_home/voice_iot_dev_log_20260221_2_llm_changetoOpenAI.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/smart-home/voice-iot-controller-sttllm-최적화-작업-기록-voice_iot_.md",
+      "category": "smart-home",
+      "title": "Voice IoT Controller — STT/LLM 최적화 작업 기록",
+      "hash": "aa4e5fa74f7c7f142c5c5d41fd276111",
+      "generated_at": "2026-03-21T13:34:11.857781"
+    },
+    "/home/gjkong/dev_ws/blog/references/llm_iot_home/voice_iot_dev_log_20260221_3.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/llm_iot_home/voice_iot_dev_log_20260221_3.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/smart-home/voice-iot-controller-작업-기록-3-voice_iot_.md",
+      "category": "smart-home",
+      "title": "Voice IoT Controller — 작업 기록 #3",
+      "hash": "9f985b74cbff2342fdf8a228e64a46c3",
+      "generated_at": "2026-03-21T13:34:11.858939"
+    },
+    "/home/gjkong/dev_ws/blog/references/llm_iot_home/voice_iot_dev_log_20260221_4 (1).md": {
+      "src": "/home/gjkong/dev_ws/blog/references/llm_iot_home/voice_iot_dev_log_20260221_4 (1).md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/voice-iot-controller-작업-기록-4-voice_iot_.md",
+      "category": "ai-ml",
+      "title": "Voice IoT Controller — 작업 기록 #4",
+      "hash": "db4c7bb65f8ae2fe12300d71dbaf6985",
+      "generated_at": "2026-03-21T13:34:11.860263"
+    },
+    "/home/gjkong/dev_ws/blog/references/llm_iot_home/voice_iot_dev_log_20260221_4.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/llm_iot_home/voice_iot_dev_log_20260221_4.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/smart-home/voice-iot-controller-작업-기록-4.md",
+      "category": "smart-home",
+      "title": "Voice IoT Controller — 작업 기록 #4",
+      "hash": "c5bd7863ac1bd312be2403f3a4fe2893",
+      "generated_at": "2026-03-21T13:34:11.861413"
+    },
+    "/home/gjkong/dev_ws/blog/references/llm_iot_home/voice_iot_dev_log_20260221_Good_Working_Version.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/llm_iot_home/voice_iot_dev_log_20260221_Good_Working_Version.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/smart-home/voice-iot-controller-개발-작업-기록-voice_iot_.md",
+      "category": "smart-home",
+      "title": "Voice IoT Controller — 개발 작업 기록",
+      "hash": "d33633ac516bec110d91d31b926b75db",
+      "generated_at": "2026-03-21T13:34:11.862674"
+    },
+    "/home/gjkong/dev_ws/blog/references/llm_iot_home/voice_iot_dev_log_20260222 (1).md": {
+      "src": "/home/gjkong/dev_ws/blog/references/llm_iot_home/voice_iot_dev_log_20260222 (1).md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/smart-home/voice-iot-controller-개발-로그-voice_iot_.md",
+      "category": "smart-home",
+      "title": "Voice IoT Controller — 개발 로그",
+      "hash": "67a51f850fa1719610f44abc85cd8b79",
+      "generated_at": "2026-03-21T13:34:11.863940"
+    },
+    "/home/gjkong/dev_ws/blog/references/llm_iot_home/voice_iot_dev_log_20260222.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/llm_iot_home/voice_iot_dev_log_20260222.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/smart-home/voice-iot-controller-개발-로그-voice_iot_.md",
+      "category": "smart-home",
+      "title": "Voice IoT Controller — 개발 로그",
+      "hash": "f7fc682ebd019b1564f938d020cba2c5",
+      "generated_at": "2026-03-21T13:34:11.865227"
+    },
+    "/home/gjkong/dev_ws/blog/references/llm_iot_home/voice_iot_dev_log_20260222_5.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/llm_iot_home/voice_iot_dev_log_20260222_5.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/smart-home/voice-iot-controller-작업-기록-5-voice_iot_.md",
+      "category": "smart-home",
+      "title": "Voice IoT Controller — 작업 기록 #5",
+      "hash": "0593d0dead8a8d2a926372bfdf826a17",
+      "generated_at": "2026-03-21T13:34:11.866479"
+    },
+    "/home/gjkong/dev_ws/blog/references/llm_iot_home/voice_iot_plan_v2.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/llm_iot_home/voice_iot_plan_v2.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/smart-home/voice-controlled-iot-system-개발-계획서-v2.md",
+      "category": "smart-home",
+      "title": "Voice-Controlled IoT System 개발 계획서 v2",
+      "hash": "e3fe8c80f3c40e0b9993472d3e8cc4ee",
+      "generated_at": "2026-03-21T13:34:11.867778"
+    },
+    "/home/gjkong/dev_ws/blog/references/llm_iot_home/보안_조치_적용_20260307.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/llm_iot_home/보안_조치_적용_20260307.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/robot-security/보안-조치-적용-2026-03-07.md",
+      "category": "robot-security",
+      "title": "보안 조치 적용 — 2026-03-07",
+      "hash": "2518724243c6c98ca53fff1aadb045fb",
+      "generated_at": "2026-03-21T13:34:11.868921"
+    },
+    "/home/gjkong/dev_ws/blog/references/llm_iot_home/보안조치_SmartGate_trigger_welcome_WS403수정_20260307.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/llm_iot_home/보안조치_SmartGate_trigger_welcome_WS403수정_20260307.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/robot-security/dev-log-보안-조치-완료-smartgate-trigger-welcome-구현-ws-403-근본-해결.md",
+      "category": "robot-security",
+      "title": "DEV_LOG — 보안 조치 완료 + SmartGate trigger_welcome 구현 + WS 403 근본 해결",
+      "hash": "eab7c8e64a0cf574d68f667098795dce",
+      "generated_at": "2026-03-21T13:34:11.870068"
+    },
+    "/home/gjkong/dev_ws/blog/references/llm_iot_home/얼굴_인식_알고리즘.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/llm_iot_home/얼굴_인식_알고리즘.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/vision-ai/얼굴-인식-알고리즘-voice-iot-controller.md",
+      "category": "vision-ai",
+      "title": "얼굴 인식 알고리즘 — Voice IoT Controller",
+      "hash": "d4d3daaeebb5e5faec288046e4bdfa0a",
+      "generated_at": "2026-03-21T13:34:11.871241"
+    },
+    "/home/gjkong/dev_ws/blog/references/memory_venv/best_practices.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/memory_venv/best_practices.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/big-data/best-practices-best_pract.md",
+      "category": "big-data",
+      "title": "Best Practices",
+      "hash": "130472ecbe642ede6d35371becbb4701",
+      "generated_at": "2026-03-21T13:34:11.872422"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/01_common/claude/claude.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/01_common/claude/claude.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/vision-ai/stephen-kongs-development-principles-patterns.md",
+      "category": "vision-ai",
+      "title": "Stephen Kong's Development Principles & Patterns",
+      "hash": "8005d0e6f7118434c4344f0cf4ef9b4b",
+      "generated_at": "2026-03-21T13:34:11.874109"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/01_common/gemini/GEMINI.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/01_common/gemini/GEMINI.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/vision-ai/home-safe-solution---vision-ai-프로젝트-문서.md",
+      "category": "vision-ai",
+      "title": "Home Safe Solution - Vision AI 프로젝트 문서",
+      "hash": "4e77fb57772a3d0b2864efdf3caaeaa2",
+      "generated_at": "2026-03-21T13:34:11.875403"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/01_common/security/SECURITY_RECOMMENDATIONS.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/01_common/security/SECURITY_RECOMMENDATIONS.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/big-data/home-safe-solution---보안-적용-제안서.md",
+      "category": "big-data",
+      "title": "🔒 Home Safe Solution - 보안 적용 제안서",
+      "hash": "636a5230a196494b89652a71a76a6ac0",
+      "generated_at": "2026-03-21T13:34:11.877323"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/ai_agent/ai_agent_setup_guide.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/ai_agent/ai_agent_setup_guide.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/ai-agent-프로젝트-셋업-가이드-ai_agent_s.md",
+      "category": "ros2",
+      "title": "AI Agent 프로젝트 셋업 가이드",
+      "hash": "ae025df320abedac0d5f8f0604f389af",
+      "generated_at": "2026-03-21T13:34:11.878506"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/coco/MyPet_DevLog_20250215.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/coco/MyPet_DevLog_20250215.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/mypet-phase-1-개발일지-2025-02-15-MyPet_DevL.md",
+      "category": "dev-tools",
+      "title": "MyPet Phase 1 개발일지 — 2025-02-15",
+      "hash": "4a9dc9d33099f0f6f8fca8072ce0284d",
+      "generated_at": "2026-03-21T13:34:11.879667"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/coco/MyPet_Project_Plan.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/coco/MyPet_Project_Plan.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/robotics/mypet-손-제스처-기반-가상-반려견-자율주행-로봇-제어-시스템.md",
+      "category": "robotics",
+      "title": "🐕 MyPet — 손 제스처 기반 가상 반려견 & 자율주행 로봇 제어 시스템",
+      "hash": "0343fecf9fcc5b43629b0875829145bb",
+      "generated_at": "2026-03-21T13:34:11.881341"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/coco/dev_log_2026-02-15.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/coco/dev_log_2026-02-15.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/vision-ai/mypet-개발일지-2026-02-15-dev_log_20.md",
+      "category": "vision-ai",
+      "title": "MyPet 개발일지 — 2026-02-15",
+      "hash": "bd92367e13107c902628dae0bcb5d557",
+      "generated_at": "2026-03-21T13:34:11.882259"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/dl_project_yoloosem/2026-02-07_WORK_LOG_memnusu_crash_solved.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/dl_project_yoloosem/2026-02-07_WORK_LOG_memnusu_crash_solved.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/work-log-2026-02-07.md",
+      "category": "dev-tools",
+      "title": "📋 Work Log — 2026-02-07",
+      "hash": "2107519f5304501337e8dedd3e6294d5",
+      "generated_at": "2026-03-21T13:34:11.883429"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/dl_project_yoloosem/CAMERA_SELECTION_GUIDE.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/dl_project_yoloosem/CAMERA_SELECTION_GUIDE.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/vision-ai/카메라-선택-기능-통합-가이드.md",
+      "category": "vision-ai",
+      "title": "카메라 선택 기능 통합 가이드",
+      "hash": "63b16c8eb5b6ef1af195a81468d76dbd",
+      "generated_at": "2026-03-21T13:34:11.884821"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/dl_project_yoloosem/EMERGENCY_CALL_INTEGRATION_GUIDE.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/dl_project_yoloosem/EMERGENCY_CALL_INTEGRATION_GUIDE.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/emergency-call-기능-통합-가이드.md",
+      "category": "dev-tools",
+      "title": "Emergency Call 기능 통합 가이드",
+      "hash": "745d007fbc4329797a22044d8b8d2c23",
+      "generated_at": "2026-03-21T13:34:11.886213"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/dl_project_yoloosem/FINAL_COMPLETE_GUIDE.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/dl_project_yoloosem/FINAL_COMPLETE_GUIDE.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/비전-홈-케어-도우미---gui-시스템-최종-완성.md",
+      "category": "dev-tools",
+      "title": "🎉 비전 홈 케어 도우미 - GUI 시스템 최종 완성!",
+      "hash": "20d73fbf8ee2065dadc47b718eb63f5b",
+      "generated_at": "2026-03-21T13:34:11.887354"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/dl_project_yoloosem/FIX_MYSQL_ERROR.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/dl_project_yoloosem/FIX_MYSQL_ERROR.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/big-data/mysql-연결-오류-해결-가이드.md",
+      "category": "big-data",
+      "title": "🔧 MySQL 연결 오류 해결 가이드",
+      "hash": "c753e7cdd42b0da1d0560272ef808af4",
+      "generated_at": "2026-03-21T13:34:11.888531"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/dl_project_yoloosem/GRAPH_INTEGRATION_GUIDE.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/dl_project_yoloosem/GRAPH_INTEGRATION_GUIDE.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/실시간-정확도-그래프-통합-가이드.md",
+      "category": "dev-tools",
+      "title": "실시간 정확도 그래프 통합 가이드",
+      "hash": "793ca59db61a3d79eb7406636fa59f36",
+      "generated_at": "2026-03-21T13:34:11.889833"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/dl_project_yoloosem/GUI_README.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/dl_project_yoloosem/GUI_README.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/home-safe-solution---pyqt6-gui-시스템.md",
+      "category": "dev-tools",
+      "title": "🏠 Home Safe Solution - PyQt6 GUI 시스템",
+      "hash": "c0a27f57ecb54152dc51b8e86327607d",
+      "generated_at": "2026-03-21T13:34:11.891064"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/dl_project_yoloosem/LOGGING_GUIDE.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/dl_project_yoloosem/LOGGING_GUIDE.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/vision-ai/로깅-시스템-사용-가이드.md",
+      "category": "vision-ai",
+      "title": "🔍 로깅 시스템 사용 가이드",
+      "hash": "de44ea9bb3483600f1ea72ae5fc0a31f",
+      "generated_at": "2026-03-21T13:34:11.892304"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/dl_project_yoloosem/MODEL_TRAINING_REPORT (1).md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/dl_project_yoloosem/MODEL_TRAINING_REPORT (1).md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/vision-ai/home-safe-solution---낙상-감지-모델-학습-완료-보고서.md",
+      "category": "vision-ai",
+      "title": "Home Safe Solution - 낙상 감지 모델 학습 완료 보고서",
+      "hash": "e001f1efda2ca9d2f68de32459f75727",
+      "generated_at": "2026-03-21T13:34:11.893984"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/dl_project_yoloosem/OVERLAY_REMOVAL_GUIDE.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/dl_project_yoloosem/OVERLAY_REMOVAL_GUIDE.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/vision-ai/낙상-감지-오버레이-제거---변경-사항.md",
+      "category": "vision-ai",
+      "title": "낙상 감지 오버레이 제거 - 변경 사항",
+      "hash": "99d0d0d7b7f076a550c37671bc1f446e",
+      "generated_at": "2026-03-21T13:34:11.895256"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/dl_project_yoloosem/PACKAGE_INFO.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/dl_project_yoloosem/PACKAGE_INFO.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/home-safe-solution---pyqt6-gui-시스템-완성.md",
+      "category": "dev-tools",
+      "title": "🏠 Home Safe Solution - PyQt6 GUI 시스템 완성!",
+      "hash": "a41b256daf09f201560a4cf9a3ac58e7",
+      "generated_at": "2026-03-21T13:34:11.896451"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/dl_project_yoloosem/PROJECT_DOCUMENTATION.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/dl_project_yoloosem/PROJECT_DOCUMENTATION.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/vision-ai/home-safe-solution---vision-ai-프로젝트-문서-PROJECT_DO.md",
+      "category": "vision-ai",
+      "title": "Home Safe Solution - Vision AI 프로젝트 문서",
+      "hash": "805ed73d44cf4260f5c8b2f68afe8af5",
+      "generated_at": "2026-03-21T13:34:11.897734"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/dl_project_yoloosem/QUICKSTART.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/dl_project_yoloosem/QUICKSTART.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/quick-start-guide.md",
+      "category": "dev-tools",
+      "title": "🚀 Quick Start Guide",
+      "hash": "7cf9a357a4d215ac818a4990360e630e",
+      "generated_at": "2026-03-21T13:34:11.898728"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/dl_project_yoloosem/README.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/dl_project_yoloosem/README.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/readme.md",
+      "category": "dev-tools",
+      "title": "Readme",
+      "hash": "d41d8cd98f00b204e9800998ecf8427e",
+      "generated_at": "2026-03-21T13:34:11.899192"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/dl_project_yoloosem/REALTIME_GUIDE.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/dl_project_yoloosem/REALTIME_GUIDE.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/vision-ai/실시간-낙상-감지-시스템-사용-가이드.md",
+      "category": "vision-ai",
+      "title": "🎥 실시간 낙상 감지 시스템 사용 가이드",
+      "hash": "b3c028a6a8e6b046268dd9e4d636db5c",
+      "generated_at": "2026-03-21T13:34:11.900385"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/dl_project_yoloosem/STEP1_ADD_ACCURACY_COLUMN.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/dl_project_yoloosem/STEP1_ADD_ACCURACY_COLUMN.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/big-data/event-logs-테이블에-accuracy-컬럼-추가.md",
+      "category": "big-data",
+      "title": "event_logs 테이블에 accuracy 컬럼 추가",
+      "hash": "a90c493b634109a6be2b769273c25b15",
+      "generated_at": "2026-03-21T13:34:11.901615"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/dl_project_yoloosem/STEP2_DATABASE_MODELS.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/dl_project_yoloosem/STEP2_DATABASE_MODELS.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/step-2-database-modelspy-수정.md",
+      "category": "ai-ml",
+      "title": "Step 2: database_models.py 수정",
+      "hash": "3d2e523041331014b189c5d4da369322",
+      "generated_at": "2026-03-21T13:34:11.902859"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/dl_project_yoloosem/STEP3_MONITORING_PAGE.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/dl_project_yoloosem/STEP3_MONITORING_PAGE.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/step-3-monitoring-pagepy-수정.md",
+      "category": "ai-ml",
+      "title": "Step 3: monitoring_page.py 수정",
+      "hash": "fe404b751d9959181a363bb6511f6df6",
+      "generated_at": "2026-03-21T13:34:11.904153"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/dl_project_yoloosem/STEP4_DASHBOARD_PAGE.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/dl_project_yoloosem/STEP4_DASHBOARD_PAGE.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/step-4-dashboard-pagepy-수정-최종.md",
+      "category": "dev-tools",
+      "title": "Step 4: dashboard_page.py 수정 (최종)",
+      "hash": "da9912238cdc739857ad83c4348f500d",
+      "generated_at": "2026-03-21T13:34:11.905536"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/dl_project_yoloosem/UPDATE_MODEL_PATH_GUIDE.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/dl_project_yoloosem/UPDATE_MODEL_PATH_GUIDE.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/vision-ai/새-모델-경로-업데이트-가이드.md",
+      "category": "vision-ai",
+      "title": "새 모델 경로 업데이트 가이드",
+      "hash": "13611abd6c3405a1564f2fa0a95a3ae9",
+      "generated_at": "2026-03-21T13:34:11.906835"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/gaze-puzzle/puzzle-mediapipe-hand-gesture-game.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/gaze-puzzle/puzzle-mediapipe-hand-gesture-game.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/vision-ai/spot-the-difference-검지-포인팅-숨은그림찾기.md",
+      "category": "vision-ai",
+      "title": "🎮 Spot the Difference — 검지 포인팅 숨은그림찾기",
+      "hash": "6ecef2a60a327ac3a8e8a777c39a3229",
+      "generated_at": "2026-03-21T13:34:11.908035"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/homeguard_robot/ENTRYPOINT_FIX_GUIDE.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/homeguard_robot/ENTRYPOINT_FIX_GUIDE.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/ros2-엔트리포인트-shebang-해결-테스트-가이드.md",
+      "category": "ros2",
+      "title": "ROS2 엔트리포인트 Shebang 해결 — 테스트 가이드",
+      "hash": "6eacdb0fbf6ff96a9607a706d44588c0",
+      "generated_at": "2026-03-21T13:34:11.909202"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/homeguard_robot/GUARD_VOICE_GUIDE.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/homeguard_robot/GUARD_VOICE_GUIDE.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/smart-home/guard-voice-노드-설치-및-테스트-가이드.md",
+      "category": "smart-home",
+      "title": "guard_voice 노드 — 설치 및 테스트 가이드",
+      "hash": "3d93010ac52bc2341cb86173797dbba9",
+      "generated_at": "2026-03-21T13:34:11.910424"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/homeguard_robot/LLM_ROS_보안관_개발계획서.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/homeguard_robot/LLM_ROS_보안관_개발계획서.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/llm-ros-기반-자율주행-보안관-개발-계획서-LLM_ROS_보안.md",
+      "category": "ai-ml",
+      "title": "🤖 LLM + ROS 기반 자율주행 보안관 — 개발 계획서",
+      "hash": "315f7d2e2273c5eab03e7df377c784fb",
+      "generated_at": "2026-03-21T13:34:11.912097"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/homeguard_robot/ROS2_쉬운_설명_Home_Guard_Bot.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/homeguard_robot/ROS2_쉬운_설명_Home_Guard_Bot.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/ros2가-뭔데-home-guard-bot으로-이해하기.md",
+      "category": "ros2",
+      "title": "🤖 ROS2가 뭔데? — Home Guard Bot으로 이해하기",
+      "hash": "ceb82059dba727c72530e9240d2618a5",
+      "generated_at": "2026-03-21T13:34:11.913371"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/homeguard_robot/RPi_탑재_계획.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/homeguard_robot/RPi_탑재_계획.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/home-guard-bot-라즈베리파이-탑재-계획.md",
+      "category": "ros2",
+      "title": "🤖 Home Guard Bot — 라즈베리파이 탑재 계획",
+      "hash": "f205486044b44538162ba4ade4b7c03c",
+      "generated_at": "2026-03-21T13:34:11.914595"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/kevin_patrol/2026-02-17_fleet_collision_avoidance_log.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/kevin_patrol/2026-02-17_fleet_collision_avoidance_log.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/robotics/kevin-multi-patrol-dashboard-fleet-충돌-회피-level-1-적용-기록-2026-02-17.md",
+      "category": "robotics",
+      "title": "Kevin Multi Patrol Dashboard — Fleet 충돌 회피 (Level 1) 적용 기록",
+      "hash": "189355690cd4a7665bd2a54f7077dc75",
+      "generated_at": "2026-03-21T13:34:11.915877"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/kevin_patrol/2026-dev-phaseIII-Finished.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/kevin_patrol/2026-dev-phaseIII-Finished.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/robotics/kevin-3d-patrol-simulator-개발-문서-2025-02-16-phase-3-v32-완료-2026-dev-p.md",
+      "category": "robotics",
+      "title": "Kevin 3D Patrol Simulator — 개발 문서 (2025-02-16 / Phase 3 v3.2 완료)",
+      "hash": "66ad5fc3795d01654ecdb3da22adbae9",
+      "generated_at": "2026-03-21T13:34:11.917559"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/kevin_patrol/kevin_multi_patrol_bugfix_log.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/kevin_patrol/kevin_multi_patrol_bugfix_log.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/robotics/kevin-multi-patrol-dashboard-mocksim-a-경로-최적화-이식-기록.md",
+      "category": "robotics",
+      "title": "Kevin Multi Patrol Dashboard — MockSim A* 경로 최적화 이식 기록",
+      "hash": "e7f7414d03acccc3b336d85844ac6ef4",
+      "generated_at": "2026-03-21T13:34:11.918838"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/kevin_patrol/kevin_patrol_dashboard_dev_250215.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/kevin_patrol/kevin_patrol_dashboard_dev_250215.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/vision-ai/kevin-patrol-dashboard-개발-기록-kevin_patr.md",
+      "category": "vision-ai",
+      "title": "Kevin Patrol Dashboard — 개발 기록",
+      "hash": "ceee7b5e353a617cddee7aad9aa673ac",
+      "generated_at": "2026-03-21T13:34:11.920075"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/kevin_patrol/kevin_patrol_mocksim_optimization_log_VIP.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/kevin_patrol/kevin_patrol_mocksim_optimization_log_VIP.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/robotics/kevin-patrol-dashboard-mocksim-a-경로-최적화-작업-기록-kevin_patr.md",
+      "category": "robotics",
+      "title": "Kevin Patrol Dashboard — MockSim A* 경로 최적화 작업 기록",
+      "hash": "7a3f64c16fee4dc51a51f966ad052129",
+      "generated_at": "2026-03-21T13:34:11.921607"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/kevin_patrol/kevin_patrol_v3.2_work_log.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/kevin_patrol/kevin_patrol_v3.2_work_log.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/kevin-patrol-dashboard-v32-작업-기록-kevin_patr.md",
+      "category": "dev-tools",
+      "title": "Kevin Patrol Dashboard v3.2 — 작업 기록",
+      "hash": "c374894e2d3a414be6f2e9733b96e5b6",
+      "generated_at": "2026-03-21T13:34:11.922901"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/kevin_patrol/kevin_patrol_v3_2_1_work_log.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/kevin_patrol/kevin_patrol_v3_2_1_work_log.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/kevin-patrol-dashboard-v321-작업-기록-kevin_patr.md",
+      "category": "dev-tools",
+      "title": "Kevin Patrol Dashboard v3.2.1 — 작업 기록",
+      "hash": "56c44ef87ee7576cb46a53c575b66e91",
+      "generated_at": "2026-03-21T13:34:11.924035"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/kevin_patrol/kevin_patrol_v3_3_fleet_work_log.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/kevin_patrol/kevin_patrol_v3_3_fleet_work_log.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/robotics/kevin-patrol-dashboard-v33-multi-robot-fleet-작업-기록-kevin_patr.md",
+      "category": "robotics",
+      "title": "Kevin Patrol Dashboard v3.3 — Multi-Robot Fleet 작업 기록",
+      "hash": "4a6d67ce93cc52c60e644db303609e32",
+      "generated_at": "2026-03-21T13:34:11.925359"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/pinocchio/20260214_gui_speech_ok.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/pinocchio/20260214_gui_speech_ok.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/피노키오-프로젝트-phase-1-작업-기록.md",
+      "category": "dev-tools",
+      "title": "피노키오 프로젝트 — Phase 1 작업 기록",
+      "hash": "0353b62f7778f34e8c719bbb32510228",
+      "generated_at": "2026-03-21T13:34:11.926393"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/pinocchio/20260214_last_optimized_goodworking.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/pinocchio/20260214_last_optimized_goodworking.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/피노키오-프로젝트-작업-기록-2026-02-14.md",
+      "category": "ai-ml",
+      "title": "피노키오 프로젝트 — 작업 기록 (2026-02-14)",
+      "hash": "3d1734d73d9b465ff7665f3c04cbfafc",
+      "generated_at": "2026-03-21T13:34:11.927504"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/pinocchio/20260214_optimization_tuning.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/pinocchio/20260214_optimization_tuning.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/피노키오-프로젝트-최적화-튜닝-기록.md",
+      "category": "ai-ml",
+      "title": "피노키오 프로젝트 — 최적화 튜닝 기록",
+      "hash": "d3af3287e969015be92f07fcf73bf4f8",
+      "generated_at": "2026-03-21T13:34:11.928486"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/pinocchio/20260214_phase2_3_음성 인식 속도.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/pinocchio/20260214_phase2_3_음성 인식 속도.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/smart-home/피노키오-프로젝트-phase-23-작업-기록.md",
+      "category": "smart-home",
+      "title": "피노키오 프로젝트 — Phase 2~3 작업 기록",
+      "hash": "8d74493a925b9857d0b02e4228201931",
+      "generated_at": "2026-03-21T13:34:11.929595"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/pinocchio/EyeCon_프로젝트_계획서.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/pinocchio/EyeCon_프로젝트_계획서.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/eyecon-심리-상태-분석기-프로젝트-계획서.md",
+      "category": "dev-tools",
+      "title": "🔍 EyeCon — 심리 상태 분석기 프로젝트 계획서",
+      "hash": "54d8c35351506e199c022f1c213c25ad",
+      "generated_at": "2026-03-21T13:34:11.930903"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/ros2/kevin_3d_sim_Guide.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/ros2/kevin_3d_sim_Guide.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/robotics/kevin-3d-patrol-simulator-개발-문서-kevin_3d_s.md",
+      "category": "robotics",
+      "title": "Kevin 3D Patrol Simulator — 개발 문서",
+      "hash": "07cc4042fe5276865cf7f47e27c77fcc",
+      "generated_at": "2026-03-21T13:34:11.932162"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/ros2/kevin_3d_sim_dev.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/ros2/kevin_3d_sim_dev.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/kevin-3d-patrol-simulator-개발-문서.md",
+      "category": "ros2",
+      "title": "Kevin 3D Patrol Simulator — 개발 문서",
+      "hash": "8ee0b0dcbd6677f9b08d0444f7cc5e29",
+      "generated_at": "2026-03-21T13:34:11.933122"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/ros2/kevin_3d_sim_dev_0215_last.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/ros2/kevin_3d_sim_dev_0215_last.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/robotics/kevin-3d-patrol-simulator-개발-문서-kevin_3d_s.md",
+      "category": "robotics",
+      "title": "Kevin 3D Patrol Simulator — 개발 문서",
+      "hash": "6c0eeab71b232b84a6a18eac014e571c",
+      "generated_at": "2026-03-21T13:34:11.934336"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/ros2/kevin_3d_sim_dev_phaseI_finished.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/ros2/kevin_3d_sim_dev_phaseI_finished.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/robotics/kevin-3d-patrol-simulator-개발-문서-kevin_3d_s.md",
+      "category": "robotics",
+      "title": "Kevin 3D Patrol Simulator — 개발 문서",
+      "hash": "5032eab61f915a2fe7b86b9fbb7a0e3c",
+      "generated_at": "2026-03-21T13:34:11.935591"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/ros2/kevin_3d_sim_dev_plan0215.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/ros2/kevin_3d_sim_dev_plan0215.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/robotics/kevin-3d-patrol-simulator-개발-문서-kevin_3d_s.md",
+      "category": "robotics",
+      "title": "Kevin 3D Patrol Simulator — 개발 문서",
+      "hash": "cf601841939228e77931d31fe8ad3c91",
+      "generated_at": "2026-03-21T13:34:11.936763"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/st_gcn/2026-02-07_WORK_LOG_FINAL_v2 (rf_stgcn_success).md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/st_gcn/2026-02-07_WORK_LOG_FINAL_v2 (rf_stgcn_success).md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/work-log-2026-02-07-final.md",
+      "category": "dev-tools",
+      "title": "📋 Work Log — 2026-02-07 (Final)",
+      "hash": "201004ed9228fc497527407957dc42aa",
+      "generated_at": "2026-03-21T13:34:11.937885"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/st_gcn/COMPARE_MODELS_GUIDE.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/st_gcn/COMPARE_MODELS_GUIDE.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/모델-성능-비교-분석-실행-가이드.md",
+      "category": "ai-ml",
+      "title": "모델 성능 비교 분석 실행 가이드",
+      "hash": "f5e6d1679b6cd8ff47502cf07703c4f3",
+      "generated_at": "2026-03-21T13:34:11.938602"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/st_gcn/GUI_MODEL_DISPLAY_GUIDE.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/st_gcn/GUI_MODEL_DISPLAY_GUIDE.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/gui-모델-정보-표시-통합-가이드.md",
+      "category": "ai-ml",
+      "title": "GUI 모델 정보 표시 통합 가이드",
+      "hash": "58162ff2c65723e7d49cccf0d8ed3320",
+      "generated_at": "2026-03-21T13:34:11.939501"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/st_gcn/PIPELINE_DESIGN.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/st_gcn/PIPELINE_DESIGN.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/home-safe-solution---자동화-학습-파이프라인-설계안.md",
+      "category": "ai-ml",
+      "title": "🔧 Home Safe Solution - 자동화 학습 파이프라인 설계안",
+      "hash": "8cbd8278933dd2ab652a08771bf01224",
+      "generated_at": "2026-03-21T13:34:11.940466"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/st_gcn/STGCN_GUI_IMPLEMENTATION_PLAN.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/st_gcn/STGCN_GUI_IMPLEMENTATION_PLAN.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/st-gcn-실시간-영상-gui-추론-구현-계획서.md",
+      "category": "dev-tools",
+      "title": "ST-GCN 실시간 영상 GUI 추론 구현 계획서",
+      "hash": "8fe25262999121fe60729b60fcc30151",
+      "generated_at": "2026-03-21T13:34:11.941567"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/st_gcn/STGCN_PRETRAINED_PLAN.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/st_gcn/STGCN_PRETRAINED_PLAN.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/st-gcn-pre-trained-모델-적용-계획.md",
+      "category": "ai-ml",
+      "title": "ST-GCN Pre-trained 모델 적용 계획",
+      "hash": "8ba460250867c92cdacd1b1ecadfe5b5",
+      "generated_at": "2026-03-21T13:34:11.942465"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/st_gcn/WORK_LOG_20260205.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/st_gcn/WORK_LOG_20260205.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/vision-ai/home-safe-solution-개발-기록.md",
+      "category": "vision-ai",
+      "title": "Home Safe Solution 개발 기록",
+      "hash": "fc939801f55bf91e36bd797b1f9c8045",
+      "generated_at": "2026-03-21T13:34:11.943513"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/st_gcn/WORK_LOG_20260205_v2(st-gcn).md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/st_gcn/WORK_LOG_20260205_v2(st-gcn).md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/home-safe-solution-개발-기록.md",
+      "category": "ai-ml",
+      "title": "Home Safe Solution 개발 기록",
+      "hash": "ca54b2af93b989a713f87fd31f14c934",
+      "generated_at": "2026-03-21T13:34:11.944447"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/st_gcn/old/ST_GCN_IMPLEMENTATION_PLAN.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/st_gcn/old/ST_GCN_IMPLEMENTATION_PLAN.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/vision-ai/st-gcn-기반-낙상-감지-시스템-도입-계획서.md",
+      "category": "vision-ai",
+      "title": "ST-GCN 기반 낙상 감지 시스템 도입 계획서",
+      "hash": "e9dda86409f1ed05e2246f42eb408126",
+      "generated_at": "2026-03-21T13:34:11.945739"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/st_gcn/old/ST_GCN_PROJECT_REPORT (1).md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/st_gcn/old/ST_GCN_PROJECT_REPORT (1).md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/st-gcn-낙상-감지-시스템-개발-프로젝트-보고서.md",
+      "category": "ai-ml",
+      "title": "ST-GCN 낙상 감지 시스템 개발 프로젝트 보고서",
+      "hash": "02d3f6c0965d7c87a383130bec8f20f7",
+      "generated_at": "2026-03-21T13:34:11.946847"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/st_gcn/old/ST_GCN_PROJECT_REPORT.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/st_gcn/old/ST_GCN_PROJECT_REPORT.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/st-gcn-낙상-감지-시스템-개발-프로젝트-보고서-ST_GCN_PRO.md",
+      "category": "ai-ml",
+      "title": "ST-GCN 낙상 감지 시스템 개발 프로젝트 보고서",
+      "hash": "02d3f6c0965d7c87a383130bec8f20f7",
+      "generated_at": "2026-03-21T13:34:11.947997"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/다중 모델 기반_수집_학습_리포트_자동화/2026-02-07_WORK_LOG_FINAL_v2 (rf_stgcn_success).md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/다중 모델 기반_수집_학습_리포트_자동화/2026-02-07_WORK_LOG_FINAL_v2 (rf_stgcn_success).md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/work-log-2026-02-07-final-2026-02-07.md",
+      "category": "dev-tools",
+      "title": "📋 Work Log — 2026-02-07 (Final)",
+      "hash": "201004ed9228fc497527407957dc42aa",
+      "generated_at": "2026-03-21T13:34:11.948981"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/다중 모델 기반_수집_학습_리포트_자동화/FILE_PLACEMENT_GUIDE.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/다중 모델 기반_수집_학습_리포트_자동화/FILE_PLACEMENT_GUIDE.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/home-safe-solution---파일-배치-가이드.md",
+      "category": "dev-tools",
+      "title": "Home Safe Solution - 파일 배치 가이드",
+      "hash": "c3b75103b72e22c5c4e9c3a4f585254a",
+      "generated_at": "2026-03-21T13:34:11.949712"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/02_project/다중 모델 기반_수집_학습_리포트_자동화/TRAINING_PIPELINE_PLAN.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/02_project/다중 모델 기반_수집_학습_리포트_자동화/TRAINING_PIPELINE_PLAN.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/home-safe-solution---자동화-학습-파이프라인-설계서.md",
+      "category": "ai-ml",
+      "title": "Home Safe Solution - 자동화 학습 파이프라인 설계서",
+      "hash": "79955118f0990e0ff9a9605631e748c1",
+      "generated_at": "2026-03-21T13:34:11.950756"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/03_knowledge/robotics_engineering_roadmap.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/03_knowledge/robotics_engineering_roadmap.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/robotics-engineering-roadmap-robotics_e.md",
+      "category": "dev-tools",
+      "title": "Robotics Engineering Roadmap",
+      "hash": "fa6af59286a3e298d3f48ff9f007caeb",
+      "generated_at": "2026-03-21T13:34:11.951917"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/03_knowledge/ros2_commander_app_roadmap.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/03_knowledge/ros2_commander_app_roadmap.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/ros2-commander-앱-스토어-배포-로드맵.md",
+      "category": "dev-tools",
+      "title": "ROS2 Commander — 앱 스토어 배포 로드맵",
+      "hash": "7881c967a473db9f64daab99a2d2d556",
+      "generated_at": "2026-03-21T13:34:11.952779"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/04_utils/docs/CHANGELOG.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/04_utils/docs/CHANGELOG.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/vision-ai/change-log---home-safe-solution.md",
+      "category": "vision-ai",
+      "title": "Change Log - Home Safe Solution",
+      "hash": "72d352df048ec91829c4ec66c0797e0c",
+      "generated_at": "2026-03-21T13:34:11.953288"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/04_utils/docs/GEMINI.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/04_utils/docs/GEMINI.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/vision-ai/home-safe-solution---vision-ai-프로젝트-문서-GEMINI.md",
+      "category": "vision-ai",
+      "title": "Home Safe Solution - Vision AI 프로젝트 문서",
+      "hash": "4e77fb57772a3d0b2864efdf3caaeaa2",
+      "generated_at": "2026-03-21T13:34:11.954164"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/04_utils/docs/PROJECT_DOCUMENTATION.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/04_utils/docs/PROJECT_DOCUMENTATION.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/vision-ai/home-safe-solution---vision-ai-프로젝트-문서-PROJECT_DO.md",
+      "category": "vision-ai",
+      "title": "Home Safe Solution - Vision AI 프로젝트 문서",
+      "hash": "4e77fb57772a3d0b2864efdf3caaeaa2",
+      "generated_at": "2026-03-21T13:34:11.955080"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/04_utils/docs/SITTING_FILTER_GUIDE.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/04_utils/docs/SITTING_FILTER_GUIDE.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/vision-ai/monitoring-pagepy-수정-가이드.md",
+      "category": "vision-ai",
+      "title": "monitoring_page.py 수정 가이드",
+      "hash": "241f8a9419adbb75527ef8bc7cdf6459",
+      "generated_at": "2026-03-21T13:34:11.956021"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/model_report/20260206_105111/MODEL_COMPARISON_REPORT.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/model_report/20260206_105111/MODEL_COMPARISON_REPORT.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/home-safe-solution---모델-성능-비교-분석-보고서.md",
+      "category": "ai-ml",
+      "title": "Home Safe Solution - 모델 성능 비교 분석 보고서",
+      "hash": "f9f0a2c75fde761c65e2f2c000db4323",
+      "generated_at": "2026-03-21T13:34:11.956863"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/model_report/20260206_105859/MODEL_COMPARISON_REPORT.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/model_report/20260206_105859/MODEL_COMPARISON_REPORT.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/home-safe-solution---모델-성능-비교-분석-보고서-MODEL_COMP.md",
+      "category": "ai-ml",
+      "title": "Home Safe Solution - 모델 성능 비교 분석 보고서",
+      "hash": "5beb3ccf87a570c5e34c4d3cb4ca7ceb",
+      "generated_at": "2026-03-21T13:34:11.957675"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/model_report/20260206_134532/MODEL_COMPARISON_REPORT.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/model_report/20260206_134532/MODEL_COMPARISON_REPORT.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/home-safe-solution---모델-성능-비교-분석-보고서-MODEL_COMP.md",
+      "category": "ai-ml",
+      "title": "Home Safe Solution - 모델 성능 비교 분석 보고서",
+      "hash": "782d46fefcc1651983be199ad205a679",
+      "generated_at": "2026-03-21T13:34:11.958498"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/model_report/20260206_134855/MODEL_COMPARISON_REPORT.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/model_report/20260206_134855/MODEL_COMPARISON_REPORT.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/home-safe-solution---모델-성능-비교-분석-보고서-MODEL_COMP.md",
+      "category": "ai-ml",
+      "title": "Home Safe Solution - 모델 성능 비교 분석 보고서",
+      "hash": "bffd5f092dd16d3904c52e40060aa5a7",
+      "generated_at": "2026-03-21T13:34:11.959299"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/model_report/RF_TUNING_EXPERIMENT_REPORT.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/model_report/RF_TUNING_EXPERIMENT_REPORT.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/home-safe-solution---random-forest-튜닝-실험-보고서.md",
+      "category": "ai-ml",
+      "title": "Home Safe Solution - Random Forest 튜닝 실험 보고서",
+      "hash": "93e738b4d271b7f206f209f403e57261",
+      "generated_at": "2026-03-21T13:34:11.960093"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/model_tunning/2026-02-07_WORK_LOG_FINAL_v2.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/model_tunning/2026-02-07_WORK_LOG_FINAL_v2.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/work-log-2026-02-07-final-2026-02-07.md",
+      "category": "dev-tools",
+      "title": "📋 Work Log — 2026-02-07 (Final)",
+      "hash": "9c17230a0cabb029d6b165e893688ec4",
+      "generated_at": "2026-03-21T13:34:11.960998"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/model_tunning/2026-02-07_WORK_LOG_v2(rf_train_normalized).md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/model_tunning/2026-02-07_WORK_LOG_v2(rf_train_normalized).md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/work-log-2026-02-07-2026-02-07.md",
+      "category": "dev-tools",
+      "title": "📋 Work Log — 2026-02-07",
+      "hash": "b114cacd51b3aa815a103818b7faa7d5",
+      "generated_at": "2026-03-21T13:34:11.961856"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/model_tunning/MODEL_COMPARISON_REPORT.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/model_tunning/MODEL_COMPARISON_REPORT.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/home-safe-solution---모델-성능-비교-분석-보고서-MODEL_COMP.md",
+      "category": "ai-ml",
+      "title": "Home Safe Solution - 모델 성능 비교 분석 보고서",
+      "hash": "f107961c6dbd5208dbcecef4820a5e92",
+      "generated_at": "2026-03-21T13:34:11.962689"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/model_tunning/MODEL_COMPARISON_REPORT_0208.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/model_tunning/MODEL_COMPARISON_REPORT_0208.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/home-safe-solution---모델-성능-비교-분석-보고서-MODEL_COMP.md",
+      "category": "ai-ml",
+      "title": "Home Safe Solution - 모델 성능 비교 분석 보고서",
+      "hash": "55b4e0c54be4559b938736adb6592282",
+      "generated_at": "2026-03-21T13:34:11.963518"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/model_tunning/rf_tuning_20260206_191149/RF_TUNING_EXPERIMENT_REPORT.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/model_tunning/rf_tuning_20260206_191149/RF_TUNING_EXPERIMENT_REPORT.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/home-safe-solution---random-forest-튜닝-실험-보고서-RF_TUNING_.md",
+      "category": "ai-ml",
+      "title": "Home Safe Solution - Random Forest 튜닝 실험 보고서",
+      "hash": "93e738b4d271b7f206f209f403e57261",
+      "generated_at": "2026-03-21T13:34:11.964361"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/model_tunning/rf_tuning_20260206_210753/RF_TUNING_EXPERIMENT_REPORT.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/model_tunning/rf_tuning_20260206_210753/RF_TUNING_EXPERIMENT_REPORT.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/home-safe-solution---random-forest-튜닝-실험-보고서-RF_TUNING_.md",
+      "category": "ai-ml",
+      "title": "Home Safe Solution - Random Forest 튜닝 실험 보고서",
+      "hash": "6588843cd41013ebd15986145bdc3523",
+      "generated_at": "2026-03-21T13:34:11.965185"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/ros2_study/day1_log.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/ros2_study/day1_log.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/day-1---ros2-환경-세팅-기본-통신-테스트-day1_log.md",
+      "category": "ros2",
+      "title": "Day 1 - ROS2 환경 세팅 & 기본 통신 테스트",
+      "hash": "e8b8ed5fae00dc0dfe1f0e1872a3e5b4",
+      "generated_at": "2026-03-21T13:34:11.965823"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/ros2_study/day2_5_log.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/ros2_study/day2_5_log.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/day-25---ros2-미니-순찰-시스템-통합-학습-일지-day2_5_log.md",
+      "category": "ros2",
+      "title": "Day 2~5 - ROS2 미니 순찰 시스템 통합 학습 일지",
+      "hash": "861490e30de73df1c954cb089731970b",
+      "generated_at": "2026-03-21T13:34:11.966652"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/work/2026-01-31_WORK_LOG.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/work/2026-01-31_WORK_LOG.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/vision-ai/home-safe-solution---작업-일지.md",
+      "category": "vision-ai",
+      "title": "Home Safe Solution - 작업 일지",
+      "hash": "1ecb99a873e9caa0327ba1b018cec746",
+      "generated_at": "2026-03-21T13:34:11.967699"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/work/2026-02-03_STGCN_WORK_SUMMARY.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/work/2026-02-03_STGCN_WORK_SUMMARY.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/st-gcn-및-as-gcn-프로젝트-작업-일지.md",
+      "category": "ai-ml",
+      "title": "ST-GCN 및 AS-GCN 프로젝트 작업 일지",
+      "hash": "51bdddd5faecdc2ca7cb7b7227e7584c",
+      "generated_at": "2026-03-21T13:34:11.968634"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/work/2026-02-06_AM_WORK_LOG.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/work/2026-02-06_AM_WORK_LOG.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/home-safe-solution---작업-기록.md",
+      "category": "ai-ml",
+      "title": "Home Safe Solution - 작업 기록",
+      "hash": "fe14f771722f6cf00dcb18ffbc296faf",
+      "generated_at": "2026-03-21T13:34:11.969459"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/work/2026-02-06_FULL_WORK_LOG.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/work/2026-02-06_FULL_WORK_LOG.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/home-safe-solution---작업-기록-2026-02-06.md",
+      "category": "ai-ml",
+      "title": "Home Safe Solution - 작업 기록",
+      "hash": "091b137f7051f225032d269d5696c045",
+      "generated_at": "2026-03-21T13:34:11.970325"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/work/2026-02-06_RF_TUNING_WORK_LOG.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/work/2026-02-06_RF_TUNING_WORK_LOG.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/home-safe-solution---rf-튜닝-실험-작업-기록.md",
+      "category": "ai-ml",
+      "title": "Home Safe Solution - RF 튜닝 실험 작업 기록",
+      "hash": "427079a65397c31ea20e04c6daf2c4ad",
+      "generated_at": "2026-03-21T13:34:11.971161"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/work/2026-02-06_WORK_LOG.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/work/2026-02-06_WORK_LOG.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/home-safe-solution---work-log.md",
+      "category": "ai-ml",
+      "title": "Home Safe Solution - Work Log",
+      "hash": "9b5600ff006ee0931d55c73c9206249a",
+      "generated_at": "2026-03-21T13:34:11.971989"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/work/2026-02-07_WORK_LOG_FINAL_v2 (rf_stgcn_success).md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/work/2026-02-07_WORK_LOG_FINAL_v2 (rf_stgcn_success).md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/work-log-2026-02-07-final-2026-02-07.md",
+      "category": "dev-tools",
+      "title": "📋 Work Log — 2026-02-07 (Final)",
+      "hash": "201004ed9228fc497527407957dc42aa",
+      "generated_at": "2026-03-21T13:34:11.973036"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/work/2026-02-07_WORK_LOG_FINAL_v2.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/work/2026-02-07_WORK_LOG_FINAL_v2.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/work-log-2026-02-07-final-2026-02-07.md",
+      "category": "dev-tools",
+      "title": "📋 Work Log — 2026-02-07 (Final)",
+      "hash": "9c17230a0cabb029d6b165e893688ec4",
+      "generated_at": "2026-03-21T13:34:11.973902"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/work/2026-02-07_WORK_LOG_FINAL_v2_updated.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/work/2026-02-07_WORK_LOG_FINAL_v2_updated.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/work-log-2026-02-07-final-2026-02-07.md",
+      "category": "dev-tools",
+      "title": "📋 Work Log — 2026-02-07 (Final)",
+      "hash": "f0317b1e4f473001ce83393fa11690c4",
+      "generated_at": "2026-03-21T13:34:11.974857"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/work/2026-02-07_WORK_LOG_memnusu_crash_solved.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/work/2026-02-07_WORK_LOG_memnusu_crash_solved.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/work-log-2026-02-07-2026-02-07.md",
+      "category": "dev-tools",
+      "title": "📋 Work Log — 2026-02-07",
+      "hash": "2107519f5304501337e8dedd3e6294d5",
+      "generated_at": "2026-03-21T13:34:11.975690"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/work/2026-02-07_WORK_LOG_v2(rf_train_normalized).md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/work/2026-02-07_WORK_LOG_v2(rf_train_normalized).md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/work-log-2026-02-07-2026-02-07.md",
+      "category": "dev-tools",
+      "title": "📋 Work Log — 2026-02-07",
+      "hash": "b114cacd51b3aa815a103818b7faa7d5",
+      "generated_at": "2026-03-21T13:34:11.976560"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/work/2026-02-09_WORK.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/work/2026-02-09_WORK.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/vision-ai/work-log-2026-02-09.md",
+      "category": "vision-ai",
+      "title": "📋 Work Log — 2026-02-09",
+      "hash": "31a6458ce6208f09f7f2dd33d5922ebc",
+      "generated_at": "2026-03-21T13:34:11.977423"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/work/2026-02-09_WORK_LOG.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/work/2026-02-09_WORK_LOG.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/work-log-2026-02-09.md",
+      "category": "ai-ml",
+      "title": "📋 Work Log — 2026-02-09",
+      "hash": "b363512d3a318f98832d9a6e50572e35",
+      "generated_at": "2026-03-21T13:34:11.978180"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/work/2026-02-12_작업일지.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/work/2026-02-12_작업일지.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/작업-일지-2026-02-12.md",
+      "category": "ai-ml",
+      "title": "작업 일지 — 2026-02-12",
+      "hash": "03fb18b75e4d80b818803a8568cc559e",
+      "generated_at": "2026-03-21T13:34:11.978776"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/work/2026-02-13_작업일지(tts-ros2-llm).md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/work/2026-02-13_작업일지(tts-ros2-llm).md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/작업일지-2026-02-13-목.md",
+      "category": "ros2",
+      "title": "📋 작업일지 — 2026-02-13 (목)",
+      "hash": "3640c3d11f665b55fe149b4fe2777d22",
+      "generated_at": "2026-03-21T13:34:11.979802"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/work/2026-02-13_작업일지_1.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/work/2026-02-13_작업일지_1.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/작업-일지-2026-02-13.md",
+      "category": "ai-ml",
+      "title": "작업 일지 — 2026-02-13",
+      "hash": "935291f3432b6e7fe9b07e2c584d0c96",
+      "generated_at": "2026-03-21T13:34:11.980580"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/work/2026-02-13_작업일지_2.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/work/2026-02-13_작업일지_2.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/작업-일지-2026-02-13.md",
+      "category": "ros2",
+      "title": "작업 일지 — 2026-02-13",
+      "hash": "a4bd5244ee159e96c712b3d557758419",
+      "generated_at": "2026-03-21T13:34:11.981599"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/work/2026-02-17_blog_design_work_log.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/work/2026-02-17_blog_design_work_log.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/hugo-blog-디자인-보완-작업-기록-2026-02-17.md",
+      "category": "dev-tools",
+      "title": "Hugo Blog 디자인 보완 작업 기록",
+      "hash": "df60033e3148811548b2c7cda28d7095",
+      "generated_at": "2026-03-21T13:34:11.982676"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/work/COMPARE_MODELS_GUIDE.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/work/COMPARE_MODELS_GUIDE.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/모델-성능-비교-분석-실행-가이드-COMPARE_MO.md",
+      "category": "ai-ml",
+      "title": "모델 성능 비교 분석 실행 가이드",
+      "hash": "f5e6d1679b6cd8ff47502cf07703c4f3",
+      "generated_at": "2026-03-21T13:34:11.983694"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/work/MODEL_COMPARISON_REPORT.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/work/MODEL_COMPARISON_REPORT.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/home-safe-solution---모델-성능-비교-분석-보고서-MODEL_COMP.md",
+      "category": "ai-ml",
+      "title": "Home Safe Solution - 모델 성능 비교 분석 보고서",
+      "hash": "bffd5f092dd16d3904c52e40060aa5a7",
+      "generated_at": "2026-03-21T13:34:11.984964"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/work/RF_TUNING_GUIDE.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/work/RF_TUNING_GUIDE.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/rf-튜닝-실험-실행-가이드.md",
+      "category": "ai-ml",
+      "title": "RF 튜닝 실험 실행 가이드",
+      "hash": "e1c438d1abbbf7fa77c243f2a619e52a",
+      "generated_at": "2026-03-21T13:34:11.986069"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/work/WORK_LOG_20260203_FINAL.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/work/WORK_LOG_20260203_FINAL.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/작업-일지---2026년-2월-3일.md",
+      "category": "ai-ml",
+      "title": "작업 일지 - 2026년 2월 3일",
+      "hash": "387e5f3e27282f596d4105193bf95dc9",
+      "generated_at": "2026-03-21T13:34:11.987472"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/work/WORK_LOG_20260205_v3_final.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/05_journal/work/WORK_LOG_20260205_v3_final.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/home-safe-solution-개발-기록-WORK_LOG_2.md",
+      "category": "ai-ml",
+      "title": "Home Safe Solution 개발 기록",
+      "hash": "6731329a7e82a74b232e6ea3eeb4f96f",
+      "generated_at": "2026-03-21T13:34:11.988884"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/07_blog/references/guard-brain-tool-use-agent.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/07_blog/references/guard-brain-tool-use-agent.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/llm-기반-guard-brain-ai-에이전트-만들기-tool-use-패턴-입문.md",
+      "category": "ai-ml",
+      "title": "LLM 기반 Guard Brain AI 에이전트 만들기 — Tool Use 패턴 입문",
+      "hash": "59d8e4249985182199354b8881c3c332",
+      "generated_at": "2026-03-21T13:34:11.990083"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/07_blog/references/home-safe-solution-vision-ai-project.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/07_blog/references/home-safe-solution-vision-ai-project.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/vision-ai/home-safe-solution---vision-ai-프로젝트-home-safe-.md",
+      "category": "vision-ai",
+      "title": "Home Safe Solution - Vision AI 프로젝트",
+      "hash": "59fdfdb754e74ab15e8c5886cfa007d9",
+      "generated_at": "2026-03-21T13:34:11.991648"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/07_blog/references/rf-stgcn-model-comparison-final.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/07_blog/references/rf-stgcn-model-comparison-final.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/rf와-st-gcn-모델-최적화-튜닝-및-성능-비교-iii-최종.md",
+      "category": "ai-ml",
+      "title": "RF와 ST-GCN 모델 최적화 튜닝 및 성능 비교 III (최종)",
+      "hash": "26fd5ef1304d71cc12bd8165e415c1b7",
+      "generated_at": "2026-03-21T13:34:11.992958"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/07_blog/rule/SETUP.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/07_blog/rule/SETUP.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/stephens-robotics-lab-블로그-셋업-가이드-SETUP.md",
+      "category": "dev-tools",
+      "title": "Stephen's Robotics Lab — 블로그 셋업 가이드",
+      "hash": "141b5d61eea052c513fd661ed9b7fee7",
+      "generated_at": "2026-03-21T13:34:11.993910"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/07_blog/rule/blog_operation_guide.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/07_blog/rule/blog_operation_guide.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/hugo-blog-career-dashboard-운영-가이드.md",
+      "category": "dev-tools",
+      "title": "Hugo Blog + Career Dashboard — 운영 가이드",
+      "hash": "24811c56f316cdf3bbca634ff09f7972",
+      "generated_at": "2026-03-21T13:34:11.995373"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/07_blog/rule/blog_ref_classification_design_ver1.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/07_blog/rule/blog_ref_classification_design_ver1.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/블로그-레퍼런스-자동-분류-체계-설계-blog_ref_c.md",
+      "category": "ros2",
+      "title": "블로그 레퍼런스 자동 분류 체계 설계",
+      "hash": "2c6b25d778db3c066942198844f11c4c",
+      "generated_at": "2026-03-21T13:34:11.996652"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/07_blog/rule/blog_ref_classification_design_ver2.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/07_blog/rule/blog_ref_classification_design_ver2.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/블로그-레퍼런스-자동-분류-체계-설계-blog_ref_c.md",
+      "category": "ros2",
+      "title": "블로그 레퍼런스 자동 분류 체계 설계",
+      "hash": "ed2e2e480c076eb2ddd19e29c50f328b",
+      "generated_at": "2026-03-21T13:34:11.998013"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/07_blog/rule/blog_strategy_guide.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/07_blog/rule/blog_strategy_guide.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/blog-strategy-posting-guide-blog_strat.md",
+      "category": "dev-tools",
+      "title": "Blog Strategy & Posting Guide",
+      "hash": "86db40e623fc71d2ffaa76277e58f6ff",
+      "generated_at": "2026-03-21T13:34:11.999505"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/07_blog/rule/blog_writer_llm_rules.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/07_blog/rule/blog_writer_llm_rules.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/blog-writer-agent-llm-본문-작성-규칙.md",
+      "category": "dev-tools",
+      "title": "Blog Writer Agent — LLM 본문 작성 규칙",
+      "hash": "ae2f1866c475c1c837272afd47b6e41c",
+      "generated_at": "2026-03-21T13:34:12.000506"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/07_blog/rule/robotics_blog_strategy.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/07_blog/rule/robotics_blog_strategy.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/로보틱스-개발자-블로그-구축-전략.md",
+      "category": "dev-tools",
+      "title": "로보틱스 개발자 블로그 — 구축 전략",
+      "hash": "0f5a6887a5d9fd646f8df094f544bffb",
+      "generated_at": "2026-03-21T13:34:12.001724"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/07_blog/rule/robotics_engineering_roadmap.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/07_blog/rule/robotics_engineering_roadmap.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/robotics-engineering-roadmap-robotics_e.md",
+      "category": "dev-tools",
+      "title": "Robotics Engineering Roadmap",
+      "hash": "fa6af59286a3e298d3f48ff9f007caeb",
+      "generated_at": "2026-03-21T13:34:12.003577"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/07_blog/work_log/2026-02-17_blog_dashboard_work_log.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/07_blog/work_log/2026-02-17_blog_dashboard_work_log.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/hugo-blog-career-dashboard-구축-작업-기록-2026-02-17.md",
+      "category": "dev-tools",
+      "title": "Hugo Blog + Career Dashboard 구축 작업 기록",
+      "hash": "8b652a34f60cfed83bbfa855d6d350ff",
+      "generated_at": "2026-03-21T13:34:12.004771"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/07_blog/work_log/2026-02-17_blog_design_work_log.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/07_blog/work_log/2026-02-17_blog_design_work_log.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/hugo-blog-디자인-보완-작업-기록-2026-02-17.md",
+      "category": "dev-tools",
+      "title": "Hugo Blog 디자인 보완 작업 기록",
+      "hash": "df60033e3148811548b2c7cda28d7095",
+      "generated_at": "2026-03-21T13:34:12.006024"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/07_blog/work_log/2026-02-17_session7_work_log.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/07_blog/work_log/2026-02-17_session7_work_log.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/2026-02-17-작업일지-session-7-fleet-충돌-회피-블로그-분류-3d-히어로.md",
+      "category": "dev-tools",
+      "title": "2026-02-17 작업일지 (Session 7: Fleet 충돌 회피 + 블로그 분류 + 3D 히어로)",
+      "hash": "77c4172a246fc028241dbc831f41f2d5",
+      "generated_at": "2026-03-21T13:34:12.007296"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/07_blog/work_log/2026-02-17_session8_work_log.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/07_blog/work_log/2026-02-17_session8_work_log.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/2026-02-17-작업일지-session-8-블로그-3d-히어로-우주-배경-효과.md",
+      "category": "dev-tools",
+      "title": "2026-02-17 작업일지 (Session 8: 블로그 3D 히어로 우주 배경 효과)",
+      "hash": "af5f3ba065a21aee514ab60a0550cd83",
+      "generated_at": "2026-03-21T13:34:12.008155"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/07_blog/work_log/2026-02-18_session10_work_log.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/07_blog/work_log/2026-02-18_session10_work_log.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/2026-02-18-작업일지-session-10-ai-agent-카테고리-블로그-반영.md",
+      "category": "dev-tools",
+      "title": "2026-02-18 작업일지 (Session 10: AI Agent 카테고리 블로그 반영)",
+      "hash": "710d8af9a0063b621481e89c42ca62e5",
+      "generated_at": "2026-03-21T13:34:12.009340"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/07_blog/work_log/2026-02-18_session11_work_log.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/07_blog/work_log/2026-02-18_session11_work_log.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/2026-02-18-작업일지-session-11-ai-agent-phase-1-tool-use-에이전트-완성.md",
+      "category": "ai-ml",
+      "title": "2026-02-18 작업일지 (Session 11: AI Agent Phase 1 — Tool Use 에이전트 완성)",
+      "hash": "729cd6c075285003cd54e39d48838f58",
+      "generated_at": "2026-03-21T13:34:12.010406"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/07_blog/work_log/2026-02-18_session12_work_log_blogwriter_agent.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/07_blog/work_log/2026-02-18_session12_work_log_blogwriter_agent.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/2026-02-18-작업일지-session-12-blog-writer-agent-완성.md",
+      "category": "ai-ml",
+      "title": "2026-02-18 작업일지 (Session 12: Blog Writer Agent 완성)",
+      "hash": "5db4474c9250eea2ac7b8bbd76743057",
+      "generated_at": "2026-03-21T13:34:12.011472"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/07_blog/work_log/2026-02-18_session13_blog_writer_updates.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/07_blog/work_log/2026-02-18_session13_blog_writer_updates.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/2026-02-18-작업일지-session-13-blog-writer-agent-개선.md",
+      "category": "ai-ml",
+      "title": "2026-02-18 작업일지 (Session 13: Blog Writer Agent 개선)",
+      "hash": "3ecd88d1a881e84f229306cc25ec9ef7",
+      "generated_at": "2026-03-21T13:34:12.012769"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/07_blog/work_log/2026-02-18_session9_work_log.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/07_blog/work_log/2026-02-18_session9_work_log.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/2026-02-18-작업일지-session-9-about-페이지-3d-엔티티-블로그-ui.md",
+      "category": "dev-tools",
+      "title": "2026-02-18 작업일지 (Session 9: About 페이지 3D 엔티티 + 블로그 UI)",
+      "hash": "8030dba8c8e8e1deb567044223b487b9",
+      "generated_at": "2026-03-21T13:34:12.013930"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/2026-01-31_WORK_LOG.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/2026-01-31_WORK_LOG.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/vision-ai/home-safe-solution---작업-일지-2026-01-31.md",
+      "category": "vision-ai",
+      "title": "Home Safe Solution - 작업 일지",
+      "hash": "1ecb99a873e9caa0327ba1b018cec746",
+      "generated_at": "2026-03-21T13:34:12.015725"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-03_STGCN_WORK_SUMMARY.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-03_STGCN_WORK_SUMMARY.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/st-gcn-및-as-gcn-프로젝트-작업-일지-2026-02-03.md",
+      "category": "ai-ml",
+      "title": "ST-GCN 및 AS-GCN 프로젝트 작업 일지",
+      "hash": "51bdddd5faecdc2ca7cb7b7227e7584c",
+      "generated_at": "2026-03-21T13:34:12.017217"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-06_AM_WORK_LOG.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-06_AM_WORK_LOG.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/home-safe-solution---작업-기록-2026-02-06.md",
+      "category": "ai-ml",
+      "title": "Home Safe Solution - 작업 기록",
+      "hash": "fe14f771722f6cf00dcb18ffbc296faf",
+      "generated_at": "2026-03-21T13:34:12.018153"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-06_FULL_WORK_LOG.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-06_FULL_WORK_LOG.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/home-safe-solution---작업-기록-2026-02-06.md",
+      "category": "ai-ml",
+      "title": "Home Safe Solution - 작업 기록",
+      "hash": "091b137f7051f225032d269d5696c045",
+      "generated_at": "2026-03-21T13:34:12.019078"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-06_RF_TUNING_WORK_LOG.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-06_RF_TUNING_WORK_LOG.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/home-safe-solution---rf-튜닝-실험-작업-기록-2026-02-06.md",
+      "category": "ai-ml",
+      "title": "Home Safe Solution - RF 튜닝 실험 작업 기록",
+      "hash": "427079a65397c31ea20e04c6daf2c4ad",
+      "generated_at": "2026-03-21T13:34:12.019924"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-06_WORK_LOG.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-06_WORK_LOG.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/home-safe-solution---work-log-2026-02-06.md",
+      "category": "ai-ml",
+      "title": "Home Safe Solution - Work Log",
+      "hash": "9b5600ff006ee0931d55c73c9206249a",
+      "generated_at": "2026-03-21T13:34:12.020757"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-07_WORK_LOG_FINAL_v2 (rf_stgcn_success).md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-07_WORK_LOG_FINAL_v2 (rf_stgcn_success).md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/work-log-2026-02-07-final-2026-02-07.md",
+      "category": "dev-tools",
+      "title": "📋 Work Log — 2026-02-07 (Final)",
+      "hash": "201004ed9228fc497527407957dc42aa",
+      "generated_at": "2026-03-21T13:34:12.021822"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-07_WORK_LOG_FINAL_v2.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-07_WORK_LOG_FINAL_v2.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/work-log-2026-02-07-final-2026-02-07.md",
+      "category": "dev-tools",
+      "title": "📋 Work Log — 2026-02-07 (Final)",
+      "hash": "9c17230a0cabb029d6b165e893688ec4",
+      "generated_at": "2026-03-21T13:34:12.022706"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-07_WORK_LOG_FINAL_v2_updated.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-07_WORK_LOG_FINAL_v2_updated.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/work-log-2026-02-07-final-2026-02-07.md",
+      "category": "dev-tools",
+      "title": "📋 Work Log — 2026-02-07 (Final)",
+      "hash": "f0317b1e4f473001ce83393fa11690c4",
+      "generated_at": "2026-03-21T13:34:12.023623"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-07_WORK_LOG_memnusu_crash_solved.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-07_WORK_LOG_memnusu_crash_solved.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/work-log-2026-02-07-2026-02-07.md",
+      "category": "dev-tools",
+      "title": "📋 Work Log — 2026-02-07",
+      "hash": "2107519f5304501337e8dedd3e6294d5",
+      "generated_at": "2026-03-21T13:34:12.024507"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-07_WORK_LOG_v2(rf_train_normalized).md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-07_WORK_LOG_v2(rf_train_normalized).md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/work-log-2026-02-07-2026-02-07.md",
+      "category": "dev-tools",
+      "title": "📋 Work Log — 2026-02-07",
+      "hash": "b114cacd51b3aa815a103818b7faa7d5",
+      "generated_at": "2026-03-21T13:34:12.025402"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-09_WORK.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-09_WORK.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/vision-ai/work-log-2026-02-09-2026-02-09.md",
+      "category": "vision-ai",
+      "title": "📋 Work Log — 2026-02-09",
+      "hash": "31a6458ce6208f09f7f2dd33d5922ebc",
+      "generated_at": "2026-03-21T13:34:12.026226"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-09_WORK_LOG.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-09_WORK_LOG.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/work-log-2026-02-09-2026-02-09.md",
+      "category": "ai-ml",
+      "title": "📋 Work Log — 2026-02-09",
+      "hash": "b363512d3a318f98832d9a6e50572e35",
+      "generated_at": "2026-03-21T13:34:12.026930"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-12_작업일지.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-12_작업일지.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/작업-일지-2026-02-12-2026-02-12.md",
+      "category": "ai-ml",
+      "title": "작업 일지 — 2026-02-12",
+      "hash": "03fb18b75e4d80b818803a8568cc559e",
+      "generated_at": "2026-03-21T13:34:12.027653"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-13_작업일지(tts-ros2-llm).md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-13_작업일지(tts-ros2-llm).md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/작업일지-2026-02-13-목-2026-02-13.md",
+      "category": "ros2",
+      "title": "📋 작업일지 — 2026-02-13 (목)",
+      "hash": "3640c3d11f665b55fe149b4fe2777d22",
+      "generated_at": "2026-03-21T13:34:12.028590"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-13_작업일지_1.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-13_작업일지_1.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/작업-일지-2026-02-13-2026-02-13.md",
+      "category": "ai-ml",
+      "title": "작업 일지 — 2026-02-13",
+      "hash": "935291f3432b6e7fe9b07e2c584d0c96",
+      "generated_at": "2026-03-21T13:34:12.029251"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-13_작업일지_2.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-13_작업일지_2.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/작업-일지-2026-02-13-2026-02-13.md",
+      "category": "ros2",
+      "title": "작업 일지 — 2026-02-13",
+      "hash": "a4bd5244ee159e96c712b3d557758419",
+      "generated_at": "2026-03-21T13:34:12.030146"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-17_blog_dashboard_work_log.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-17_blog_dashboard_work_log.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/hugo-blog-career-dashboard-구축-작업-기록-2026-02-17.md",
+      "category": "dev-tools",
+      "title": "Hugo Blog + Career Dashboard 구축 작업 기록",
+      "hash": "8b652a34f60cfed83bbfa855d6d350ff",
+      "generated_at": "2026-03-21T13:34:12.031134"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-17_blog_design_work_log.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-17_blog_design_work_log.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/hugo-blog-디자인-보완-작업-기록-2026-02-17.md",
+      "category": "dev-tools",
+      "title": "Hugo Blog 디자인 보완 작업 기록",
+      "hash": "df60033e3148811548b2c7cda28d7095",
+      "generated_at": "2026-03-21T13:34:12.032178"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-17_fleet_collision_avoidance_log.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/2026-02-17_fleet_collision_avoidance_log.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/robotics/kevin-multi-patrol-dashboard-fleet-충돌-회피-level-1-적용-기록-2026-02-17.md",
+      "category": "robotics",
+      "title": "Kevin Multi Patrol Dashboard — Fleet 충돌 회피 (Level 1) 적용 기록",
+      "hash": "189355690cd4a7665bd2a54f7077dc75",
+      "generated_at": "2026-03-21T13:34:12.033460"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/2026-dev-phaseIII-Finished.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/2026-dev-phaseIII-Finished.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/robotics/kevin-3d-patrol-simulator-개발-문서-2025-02-16-phase-3-v32-완료-2026-dev-p.md",
+      "category": "robotics",
+      "title": "Kevin 3D Patrol Simulator — 개발 문서 (2025-02-16 / Phase 3 v3.2 완료)",
+      "hash": "66ad5fc3795d01654ecdb3da22adbae9",
+      "generated_at": "2026-03-21T13:34:12.035175"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/20260214_gui_speech_ok.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/20260214_gui_speech_ok.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/피노키오-프로젝트-phase-1-작업-기록-20260214_g.md",
+      "category": "dev-tools",
+      "title": "피노키오 프로젝트 — Phase 1 작업 기록",
+      "hash": "0353b62f7778f34e8c719bbb32510228",
+      "generated_at": "2026-03-21T13:34:12.036217"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/20260214_last_optimized_goodworking.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/20260214_last_optimized_goodworking.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/피노키오-프로젝트-작업-기록-2026-02-14-20260214_l.md",
+      "category": "ai-ml",
+      "title": "피노키오 프로젝트 — 작업 기록 (2026-02-14)",
+      "hash": "3d1734d73d9b465ff7665f3c04cbfafc",
+      "generated_at": "2026-03-21T13:34:12.037226"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/20260214_optimization_tuning.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/20260214_optimization_tuning.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/피노키오-프로젝트-최적화-튜닝-기록-20260214_o.md",
+      "category": "ai-ml",
+      "title": "피노키오 프로젝트 — 최적화 튜닝 기록",
+      "hash": "d3af3287e969015be92f07fcf73bf4f8",
+      "generated_at": "2026-03-21T13:34:12.038089"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/20260214_phase2_3_음성 인식 속도.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/20260214_phase2_3_음성 인식 속도.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/smart-home/피노키오-프로젝트-phase-23-작업-기록-20260214_p.md",
+      "category": "smart-home",
+      "title": "피노키오 프로젝트 — Phase 2~3 작업 기록",
+      "hash": "8d74493a925b9857d0b02e4228201931",
+      "generated_at": "2026-03-21T13:34:12.039082"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/CAMERA_SELECTION_GUIDE.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/CAMERA_SELECTION_GUIDE.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/vision-ai/카메라-선택-기능-통합-가이드-CAMERA_SEL.md",
+      "category": "vision-ai",
+      "title": "카메라 선택 기능 통합 가이드",
+      "hash": "63b16c8eb5b6ef1af195a81468d76dbd",
+      "generated_at": "2026-03-21T13:34:12.040170"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/COMPARE_MODELS_GUIDE.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/COMPARE_MODELS_GUIDE.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/모델-성능-비교-분석-실행-가이드-COMPARE_MO.md",
+      "category": "ai-ml",
+      "title": "모델 성능 비교 분석 실행 가이드",
+      "hash": "f5e6d1679b6cd8ff47502cf07703c4f3",
+      "generated_at": "2026-03-21T13:34:12.041117"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/EMERGENCY_CALL_INTEGRATION_GUIDE.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/EMERGENCY_CALL_INTEGRATION_GUIDE.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/emergency-call-기능-통합-가이드-EMERGENCY_.md",
+      "category": "dev-tools",
+      "title": "Emergency Call 기능 통합 가이드",
+      "hash": "745d007fbc4329797a22044d8b8d2c23",
+      "generated_at": "2026-03-21T13:34:12.042461"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/ENTRYPOINT_FIX_GUIDE.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/ENTRYPOINT_FIX_GUIDE.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/ros2-엔트리포인트-shebang-해결-테스트-가이드-ENTRYPOINT.md",
+      "category": "ros2",
+      "title": "ROS2 엔트리포인트 Shebang 해결 — 테스트 가이드",
+      "hash": "6eacdb0fbf6ff96a9607a706d44588c0",
+      "generated_at": "2026-03-21T13:34:12.043287"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/EyeCon_프로젝트_계획서.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/EyeCon_프로젝트_계획서.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/eyecon-심리-상태-분석기-프로젝트-계획서-EyeCon_프로젝.md",
+      "category": "dev-tools",
+      "title": "🔍 EyeCon — 심리 상태 분석기 프로젝트 계획서",
+      "hash": "54d8c35351506e199c022f1c213c25ad",
+      "generated_at": "2026-03-21T13:34:12.044443"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/FILE_PLACEMENT_GUIDE.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/FILE_PLACEMENT_GUIDE.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/home-safe-solution---파일-배치-가이드-FILE_PLACE.md",
+      "category": "dev-tools",
+      "title": "Home Safe Solution - 파일 배치 가이드",
+      "hash": "c3b75103b72e22c5c4e9c3a4f585254a",
+      "generated_at": "2026-03-21T13:34:12.045385"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/FINAL_COMPLETE_GUIDE.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/FINAL_COMPLETE_GUIDE.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/비전-홈-케어-도우미---gui-시스템-최종-완성-FINAL_COMP.md",
+      "category": "dev-tools",
+      "title": "🎉 비전 홈 케어 도우미 - GUI 시스템 최종 완성!",
+      "hash": "20d73fbf8ee2065dadc47b718eb63f5b",
+      "generated_at": "2026-03-21T13:34:12.046231"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/FIX_MYSQL_ERROR.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/FIX_MYSQL_ERROR.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/big-data/mysql-연결-오류-해결-가이드-FIX_MYSQL_.md",
+      "category": "big-data",
+      "title": "🔧 MySQL 연결 오류 해결 가이드",
+      "hash": "c753e7cdd42b0da1d0560272ef808af4",
+      "generated_at": "2026-03-21T13:34:12.047483"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/GEMINI.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/GEMINI.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/vision-ai/home-safe-solution---vision-ai-프로젝트-문서-GEMINI.md",
+      "category": "vision-ai",
+      "title": "Home Safe Solution - Vision AI 프로젝트 문서",
+      "hash": "4e77fb57772a3d0b2864efdf3caaeaa2",
+      "generated_at": "2026-03-21T13:34:12.048644"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/GRAPH_INTEGRATION_GUIDE.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/GRAPH_INTEGRATION_GUIDE.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/실시간-정확도-그래프-통합-가이드-GRAPH_INTE.md",
+      "category": "dev-tools",
+      "title": "실시간 정확도 그래프 통합 가이드",
+      "hash": "793ca59db61a3d79eb7406636fa59f36",
+      "generated_at": "2026-03-21T13:34:12.049596"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/GUARD_VOICE_GUIDE.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/GUARD_VOICE_GUIDE.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/smart-home/guard-voice-노드-설치-및-테스트-가이드-GUARD_VOIC.md",
+      "category": "smart-home",
+      "title": "guard_voice 노드 — 설치 및 테스트 가이드",
+      "hash": "3d93010ac52bc2341cb86173797dbba9",
+      "generated_at": "2026-03-21T13:34:12.050328"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/GUI_MODEL_DISPLAY_GUIDE.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/GUI_MODEL_DISPLAY_GUIDE.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/gui-모델-정보-표시-통합-가이드-GUI_MODEL_.md",
+      "category": "ai-ml",
+      "title": "GUI 모델 정보 표시 통합 가이드",
+      "hash": "58162ff2c65723e7d49cccf0d8ed3320",
+      "generated_at": "2026-03-21T13:34:12.051186"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/GUI_README.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/GUI_README.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/home-safe-solution---pyqt6-gui-시스템-GUI_README.md",
+      "category": "dev-tools",
+      "title": "🏠 Home Safe Solution - PyQt6 GUI 시스템",
+      "hash": "c0a27f57ecb54152dc51b8e86327607d",
+      "generated_at": "2026-03-21T13:34:12.052086"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/LLM_ROS_보안관_개발계획서.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/LLM_ROS_보안관_개발계획서.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/llm-ros-기반-자율주행-보안관-개발-계획서-LLM_ROS_보안.md",
+      "category": "ai-ml",
+      "title": "🤖 LLM + ROS 기반 자율주행 보안관 — 개발 계획서",
+      "hash": "315f7d2e2273c5eab03e7df377c784fb",
+      "generated_at": "2026-03-21T13:34:12.053293"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/LOGGING_GUIDE.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/LOGGING_GUIDE.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/vision-ai/로깅-시스템-사용-가이드-LOGGING_GU.md",
+      "category": "vision-ai",
+      "title": "🔍 로깅 시스템 사용 가이드",
+      "hash": "de44ea9bb3483600f1ea72ae5fc0a31f",
+      "generated_at": "2026-03-21T13:34:12.054664"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/MODEL_COMPARISON_REPORT.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/MODEL_COMPARISON_REPORT.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/home-safe-solution---모델-성능-비교-분석-보고서-MODEL_COMP.md",
+      "category": "ai-ml",
+      "title": "Home Safe Solution - 모델 성능 비교 분석 보고서",
+      "hash": "bffd5f092dd16d3904c52e40060aa5a7",
+      "generated_at": "2026-03-21T13:34:12.055591"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/MODEL_COMPARISON_REPORT_0208.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/MODEL_COMPARISON_REPORT_0208.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/home-safe-solution---모델-성능-비교-분석-보고서-MODEL_COMP.md",
+      "category": "ai-ml",
+      "title": "Home Safe Solution - 모델 성능 비교 분석 보고서",
+      "hash": "55b4e0c54be4559b938736adb6592282",
+      "generated_at": "2026-03-21T13:34:12.056403"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/MODEL_TRAINING_REPORT (1).md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/MODEL_TRAINING_REPORT (1).md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/vision-ai/home-safe-solution---낙상-감지-모델-학습-완료-보고서-MODEL_TRAI.md",
+      "category": "vision-ai",
+      "title": "Home Safe Solution - 낙상 감지 모델 학습 완료 보고서",
+      "hash": "e001f1efda2ca9d2f68de32459f75727",
+      "generated_at": "2026-03-21T13:34:12.057549"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/MyPet_DevLog_20250215.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/MyPet_DevLog_20250215.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/mypet-phase-1-개발일지-2025-02-15-MyPet_DevL.md",
+      "category": "dev-tools",
+      "title": "MyPet Phase 1 개발일지 — 2025-02-15",
+      "hash": "4a9dc9d33099f0f6f8fca8072ce0284d",
+      "generated_at": "2026-03-21T13:34:12.058369"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/MyPet_Project_Plan.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/MyPet_Project_Plan.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/robotics/mypet-손-제스처-기반-가상-반려견-자율주행-로봇-제어-시스템-MyPet_Proj.md",
+      "category": "robotics",
+      "title": "🐕 MyPet — 손 제스처 기반 가상 반려견 & 자율주행 로봇 제어 시스템",
+      "hash": "0343fecf9fcc5b43629b0875829145bb",
+      "generated_at": "2026-03-21T13:34:12.059545"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/OVERLAY_REMOVAL_GUIDE.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/OVERLAY_REMOVAL_GUIDE.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/vision-ai/낙상-감지-오버레이-제거---변경-사항-OVERLAY_RE.md",
+      "category": "vision-ai",
+      "title": "낙상 감지 오버레이 제거 - 변경 사항",
+      "hash": "99d0d0d7b7f076a550c37671bc1f446e",
+      "generated_at": "2026-03-21T13:34:12.060481"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/PACKAGE_INFO.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/PACKAGE_INFO.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/home-safe-solution---pyqt6-gui-시스템-완성-PACKAGE_IN.md",
+      "category": "dev-tools",
+      "title": "🏠 Home Safe Solution - PyQt6 GUI 시스템 완성!",
+      "hash": "a41b256daf09f201560a4cf9a3ac58e7",
+      "generated_at": "2026-03-21T13:34:12.061647"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/PIPELINE_DESIGN.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/PIPELINE_DESIGN.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/home-safe-solution---자동화-학습-파이프라인-설계안-PIPELINE_D.md",
+      "category": "ai-ml",
+      "title": "🔧 Home Safe Solution - 자동화 학습 파이프라인 설계안",
+      "hash": "8cbd8278933dd2ab652a08771bf01224",
+      "generated_at": "2026-03-21T13:34:12.063004"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/PROJECT_DOCUMENTATION.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/PROJECT_DOCUMENTATION.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/vision-ai/home-safe-solution---vision-ai-프로젝트-문서-PROJECT_DO.md",
+      "category": "vision-ai",
+      "title": "Home Safe Solution - Vision AI 프로젝트 문서",
+      "hash": "4e77fb57772a3d0b2864efdf3caaeaa2",
+      "generated_at": "2026-03-21T13:34:12.063947"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/QUICKSTART.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/QUICKSTART.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/quick-start-guide-QUICKSTART.md",
+      "category": "dev-tools",
+      "title": "🚀 Quick Start Guide",
+      "hash": "7cf9a357a4d215ac818a4990360e630e",
+      "generated_at": "2026-03-21T13:34:12.064662"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/REALTIME_GUIDE.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/REALTIME_GUIDE.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/vision-ai/실시간-낙상-감지-시스템-사용-가이드-REALTIME_G.md",
+      "category": "vision-ai",
+      "title": "🎥 실시간 낙상 감지 시스템 사용 가이드",
+      "hash": "b3c028a6a8e6b046268dd9e4d636db5c",
+      "generated_at": "2026-03-21T13:34:12.065497"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/RF_TUNING_EXPERIMENT_REPORT.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/RF_TUNING_EXPERIMENT_REPORT.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/home-safe-solution---random-forest-튜닝-실험-보고서-RF_TUNING_.md",
+      "category": "ai-ml",
+      "title": "Home Safe Solution - Random Forest 튜닝 실험 보고서",
+      "hash": "6588843cd41013ebd15986145bdc3523",
+      "generated_at": "2026-03-21T13:34:12.066378"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/RF_TUNING_GUIDE.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/RF_TUNING_GUIDE.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/rf-튜닝-실험-실행-가이드-RF_TUNING_.md",
+      "category": "ai-ml",
+      "title": "RF 튜닝 실험 실행 가이드",
+      "hash": "e1c438d1abbbf7fa77c243f2a619e52a",
+      "generated_at": "2026-03-21T13:34:12.067099"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/ROS2_쉬운_설명_Home_Guard_Bot.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/ROS2_쉬운_설명_Home_Guard_Bot.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/ros2가-뭔데-home-guard-bot으로-이해하기-ROS2_쉬운_설명.md",
+      "category": "ros2",
+      "title": "🤖 ROS2가 뭔데? — Home Guard Bot으로 이해하기",
+      "hash": "ceb82059dba727c72530e9240d2618a5",
+      "generated_at": "2026-03-21T13:34:12.068342"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/RPi_탑재_계획.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/RPi_탑재_계획.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/home-guard-bot-라즈베리파이-탑재-계획-RPi_탑재_계획.md",
+      "category": "ros2",
+      "title": "🤖 Home Guard Bot — 라즈베리파이 탑재 계획",
+      "hash": "f205486044b44538162ba4ade4b7c03c",
+      "generated_at": "2026-03-21T13:34:12.069394"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/SECURITY_RECOMMENDATIONS.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/SECURITY_RECOMMENDATIONS.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/big-data/home-safe-solution---보안-적용-제안서-SECURITY_R.md",
+      "category": "big-data",
+      "title": "🔒 Home Safe Solution - 보안 적용 제안서",
+      "hash": "636a5230a196494b89652a71a76a6ac0",
+      "generated_at": "2026-03-21T13:34:12.070744"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/SETUP.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/SETUP.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/stephens-robotics-lab-블로그-셋업-가이드-SETUP.md",
+      "category": "dev-tools",
+      "title": "Stephen's Robotics Lab — 블로그 셋업 가이드",
+      "hash": "141b5d61eea052c513fd661ed9b7fee7",
+      "generated_at": "2026-03-21T13:34:12.071438"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/SITTING_FILTER_GUIDE.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/SITTING_FILTER_GUIDE.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/vision-ai/monitoring-pagepy-수정-가이드-SITTING_FI.md",
+      "category": "vision-ai",
+      "title": "monitoring_page.py 수정 가이드",
+      "hash": "241f8a9419adbb75527ef8bc7cdf6459",
+      "generated_at": "2026-03-21T13:34:12.072374"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/STEP1_ADD_ACCURACY_COLUMN.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/STEP1_ADD_ACCURACY_COLUMN.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/big-data/event-logs-테이블에-accuracy-컬럼-추가-STEP1_ADD_.md",
+      "category": "big-data",
+      "title": "event_logs 테이블에 accuracy 컬럼 추가",
+      "hash": "a90c493b634109a6be2b769273c25b15",
+      "generated_at": "2026-03-21T13:34:12.073269"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/STEP2_DATABASE_MODELS.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/STEP2_DATABASE_MODELS.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/step-2-database-modelspy-수정-STEP2_DATA.md",
+      "category": "ai-ml",
+      "title": "Step 2: database_models.py 수정",
+      "hash": "3d2e523041331014b189c5d4da369322",
+      "generated_at": "2026-03-21T13:34:12.074181"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/STEP3_MONITORING_PAGE.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/STEP3_MONITORING_PAGE.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/step-3-monitoring-pagepy-수정-STEP3_MONI.md",
+      "category": "ai-ml",
+      "title": "Step 3: monitoring_page.py 수정",
+      "hash": "fe404b751d9959181a363bb6511f6df6",
+      "generated_at": "2026-03-21T13:34:12.075574"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/STEP4_DASHBOARD_PAGE.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/STEP4_DASHBOARD_PAGE.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/step-4-dashboard-pagepy-수정-최종-STEP4_DASH.md",
+      "category": "dev-tools",
+      "title": "Step 4: dashboard_page.py 수정 (최종)",
+      "hash": "da9912238cdc739857ad83c4348f500d",
+      "generated_at": "2026-03-21T13:34:12.076586"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/STGCN_GUI_IMPLEMENTATION_PLAN.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/STGCN_GUI_IMPLEMENTATION_PLAN.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/st-gcn-실시간-영상-gui-추론-구현-계획서-STGCN_GUI_.md",
+      "category": "dev-tools",
+      "title": "ST-GCN 실시간 영상 GUI 추론 구현 계획서",
+      "hash": "8fe25262999121fe60729b60fcc30151",
+      "generated_at": "2026-03-21T13:34:12.077739"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/STGCN_PRETRAINED_PLAN.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/STGCN_PRETRAINED_PLAN.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/st-gcn-pre-trained-모델-적용-계획-STGCN_PRET.md",
+      "category": "ai-ml",
+      "title": "ST-GCN Pre-trained 모델 적용 계획",
+      "hash": "8ba460250867c92cdacd1b1ecadfe5b5",
+      "generated_at": "2026-03-21T13:34:12.078641"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/ST_GCN_IMPLEMENTATION_PLAN.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/ST_GCN_IMPLEMENTATION_PLAN.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/vision-ai/st-gcn-기반-낙상-감지-시스템-도입-계획서-ST_GCN_IMP.md",
+      "category": "vision-ai",
+      "title": "ST-GCN 기반 낙상 감지 시스템 도입 계획서",
+      "hash": "e9dda86409f1ed05e2246f42eb408126",
+      "generated_at": "2026-03-21T13:34:12.080085"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/ST_GCN_PROJECT_REPORT (1).md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/ST_GCN_PROJECT_REPORT (1).md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/st-gcn-낙상-감지-시스템-개발-프로젝트-보고서-ST_GCN_PRO.md",
+      "category": "ai-ml",
+      "title": "ST-GCN 낙상 감지 시스템 개발 프로젝트 보고서",
+      "hash": "02d3f6c0965d7c87a383130bec8f20f7",
+      "generated_at": "2026-03-21T13:34:12.081318"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/ST_GCN_PROJECT_REPORT.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/ST_GCN_PROJECT_REPORT.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/st-gcn-낙상-감지-시스템-개발-프로젝트-보고서-ST_GCN_PRO.md",
+      "category": "ai-ml",
+      "title": "ST-GCN 낙상 감지 시스템 개발 프로젝트 보고서",
+      "hash": "02d3f6c0965d7c87a383130bec8f20f7",
+      "generated_at": "2026-03-21T13:34:12.082946"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/TRAINING_PIPELINE_PLAN.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/TRAINING_PIPELINE_PLAN.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/home-safe-solution---자동화-학습-파이프라인-설계서-TRAINING_P.md",
+      "category": "ai-ml",
+      "title": "Home Safe Solution - 자동화 학습 파이프라인 설계서",
+      "hash": "79955118f0990e0ff9a9605631e748c1",
+      "generated_at": "2026-03-21T13:34:12.083968"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/UPDATE_MODEL_PATH_GUIDE.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/UPDATE_MODEL_PATH_GUIDE.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/vision-ai/새-모델-경로-업데이트-가이드-UPDATE_MOD.md",
+      "category": "vision-ai",
+      "title": "새 모델 경로 업데이트 가이드",
+      "hash": "13611abd6c3405a1564f2fa0a95a3ae9",
+      "generated_at": "2026-03-21T13:34:12.084859"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/WORK_LOG_20260203_FINAL.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/WORK_LOG_20260203_FINAL.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/작업-일지---2026년-2월-3일-WORK_LOG_2.md",
+      "category": "ai-ml",
+      "title": "작업 일지 - 2026년 2월 3일",
+      "hash": "387e5f3e27282f596d4105193bf95dc9",
+      "generated_at": "2026-03-21T13:34:12.085725"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/WORK_LOG_20260205.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/WORK_LOG_20260205.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/vision-ai/home-safe-solution-개발-기록-WORK_LOG_2.md",
+      "category": "vision-ai",
+      "title": "Home Safe Solution 개발 기록",
+      "hash": "fc939801f55bf91e36bd797b1f9c8045",
+      "generated_at": "2026-03-21T13:34:12.086779"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/WORK_LOG_20260205_v2(st-gcn).md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/WORK_LOG_20260205_v2(st-gcn).md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/home-safe-solution-개발-기록-WORK_LOG_2.md",
+      "category": "ai-ml",
+      "title": "Home Safe Solution 개발 기록",
+      "hash": "ca54b2af93b989a713f87fd31f14c934",
+      "generated_at": "2026-03-21T13:34:12.087771"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/WORK_LOG_20260205_v3_final.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/WORK_LOG_20260205_v3_final.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/home-safe-solution-개발-기록-WORK_LOG_2.md",
+      "category": "ai-ml",
+      "title": "Home Safe Solution 개발 기록",
+      "hash": "6731329a7e82a74b232e6ea3eeb4f96f",
+      "generated_at": "2026-03-21T13:34:12.088785"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/blog_operation_guide.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/blog_operation_guide.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/hugo-blog-career-dashboard-운영-가이드-blog_opera.md",
+      "category": "dev-tools",
+      "title": "Hugo Blog + Career Dashboard — 운영 가이드",
+      "hash": "24811c56f316cdf3bbca634ff09f7972",
+      "generated_at": "2026-03-21T13:34:12.090099"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/blog_strategy_guide.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/blog_strategy_guide.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/blog-strategy-posting-guide-blog_strat.md",
+      "category": "dev-tools",
+      "title": "Blog Strategy & Posting Guide",
+      "hash": "86db40e623fc71d2ffaa76277e58f6ff",
+      "generated_at": "2026-03-21T13:34:12.091117"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/claude.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/claude.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/vision-ai/stephen-kongs-development-principles-patterns-claude.md",
+      "category": "vision-ai",
+      "title": "Stephen Kong's Development Principles & Patterns",
+      "hash": "8005d0e6f7118434c4344f0cf4ef9b4b",
+      "generated_at": "2026-03-21T13:34:12.092210"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/day1_log.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/day1_log.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/day-1---ros2-환경-세팅-기본-통신-테스트-day1_log.md",
+      "category": "ros2",
+      "title": "Day 1 - ROS2 환경 세팅 & 기본 통신 테스트",
+      "hash": "e8b8ed5fae00dc0dfe1f0e1872a3e5b4",
+      "generated_at": "2026-03-21T13:34:12.092848"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/day2_5_log.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/day2_5_log.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/day-25---ros2-미니-순찰-시스템-통합-학습-일지-day2_5_log.md",
+      "category": "ros2",
+      "title": "Day 2~5 - ROS2 미니 순찰 시스템 통합 학습 일지",
+      "hash": "861490e30de73df1c954cb089731970b",
+      "generated_at": "2026-03-21T13:34:12.093714"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/dev_log_2026-02-15.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/dev_log_2026-02-15.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/vision-ai/mypet-개발일지-2026-02-15-dev_log_20.md",
+      "category": "vision-ai",
+      "title": "MyPet 개발일지 — 2026-02-15",
+      "hash": "bd92367e13107c902628dae0bcb5d557",
+      "generated_at": "2026-03-21T13:34:12.094378"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/home-safe-solution-vision-ai-project.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/home-safe-solution-vision-ai-project.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/vision-ai/home-safe-solution---vision-ai-프로젝트-home-safe-.md",
+      "category": "vision-ai",
+      "title": "Home Safe Solution - Vision AI 프로젝트",
+      "hash": "59fdfdb754e74ab15e8c5886cfa007d9",
+      "generated_at": "2026-03-21T13:34:12.095457"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/kevin_3d_sim_Guide.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/kevin_3d_sim_Guide.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/robotics/kevin-3d-patrol-simulator-개발-문서-kevin_3d_s.md",
+      "category": "robotics",
+      "title": "Kevin 3D Patrol Simulator — 개발 문서",
+      "hash": "07cc4042fe5276865cf7f47e27c77fcc",
+      "generated_at": "2026-03-21T13:34:12.096584"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/kevin_3d_sim_dev.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/kevin_3d_sim_dev.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/kevin-3d-patrol-simulator-개발-문서-kevin_3d_s.md",
+      "category": "ros2",
+      "title": "Kevin 3D Patrol Simulator — 개발 문서",
+      "hash": "8ee0b0dcbd6677f9b08d0444f7cc5e29",
+      "generated_at": "2026-03-21T13:34:12.097754"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/kevin_3d_sim_dev_0215_last.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/kevin_3d_sim_dev_0215_last.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/robotics/kevin-3d-patrol-simulator-개발-문서-kevin_3d_s.md",
+      "category": "robotics",
+      "title": "Kevin 3D Patrol Simulator — 개발 문서",
+      "hash": "6c0eeab71b232b84a6a18eac014e571c",
+      "generated_at": "2026-03-21T13:34:12.098810"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/kevin_3d_sim_dev_phaseI_finished.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/kevin_3d_sim_dev_phaseI_finished.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/robotics/kevin-3d-patrol-simulator-개발-문서-kevin_3d_s.md",
+      "category": "robotics",
+      "title": "Kevin 3D Patrol Simulator — 개발 문서",
+      "hash": "5032eab61f915a2fe7b86b9fbb7a0e3c",
+      "generated_at": "2026-03-21T13:34:12.099833"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/kevin_3d_sim_dev_plan0215.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/kevin_3d_sim_dev_plan0215.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/robotics/kevin-3d-patrol-simulator-개발-문서-kevin_3d_s.md",
+      "category": "robotics",
+      "title": "Kevin 3D Patrol Simulator — 개발 문서",
+      "hash": "cf601841939228e77931d31fe8ad3c91",
+      "generated_at": "2026-03-21T13:34:12.100916"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/kevin_multi_patrol_bugfix_log.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/kevin_multi_patrol_bugfix_log.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/robotics/kevin-multi-patrol-dashboard-mocksim-a-경로-최적화-이식-기록-kevin_mult.md",
+      "category": "robotics",
+      "title": "Kevin Multi Patrol Dashboard — MockSim A* 경로 최적화 이식 기록",
+      "hash": "e7f7414d03acccc3b336d85844ac6ef4",
+      "generated_at": "2026-03-21T13:34:12.101839"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/kevin_patrol_dashboard_dev_250215.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/kevin_patrol_dashboard_dev_250215.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/vision-ai/kevin-patrol-dashboard-개발-기록-kevin_patr.md",
+      "category": "vision-ai",
+      "title": "Kevin Patrol Dashboard — 개발 기록",
+      "hash": "ceee7b5e353a617cddee7aad9aa673ac",
+      "generated_at": "2026-03-21T13:34:12.102947"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/kevin_patrol_mocksim_optimization_log_VIP.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/kevin_patrol_mocksim_optimization_log_VIP.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/robotics/kevin-patrol-dashboard-mocksim-a-경로-최적화-작업-기록-kevin_patr.md",
+      "category": "robotics",
+      "title": "Kevin Patrol Dashboard — MockSim A* 경로 최적화 작업 기록",
+      "hash": "7a3f64c16fee4dc51a51f966ad052129",
+      "generated_at": "2026-03-21T13:34:12.104236"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/kevin_patrol_v3.2_work_log.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/kevin_patrol_v3.2_work_log.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/kevin-patrol-dashboard-v32-작업-기록-kevin_patr.md",
+      "category": "dev-tools",
+      "title": "Kevin Patrol Dashboard v3.2 — 작업 기록",
+      "hash": "c374894e2d3a414be6f2e9733b96e5b6",
+      "generated_at": "2026-03-21T13:34:12.105163"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/kevin_patrol_v3_2_1_work_log.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/kevin_patrol_v3_2_1_work_log.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/kevin-patrol-dashboard-v321-작업-기록-kevin_patr.md",
+      "category": "dev-tools",
+      "title": "Kevin Patrol Dashboard v3.2.1 — 작업 기록",
+      "hash": "56c44ef87ee7576cb46a53c575b66e91",
+      "generated_at": "2026-03-21T13:34:12.106003"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/kevin_patrol_v3_3_fleet_work_log.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/kevin_patrol_v3_3_fleet_work_log.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/robotics/kevin-patrol-dashboard-v33-multi-robot-fleet-작업-기록-kevin_patr.md",
+      "category": "robotics",
+      "title": "Kevin Patrol Dashboard v3.3 — Multi-Robot Fleet 작업 기록",
+      "hash": "4a6d67ce93cc52c60e644db303609e32",
+      "generated_at": "2026-03-21T13:34:12.106942"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/puzzle-mediapipe-hand-gesture-game.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/puzzle-mediapipe-hand-gesture-game.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/vision-ai/spot-the-difference-검지-포인팅-숨은그림찾기-puzzle-med.md",
+      "category": "vision-ai",
+      "title": "🎮 Spot the Difference — 검지 포인팅 숨은그림찾기",
+      "hash": "6ecef2a60a327ac3a8e8a777c39a3229",
+      "generated_at": "2026-03-21T13:34:12.107841"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/rf-stgcn-model-comparison-final.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/rf-stgcn-model-comparison-final.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/rf와-st-gcn-모델-최적화-튜닝-및-성능-비교-iii-최종-rf-stgcn-m.md",
+      "category": "ai-ml",
+      "title": "RF와 ST-GCN 모델 최적화 튜닝 및 성능 비교 III (최종)",
+      "hash": "26fd5ef1304d71cc12bd8165e415c1b7",
+      "generated_at": "2026-03-21T13:34:12.108721"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/robotics_blog_strategy.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/robotics_blog_strategy.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/로보틱스-개발자-블로그-구축-전략-robotics_b.md",
+      "category": "dev-tools",
+      "title": "로보틱스 개발자 블로그 — 구축 전략",
+      "hash": "0f5a6887a5d9fd646f8df094f544bffb",
+      "generated_at": "2026-03-21T13:34:12.109886"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/robotics_engineering_roadmap.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/robotics_engineering_roadmap.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/robotics-engineering-roadmap-robotics_e.md",
+      "category": "dev-tools",
+      "title": "Robotics Engineering Roadmap",
+      "hash": "fa6af59286a3e298d3f48ff9f007caeb",
+      "generated_at": "2026-03-21T13:34:12.111316"
+    },
+    "/home/gjkong/dev_ws/blog/references/my_docs/ros2_commander_app_roadmap.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/my_docs/ros2_commander_app_roadmap.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/ros2-commander-앱-스토어-배포-로드맵-ros2_comma.md",
+      "category": "dev-tools",
+      "title": "ROS2 Commander — 앱 스토어 배포 로드맵",
+      "hash": "7881c967a473db9f64daab99a2d2d556",
+      "generated_at": "2026-03-21T13:34:12.112266"
+    },
+    "/home/gjkong/dev_ws/blog/references/mypet_venv/best_practices.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/mypet_venv/best_practices.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/big-data/best-practices-best_pract.md",
+      "category": "big-data",
+      "title": "Best Practices",
+      "hash": "130472ecbe642ede6d35371becbb4701",
+      "generated_at": "2026-03-21T13:34:12.113093"
+    },
+    "/home/gjkong/dev_ws/blog/references/pipeline__no_use/TRAINING_PIPELINE_PLAN.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/pipeline__no_use/TRAINING_PIPELINE_PLAN.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/home-safe-solution---자동화-학습-파이프라인-설계서-TRAINING_P.md",
+      "category": "ai-ml",
+      "title": "Home Safe Solution - 자동화 학습 파이프라인 설계서",
+      "hash": "79955118f0990e0ff9a9605631e748c1",
+      "generated_at": "2026-03-21T13:34:12.114092"
+    },
+    "/home/gjkong/dev_ws/blog/references/ros2_fundamental/ros2_mini_patrol_project.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/ros2_fundamental/ros2_mini_patrol_project.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ros2/ros2-미니-로봇-관제-시스템-mini-robot-patrol-system.md",
+      "category": "ros2",
+      "title": "ROS2 미니 로봇 관제 시스템 (Mini Robot Patrol System)",
+      "hash": "265455ec0a8b979956fd7d66bbbbd0c6",
+      "generated_at": "2026-03-21T13:34:12.115363"
+    },
+    "/home/gjkong/dev_ws/blog/references/ros2_venv/best_practices.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/ros2_venv/best_practices.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/big-data/best-practices-best_pract.md",
+      "category": "big-data",
+      "title": "Best Practices",
+      "hash": "130472ecbe642ede6d35371becbb4701",
+      "generated_at": "2026-03-21T13:34:12.116228"
+    },
+    "/home/gjkong/dev_ws/blog/references/smartgate/2026-02-26_smartgate_day1.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/smartgate/2026-02-26_smartgate_day1.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/vision-ai/smartgate-개발-로그.md",
+      "category": "vision-ai",
+      "title": "SmartGate 개발 로그",
+      "hash": "7924e7dcc6927a9e37e78b28cdcf83a9",
+      "generated_at": "2026-03-21T13:34:12.117431"
+    },
+    "/home/gjkong/dev_ws/blog/references/smartgate/smartgate_dev_log_20260228.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/smartgate/smartgate_dev_log_20260228.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/robot-security/smartgate-2fa-개발-로그.md",
+      "category": "robot-security",
+      "title": "SmartGate 2FA 개발 로그",
+      "hash": "df485db4bea39651db469e5eb9b440f8",
+      "generated_at": "2026-03-21T13:34:12.118267"
+    },
+    "/home/gjkong/dev_ws/blog/references/st_gcn_backup/FINAL_COMPLETE_GUIDE.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/st_gcn_backup/FINAL_COMPLETE_GUIDE.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/비전-홈-케어-도우미---gui-시스템-최종-완성-FINAL_COMP.md",
+      "category": "dev-tools",
+      "title": "🎉 비전 홈 케어 도우미 - GUI 시스템 최종 완성!",
+      "hash": "20d73fbf8ee2065dadc47b718eb63f5b",
+      "generated_at": "2026-03-21T13:34:12.119096"
+    },
+    "/home/gjkong/dev_ws/blog/references/st_gcn_backup/FIX_MYSQL_ERROR.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/st_gcn_backup/FIX_MYSQL_ERROR.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/big-data/mysql-연결-오류-해결-가이드-FIX_MYSQL_.md",
+      "category": "big-data",
+      "title": "🔧 MySQL 연결 오류 해결 가이드",
+      "hash": "c753e7cdd42b0da1d0560272ef808af4",
+      "generated_at": "2026-03-21T13:34:12.119900"
+    },
+    "/home/gjkong/dev_ws/blog/references/st_gcn_backup/GUI_README.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/st_gcn_backup/GUI_README.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/home-safe-solution---pyqt6-gui-시스템-GUI_README.md",
+      "category": "dev-tools",
+      "title": "🏠 Home Safe Solution - PyQt6 GUI 시스템",
+      "hash": "c0a27f57ecb54152dc51b8e86327607d",
+      "generated_at": "2026-03-21T13:34:12.120775"
+    },
+    "/home/gjkong/dev_ws/blog/references/st_gcn_backup/LOGGING_GUIDE.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/st_gcn_backup/LOGGING_GUIDE.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/vision-ai/로깅-시스템-사용-가이드-LOGGING_GU.md",
+      "category": "vision-ai",
+      "title": "🔍 로깅 시스템 사용 가이드",
+      "hash": "de44ea9bb3483600f1ea72ae5fc0a31f",
+      "generated_at": "2026-03-21T13:34:12.121732"
+    },
+    "/home/gjkong/dev_ws/blog/references/st_gcn_backup/PACKAGE_INFO.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/st_gcn_backup/PACKAGE_INFO.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/home-safe-solution---pyqt6-gui-시스템-완성-PACKAGE_IN.md",
+      "category": "dev-tools",
+      "title": "🏠 Home Safe Solution - PyQt6 GUI 시스템 완성!",
+      "hash": "a41b256daf09f201560a4cf9a3ac58e7",
+      "generated_at": "2026-03-21T13:34:12.122590"
+    },
+    "/home/gjkong/dev_ws/blog/references/st_gcn_backup/QUICKSTART.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/st_gcn_backup/QUICKSTART.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/quick-start-guide-QUICKSTART.md",
+      "category": "dev-tools",
+      "title": "🚀 Quick Start Guide",
+      "hash": "7cf9a357a4d215ac818a4990360e630e",
+      "generated_at": "2026-03-21T13:34:12.123278"
+    },
+    "/home/gjkong/dev_ws/blog/references/st_gcn_backup/REALTIME_GUIDE.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/st_gcn_backup/REALTIME_GUIDE.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/realtime-guide.md",
+      "category": "dev-tools",
+      "title": "Realtime Guide",
+      "hash": "d41d8cd98f00b204e9800998ecf8427e",
+      "generated_at": "2026-03-21T13:34:12.123737"
+    },
+    "/home/gjkong/dev_ws/blog/references/yolo/FINAL_COMPLETE_GUIDE.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/yolo/FINAL_COMPLETE_GUIDE.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/비전-홈-케어-도우미---gui-시스템-최종-완성-FINAL_COMP.md",
+      "category": "dev-tools",
+      "title": "🎉 비전 홈 케어 도우미 - GUI 시스템 최종 완성!",
+      "hash": "20d73fbf8ee2065dadc47b718eb63f5b",
+      "generated_at": "2026-03-21T13:34:12.124925"
+    },
+    "/home/gjkong/dev_ws/blog/references/yolo/FIX_MYSQL_ERROR.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/yolo/FIX_MYSQL_ERROR.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/big-data/mysql-연결-오류-해결-가이드-FIX_MYSQL_.md",
+      "category": "big-data",
+      "title": "🔧 MySQL 연결 오류 해결 가이드",
+      "hash": "c753e7cdd42b0da1d0560272ef808af4",
+      "generated_at": "2026-03-21T13:34:12.125718"
+    },
+    "/home/gjkong/dev_ws/blog/references/yolo/GEMINI.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/yolo/GEMINI.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/vision-ai/home-safe-solution---vision-ai-프로젝트-문서-GEMINI.md",
+      "category": "vision-ai",
+      "title": "Home Safe Solution - Vision AI 프로젝트 문서",
+      "hash": "4e77fb57772a3d0b2864efdf3caaeaa2",
+      "generated_at": "2026-03-21T13:34:12.126635"
+    },
+    "/home/gjkong/dev_ws/blog/references/yolo/GUI_README.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/yolo/GUI_README.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/home-safe-solution---pyqt6-gui-시스템-GUI_README.md",
+      "category": "dev-tools",
+      "title": "🏠 Home Safe Solution - PyQt6 GUI 시스템",
+      "hash": "c0a27f57ecb54152dc51b8e86327607d",
+      "generated_at": "2026-03-21T13:34:12.127557"
+    },
+    "/home/gjkong/dev_ws/blog/references/yolo/LOGGING_GUIDE.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/yolo/LOGGING_GUIDE.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/vision-ai/로깅-시스템-사용-가이드-LOGGING_GU.md",
+      "category": "vision-ai",
+      "title": "🔍 로깅 시스템 사용 가이드",
+      "hash": "5d451902f15556a4bc09001e44f3d266",
+      "generated_at": "2026-03-21T13:34:12.128665"
+    },
+    "/home/gjkong/dev_ws/blog/references/yolo/MODEL_COMPARISON_REPORT.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/yolo/MODEL_COMPARISON_REPORT.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/home-safe-solution---모델-성능-비교-분석-보고서-MODEL_COMP.md",
+      "category": "ai-ml",
+      "title": "Home Safe Solution - 모델 성능 비교 분석 보고서",
+      "hash": "09511c0f1e919ff1cb157dd21bc410e2",
+      "generated_at": "2026-03-21T13:34:12.129581"
+    },
+    "/home/gjkong/dev_ws/blog/references/yolo/MODEL_COMPARISON_REPORT_0208.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/yolo/MODEL_COMPARISON_REPORT_0208.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/home-safe-solution---모델-성능-비교-분석-보고서-MODEL_COMP.md",
+      "category": "ai-ml",
+      "title": "Home Safe Solution - 모델 성능 비교 분석 보고서",
+      "hash": "55b4e0c54be4559b938736adb6592282",
+      "generated_at": "2026-03-21T13:34:12.130450"
+    },
+    "/home/gjkong/dev_ws/blog/references/yolo/PACKAGE_INFO.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/yolo/PACKAGE_INFO.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/home-safe-solution---pyqt6-gui-시스템-완성-PACKAGE_IN.md",
+      "category": "dev-tools",
+      "title": "🏠 Home Safe Solution - PyQt6 GUI 시스템 완성!",
+      "hash": "a41b256daf09f201560a4cf9a3ac58e7",
+      "generated_at": "2026-03-21T13:34:12.131826"
+    },
+    "/home/gjkong/dev_ws/blog/references/yolo/PROJECT_DOCUMENTATION.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/yolo/PROJECT_DOCUMENTATION.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/vision-ai/home-safe-solution---vision-ai-프로젝트-문서-PROJECT_DO.md",
+      "category": "vision-ai",
+      "title": "Home Safe Solution - Vision AI 프로젝트 문서",
+      "hash": "4e77fb57772a3d0b2864efdf3caaeaa2",
+      "generated_at": "2026-03-21T13:34:12.132777"
+    },
+    "/home/gjkong/dev_ws/blog/references/yolo/QUICKSTART.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/yolo/QUICKSTART.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/quick-start-guide-QUICKSTART.md",
+      "category": "dev-tools",
+      "title": "🚀 Quick Start Guide",
+      "hash": "7cf9a357a4d215ac818a4990360e630e",
+      "generated_at": "2026-03-21T13:34:12.133508"
+    },
+    "/home/gjkong/dev_ws/blog/references/yolo/REALTIME_GUIDE.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/yolo/REALTIME_GUIDE.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/vision-ai/실시간-낙상-감지-시스템-사용-가이드-REALTIME_G.md",
+      "category": "vision-ai",
+      "title": "🎥 실시간 낙상 감지 시스템 사용 가이드",
+      "hash": "b3c028a6a8e6b046268dd9e4d636db5c",
+      "generated_at": "2026-03-21T13:34:12.134378"
+    },
+    "/home/gjkong/dev_ws/blog/references/yolo/RF_TUNING_EXPERIMENT_REPORT.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/yolo/RF_TUNING_EXPERIMENT_REPORT.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/home-safe-solution---random-forest-튜닝-실험-보고서-RF_TUNING_.md",
+      "category": "ai-ml",
+      "title": "Home Safe Solution - Random Forest 튜닝 실험 보고서",
+      "hash": "6588843cd41013ebd15986145bdc3523",
+      "generated_at": "2026-03-21T13:34:12.135219"
+    },
+    "/home/gjkong/dev_ws/blog/references/yolo/TRAINING_PIPELINE_PLAN.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/yolo/TRAINING_PIPELINE_PLAN.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/home-safe-solution---자동화-학습-파이프라인-설계서-TRAINING_P.md",
+      "category": "ai-ml",
+      "title": "Home Safe Solution - 자동화 학습 파이프라인 설계서",
+      "hash": "79955118f0990e0ff9a9605631e748c1",
+      "generated_at": "2026-03-21T13:34:12.136301"
+    },
+    "/home/gjkong/dev_ws/blog/references/yolo_venv/AGENTS.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/yolo_venv/AGENTS.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/ai-ml/solapi-model-layer.md",
+      "category": "ai-ml",
+      "title": "SOLAPI MODEL LAYER",
+      "hash": "043cb741f751c780cf6855a593662a9b",
+      "generated_at": "2026-03-21T13:34:12.137278"
+    },
+    "/home/gjkong/dev_ws/blog/references/yolo_venv/ICON_LICENSE.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/yolo_venv/ICON_LICENSE.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/icon-license-ICON_LICEN.md",
+      "category": "dev-tools",
+      "title": "Icon License",
+      "hash": "44921d713d160eb0d2a7004e35675485",
+      "generated_at": "2026-03-21T13:34:12.137931"
+    },
+    "/home/gjkong/dev_ws/blog/references/yolo_venv/Privacy.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/yolo_venv/Privacy.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/dev-tools/privacy.md",
+      "category": "dev-tools",
+      "title": "Privacy",
+      "hash": "0b9af38847e428dcdff7bb01ff3c749a",
+      "generated_at": "2026-03-21T13:34:12.138704"
+    },
+    "/home/gjkong/dev_ws/blog/references/yolo_venv/best_practices.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/yolo_venv/best_practices.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/big-data/best-practices-best_pract.md",
+      "category": "big-data",
+      "title": "Best Practices",
+      "hash": "130472ecbe642ede6d35371becbb4701",
+      "generated_at": "2026-03-21T13:34:12.139539"
+    },
+    "/home/gjkong/dev_ws/blog/references/yolo_venv/coreml_supported_mlprogram_ops.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/yolo_venv/coreml_supported_mlprogram_ops.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/mlops/coreml-supported-mlprogram-ops.md",
+      "category": "mlops",
+      "title": "Coreml Supported Mlprogram Ops",
+      "hash": "78914a4aceba40e88acdf27c68f4d2df",
+      "generated_at": "2026-03-21T13:34:12.140216"
+    },
+    "/home/gjkong/dev_ws/blog/references/yolo_venv/coreml_supported_neuralnetwork_ops.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/yolo_venv/coreml_supported_neuralnetwork_ops.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/mlops/coreml-supported-neuralnetwork-ops.md",
+      "category": "mlops",
+      "title": "Coreml Supported Neuralnetwork Ops",
+      "hash": "e2ff27aad582de403ced9e84a14e32e1",
+      "generated_at": "2026-03-21T13:34:12.140787"
+    },
+    "/home/gjkong/dev_ws/blog/references/yolo_venv/nnapi_supported_ops.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/yolo_venv/nnapi_supported_ops.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/mlops/nnapi-supported-ops.md",
+      "category": "mlops",
+      "title": "Nnapi Supported Ops",
+      "hash": "38c842e69907da93e225ed13957200b1",
+      "generated_at": "2026-03-21T13:34:12.141403"
+    },
+    "/home/gjkong/dev_ws/blog/references/yoloosem/ClientProgram.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/yoloosem/ClientProgram.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/big-data/클라이언트-프로그램-정의서.md",
+      "category": "big-data",
+      "title": "클라이언트 프로그램 정의서",
+      "hash": "7f856136a0d51c024d043ffcdb290b64",
+      "generated_at": "2026-03-21T13:34:12.141792"
+    },
+    "/home/gjkong/dev_ws/blog/references/yoloosem/LOGGING_GUIDE.md": {
+      "src": "/home/gjkong/dev_ws/blog/references/yoloosem/LOGGING_GUIDE.md",
+      "dest": "/home/gjkong/dev_ws/blog/content/posts/vision-ai/로깅-시스템-사용-가이드-LOGGING_GU.md",
+      "category": "vision-ai",
+      "title": "🔍 로깅 시스템 사용 가이드",
+      "hash": "5d451902f15556a4bc09001e44f3d266",
+      "generated_at": "2026-03-21T13:34:12.142761"
+    }
+  }
+}
