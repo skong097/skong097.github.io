@@ -27,12 +27,12 @@ description: "**날짜:** 2026-02-21 **프로젝트:** `~/dev_ws/voice_iot_contr
 ## 실행 결과 (13:16 기준)
 
 ```
-✅ Ollama 연결 성공 — exaone3.5:latest
-✅ STTEngine — base / wake=자비스야
-✅ TCP 서버 — 0.0.0.0:9000
-✅ ESP32 연결 — esp32_bedroom (192.168.35.229)
-✅ WebSocket 클라이언트 — ws_client_0001
-⚠️  noisereduce 미설치 → 노이즈 억제 비활성화
+ Ollama 연결 성공 — exaone3.5:latest
+ STTEngine — base / wake=자비스야
+ TCP 서버 — 0.0.0.0:9000
+ ESP32 연결 — esp32_bedroom (192.168.35.229)
+ WebSocket 클라이언트 — ws_client_0001
+  noisereduce 미설치 → 노이즈 억제 비활성화
 ```
 
 ---

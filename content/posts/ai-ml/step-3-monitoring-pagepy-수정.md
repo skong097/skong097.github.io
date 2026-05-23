@@ -9,7 +9,7 @@ description: "**파일**: `monitoring_page.py` **메소드**: `save_fall_event()
 
 # Step 3: monitoring_page.py 수정
 
-## 📋 수정 내용
+##  수정 내용
 
 **파일**: `monitoring_page.py`  
 **메소드**: `save_fall_event()`  
@@ -17,7 +17,7 @@ description: "**파일**: `monitoring_page.py` **메소드**: `save_fall_event()
 
 ---
 
-## ✏️ 수정 사항
+##  수정 사항
 
 ### 1. 정확도 가져오기 추가
 
@@ -89,7 +89,7 @@ if event_id:
 
 ---
 
-## 📊 동작 흐름
+##  동작 흐름
 
 ```
 1. 낙상 감지 예측
@@ -111,7 +111,7 @@ if event_id:
 
 ---
 
-## 📂 생성된 파일
+##  생성된 파일
 
 ```
 /mnt/user-data/outputs/monitoring_page_STEP3_FINAL.py
@@ -124,7 +124,7 @@ if event_id:
 
 ---
 
-## 🔄 배포 방법
+##  배포 방법
 
 ```bash
 cd /home/gjkong/dev_ws/yolo/myproj/gui
@@ -138,7 +138,7 @@ cp ~/Downloads/monitoring_page_STEP3_FINAL.py monitoring_page.py
 
 ---
 
-## ✅ 테스트 방법
+##  테스트 방법
 
 ### 1. GUI 실행
 ```bash
@@ -176,7 +176,7 @@ LIMIT 5;
 
 ---
 
-## 🎯 정확도 값 의미
+##  정확도 값 의미
 
 ```python
 accuracy = self.accuracy_tracker.get_accuracy()
@@ -196,7 +196,7 @@ accuracy = self.accuracy_tracker.get_accuracy()
 
 ---
 
-## 📝 코드 변경 요약
+##  코드 변경 요약
 
 | 항목 | 변경 사항 |
 |------|-----------|
@@ -207,11 +207,11 @@ accuracy = self.accuracy_tracker.get_accuracy()
 
 ---
 
-## ⚠️ 주의사항
+##  주의사항
 
 1. **의존성**: Step 1, Step 2가 먼저 완료되어야 합니다!
-   - Step 1: DB 컬럼 추가 ✅
-   - Step 2: database_models.py 수정 ✅
+   - Step 1: DB 컬럼 추가 
+   - Step 2: database_models.py 수정 
 
 2. **AccuracyTracker**: 이미 monitoring_page.py에 통합되어 있습니다
    ```python
@@ -228,15 +228,15 @@ accuracy = self.accuracy_tracker.get_accuracy()
 
 ---
 
-## 🎉 예상 결과
+##  예상 결과
 
 ### GUI 로그 화면:
 ```
-[00:19:05] [YOLO] ✅ Keypoints: 1개!
+[00:19:05] [YOLO]  Keypoints: 1개!
 [00:19:05] [INFO] Normal - 85.3%
 [00:19:05] [DB] Normal saved (ID: 22518, Acc: 92.5%)  ⭐
 
-[00:19:10] [YOLO] ✅ Keypoints: 1개!
+[00:19:10] [YOLO]  Keypoints: 1개!
 [00:19:10] [INFO] Normal - 80.1%
 [00:19:10] [DB] Normal saved (ID: 22519, Acc: 93.1%)  ⭐
 ```
@@ -260,16 +260,16 @@ accuracy: 92.5  ⭐ DB에 저장됨!
 
 ---
 
-## 🎯 다음 단계
+##  다음 단계
 
 Step 3 완료 후:
-- ✅ Step 1: DB 컬럼 추가 (완료)
-- ✅ Step 2: database_models.py 수정 (완료)
-- ✅ Step 3: monitoring_page.py 수정 (완료)
-- ⏭️ **Step 4: dashboard_page.py 수정** (다음)
+-  Step 1: DB 컬럼 추가 (완료)
+-  Step 2: database_models.py 수정 (완료)
+-  Step 3: monitoring_page.py 수정 (완료)
+- ⏭ **Step 4: dashboard_page.py 수정** (다음)
 
 ---
 
-**Step 3 완료!** ✅
+**Step 3 완료!** 
 
-파일을 배포하고 테스트한 후 "Step 4 진행" 이라고 말씀해주세요! 😊
+파일을 배포하고 테스트한 후 "Step 4 진행" 이라고 말씀해주세요! 

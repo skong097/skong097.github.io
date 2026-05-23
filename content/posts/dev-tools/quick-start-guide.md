@@ -1,5 +1,5 @@
 ---
-title: "🚀 Quick Start Guide"
+title: " Quick Start Guide"
 date: 2026-03-21
 draft: true
 tags: ["dev-tools", "pyqt6"]
@@ -7,9 +7,9 @@ categories: ["dev-tools"]
 description: "```bash cd /mnt/user-data/outputs chmod +x install.sh"
 ---
 
-# 🚀 Quick Start Guide
+#  Quick Start Guide
 
-## ⚡ 5분 만에 시작하기
+##  5분 만에 시작하기
 
 ### 1단계: 설치 스크립트 실행 (1분)
 
@@ -53,42 +53,42 @@ python main.py
 
 ---
 
-## 🎯 핵심 기능 테스트
+##  핵심 기능 테스트
 
-### ✅ 1. 대시보드 확인
+###  1. 대시보드 확인
 - 로그인 후 자동으로 대시보드 표시
 - 통계 카드, 차트, 최근 이벤트 확인
 
-### ✅ 2. 실시간 모니터링
-1. **🎥 실시간 모니터링** 메뉴 클릭
+###  2. 실시간 모니터링
+1. ** 실시간 모니터링** 메뉴 클릭
 2. **▶ 시작** 버튼 클릭
 3. 웹캠 앞에서 **서있기** (전신이 보이도록!)
 4. Skeleton이 표시되면 성공!
-5. 상태 확인: 🟢 Normal
+5. 상태 확인:  Normal
 
-### ✅ 3. 낙상 테스트
+###  3. 낙상 테스트
 1. 모니터링 중에 **천천히 쪼그려 앉기**
-2. 🟡 Falling 감지
+2.  Falling 감지
 3. **바닥에 눕기**
-4. 🔴 Fallen 감지
+4.  Fallen 감지
 5. 이벤트 로그 확인
 
-### ✅ 4. 이벤트 로그 확인
-1. **📋 이벤트 로그** 메뉴 클릭
+###  4. 이벤트 로그 확인
+1. ** 이벤트 로그** 메뉴 클릭
 2. 기록된 이벤트 조회
 
 ---
 
-## 🐛 문제 해결 (1분 해결)
+##  문제 해결 (1분 해결)
 
-### ❌ 문제 1: PyQt6 설치 오류
+###  문제 1: PyQt6 설치 오류
 
 ```bash
 pip uninstall PyQt6
 pip install PyQt6 --break-system-packages --no-cache-dir
 ```
 
-### ❌ 문제 2: MySQL 연결 오류
+###  문제 2: MySQL 연결 오류
 
 ```bash
 # MySQL 시작
@@ -98,7 +98,7 @@ sudo systemctl start mysql
 mysql -u root -p -e "SELECT 1"
 ```
 
-### ❌ 문제 3: 웹캠 인식 안 됨
+###  문제 3: 웹캠 인식 안 됨
 
 ```bash
 # 웹캠 확인
@@ -108,7 +108,7 @@ ls /dev/video*
 sudo chmod 666 /dev/video0
 ```
 
-### ❌ 문제 4: Feature 값이 0
+###  문제 4: Feature 값이 0
 
 **원인**: 앉아서 테스트 → 하반신이 화면 밖
 
@@ -119,12 +119,12 @@ sudo chmod 666 /dev/video0
 
 ---
 
-## 📊 예상 결과
+##  예상 결과
 
 ### 정상 작동 시
 
 ```
-상태: 🟢 Normal (확률: 95.2%)
+상태:  Normal (확률: 95.2%)
 Hip Height: 320.5
 Spine Angle: 12.8°
 Confidence: 0.85
@@ -133,7 +133,7 @@ Confidence: 0.85
 ### 낙상 감지 시
 
 ```
-상태: 🔴 Fallen (확률: 92.1%)
+상태:  Fallen (확률: 92.1%)
 Hip Height: 150.3
 Spine Angle: 85.5°
 Confidence: 0.82
@@ -141,16 +141,16 @@ Confidence: 0.82
 
 ---
 
-## 🎉 성공!
+##  성공!
 
 모든 것이 정상 작동하면:
 
-1. ✅ 웹캠 영상 표시
-2. ✅ Skeleton 오버레이
-3. ✅ 실시간 상태 업데이트
-4. ✅ 낙상 감지 및 이벤트 로그
+1.  웹캠 영상 표시
+2.  Skeleton 오버레이
+3.  실시간 상태 업데이트
+4.  낙상 감지 및 이벤트 로그
 
-**축하합니다! 🎊**
+**축하합니다! **
 
 이제 다음 단계로:
 - 사용자 추가
@@ -162,7 +162,7 @@ Confidence: 0.82
 
 ---
 
-## 🆘 도움말
+##  도움말
 
 문제가 해결되지 않으면:
 
@@ -180,4 +180,4 @@ Confidence: 0.82
 **날짜**: 2026-01-28  
 **버전**: 1.0.0
 
-🏠 **Home Safe** - 가정의 안전을 지킵니다
+ **Home Safe** - 가정의 안전을 지킵니다

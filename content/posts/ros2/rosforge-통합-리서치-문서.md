@@ -102,23 +102,23 @@ ROS2 기반 개발 시 개발자가 겪는 주요 불편 사항:
 
 | 기능 | ROSForge (제안) | Foxglove | rqt | RViz2 |
 |------|:-:|:-:|:-:|:-:|
-| 환경 설정 GUI (.bashrc) | ✅ | ❌ | ❌ | ❌ |
-| 빌드 자동화 | ✅ | ❌ | ❌ | ❌ |
-| 노드 실행 관리 | ✅ | ❌ | ❌ | ❌ |
-| **노드 상세 인트로스펙션** | ✅ | 부분 | ✅ | ❌ |
-| **QoS 프로파일 조회/시각화** | ✅ | ❌ | ❌ | ❌ |
-| **토픽 주파수/대역폭 실시간** | ✅ | ✅ | ✅ | ❌ |
-| 실시간 토픽 뷰어 | ✅ | ✅ | ✅ | ❌ |
-| 파라미터 GUI 수정 | ✅ | 제한적 | ✅ | ❌ |
-| **라이프사이클 노드 상태 제어** | ✅ | 부분 | ❌ | ❌ |
-| **발행자/구독자 엔드포인트 정보** | ✅ | ❌ | ❌ | ❌ |
-| 3D 시각화 | ✅ | ✅ | ❌ | ✅ |
-| 실시간 플롯 | ✅ | ✅ | ✅ | ❌ |
-| 로그 뷰어 | ✅ | ✅ | ✅ | ❌ |
-| 인터페이스 브라우저 | ✅ | ❌ | ❌ | ❌ |
-| Watch Mode 빌드 | ✅ | ❌ | ❌ | ❌ |
-| bag 파일 재생 | ✅ | ✅ | ❌ | 제한적 |
-| **통합 단일 도구** | ✅ | 시각화만 | 분산 | 3D만 |
+| 환경 설정 GUI (.bashrc) |  |  |  |  |
+| 빌드 자동화 |  |  |  |  |
+| 노드 실행 관리 |  |  |  |  |
+| **노드 상세 인트로스펙션** |  | 부분 |  |  |
+| **QoS 프로파일 조회/시각화** |  |  |  |  |
+| **토픽 주파수/대역폭 실시간** |  |  |  |  |
+| 실시간 토픽 뷰어 |  |  |  |  |
+| 파라미터 GUI 수정 |  | 제한적 |  |  |
+| **라이프사이클 노드 상태 제어** |  | 부분 |  |  |
+| **발행자/구독자 엔드포인트 정보** |  |  |  |  |
+| 3D 시각화 |  |  |  |  |
+| 실시간 플롯 |  |  |  |  |
+| 로그 뷰어 |  |  |  |  |
+| 인터페이스 브라우저 |  |  |  |  |
+| Watch Mode 빌드 |  |  |  |  |
+| bag 파일 재생 |  |  |  | 제한적 |
+| **통합 단일 도구** |  | 시각화만 | 분산 | 3D만 |
 
 **결론**: 빌드-실행-모니터링-시각화-파라미터 수정을 하나로 통합한 도구는 **현재 존재하지 않음**.
 
@@ -144,7 +144,7 @@ ROS2 기반 개발 시 개발자가 겪는 주요 불편 사항:
   Action Clients:       # 이 노드가 호출하는 액션 + 타입
 ```
 
-> ⚠️ **현재 research.md 누락**: 노드의 Service Clients, Action Clients 조회가 요구사항에 없음
+>  **현재 research.md 누락**: 노드의 Service Clients, Action Clients 조회가 요구사항에 없음
 
 #### rclpy API
 
@@ -179,22 +179,22 @@ get_action_client_names_and_types_by_node(node, node_name, node_namespace)
 ```
 노드 카드 클릭 시 표시할 정보:
 ┌─────────────────────────────────────────┐
-│  📦 /dist_turtle_action_server           │
+│   /dist_turtle_action_server           │
 │  패키지: my_first_package                │
 │  PID: 12345  |  CPU: 2.1%  |  MEM: 45MB │
 │                                         │
-│  📤 Publishers (1)                       │
+│   Publishers (1)                       │
 │    /turtle1/cmd_vel  geometry_msgs/Twist │
 │                                         │
-│  📥 Subscribers (1)                      │
+│   Subscribers (1)                      │
 │    /turtle1/pose     turtlesim/Pose      │
 │                                         │
-│  🔧 Service Servers (6)                  │
+│   Service Servers (6)                  │
 │    /dist_turtle_action_server/set_params │
 │    /dist_turtle_action_server/get_params │
 │    ... (파라미터 기본 서비스)             │
 │                                         │
-│  🎯 Action Servers (1)                   │
+│   Action Servers (1)                   │
 │    /dist_turtle  my_first_package_msgs/  │
 │                  action/DistTurtle       │
 │                                         │
@@ -264,7 +264,7 @@ node.count_subscribers('/turtle1/cmd_vel')
 ```
 토픽 목록 행 클릭 시 표시할 상세:
 ┌─────────────────────────────────────────────┐
-│  📡 /turtle1/cmd_vel                         │
+│   /turtle1/cmd_vel                         │
 │  타입: geometry_msgs/msg/Twist               │
 │  주파수: 2.0 Hz  |  대역폭: 0.08 KB/s        │
 │                                             │
@@ -278,12 +278,12 @@ node.count_subscribers('/turtle1/cmd_vel')
 │    _ros2cli_xxx [/]                          │
 │    QoS: BEST_EFFORT | VOLATILE | KEEP_LAST  │
 │                                             │
-│  ⚠️  QoS 호환성 경고: RELIABLE ↔ BEST_EFFORT │
+│    QoS 호환성 경고: RELIABLE ↔ BEST_EFFORT │
 │  [메시지 보기]  [플롯]  [발행]  [녹화]        │
 └─────────────────────────────────────────────┘
 ```
 
-> ⚠️ **현재 research.md 누락**:
+>  **현재 research.md 누락**:
 > - 토픽 주파수(Hz) 실시간 표시
 > - 토픽 대역폭(KB/s) 실시간 표시
 > - 발행자/구독자 엔드포인트 상세 (노드명, QoS 프로파일)
@@ -307,11 +307,11 @@ node.count_subscribers('/turtle1/cmd_vel')
 
 ```
 QoS 호환성 매트릭스 표시:
-발행자 RELIABLE + 구독자 BEST_EFFORT → ✅ 호환 (다운그레이드)
-발행자 BEST_EFFORT + 구독자 RELIABLE → ❌ 비호환 (연결 안 됨)
+발행자 RELIABLE + 구독자 BEST_EFFORT →  호환 (다운그레이드)
+발행자 BEST_EFFORT + 구독자 RELIABLE →  비호환 (연결 안 됨)
 
-발행자 VOLATILE + 구독자 TRANSIENT_LOCAL → ❌ 비호환
-발행자 TRANSIENT_LOCAL + 구독자 VOLATILE → ✅ 호환
+발행자 VOLATILE + 구독자 TRANSIENT_LOCAL →  비호환
+발행자 TRANSIENT_LOCAL + 구독자 VOLATILE →  호환
 ```
 
 ### 2-B.4 서비스 (Service) 상세 모니터링
@@ -351,7 +351,7 @@ future = client.call_async(req)
 ```
 서비스 호출 UI:
 ┌─────────────────────────────────────────┐
-│  🔧 /multi_spawn                         │
+│   /multi_spawn                         │
 │  타입: my_first_package_msgs/srv/MultiSpawn │
 │                                         │
 │  Request                                │
@@ -372,7 +372,7 @@ future = client.call_async(req)
 └─────────────────────────────────────────┘
 ```
 
-> ⚠️ **현재 research.md 누락**: 서비스 호출 응답 시간, 호출 히스토리 로깅
+>  **현재 research.md 누락**: 서비스 호출 응답 시간, 호출 히스토리 로깅
 
 ### 2-B.5 액션 (Action) 상세 모니터링
 
@@ -424,9 +424,9 @@ await goal_handle.cancel_goal_async()
 ```
 액션 실행 UI:
 ┌─────────────────────────────────────────┐
-│  🎯 /dist_turtle                         │
+│   /dist_turtle                         │
 │  타입: my_first_package_msgs/DistTurtle  │
-│  서버 상태: ✅ 활성                       │
+│  서버 상태:  활성                       │
 │                                         │
 │  Goal 전송                               │
 │  linear_x (float32):   [ 2.0 ]          │
@@ -451,7 +451,7 @@ await goal_handle.cancel_goal_async()
 └─────────────────────────────────────────┘
 ```
 
-> ⚠️ **현재 research.md 누락**:
+>  **현재 research.md 누락**:
 > - 액션 내부 상태 머신 시각화 (ACCEPTED→EXECUTING→SUCCEEDED)
 > - Goal 히스토리 로깅
 > - Feedback 실시간 플롯 (time-series)
@@ -507,7 +507,7 @@ client = node.create_client(DescribeParameters, '/dist_turtle_action_server/desc
 ```
 파라미터 편집 UI:
 ┌─────────────────────────────────────────────┐
-│  🔩 /dist_turtle_action_server               │
+│   /dist_turtle_action_server               │
 │                                             │
 │  파라미터 (4)           [YAML 저장] [로드]   │
 │  ─────────────────────────────────────────  │
@@ -524,14 +524,14 @@ client = node.create_client(DescribeParameters, '/dist_turtle_action_server/desc
 │  ...                                        │
 │                                             │
 │  변경 히스토리:                              │
-│  14:23:01  angular_P: 1.0 → 2.0  ✅ 적용   │
-│  14:22:45  quatile_time: 0.75 → 0.8  ✅    │
+│  14:23:01  angular_P: 1.0 → 2.0   적용   │
+│  14:22:45  quatile_time: 0.75 → 0.8      │
 │                                             │
-│  ⚡ /parameter_events 실시간 감지 중         │
+│   /parameter_events 실시간 감지 중         │
 └─────────────────────────────────────────────┘
 ```
 
-> ⚠️ **현재 research.md 누락**:
+>  **현재 research.md 누락**:
 > - `describe_parameters`를 통한 파라미터 설명/범위 표시
 > - `BYTE_ARRAY`, `BOOL_ARRAY`, `INTEGER_ARRAY`, `DOUBLE_ARRAY`, `STRING_ARRAY` 배열 타입 처리
 > - `/parameter_events` 토픽 구독으로 전체 노드 파라미터 변경 실시간 감지
@@ -585,7 +585,7 @@ await change_client.call_async(req)
 ```
 라이프사이클 노드 UI:
 ┌──────────────────────────────────────────┐
-│  🔄 /nav2_controller (LifecycleNode)      │
+│   /nav2_controller (LifecycleNode)      │
 │                                          │
 │  현재 상태: ██ ACTIVE (녹색)              │
 │                                          │
@@ -646,7 +646,7 @@ TF 트리 시각화:
 - 두 프레임 선택 → 상대 변환 계산 표시
 ```
 
-> ⚠️ **현재 research.md 누락**: `/tf_static` 구독, 두 프레임 간 상대 변환 계산
+>  **현재 research.md 누락**: `/tf_static` 구독, 두 프레임 간 상대 변환 계산
 
 ### 2-B.9 로그 (Logging) 시스템
 
@@ -688,7 +688,7 @@ sub = node.create_subscription(Log, '/rosout', callback, 1000)
 ```
 로그 뷰어 UI:
 ┌─────────────────────────────────────────────────────┐
-│  📋 통합 로그                [필터] [저장] [지우기]   │
+│   통합 로그                [필터] [저장] [지우기]   │
 │  레벨: [ALL ▼]  노드: [ALL ▼]  키워드: [      ]     │
 │                                                     │
 │  14:23:01.123  [INFO]  /turtlesim          turtle1  │
@@ -702,7 +702,7 @@ sub = node.create_subscription(Log, '/rosout', callback, 1000)
 └─────────────────────────────────────────────────────┘
 ```
 
-> ⚠️ **현재 research.md 누락**:
+>  **현재 research.md 누락**:
 > - Log 메시지의 `file`, `function`, `line` 필드 표시 (디버깅에 필수)
 > - 로거 레벨 동적 변경 UI (`set_logger_levels` 서비스)
 > - 로그 파일 저장 (.log, .csv)
@@ -750,10 +750,10 @@ with Reader('/path/to/bag') as reader:
 ```
 bag 녹화/재생 UI:
 ┌─────────────────────────────────────────────┐
-│  🎬 Bag Recorder/Player                      │
+│   Bag Recorder/Player                      │
 │                                             │
 │  ── 녹화 ──────────────────────────────     │
-│  토픽 선택: [✅ 전체]  [선택 토픽...]         │
+│  토픽 선택: [ 전체]  [선택 토픽...]         │
 │  저장 경로: [~/bags/session_20260318  ][찾기]│
 │  형식: [MCAP ▼]                             │
 │  [● 녹화 시작]  녹화 중: 00:01:23  45MB     │
@@ -765,9 +765,9 @@ bag 녹화/재생 UI:
 │  [◀◀ 처음][◀ 5s][▶ 재생][▶ 5s][▶▶ 끝]     │
 │                                             │
 │  포함 토픽 (3):                              │
-│  ✅ /turtle1/pose      62Hz   1.2MB        │
-│  ✅ /turtle1/cmd_vel    2Hz   0.1MB        │
-│  ✅ /error             10Hz   0.3MB        │
+│   /turtle1/pose      62Hz   1.2MB        │
+│   /turtle1/cmd_vel    2Hz   0.1MB        │
+│   /error             10Hz   0.3MB        │
 └─────────────────────────────────────────────┘
 ```
 
@@ -800,7 +800,7 @@ ros2 service list -t              # 서비스 + 타입
 - 실시간 자동 업데이트 (1초 주기)
 ```
 
-> ⚠️ **현재 research.md 누락**: 노드 상태별 색상 구분, 라이프사이클 상태 연동, 토픽/서비스/액션 엣지 타입 구분
+>  **현재 research.md 누락**: 노드 상태별 색상 구분, 라이프사이클 상태 연동, 토픽/서비스/액션 엣지 타입 구분
 
 ### 2-B.12 인터페이스 (Interface) 브라우저
 
@@ -821,7 +821,7 @@ ros2 interface package <pkg>     # 특정 패키지의 인터페이스
 ```
 인터페이스 브라우저 UI:
 ┌─────────────────────────────────────────────┐
-│  📚 Interface Browser                [검색]  │
+│   Interface Browser                [검색]  │
 │  [msg] [srv] [action]               [패키지]│
 │                                             │
 │  my_first_package_msgs                      │
@@ -842,7 +842,7 @@ ros2 interface package <pkg>     # 특정 패키지의 인터페이스
 └─────────────────────────────────────────────┘
 ```
 
-> ⚠️ **현재 research.md 누락**: 인터페이스 타입에서 바로 토픽 발행/서비스 호출 패널로 연결하는 기능
+>  **현재 research.md 누락**: 인터페이스 타입에서 바로 토픽 발행/서비스 호출 패널로 연결하는 기능
 
 ---
 
@@ -1093,8 +1093,8 @@ Step 3  ws_setting() 함수 + 워크스페이스 alias 등록
         - ros2_study = ws_setting "ros2_study"
 ```
 
-> ⚠️ **PDF 2.1절 주의**: alias에서 `=` 양쪽에 **띄어쓰기 없이** 붙여 써야 함.  
-> `alias sb = "..."` → ❌ 오류 / `alias sb="..."` → ✅ 정상
+>  **PDF 2.1절 주의**: alias에서 `=` 양쪽에 **띄어쓰기 없이** 붙여 써야 함.  
+> `alias sb = "..."` →  오류 / `alias sb="..."` →  정상
 
 #### 최종 .bashrc 완성 블록 (교재 완성형)
 
@@ -1454,13 +1454,13 @@ class BashrcManager:
 │                                            │  ● ● ●  Terminal               │
 │  STEP 1  플랫폼 선택                        │  ─────────────────────────────│
 │  ┌──────────┐ ┌──────────┐                 │                               │
-│  │🖥️  ROS2  │ │🍓  RPi  │                 │  $ source ~/.bashrc            │
+│  │  ROS2  │ │  RPi  │                 │  $ source ~/.bashrc            │
 │  │  Basic   │ │         │                 │  ROSForge 블록을 적용합니다...  │
-│  └──────────┘ └──────────┘                 │  ✅ alias sb 등록 완료         │
-│  ┌──────────┐ ┌──────────┐                 │  ✅ alias ros_domain 등록 완료 │
-│  │👻 GHOST5 │ │⚙️ Custom│                 │  ✅ alias jazzy 등록 완료      │
-│  │  Swarm   │ │         │                 │  ✅ alias ros2_study 등록 완료  │
-│  └──────────┘ └──────────┘                 │  ✅ .bashrc 저장 완료          │
+│  └──────────┘ └──────────┘                 │   alias sb 등록 완료         │
+│  ┌──────────┐ ┌──────────┐                 │   alias ros_domain 등록 완료 │
+│  │ GHOST5 │ │ Custom│                 │   alias jazzy 등록 완료      │
+│  │  Swarm   │ │         │                 │   alias ros2_study 등록 완료  │
+│  └──────────┘ └──────────┘                 │   .bashrc 저장 완료          │
 │                                            │                               │
 │  STEP 2  환경 설정                          │  bashrc is reloded            │
 │  ┌──────────────────────────────────────┐  │  ROS_DOMAIN_ID is set to 13 ! │
@@ -1484,14 +1484,14 @@ class BashrcManager:
 │  └──────────────────────────────────────┘  │                               │
 │                                            │                               │
 │  STEP 4  적용                               │                               │
-│  [✅ .bashrc에 적용]  [🔍 환경 검증]        │                               │
-│  [💾 백업 생성]       [↩️ 복원]            │                               │
+│  [ .bashrc에 적용]  [ 환경 검증]        │                               │
+│  [ 백업 생성]       [↩ 복원]            │                               │
 │                                            │                               │
 │  ── 상태 점검 결과 ──────────────────────  │                               │
-│  ✅ ros2 CLI 감지됨  ✅ colcon 감지됨       │                               │
-│  ✅ rclpy import 성공                       │                               │
-│  ⚠️ foxglove_bridge 미설치                  │                               │
-│  ✅ turtlesim 감지됨                        │                               │
+│   ros2 CLI 감지됨   colcon 감지됨       │                               │
+│   rclpy import 성공                       │                               │
+│   foxglove_bridge 미설치                  │                               │
+│   turtlesim 감지됨                        │                               │
 └────────────────────────────────────────────┴────────────────────────────────┘
 ```
 
@@ -1501,10 +1501,10 @@ class BashrcManager:
 
 | 플랫폼 카드 | 아이콘 | 자동 설정 내용 |
 |------------|--------|----------------|
-| **ROS2 Basic** | 🖥️ | jazzy 소싱, venv ON/OFF 선택, ros_domain, ros2_study alias |
-| **Raspberry Pi** | 🍓 | jazzy 소싱, venv OFF 기본, rpi_ws alias |
-| **GHOST-5** | 👻 | jazzy + rmw_zenoh, venv OFF 강제, Domain 42, ghost5 alias |
-| **Custom** | ⚙️ | 모든 항목 사용자 직접 입력 |
+| **ROS2 Basic** |  | jazzy 소싱, venv ON/OFF 선택, ros_domain, ros2_study alias |
+| **Raspberry Pi** |  | jazzy 소싱, venv OFF 기본, rpi_ws alias |
+| **GHOST-5** |  | jazzy + rmw_zenoh, venv OFF 강제, Domain 42, ghost5 alias |
+| **Custom** |  | 모든 항목 사용자 직접 입력 |
 
 ### 6.3 STEP 2 — 환경 설정 입력 필드
 
@@ -1518,7 +1518,7 @@ class BashrcManager:
 | **RMW** | 드롭다운 | GHOST-5 선택 시 rmw_zenoh 자동 설정 |
 | **워크스페이스 alias 이름** | 텍스트 입력창 | 기본값: ros2_study |
 
-> ⚠️ **ROS_DOMAIN_ID**는 이후 언제든지 Environment Panel에서 수정 가능. 변경 후 [.bashrc에 적용] 버튼 클릭 → 터미널에 결과 출력.
+>  **ROS_DOMAIN_ID**는 이후 언제든지 Environment Panel에서 수정 가능. 변경 후 [.bashrc에 적용] 버튼 클릭 → 터미널에 결과 출력.
 
 ### 6.4 STEP 3 — alias 미리보기
 
@@ -1555,7 +1555,7 @@ class BashrcManager:
 
 ### 6.5 STEP 4 — 적용 버튼 동작
 
-#### [✅ .bashrc에 적용] 버튼 클릭 시 실행 순서
+#### [ .bashrc에 적용] 버튼 클릭 시 실행 순서
 
 ```
 1. .bashrc 백업 생성  (~/.bashrc.bak)
@@ -1564,22 +1564,22 @@ class BashrcManager:
    - 없으면: 기존 source 충돌 감지 → 경고 다이얼로그 → 확인 후 파일 끝에 추가
 3. 블록 내용을 .bashrc에 기록
 4. 터미널 패널에 적용 결과 출력:
-   ✅ ~/.bashrc 백업 생성: ~/.bashrc.bak
-   ✅ ROSForge 블록 적용 완료
+    ~/.bashrc 백업 생성: ~/.bashrc.bak
+    ROSForge 블록 적용 완료
    ─────────────────────────────
    [적용된 내용 요약 출력]
    ─────────────────────────────
 5. 자동으로 source ~/.bashrc 실행 (ROSForge 내부 환경 갱신)
 6. 터미널에 각 alias 등록 확인 메시지 출력
-7. 상태 표시줄 업데이트: DOMAIN: 13 | jazzy ✅
+7. 상태 표시줄 업데이트: DOMAIN: 13 | jazzy 
 ```
 
 #### 터미널 출력 예시
 
 ```
 $ [ROSForge] .bashrc에 적용을 시작합니다...
-  백업 생성: ~/.bashrc.bak ✅
-  ROSForge 블록 작성 완료 ✅
+  백업 생성: ~/.bashrc.bak 
+  ROSForge 블록 작성 완료 
 
 $ source ~/.bashrc
 bashrc is reloded
@@ -1593,19 +1593,19 @@ alias ros2_study='ws_setting "ros2_study"'
 alias ros_domain='export ROS_DOMAIN_ID=13; ...'
 alias sb='source ~/.bashrc; echo "bashrc is reloded"'
 
-[ROSForge] ✅ 환경 설정이 완료되었습니다.
+[ROSForge]  환경 설정이 완료되었습니다.
 ```
 
-#### [🔍 환경 검증] 버튼 클릭 시
+#### [ 환경 검증] 버튼 클릭 시
 
 ```
 $ [ROSForge] 환경 검증을 시작합니다...
-  ✅  ros2 CLI       : /opt/ros/jazzy/bin/ros2
-  ✅  colcon         : /usr/bin/colcon
-  ✅  rclpy          : import 성공
-  ✅  turtlesim      : ros-jazzy-turtlesim 설치됨
-  ⚠️  foxglove_bridge: 미설치 (sudo apt install ros-jazzy-foxglove-bridge)
-  ✅  rosbridge_suite: ros-jazzy-rosbridge-suite 설치됨
+    ros2 CLI       : /opt/ros/jazzy/bin/ros2
+    colcon         : /usr/bin/colcon
+    rclpy          : import 성공
+    turtlesim      : ros-jazzy-turtlesim 설치됨
+    foxglove_bridge: 미설치 (sudo apt install ros-jazzy-foxglove-bridge)
+    rosbridge_suite: ros-jazzy-rosbridge-suite 설치됨
 ```
 
 ### 6.6 ROS_DOMAIN_ID 이후 수정 시나리오
@@ -1621,7 +1621,7 @@ Environment Panel 상단 표시줄:
 
 터미널 출력:
 $ [ROSForge] ROS_DOMAIN_ID를 42로 변경합니다...
-  .bashrc 갱신 완료 ✅
+  .bashrc 갱신 완료 
 $ source ~/.bashrc
   ROS_DOMAIN_ID is set to 42 !
 ```

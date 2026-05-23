@@ -285,10 +285,10 @@ def _has_line_of_sight(self, x1, z1, x2, z2):
 ### 3-3. 핵심 주의사항: 구간별 적용
 
 ```
-❌ 전체 경로에 한 번 적용:
+ 전체 경로에 한 번 적용:
    순환 경로이므로 첫점≈끝점 → LOS 통과 → 215pt → 2pt (거의 전부 제거)
 
-✅ 구간별(WP→WP) 적용:
+ 구간별(WP→WP) 적용:
    각 구간 내에서만 smoothing → 벽 회피 중간점은 보존, 직선 구간만 단축
    결과: 215pt → 18pt (적절한 밀도)
 ```
@@ -396,7 +396,7 @@ Kevin Multi Dashboard에 본 최적화를 적용할 때 확인할 항목:
 
 - [ ] 각 로봇의 `spatial_hash` 또는 `occupancy_grid`에 맞는 A* 플래너 연결
 - [ ] `plan_full_patrol()` 호출 시점: 순찰 시작 시 1회
-- [ ] 구간별 smoothing 적용 (전체 경로 한 번에 적용 ❌)
+- [ ] 구간별 smoothing 적용 (전체 경로 한 번에 적용 )
 - [ ] 로봇 간 경로 충돌 회피 (추가 과제)
 
 ### 7-3. 경로 추적
@@ -425,15 +425,15 @@ Kevin Multi Dashboard에 본 최적화를 적용할 때 확인할 항목:
 
 | 이슈 | 상태 |
 |------|------|
-| SLAM Map 경로 라인 벽 관통 | ✅ A* 벽 회피 경로로 교체 |
-| 로봇이 경로를 따라가지 않음 | ✅ A* 중간점 순차 추적 |
-| MockSLAM 맵 구조 불일치 | ✅ generate_map() 동기화 |
-| 경로가 너무 크게 돌아감 | ✅ LOS path smoothing (215→18pt) |
-| Smoothing이 경로 전체를 제거 | ✅ 구간별(WP→WP) smoothing |
-| MockSim 벽 통과 | ✅ occupancy grid 충돌 체크 추가 |
-| WP 연결선 소실 | ✅ 주황 점선 + 파란 마커 레이어 분리 |
-| SLAM Reset 작동 안 함 | ✅ free 영역만 unknown 리셋 (벽 구조 보존) |
-| Stop→Start 시 출발점 회귀 | ✅ 가장 가까운 WP부터 순환 경로 빌드 |
+| SLAM Map 경로 라인 벽 관통 |  A* 벽 회피 경로로 교체 |
+| 로봇이 경로를 따라가지 않음 |  A* 중간점 순차 추적 |
+| MockSLAM 맵 구조 불일치 |  generate_map() 동기화 |
+| 경로가 너무 크게 돌아감 |  LOS path smoothing (215→18pt) |
+| Smoothing이 경로 전체를 제거 |  구간별(WP→WP) smoothing |
+| MockSim 벽 통과 |  occupancy grid 충돌 체크 추가 |
+| WP 연결선 소실 |  주황 점선 + 파란 마커 레이어 분리 |
+| SLAM Reset 작동 안 함 |  free 영역만 unknown 리셋 (벽 구조 보존) |
+| Stop→Start 시 출발점 회귀 |  가장 가까운 WP부터 순환 경로 빌드 |
 
 ### 잔여 과제 (Multi Dashboard 구현 시)
 

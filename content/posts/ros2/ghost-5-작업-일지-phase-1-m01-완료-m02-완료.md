@@ -4,12 +4,12 @@ date: 2026-03-21
 draft: true
 tags: ["ros2", "slam", "zenoh"]
 categories: ["ros2"]
-description: "**날짜**: 2026-03-18 **현재 단계**: Phase 1 — M01 ✅ / M02 ✅ / M03 대기 **작업자**: gjkong@pc"
+description: "**날짜**: 2026-03-18 **현재 단계**: Phase 1 — M01  / M02  / M03 대기 **작업자**: gjkong@pc"
 ---
 
 # GHOST-5 작업 일지 | Phase 1 — M01 완료 + M02 완료
 **날짜**: 2026-03-18  
-**현재 단계**: Phase 1 — M01 ✅ / M02 ✅ / M03 대기  
+**현재 단계**: Phase 1 — M01  / M02  / M03 대기  
 **작업자**: gjkong@pc  
 **프로젝트 홈**: `/home/gjkong/ghost5`  
 **기반 문서**: GHOST5_plan_v2.1 / GHOST5_구현단계_v2.md v1.2
@@ -20,16 +20,16 @@ description: "**날짜**: 2026-03-18 **현재 단계**: Phase 1 — M01 ✅ / M0
 
 | 순서 | 모듈 | 작업 내용 | 검증 | 상태 |
 |------|------|-----------|------|------|
-| 1 | M01 | qos_profiles.py 작성 | — | ✅ |
-| 2 | M01 | zenoh_config.json5 작성 | — | ✅ |
-| 3 | M01 | test_m01_verify.py 작성 + 실행 | 21/21 PASS | ✅ |
-| 4 | M02 | ghost5_interfaces 파일 16개 작성 | — | ✅ |
-| 5 | M02 | package.xml + CMakeLists.txt 작성 | — | ✅ |
-| 6 | M02 | test_m02_verify.py 작성 + 실행 | 44/44 PASS | ✅ |
+| 1 | M01 | qos_profiles.py 작성 | — |  |
+| 2 | M01 | zenoh_config.json5 작성 | — |  |
+| 3 | M01 | test_m01_verify.py 작성 + 실행 | 21/21 PASS |  |
+| 4 | M02 | ghost5_interfaces 파일 16개 작성 | — |  |
+| 5 | M02 | package.xml + CMakeLists.txt 작성 | — |  |
+| 6 | M02 | test_m02_verify.py 작성 + 실행 | 44/44 PASS |  |
 
 ---
 
-## M01 — rmw_zenoh + QoS 프로파일 ✅
+## M01 — rmw_zenoh + QoS 프로파일 
 
 ### 생성 파일
 
@@ -66,15 +66,15 @@ description: "**날짜**: 2026-03-18 **현재 단계**: Phase 1 — M01 ✅ / M0
 
 ### M01 검증 결과
 ```
-결과: 21/21 통과  |  실패: 0  ✅
+결과: 21/21 통과  |  실패: 0  
 ```
 
-> 📌 pyjson5 미설치 — fallback 정규화 파싱으로 통과.  
+>  pyjson5 미설치 — fallback 정규화 파싱으로 통과.  
 > 필요 시: `source ~/ghost5/venv/bin/activate && pip install pyjson5`
 
 ---
 
-## M02 — ghost5_interfaces (커스텀 메시지/서비스/액션) ✅
+## M02 — ghost5_interfaces (커스텀 메시지/서비스/액션) 
 
 ### 생성 파일 (16개)
 
@@ -105,7 +105,7 @@ ghost5_ws/src/ghost5_interfaces/
 
 ### M02 검증 결과
 ```
-결과: 44/44 통과  |  실패: 0  ✅
+결과: 44/44 통과  |  실패: 0  
   V1: 인터페이스 파일 16개 존재
   V2: package.xml 의존성 5개
   V3: CMakeLists.txt 16개 등록
@@ -119,8 +119,8 @@ ghost5_ws/src/ghost5_interfaces/
 
 ```
 Phase 1 — 기반 인프라 (M01~M04)
-  ├── M01  rmw_zenoh + QoS 프로파일        ✅ 완료 (21/21)
-  ├── M02  ghost5_interfaces               ✅ 완료 (44/44)
+  ├── M01  rmw_zenoh + QoS 프로파일         완료 (21/21)
+  ├── M02  ghost5_interfaces                완료 (44/44)
   ├── M03  Redis HA Blackboard             ⏳ 대기
   └── M04  SROS2 보안                      ⏳ 대기
 ```

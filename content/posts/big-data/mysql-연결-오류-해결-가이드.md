@@ -1,5 +1,5 @@
 ---
-title: "🔧 MySQL 연결 오류 해결 가이드"
+title: " MySQL 연결 오류 해결 가이드"
 date: 2026-03-21
 draft: true
 tags: ["big-data"]
@@ -7,9 +7,9 @@ categories: ["big-data"]
 description: "``` mysql.connector.errors.ProgrammingError: 1698 (28000): Access denied for user 'root'@'localhost'"
 ---
 
-# 🔧 MySQL 연결 오류 해결 가이드
+#  MySQL 연결 오류 해결 가이드
 
-## ❌ **발생한 오류**
+##  **발생한 오류**
 
 ```
 mysql.connector.errors.ProgrammingError: 1698 (28000): 
@@ -18,9 +18,9 @@ Access denied for user 'root'@'localhost'
 
 ---
 
-## ✅ **해결 방법 (2가지 중 선택)**
+##  **해결 방법 (2가지 중 선택)**
 
-### **방법 1: SQLite로 변경** ⚡ (5분, 권장!)
+### **방법 1: SQLite로 변경**  (5분, 권장!)
 
 MySQL 설치 없이 바로 사용 가능!
 
@@ -42,11 +42,11 @@ cp database_models_sqlite.py database_models.py
 python main.py
 ```
 
-**끝!** 🎉
+**끝!** 
 
 ---
 
-### **방법 2: MySQL 설치 및 설정** 🗄️ (15분)
+### **방법 2: MySQL 설치 및 설정**  (15분)
 
 완전한 MySQL 데이터베이스 사용
 
@@ -96,19 +96,19 @@ python main.py
 
 ---
 
-## 🔍 **어떤 방법을 선택할까?**
+##  **어떤 방법을 선택할까?**
 
 ### SQLite (방법 1) - 권장! ⭐
 
 **장점:**
-- ✅ 설치 불필요
-- ✅ 5분 만에 바로 사용
-- ✅ 가볍고 빠름
-- ✅ 파일 기반 (home_safe.db)
+-  설치 불필요
+-  5분 만에 바로 사용
+-  가볍고 빠름
+-  파일 기반 (home_safe.db)
 
 **단점:**
-- ⚠️ 동시 접속 제한적
-- ⚠️ 대용량 데이터 처리 느림
+-  동시 접속 제한적
+-  대용량 데이터 처리 느림
 
 **추천 대상:** 
 - 개인 사용자
@@ -118,13 +118,13 @@ python main.py
 ### MySQL (방법 2)
 
 **장점:**
-- ✅ 대용량 데이터 처리
-- ✅ 다중 사용자 지원
-- ✅ 고급 기능 (트리거, 프로시저 등)
+-  대용량 데이터 처리
+-  다중 사용자 지원
+-  고급 기능 (트리거, 프로시저 등)
 
 **단점:**
-- ⚠️ 설치 및 설정 필요
-- ⚠️ 메모리 사용량 높음
+-  설치 및 설정 필요
+-  메모리 사용량 높음
 
 **추천 대상:**
 - 실제 운영 환경
@@ -133,7 +133,7 @@ python main.py
 
 ---
 
-## 🚀 **추천 순서**
+##  **추천 순서**
 
 ### 지금 바로 테스트하고 싶다면:
 
@@ -158,7 +158,7 @@ python main.py
 
 ---
 
-## 🎯 **빠른 해결 (30초)**
+##  **빠른 해결 (30초)**
 
 지금 당장 실행하려면:
 
@@ -175,7 +175,7 @@ python main.py
 
 ---
 
-## 🐛 **추가 문제 해결**
+##  **추가 문제 해결**
 
 ### SQLite 오류 발생?
 
@@ -200,7 +200,7 @@ ls -lh /home/gjkong/dev_ws/yolo/myproj/gui/home_safe.db
 
 ---
 
-## 📊 **두 방법 비교**
+##  **두 방법 비교**
 
 | 항목 | SQLite | MySQL |
 |------|--------|-------|
@@ -213,13 +213,13 @@ ls -lh /home/gjkong/dev_ws/yolo/myproj/gui/home_safe.db
 
 ---
 
-## ✅ **최종 추천**
+##  **최종 추천**
 
-**지금 바로 테스트**: → **SQLite** ⚡
-**실제 운영 환경**: → **MySQL** 🗄️
+**지금 바로 테스트**: → **SQLite** 
+**실제 운영 환경**: → **MySQL** 
 
 ---
 
 **결론**: SQLite로 시작하고, 필요하면 나중에 MySQL로 전환!
 
-🏠 **Home Safe Solution** - 이제 바로 시작하세요! 🚀
+ **Home Safe Solution** - 이제 바로 시작하세요! 

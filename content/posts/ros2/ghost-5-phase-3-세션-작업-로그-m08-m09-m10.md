@@ -21,9 +21,9 @@ description: "**날짜**: 2026-03-18 **Phase**: 3 — 군집 지능 **작업 모
 
 | 모듈 | 내용 | 빌드 | 로직 검증 | 하드웨어 검증 |
 |---|---|---|---|---|
-| M08 | Bully Leader Election | ⬜ 빌드 대기 | ✅ 5/5 | ⬜ 하드웨어 대기 |
-| M09 | MMPF Frontier 탐색 | ✅ | ✅ 5/5 | ⬜ 하드웨어 대기 |
-| M10 | Delta Map Merger | ✅ | ✅ 4/4 | ⬜ 하드웨어 대기 |
+| M08 | Bully Leader Election | ⬜ 빌드 대기 |  5/5 | ⬜ 하드웨어 대기 |
+| M09 | MMPF Frontier 탐색 |  |  5/5 | ⬜ 하드웨어 대기 |
+| M10 | Delta Map Merger |  |  4/4 | ⬜ 하드웨어 대기 |
 
 ---
 
@@ -79,11 +79,11 @@ colcon build --packages-select ghost5_swarm --symlink-install
 ```
 python3 tests/unit/test_leader_election_m08.py
 → [PASS] 5/5 ALL PASS
-  ✅ [조건 1] LeaderElection 상수 검증 (timeout=3.0s, quorum=3, backoff=0.1s/ID)
-  ✅ [조건 3] Election Storm Backoff (Robot-5=0.0s, Robot-1=0.4s)
-  ✅ [조건 4] Split-Brain 쿼럼 로직 (QUORUM_SIZE=3, MAX_RETRY=3)
-  ✅ [B2] ElectionGuard 지수 백오프 (base=0.5s, max=8.0s, TTL=10s)
-  ✅ [B2] election_safe_write 데코레이터 존재 확인
+   [조건 1] LeaderElection 상수 검증 (timeout=3.0s, quorum=3, backoff=0.1s/ID)
+   [조건 3] Election Storm Backoff (Robot-5=0.0s, Robot-1=0.4s)
+   [조건 4] Split-Brain 쿼럼 로직 (QUORUM_SIZE=3, MAX_RETRY=3)
+   [B2] ElectionGuard 지수 백오프 (base=0.5s, max=8.0s, TTL=10s)
+   [B2] election_safe_write 데코레이터 존재 확인
 ```
 
 ### 완료 조건 현황
@@ -139,18 +139,18 @@ Frontier 클러스터링:
 ### 빌드 결과
 ```
 colcon build --packages-select ghost5_navigation --symlink-install
-→ ghost5_navigation Finished ✅
+→ ghost5_navigation Finished 
 ```
 
 ### 로직 검증 결과
 ```
 python3 tests/unit/test_frontier_m09.py
 → [PASS] 5/5 ALL PASS
-  ✅ [조건 1] FrontierDetector 로직 (Free+Unknown → Frontier 추출)
-  ✅ [조건 1] Frontier 클러스터링 (4개 → 2개 클러스터)
-  ✅ [조건 1] MMPF 포텐셜 함수 (α=1.0, β=0.5, score_A=4.00 > score_B=2.00)
-  ✅ [조건 2] skip_zones 로직 (MAX_FAIL=3, TTL=5분)
-  ✅ [조건 1] Claim 중복 방지 (5대 동시 시도 → 1대만 성공)
+   [조건 1] FrontierDetector 로직 (Free+Unknown → Frontier 추출)
+   [조건 1] Frontier 클러스터링 (4개 → 2개 클러스터)
+   [조건 1] MMPF 포텐셜 함수 (α=1.0, β=0.5, score_A=4.00 > score_B=2.00)
+   [조건 2] skip_zones 로직 (MAX_FAIL=3, TTL=5분)
+   [조건 1] Claim 중복 방지 (5대 동시 시도 → 1대만 성공)
 ```
 
 ### 완료 조건 현황
@@ -205,17 +205,17 @@ Layer 2+3 (Elevation + LowObstacle):
 ### 빌드 결과
 ```
 colcon build --packages-select ghost5_slam --symlink-install
-→ ghost5_slam Finished ✅
+→ ghost5_slam Finished 
 ```
 
 ### 로직 검증 결과
 ```
 python3 tests/unit/test_map_merger_m10.py
 → [PASS] 4/4 ALL PASS
-  ✅ [조건 3] Delta 비율 계산 (10%/0%/100% 정확)
-  ✅ [조건 2] cells_to_grid 변환 (2×2 grid free/occupied/unknown 정확)
-  ✅ [조건 2] Majority Vote (2/3 occupied→occupied, 동수→free)
-  ✅ PoseGraphPublisher 상수 (PUBLISH_HZ=1.0Hz)
+   [조건 3] Delta 비율 계산 (10%/0%/100% 정확)
+   [조건 2] cells_to_grid 변환 (2×2 grid free/occupied/unknown 정확)
+   [조건 2] Majority Vote (2/3 occupied→occupied, 동수→free)
+   PoseGraphPublisher 상수 (PUBLISH_HZ=1.0Hz)
 ```
 
 ### 완료 조건 현황
@@ -232,16 +232,16 @@ python3 tests/unit/test_map_merger_m10.py
 
 | Phase | 모듈 | 내용 | 코드 구현 | 빌드 | 로직 검증 | 하드웨어 검증 |
 |---|---|---|---|---|---|---|
-| Phase 1 | M01 | rmw_zenoh + QoS | ✅ | ✅ | ✅ | ⬜ |
-| Phase 1 | M02 | 커스텀 메시지/서비스/액션 | ✅ | ✅ | ✅ | ⬜ |
-| Phase 1 | M03 | Redis Blackboard + Semantic Memory | ✅ | ✅ | ✅ | ⬜ |
-| Phase 1 | M04 | SROS2 보안 설정 | ✅ | ✅ | ✅ | ⬜ |
-| Phase 2 | M05 | slam_toolbox 단일 로봇 SLAM | ✅ | ✅ | ✅ | ⬜ |
-| Phase 2 | M06 | Nav2 + EKF + Inter-Robot Costmap | ✅ | ✅ | ✅ 2/2 | ⬜ |
-| Phase 2 | M07 | 2.5D Elevation Map + IMU 보정 | ✅ | ✅ | ✅ 4/4 | ⬜ |
-| Phase 3 | M08 | Bully Leader Election | ✅ | ⬜ | ✅ 5/5 | ⬜ |
-| Phase 3 | M09 | MMPF Frontier 탐색 | ✅ | ✅ | ✅ 5/5 | ⬜ |
-| Phase 3 | M10 | Delta Map Merger | ✅ | ✅ | ✅ 4/4 | ⬜ |
+| Phase 1 | M01 | rmw_zenoh + QoS |  |  |  | ⬜ |
+| Phase 1 | M02 | 커스텀 메시지/서비스/액션 |  |  |  | ⬜ |
+| Phase 1 | M03 | Redis Blackboard + Semantic Memory |  |  |  | ⬜ |
+| Phase 1 | M04 | SROS2 보안 설정 |  |  |  | ⬜ |
+| Phase 2 | M05 | slam_toolbox 단일 로봇 SLAM |  |  |  | ⬜ |
+| Phase 2 | M06 | Nav2 + EKF + Inter-Robot Costmap |  |  |  2/2 | ⬜ |
+| Phase 2 | M07 | 2.5D Elevation Map + IMU 보정 |  |  |  4/4 | ⬜ |
+| Phase 3 | M08 | Bully Leader Election |  | ⬜ |  5/5 | ⬜ |
+| Phase 3 | M09 | MMPF Frontier 탐색 |  |  |  5/5 | ⬜ |
+| Phase 3 | M10 | Delta Map Merger |  |  |  4/4 | ⬜ |
 | Phase 4 | M11 | 3-센서 생존자 감지 | ⬜ | ⬜ | ⬜ | ⬜ |
 | Phase 4 | M12 | Rendezvous + RSSI Gradient | ⬜ | ⬜ | ⬜ | ⬜ |
 | Phase 5 | M13 | FastAPI GCS API | ⬜ | ⬜ | ⬜ | ⬜ |
@@ -259,9 +259,9 @@ python3 tests/unit/test_map_merger_m10.py
 
 | 패키지 | 포함 모듈 | 빌드 상태 |
 |---|---|---|
-| `ghost5_bringup` | M05, M06 설정파일 | ✅ |
-| `ghost5_slam` | M05, M07, M10 | ✅ |
-| `ghost5_navigation` | M06, M09 | ✅ |
+| `ghost5_bringup` | M05, M06 설정파일 |  |
+| `ghost5_slam` | M05, M07, M10 |  |
+| `ghost5_navigation` | M06, M09 |  |
 | `ghost5_swarm` | M08 | ⬜ 빌드 필요 |
 
 ### M08 빌드 명령 (미완료)

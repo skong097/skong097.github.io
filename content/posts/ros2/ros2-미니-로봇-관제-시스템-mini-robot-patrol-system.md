@@ -197,11 +197,11 @@ class StatusMonitor(Node):
         if status['alert']:
             self.alert_count += 1
             self.get_logger().warn(
-                f'⚠️ ALERT #{self.alert_count}: 배터리 부족 ({status["battery"]}%)'
+                f' ALERT #{self.alert_count}: 배터리 부족 ({status["battery"]}%)'
             )
         else:
             self.get_logger().info(
-                f'✅ 상태 정상 | {status["state"]} | Battery: {status["battery"]}%'
+                f' 상태 정상 | {status["state"]} | Battery: {status["battery"]}%'
             )
 
 def main(args=None):
@@ -524,7 +524,7 @@ class PatrolActionServer(Node):
             feedback_msg.battery_level = 100.0 - (i * 5.0)
             goal_handle.publish_feedback(feedback_msg)
             
-            self.get_logger().info(f'📍 웨이포인트 {wp} 도착 ({feedback_msg.progress_percent:.0f}%)')
+            self.get_logger().info(f' 웨이포인트 {wp} 도착 ({feedback_msg.progress_percent:.0f}%)')
             visited.append(wp)
             
             # 이동 시간 시뮬레이션

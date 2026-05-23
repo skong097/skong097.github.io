@@ -136,7 +136,7 @@ touch logs/.gitkeep
 ### Step 6 — 설치 확인
 
 ```bash
-python -c "import fastapi, uvicorn, ollama, pydantic; print('✅ 모든 패키지 설치 완료')"
+python -c "import fastapi, uvicorn, ollama, pydantic; print(' 모든 패키지 설치 완료')"
 ```
 
 ---

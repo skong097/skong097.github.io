@@ -84,7 +84,7 @@ def _load_style_guide(self) -> str:
 
 시작 로그:
 ```
-📖 스타일 가이드 로드 완료 (1314자)
+ 스타일 가이드 로드 완료 (1314자)
 ```
 
 ---
@@ -105,8 +105,8 @@ def _sync_references(self):
 
 시작 로그:
 ```
-🔄 레퍼런스 동기화 완료 (124개 업데이트)  ← 첫 실행
-🔄 레퍼런스 동기화 완료 (0개 업데이트)    ← 이후 (변경 없을 때)
+ 레퍼런스 동기화 완료 (124개 업데이트)  ← 첫 실행
+ 레퍼런스 동기화 완료 (0개 업데이트)    ← 이후 (변경 없을 때)
 ```
 
 **중요**: `~/dev_ws/my_docs/` 원본은 절대 수정하지 않음
@@ -132,15 +132,15 @@ def _sync_references(self):
 
 | 파일 | 카테고리 | 상태 |
 |------|---------|------|
-| blog-writer-agent-post.md | ai-agent | ✅ |
-| st-gcn-파인튜닝으로-낙상감지-91-89--달성기.md | ai-ml | ✅ |
-| rf-vs-stgcn-fall-detection.md | computer-vision | ✅ |
-| stgcn-finetuning-fall-detection.md | computer-vision | ✅ |
-| pyqt6-dark-theme-system.md | dev-tools | ✅ |
-| astar-pathfinding-los-smoothing.md | robotics | ✅ |
-| kevin-patrol-fleet-dashboard.md | robotics | ✅ |
-| ros2-guard-brain-fastapi.md | ros2 | ✅ |
-| eyecon-multimodal-psychology-ai.md | vision-ai | ✅ |
+| blog-writer-agent-post.md | ai-agent |  |
+| st-gcn-파인튜닝으로-낙상감지-91-89--달성기.md | ai-ml |  |
+| rf-vs-stgcn-fall-detection.md | computer-vision |  |
+| stgcn-finetuning-fall-detection.md | computer-vision |  |
+| pyqt6-dark-theme-system.md | dev-tools |  |
+| astar-pathfinding-los-smoothing.md | robotics |  |
+| kevin-patrol-fleet-dashboard.md | robotics |  |
+| ros2-guard-brain-fastapi.md | ros2 |  |
+| eyecon-multimodal-psychology-ai.md | vision-ai |  |
 
 **총 9개** — 목표 10개까지 1개 남음!
 
@@ -172,12 +172,12 @@ Agent 담당 (80%):        사람 담당 (20%):
 ## 5. 레퍼런스 파일명 원칙 (교훈)
 
 ```
-✅ 좋은 예:
+ 좋은 예:
 rf-stgcn-model-comparison.md
 astar-pathfinding-los-smoothing.md
 eyecon-multimodal-psychology.md
 
-❌ 나쁜 예:
+ 나쁜 예:
 WORK_LOG_20260205_v2(st-gcn).md
 2026-02-07_WORK_LOG_FINAL_v2.md
 ```

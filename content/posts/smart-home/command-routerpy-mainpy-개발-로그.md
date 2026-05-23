@@ -78,9 +78,9 @@ ESP32 감지
 
 | event | context | 메시지 |
 |-------|---------|--------|
-| guard_alert    | away  | 🚨 외출 중 침입 감지! |
-| guard_alert    | sleep | 🚨 취침 중 거실 침입 감지! |
-| presence_alert | home  | ⚠️ 장시간 움직임 없음 — 괜찮으신가요? |
+| guard_alert    | away  |  외출 중 침입 감지! |
+| guard_alert    | sleep |  취침 중 거실 침입 감지! |
+| presence_alert | home  |  장시간 움직임 없음 — 괜찮으신가요? |
 
 ### Telegram 연동 준비
 

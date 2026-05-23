@@ -65,8 +65,8 @@ DISABLE_STT=1 DISABLE_LLM=1 uvicorn server.main:app --host 0.0.0.0 --port 8000
   HTTP : 0.0.0.0:8000
   WS   : ws://0.0.0.0:8000/ws
 ----------------------------------------------------
-  LLM  : ✅ exaone3.5:latest   (또는 ⛔ 비활성화)
-  STT  : ✅ base / wake=헤이IoT (또는 ⛔ 비활성화)
+  LLM  :  exaone3.5:latest   (또는  비활성화)
+  STT  :  base / wake=헤이IoT (또는  비활성화)
 ====================================================
 서버 준비 완료 - 요청 대기 중   ← 이 로그 확인 후 사용
 ```
@@ -160,23 +160,23 @@ python -m pytest tests/test_e2e.py -v
 
 | # | 케이스 | 내용 | ESP32 필요 |
 |---|--------|------|-----------|
-| TC-01 | `test_TC01_server_status` | GET /status → server=running | ❌ |
-| TC-02 | `test_TC02_device_list` | GET /devices → 리스트 반환 | ❌ |
-| TC-04 | `test_TC04_manual_command` | POST /command LED 명령 | ⚠️ 없으면 fail |
-| TC-05 | `test_TC05_voice_pipeline` | POST /voice 침실 불 켜줘 | ⚠️ 없으면 fail |
-| TC-05b | `test_TC05b_voice_all_devices` | POST /voice 전체 불 꺼줘 | ⚠️ 없으면 fail |
-| TC-06 | `test_TC06_stt_activate` | POST /stt/activate | ❌ |
-| TC-07 | `test_TC07_ws_manual_cmd` | WS manual_cmd | ⚠️ 없으면 fail |
-| TC-08 | `test_TC08_ws_voice_text` | WS voice_text | ⚠️ 없으면 fail |
-| TC-09 | `test_TC09_ws_manual_trigger` | WS manual_trigger | ❌ |
-| TC-10 | `test_TC10_all_broadcast_rest` | POST /command device_id=all | ⚠️ 없으면 fail |
-| TC-11 | `test_TC11_stt_state_in_status` | /status stt_state 필드 | ❌ |
-| TC-12a | `test_TC12a_invalid_cmd` | 잘못된 cmd → fail | ❌ |
-| TC-12b | `test_TC12b_empty_voice_text` | 빈 텍스트 → 422/fail | ❌ |
-| TC-12c | `test_TC12c_unknown_ws_type` | unknown WS type → fail | ❌ |
-| Mock×5 | `TestMock` | 스키마/파싱 단위 검증 | ❌ |
+| TC-01 | `test_TC01_server_status` | GET /status → server=running |  |
+| TC-02 | `test_TC02_device_list` | GET /devices → 리스트 반환 |  |
+| TC-04 | `test_TC04_manual_command` | POST /command LED 명령 |  없으면 fail |
+| TC-05 | `test_TC05_voice_pipeline` | POST /voice 침실 불 켜줘 |  없으면 fail |
+| TC-05b | `test_TC05b_voice_all_devices` | POST /voice 전체 불 꺼줘 |  없으면 fail |
+| TC-06 | `test_TC06_stt_activate` | POST /stt/activate |  |
+| TC-07 | `test_TC07_ws_manual_cmd` | WS manual_cmd |  없으면 fail |
+| TC-08 | `test_TC08_ws_voice_text` | WS voice_text |  없으면 fail |
+| TC-09 | `test_TC09_ws_manual_trigger` | WS manual_trigger |  |
+| TC-10 | `test_TC10_all_broadcast_rest` | POST /command device_id=all |  없으면 fail |
+| TC-11 | `test_TC11_stt_state_in_status` | /status stt_state 필드 |  |
+| TC-12a | `test_TC12a_invalid_cmd` | 잘못된 cmd → fail |  |
+| TC-12b | `test_TC12b_empty_voice_text` | 빈 텍스트 → 422/fail |  |
+| TC-12c | `test_TC12c_unknown_ws_type` | unknown WS type → fail |  |
+| Mock×5 | `TestMock` | 스키마/파싱 단위 검증 |  |
 
-> ⚠️ ESP32 미연결 시 `status: fail` 응답 → 테스트는 PASSED (fail 응답도 정상 처리로 설계)
+>  ESP32 미연결 시 `status: fail` 응답 → 테스트는 PASSED (fail 응답도 정상 처리로 설계)
 
 **기대 결과 (서버만 실행, ESP32 없음):**
 ```

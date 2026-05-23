@@ -21,7 +21,7 @@ description: "**작성일**: 2026-02-18 **세션**: Session 11 이후 추가 작
 
 ---
 
-## 1. 환경 구축 ✅
+## 1. 환경 구축 
 
 ```
 ~/dev_ws/ai_agent/blog_writer_agent/

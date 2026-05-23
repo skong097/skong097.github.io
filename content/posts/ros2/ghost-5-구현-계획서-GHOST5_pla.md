@@ -29,7 +29,7 @@ description: "> GPS-denied Hazard Operation with Swarm Team — 5 Units > 작성
 8. [리더 선출 구현 (Bully Algorithm)](#8-리더-선출-구현-bully-algorithm)
 9. [Redis Blackboard + Semantic Event Memory](#9-redis-blackboard--semantic-event-memory)
 10. [2.5D Elevation Map 구현](#10-25d-elevation-map-구현)
-   - [10.3 🆕 Inter-Robot 동적 장애물 등록 (Nav2 Costmap)](#103-inter-robot-동적-장애물-등록-nav2-costmap)
+   - [10.3  Inter-Robot 동적 장애물 등록 (Nav2 Costmap)](#103-inter-robot-동적-장애물-등록-nav2-costmap)
 11. [Rendezvous 프로토콜 구현](#11-rendezvous-프로토콜-구현)
 12. [생존자 감지 구현 (3-센서 교차 검증)](#12-생존자-감지-구현-3-센서-교차-검증)
 13. [Hailo NPU 가속 구현 (Phase 2)](#13-hailo-npu-가속-구현-phase-2)
@@ -40,12 +40,12 @@ description: "> GPS-denied Hazard Operation with Swarm Team — 5 Units > 작성
 18. [검증 전략 및 테스트](#18-검증-전략-및-테스트)
 19. [성능 벤치마크 설계](#19-성능-벤치마크-설계)
 20. [개발 환경 세팅](#20-개발-환경-세팅)
-21. [🆕 가상 드론 통합 설계 (Phase 3-A: Fake Drone)](#21-가상-드론-통합-설계-phase-3-a-fake-drone)
-22. [🆕 PX4 SITL 드론 통합 (Phase 3-B)](#22-px4-sitl-드론-통합-phase-3-b)
-23. [🆕 드론-지상 로봇 협동 아키텍처](#23-드론-지상-로봇-협동-아키텍처)
-24. [🆕 드론 통합 런치 파일 설계](#24-드론-통합-런치-파일-설계)
-25. [🆕 드론 통합 검증 시나리오](#25-드론-통합-검증-시나리오)
-26. [🆕 최종 통합 아키텍처 (지상 5대 + 가상 드론)](#26-최종-통합-아키텍처-지상-5대--가상-드론)
+21. [ 가상 드론 통합 설계 (Phase 3-A: Fake Drone)](#21-가상-드론-통합-설계-phase-3-a-fake-drone)
+22. [ PX4 SITL 드론 통합 (Phase 3-B)](#22-px4-sitl-드론-통합-phase-3-b)
+23. [ 드론-지상 로봇 협동 아키텍처](#23-드론-지상-로봇-협동-아키텍처)
+24. [ 드론 통합 런치 파일 설계](#24-드론-통합-런치-파일-설계)
+25. [ 드론 통합 검증 시나리오](#25-드론-통합-검증-시나리오)
+26. [ 최종 통합 아키텍처 (지상 5대 + 가상 드론)](#26-최종-통합-아키텍처-지상-5대--가상-드론)
 
 ---
 
@@ -123,24 +123,24 @@ Raspberry Pi 5 (8GB)
 ### 2.2 통신 채널 QoS 설계
 
 ```
-🔴 /robot_N/pose              → BEST_EFFORT  10Hz   TTL 5s   (위치, 최신값만)
-🔴 /swarm/robot_poses_array  → BEST_EFFORT  5Hz    TTL 5s   (전체 로봇 위치 집계 → Inter-Robot Costmap)
-🟡 /robot_N/map_delta         → RELIABLE     1Hz    TTL 60s  (지도 delta)
-🟡 /robot_N/elevation_layer   → RELIABLE     2Hz    -        (elevation)
-🟡 /robot_N/low_obstacle_layer→ RELIABLE     2Hz    -        (저고도 장애물)
-🟢 /swarm/elevation_global    → RELIABLE     0.5Hz  -        (병합 후 GCS)
-🟢 /swarm/election            → RELIABLE     이벤트  KEEP_ALL (리더 선출)
-🟢 /swarm/heartbeat           → BEST_EFFORT  1Hz    -        (리더 생존 확인)
-🟢 /swarm/frontier_claims     → RELIABLE     이벤트  KEEP_ALL (frontier 예약)
-🟢 /swarm/comm_events         → RELIABLE     이벤트  -        (통신 이상)
-🟢 /swarm/victim              → RELIABLE     이벤트  KEEP_ALL (생존자 감지)
-🟢 /robot_N/rssi              → BEST_EFFORT  0.5Hz  -        (신호 강도)
-🔵 /drone/gps_pose            → BEST_EFFORT  10Hz   -        (드론 ENU 위치)
-🔵 /drone/survivor_pose       → RELIABLE     이벤트  KEEP_ALL (드론 감지 생존자)
-🔵 /drone/wifi_ap_status      → RELIABLE     1Hz    -        (드론 WiFi 릴레이 상태)
-🔵 /drone/battery_percent     → BEST_EFFORT  1Hz    -        (드론 배터리)
-🔵 /swarm/drone_relay_active  → RELIABLE     이벤트  KEEP_ALL (드론 활성/Fallback)
-🔵 /swarm/frontier_priority   → RELIABLE     이벤트  -        (드론 우선 탐색 좌표)
+ /robot_N/pose              → BEST_EFFORT  10Hz   TTL 5s   (위치, 최신값만)
+ /swarm/robot_poses_array  → BEST_EFFORT  5Hz    TTL 5s   (전체 로봇 위치 집계 → Inter-Robot Costmap)
+ /robot_N/map_delta         → RELIABLE     1Hz    TTL 60s  (지도 delta)
+ /robot_N/elevation_layer   → RELIABLE     2Hz    -        (elevation)
+ /robot_N/low_obstacle_layer→ RELIABLE     2Hz    -        (저고도 장애물)
+ /swarm/elevation_global    → RELIABLE     0.5Hz  -        (병합 후 GCS)
+ /swarm/election            → RELIABLE     이벤트  KEEP_ALL (리더 선출)
+ /swarm/heartbeat           → BEST_EFFORT  1Hz    -        (리더 생존 확인)
+ /swarm/frontier_claims     → RELIABLE     이벤트  KEEP_ALL (frontier 예약)
+ /swarm/comm_events         → RELIABLE     이벤트  -        (통신 이상)
+ /swarm/victim              → RELIABLE     이벤트  KEEP_ALL (생존자 감지)
+ /robot_N/rssi              → BEST_EFFORT  0.5Hz  -        (신호 강도)
+ /drone/gps_pose            → BEST_EFFORT  10Hz   -        (드론 ENU 위치)
+ /drone/survivor_pose       → RELIABLE     이벤트  KEEP_ALL (드론 감지 생존자)
+ /drone/wifi_ap_status      → RELIABLE     1Hz    -        (드론 WiFi 릴레이 상태)
+ /drone/battery_percent     → BEST_EFFORT  1Hz    -        (드론 배터리)
+ /swarm/drone_relay_active  → RELIABLE     이벤트  KEEP_ALL (드론 활성/Fallback)
+ /swarm/frontier_priority   → RELIABLE     이벤트  -        (드론 우선 탐색 좌표)
 ```
 
 ### 2.3 Robot 역할 분류
@@ -193,7 +193,7 @@ ghost5_ws/
 │   │       ├── frontier_detector.py      # OccupancyGrid → Frontier 추출
 │   │       ├── frontier_manager.py       # MMPF 기반 Frontier 할당
 │   │       ├── nav_goal_publisher.py     # Nav2 Goal 전송
-│   │       └── inter_robot_costmap_layer.py  # 🆕 타 로봇 위치 → 동적 장애물 등록
+│   │       └── inter_robot_costmap_layer.py  #  타 로봇 위치 → 동적 장애물 등록
 │   │
 │   ├── ghost5_swarm/                 # 군집 지능
 │   │   └── ghost5_swarm/
@@ -217,12 +217,12 @@ ghost5_ws/
 │           ├── foxglove_publisher.py     # Foxglove 통합 지도
 │           └── victim_marker.py          # 생존자 위치 마커
 │
-│   ├── ghost5_drone_sim/             # 🆕 드론 시뮬레이션 패키지 (Phase 3)
+│   ├── ghost5_drone_sim/             #  드론 시뮬레이션 패키지 (Phase 3)
 │   │   └── ghost5_drone_sim/
 │   │       ├── fake_drone_node.py        # Phase 3-A: Fake 드론 노드
 │   │       └── px4_topic_bridge.py       # Phase 3-B: PX4 NED→ENU 변환
 │   │
-│   └── ghost5_drone_integration/     # 🆕 드론-로봇 통합 패키지 (Phase 3)
+│   └── ghost5_drone_integration/     #  드론-로봇 통합 패키지 (Phase 3)
 │       └── ghost5_drone_integration/
 │           ├── drone_nav_bridge.py       # 드론 좌표 → Nav2 Goal 자동 파견
 │           ├── drone_gossip_bridge.py    # 드론 생존자 → Gossip 전파
@@ -342,7 +342,7 @@ ros2 run rmw_zenoh_cpp init_rmw_zenoh_router
 from rclpy.qos import QoSProfile, ReliabilityPolicy, DurabilityPolicy, HistoryPolicy
 
 # ─────────────────────────────────────────────────────────
-# 🔴 HIGH: 로봇 위치, 상태, RSSI (10Hz, 손실 허용, 최신값만)
+#  HIGH: 로봇 위치, 상태, RSSI (10Hz, 손실 허용, 최신값만)
 # ─────────────────────────────────────────────────────────
 POSE_QOS = QoSProfile(
     reliability=ReliabilityPolicy.BEST_EFFORT,   # UDP: 빠름, 손실 허용
@@ -352,7 +352,7 @@ POSE_QOS = QoSProfile(
 )
 
 # ─────────────────────────────────────────────────────────
-# 🟡 MEDIUM: 지도 delta, Elevation Layer (1~2Hz, 손실 불허)
+#  MEDIUM: 지도 delta, Elevation Layer (1~2Hz, 손실 불허)
 # ─────────────────────────────────────────────────────────
 MAP_QOS = QoSProfile(
     reliability=ReliabilityPolicy.RELIABLE,       # TCP: 보장, 약간 느림
@@ -362,7 +362,7 @@ MAP_QOS = QoSProfile(
 )
 
 # ─────────────────────────────────────────────────────────
-# 🟢 LOW: 생존자 감지, Leader Election, 통신 이벤트 (이벤트 기반)
+#  LOW: 생존자 감지, Leader Election, 통신 이벤트 (이벤트 기반)
 # ─────────────────────────────────────────────────────────
 EVENT_QOS = QoSProfile(
     reliability=ReliabilityPolicy.RELIABLE,
@@ -1080,7 +1080,7 @@ class LeaderElection(Node):
         self._leader_dead_votes   = set()   # 투표 초기화
         self._quorum_retry_count  = 0
         self.get_logger().info(
-            f'Robot {self.robot_id}: LEADER 선출됨! 🏆 '
+            f'Robot {self.robot_id}: LEADER 선출됨!  '
             f'(쿼럼 {len(self._leader_dead_votes) + 1}대 합의)'
         )
         self.election_pub.publish(String(data=json.dumps({
@@ -1154,7 +1154,7 @@ if __name__ == '__main__':
 
 ## 9. Redis Blackboard + Semantic Event Memory
 
-### 9.0 🆕 보완: Redis HA 복제 (고가용성 설계)
+### 9.0  보완: Redis HA 복제 (고가용성 설계)
 
 > **문제**: 현재 설계는 Leader 로봇의 Redis에 모든 정보를 집중하는 계층형 방식이다.  
 > Leader가 물리적 충격으로 즉사하면 새 리더 선출 전까지 **Frontier Claim과 Semantic Memory가 전량 소실**된다.  
@@ -1184,10 +1184,10 @@ if __name__ == '__main__':
 └─────────────────────────────────────────────────────────────┘
 
 복제 대상:
-  ✅ 생존자 위치 (victims hash)         — 절대 소실 불가
-  ✅ Semantic Event Memory (events:*)   — Leader 컨텍스트 승계
-  ✅ Frontier Claim (frontier:claim:*)  — 중복 탐색 방지
-  ❌ 로봇 위치 (robot:N:state TTL 5s)   — 복제 불필요 (빠른 재생성)
+   생존자 위치 (victims hash)         — 절대 소실 불가
+   Semantic Event Memory (events:*)   — Leader 컨텍스트 승계
+   Frontier Claim (frontier:claim:*)  — 중복 탐색 방지
+   로봇 위치 (robot:N:state TTL 5s)   — 복제 불필요 (빠른 재생성)
 ```
 
 #### 복제 대상 분리 전략
@@ -1243,7 +1243,7 @@ cat << 'SCRIPT' > ~/ghost5_ws/scripts/promote_replica.sh
 # 사용법: ./promote_replica.sh <replica_robot_ip>
 REPLICA_IP=${1:-"192.168.1.102"}
 redis-cli -h ${REPLICA_IP} -p 6379 -a ghost5secure! REPLICAOF NO ONE
-echo "✅ Robot-2 Redis 복제본을 Master로 승격 완료 (IP: ${REPLICA_IP})"
+echo " Robot-2 Redis 복제본을 Master로 승격 완료 (IP: ${REPLICA_IP})"
 SCRIPT
 chmod +x ~/ghost5_ws/scripts/promote_replica.sh
 ```
@@ -1663,7 +1663,7 @@ class SemanticMemory:
 
 ## 10. 2.5D Elevation Map 구현
 
-### 10.0 🆕 보완: IMU 기반 동적 보정 (Dynamic Calibration)
+### 10.0  보완: IMU 기반 동적 보정 (Dynamic Calibration)
 
 > **문제**: RPLiDAR C1 Z-stack 누적은 로봇 주행 중 진동·경사로 인해  
 > 수평 스캔 빔이 바닥을 쳐서 **고스트 장애물(Ghost Obstacle)**을 생성할 위험이 있다.  
@@ -1992,9 +1992,9 @@ class LidarElevationNode(Node):
              hits 충족해도 확정 불가 → 순간적 이동 물체 잔상 억제
 
         두 필터 조합 효과:
-          정적 잔해 → hits 빠르게 누적 + 오래 유지 → 장애물 확정 ✅
-          이동 물체 → hits 적음 OR 지속 시간 짧음 → 미확정/소멸 ✅
-          노이즈    → Ray-casting으로 clearing + Temporal로 이중 억제 ✅
+          정적 잔해 → hits 빠르게 누적 + 오래 유지 → 장애물 확정 
+          이동 물체 → hits 적음 OR 지속 시간 짧음 → 미확정/소멸 
+          노이즈    → Ray-casting으로 clearing + Temporal로 이중 억제 
         """
         if not self.elevation_cells:
             return
@@ -2083,7 +2083,7 @@ local_costmap:
         - obstacle_layer
         - elevation_layer
         - low_obs_layer
-        - robot_layer          # 🆕 타 로봇 동적 장애물 레이어
+        - robot_layer          #  타 로봇 동적 장애물 레이어
         - inflation_layer
 
       obstacle_layer:
@@ -2102,7 +2102,7 @@ local_costmap:
         map_topic: /robot_N/low_obstacle_layer
         combination_method: 1
 
-      robot_layer:             # 🆕 타 로봇 위치 → 동적 장애물
+      robot_layer:             #  타 로봇 위치 → 동적 장애물
         plugin: "nav2_costmap_2d::ObstacleLayer"
         observation_sources: robot_poses
         robot_poses:
@@ -2137,7 +2137,7 @@ global_costmap:
 
 ---
 
-### 10.3 🆕 Inter-Robot 동적 장애물 등록 (Nav2 Costmap)
+### 10.3  Inter-Robot 동적 장애물 등록 (Nav2 Costmap)
 
 > **문제**: Nav2 local costmap은 LiDAR 기반 정적 장애물만 인식한다.  
 > 좁은 통로에서 두 로봇이 마주쳤을 때 서로를 빈 공간으로 인식하여 정면 충돌하거나 교착(Deadlock) 상태에 빠진다.  
@@ -2334,7 +2334,7 @@ if __name__ == '__main__':
 
 ## 11. Rendezvous 프로토콜 구현
 
-### 11.0 🆕 보완: Communication Gradient Map (지능적 랑데부 지점 선택)
+### 11.0  보완: Communication Gradient Map (지능적 랑데부 지점 선택)
 
 > **문제**: 기존 설계는 신호 단절 시 단순히 '마지막 양호 지점' 한 점으로 복귀한다.  
 > 그 지점 자체가 이미 잔해로 막혔거나 무너졌을 수 있고, 여러 번 방문했던 경로가 이미 봉쇄된 상황을 전혀 고려하지 않는다.  
@@ -2908,7 +2908,7 @@ class ProximityDetectorNode(Node):
             })
             self.victim_pub.publish(String(data=detection))
             self.get_logger().warn(
-                f'⚠️ Robot {self.robot_id}: 생존자 감지 '
+                f' Robot {self.robot_id}: 생존자 감지 '
                 f'(신뢰도 {combined:.2f}, 거리 {np.median(us_arr):.2f}m)'
             )
 ```
@@ -2998,7 +2998,7 @@ class VictimFuser(Node):
         # TODO: 실제 위치 TF 조회 후 설정
         self.victim_pub.publish(msg)
         self.get_logger().warn(
-            f'🚨 Robot {self.robot_id}: 생존자 최종 보고 (신뢰도 {confidence:.2f})'
+            f' Robot {self.robot_id}: 생존자 최종 보고 (신뢰도 {confidence:.2f})'
         )
 ```
 
@@ -3237,7 +3237,7 @@ int32   frontiers_remaining
 > **설계 원칙**: 오프셋 페이징(offset/limit) 대신 **커서(cursor) 기반 페이징**을 사용한다.  
 > 이유: 실시간 데이터(Frontier claim, 로봇 상태, 이벤트 로그)는 지속적으로 추가/삭제되므로 offset 기반은 중복 조회 및 누락이 발생한다.
 
-### 16.0 🆕 보완: Election Phase 엣지 케이스 처리
+### 16.0  보완: Election Phase 엣지 케이스 처리
 
 > **문제**: Leader Election 진행 중(Election Phase)에 GCS나 다른 로봇이 Redis에 쓰기 시도를 하면  
 > Replica 승격 과정과 충돌하여 데이터 불일치가 발생할 수 있다.  
@@ -3252,8 +3252,8 @@ int32   frontiers_remaining
 정상 운영                     Leader Election 진행 중
 (write_lock = 0)             (write_lock = 1)
 
-  쓰기 허용 ✅                  쓰기 차단 ❌ (5초 TTL)
-  읽기 허용 ✅                  읽기 허용 ✅ (stale 데이터 명시)
+  쓰기 허용                   쓰기 차단  (5초 TTL)
+  읽기 허용                   읽기 허용  (stale 데이터 명시)
   API 응답: 200                 API 응답: 200 + warning 헤더
                                   X-Election-Status: in_progress
                                   X-Data-Staleness: possible
@@ -3753,12 +3753,12 @@ def get_all_events_safe() -> list[dict]:
         election_status = resp.headers.get('X-Election-Status', 'stable')
         if election_status == 'in_progress':
             retry_ms = int(resp.headers.get('X-Retry-After-Ms', 500))
-            print(f'⚠️  Election 진행 중 — 데이터 stale 가능 (재시도 권고: {retry_ms}ms)')
+            print(f'  Election 진행 중 — 데이터 stale 가능 (재시도 권고: {retry_ms}ms)')
 
         data = resp.json()
 
         if data.get('election_warning'):
-            print(f'  ℹ️  election_warning=True: 이 페이지 데이터는 구 버전일 수 있습니다.')
+            print(f'  ℹ  election_warning=True: 이 페이지 데이터는 구 버전일 수 있습니다.')
 
         all_events.extend(data['items'])
 
@@ -4098,9 +4098,9 @@ class LatencyBenchmark(Node):
                 # 목표 검증
                 p95 = sorted_l[p95_idx]
                 if p95 > 50:
-                    self.get_logger().warn(f'⚠️  P95 목표(50ms) 초과: {p95:.2f}ms')
+                    self.get_logger().warn(f'  P95 목표(50ms) 초과: {p95:.2f}ms')
                 else:
-                    self.get_logger().info(f'✅ P95 목표 달성: {p95:.2f}ms')
+                    self.get_logger().info(f' P95 목표 달성: {p95:.2f}ms')
 
 
 def main():
@@ -4118,7 +4118,7 @@ if __name__ == '__main__':
 
 ## 20. Pinky Pro 하드웨어 최적화
 
-### 20.1 🆕 다이나믹셀 XL330 슬립 감지 + EKF 가중치 보정
+### 20.1  다이나믹셀 XL330 슬립 감지 + EKF 가중치 보정
 
 > **문제**: 재난 현장의 미끄러운 잔해 위에서는 XL330 바퀴 슬립(Slip)이 심하여  
 > 엔코더 기반 오도메트리가 실제 이동과 크게 달라진다.  
@@ -4248,7 +4248,7 @@ def main():
     rclpy.shutdown()
 ```
 
-### 20.2 🆕 RPLiDAR C1 Energy Saving Mode
+### 20.2  RPLiDAR C1 Energy Saving Mode
 
 > **문제**: Raspberry Pi 5에서 다수 노드 동시 실행 시 배터리 소모가 극심하다.  
 > RPLiDAR C1의 모터는 탐색 여부와 무관하게 항상 최고 속도로 회전한다.  
@@ -4450,7 +4450,7 @@ Node(
 ),
 ```
 
-### 20.5 🆕 Pinky Pro 센서 배치 최적화 다이어그램
+### 20.5  Pinky Pro 센서 배치 최적화 다이어그램
 
 > 재난 현장에서 로봇의 안정성을 높이기 위한 센서 기하학적 보정 구조와  
 > 핵심 알고리즘 연동 흐름을 하나의 다이어그램으로 정리한다.
@@ -4631,11 +4631,11 @@ commit:
 |------|------|------|
 | v1.0 | 2026-03-15 | 최초 작성 — GHOST5_research.md v2.1 기반 전체 구현 계획 수립. 인풋 기반 커서 페이징 설계 포함 |
 | v1.3 | 2026-03-15 | **3가지 최종 보완 + 센서 배치 다이어그램**: ① 섹션 9 — Redis Slave Lag 대응: add_victim() WAIT(1, 100ms) 동기 쓰기(sync_write=True 기본값), add_victim_async() 비동기 폴백, check_slave_lag_and_warn() 모니터링 메서드 추가 ② 섹션 10 — Temporal Consistency Filter: TEMPORAL_MIN_SEC(2.0s), TEMPORAL_DECAY_SEC(10.0s) 파라미터 추가; elevation_cells에 first_seen/last_seen 타임스탬프 기록; _publish_elevation()에서 Decay 삭제 + Duration Guard(지속 시간 미달 셀 미확정) 이중 필터 적용 ③ 섹션 8 — Election Storm 방지: BACKOFF_STEP_SEC(0.1s), _start_election_with_backoff()로 ID 기반 지연(Robot-5: 0s → Robot-1: 0.4s), _start_election_once() Backoff 중 VICTORY 수신 시 자동 취소 ④ 섹션 20 — Pinky Pro 센서 배치 최종 다이어그램 |
-| v2.0 | 2026-03-17 | **🆕 가상 드론(Gazebo) 통합 완전판**: GHOST5_research.md v3.1 기반. 섹션 21~26 신규 추가. Phase 3-A(fake_drone_node.py) + Phase 3-B(PX4 SITL px4_sitl_zenoh + Gazebo Harmonic). NED↔ENU 변환 노드, 드론-Nav2 브릿지, 드론-Gossip 브릿지, 드론 Fallback 모니터, 재난 SDF 월드, 5대 시나리오 검증 체크리스트. 드론 QoS 토픽 6개 추가. 워크스페이스에 ghost5_drone_sim + ghost5_drone_integration 패키지 추가. |
+| v2.0 | 2026-03-17 | ** 가상 드론(Gazebo) 통합 완전판**: GHOST5_research.md v3.1 기반. 섹션 21~26 신규 추가. Phase 3-A(fake_drone_node.py) + Phase 3-B(PX4 SITL px4_sitl_zenoh + Gazebo Harmonic). NED↔ENU 변환 노드, 드론-Nav2 브릿지, 드론-Gossip 브릿지, 드론 Fallback 모니터, 재난 SDF 월드, 5대 시나리오 검증 체크리스트. 드론 QoS 토픽 6개 추가. 워크스페이스에 ghost5_drone_sim + ghost5_drone_integration 패키지 추가. |
 
 ---
 
-## 21. 🆕 가상 드론 통합 설계 (Phase 3-A: Fake Drone)
+## 21.  가상 드론 통합 설계 (Phase 3-A: Fake Drone)
 
 ### 21.1 설계 목표
 
@@ -4707,7 +4707,7 @@ class FakeDroneNode(Node):
 
     def __init__(self):
         super().__init__('fake_drone')
-        self.get_logger().info('🚁 Fake Drone Node 시작 (Phase 3-A)')
+        self.get_logger().info(' Fake Drone Node 시작 (Phase 3-A)')
 
         # 드론 상태
         self._pos         = list(self.PATROL_WAYPOINTS[0])  # [x, y, z] ENU
@@ -4750,7 +4750,7 @@ class FakeDroneNode(Node):
         if self._battery <= 0.0:
             self._battery = 0.0
             self._active  = False
-            self.get_logger().warn('🚁 드론 배터리 소진 → 비활성화')
+            self.get_logger().warn(' 드론 배터리 소진 → 비활성화')
             self._publish_relay_active(False)
 
     def _move_towards_waypoint(self):
@@ -4768,7 +4768,7 @@ class FakeDroneNode(Node):
             self._pos = list(target)
             self._wp_idx = (self._wp_idx + 1) % len(self.PATROL_WAYPOINTS)
             self.get_logger().debug(
-                f'🚁 웨이포인트 {self._wp_idx} 도달: {target}'
+                f' 웨이포인트 {self._wp_idx} 도달: {target}'
             )
         else:
             # 방향 단위 벡터 × step
@@ -4806,7 +4806,7 @@ class FakeDroneNode(Node):
                 victim_msg.pose.position.z = vz
                 self.victim_pub.publish(victim_msg)
                 self.get_logger().warn(
-                    f'🚁 드론 생존자 탐지! 위치: ({vx}, {vy}) → /drone/survivor_pose 퍼블리시'
+                    f' 드론 생존자 탐지! 위치: ({vx}, {vy}) → /drone/survivor_pose 퍼블리시'
                 )
 
     def _publish_status(self):
@@ -4838,7 +4838,7 @@ class FakeDroneNode(Node):
         self.PATROL_WAYPOINTS = tuple(waypoints)
 
         self.get_logger().info(
-            f'🚁 우선 탐색 좌표 수신: ({px:.1f}, {py:.1f}) → 웨이포인트 삽입'
+            f' 우선 탐색 좌표 수신: ({px:.1f}, {py:.1f}) → 웨이포인트 삽입'
         )
 
 
@@ -4941,7 +4941,7 @@ class DroneNavBridge(Node):
         target_y = msg.pose.position.y
 
         self.get_logger().warn(
-            f'🚁→🤖 드론 생존자 탐지: ({target_x:.2f}, {target_y:.2f}) '
+            f'→ 드론 생존자 탐지: ({target_x:.2f}, {target_y:.2f}) '
             f'→ 가장 가까운 로봇 파견'
         )
 
@@ -5121,7 +5121,7 @@ class DroneGossipBridge(Node):
         })))
 
         self.get_logger().warn(
-            f'🚁→📡 Gossip 전파: 드론 생존자 ({x:.2f}, {y:.2f}) — {self.GOSSIP_REPEAT}회'
+            f'→ Gossip 전파: 드론 생존자 ({x:.2f}, {y:.2f}) — {self.GOSSIP_REPEAT}회'
         )
 
 
@@ -5213,7 +5213,7 @@ class DroneFallbackMonitor(Node):
         if self._fallback_active:
             self._fallback_active = False
             self.get_logger().info(
-                '🚁 드론 통신 복구 → Fallback 해제, 드론 협동 모드 복귀'
+                ' 드론 통신 복구 → Fallback 해제, 드론 협동 모드 복귀'
             )
             self._publish_relay(active=True)
 
@@ -5223,7 +5223,7 @@ class DroneFallbackMonitor(Node):
 
         if elapsed > self.DRONE_TIMEOUT_SEC and not self._fallback_active:
             self.get_logger().error(
-                f'🚁 드론 장애 감지! ({elapsed:.1f}초 미수신) → Fallback 전환'
+                f' 드론 장애 감지! ({elapsed:.1f}초 미수신) → Fallback 전환'
             )
             self._activate_fallback()
 
@@ -5275,7 +5275,7 @@ if __name__ == '__main__':
 
 ---
 
-## 22. 🆕 PX4 SITL 드론 통합 (Phase 3-B)
+## 22.  PX4 SITL 드론 통합 (Phase 3-B)
 
 ### 22.1 Zenoh + uXRCE-DDS 충돌 문제 및 해결
 
@@ -5549,7 +5549,7 @@ if __name__ == '__main__':
 
 ---
 
-## 23. 🆕 드론-지상 로봇 협동 아키텍처
+## 23.  드론-지상 로봇 협동 아키텍처
 
 ### 23.1 협동 시나리오 전체 흐름
 
@@ -5650,7 +5650,7 @@ class FrontierManager:
 
 ---
 
-## 24. 🆕 드론 통합 런치 파일 설계
+## 24.  드론 통합 런치 파일 설계
 
 ### 24.1 드론 통합 런치 (Phase 3-A)
 
@@ -5822,7 +5822,7 @@ def generate_launch_description():
 
 ---
 
-## 25. 🆕 드론 통합 검증 시나리오
+## 25.  드론 통합 검증 시나리오
 
 ### 25.1 Phase 3-A 검증 시나리오 (Fake Drone)
 
@@ -5954,7 +5954,7 @@ class TestNEDtoENUConversion:
 
 ---
 
-## 26. 🆕 최종 통합 아키텍처 (지상 5대 + 가상 드론)
+## 26.  최종 통합 아키텍처 (지상 5대 + 가상 드론)
 
 ### 26.1 전체 시스템 아키텍처 (v2.0)
 
@@ -5967,7 +5967,7 @@ class TestNEDtoENUConversion:
                                │ rmw_zenoh (SROS2 AES-GCM 암호화)
                                │
 ┌──────────────────────────────▼──────────────────────────────────────┐
-│         🚁 가상 드론                                                  │
+│          가상 드론                                                  │
 │                                                                      │
 │  Phase 3-A (즉시):               Phase 3-B (2~4주 후):              │
 │  fake_drone_node.py              PX4 SITL X500 + Gazebo Harmonic     │
@@ -6025,21 +6025,21 @@ class TestNEDtoENUConversion:
 
 | 레이어 | 선택 기술 | 상태 |
 |--------|-----------|------|
-| **미들웨어** | rmw_zenoh (ROS2 Jazzy) | ✅ 드론 = Zenoh Router |
-| **SLAM** | slam_toolbox + Pose Graph | ✅ 유지 |
-| **지도 병합** | Delta Update + map_merger_v2 | ✅ 유지 |
-| **Frontier** | MMPF + Claim Blackboard | ✅ 드론 좌표 우선순위 연동 |
-| **리더 선출** | Bully Algorithm | ✅ 드론 Fallback 시 Router 인수 |
-| **드론 Phase 3-A** | fake_drone_node.py | 🆕 신규 |
-| **드론 Phase 3-B** | PX4 px4_sitl_zenoh + Gazebo Harmonic | 🆕 신규 |
-| **NED→ENU 변환** | px4_topic_bridge.py | 🆕 신규 |
-| **드론 협동** | drone_nav_bridge + drone_gossip_bridge | 🆕 신규 |
-| **드론 Fallback** | drone_fallback_monitor + Bully Router 인수 | 🆕 신규 |
-| **공유 상태** | Redis Blackboard + Semantic Event Memory | ✅ 유지 |
-| **보안** | SROS2 (DDS-Security AES-GCM) | ✅ 유지 |
-| **생존자 감지** | US-016 + TCRT5000 + YOLOv8n | ✅ 유지 |
-| **2.5D 인지** | RPLiDAR Z-stack + IMU 보정 | ✅ 유지 |
-| **시각화** | Foxglove Studio | ✅ 드론 위치 오버레이 추가 |
+| **미들웨어** | rmw_zenoh (ROS2 Jazzy) |  드론 = Zenoh Router |
+| **SLAM** | slam_toolbox + Pose Graph |  유지 |
+| **지도 병합** | Delta Update + map_merger_v2 |  유지 |
+| **Frontier** | MMPF + Claim Blackboard |  드론 좌표 우선순위 연동 |
+| **리더 선출** | Bully Algorithm |  드론 Fallback 시 Router 인수 |
+| **드론 Phase 3-A** | fake_drone_node.py |  신규 |
+| **드론 Phase 3-B** | PX4 px4_sitl_zenoh + Gazebo Harmonic |  신규 |
+| **NED→ENU 변환** | px4_topic_bridge.py |  신규 |
+| **드론 협동** | drone_nav_bridge + drone_gossip_bridge |  신규 |
+| **드론 Fallback** | drone_fallback_monitor + Bully Router 인수 |  신규 |
+| **공유 상태** | Redis Blackboard + Semantic Event Memory |  유지 |
+| **보안** | SROS2 (DDS-Security AES-GCM) |  유지 |
+| **생존자 감지** | US-016 + TCRT5000 + YOLOv8n |  유지 |
+| **2.5D 인지** | RPLiDAR Z-stack + IMU 보정 |  유지 |
+| **시각화** | Foxglove Studio |  드론 위치 오버레이 추가 |
 
 ### 26.3 구현 우선순위 (Phase 3)
 
@@ -6113,8 +6113,8 @@ uvicorn ghost5_viz.gcs_api:app --host 0.0.0.0 --port 8000 &
 |------|------|------|
 | v1.0 | 2026-03-15 | 최초 작성 — GHOST5_research.md v2.1 기반 전체 구현 계획 수립. 인풋 기반 커서 페이징 설계 포함 |
 | v1.3 | 2026-03-15 | **3가지 최종 보완 + 센서 배치 다이어그램**: ① 섹션 9 — Redis Slave Lag 대응: add_victim() WAIT(1, 100ms) 동기 쓰기(sync_write=True 기본값), add_victim_async() 비동기 폴백, check_slave_lag_and_warn() 모니터링 메서드 추가 ② 섹션 10 — Temporal Consistency Filter: TEMPORAL_MIN_SEC(2.0s), TEMPORAL_DECAY_SEC(10.0s) 파라미터 추가; elevation_cells에 first_seen/last_seen 타임스탬프 기록; _publish_elevation()에서 Decay 삭제 + Duration Guard(지속 시간 미달 셀 미확정) 이중 필터 적용 ③ 섹션 8 — Election Storm 방지: BACKOFF_STEP_SEC(0.1s), _start_election_with_backoff()로 ID 기반 지연(Robot-5: 0s → Robot-1: 0.4s), _start_election_once() Backoff 중 VICTORY 수신 시 자동 취소 ④ 섹션 20 — Pinky Pro 센서 배치 최종 다이어그램 |
-| v2.0 | 2026-03-17 | **🆕 가상 드론(Gazebo) 통합 완전판**: GHOST5_research.md v3.1 기반. 섹션 21~26 신규 추가. Phase 3-A(fake_drone_node.py) + Phase 3-B(PX4 SITL px4_sitl_zenoh + Gazebo Harmonic). NED↔ENU 변환 노드, 드론-Nav2 브릿지, 드론-Gossip 브릿지, 드론 Fallback 모니터, 재난 SDF 월드, 6가지 검증 시나리오, 드론 단위 테스트. 드론 QoS 토픽 6개 추가(/drone/*, /swarm/drone_*). 워크스페이스에 ghost5_drone_sim + ghost5_drone_integration 패키지 추가. Bully 리더 Zenoh Router 인수 로직 추가. |
-| v2.1 | 2026-03-17 | **🆕 Inter-Robot 동적 장애물 등록 (충돌 회피 보완)**: 섹션 10.3 신규 추가. Nav2 local costmap에 `robot_layer`(ObstacleLayer) 추가. `InterRobotCostmapLayer` 노드(`inter_robot_costmap_layer.py`) 신규 구현 — /robot_N/pose 5대 수집 → TTL 0.3s 관리 → PointCloud2 변환 → /swarm/robot_poses_array 5Hz 퍼블리시. QoS 토픽에 /swarm/robot_poses_array 추가. nav2_params.yaml에 robot_layer 섹션 추가(obstacle_max_range 3m, clearing true). ghost5_navigation 패키지에 inter_robot_costmap_layer.py 추가. |
+| v2.0 | 2026-03-17 | ** 가상 드론(Gazebo) 통합 완전판**: GHOST5_research.md v3.1 기반. 섹션 21~26 신규 추가. Phase 3-A(fake_drone_node.py) + Phase 3-B(PX4 SITL px4_sitl_zenoh + Gazebo Harmonic). NED↔ENU 변환 노드, 드론-Nav2 브릿지, 드론-Gossip 브릿지, 드론 Fallback 모니터, 재난 SDF 월드, 6가지 검증 시나리오, 드론 단위 테스트. 드론 QoS 토픽 6개 추가(/drone/*, /swarm/drone_*). 워크스페이스에 ghost5_drone_sim + ghost5_drone_integration 패키지 추가. Bully 리더 Zenoh Router 인수 로직 추가. |
+| v2.1 | 2026-03-17 | ** Inter-Robot 동적 장애물 등록 (충돌 회피 보완)**: 섹션 10.3 신규 추가. Nav2 local costmap에 `robot_layer`(ObstacleLayer) 추가. `InterRobotCostmapLayer` 노드(`inter_robot_costmap_layer.py`) 신규 구현 — /robot_N/pose 5대 수집 → TTL 0.3s 관리 → PointCloud2 변환 → /swarm/robot_poses_array 5Hz 퍼블리시. QoS 토픽에 /swarm/robot_poses_array 추가. nav2_params.yaml에 robot_layer 섹션 추가(obstacle_max_range 3m, clearing true). ghost5_navigation 패키지에 inter_robot_costmap_layer.py 추가. |
 
 ---
 

@@ -229,16 +229,16 @@ self.grid[4:84, 4:84] = 0          # 외벽 내부 전체 free
 
 | # | 이슈 | 출처 | 상태 |
 |---|------|------|------|
-| 1 | SLAM Map 경로 라인 벽 관통 | Single | ✅ A* 벽 회피 경로로 교체 |
-| 2 | 로봇이 경로를 따라가지 않음 | Single | ✅ A* 중간점 순차 추적 |
-| 3 | MockSLAM 맵 구조 불일치 | Single | ✅ generate_map() 동기화 |
-| 4 | 경로가 너무 크게 돌아감 | Single | ✅ LOS path smoothing |
-| 5 | Smoothing이 경로 전체를 제거 | Single | ✅ 구간별(WP→WP) smoothing |
-| 6 | MockSim 벽 통과 | Single | ✅ occupancy grid 충돌 체크 |
-| 7 | WP 연결선 소실 | Single | ✅ 주황 대시선 + 파란 마커 레이어 분리 |
-| 8 | SLAM Reset 작동 안 함 | Single | ✅ free만 unknown 리셋 (벽 보존) |
-| 9 | Stop→Start 시 출발점 회귀 | Single | ✅ 가장 가까운 WP부터 순환 경로 빌드 |
-| 10 | Kevin-02 벽 옆 이동 불가 | **Fleet** | ✅ 축 분리 슬라이딩 (양쪽 적용) |
+| 1 | SLAM Map 경로 라인 벽 관통 | Single |  A* 벽 회피 경로로 교체 |
+| 2 | 로봇이 경로를 따라가지 않음 | Single |  A* 중간점 순차 추적 |
+| 3 | MockSLAM 맵 구조 불일치 | Single |  generate_map() 동기화 |
+| 4 | 경로가 너무 크게 돌아감 | Single |  LOS path smoothing |
+| 5 | Smoothing이 경로 전체를 제거 | Single |  구간별(WP→WP) smoothing |
+| 6 | MockSim 벽 통과 | Single |  occupancy grid 충돌 체크 |
+| 7 | WP 연결선 소실 | Single |  주황 대시선 + 파란 마커 레이어 분리 |
+| 8 | SLAM Reset 작동 안 함 | Single |  free만 unknown 리셋 (벽 보존) |
+| 9 | Stop→Start 시 출발점 회귀 | Single |  가장 가까운 WP부터 순환 경로 빌드 |
+| 10 | Kevin-02 벽 옆 이동 불가 | **Fleet** |  축 분리 슬라이딩 (양쪽 적용) |
 
 ---
 

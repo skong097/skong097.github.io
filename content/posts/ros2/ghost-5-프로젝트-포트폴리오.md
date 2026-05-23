@@ -63,21 +63,21 @@ GPS가 차단된 재난 환경에서 5대의 로봇이 다음을 자율적으로
 
 ## 4. 성과 / 기여한 점
 
-### Phase 1 — 기반 인프라 (M01~M04) ✅
+### Phase 1 — 기반 인프라 (M01~M04) 
 
 - **rmw_zenoh 미들웨어 설정** (M01): 기존 DDS 대비 CPU 50% 절감, Discovery 트래픽 99% 감소하는 Zenoh 미들웨어 QoS 프로파일 설계·구현
 - **커스텀 ROS2 인터페이스 정의** (M02): `RobotState`, `VictimInfo`, `SwarmCommand`, `DroneStatus` 등 프로젝트 전용 메시지/서비스/액션 타입 25종 구현
 - **Redis Blackboard + Semantic Event Memory** (M03): 5대 로봇 공유 상태 관리, Leader 교체 시 컨텍스트 자동 승계 구조 설계
 - **SROS2 보안 설정** (M04): AES-GCM 암호화 + X.509 인증 기반 로봇 간 통신 보안 아키텍처 구축
 
-### Phase 2 — 단일 로봇 자율주행 (M05~M07) ✅
+### Phase 2 — 단일 로봇 자율주행 (M05~M07) 
 
 - **slam_toolbox SLAM 설정** (M05): RPLiDAR C1 기반 5cm 해상도 실시간 2D 지도 생성, Loop Closure 설정, Raspberry Pi 5 성능 최적화
 - **Nav2 + EKF + SlipAwareEKFTuner** (M06): 재난 환경 미끄러운 바닥 대응 슬립 감지 노드 설계. IMU–엔코더 속도 차 0.15m/s 초과 시 EKF 공분산 자동 전환(0.01→5.0)
 - **[B4] InterRobotCostmapLayer** (M06): 이동 중 로봇 간 동적 충돌 방지를 위한 Nav2 Costmap 동적 장애물 등록 노드 설계. TTL 0.3s 자동 잔상 제거
 - **2.5D Elevation Map + IMU 동적 보정** (M07): 단일 수평 LiDAR 스캔으로 높이 정보 추출하는 Z-stack 누적 방식 구현. BNO055 IMU pitch/roll 보정으로 Ghost Obstacle 제거. Bresenham Ray-casting으로 이동 물체 잔상 제거. **[B3]** Python dict에서 Numpy float32 배열로 교체 → 메모리 사용 ~128MB → ~9MB(상한 고정)로 대폭 절감
 
-### Phase 3 — 군집 지능 (M08~M10) ✅
+### Phase 3 — 군집 지능 (M08~M10) 
 
 - **Bully Algorithm Leader Election** (M08): 5대 분산 환경에서 최고 ID 로봇이 3초 내 리더로 선출되는 알고리즘 설계. ID 기반 Backoff로 Election Storm 방지, Quorum(3대 합의)으로 Split-Brain 방지. **[B2]** 지수 백오프 + Jitter로 Redis HA 레이스 컨디션 방지 (총 최대 대기 ~19.5s)
 - **MMPF Frontier 탐색** (M09): Multi-robot Multi-target Potential Field 알고리즘 설계. `U(f) = α × (info_gain/dist) - β × Σ(1/dist_to_robot)` 포텐셜 함수로 5대 중복 없는 분산 탐색. Redis SET NX 원자적 Claim, 3회 실패 구역 자동 스킵(5분 TTL). 드론 우선 좌표 연동 설계
@@ -137,9 +137,9 @@ GPS가 차단된 재난 환경에서 5대의 로봇이 다음을 자율적으로
 
 | Phase | 모듈 수 | 코드 구현 | 로직 검증 | 하드웨어 검증 |
 |---|---|---|---|---|
-| Phase 1 (기반 인프라) | 4 | ✅ 완료 | ✅ 완료 | ⬜ 하드웨어 대기 |
-| Phase 2 (단일 자율주행) | 3 | ✅ 완료 | ✅ 완료 | ⬜ 하드웨어 대기 |
-| Phase 3 (군집 지능) | 3 | ✅ 완료 | ✅ 완료 | ⬜ 하드웨어 대기 |
+| Phase 1 (기반 인프라) | 4 |  완료 |  완료 | ⬜ 하드웨어 대기 |
+| Phase 2 (단일 자율주행) | 3 |  완료 |  완료 | ⬜ 하드웨어 대기 |
+| Phase 3 (군집 지능) | 3 |  완료 |  완료 | ⬜ 하드웨어 대기 |
 | Phase 4 (생존자 감지) | 2 | ⬜ 예정 | ⬜ 예정 | ⬜ 예정 |
 | Phase 5 (GCS + 시각화) | 2 | ⬜ 예정 | ⬜ 예정 | ⬜ 예정 |
 | Phase 6 (드론 통합) | 3 | ⬜ 예정 | ⬜ 예정 | ⬜ 예정 |

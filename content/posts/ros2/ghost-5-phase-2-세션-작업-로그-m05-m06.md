@@ -21,8 +21,8 @@ description: "**날짜**: 2026-03-18 **Phase**: 2 — 단일 로봇 자율주행
 
 | 모듈 | 내용 | 빌드 | 로직 검증 | 하드웨어 검증 |
 |---|---|---|---|---|
-| M05 | slam_toolbox 단일 로봇 SLAM | ✅ | ✅ (Zenoh/LiDAR 없어 FAIL 정상) | ⬜ 하드웨어 대기 |
-| M06 | Nav2 + EKF + Inter-Robot Costmap | ✅ | ✅ 2/2 PASS | ⬜ 하드웨어 대기 |
+| M05 | slam_toolbox 단일 로봇 SLAM |  |  (Zenoh/LiDAR 없어 FAIL 정상) | ⬜ 하드웨어 대기 |
+| M06 | Nav2 + EKF + Inter-Robot Costmap |  |  2/2 PASS | ⬜ 하드웨어 대기 |
 
 ---
 
@@ -59,7 +59,7 @@ solver_plugin:           solver_plugins::CeresSolver
 ```bash
 cd ~/ghost5/ghost5_ws
 colcon build --packages-select ghost5_bringup ghost5_slam --symlink-install
-# → ghost5_bringup Finished / ghost5_slam Finished ✅
+# → ghost5_bringup Finished / ghost5_slam Finished 
 ```
 
 ### 트러블슈팅 기록
@@ -124,7 +124,7 @@ touch ~/ghost5/ghost5_ws/src/ghost5_navigation/resource/ghost5_navigation
 
 cd ~/ghost5/ghost5_ws
 colcon build --packages-select ghost5_navigation --symlink-install
-# → ghost5_navigation Finished ✅
+# → ghost5_navigation Finished 
 ```
 
 ### 트러블슈팅 기록
@@ -136,8 +136,8 @@ colcon build --packages-select ghost5_navigation --symlink-install
 ```
 python3 tests/unit/test_nav_m06.py --robot-id 1
 → [PASS] 2/4
-  ✅ [조건 2] SlipAwareEKFTuner 상수 검증 (threshold=0.15 m/s, slip_cov=5.0)
-  ✅ [조건 5~6] InterRobotCostmapLayer 상수 검증 (TTL=0.3s, Hz=5.0)
+   [조건 2] SlipAwareEKFTuner 상수 검증 (threshold=0.15 m/s, slip_cov=5.0)
+   [조건 5~6] InterRobotCostmapLayer 상수 검증 (TTL=0.3s, Hz=5.0)
   ⬜ [조건 1] NavigateToPose → 하드웨어 대기
   ⬜ [조건 4] robot_poses_array 5Hz → 하드웨어 대기
 ```
@@ -157,8 +157,8 @@ python3 tests/unit/test_nav_m06.py --robot-id 1
 
 | 모듈 | 내용 | 코드 구현 | 빌드 | 로직 검증 | 하드웨어 검증 |
 |---|---|---|---|---|---|
-| M05 | slam_toolbox SLAM | ✅ | ✅ | ✅ | ⬜ |
-| M06 | Nav2 + EKF + Costmap | ✅ | ✅ | ✅ | ⬜ |
+| M05 | slam_toolbox SLAM |  |  |  | ⬜ |
+| M06 | Nav2 + EKF + Costmap |  |  |  | ⬜ |
 | M07 | 2.5D Elevation Map | ⬜ | ⬜ | ⬜ | ⬜ |
 
 ---

@@ -208,17 +208,17 @@ v1.0~v1.2에서 완료된 항목과 남은 시뮬레이션 기능 보강.
 
 | 항목 | 상태 | 설명 |
 |---|---|---|
-| 3D 환경 + 로봇 모델 | ✅ v1.0 | Pygame + OpenGL, Kevin 4륜 로봇 |
-| LiDAR 360° 시각화 | ✅ v1.0 | 72-ray 레이캐스트, 거리 색상 |
-| Nav2 웨이포인트 순찰 | ✅ v1.0 | 10개 WP 자동 추종 |
-| 낙상 감지 이벤트 | ✅ v1.0 | 5명 사람, 알림 오버레이 |
-| 전체 화면 / 마우스 제어 | ✅ v1.1 | F11, 클릭 캡처, ALT 해제 |
-| SLAM occupancy grid | ✅ v1.2 | Log-odds, Bresenham, 3D + 미니맵 |
-| 성능 최적화 | ✅ v1.2 | DisplayList, SpatialHash, LiDAR 캐시 |
-| 사운드 효과 | 🔲 | 경보음, 모터, LiDAR 스캔 |
-| Costmap 시각화 | 🔲 | global/local costmap 레이어 |
-| A*/DWA 경로 계획 시각화 | 🔲 | 경로 탐색 과정 애니메이션 |
-| 순찰 경로 편집기 | 🔲 | 웨이포인트 드래그 추가/삭제 |
+| 3D 환경 + 로봇 모델 |  v1.0 | Pygame + OpenGL, Kevin 4륜 로봇 |
+| LiDAR 360° 시각화 |  v1.0 | 72-ray 레이캐스트, 거리 색상 |
+| Nav2 웨이포인트 순찰 |  v1.0 | 10개 WP 자동 추종 |
+| 낙상 감지 이벤트 |  v1.0 | 5명 사람, 알림 오버레이 |
+| 전체 화면 / 마우스 제어 |  v1.1 | F11, 클릭 캡처, ALT 해제 |
+| SLAM occupancy grid |  v1.2 | Log-odds, Bresenham, 3D + 미니맵 |
+| 성능 최적화 |  v1.2 | DisplayList, SpatialHash, LiDAR 캐시 |
+| 사운드 효과 |  | 경보음, 모터, LiDAR 스캔 |
+| Costmap 시각화 |  | global/local costmap 레이어 |
+| A*/DWA 경로 계획 시각화 |  | 경로 탐색 과정 애니메이션 |
+| 순찰 경로 편집기 |  | 웨이포인트 드래그 추가/삭제 |
 
 ---
 
@@ -325,9 +325,9 @@ DataProvider (ABC)
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│  Kevin Patrol Dashboard          [SIM] [LIVE] [REC]  │ ⚙ │
+│  Kevin Patrol Dashboard          [SIM] [LIVE] [REC]  │  │
 ├──────────────────┬──────────────────┬───────────────────────┤
-│                  │                  │  📡 Topic Monitor     │
+│                  │                  │   Topic Monitor     │
 │   3D Viewport    │  Camera Feed     │  ─────────────────── │
 │   (OpenGL)       │  /image_raw      │  /cmd_vel    50Hz ● │
 │                  │                  │  /scan       10Hz ● │
@@ -336,8 +336,8 @@ DataProvider (ABC)
 │                  │                  │  /detection  10Hz ● │
 │                  │                  │  /alert       0Hz ○ │
 ├──────────────────┼──────────────────┤  ...                 │
-│                  │  📊 Sensor Plot  ├───────────────────────┤
-│   🗺 SLAM Map    │  ───────────────│  🤖 Robot Status     │
+│                  │   Sensor Plot  ├───────────────────────┤
+│    SLAM Map    │  ───────────────│   Robot Status     │
 │   (2D top-down)  │  IMU angular_vel│  Battery: 78%        │
 │                  │  LiDAR min_dist │  Mode: Auto Patrol   │
 │   occupancy grid │  Motor current  │  Speed: 0.3 m/s     │
@@ -345,7 +345,7 @@ DataProvider (ABC)
 │   + nav path     │                  │  SLAM: 67% explored │
 │   + costmap      │                  │  Uptime: 02:34:12   │
 ├──────────────────┴──────────────────┴───────────────────────┤
-│  ▶ PATROL  ⏸ STOP  📍 SET_GOAL  🔄 SLAM_RESET  ⚠ ALERTS │
+│  ▶ PATROL  ⏸ STOP   SET_GOAL   SLAM_RESET   ALERTS │
 └─────────────────────────────────────────────────────────────┘
 ```
 

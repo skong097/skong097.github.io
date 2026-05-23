@@ -38,9 +38,9 @@ ESP32-CAM (현관) → UDP → Python 서버
 ```
 
 **알람 방식**
-- `known`    : ✅ 초록 배지 + 로그
-- `delivery` : 📦 CCTV 모달 + 짧은 비프음
-- `intruder` : 🚨 전체 알람 모달 + 경보음(Web Audio) + TTS 음성
+- `known`    :  초록 배지 + 로그
+- `delivery` :  CCTV 모달 + 짧은 비프음
+- `intruder` :  전체 알람 모달 + 경보음(Web Audio) + TTS 음성
 
 ---
 
@@ -120,9 +120,9 @@ if (!hasPsram) config.frame_size = FRAMESIZE_QQVGA;
 
 **결과**
 ```
-[CAM] PSRAM 감지: ❌ 없음
+[CAM] PSRAM 감지:  없음
 [CAM] 모드: DRAM → QQVGA(160x120) q=20
-[CAM] ✅ 초기화 완료 — Heap여유: 211868 bytes
+[CAM]  초기화 완료 — Heap여유: 211868 bytes
 [UDP] 서버: 192.168.0.154:5005
 [CAM] 프레임 1000 | 크기: 1644 bytes | Heap: 160664  ← 안정적
 ```
@@ -151,9 +151,9 @@ ESP32-CAM
       └── InsightFace buffalo_sc : 얼굴 임베딩 + cosine 매칭
   → verdict (known / delivery / intruder / clear)
   → WebSocket broadcast → index.html
-      ├── intruder : 🚨 알람 모달 + Web Audio 경보음 + TTS
-      ├── delivery : 📦 CCTV 모달 + 비프음
-      └── known    : ✅ 초록 배지 + 로그
+      ├── intruder :  알람 모달 + Web Audio 경보음 + TTS
+      ├── delivery :  CCTV 모달 + 비프음
+      └── known    :  초록 배지 + 로그
 ```
 
 ### 판정 우선순위
@@ -182,7 +182,7 @@ ESP32-CAM
 ### 추가된 HTML
 - `#card-cam` 현관 카메라 카드 (PIR 카드 다음)
   - ▶ 스트림 시작 / ■ 스트림 중지 토글 버튼
-  - 📸 스냅샷 다운로드 버튼
+  -  스냅샷 다운로드 버튼
   - 판정 배지 오버레이 + LIVE 표시
   - 마지막 이벤트 표시
 - `#camAlertModal` ESP32-CAM 침입 알람 모달
@@ -295,16 +295,16 @@ DISABLE_CAM=1 ./run_server.sh
 ## 12. 실행 확인 체크리스트
 
 ```
-✅ python-multipart 설치
-✅ ESP32-CAM 펌웨어 v1.1 업로드
-✅ Wi-Fi 연결 (192.168.0.19)
-✅ UDP 전송 (192.168.0.154:5005)
-✅ 프레임 전송 안정 (1,250+ 프레임, Heap 안정)
-✅ 서버 UDP 수신 시작
-✅ YOLOv8n 로드 완료
-✅ InsightFace 로드 완료
-✅ analysis_loop task 시작
-✅ WebSocket 연결 (ws_client_0001)
+ python-multipart 설치
+ ESP32-CAM 펌웨어 v1.1 업로드
+ Wi-Fi 연결 (192.168.0.19)
+ UDP 전송 (192.168.0.154:5005)
+ 프레임 전송 안정 (1,250+ 프레임, Heap 안정)
+ 서버 UDP 수신 시작
+ YOLOv8n 로드 완료
+ InsightFace 로드 완료
+ analysis_loop task 시작
+ WebSocket 연결 (ws_client_0001)
 ⬜ 얼굴 DB 등록 (0명 → stephen 등록 필요)
 ⬜ 웹앱 스트림 실시간 확인
 ⬜ 침입 알람 E2E 테스트
@@ -398,13 +398,13 @@ JPEG_QUALITY     = 70    # 80 → 70 (전송량 감소)
 ## 15. 현재 상태 (2026-02-24 15:30 기준)
 
 ```
-✅ ESP32-CAM 펌웨어 v1.1 업로드 완료
-✅ Wi-Fi 연결 (192.168.0.19)
-✅ UDP 패킷 전송 확인 (tcpdump)
-✅ 서버 active:true (프레임 수신 중)
-✅ python-multipart 설치 완료
-✅ YOLOv8n + InsightFace 로드 완료
-✅ 웹앱 카메라 카드 UI 통합
+ ESP32-CAM 펌웨어 v1.1 업로드 완료
+ Wi-Fi 연결 (192.168.0.19)
+ UDP 패킷 전송 확인 (tcpdump)
+ 서버 active:true (프레임 수신 중)
+ python-multipart 설치 완료
+ YOLOv8n + InsightFace 로드 완료
+ 웹앱 카메라 카드 UI 통합
 ⬜ camera_stream.py v1.1 적용 (SOI/EOI 조립) → 재시작 필요
 ⬜ esp_cam_entrance.ino v1.2 업로드 (vflip=1) → 재업로드 필요
 ⬜ 영상 정상 출력 최종 확인

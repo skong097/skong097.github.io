@@ -79,7 +79,7 @@ def add_accuracy_column():
             cursor.execute(alter_query)
             connection.commit()
             
-            print("✅ accuracy 컬럼 추가 완료!")
+            print(" accuracy 컬럼 추가 완료!")
             
             # 테이블 구조 확인
             cursor.execute("DESCRIBE event_logs")
@@ -91,13 +91,13 @@ def add_accuracy_column():
                 print(f"{col[0]:<20} {col[1]:<15} {col[2]}")
             
     except Error as e:
-        print(f"❌ 오류 발생: {e}")
+        print(f" 오류 발생: {e}")
         
     finally:
         if connection.is_connected():
             cursor.close()
             connection.close()
-            print("\n✅ DB 연결 종료")
+            print("\n DB 연결 종료")
 
 if __name__ == "__main__":
     add_accuracy_column()
@@ -122,9 +122,9 @@ COMMENT '정상 탐지율 (최근 5분 평균, %)'
 
 try:
     db.execute_update(alter_query)
-    print("✅ accuracy 컬럼 추가 완료!")
+    print(" accuracy 컬럼 추가 완료!")
 except Exception as e:
-    print(f"❌ 오류: {e}")
+    print(f" 오류: {e}")
 ```
 
 ---
@@ -192,7 +192,7 @@ Step 1 완료 후:
 
 ---
 
-**어느 방법으로 실행하시겠어요?** 😊
+**어느 방법으로 실행하시겠어요?** 
 
 1. MySQL 커맨드라인
 2. Python 스크립트

@@ -21,7 +21,7 @@ description: "> **블로그**: ~/dev_ws/blog (Hugo + PaperMod) > **대시보드 
 ~/dev_ws/blog/
 ├── hugo.yaml                          # Hugo 설정 (메뉴, 테마, 사이트 정보)
 ├── data/
-│   └── roadmap_data.yaml              # ★ 대시보드 데이터 (이 파일만 수정)
+│   └── roadmap_data.yaml              #  대시보드 데이터 (이 파일만 수정)
 ├── content/
 │   ├── dashboard/
 │   │   └── index.md                   # 대시보드 페이지 (frontmatter만)
@@ -55,7 +55,7 @@ description: "> **블로그**: ~/dev_ws/blog (Hugo + PaperMod) > **대시보드 
 domains:
   - id: ros2
     name: "ROS2 / Navigation"
-    icon: "🤖"
+    icon: ""
     proficiency: 55        # ← 현재 숙련도 (0-100)
     learning_target: 80    # ← 목표 숙련도
     skills:
@@ -139,7 +139,7 @@ domains:
   # 기존 영역들...
   - id: new_domain                   # 고유 ID (영문 소문자)
     name: "영역 이름"
-    icon: "🆕"
+    icon: ""
     proficiency: 0
     learning_target: 50
     skills:

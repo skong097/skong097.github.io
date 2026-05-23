@@ -20,15 +20,15 @@ description: "> 작성일: 2026-02-21 > 프로젝트: `~/dev_ws/voice_iot_contro
 
 | 단계 | 내용 | 결과 |
 |------|------|------|
-| 1 | 시스템 리소스 확인 (RAM 14GB, CPU 16코어) | ✅ 업그레이드 가능 확인 |
-| 2 | qwen2.5:7b Ollama 다운로드 | ✅ |
-| 3 | faster-whisper small 사전 캐시 | ✅ |
-| 4 | settings.yaml v0.7 — STT/LLM 설정 업그레이드 | ✅ |
-| 5 | stt_engine.py v4.2 — beam_size/cpu_threads/num_workers 최적화 | ✅ |
-| 6 | llm_engine.py v1.2 — 모델/타임아웃/시스템 프롬프트 수정 | ✅ |
-| 7 | VAD thresh 0.15 테스트 | ❌ 발화 미감지 → 0.06 원복 |
-| 8 | stt_engine.py v4.3 — VAD 대기시간 최적화 | ✅ 체감 속도 대폭 개선 |
-| 9 | main.py v0.4 — LLM 워밍업 추가 | ✅ 콜드 스타트 완전 제거 |
+| 1 | 시스템 리소스 확인 (RAM 14GB, CPU 16코어) |  업그레이드 가능 확인 |
+| 2 | qwen2.5:7b Ollama 다운로드 |  |
+| 3 | faster-whisper small 사전 캐시 |  |
+| 4 | settings.yaml v0.7 — STT/LLM 설정 업그레이드 |  |
+| 5 | stt_engine.py v4.2 — beam_size/cpu_threads/num_workers 최적화 |  |
+| 6 | llm_engine.py v1.2 — 모델/타임아웃/시스템 프롬프트 수정 |  |
+| 7 | VAD thresh 0.15 테스트 |  발화 미감지 → 0.06 원복 |
+| 8 | stt_engine.py v4.3 — VAD 대기시간 최적화 |  체감 속도 대폭 개선 |
+| 9 | main.py v0.4 — LLM 워밍업 추가 |  콜드 스타트 완전 제거 |
 
 ---
 
@@ -123,7 +123,7 @@ if available:
 
 **LLM 콜드 스타트**: 첫 1~2회 호출 시 5~7초 소요 → 이후 600ms 이하로 안정화
 - 원인: qwen2.5:7b 첫 로딩 시 메모리 적재 시간 포함
-- 해결: main.py v0.4 — 서버 시작 시 `_warmup_llm()` 더미 호출로 완전 제거 ✅
+- 해결: main.py v0.4 — 서버 시작 시 `_warmup_llm()` 더미 호출로 완전 제거 
 
 **VAD 발화 미감지 (speech_dur=10080ms)**:
 - 배경음 energy: 0.113~0.148, thresh=0.06 → 배경음이 thresh 초과

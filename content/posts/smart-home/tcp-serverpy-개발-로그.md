@@ -57,13 +57,13 @@ if not ok:
 
 | event | context | WS 메시지 |
 |-------|---------|-----------|
-| guard_alert    | away  | 🚨 외출 중 침입 감지! |
-| guard_alert    | sleep | 🚨 취침 중 거실 침입 감지! |
-| presence_alert | home  | ⚠️ 장시간 움직임 없음 — 괜찮으신가요? |
+| guard_alert    | away  |  외출 중 침입 감지! |
+| guard_alert    | sleep |  취침 중 거실 침입 감지! |
+| presence_alert | home  |  장시간 움직임 없음 — 괜찮으신가요? |
 
 WS 브로드캐스트 포맷:
 ```json
-{"type":"pir_alert","msg":"🚨 외출 중 침입 감지!","event":"guard_alert","context":"away"}
+{"type":"pir_alert","msg":" 외출 중 침입 감지!","event":"guard_alert","context":"away"}
 ```
 
 ---
@@ -76,6 +76,6 @@ ESP32 PIR 감지
   → TCPServer._handle_client() 수신
   → _on_pir_event() 호출
   → WS 브로드캐스트 (pir_alert)
-  → 브라우저 PIR 카드 ⚠ 감지됨! 점멸
+  → 브라우저 PIR 카드  감지됨! 점멸
   → 로그 패널 빨간 텍스트 출력
 ```

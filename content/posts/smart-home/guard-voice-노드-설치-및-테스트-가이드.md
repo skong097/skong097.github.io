@@ -60,7 +60,7 @@ cd ~/dev_ws/ironman
 ./scripts/build.sh guard_voice
 ```
 
-`✅ guard_voice/tts_node` 패치 메시지가 나와야 합니다.
+` guard_voice/tts_node` 패치 메시지가 나와야 합니다.
 
 ## 4. 단독 테스트
 

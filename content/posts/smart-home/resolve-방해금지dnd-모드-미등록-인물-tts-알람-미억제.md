@@ -4,14 +4,14 @@ date: 2026-03-21
 draft: true
 tags: ["smart-home", "esp32"]
 categories: ["smart-home"]
-description: "- **프로젝트:** iot-repo-1 Voice IoT Controller - **날짜:** 2026-03-07 - **상태:** ✅ 해결 완료"
+description: "- **프로젝트:** iot-repo-1 Voice IoT Controller - **날짜:** 2026-03-07 - **상태:**  해결 완료"
 ---
 
 # RESOLVE — 방해금지(dnd) 모드 미등록 인물 TTS 알람 미억제
 
 - **프로젝트:** iot-repo-1 Voice IoT Controller
 - **날짜:** 2026-03-07
-- **상태:** ✅ 해결 완료
+- **상태:**  해결 완료
 - **관련 파일:** `server/command_router.py`, `server/camera_stream.py`, `server/main.py`
 
 ---
@@ -20,7 +20,7 @@ description: "- **프로젝트:** iot-repo-1 Voice IoT Controller - **날짜:** 
 
 방해금지 모드 활성화 상태에서 미등록 인물 감지 시:
 - TTS 음성 알람 발생 (억제 안 됨)
-- 웹 대시보드 `🚨 현관 미등록 인물 감지` 알람 팝업 발생
+- 웹 대시보드 ` 현관 미등록 인물 감지` 알람 팝업 발생
 
 ---
 
@@ -157,15 +157,15 @@ analysis_task = asyncio.create_task(
 # 방해금지 활성화 후 로그 확인
 20:44:31 [DEBUG] [Router] _current_pir_mode 설정 완료: dnd_mode
 20:44:31 [WARNING] [Router] esp32_home2 미연결 — 모드=dnd_mode 상태는 저장됨
-20:44:32 [DEBUG] [CameraStream] 보안모드 'dnd' → intruder 억제  ✅
-20:44:33 [DEBUG] [CameraStream] 보안모드 'dnd' → intruder 억제  ✅
-20:44:34 [DEBUG] [CameraStream] 보안모드 'dnd' → intruder 억제  ✅
-20:44:35 [DEBUG] [CameraStream] 보안모드 'dnd' → intruder 억제  ✅
+20:44:32 [DEBUG] [CameraStream] 보안모드 'dnd' → intruder 억제  
+20:44:33 [DEBUG] [CameraStream] 보안모드 'dnd' → intruder 억제  
+20:44:34 [DEBUG] [CameraStream] 보안모드 'dnd' → intruder 억제  
+20:44:35 [DEBUG] [CameraStream] 보안모드 'dnd' → intruder 억제  
 ```
 
-- 방해금지 모드 활성화 후 TTS 알람 미발생 ✅
-- 웹 대시보드 🚨 팝업 미발생 ✅
-- 방해금지 해제(기상 모드) 후 알람 정상 복구 ✅
+- 방해금지 모드 활성화 후 TTS 알람 미발생 
+- 웹 대시보드  팝업 미발생 
+- 방해금지 해제(기상 모드) 후 알람 정상 복구 
 
 ---
 

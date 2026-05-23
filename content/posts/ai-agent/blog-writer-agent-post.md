@@ -56,7 +56,7 @@ POST /agent/write
 │  Step 3. classify_category      │ ← 코드가 직접 실행
 │          (키워드 스코어링)        │
 │                                 │
-│  Step 4. LLM 본문 생성 ★        │ ← LLM 전담
+│  Step 4. LLM 본문 생성         │ ← LLM 전담
 │          (마크다운 직접 출력)     │
 │                                 │
 │  Step 5. write_post             │ ← 코드가 직접 실행
@@ -170,7 +170,7 @@ curl -X POST http://localhost:8101/agent/write \
   생성 완료 — 3339자
 
 [Step 5] write_post — st-gcn-파인튜닝으로-낙상감지-91-89--달성기.md
-  ✅ 저장 완료
+   저장 완료
 ```
 
 저장된 파일의 front matter:

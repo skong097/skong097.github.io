@@ -20,8 +20,8 @@ description: "**작업일**: 2026-02-16 **세션**: Phase 1~2 완료 — 다중 
 
 | Phase | 내용 | 상태 |
 |-------|------|------|
-| Phase 1 | RobotManager + DataProvider 다중화 + RobotSelectorBar | ✅ 완료 |
-| Phase 2 | Fleet Overview 미니맵 (SLAM 배경 + 상태 색상 + 감지 이벤트 + 클릭 선택) | ✅ 완료 |
+| Phase 1 | RobotManager + DataProvider 다중화 + RobotSelectorBar |  완료 |
+| Phase 2 | Fleet Overview 미니맵 (SLAM 배경 + 상태 색상 + 감지 이벤트 + 클릭 선택) |  완료 |
 | Phase 3 | 분할 화면 뷰 (2~4대 동시 패널 그리드) | ⬜ 미착수 |
 | Phase 4 | ROS2 네임스페이스 기반 실제 로봇 연동 | ⬜ 미착수 |
 
@@ -90,7 +90,7 @@ class RobotSelectorBar(QWidget):
     update_connection_status()           # 연결 카운터 갱신
 ```
 
-**UI**: `🤖 Fleet | [Kevin-01] [Kevin-02] [Kevin-03]  3/3`
+**UI**: ` Fleet | [Kevin-01] [Kevin-02] [Kevin-03]  3/3`
 
 ### 2-3. DashboardWindow 변경
 
@@ -112,7 +112,7 @@ class RobotSelectorBar(QWidget):
 알림 메시지에 `[Kevin-01]`, `[Kevin-02]` 등 로봇 이름 태그 추가:
 ```
 15:56:27 ℹ [Kevin-02] Face detected at (4, 7)
-15:56:30 🚨 [Kevin-01] Fall detected at (3, -7)
+15:56:30  [Kevin-01] Fall detected at (3, -7)
 ```
 
 ---
@@ -124,9 +124,9 @@ class RobotSelectorBar(QWidget):
 사이드바 최상단 (Topic Monitor 위):
 ```
 사이드바
-├── 🌍 Fleet Overview    ← 신규
-├── 📡 Topic Monitor
-└── 🔔 Alert History
+├──  Fleet Overview    ← 신규
+├──  Topic Monitor
+└──  Alert History
 ```
 
 ### 3-2. SLAM 그리드 배경
@@ -154,10 +154,10 @@ class RobotSelectorBar(QWidget):
 ### 3-5. 하단 요약 바
 
 ```
-● 3 patrol  ● 0 idle  👤 1  ⚠ 1 fall
+● 3 patrol  ● 0 idle   1   1 fall
 ```
 
-배터리 부족 로봇이 있으면 `⚠ N alert` 표시.
+배터리 부족 로봇이 있으면 ` N alert` 표시.
 
 ### 3-6. 테마 동기화
 
@@ -215,23 +215,23 @@ python run_fleet.py
 
 ```
 ┌──────────────────────────────────────────────────────────────────┐
-│  🤖 Kevin Patrol Dashboard  v3.3                                │
-│  [SIM] [LIVE] [REC]  [🎨 CYBER]  ● Connected                   │
+│   Kevin Patrol Dashboard  v3.3                                │
+│  [SIM] [LIVE] [REC]  [ CYBER]  ● Connected                   │
 ├──────────────────────────────────────────────────────────────────┤
-│  🤖 Fleet | [Kevin-01] [Kevin-02] [Kevin-03]              3/3   │
+│   Fleet | [Kevin-01] [Kevin-02] [Kevin-03]              3/3   │
 ├──────────────────┬──────────────────┬────────────────────────────┤
-│                  │                  │  🌍 Fleet Overview          │
-│   🗺 SLAM Map    │  📷 Camera Feed  │  (전체 로봇 위치 + SLAM     │
+│                  │                  │   Fleet Overview          │
+│    SLAM Map    │   Camera Feed  │  (전체 로봇 위치 + SLAM     │
 │   (선택된 로봇)   │  (선택된 로봇)    │   배경 + 감지 이벤트)       │
 │                  │                  │  ● 3 patrol ● 0 idle       │
 ├──────────────────┼──────────────────┼────────────────────────────┤
-│                  │                  │  📡 Topic Monitor           │
-│   📊 Sensor Plot │  🤖 Status +     │  (선택된 로봇의 토픽)        │
-│   (선택된 로봇)   │  🔍 Detection    ├────────────────────────────┤
-│                  │                  │  🔔 Alert History           │
+│                  │                  │   Topic Monitor           │
+│    Sensor Plot │   Status +     │  (선택된 로봇의 토픽)        │
+│   (선택된 로봇)   │   Detection    ├────────────────────────────┤
+│                  │                  │   Alert History           │
 │                  │                  │  (전체 로봇 통합 + 태그)      │
 ├──────────────────┴──────────────────┴────────────────────────────┤
-│  ▶ PATROL  ⏸ STOP  📍 SET GOAL  🔄 SLAM RESET   ⚠ ALERTS      │
+│  ▶ PATROL  ⏸ STOP   SET GOAL   SLAM RESET    ALERTS      │
 └──────────────────────────────────────────────────────────────────┘
 ```
 

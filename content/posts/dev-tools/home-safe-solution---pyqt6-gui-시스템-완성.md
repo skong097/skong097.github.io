@@ -1,53 +1,53 @@
 ---
-title: "🏠 Home Safe Solution - PyQt6 GUI 시스템 완성!"
+title: " Home Safe Solution - PyQt6 GUI 시스템 완성!"
 date: 2026-03-21
 draft: true
 tags: ["dev-tools", "pyqt6"]
 categories: ["dev-tools"]
-description: "- ✅ `database_schema.sql` (9.7K) - MySQL 스키마 - ✅ `database_models.py` (15K) - ORM 모델 - ✅ `main.py` (1.1K) - 메인 실행 파일"
+description: "-  `database_schema.sql` (9.7K) - MySQL 스키마 -  `database_models.py` (15K) - ORM 모델 -  `main.py` (1.1K) - 메인 실행 파일"
 ---
 
-# 🏠 Home Safe Solution - PyQt6 GUI 시스템 완성!
+#  Home Safe Solution - PyQt6 GUI 시스템 완성!
 
-## 🎉 완성된 파일 목록
+##  완성된 파일 목록
 
-### 📁 **핵심 파일 (12개)**
+###  **핵심 파일 (12개)**
 
 #### 데이터베이스
-- ✅ `database_schema.sql` (9.7K) - MySQL 스키마
-- ✅ `database_models.py` (15K) - ORM 모델
+-  `database_schema.sql` (9.7K) - MySQL 스키마
+-  `database_models.py` (15K) - ORM 모델
 
 #### GUI 화면
-- ✅ `main.py` (1.1K) - 메인 실행 파일
-- ✅ `login_window.py` (7.1K) - 로그인 화면
-- ✅ `main_window.py` (12K) - 메인 윈도우
-- ✅ `dashboard_page.py` (14K) - 대시보드
-- ✅ `monitoring_page.py` (17K) - **실시간 모니터링** ⭐
-- ✅ `additional_pages.py` - 추가 페이지
-- ✅ `events_page.py` - 이벤트 로그
-- ✅ `users_page.py` - 사용자 관리
-- ✅ `settings_page.py` - 설정
+-  `main.py` (1.1K) - 메인 실행 파일
+-  `login_window.py` (7.1K) - 로그인 화면
+-  `main_window.py` (12K) - 메인 윈도우
+-  `dashboard_page.py` (14K) - 대시보드
+-  `monitoring_page.py` (17K) - **실시간 모니터링** ⭐
+-  `additional_pages.py` - 추가 페이지
+-  `events_page.py` - 이벤트 로그
+-  `users_page.py` - 사용자 관리
+-  `settings_page.py` - 설정
 
 #### 설치 & 문서
-- ✅ `install.sh` (4.0K) - 자동 설치 스크립트
-- ✅ `QUICKSTART.md` (3.1K) - 빠른 시작 가이드
-- ✅ `GUI_README.md` (9.2K) - 상세 사용 설명서
+-  `install.sh` (4.0K) - 자동 설치 스크립트
+-  `QUICKSTART.md` (3.1K) - 빠른 시작 가이드
+-  `GUI_README.md` (9.2K) - 상세 사용 설명서
 
 ---
 
-## 🚀 설치 방법 (3단계)
+##  설치 방법 (3단계)
 
-### 1️⃣ 파일 다운로드
+### 1⃣ 파일 다운로드
 모든 파일을 `/home/gjkong/dev_ws/yolo/myproj/gui/` 디렉토리에 복사
 
-### 2️⃣ 자동 설치
+### 2⃣ 자동 설치
 ```bash
 cd /home/gjkong/dev_ws/yolo/myproj/gui
 chmod +x install.sh
 ./install.sh
 ```
 
-### 3️⃣ 데이터베이스 생성
+### 3⃣ 데이터베이스 생성
 ```bash
 mysql -u root -p < database_schema.sql
 ```
@@ -60,7 +60,7 @@ nano database_models.py
 
 ---
 
-## 🎯 실행 방법
+##  실행 방법
 
 ```bash
 cd /home/gjkong/dev_ws/yolo/myproj/gui
@@ -73,12 +73,12 @@ python main.py
 
 ---
 
-## 🖼️ 완성된 화면 구성
+##  완성된 화면 구성
 
 ### 1. 로그인 화면
 ```
 ┌────────────────────────────┐
-│      🏠 Home Safe         │
+│       Home Safe         │
 │     낙상 감지 시스템        │
 │                            │
 │   아이디: [__________]    │
@@ -93,14 +93,14 @@ python main.py
 ┌─────────────────────────────────────────────────────┐
 │ 사이드바    │  대시보드                              │
 │ ────────   │  ───────────────────────────────────  │
-│ 🏠 Home Safe│  [총 이벤트] [오늘] [낙상] [정상]    │
+│  Home Safe│  [총 이벤트] [오늘] [낙상] [정상]    │
 │ 관리자님    │                                        │
-│             │  📊 차트 영역                         │
-│ 📊 대시보드 │  ┌──────────┐  ┌──────────┐         │
-│ 🎥 모니터링 │  │ 파이차트 │  │ 막대차트 │         │
-│ 📋 이벤트   │  └──────────┘  └──────────┘         │
-│ 👥 사용자   │                                        │
-│ ⚙️ 설정     │  최근 이벤트 테이블                    │
+│             │   차트 영역                         │
+│  대시보드 │  ┌──────────┐  ┌──────────┐         │
+│  모니터링 │  │ 파이차트 │  │ 막대차트 │         │
+│  이벤트   │  └──────────┘  └──────────┘         │
+│  사용자   │                                        │
+│  설정     │  최근 이벤트 테이블                    │
 │             │  ┌────────────────────────────────┐  │
 │ [로그아웃]  │  │ 시간 | 사용자 | 이벤트 | 상태 │  │
 └─────────────┴──┴────────────────────────────────┴──┘
@@ -111,8 +111,8 @@ python main.py
 ┌─────────────────────────────────────────────────────┐
 │ 영상 영역             │  정보 패널                   │
 │ ┌─────────────────┐   │  ┌──────────────────────┐  │
-│ │   🎥 웹캠       │   │  │ 현재 상태            │  │
-│ │   (Skeleton)    │   │  │ 🟢 정상             │  │
+│ │    웹캠       │   │  │ 현재 상태            │  │
+│ │   (Skeleton)    │   │  │  정상             │  │
 │ │                 │   │  │ 확률: 96.3%        │  │
 │ │                 │   │  └──────────────────────┘  │
 │ └─────────────────┘   │  ┌──────────────────────┐  │
@@ -120,15 +120,15 @@ python main.py
 │                       │  │ Hip: 320.5          │  │
 │                       │  │ Spine: 12.8°       │  │
 │                       │  └──────────────────────┘  │
-│                       │  📋 이벤트 로그             │
+│                       │   이벤트 로그             │
 └───────────────────────┴─────────────────────────────┘
 ```
 
 ---
 
-## ✨ 주요 기능
+##  주요 기능
 
-### ✅ 완성된 기능
+###  완성된 기능
 1. **로그인 시스템**
    - bcrypt 암호화
    - 세션 관리
@@ -154,7 +154,7 @@ python main.py
    - 자동신고 로그
    - 시스템 설정
 
-### 🚧 개발 예정
+###  개발 예정
 1. **이벤트 로그 페이지**
    - 검색 및 필터링
    - 동영상 재생
@@ -177,7 +177,7 @@ python main.py
 
 ---
 
-## 📊 기술 스택
+##  기술 스택
 
 ### Frontend (GUI)
 - **PyQt6** - 최신 Qt6 기반 GUI
@@ -196,7 +196,7 @@ python main.py
 
 ---
 
-## 🎓 학습 포인트
+##  학습 포인트
 
 이 프로젝트에서 배운 것들:
 
@@ -226,7 +226,7 @@ python main.py
 
 ---
 
-## 🐛 알려진 이슈
+##  알려진 이슈
 
 ### Issue #1: Feature 값이 0
 **원인**: 앉아서 테스트 → keypoint 감지 실패
@@ -242,7 +242,7 @@ python main.py
 
 ---
 
-## 📈 성능
+##  성능
 
 ### 실시간 모니터링
 - **FPS**: 20~25 (GPU) / 15~20 (CPU)
@@ -256,7 +256,7 @@ python main.py
 
 ---
 
-## 🔮 향후 계획
+##  향후 계획
 
 ### Phase 3: 고급 기능
 - [ ] LSTM 모델 통합
@@ -272,15 +272,15 @@ python main.py
 
 ---
 
-## 🎉 축하합니다!
+##  축하합니다!
 
 **Home Safe Solution PyQt6 GUI 시스템이 완성되었습니다!**
 
 ### 다음 단계:
-1. ✅ 설치 및 테스트
-2. ✅ 사용자 추가
-3. ✅ 실제 환경 테스트
-4. 🚀 기능 확장
+1.  설치 및 테스트
+2.  사용자 추가
+3.  실제 환경 테스트
+4.  기능 확장
 
 ---
 
@@ -289,15 +289,15 @@ python main.py
 **버전**: 1.0.0  
 **라이센스**: MIT
 
-🏠 **Home Safe** - 가정의 안전을 지키는 스마트 낙상 감지 시스템
+ **Home Safe** - 가정의 안전을 지키는 스마트 낙상 감지 시스템
 
 ---
 
-## 📞 문의
+##  문의
 
 문제가 있으면:
 1. `QUICKSTART.md` - 빠른 해결책
 2. `GUI_README.md` - 상세 가이드
 3. `logs/` - 로그 파일 확인
 
-**모든 파일이 준비되었습니다! 🎊**
+**모든 파일이 준비되었습니다! **

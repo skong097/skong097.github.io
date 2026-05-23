@@ -4,14 +4,14 @@ date: 2026-03-21
 draft: true
 tags: ["robot-security", "jwt"]
 categories: ["robot-security"]
-description: "**날짜:** 2026-03-06 **프로젝트:** Voice IoT Controller (`iot-repo-1`) **상태:** 🔴 미해결"
+description: "**날짜:** 2026-03-06 **프로젝트:** Voice IoT Controller (`iot-repo-1`) **상태:**  미해결"
 ---
 
 # 이슈 기록 — WebSocket JWT 인증 실패
 
 **날짜:** 2026-03-06  
 **프로젝트:** Voice IoT Controller (`iot-repo-1`)  
-**상태:** 🔴 미해결
+**상태:**  미해결
 
 ---
 

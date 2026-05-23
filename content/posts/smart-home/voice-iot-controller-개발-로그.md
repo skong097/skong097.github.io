@@ -75,7 +75,7 @@ for v in k.get_voices(): print(v)
 ### Step 5 — edge-tts 채택
 - **선택 이유:** 무료, 한국어 고품질, `pip install edge-tts`로 즉시 사용
 - **한국어 목소리:** `ko-KR-SunHiNeural` (여성), `ko-KR-InJoonNeural` (남성)
-- **테스트 통과:** 한국어 자연스럽게 출력 확인 ✅
+- **테스트 통과:** 한국어 자연스럽게 출력 확인 
 
 ---
 
@@ -120,12 +120,12 @@ tts:
 
 | 컴포넌트 | 상태 | 비고 |
 |----------|------|------|
-| 웨이크워드 | ✅ | Porcupine "자비스야" |
-| STT | ✅ | Whisper small, 한국어 |
-| LLM | ✅ | qwen2.5:7b (Ollama) |
-| IoT 명령 | ✅ | TCP → ESP32 |
-| 자유 대화 | ✅ | cmd=null 분기 처리 |
-| TTS | ✅ | edge-tts ko-KR-SunHiNeural |
+| 웨이크워드 |  | Porcupine "자비스야" |
+| STT |  | Whisper small, 한국어 |
+| LLM |  | qwen2.5:7b (Ollama) |
+| IoT 명령 |  | TCP → ESP32 |
+| 자유 대화 |  | cmd=null 분기 처리 |
+| TTS |  | edge-tts ko-KR-SunHiNeural |
 
 ---
 
@@ -133,9 +133,9 @@ tts:
 
 | 이슈 | 우선순위 | 내용 |
 |------|---------|------|
-| VAD 배경음 | 🔴 높음 | IDLE energy 0.11~0.14 (thresh=0.06 초과) → 발화 종료 미감지, Silero VAD 교체 검토 |
-| 큐 백로그 | 🟡 중간 | LLM 처리 중 qsize 100~196 까지 쌓임 |
-| STT 오인식 | 🟡 중간 | "침실 전등켜줘" → "침실 전 등켜줘" 등 띄어쓰기 오류 |
+| VAD 배경음 |  높음 | IDLE energy 0.11~0.14 (thresh=0.06 초과) → 발화 종료 미감지, Silero VAD 교체 검토 |
+| 큐 백로그 |  중간 | LLM 처리 중 qsize 100~196 까지 쌓임 |
+| STT 오인식 |  중간 | "침실 전등켜줘" → "침실 전 등켜줘" 등 띄어쓰기 오류 |
 
 ---
 

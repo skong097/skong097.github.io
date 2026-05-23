@@ -211,25 +211,25 @@ curl -X POST http://localhost:8100/agent/run \
 ```
 
 ```
-🤖 Guard Brain Agent 시작
-📋 상황: Zone A에서 모션 감지됨. 상황을 파악하고 적절히 대응하라.
+ Guard Brain Agent 시작
+ 상황: Zone A에서 모션 감지됨. 상황을 파악하고 적절히 대응하라.
 
 [Iteration 1/5]
-  💭 Thought : Zone A 상황 파악을 위해 카메라 피드를 먼저 확인한다.
-  ⚡ Action  : get_camera_feed
-  📊 Result  : {"status": "motion_detected", "persons_detected": 2}
+   Thought : Zone A 상황 파악을 위해 카메라 피드를 먼저 확인한다.
+   Action  : get_camera_feed
+   Result  : {"status": "motion_detected", "persons_detected": 2}
 
 [Iteration 2/5]
-  💭 Thought : 사람 2명 확인. 센서로 추가 확인한다.
-  ⚡ Action  : get_sensor_status
-  📊 Result  : {"motion": true, "temperature": 33.2}
+   Thought : 사람 2명 확인. 센서로 추가 확인한다.
+   Action  : get_sensor_status
+   Result  : {"motion": true, "temperature": 33.2}
 
 [Iteration 3/5]
-  💭 Thought : 모션 및 인원 확인 완료. 로봇을 현장으로 이동시킨다.
-  ⚡ Action  : move_robot
-  📊 Result  : {"status": "accepted", "eta_seconds": 6}
+   Thought : 모션 및 인원 확인 완료. 로봇을 현장으로 이동시킨다.
+   Action  : move_robot
+   Result  : {"status": "accepted", "eta_seconds": 6}
 
-✅ 최종 판단 (자동): 현장 조치 및 상황 확인 완료
+ 최종 판단 (자동): 현장 조치 및 상황 확인 완료
    조치 내역: ['get_camera_feed', 'get_sensor_status', 'move_robot']
 ```
 

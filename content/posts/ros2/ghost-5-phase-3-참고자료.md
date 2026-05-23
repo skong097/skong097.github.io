@@ -345,11 +345,11 @@ UWB 거리 측정:       d_1, d_2, d_3, d_4, d_5 [각 로봇까지]
 
 | 기술 | 범위 | 대역폭 | 지연 | 전력 | GPS 데이터 전송 | ROS2 연동 | GHOST-5 적합성 |
 |---|---|---|---|---|---|---|---|
-| **UWB** | ~100m | 낮음 | 매우 낮음 | 중간 | ✅ 측위 직접 제공 | ✅ | ⭐⭐⭐⭐⭐ |
-| **LoRa** | ~15km | 매우 낮음 | 낮음 | 매우 낮음 | ✅ 좌표만 | ✅ | ⭐⭐⭐⭐ |
-| **WiFi 802.11s Mesh** | ~300m | 높음 | 낮음 | 높음 | ✅ 풍부한 데이터 | ✅ (DDS) | ⭐⭐⭐ |
-| **LoRa + WiFi 혼합** | 장거리+고속 | 혼합 | 혼합 | 중간 | ✅ 최적 | ✅ | ⭐⭐⭐⭐⭐ |
-| **ZigBee** | ~100m | 낮음 | 낮음 | 낮음 | ✅ 제한적 | △ | ⭐⭐ |
+| **UWB** | ~100m | 낮음 | 매우 낮음 | 중간 |  측위 직접 제공 |  | ⭐⭐⭐⭐⭐ |
+| **LoRa** | ~15km | 매우 낮음 | 낮음 | 매우 낮음 |  좌표만 |  | ⭐⭐⭐⭐ |
+| **WiFi 802.11s Mesh** | ~300m | 높음 | 낮음 | 높음 |  풍부한 데이터 |  (DDS) | ⭐⭐⭐ |
+| **LoRa + WiFi 혼합** | 장거리+고속 | 혼합 | 혼합 | 중간 |  최적 |  | ⭐⭐⭐⭐⭐ |
+| **ZigBee** | ~100m | 낮음 | 낮음 | 낮음 |  제한적 | △ | ⭐⭐ |
 
 ### 4.2 GHOST-5 재난 시나리오 추천 조합
 
@@ -513,7 +513,7 @@ class DroneScoutNode(Node):
 
             self.survivor_pub.publish(survivor_pose)
             self.get_logger().info(
-                f'🔥 생존자 감지! 위치: ({self.current_pose.position.x:.2f}, '
+                f' 생존자 감지! 위치: ({self.current_pose.position.x:.2f}, '
                 f'{self.current_pose.position.y:.2f})'
             )
 
@@ -889,19 +889,19 @@ Phase 3-D (2주): 통합 재난 시나리오 테스트
 ### 9.2 우선순위 구현 순서
 
 ```
-1️⃣ Gazebo에서 PX4 + ROS2 시뮬레이션 환경 구축
+1⃣ Gazebo에서 PX4 + ROS2 시뮬레이션 환경 구축
      → px4_sim_ros2 참고
 
-2️⃣ /drone/survivor_pose 토픽 → Nav2 Goal 연동
+2⃣ /drone/survivor_pose 토픽 → Nav2 Goal 연동
      → 6.2 코드 스니펫 참고
 
-3️⃣ UWB 시뮬레이터로 측위 알고리즘 검증
+3⃣ UWB 시뮬레이터로 측위 알고리즘 검증
      → mr-radio-localization 참고
 
-4️⃣ LoRa 모듈 ROS2 브릿지 구현
+4⃣ LoRa 모듈 ROS2 브릿지 구현
      → 6.4 코드 스니펫 참고
 
-5️⃣ 실기체 비행 (반드시 SITL 충분히 후)
+5⃣ 실기체 비행 (반드시 SITL 충분히 후)
 ```
 
 ### 9.3 주요 성능 목표

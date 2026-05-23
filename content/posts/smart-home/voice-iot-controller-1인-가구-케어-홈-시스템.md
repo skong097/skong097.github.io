@@ -324,15 +324,15 @@ Authorization: Bearer <token>
 
 | # | 우선순위 | 항목 | 구현 방법 | 상태 |
 |---|----------|------|-----------|------|
-| 1 | HIGH | TCP :9000 통신 암호화 | HMAC-SHA256 서명 (`esp32_secure.py`) | ✅ 완료 |
-| 2 | HIGH | FastAPI 엔드포인트 인증 | JWT Bearer 토큰 전체 21개 엔드포인트 적용 (`auth.py`) | ✅ 완료 |
-| 3 | HIGH | 얼굴 임베딩 벡터 암호화 | Fernet 대칭 암호화 (`face_store.py`) | 📅 예정 (팀원 담당) |
-| 4 | MEDIUM | ESP32 OTA 서명 검증 | ESP-IDF Secure Boot v2 | ⛔ 제외 (ESP-IDF 별도) |
-| 5 | MEDIUM | UDP MJPEG 스트림 IP 필터링 | IP 화이트리스트 (`camera_stream.py`) | 📅 예정 |
-| 6 | MEDIUM | settings.yaml 접근 권한 제한 | chmod 600 + 민감값 `.env` 분리 | ✅ 완료 |
-| 7 | LOW | 의존성 CVE 스캔 자동화 | pip-audit + GitHub Actions (매주 월요일) | ✅ 완료 |
-| 8 | LOW | ESP32 JTAG 포트 비활성화 | ESP-IDF eFuse JTAG_DISABLE | ⛔ 제외 (ESP-IDF 별도) |
-| 9 | LOW | 보안 이벤트 감사 로그 분리 | `security_audit` 테이블 + SHA-256 체인 해시 (`db_logger.py`) | ✅ 완료 |
+| 1 | HIGH | TCP :9000 통신 암호화 | HMAC-SHA256 서명 (`esp32_secure.py`) |  완료 |
+| 2 | HIGH | FastAPI 엔드포인트 인증 | JWT Bearer 토큰 전체 21개 엔드포인트 적용 (`auth.py`) |  완료 |
+| 3 | HIGH | 얼굴 임베딩 벡터 암호화 | Fernet 대칭 암호화 (`face_store.py`) |  예정 (팀원 담당) |
+| 4 | MEDIUM | ESP32 OTA 서명 검증 | ESP-IDF Secure Boot v2 |  제외 (ESP-IDF 별도) |
+| 5 | MEDIUM | UDP MJPEG 스트림 IP 필터링 | IP 화이트리스트 (`camera_stream.py`) |  예정 |
+| 6 | MEDIUM | settings.yaml 접근 권한 제한 | chmod 600 + 민감값 `.env` 분리 |  완료 |
+| 7 | LOW | 의존성 CVE 스캔 자동화 | pip-audit + GitHub Actions (매주 월요일) |  완료 |
+| 8 | LOW | ESP32 JTAG 포트 비활성화 | ESP-IDF eFuse JTAG_DISABLE |  제외 (ESP-IDF 별도) |
+| 9 | LOW | 보안 이벤트 감사 로그 분리 | `security_audit` 테이블 + SHA-256 체인 해시 (`db_logger.py`) |  완료 |
 
 > 진행률: HIGH 67% (2/3) · MEDIUM 33% (1/3) · LOW 67% (2/3)
 

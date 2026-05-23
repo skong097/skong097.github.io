@@ -128,13 +128,13 @@ _KO_CORRECTIONS = {
 
 | 단계 | 내용 | 결과 |
 |------|------|------|
-| faster-whisper CPU 최적화 | beam_size=1, cpu_threads=3 | ✅ |
-| Whisper base → small | 정확도 향상 | ✅ |
-| qwen2.5:7b 업그레이드 | JSON 준수율 향상 | ✅ |
-| LLM 워밍업 | 초기 지연 제거 | ✅ |
-| OpenAI 전환 시도 | 크레딧 소진 | ❌ → Ollama 원복 |
-| 한국어 오인식 교정 | _KO_CORRECTIONS | ✅ |
-| _normalize_types | float→int 자동 변환 | ✅ |
+| faster-whisper CPU 최적화 | beam_size=1, cpu_threads=3 |  |
+| Whisper base → small | 정확도 향상 |  |
+| qwen2.5:7b 업그레이드 | JSON 준수율 향상 |  |
+| LLM 워밍업 | 초기 지연 제거 |  |
+| OpenAI 전환 시도 | 크레딧 소진 |  → Ollama 원복 |
+| 한국어 오인식 교정 | _KO_CORRECTIONS |  |
+| _normalize_types | float→int 자동 변환 |  |
 
 ---
 

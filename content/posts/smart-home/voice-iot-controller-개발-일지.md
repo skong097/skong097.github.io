@@ -89,9 +89,9 @@ PIR 센서(HC-SR501) 기반 1인 가구 보안 시스템 통합 완료.
 ESP32 PIR 이벤트 수신 처리 (HTTP 경로 — 현재 미사용, TCP로 대체됨)
 
 이벤트별 메시지 매핑:
-- `guard_alert` + away  → "🚨 외출 중 침입 감지!"
-- `guard_alert` + sleep → "🚨 취침 중 거실 침입 감지!"
-- `presence_alert` + home → "⚠️ 장시간 움직임 없음"
+- `guard_alert` + away  → " 외출 중 침입 감지!"
+- `guard_alert` + sleep → " 취침 중 거실 침입 감지!"
+- `presence_alert` + home → " 장시간 움직임 없음"
 
 ---
 
@@ -137,7 +137,7 @@ if cmd.get("cmd") in ("away_mode", "home_mode", "sleep_mode", "wake_mode"):
 
 ```python
 # WS 브로드캐스트 포맷
-{"type":"pir_alert", "msg":"🚨 외출 중 침입 감지!", "event":"guard_alert", "context":"away"}
+{"type":"pir_alert", "msg":" 외출 중 침입 감지!", "event":"guard_alert", "context":"away"}
 ```
 
 **수정 후 정상 흐름**
@@ -154,16 +154,16 @@ ESP32 PIR 감지
 ### 6. index.html
 
 **PIR 보안 카드 추가**
-- 4개 모드 버튼: 외출🚶 / 귀가🏠 / 취침🌙 / 기상☀️
+- 4개 모드 버튼: 외출 / 귀가 / 취침 / 기상
 - 버튼 활성 색상: 외출(빨강) / 귀가(초록) / 취침(보라) / 기상(노랑)
 - PIR 상태 도트: 방범 중(빨강 점멸) / 재실 감지(초록 고정)
-- 알림 뱃지: 감지 시 "⚠ 감지됨!" 점멸 → 10초 후 자동 복원
+- 알림 뱃지: 감지 시 " 감지됨!" 점멸 → 10초 후 자동 복원
 
 **CCTV 모달 추가**
 - PIR 감지 시 자동 팝업
 - `/camera/stream` MJPEG 스트림 표시 (16:9)
 - 스트림 실패 시 오류 메시지 표시
-- 버튼: "✅ 확인-해제" (경고 초기화) / "✕ 닫기" (경고 유지)
+- 버튼: " 확인-해제" (경고 초기화) / " 닫기" (경고 유지)
 
 **음성 모드 전환 버튼 동기화 버그 수정**
 - 문제: `'home'` 키워드가 `'esp32_home'`에 항상 매칭 → 무조건 귀가 모드로 덮어씀
@@ -191,7 +191,7 @@ const ctxMatch = msg.match(/context=(\w+)/);
   → allLightsOn() + sendPirEvent()
   → TCPServer._on_pir_event()
   → WS 브로드캐스트 pir_alert
-  → 웹앱 PIR 카드 "⚠ 감지됨!" 점멸
+  → 웹앱 PIR 카드 " 감지됨!" 점멸
   → CCTV 모달 자동 팝업
   → 로그 패널 빨간 텍스트 기록
 ```

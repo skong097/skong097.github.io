@@ -91,9 +91,9 @@ python3 tests/unit/test_map_merger_m10.py
 
 | 완료 조건 | 하드웨어 필요 | 상태 |
 |---|---|---|
-| /map_merge/global_map 토픽 퍼블리시 | ✅ | ⬜ |
-| 2대 로봇 지도 글로벌 맵 통합 확인 | ✅ | ⬜ |
-| Delta Update 비율 < 20% 로그 | ✅ | ⬜ |
+| /map_merge/global_map 토픽 퍼블리시 |  | ⬜ |
+| 2대 로봇 지도 글로벌 맵 통합 확인 |  | ⬜ |
+| Delta Update 비율 < 20% 로그 |  | ⬜ |
 
 ---
 

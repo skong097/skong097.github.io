@@ -1,5 +1,5 @@
 ---
-title: "🔒 Home Safe Solution - 보안 적용 제안서"
+title: " Home Safe Solution - 보안 적용 제안서"
 date: 2026-03-21
 draft: true
 tags: ["big-data"]
@@ -7,19 +7,19 @@ categories: ["big-data"]
 description: "```python config = { 'host': 'localhost',"
 ---
 
-# 🔒 Home Safe Solution - 보안 적용 제안서
+#  Home Safe Solution - 보안 적용 제안서
 
-## 📋 프로젝트: vision_ai (Fall Detection System)
-## 📅 작성일: 2026-01-30
-## 🎯 GitHub: https://github.com/skong097/vision_ai
+##  프로젝트: vision_ai (Fall Detection System)
+##  작성일: 2026-01-30
+##  GitHub: https://github.com/skong097/vision_ai
 
 ---
 
-# 🚨 즉시 조치 필요 (Critical)
+#  즉시 조치 필요 (Critical)
 
 ## 1. 하드코딩된 민감 정보 제거
 
-### ⚠️ **1.1 데이터베이스 자격 증명**
+###  **1.1 데이터베이스 자격 증명**
 
 #### **현재 상태 (위험):**
 ```python
@@ -28,11 +28,11 @@ config = {
     'host': 'localhost',
     'database': 'home_safe',
     'user': 'homesafe',
-    'password': '*******'  # ❌ GitHub에 노출!
+    'password': '*******'  #  GitHub에 노출!
 }
 ```
 
-#### **위험도:** 🔴 **매우 높음**
+#### **위험도:**  **매우 높음**
 - DB 접근 정보가 GitHub에 노출됨
 - 악의적 사용자의 데이터베이스 접근 가능
 - 사용자 개인정보, 이벤트 로그 유출 위험
@@ -101,9 +101,9 @@ class DatabaseManager:
         """데이터베이스 연결"""
         try:
             self.connection = mysql.connector.connect(**self.config)
-            print(f"✅ Connected to database: {self.config['database']}")
+            print(f" Connected to database: {self.config['database']}")
         except mysql.connector.Error as err:
-            print(f"❌ Database connection error: {err}")
+            print(f" Database connection error: {err}")
             raise
 ```
 
@@ -122,7 +122,7 @@ echo "python-dotenv==1.0.0" >> requirements.txt
 
 ---
 
-### ⚠️ **1.2 하드코딩된 경로 제거**
+###  **1.2 하드코딩된 경로 제거**
 
 #### **문제점:**
 ```python
@@ -180,9 +180,9 @@ ensure_directories()
 
 # 디버그 정보
 if os.getenv('DEBUG', 'False').lower() == 'true':
-    print(f"📂 PROJECT_ROOT: {PROJECT_ROOT}")
-    print(f"📂 MODEL_DIR: {MODEL_DIR}")
-    print(f"📂 DATA_DIR: {DATA_DIR}")
+    print(f" PROJECT_ROOT: {PROJECT_ROOT}")
+    print(f" MODEL_DIR: {MODEL_DIR}")
+    print(f" DATA_DIR: {DATA_DIR}")
 ```
 
 **Step 3: 사용 예시**
@@ -333,7 +333,7 @@ htmlcov/
 
 ## 3. 비밀번호 보안 강화
 
-### ✅ **현재 상태: 양호 (bcrypt 사용 중)**
+###  **현재 상태: 양호 (bcrypt 사용 중)**
 
 ```python
 # gui/login_window.py
@@ -347,7 +347,7 @@ if bcrypt.checkpw(password.encode('utf-8'), stored_hash):
     # 인증 성공
 ```
 
-### 📈 **추가 개선 사항:**
+###  **추가 개선 사항:**
 
 #### **3.1 비밀번호 정책 강화**
 
@@ -498,7 +498,7 @@ class RegisterDialog(QDialog):
         
         password = self.password_input.text()
         
-        # 비밀번호 정책 검증 ✅
+        # 비밀번호 정책 검증 
         is_valid, errors = PasswordPolicy.validate(password)
         if not is_valid:
             QMessageBox.warning(
@@ -592,7 +592,7 @@ class LoginWindow(QDialog):
         super().__init__()
         self.db = DatabaseManager()
         self.user_model = User(self.db)
-        self.security = LoginSecurity()  # ✅ 추가
+        self.security = LoginSecurity()  #  추가
         self.init_ui()
     
     def on_login_clicked(self):
@@ -605,7 +605,7 @@ class LoginWindow(QDialog):
             QMessageBox.warning(self, '입력 오류', '아이디와 비밀번호를 입력하세요.')
             return
         
-        # 계정 잠금 확인 ✅
+        # 계정 잠금 확인 
         is_locked, remaining_minutes = self.security.is_locked_out(username)
         if is_locked:
             QMessageBox.critical(
@@ -621,7 +621,7 @@ class LoginWindow(QDialog):
         user = self.user_model.authenticate(username, password)
         
         if user:
-            # 성공 시 초기화 ✅
+            # 성공 시 초기화 
             self.security.clear_attempts(username)
             
             # 로그인 이력 기록
@@ -631,7 +631,7 @@ class LoginWindow(QDialog):
             self.login_success.emit(user)
             self.close()
         else:
-            # 실패 시 기록 ✅
+            # 실패 시 기록 
             self.security.record_attempt(username)
             
             # 남은 시도 횟수 표시
@@ -669,11 +669,11 @@ class MainWindow(QMainWindow):
         super().__init__()
         self.user_info = user_info
         self.db = DatabaseManager()
-        self.last_activity = datetime.now()  # ✅ 마지막 활동 시간
+        self.last_activity = datetime.now()  #  마지막 활동 시간
         
         self.init_ui()
         
-        # 세션 타임아웃 타이머 ✅
+        # 세션 타임아웃 타이머 
         self.session_timer = QTimer()
         self.session_timer.timeout.connect(self.check_session_timeout)
         self.session_timer.start(60000)  # 1분마다 체크
@@ -795,7 +795,7 @@ class DataEncryption:
         if not key:
             # 키가 없으면 생성 (최초 1회만)
             key = Fernet.generate_key()
-            print(f"⚠️ ENCRYPTION_KEY 생성됨. .env에 저장하세요:")
+            print(f" ENCRYPTION_KEY 생성됨. .env에 저장하세요:")
             print(f"ENCRYPTION_KEY={key.decode()}")
         else:
             key = key.encode()
@@ -833,7 +833,7 @@ class User:
         # 비밀번호는 bcrypt
         password_hash = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
         
-        # 전화번호는 암호화 ✅
+        # 전화번호는 암호화 
         encrypted_phone = None
         if phone:
             encrypted_phone = self.encryption.encrypt(phone)
@@ -939,17 +939,17 @@ from security_logger import SecurityLogger
 class LoginWindow(QDialog):
     def __init__(self):
         # ...
-        self.sec_logger = SecurityLogger()  # ✅
+        self.sec_logger = SecurityLogger()  # 
     
     def on_login_clicked(self):
         # ...
         user = self.user_model.authenticate(username, password)
         
         if user:
-            self.sec_logger.log_login_success(username)  # ✅
+            self.sec_logger.log_login_success(username)  # 
             # ...
         else:
-            self.sec_logger.log_login_failure(username)  # ✅
+            self.sec_logger.log_login_failure(username)  # 
             # ...
 ```
 
@@ -959,15 +959,15 @@ class LoginWindow(QDialog):
 
 ### **7.1 SQL Injection 방지**
 
-#### ✅ **현재 상태: 양호 (Parameterized Queries 사용)**
+####  **현재 상태: 양호 (Parameterized Queries 사용)**
 
 ```python
 # 좋은 예 (현재 코드)
 query = "SELECT * FROM users WHERE username = %s"
-result = self.db.execute(query, (username,))  # ✅ 파라미터화
+result = self.db.execute(query, (username,))  #  파라미터화
 
 # 나쁜 예 (사용하면 안 됨!)
-query = f"SELECT * FROM users WHERE username = '{username}'"  # ❌ SQL Injection 취약!
+query = f"SELECT * FROM users WHERE username = '{username}'"  #  SQL Injection 취약!
 ```
 
 #### **추가 검증:**
@@ -1025,7 +1025,7 @@ from input_validator import InputValidator
 def on_register_clicked(self):
     username = self.username_input.text().strip()
     
-    # 사용자명 검증 ✅
+    # 사용자명 검증 
     if not InputValidator.is_valid_username(username):
         QMessageBox.warning(
             self,
@@ -1055,8 +1055,8 @@ if __name__ == '__main__':
         app,
         host='0.0.0.0',
         port=8000,
-        ssl_keyfile='/path/to/key.pem',      # ✅ SSL 인증서
-        ssl_certfile='/path/to/cert.pem',    # ✅ SSL 인증서
+        ssl_keyfile='/path/to/key.pem',      #  SSL 인증서
+        ssl_certfile='/path/to/cert.pem',    #  SSL 인증서
     )
 ```
 
@@ -1183,29 +1183,29 @@ LOCKOUT_MINUTES=15
 
 ---
 
-## 📋 적용 우선순위
+##  적용 우선순위
 
-### 🔴 **즉시 (Critical)**
-1. ✅ `.env` 파일 생성 및 DB 자격 증명 이동
-2. ✅ `.gitignore` 업데이트 (민감 파일 제외)
-3. ✅ 하드코딩된 경로 제거 (`config.py` 생성)
-4. ✅ GitHub에서 이미 업로드된 민감 정보 확인 및 제거
+###  **즉시 (Critical)**
+1.  `.env` 파일 생성 및 DB 자격 증명 이동
+2.  `.gitignore` 업데이트 (민감 파일 제외)
+3.  하드코딩된 경로 제거 (`config.py` 생성)
+4.  GitHub에서 이미 업로드된 민감 정보 확인 및 제거
 
-### 🟡 **중요 (High)**
-5. ✅ 비밀번호 정책 강화
-6. ✅ 로그인 시도 제한
-7. ✅ 세션 타임아웃
-8. ✅ 보안 로깅
+###  **중요 (High)**
+5.  비밀번호 정책 강화
+6.  로그인 시도 제한
+7.  세션 타임아웃
+8.  보안 로깅
 
-### 🟢 **권장 (Medium)**
-9. ✅ 민감 데이터 암호화
-10. ✅ Input Validation
-11. ✅ 데이터 익명화
-12. ✅ 배포 체크리스트 작성
+###  **권장 (Medium)**
+9.  민감 데이터 암호화
+10.  Input Validation
+11.  데이터 익명화
+12.  배포 체크리스트 작성
 
 ---
 
-## 📦 필요한 패키지
+##  필요한 패키지
 
 ```bash
 pip install python-dotenv
@@ -1219,7 +1219,7 @@ echo "cryptography==41.0.7" >> requirements.txt
 
 ---
 
-## 🎯 다음 단계
+##  다음 단계
 
 1. `.env` 파일 생성 및 설정
 2. `config.py` 생성
@@ -1227,4 +1227,4 @@ echo "cryptography==41.0.7" >> requirements.txt
 4. `.gitignore` 업데이트
 5. GitHub에 푸시 전 민감 정보 제거 확인
 
-**수고하셨습니다!** 🔒✨
+**수고하셨습니다!** 

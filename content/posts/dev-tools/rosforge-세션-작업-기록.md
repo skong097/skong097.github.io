@@ -19,14 +19,14 @@ description: "**작업일**: 2026-03-18 **작성자**: gjkong **세션**: ROSFor
 
 | 단계 | 내용 | 상태 |
 |------|------|------|
-| 기술 조사 | ROSForge 기술 스택 분석 및 연구 문서 작성 | ✅ |
-| 구축 계획서 | ROSForge_plan.md v1.1 작성 (M00~M10 전체) | ✅ |
-| 구조 생성 스크립트 | setup_structure.py 작성 및 실행 | ✅ |
-| M00 구현 | 환경 설정 패널 전체 구현 | ✅ |
-| M01 구현 | Build & Run Panel 전체 구현 | ✅ |
-| M02 구현 | Topic Panel 전체 구현 | ✅ |
-| M03 구현 | Parameter Panel 전체 구현 | ✅ |
-| M04 구현 | Service & Action Panel 전체 구현 | ✅ |
+| 기술 조사 | ROSForge 기술 스택 분석 및 연구 문서 작성 |  |
+| 구축 계획서 | ROSForge_plan.md v1.1 작성 (M00~M10 전체) |  |
+| 구조 생성 스크립트 | setup_structure.py 작성 및 실행 |  |
+| M00 구현 | 환경 설정 패널 전체 구현 |  |
+| M01 구현 | Build & Run Panel 전체 구현 |  |
+| M02 구현 | Topic Panel 전체 구현 |  |
+| M03 구현 | Parameter Panel 전체 구현 |  |
+| M04 구현 | Service & Action Panel 전체 구현 |  |
 
 ---
 
@@ -98,7 +98,7 @@ description: "**작업일**: 2026-03-18 **작성자**: gjkong **세션**: ROSFor
 ### 3.5 ui/main_window.py (M00-9,10)
 
 - QMainWindow + QDockWidget 패널 시스템
-- 상단 툴바: 프로파일 드롭다운, DOMAIN ID 빠른 변경, 🛑 Kill Switch
+- 상단 툴바: 프로파일 드롭다운, DOMAIN ID 빠른 변경,  Kill Switch
 - 하단 상태 표시줄: 프로파일명, DOMAIN, venv, 소싱 상태, 노드 수
 
 ### 3.6 로그 파일
@@ -124,51 +124,51 @@ description: "**작업일**: 2026-03-18 **작성자**: gjkong **세션**: ROSFor
 ├── README.md
 │
 ├── logs/
-│   ├── M00_environment_setup_2026-03-18.md      ✅
-│   ├── M01_build_run_panel_2026-03-18.md         ✅
-│   ├── M02_topic_panel_2026-03-18.md             ✅
-│   ├── M03_param_panel_2026-03-18.md             ✅
-│   └── M04_service_action_panel_2026-03-18.md    ✅
+│   ├── M00_environment_setup_2026-03-18.md      
+│   ├── M01_build_run_panel_2026-03-18.md         
+│   ├── M02_topic_panel_2026-03-18.md             
+│   ├── M03_param_panel_2026-03-18.md             
+│   └── M04_service_action_panel_2026-03-18.md    
 │
 ├── rosforge/
 │   ├── __init__.py
 │   │
 │   ├── backend/
 │   │   ├── __init__.py
-│   │   ├── ros2_adapter.py          ✅ M00
-│   │   ├── environment_manager.py   ✅ M00
-│   │   ├── bashrc_manager.py        ✅ M00
-│   │   ├── profile_manager.py       ✅ M00
-│   │   ├── build_manager.py         ✅ M01
-│   │   ├── process_manager.py       ✅ M01
-│   │   ├── launch_parser.py         ✅ M01
-│   │   ├── ros2_introspector.py     ✅ M02
-│   │   ├── qos_analyzer.py          ✅ M02
-│   │   ├── topic_manager.py         ✅ M02
-│   │   ├── param_manager.py         ✅ M03
-│   │   ├── service_manager.py       ✅ M04
-│   │   ├── action_manager.py        ✅ M04
+│   │   ├── ros2_adapter.py           M00
+│   │   ├── environment_manager.py    M00
+│   │   ├── bashrc_manager.py         M00
+│   │   ├── profile_manager.py        M00
+│   │   ├── build_manager.py          M01
+│   │   ├── process_manager.py        M01
+│   │   ├── launch_parser.py          M01
+│   │   ├── ros2_introspector.py      M02
+│   │   ├── qos_analyzer.py           M02
+│   │   ├── topic_manager.py          M02
+│   │   ├── param_manager.py          M03
+│   │   ├── service_manager.py        M04
+│   │   ├── action_manager.py         M04
 │   │   ├── log_manager.py           ⬜ M05
 │   │   ├── lifecycle_manager.py     ⬜ M09
 │   │   ├── tf_manager.py            ⬜ M06
 │   │   ├── bag_manager.py           ⬜ M09
-│   │   └── qos_analyzer.py          ✅ M02
+│   │   └── qos_analyzer.py           M02
 │   │
 │   ├── ui/
 │   │   ├── __init__.py
-│   │   ├── main_window.py           ✅ M00
+│   │   ├── main_window.py            M00
 │   │   ├── status_bar.py            ⬜ 스텁
 │   │   │
 │   │   ├── panels/
 │   │   │   ├── __init__.py
-│   │   │   ├── env_panel.py         ✅ M00
-│   │   │   ├── build_panel.py       ✅ M01
-│   │   │   ├── run_panel.py         ✅ M01
-│   │   │   ├── node_panel.py        ✅ M01
-│   │   │   ├── topic_panel.py       ✅ M02
-│   │   │   ├── param_panel.py       ✅ M03
-│   │   │   ├── service_panel.py     ✅ M04
-│   │   │   ├── action_panel.py      ✅ M04
+│   │   │   ├── env_panel.py          M00
+│   │   │   ├── build_panel.py        M01
+│   │   │   ├── run_panel.py          M01
+│   │   │   ├── node_panel.py         M01
+│   │   │   ├── topic_panel.py        M02
+│   │   │   ├── param_panel.py        M03
+│   │   │   ├── service_panel.py      M04
+│   │   │   ├── action_panel.py       M04
 │   │   │   ├── log_panel.py         ⬜ M05
 │   │   │   ├── interface_panel.py   ⬜ M05
 │   │   │   ├── map2d_panel.py       ⬜ M06
@@ -180,13 +180,13 @@ description: "**작업일**: 2026-03-18 **작성자**: gjkong **세션**: ROSFor
 │   │   │
 │   │   └── widgets/
 │   │       ├── __init__.py
-│   │       ├── m00_widgets.py        ✅ M00
-│   │       ├── qos_badge.py          ✅ M02
-│   │       ├── realtime_plot.py      ✅ M02
-│   │       ├── topic_publisher.py    ✅ M02
-│   │       ├── param_editor.py       ✅ M03
-│   │       ├── pid_slider_widget.py  ✅ M03
-│   │       ├── history_table.py      ✅ M03
+│   │       ├── m00_widgets.py         M00
+│   │       ├── qos_badge.py           M02
+│   │       ├── realtime_plot.py       M02
+│   │       ├── topic_publisher.py     M02
+│   │       ├── param_editor.py        M03
+│   │       ├── pid_slider_widget.py   M03
+│   │       ├── history_table.py       M03
 │   │       ├── lifecycle_state_widget.py ⬜ M09
 │   │       └── (기타 스텁들)
 │   │
@@ -211,11 +211,11 @@ description: "**작업일**: 2026-03-18 **작성자**: gjkong **세션**: ROSFor
 ## 5. 마일스톤 진행 현황
 
 ```
-M00  환경 설정          ██████ 21/21  ✅ 완료
-M01  Build & Run        ██████ 44/44  ✅ 완료
-M02  Topic Panel        ██████ 57/57  ✅ 완료
-M03  Parameter Panel    ██████ 완료   ✅ 완료
-M04  Service & Action   ██████ 완료   ✅ 완료
+M00  환경 설정          ██████ 21/21   완료
+M01  Build & Run        ██████ 44/44   완료
+M02  Topic Panel        ██████ 57/57   완료
+M03  Parameter Panel    ██████ 완료    완료
+M04  Service & Action   ██████ 완료    완료
 ─────────────────────────────────────────
 M05  Log & Interface    ░░░░░░        ⬜ 미구현
 M06  2D Map & TF        ░░░░░░        ⬜ 미구현

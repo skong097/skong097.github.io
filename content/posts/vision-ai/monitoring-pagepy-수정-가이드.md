@@ -14,7 +14,7 @@ description: "작성일: 2026-02-03 목적: Fallen 70% 오판 방지 (앉기 감
 목적: Fallen 70% 오판 방지 (앉기 감지)
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📍 수정 위치 1: 파일 상단 (import 아래, class 정의 전)
+ 수정 위치 1: 파일 상단 (import 아래, class 정의 전)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 위치: Line 35 (from database_models import DatabaseManager 아래)
@@ -166,7 +166,7 @@ def apply_sitting_filter(keypoints, prediction, proba, fallen_threshold=0.80):
 ```
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📍 수정 위치 2: update_frame() 메소드 내부
+ 수정 위치 2: update_frame() 메소드 내부
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 찾기: "# Fallen 알림" 또는 "if prediction == 2:"
@@ -222,56 +222,56 @@ self.save_fall_event(filtered_prediction, filtered_proba, dynamic_features)
 if filtered_prediction == 2:
     if filter_msg:
         # 필터를 통과했음에도 Fallen -> 진짜 낙상!
-        self.add_log(f"[ALERT] ⚠️ Real Fallen detected! (passed sitting filter)")
+        self.add_log(f"[ALERT]  Real Fallen detected! (passed sitting filter)")
     else:
         self.add_log(f"[ALERT] Fallen detected! ({filtered_proba[2]:.1%})")
 ```
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📍 수정 위치 3: __init__() 메소드 - 로그 메시지 추가
+ 수정 위치 3: __init__() 메소드 - 로그 메시지 추가
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 위치: Line 93-95 (모델 로드 성공 후)
 
 현재:
 ```python
-print(f"✅ 낙상 감지 모델 로드 성공! (93.19% 정확도)")
+print(f" 낙상 감지 모델 로드 성공! (93.19% 정확도)")
 print(f"   Feature: {len(self.feature_columns)}개")
 print(f"   경로: {model_path}")
 ```
 
 추가:
 ```python
-print(f"✅ 낙상 감지 모델 로드 성공! (93.19% 정확도)")
+print(f" 낙상 감지 모델 로드 성공! (93.19% 정확도)")
 print(f"   Feature: {len(self.feature_columns)}개")
 print(f"   경로: {model_path}")
-print(f"✅ 앉기 오판 방지 필터 활성화! (Fallen threshold: 80%)")  # ⭐ 추가
+print(f" 앉기 오판 방지 필터 활성화! (Fallen threshold: 80%)")  # ⭐ 추가
 ```
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📋 요약
+ 요약
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 총 3곳 수정:
 
-1. ✅ 파일 상단: is_sitting_posture() + apply_sitting_filter() 함수 추가
-2. ✅ update_frame(): 필터 적용 코드 추가 (예측 직후)
-3. ✅ __init__(): 로그 메시지 추가
+1.  파일 상단: is_sitting_posture() + apply_sitting_filter() 함수 추가
+2.  update_frame(): 필터 적용 코드 추가 (예측 직후)
+3.  __init__(): 로그 메시지 추가
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🎯 예상 효과
+ 예상 효과
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 Before (현재):
 - 실제: 앉아있음
-- 예측: Fallen 70% ❌
+- 예측: Fallen 70% 
 - DB 저장: Fallen 이벤트 (오판)
 
 After (필터 적용):
 - 실제: 앉아있음
 - 1차 예측: Fallen 70%
 - 필터 감지: Sitting (85%)
-- 최종 예측: Normal 70% ✅
+- 최종 예측: Normal 70% 
 - DB 저장: Normal 이벤트 (정상)
 - 로그: [FILTER] Sitting detected - Filtered Fallen → Normal
 
@@ -291,11 +291,11 @@ DESCRIBE event_logs;
 
 exit;
 
-✅ Step 1: event_logs 테이블에 accuracy 컬럼 추가
-✅ Step 2: database_models.py 수정 (accuracy 파라미터)
-✅ Step 3: monitoring_page.py 수정 (accuracy 저장)
-✅ Step 4: dashboard_page.py 수정 (정상 탐지율 표시)
-✅ 뷰 재생성: v_event_details (accuracy 포함)
+ Step 1: event_logs 테이블에 accuracy 컬럼 추가
+ Step 2: database_models.py 수정 (accuracy 파라미터)
+ Step 3: monitoring_page.py 수정 (accuracy 저장)
+ Step 4: dashboard_page.py 수정 (정상 탐지율 표시)
+ 뷰 재생성: v_event_details (accuracy 포함)
 
 
 
@@ -320,7 +320,7 @@ LIMIT 5;
 
 ---
 
-## 📊 **Dashboard 예상 화면**
+##  **Dashboard 예상 화면**
 ```
 최근 이벤트
 ┌────────────┬────────┬──────┬──────┬────────┬────────────┬─────────────┐
@@ -345,7 +345,7 @@ LIMIT 5;
 [10:03:38] [DEBUG] YOLO 결과: 1개
 [10:03:38] [ALERT] Fallen detected! (70.0%)
 [10:03:38] [DB] Event saved: ID=28616, Type=낙상, Conf=0.70, Acc=0.0%
-[10:03:38] [YOLO] ✅ Keypoints: 2개!
+[10:03:38] [YOLO]  Keypoints: 2개!
 [10:03:38] [DB] 낙상 saved (ID: 28617, Acc: 0.0%)
 [10:03:39] [ALERT] Emergency call confirmed!
 [10:03:39] [DB] Emergency call logged: Event ID=28615
@@ -353,12 +353,12 @@ LIMIT 5;
 [10:03:40] [DEBUG] YOLO 결과: 1개
 [10:03:40] [ALERT] Fallen detected! (70.0%)
 [10:03:40] [DB] Event saved: ID=28619, Type=낙상, Conf=0.70, Acc=0.0%
-[10:03:40] [YOLO] ✅ Keypoints: 2개!
+[10:03:40] [YOLO]  Keypoints: 2개!
 [10:03:40] [DB] 낙상 saved (ID: 28620, Acc: 0.0%)
 [10:03:41] [DEBUG] YOLO 결과: 1개
 [10:03:41] [ALERT] Fallen detected! (70.0%)
 [10:03:41] [DB] Event saved: ID=28621, Type=낙상, Conf=0.70, Acc=0.0%
-[10:03:41] [YOLO] ✅ Keypoints: 2개!
+[10:03:41] [YOLO]  Keypoints: 2개!
 [10:03:41] [DB] 낙상 saved (ID: 28622, Acc: 0.0%)
 [10:03:42] [INFO] 프레임: 2200
 [10:03:42] [DB] 낙상 saved (ID: 28623, Acc: 0.0%)

@@ -21,7 +21,7 @@ description: "**작성일**: 2026-02-18 **세션**: Session 10 이후 추가 작
 
 ---
 
-## 1. 환경 구축 ✅
+## 1. 환경 구축 
 
 ```
 ~/dev_ws/ai_agent/guard_brain_agent/
@@ -85,7 +85,7 @@ Iteration 3: move_robot        → 로봇 이동 명령
 | 1차 | max_iterations_reached | 프롬프트에 종료 조건 추가 |
 | 2차 | max_iterations_reached | 히스토리 포맷 개선 |
 | 3차 | "wait" 없는 도구 호출, 중복 호출 | agent.py에 강제 종료 조건 추가 |
-| 4차 | **✅ 3 iterations에 done** | 완성 |
+| 4차 | ** 3 iterations에 done** | 완성 |
 
 ---
 

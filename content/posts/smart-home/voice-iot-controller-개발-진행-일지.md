@@ -14,7 +14,7 @@ description: "> 작성일: 2026-02-22 > 프로젝트 경로: `~/dev_ws/voice_iot
 
 ---
 
-## 📁 현재 파일 버전
+##  현재 파일 버전
 
 | 파일 | 버전 | 경로 |
 |------|------|------|
@@ -25,7 +25,7 @@ description: "> 작성일: 2026-02-22 > 프로젝트 경로: `~/dev_ws/voice_iot
 
 ---
 
-## ✅ 완료 작업
+##  완료 작업
 
 ### 1. Wake Word — Porcupine "자비스야"
 - 기존 한국어 "헤이 코코" → 영어 호환 문제로 교체
@@ -78,7 +78,7 @@ description: "> 작성일: 2026-02-22 > 프로젝트 경로: `~/dev_ws/voice_iot
 
 ---
 
-## 🔧 현재 시스템 구성
+##  현재 시스템 구성
 
 ```
 마이크 (16kHz·int16·mic:11)
@@ -104,15 +104,15 @@ ESP32 디바이스:
 
 ---
 
-## 🚧 미완료 / 다음 작업
+##  미완료 / 다음 작업
 
-### 🔴 High Priority
+###  High Priority
 
 #### 1. UnifiedStateManager — 종합 상태 관리 통합
 **현재 문제:**
-- ESP32 상태 → StateManager (TCP) ✅
-- 음악 재생 상태 → 브라우저 JS (ytPlayer) ❌ 서버 모름
-- 웹앱 연결 상태 → 별도 관리 ❌
+- ESP32 상태 → StateManager (TCP) 
+- 음악 재생 상태 → 브라우저 JS (ytPlayer)  서버 모름
+- 웹앱 연결 상태 → 별도 관리 
 
 **목표 구조:**
 ```
@@ -146,7 +146,7 @@ UnifiedStateManager
 - 목표: Silero VAD 교체로 정확도 향상
 - 관련 파일: `server/stt_engine.py`
 
-### 🟡 Medium Priority
+###  Medium Priority
 
 #### 3. 음악 플레이어 첫 재생 문제
 - 증상: 첫 음성 명령 시 ytPlayer 미초기화로 재생 불가
@@ -161,7 +161,7 @@ UnifiedStateManager
 - 명령 연속 입력 시 큐 쌓임 현상
 - 처리 중 새 명령 수신 시 이전 명령 취소 로직 검토
 
-### 🟢 Low Priority
+###  Low Priority
 
 #### 6. ESP32 ACK 기반 상태 동기화
 - 현재: 명령 전송 후 낙관적 선반영 (ACK 전)
@@ -173,7 +173,7 @@ UnifiedStateManager
 
 ---
 
-## 📝 settings.yaml 주요 설정
+##  settings.yaml 주요 설정
 
 ```yaml
 # 상태 폴링 (선택, 기본 30초)
@@ -204,7 +204,7 @@ ollama:
 
 ---
 
-## 🗂️ 관련 파일 목록
+##  관련 파일 목록
 
 ```
 voice_iot_controller/

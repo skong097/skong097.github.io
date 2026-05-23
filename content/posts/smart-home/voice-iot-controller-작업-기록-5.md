@@ -20,11 +20,11 @@ description: "> 작성일: 2026-02-22 > 프로젝트: `~/dev_ws/voice_iot_contro
 
 | 단계 | 내용 | 결과 |
 |------|------|------|
-| 1 | DEV_RULES 확인 및 최신 파일 기준 작업 | ✅ |
-| 2 | tts_engine.py v1.0 신규 작성 | ✅ |
-| 3 | llm_engine.py v1.3 → v1.4 (tts_response 필드 추가) | ✅ |
-| 4 | main.py v0.4 → v0.5 (TTS 초기화 + speak 호출) | ✅ |
-| 5 | settings.yaml v0.7 → v0.8 (tts 블록 추가) | ✅ |
+| 1 | DEV_RULES 확인 및 최신 파일 기준 작업 |  |
+| 2 | tts_engine.py v1.0 신규 작성 |  |
+| 3 | llm_engine.py v1.3 → v1.4 (tts_response 필드 추가) |  |
+| 4 | main.py v0.4 → v0.5 (TTS 초기화 + speak 호출) |  |
+| 5 | settings.yaml v0.7 → v0.8 (tts 블록 추가) |  |
 
 ---
 

@@ -100,13 +100,13 @@ FRAME_INTERVAL_MS = 100;         // ~10fps
 
 | 단계 | 확인 내용 | 결과 |
 |------|----------|------|
-| 1 | 포트 5005 점유 확인 (`lsof -iUDP:5005`) | uvicorn 정상 점유 ✅ |
-| 2 | FrameAnalyzer import 확인 | OK ✅ |
+| 1 | 포트 5005 점유 확인 (`lsof -iUDP:5005`) | uvicorn 정상 점유  |
+| 2 | FrameAnalyzer import 확인 | OK  |
 | 3 | 서버 재시작 + CAM 로그 확인 | 서버 정상 기동, active:false 유지 |
 | 4 | camera_stream.py v1.2 디버그 로그 추가 | timeout — 수신 패킷 누적: 0개 확인 |
-| 5 | PC IP 확인 (`ip addr`) | 192.168.0.154 정상 ✅ |
+| 5 | PC IP 확인 (`ip addr`) | 192.168.0.154 정상  |
 | 6 | Python UDP 수신 테스트 | OSError: Address already in use → 서버가 이미 점유 중 |
-| 7 | ESP32-CAM ping 테스트 | 지연 953ms ~ 16,000ms, 패킷 손실 심각 ❌ |
+| 7 | ESP32-CAM ping 테스트 | 지연 953ms ~ 16,000ms, 패킷 손실 심각  |
 
 ### 3-3. 원인 파악
 
@@ -127,7 +127,7 @@ WiFi.setTxPower(WIFI_POWER_19_5dBm);    // 최대 출력 고정
 
 **적용 후 시리얼 로그:**
 ```
-[WiFi] ✅ 연결 완료 — IP: 192.168.0.19
+[WiFi]  연결 완료 — IP: 192.168.0.19
 [WiFi] 절전모드: OFF | TxPower: 19.5dBm
 ```
 
@@ -139,10 +139,10 @@ WiFi.setTxPower(WIFI_POWER_19_5dBm);    // 최대 출력 고정
 ### 3-5. 최종 결과
 
 ```
-✅ UDP 패킷 수신 정상
-✅ 웹앱 영상 출력 정상
-✅ CLEAR 판정 오버레이 정상
-✅ 타임스탬프 표시 정상
+ UDP 패킷 수신 정상
+ 웹앱 영상 출력 정상
+ CLEAR 판정 오버레이 정상
+ 타임스탬프 표시 정상
 ```
 
 ---
@@ -193,9 +193,9 @@ ESP32-CAM
       ├── YOLOv8n      : person / suitcase / handbag 감지
       └── InsightFace  : 얼굴 임베딩 + cosine 매칭 (threshold=0.45)
   → verdict → WebSocket → index.html
-      ├── known    : ✅ 초록 배지 + 로그
-      ├── delivery : 📦 CCTV 모달 + 비프음 (쿨다운 60초)
-      └── intruder : 🚨 알람 모달 + 경보음 + TTS (쿨다운 30초)
+      ├── known    :  초록 배지 + 로그
+      ├── delivery :  CCTV 모달 + 비프음 (쿨다운 60초)
+      └── intruder :  알람 모달 + 경보음 + TTS (쿨다운 30초)
 ```
 
 ---
@@ -229,14 +229,14 @@ ESP32-CAM
 ## 9. 현재 상태 (2026-02-24 작업 종료 기준)
 
 ```
-✅ ESP32-CAM 펌웨어 v1.3 업로드 완료
-✅ WiFi 절전모드 OFF 적용
-✅ UDP 패킷 수신 정상 (192.168.0.19 → 192.168.0.154:5005)
-✅ SOI/EOI 자동 조립 정상
-✅ YOLOv8n + InsightFace 모델 로드 완료
-✅ 웹앱 현관 카메라 카드 영상 출력 정상
-✅ CLEAR 판정 오버레이 정상
-✅ WebSocket 연결 정상
+ ESP32-CAM 펌웨어 v1.3 업로드 완료
+ WiFi 절전모드 OFF 적용
+ UDP 패킷 수신 정상 (192.168.0.19 → 192.168.0.154:5005)
+ SOI/EOI 자동 조립 정상
+ YOLOv8n + InsightFace 모델 로드 완료
+ 웹앱 현관 카메라 카드 영상 출력 정상
+ CLEAR 판정 오버레이 정상
+ WebSocket 연결 정상
 ⬜ 얼굴 DB 등록 (0명 → stephen 등록 필요)
 ⬜ 침입 감지 E2E 테스트
 ⬜ 디버그 로그 정리 (camera_stream.py v1.3)

@@ -4,14 +4,14 @@ date: 2026-03-21
 draft: true
 tags: ["smart-home"]
 categories: ["smart-home"]
-description: "> **날짜:** 2026-02-14 > **Phase:** 2 (영상+음성 지표) + 3 (감정분류+멀티모달 퓨전) > **상태:** ✅ 완료 (v3.3)"
+description: "> **날짜:** 2026-02-14 > **Phase:** 2 (영상+음성 지표) + 3 (감정분류+멀티모달 퓨전) > **상태:**  완료 (v3.3)"
 ---
 
 # 피노키오 프로젝트 — Phase 2~3 작업 기록
 
 > **날짜:** 2026-02-14
 > **Phase:** 2 (영상+음성 지표) + 3 (감정분류+멀티모달 퓨전)
-> **상태:** ✅ 완료 (v3.3)
+> **상태:**  완료 (v3.3)
 
 ---
 
@@ -132,13 +132,13 @@ STT = {
 
 | 감정 | 주요 AU/Blendshapes | 가중치 |
 |------|---------------------|--------|
-| Happy 😊 | mouthSmile (60%) + cheekSquint (40%) | — |
-| Sad 😢 | mouthFrown (50%) + browInnerUp (50%) | — |
-| Angry 😠 | browDown (40%) + mouthPress (30%) + jawForward (30%) | — |
-| Surprise 😲 | eyeWide (30%) + browInnerUp (20%) + browOuterUp (20%) + jawOpen (30%) | — |
-| Fear 😰 | browInnerUp (30%) + eyeWide (30%) + mouthPress (20%) + lipPress (20%) | — |
-| Disgust 😖 | noseSneer (50%) + mouthShrugUpper (30%) + mouthFrown (20%) | — |
-| Neutral 😐 | 0.5 - max(다른 감정) | — |
+| Happy  | mouthSmile (60%) + cheekSquint (40%) | — |
+| Sad  | mouthFrown (50%) + browInnerUp (50%) | — |
+| Angry  | browDown (40%) + mouthPress (30%) + jawForward (30%) | — |
+| Surprise  | eyeWide (30%) + browInnerUp (20%) + browOuterUp (20%) + jawOpen (30%) | — |
+| Fear  | browInnerUp (30%) + eyeWide (30%) + mouthPress (20%) + lipPress (20%) | — |
+| Disgust  | noseSneer (50%) + mouthShrugUpper (30%) + mouthFrown (20%) | — |
+| Neutral  | 0.5 - max(다른 감정) | — |
 
 → softmax 정규화 후 최고 점수 감정 선택
 
@@ -200,7 +200,7 @@ STT = {
 
 ## 6. 현재 동작 상태
 
-**✅ 동작 확인 완료:**
+** 동작 확인 완료:**
 - 4분할 대시보드 + 실시간 그래프
 - 영상 6개 지표 실시간 표시 (시선/깜빡임/동공확장률/미세표정/비대칭/입술압축)
 - 음성 4개 지표 실시간 표시 (피치/응답지연/비유창성/말속도)

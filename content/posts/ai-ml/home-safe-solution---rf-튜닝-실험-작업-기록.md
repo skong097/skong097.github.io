@@ -4,12 +4,12 @@ date: 2026-03-21
 draft: true
 tags: ["ai-ml"]
 categories: ["ai-ml"]
-description: "기존 Random Forest 모델(binary, 94.92% accuracy)의 실시간 낙상 탐지 성능 개선을 위해 4가지 튜닝 전략을 실험하고 동일 테스트셋으로 비교 평가한다. - ✅ 기존 모델 파일 변경 없음 "
+description: "기존 Random Forest 모델(binary, 94.92% accuracy)의 실시간 낙상 탐지 성능 개선을 위해 4가지 튜닝 전략을 실험하고 동일 테스트셋으로 비교 평가한다. -  기존 모델 파일 변경 없음 "
 ---
 
 # Home Safe Solution - RF 튜닝 실험 작업 기록
 
-## 📅 날짜: 2026-02-06 (목) 저녁
+##  날짜: 2026-02-06 (목) 저녁
 
 ---
 
@@ -18,9 +18,9 @@ description: "기존 Random Forest 모델(binary, 94.92% accuracy)의 실시간 
 기존 Random Forest 모델(binary, 94.92% accuracy)의 실시간 낙상 탐지 성능 개선을 위해 4가지 튜닝 전략을 실험하고 동일 테스트셋으로 비교 평가한다.
 
 ### 원칙
-- ✅ 기존 모델 파일 변경 없음 (읽기 전용 로드)
-- ✅ 모든 결과는 별도 디렉토리에 저장
-- ✅ 동일 테스트셋(binary/test.csv, 295 samples)으로 공정 비교
+-  기존 모델 파일 변경 없음 (읽기 전용 로드)
+-  모든 결과는 별도 디렉토리에 저장
+-  동일 테스트셋(binary/test.csv, 295 samples)으로 공정 비교
 
 ---
 
@@ -134,7 +134,7 @@ Feature Importance 기반 상위 K개 feature만 선별하여 학습/평가.
 
 ## 6. 추천 모델
 
-### 🏆 RF Balanced (th=0.59)
+###  RF Balanced (th=0.59)
 
 | 항목 | Baseline | RF Balanced | 변화 |
 |------|----------|-------------|------|
@@ -165,7 +165,7 @@ cp random_forest_model.pkl random_forest_model_backup_20260206.pkl
 - 기존 GUI 추론 코드에서 threshold 0.5 → 0.59로 변경
 - 또는 설정 파일로 분리하여 관리
 
-> ⚠ Step 2~3은 아직 미적용 상태. 별도 적용 스크립트 필요.
+>  Step 2~3은 아직 미적용 상태. 별도 적용 스크립트 필요.
 
 ---
 

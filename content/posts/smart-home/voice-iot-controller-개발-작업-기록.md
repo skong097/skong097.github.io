@@ -98,7 +98,7 @@ ON/열림은 눈에 바로 띄도록, 색상으로 명확하게 구분.
 **변경 내용**
 
 ```
-[ 📊 온습도 조회 ]           ← 현재 온도 요청 버튼
+[  온습도 조회 ]           ← 현재 온도 요청 버튼
 ┌──────────┐ ┌──────────┐
 │ 현재 온도 │ │ 현재 습도 │   ← 조회 결과 칩
 │  --.- °C │ │  --.- %  │
@@ -262,7 +262,7 @@ if (isOk) syncBadgeFromCmdResult(data);
 음성 "침실 불 켜줘" / 버튼 클릭
   → command_router: client.state["led_2"] = 1 즉시 저장
   → ws_device_update("esp32_bedroom", state) 브로드캐스트
-  → 브라우저 updateDeviceState() → 전등 뱃지 ON (초록) ✅
+  → 브라우저 updateDeviceState() → 전등 뱃지 ON (초록) 
   → (2중 보장) syncBadgeFromCmdResult() 추가 처리
   → (3중 보장) ESP32 ACK 수신 후 tcp_server._on_ack() 재처리
 ```

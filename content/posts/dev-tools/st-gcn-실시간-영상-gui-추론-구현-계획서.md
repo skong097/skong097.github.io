@@ -9,7 +9,7 @@ description: "| 항목 | 내용 | |------|------| | **작성일** | 2026-02-05 (
 
 # ST-GCN 실시간 영상 GUI 추론 구현 계획서
 
-## 📋 문서 정보
+##  문서 정보
 
 | 항목 | 내용 |
 |------|------|
@@ -29,11 +29,11 @@ description: "| 항목 | 내용 | |------|------| | **작성일** | 2026-02-05 (
 
 ### 1.2 목표
 ```
-✅ 기존 GUI 코드 최소 변경 (기존 기능 100% 유지)
-✅ ST-GCN 실시간 추론 모듈 추가
-✅ 모델 선택 UI 제공 (Random Forest / ST-GCN)
-✅ 60 프레임 버퍼링을 통한 시계열 추론
-✅ 향후 Pre-trained 모델 교체 용이한 구조
+ 기존 GUI 코드 최소 변경 (기존 기능 100% 유지)
+ ST-GCN 실시간 추론 모듈 추가
+ 모델 선택 UI 제공 (Random Forest / ST-GCN)
+ 60 프레임 버퍼링을 통한 시계열 추론
+ 향후 Pre-trained 모델 교체 용이한 구조
 ```
 
 ### 1.3 제약 조건
@@ -180,7 +180,7 @@ class STGCNInference:
 **UI 구성:**
 ```
 ┌─────────────────────────────────────────┐
-│  🤖 낙상 감지 모델 선택                  │
+│   낙상 감지 모델 선택                  │
 ├─────────────────────────────────────────┤
 │                                         │
 │  ○ Random Forest (권장)                 │
@@ -262,7 +262,7 @@ elif self.model_type == 'stgcn':
 /home/gjkong/dev_ws/yolo/myproj/gui/
 ├── main.py
 ├── main_window.py
-├── monitoring_page.py              # 🔧 수정 (분기 로직 추가)
+├── monitoring_page.py              #  수정 (분기 로직 추가)
 ├── input_selection_dialog.py
 ├── video_control_panel.py
 ├── model_selection_dialog.py       # ⭐ 신규 (모델 선택 UI)
@@ -468,7 +468,7 @@ class ModelSelectionDialog(QDialog):
         layout = QVBoxLayout()
         
         # 제목
-        title = QLabel("🤖 낙상 감지 모델을 선택하세요")
+        title = QLabel(" 낙상 감지 모델을 선택하세요")
         title.setStyleSheet("font-size: 16px; font-weight: bold;")
         layout.addWidget(title)
         

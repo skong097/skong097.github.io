@@ -16,7 +16,7 @@ description: "- **호스트 OS:** Ubuntu 24.04 Desktop - **Docker 이미지:** `
 - **ROS 2:** Jazzy Jalisco
 - **Python:** 3.12 (Ubuntu 24.04 기본)
 
-> ⚠️ Ubuntu 24.04(Python 3.12) + ESP-IDF 4.1 조합에서 발생하는 호환성 문제들을 모두 해결한 가이드입니다.
+>  Ubuntu 24.04(Python 3.12) + ESP-IDF 4.1 조합에서 발생하는 호환성 문제들을 모두 해결한 가이드입니다.
 
 ---
 
@@ -284,7 +284,7 @@ ros2 topic echo /microROS/pong
 ros2 topic pub --once /microROS/ping std_msgs/msg/Header '{frame_id: "fake_ping"}'
 ```
 
-pong 터미널에서 응답이 출력되면 **완료!** 🎉
+pong 터미널에서 응답이 출력되면 **완료!** 
 
 ---
 

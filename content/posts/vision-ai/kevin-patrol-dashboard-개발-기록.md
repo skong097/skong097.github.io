@@ -157,7 +157,7 @@ kevin_patrol/
 ├── run_dashboard.py          — 대시보드 실행 스크립트
 ├── run_sim.py                — 3D 시뮬레이터 실행 스크립트
 ├── core/
-│   └── data_provider.py      — DataProvider 추상화 레이어 (★ 오늘 수정)
+│   └── data_provider.py      — DataProvider 추상화 레이어 ( 오늘 수정)
 ├── dashboard/
 │   └── app.py                — 통합 모니터링 GUI (v3.1, 1563 lines)
 └── sim/

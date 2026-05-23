@@ -19,14 +19,14 @@ description: "**작업일**: 2026-03-19 **작성자**: gjkong **세션**: ROSFor
 
 | 단계 | 내용 | 상태 |
 |------|------|------|
-| 환경 검증 | venv + ROS2 Jazzy 환경 구성 | ✅ |
-| 실행 오류 수정 | `AA_UseHighDpiPixmaps` 제거 | ✅ |
-| UI 구조 개편 | DockWidget → 사이드바 네비게이션 | ✅ |
-| 사이드바 토글 | 슬라이드 애니메이션 접기/펼치기 | ✅ |
-| 이모지 제거 | 메뉴바, 사이드바, 버튼 전체 | ✅ |
-| 테마 시스템 | Navy Professional / Slate Dark Pro 토글 | ✅ |
-| 폰트 색상 수정 | 테마별 글자 가시성 문제 해결 | ✅ |
-| 폰트 적용 | Pretendard + JetBrains Mono 설치 스크립트 | ✅ |
+| 환경 검증 | venv + ROS2 Jazzy 환경 구성 |  |
+| 실행 오류 수정 | `AA_UseHighDpiPixmaps` 제거 |  |
+| UI 구조 개편 | DockWidget → 사이드바 네비게이션 |  |
+| 사이드바 토글 | 슬라이드 애니메이션 접기/펼치기 |  |
+| 이모지 제거 | 메뉴바, 사이드바, 버튼 전체 |  |
+| 테마 시스템 | Navy Professional / Slate Dark Pro 토글 |  |
+| 폰트 색상 수정 | 테마별 글자 가시성 문제 해결 |  |
+| 폰트 적용 | Pretendard + JetBrains Mono 설치 스크립트 |  |
 
 ---
 

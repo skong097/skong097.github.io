@@ -19,12 +19,12 @@ description: "> 작성일: 2026-02-21 > 프로젝트: `~/dev_ws/voice_iot_contro
 
 | 단계 | 내용 | 결과 |
 |------|------|------|
-| 1 | faster-whisper CPU 최적화 | ✅ beam_size=1, cpu_threads=3 |
-| 2 | LLM Ollama → OpenAI 전환 | ✅ gpt-4o-mini 연결 성공 |
-| 3 | STT OpenAI Whisper API 전환 | ❌ 크레딧 소진으로 실패 |
-| 4 | Ollama 원복 | ✅ 정상 동작 확인 |
-| 5 | _KO_CORRECTIONS 한국어 오인식 교정 추가 | ✅ |
-| 6 | _normalize_types float→int 수정 추가 | ✅ |
+| 1 | faster-whisper CPU 최적화 |  beam_size=1, cpu_threads=3 |
+| 2 | LLM Ollama → OpenAI 전환 |  gpt-4o-mini 연결 성공 |
+| 3 | STT OpenAI Whisper API 전환 |  크레딧 소진으로 실패 |
+| 4 | Ollama 원복 |  정상 동작 확인 |
+| 5 | _KO_CORRECTIONS 한국어 오인식 교정 추가 |  |
+| 6 | _normalize_types float→int 수정 추가 |  |
 
 ---
 

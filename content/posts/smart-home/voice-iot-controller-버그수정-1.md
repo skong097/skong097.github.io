@@ -4,13 +4,13 @@ date: 2026-03-21
 draft: true
 tags: ["smart-home", "whisper", "porcupine"]
 categories: ["smart-home"]
-description: "**날짜:** 2026-02-21 **태그:** `bugfix#1` `porcupine` `noisereduce` `wake-word` **결과:** ✅ '자비스야' 웨이크워드 정상 작동 확인"
+description: "**날짜:** 2026-02-21 **태그:** `bugfix#1` `porcupine` `noisereduce` `wake-word` **결과:**  '자비스야' 웨이크워드 정상 작동 확인"
 ---
 
 # Voice IoT Controller — 버그수정 #1
 **날짜:** 2026-02-21
 **태그:** `bugfix#1` `porcupine` `noisereduce` `wake-word`
-**결과:** ✅ "자비스야" 웨이크워드 정상 작동 확인
+**결과:**  "자비스야" 웨이크워드 정상 작동 확인
 
 ---
 
@@ -42,7 +42,7 @@ description: "**날짜:** 2026-02-21 **태그:** `bugfix#1` `porcupine` `noisere
 |----|--------|------|
 | 0.50 | 49.4% | 약함 |
 | 0.75 | 74.1% | 기존 기본값 |
-| **0.85** | **~85%** | **✅ 권장 (발화 보호 + 억제 균형)** |
+| **0.85** | **~85%** | ** 권장 (발화 보호 + 억제 균형)** |
 | 1.00 | 96.5% | 과억제 위험 |
 
 → `noise_prop_decrease: 0.85` 확정
@@ -103,12 +103,12 @@ stt_engine = STTEngine(
 배너 변경:
 ```
 # 이전 (v0.4)
-  STT  : ✅ base / wake=자비스야
+  STT  :  base / wake=자비스야
 
 # 현재 (v0.5)
-  STT  : ✅ base (Whisper)
-  WAKE : ✅ Porcupine / 자비스야
-  NR   : ✅ prop_decrease=0.85
+  STT  :  base (Whisper)
+  WAKE :  Porcupine / 자비스야
+  NR   :  prop_decrease=0.85
 ```
 
 ---
@@ -128,10 +128,10 @@ stt:
 ## 최종 기동 로그 (정상 확인)
 
 ```
-✅ LLM  : exaone3.5:latest
-✅ STT  : base (Whisper)
-✅ WAKE : Porcupine / 자비스야
-✅ NR   : prop_decrease=0.85
+ LLM  : exaone3.5:latest
+ STT  : base (Whisper)
+ WAKE : Porcupine / 자비스야
+ NR   : prop_decrease=0.85
 ...
 [STT] noisereduce 사용 가능 → 노이즈 억제 활성화
 [STT] Whisper 로드 완료

@@ -19,9 +19,9 @@ description: "**날짜**: 2026-03-18 **현재 단계**: Phase 1 — M01 완료 (
 
 | 순서 | 작업 내용 | 상태 |
 |------|-----------|------|
-| 1 | `ghost5_bringup/config/qos_profiles.py` 작성 | ✅ 완료 |
-| 2 | `ghost5_bringup/config/zenoh_config.json5` 작성 | ✅ 완료 |
-| 3 | M01 완료 조건 검증 스크립트 작성 | ✅ 완료 |
+| 1 | `ghost5_bringup/config/qos_profiles.py` 작성 |  완료 |
+| 2 | `ghost5_bringup/config/zenoh_config.json5` 작성 |  완료 |
+| 3 | M01 완료 조건 검증 스크립트 작성 |  완료 |
 
 ---
 
@@ -62,7 +62,7 @@ description: "**날짜**: 2026-03-18 **현재 단계**: Phase 1 — M01 완료 (
 | gossip.multihop | `true` | 직접 연결 불가 로봇 간 탐색 |
 | retry | 1s → 10s 지수 백오프 | 연결 재시도 |
 
-> ⚠️ **배포 시 수정 필요**: `connect.endpoints`의 `localhost` → GCS 실제 IP
+>  **배포 시 수정 필요**: `connect.endpoints`의 `localhost` → GCS 실제 IP
 
 ---
 
@@ -113,7 +113,7 @@ ghost5_ws/tests/unit/
 - [ ] 두 노드 간 POSE_QOS 통신 지연 < 50ms 확인
 - [ ] `zenohd -c zenoh_config.json5` — Zenoh 라우터 정상 실행 확인
 
-> ✅ 위 4개 항목 통과 시 M01 완료 → **M02 (SLAM 패키지 설정)** 진입
+>  위 4개 항목 통과 시 M01 완료 → **M02 (SLAM 패키지 설정)** 진입
 
 ---
 

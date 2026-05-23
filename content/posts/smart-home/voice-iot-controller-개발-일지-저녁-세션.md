@@ -14,7 +14,7 @@ description: "- 브라우저 WS 연결 후 정확히 1초 만에 끊김 → 3초
 
 ---
 
-## 1. WebSocket 3초 주기 끊김 이슈 해결 ✅
+## 1. WebSocket 3초 주기 끊김 이슈 해결 
 
 ### 증상
 - 브라우저 WS 연결 후 정확히 1초 만에 끊김 → 3초 후 재연결 무한 반복
@@ -50,7 +50,7 @@ async def broadcast(self, message: str | dict):
 
 ---
 
-## 2. PIR 침입 알림 해제 시 LED 미복원 버그 수정 ✅
+## 2. PIR 침입 알림 해제 시 LED 미복원 버그 수정 
 
 ### 증상
 - PIR 감지 → LED 전체 점등 → CCTV/CAM 모달의 **확인·해제 버튼** 클릭 시 LED가 꺼지지 않고 계속 켜져 있음
@@ -82,12 +82,12 @@ sendCmd({ cmd: 'pir_dismiss', device_id: 'esp32_home' });
 
 | 팝업 | 버튼 | 처리 |
 |---|---|---|
-| CCTV 모달 (PIR 감지) | ✅ 확인 — 해제 | `dismissAlert()` → `pir_dismiss` |
-| CAM 알람 모달 (얼굴 인식) | ✅ 확인 — 경고 해제 | `camAlertConfirm()` → `pir_dismiss` |
+| CCTV 모달 (PIR 감지) |  확인 — 해제 | `dismissAlert()` → `pir_dismiss` |
+| CAM 알람 모달 (얼굴 인식) |  확인 — 경고 해제 | `camAlertConfirm()` → `pir_dismiss` |
 
 ---
 
-## 3. 보안 모드 방해금지(DnD) 추가 — 5번째 PIR 모드 ✅
+## 3. 보안 모드 방해금지(DnD) 추가 — 5번째 PIR 모드 
 
 ### 요구사항
 - 현관 PIR 및 카메라 얼굴 감지 외 모든 센서 알람 무시
@@ -101,7 +101,7 @@ sendCmd({ cmd: 'pir_dismiss', device_id: 'esp32_home' });
 | 항목 | 내용 |
 |---|---|
 | 버튼 그리드 | 4컬럼 → 5컬럼 |
-| 버튼 | `🔕 방해금지` (보라색 `active-dnd` 스타일) |
+| 버튼 | ` 방해금지` (보라색 `active-dnd` 스타일) |
 | status dot | 보라색 `dnd` dot 추가 |
 | `PIR_MODE_CONFIG` | `dnd_mode` 등록 |
 | `handlePirAlert()` | 현관 PIR(away/sleep context) → 알람 유지, 나머지 → 로그만 |
@@ -111,10 +111,10 @@ sendCmd({ cmd: 'pir_dismiss', device_id: 'esp32_home' });
 
 | 이벤트 | 방해금지 시 | 기록 |
 |---|---|---|
-| 현관 PIR 침입 감지 | ✅ 알람 유지 | ✅ |
-| 현관 CAM intruder | ✅ 알람 유지 | ✅ |
-| 기타 PIR 감지 | 🔕 알람 무시 | ✅ `[방해금지]` |
-| 택배(delivery) 감지 | 🔕 알람 무시 | ✅ `[방해금지]` |
+| 현관 PIR 침입 감지 |  알람 유지 |  |
+| 현관 CAM intruder |  알람 유지 |  |
+| 기타 PIR 감지 |  알람 무시 |  `[방해금지]` |
+| 택배(delivery) 감지 |  알람 무시 |  `[방해금지]` |
 
 **`server/command_router.py`**
 ```python
@@ -142,14 +142,14 @@ if pir_mode == "dnd":
 ## 5. 현재 상태 (2026-02-24 종료 기준)
 
 ```
-✅ 얼굴 DB 등록 완료 (stephen 28장)
-✅ KNOWN: stephen 정상 판정
-✅ WebSocket 끊김 이슈 해결 (broadcast dict 직렬화)
-✅ PIR 모드 LED 상태 복원 버그 수정 (pir_dismiss)
-✅ CCTV 모달 확인 버튼 LED 복원 연동
-✅ CAM 알람 모달 확인 버튼 LED 복원 연동
-✅ 방해금지(DnD) 모드 추가 — 총 5개 PIR 버튼
-✅ cam_verdict WS 브로드캐스트 정상 동작 확인
+ 얼굴 DB 등록 완료 (stephen 28장)
+ KNOWN: stephen 정상 판정
+ WebSocket 끊김 이슈 해결 (broadcast dict 직렬화)
+ PIR 모드 LED 상태 복원 버그 수정 (pir_dismiss)
+ CCTV 모달 확인 버튼 LED 복원 연동
+ CAM 알람 모달 확인 버튼 LED 복원 연동
+ 방해금지(DnD) 모드 추가 — 총 5개 PIR 버튼
+ cam_verdict WS 브로드캐스트 정상 동작 확인
 ⬜ 침입 감지 E2E 테스트
 ⬜ InsightFace threshold 현장 튜닝 (현재 0.45)
 ⬜ cam_verdict Command Log 실출력 확인

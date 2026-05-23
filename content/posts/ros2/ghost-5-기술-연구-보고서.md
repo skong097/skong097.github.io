@@ -38,10 +38,10 @@ description: "> GPS-denied Hazard Operation with Swarm Team — 5 Units > 작성
 8. [코드 구조 설계](#8-코드-구조-설계)
 9. [검증 전략 및 성능 지표](#9-검증-전략-및-성능-지표)
 10. [MEM 논문에서 얻은 아키텍처 인사이트](#10-mem-논문에서-얻은-아키텍처-인사이트)
-11. [🆕 보완 설계 — 2.5D Elevation Map 융합](#11-보완-설계--25d-elevation-map-융합)
-12. [🆕 보완 설계 — Semantic Event Memory](#12-보완-설계--semantic-event-memory)
-13. [🆕 보완 설계 — Rendezvous 프로토콜 (통신 단절 대응)](#13-보완-설계--rendezvous-프로토콜-통신-단절-대응)
-14. [🆕 보완 설계 — Hailo NPU 하드웨어 가속](#14-보완-설계--hailo-npu-하드웨어-가속)
+11. [ 보완 설계 — 2.5D Elevation Map 융합](#11-보완-설계--25d-elevation-map-융합)
+12. [ 보완 설계 — Semantic Event Memory](#12-보완-설계--semantic-event-memory)
+13. [ 보완 설계 — Rendezvous 프로토콜 (통신 단절 대응)](#13-보완-설계--rendezvous-프로토콜-통신-단절-대응)
+14. [ 보완 설계 — Hailo NPU 하드웨어 가속](#14-보완-설계--hailo-npu-하드웨어-가속)
 15. [최종 기술 스택 요약 (v2.0)](#15-최종-기술-스택-요약-v20)
 
 ---
@@ -72,8 +72,8 @@ ROS2 Jazzy 기준으로 사용 가능한 RMW(ROS Middleware)는 세 가지다.
 | CPU 사용량 (Raspberry Pi) | 높음 | 중간 | **절반 수준** |
 | Discovery 오버헤드 | 높음 | 중간 | **97~99.9% 절감** |
 | 대형 메시지 (지도) | 불안정 | 불안정 | **안정** |
-| Jazzy 공식 지원 | ✅ | ✅ | ✅ (2025년 정식 포함) |
-| 메쉬 네트워크 지원 | ❌ | ❌ | ✅ |
+| Jazzy 공식 지원 |  |  |  (2025년 정식 포함) |
+| 메쉬 네트워크 지원 |  |  |  |
 
 **2025년 주요 연구 결과 (Journal of Intelligent & Robotic Systems):**
 > Zenoh는 동적 메쉬 토폴로지 환경에서 CycloneDDS/FastDDS 대비 지연(delay) 감소, 도달 가능성(reachability) 향상, CPU 사용량 절반 수준을 보여줬다. 행성 탐사 시나리오(극한 환경 멀티 로봇)에서 Zenoh가 최적 RMW로 선정됐다.
@@ -122,7 +122,7 @@ ros2 run rmw_zenoh_cpp init_rmw_zenoh_router
 from rclpy.qos import QoSProfile, ReliabilityPolicy, DurabilityPolicy, HistoryPolicy
 import rclpy.qos as qos
 
-# 🔴 HIGH: 로봇 위치, 상태 (10Hz, 손실 허용, 최신 값만)
+#  HIGH: 로봇 위치, 상태 (10Hz, 손실 허용, 최신 값만)
 POSE_QOS = QoSProfile(
     reliability=ReliabilityPolicy.BEST_EFFORT,   # UDP: 빠름, 손실 허용
     durability=DurabilityPolicy.VOLATILE,
@@ -130,7 +130,7 @@ POSE_QOS = QoSProfile(
     depth=1  # 최신 1개만 유지
 )
 
-# 🟡 MEDIUM: 지도 delta, Frontier 정보 (1Hz, 손실 불허)
+#  MEDIUM: 지도 delta, Frontier 정보 (1Hz, 손실 불허)
 MAP_QOS = QoSProfile(
     reliability=ReliabilityPolicy.RELIABLE,      # TCP: 보장, 약간 느림
     durability=DurabilityPolicy.TRANSIENT_LOCAL, # 늦게 참여한 로봇도 수신
@@ -138,7 +138,7 @@ MAP_QOS = QoSProfile(
     depth=5
 )
 
-# 🟢 LOW: 생존자 감지, Leader Election (이벤트, 반드시 전달)
+#  LOW: 생존자 감지, Leader Election (이벤트, 반드시 전달)
 EVENT_QOS = QoSProfile(
     reliability=ReliabilityPolicy.RELIABLE,
     durability=DurabilityPolicy.TRANSIENT_LOCAL,
@@ -154,10 +154,10 @@ EVENT_QOS = QoSProfile(
 
 | 방식 | 설명 | 장점 | 단점 | GHOST-5 적합성 |
 |------|------|------|------|----------------|
-| 중앙화 (GCS에서 병합) | 모든 로봇이 스캔 데이터를 GCS로 전송 | 구현 단순 | GCS 다운 시 전체 마비, 대역폭 폭발 | ❌ 재난 환경 부적합 |
-| Pose Graph 공유 (분산) | 각 로봇이 로컬 SLAM 후 Pose Graph만 공유 | 낮은 대역폭 | 초기 상대 위치 추정 필요 | ✅ |
-| Submap 공유 (SMMR-Explore) | 변경된 Submap만 공유 | 균형잡힌 효율 | 구현 복잡도 중간 | ✅ |
-| 전체 지도 주기적 전송 | 완전한 OccupancyGrid를 주기적 전송 | 단순 | 대역폭 폭발 (수 MB/cycle) | ❌ |
+| 중앙화 (GCS에서 병합) | 모든 로봇이 스캔 데이터를 GCS로 전송 | 구현 단순 | GCS 다운 시 전체 마비, 대역폭 폭발 |  재난 환경 부적합 |
+| Pose Graph 공유 (분산) | 각 로봇이 로컬 SLAM 후 Pose Graph만 공유 | 낮은 대역폭 | 초기 상대 위치 추정 필요 |  |
+| Submap 공유 (SMMR-Explore) | 변경된 Submap만 공유 | 균형잡힌 효율 | 구현 복잡도 중간 |  |
+| 전체 지도 주기적 전송 | 완전한 OccupancyGrid를 주기적 전송 | 단순 | 대역폭 폭발 (수 MB/cycle) |  |
 
 ### 3.2 채택 결론: **분산 Pose Graph SLAM + Delta Map Update**
 
@@ -278,11 +278,11 @@ class MapMergerNode(Node):
 
 | 알고리즘 | 방식 | 효율 | 중복 탐색 방지 | GHOST-5 적합성 |
 |----------|------|------|----------------|----------------|
-| 단순 최근접 Frontier | 각 로봇이 독립적으로 가장 가까운 Frontier 선택 | 낮음 | ❌ 매우 빈번 | ❌ |
-| 중앙 집중 할당 (GCS) | GCS가 모든 Frontier를 할당 | 높음 | ✅ | ❌ GCS 의존 |
-| **분산 Claim 기반 (Blackboard)** | Redis/토픽으로 Frontier를 "예약"하고 할당 | 높음 | ✅ | ✅ |
-| MMPF (Multi-robot Multi-target Potential Field) | 포텐셜 필드로 로봇 간 반발 + Frontier 인력 | 매우 높음 | ✅ 자동 분산 | ✅ **채택** |
-| LPFE (Lightweight Predictive Frontier Exploration) | 예측 기반 Frontier 우선순위 | 높음 | ✅ | ✅ 병행 활용 |
+| 단순 최근접 Frontier | 각 로봇이 독립적으로 가장 가까운 Frontier 선택 | 낮음 |  매우 빈번 |  |
+| 중앙 집중 할당 (GCS) | GCS가 모든 Frontier를 할당 | 높음 |  |  GCS 의존 |
+| **분산 Claim 기반 (Blackboard)** | Redis/토픽으로 Frontier를 "예약"하고 할당 | 높음 |  |  |
+| MMPF (Multi-robot Multi-target Potential Field) | 포텐셜 필드로 로봇 간 반발 + Frontier 인력 | 매우 높음 |  자동 분산 |  **채택** |
+| LPFE (Lightweight Predictive Frontier Exploration) | 예측 기반 Frontier 우선순위 | 높음 |  |  병행 활용 |
 
 ### 4.2 채택 결론: **MMPF + Claim Blackboard 하이브리드**
 
@@ -405,7 +405,7 @@ class FrontierManager:
 
 | 알고리즘 | 방식 | 수렴 시간 | 복잡도 | 5대 소규모 적합성 |
 |----------|------|-----------|--------|-------------------|
-| Bully Algorithm | 가장 높은 ID의 생존 로봇이 Leader | O(n²) 메시지 | 낮음 | ✅ **채택** |
+| Bully Algorithm | 가장 높은 ID의 생존 로봇이 Leader | O(n²) 메시지 | 낮음 |  **채택** |
 | Raft Consensus | 다수결 투표 기반 | O(n log n) | 높음 | 과설계 |
 | Ring Election | 링 구조로 ID 전달 | O(n) | 중간 | 링 구성 불안정 |
 | Token Ring | 토큰 순환 | O(n) | 낮음 | 토큰 분실 리스크 |
@@ -640,7 +640,7 @@ class GhostBlackboard:
     def add_victim(self, victim: VictimDetection):
         victim_id = f'victim:{int(victim.timestamp)}'
         self.r.hset('victims', victim_id, json.dumps(asdict(victim)))
-        self.get_logger.info(f'⚠️ Victim detected at ({victim.x:.2f}, {victim.y:.2f})')
+        self.get_logger.info(f' Victim detected at ({victim.x:.2f}, {victim.y:.2f})')
 
     def get_all_victims(self) -> list:
         victims_raw = self.r.hgetall('victims')
@@ -1003,7 +1003,7 @@ GHOST-5:
 
 ---
 
-## 11. 🆕 보완 설계 — 2.5D Elevation Map 융합 (LiDAR 기반)
+## 11.  보완 설계 — 2.5D Elevation Map 융합 (LiDAR 기반)
 
 ### 11.1 문제 정의: 2D SLAM의 재난 환경 한계
 
@@ -1022,7 +1022,7 @@ GHOST-5 하드웨어 기준으로 가장 현실적인 방법은:
 - **RPLiDAR를 수평 + 소폭 틸트(~15도 하방)** 로 추가 장착하여 전방 지면 스캔
 - 두 스캔면의 Z축 차이로 장애물 높이를 추정하여 Elevation Layer 생성
 
-> 📌 **단일 RPLiDAR인 경우**: 로봇 이동 중 LiDAR 높이 변화를 이용한 **수직 스캔 누적(Z-stack)** 방식으로도 구현 가능하다 (아래 11.4절 참조).
+>  **단일 RPLiDAR인 경우**: 로봇 이동 중 LiDAR 높이 변화를 이용한 **수직 스캔 누적(Z-stack)** 방식으로도 구현 가능하다 (아래 11.4절 참조).
 
 ### 11.2 하드웨어 구성 옵션
 
@@ -1446,23 +1446,23 @@ global_costmap:
 
 ```
 LiDAR 수평 스캔 (장착 높이 15cm)
-  ✅ 감지 가능: 15cm 이상 장애물 (벽, 큰 잔해, 문)
-  ❌ 감지 불가: 15cm 미만 저고도 잔해
+   감지 가능: 15cm 이상 장애물 (벽, 큰 잔해, 문)
+   감지 불가: 15cm 미만 저고도 잔해
 
 5MP 카메라 (텍스처 분석)
-  ✅ 보완: 5~15cm 저고도 잔해 (높은 텍스처 분산으로 판단)
-  ❌ 한계: 텍스처 없는 평평한 잔해, 조명 불량 환경
+   보완: 5~15cm 저고도 잔해 (높은 텍스처 분산으로 판단)
+   한계: 텍스처 없는 평평한 잔해, 조명 불량 환경
 
 LiDAR Z-stack 누적
-  ✅ 보완: 이동 궤적이 쌓이면서 점진적 높이 맵 개선
-  ❌ 한계: 탐색 초기 / 처음 방문 구역에서 정보 부재
+   보완: 이동 궤적이 쌓이면서 점진적 높이 맵 개선
+   한계: 탐색 초기 / 처음 방문 구역에서 정보 부재
 
 결론: 3개 레이어 합산 → 단일 방법 대비 사각지대 대폭 축소
 ```
 
 ---
 
-## 12. 🆕 보완 설계 — Semantic Event Memory
+## 12.  보완 설계 — Semantic Event Memory
 
 ### 12.1 문제 정의: 단순 상태 저장소의 한계
 
@@ -1689,7 +1689,7 @@ Robot 4가 위 컨텍스트 기반으로 임무 재분배
 
 ---
 
-## 13. 🆕 보완 설계 — Rendezvous 프로토콜 (통신 단절 대응)
+## 13.  보완 설계 — Rendezvous 프로토콜 (통신 단절 대응)
 
 ### 13.1 문제 정의: 완전 고립 로봇의 공백
 
@@ -1929,7 +1929,7 @@ def handle_comm_event(self, msg):
 
 ---
 
-## 14. 🆕 보완 설계 — Hailo NPU 하드웨어 가속
+## 14.  보완 설계 — Hailo NPU 하드웨어 가속
 
 ### 14.1 문제 정의: CPU 부하 병목 분석
 
@@ -1944,7 +1944,7 @@ Raspberry Pi 5 (ARM Cortex-A76, 4코어 2.4GHz)의 CPU 부하 예상:
 | **YOLOv8n 인체 감지 (카메라)** | **20~30%** | 5MP 실시간 추론 |
 | **카메라 텍스처 분석 (Elevation)** | **8~12%** | OpenCV 경량 처리 |
 | US-016 / TCRT5000 처리 | 2~3% | 경량 센서 폴링 |
-| **합계** | **~88%** | **CPU 과부하 위험 ⚠️** |
+| **합계** | **~88%** | **CPU 과부하 위험 ** |
 
 **결론: YOLOv8n 인체 감지를 NPU로 오프로딩하면 안정적 동작 가능.**
 
@@ -2224,7 +2224,7 @@ class ProximityDetectorNode(Node):
             })
             self.victim_pub.publish(String(data=detection))
             self.get_logger().warn(
-                f'⚠️ Robot {self.robot_id}: 생존자 감지 가능 '
+                f' Robot {self.robot_id}: 생존자 감지 가능 '
                 f'(신뢰도 {combined:.2f}, 거리 {np.median(us_arr):.2f}m)'
             )
 ```
@@ -2248,16 +2248,16 @@ class ProximityDetectorNode(Node):
 | 레이어 | 선택 기술 | 선택 이유 | v2.0 보완 |
 |--------|-----------|-----------|-----------|
 | **미들웨어** | rmw_zenoh (ROS2 Jazzy) | WiFi 메쉬 최적화, CPU 절반, Discovery 99% 절감 | — |
-| **SLAM** | slam_toolbox + Pose Graph 공유 | 대역폭 효율, ROS2 Jazzy 공식 지원 | 🆕 2.5D Elevation Layer 추가 |
-| **지도 병합** | Delta Update + map_merge | 전체 대비 10~20% 대역폭 사용 | 🆕 Elevation 글로벌 병합 |
-| **Frontier 탐색** | MMPF + Claim Blackboard | 중복 탐색 방지, 목표 안정성 | 🆕 skip_zones 연동 |
+| **SLAM** | slam_toolbox + Pose Graph 공유 | 대역폭 효율, ROS2 Jazzy 공식 지원 |  2.5D Elevation Layer 추가 |
+| **지도 병합** | Delta Update + map_merge | 전체 대비 10~20% 대역폭 사용 |  Elevation 글로벌 병합 |
+| **Frontier 탐색** | MMPF + Claim Blackboard | 중복 탐색 방지, 목표 안정성 |  skip_zones 연동 |
 | **리더 선출** | Bully Algorithm | 5대 소규모 최적, 빠른 수렴 | — |
-| **공유 상태** | Redis Blackboard (Leader) | 원자적 Claim, 자동 TTL 만료 | 🆕 Semantic Event Memory |
-| **통신 단절 대응** | Zenoh Gossip | 메쉬 자동 우회 | 🆕 Rendezvous 프로토콜 + RSSI 모니터링 |
+| **공유 상태** | Redis Blackboard (Leader) | 원자적 Claim, 자동 TTL 만료 |  Semantic Event Memory |
+| **통신 단절 대응** | Zenoh Gossip | 메쉬 자동 우회 |  Rendezvous 프로토콜 + RSSI 모니터링 |
 | **보안** | SROS2 (DDS-Security) | AES-GCM 암호화, X.509 인증 | — |
-| **생존자 감지** | US-016 초음파 + TCRT5000 IR + 5MP 카메라(YOLOv8n) 교차 검증 | Pinky Pro 탑재 센서 활용, 오탐 최소화 | 🆕 YOLOv8n Hailo NPU 오프로딩 |
-| **하드웨어 가속** | Raspberry Pi AI HAT+ 26TOPS | YOLOv8n 인체감지 실시간 추론 | 🆕 신규 추가 |
-| **2.5D 인지** | RPLiDAR C1 Z-stack + 5MP 카메라 텍스처 | LiDAR 기반, 추가 하드웨어 불필요 | 🆕 신규 추가 |
+| **생존자 감지** | US-016 초음파 + TCRT5000 IR + 5MP 카메라(YOLOv8n) 교차 검증 | Pinky Pro 탑재 센서 활용, 오탐 최소화 |  YOLOv8n Hailo NPU 오프로딩 |
+| **하드웨어 가속** | Raspberry Pi AI HAT+ 26TOPS | YOLOv8n 인체감지 실시간 추론 |  신규 추가 |
+| **2.5D 인지** | RPLiDAR C1 Z-stack + 5MP 카메라 텍스처 | LiDAR 기반, 추가 하드웨어 불필요 |  신규 추가 |
 | **시각화** | Foxglove Studio | 실시간 멀티 로봇 모니터링 | — |
 
 ### 15.2 최종 아키텍처 다이어그램 (v2.0, 드론 미적용)
@@ -2294,14 +2294,14 @@ class ProximityDetectorNode(Node):
          └── yolov8n_person.hef   (인체 감지)
 
 통신 채널 (rmw_zenoh QoS):
-  🔴 /robot_N/pose             → BEST_EFFORT  10Hz  TTL 5s
-  🟡 /robot_N/map_delta        → RELIABLE     1Hz   TTL 60s
-  🟡 /robot_N/elevation_layer  → RELIABLE     2Hz   (Hailo 추론 주기)
-  🟢 /swarm/elevation_global   → RELIABLE     0.5Hz (병합 후 GCS)
-  🟢 /swarm/election           → RELIABLE     이벤트  KEEP_ALL
-  🟢 /swarm/comm_events        → RELIABLE     이벤트  (RSSI 경고)
-  🟢 /swarm/victim             → RELIABLE     이벤트  KEEP_ALL
-  🟢 /robot_N/rssi             → BEST_EFFORT  0.5Hz
+   /robot_N/pose             → BEST_EFFORT  10Hz  TTL 5s
+   /robot_N/map_delta        → RELIABLE     1Hz   TTL 60s
+   /robot_N/elevation_layer  → RELIABLE     2Hz   (Hailo 추론 주기)
+   /swarm/elevation_global   → RELIABLE     0.5Hz (병합 후 GCS)
+   /swarm/election           → RELIABLE     이벤트  KEEP_ALL
+   /swarm/comm_events        → RELIABLE     이벤트  (RSSI 경고)
+   /swarm/victim             → RELIABLE     이벤트  KEEP_ALL
+   /robot_N/rssi             → BEST_EFFORT  0.5Hz
 ```
 
 ### 15.3 단계별 보완 구현 우선순위

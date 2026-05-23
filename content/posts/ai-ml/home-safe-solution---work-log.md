@@ -9,11 +9,11 @@ description: "기존 RF 모델(binary, 94.92%)의 실시간 낙상 탐지 성능
 
 # Home Safe Solution - Work Log
 
-## 📅 날짜: 2026-02-06 (목)
+##  날짜: 2026-02-06 (목)
 
 ---
 
-## 1. 오전~오후: RF 튜닝 실험 ✅ 완료
+## 1. 오전~오후: RF 튜닝 실험  완료
 
 ### 1.1 목적
 기존 RF 모델(binary, 94.92%)의 실시간 낙상 탐지 성능 개선을 위해 4가지 전략 실험.
@@ -62,7 +62,7 @@ experiments/rf_tuning_20260206_191149/
 
 ---
 
-## 2. 저녁: RF Balanced 배포 시도 ⚠️ 실패 → 원복
+## 2. 저녁: RF Balanced 배포 시도  실패 → 원복
 
 ### 2.1 작성한 배포 스크립트
 
@@ -94,7 +94,7 @@ experiments/rf_tuning_20260206_191149/
 | 2차 | GUI 정상 로드, Start 시 PerformanceWarning 폭주 | `df[col] = 0` 루프가 181개 컬럼을 하나씩 추가 |
 | 3차 | GUI 로드 안됨 (크래시) | 수정 누적으로 코드 꼬임 |
 
-### 2.3 원복 완료 ✅
+### 2.3 원복 완료 
 
 - monitoring_page.py를 **수정 전 원본으로 완전 복원**
 - GUI 정상 동작 확인
@@ -115,7 +115,7 @@ experiments/rf_tuning_20260206_191149/
 - **predict_fall()**: RF 모델 미사용 (hip_height/aspect_ratio 규칙 기반 임시 코드)
 - **RF 모델 경로**: `models_integrated/3class/` (3class 모델 사용 중)
 - **class_names**: 3class 기준 (`{0:'Normal', 1:'Falling', 2:'Fallen'}`)
-- YOLO 모델: `yolo11s-pose.pt` ✅ 정상
+- YOLO 모델: `yolo11s-pose.pt`  정상
 
 ---
 
@@ -123,11 +123,11 @@ experiments/rf_tuning_20260206_191149/
 
 | 항목 | 상태 |
 |------|------|
-| RF 튜닝 실험 | ✅ 완료 (RF Balanced 선정) |
-| apply_rf_balanced.py | ✅ 작성 완료 (미실행) |
-| monitoring_page.py 수정 | ❌ 원복 (수정 전 원본 상태) |
-| rf_config.json | ❌ 미생성 |
-| GUI 동작 | ✅ 정상 (원본 상태) |
+| RF 튜닝 실험 |  완료 (RF Balanced 선정) |
+| apply_rf_balanced.py |  작성 완료 (미실행) |
+| monitoring_page.py 수정 |  원복 (수정 전 원본 상태) |
+| rf_config.json |  미생성 |
+| GUI 동작 |  정상 (원본 상태) |
 
 ### 파일 위치
 ```

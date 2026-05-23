@@ -275,7 +275,7 @@ async def generate_tts(
 
 ```json
 {
-  "title": "🤖 AI들의 선택 | SF 드라마 EP.1 | AI Drama Series",
+  "title": " AI들의 선택 | SF 드라마 EP.1 | AI Drama Series",
   "description": "...",
   "tags": ["AI드라마", "SF", "인공지능", "미래", "단편드라마"],
   "thumbnail_prompt": "어두운 우주선 함교, 5개의 홀로그램 AI 캐릭터, 긴장감 넘치는 분위기, 시네마틱 조명",
@@ -377,13 +377,13 @@ DRAMA_LANGUAGE=ko          # ko / en
 
 | Phase | 내용 | 우선순위 |
 |-------|------|---------|
-| **Phase 1** | Director Agent + DramaState 기본 구현 | 🔴 High |
-| **Phase 2** | 5개 Character Agent + LangGraph 연결 | 🔴 High |
-| **Phase 3** | Script Assembler + 대본 파일 출력 | 🟡 Medium |
-| **Phase 4** | ElevenLabs TTS Dispatcher 연동 | 🟡 Medium |
-| **Phase 5** | YouTube Meta Agent | 🟢 Low |
-| **Phase 6** | Jupyter Notebook 프로토타입 완성 | 🟢 Low |
-| **Phase 7** | 전체 에피소드 E2E 테스트 | 🟢 Low |
+| **Phase 1** | Director Agent + DramaState 기본 구현 |  High |
+| **Phase 2** | 5개 Character Agent + LangGraph 연결 |  High |
+| **Phase 3** | Script Assembler + 대본 파일 출력 |  Medium |
+| **Phase 4** | ElevenLabs TTS Dispatcher 연동 |  Medium |
+| **Phase 5** | YouTube Meta Agent |  Low |
+| **Phase 6** | Jupyter Notebook 프로토타입 완성 |  Low |
+| **Phase 7** | 전체 에피소드 E2E 테스트 |  Low |
 
 ---
 

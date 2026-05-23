@@ -80,12 +80,12 @@ def paintEvent(self, event):
 
 | 패널 | paintEvent | 배경 | 하이라이트 |
 |------|-----------|------|-----------|
-| SLAM Map | 기존 (수정) | `_panel_bg` ✅ | — (맵 데이터가 덮음) |
-| Camera Feed | 기존 (수정) | `_panel_bg` ✅ | — (카메라 프레임이 덮음) |
-| Face Detection | 기존 (수정) | `_panel_bg` ✅ | `_panel_highlight` ✅ |
-| Sensor Plot | PyQtGraph (유지) | PYQTGRAPH_THEMES ✅ | — (PyQtGraph 자체 관리) |
-| Topic Monitor | **신규 추가** | `_panel_bg` ✅ | `_panel_highlight` ✅ |
-| Robot Status | **신규 추가** | `_panel_bg` ✅ | `_panel_highlight` ✅ |
+| SLAM Map | 기존 (수정) | `_panel_bg`  | — (맵 데이터가 덮음) |
+| Camera Feed | 기존 (수정) | `_panel_bg`  | — (카메라 프레임이 덮음) |
+| Face Detection | 기존 (수정) | `_panel_bg`  | `_panel_highlight`  |
+| Sensor Plot | PyQtGraph (유지) | PYQTGRAPH_THEMES  | — (PyQtGraph 자체 관리) |
+| Topic Monitor | **신규 추가** | `_panel_bg`  | `_panel_highlight`  |
+| Robot Status | **신규 추가** | `_panel_bg`  | `_panel_highlight`  |
 
 ---
 
@@ -142,5 +142,5 @@ dashboard/
 
 | 미해결 과제 (v3.2) | 상태 |
 |-------------------|------|
-| 패널 배경색 불일치 (6개 패널 제각각) | ✅ 해결 — PANEL_BG_THEMES 중앙 관리 |
-| Topic Monitor / Robot Status 입체감 없음 | ✅ 해결 — paintEvent 추가 + 하이라이트 |
+| 패널 배경색 불일치 (6개 패널 제각각) |  해결 — PANEL_BG_THEMES 중앙 관리 |
+| Topic Monitor / Robot Status 입체감 없음 |  해결 — paintEvent 추가 + 하이라이트 |

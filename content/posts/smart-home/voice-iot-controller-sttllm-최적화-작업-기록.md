@@ -151,9 +151,9 @@ ollama:
 ## 4. 적용 확인 로그
 
 ```
-[INFO] server.main -   LLM  : ✅ [openai] gpt-4o-mini
-[INFO] server.main -   STT  : ✅ base (Whisper)
-[INFO] server.main -   WAKE : ✅ Porcupine / 자비스야
+[INFO] server.main -   LLM  :  [openai] gpt-4o-mini
+[INFO] server.main -   STT  :  base (Whisper)
+[INFO] server.main -   WAKE :  Porcupine / 자비스야
 [INFO] httpx - HTTP Request: GET https://api.openai.com/v1/models "HTTP/1.1 200 OK"
 [INFO] server.main - LLM 연결 성공 | provider=openai | 모델: [...]
 [INFO] server.tcp_server - [TCP] 등록 완료: esp32_bedroom

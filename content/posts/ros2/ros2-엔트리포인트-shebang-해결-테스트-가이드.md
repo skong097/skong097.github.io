@@ -63,7 +63,7 @@ rm -rf home_guard_ws/build/ home_guard_ws/install/ home_guard_ws/log/
 head -1 home_guard_ws/install/guard_brain/lib/guard_brain/brain_node
 # 기대 결과: #!/home/gjkong/dev_ws/ros2_venv/bin/python3
 #
-# ❌ 만약 #!/usr/bin/python3 이면 venv가 activate 안 된 상태에서 빌드한 것
+#  만약 #!/usr/bin/python3 이면 venv가 activate 안 된 상태에서 빌드한 것
 ```
 
 ### Step 4: ros2 run 테스트

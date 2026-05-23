@@ -232,17 +232,17 @@ v1.0~v1.2에서 완료된 항목과 남은 시뮬레이션 기능 보강.
 
 | 항목 | 상태 | 설명 |
 |---|---|---|
-| 3D 환경 + 로봇 모델 | ✅ v1.0 | Pygame + OpenGL, Kevin 4륜 로봇 |
-| LiDAR 360° 시각화 | ✅ v1.0 | 72-ray 레이캐스트, 거리 색상 |
-| Nav2 웨이포인트 순찰 | ✅ v1.0 | 10개 WP 자동 추종 |
-| 낙상 감지 이벤트 | ✅ v1.0 | 5명 사람, 알림 오버레이 |
-| 전체 화면 / 마우스 제어 | ✅ v1.1 | F11, 클릭 캡처, ALT 해제 |
-| SLAM occupancy grid | ✅ v1.2 | Log-odds, Bresenham, 3D + 미니맵 |
-| 성능 최적화 | ✅ v1.2 | DisplayList, SpatialHash, LiDAR 캐시 |
-| 사운드 효과 | ✅ v1.4 | 절차적 생성 (경보, 모터, 차임, LiDAR) |
-| Costmap 시각화 | ✅ v1.4 | Global inflation + Local LiDAR |
-| A*/DWA 경로 계획 시각화 | ✅ v1.3 | A* 탐색 과정 애니메이션, 3D+미니맵 |
-| 순찰 경로 편집기 | ✅ v1.5 | WP 추가/삭제/드래그, 충돌 검증 |
+| 3D 환경 + 로봇 모델 |  v1.0 | Pygame + OpenGL, Kevin 4륜 로봇 |
+| LiDAR 360° 시각화 |  v1.0 | 72-ray 레이캐스트, 거리 색상 |
+| Nav2 웨이포인트 순찰 |  v1.0 | 10개 WP 자동 추종 |
+| 낙상 감지 이벤트 |  v1.0 | 5명 사람, 알림 오버레이 |
+| 전체 화면 / 마우스 제어 |  v1.1 | F11, 클릭 캡처, ALT 해제 |
+| SLAM occupancy grid |  v1.2 | Log-odds, Bresenham, 3D + 미니맵 |
+| 성능 최적화 |  v1.2 | DisplayList, SpatialHash, LiDAR 캐시 |
+| 사운드 효과 |  v1.4 | 절차적 생성 (경보, 모터, 차임, LiDAR) |
+| Costmap 시각화 |  v1.4 | Global inflation + Local LiDAR |
+| A*/DWA 경로 계획 시각화 |  v1.3 | A* 탐색 과정 애니메이션, 3D+미니맵 |
+| 순찰 경로 편집기 |  v1.5 | WP 추가/삭제/드래그, 충돌 검증 |
 
 ---
 
@@ -349,9 +349,9 @@ DataProvider (ABC)
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│  Kevin Patrol Dashboard          [SIM] [LIVE] [REC]  │ ⚙ │
+│  Kevin Patrol Dashboard          [SIM] [LIVE] [REC]  │  │
 ├──────────────────┬──────────────────┬───────────────────────┤
-│                  │                  │  📡 Topic Monitor     │
+│                  │                  │   Topic Monitor     │
 │   3D Viewport    │  Camera Feed     │  ─────────────────── │
 │   (OpenGL)       │  /image_raw      │  /cmd_vel    50Hz ● │
 │                  │                  │  /scan       10Hz ● │
@@ -360,8 +360,8 @@ DataProvider (ABC)
 │                  │                  │  /detection  10Hz ● │
 │                  │                  │  /alert       0Hz ○ │
 ├──────────────────┼──────────────────┤  ...                 │
-│                  │  📊 Sensor Plot  ├───────────────────────┤
-│   🗺 SLAM Map    │  ───────────────│  🤖 Robot Status     │
+│                  │   Sensor Plot  ├───────────────────────┤
+│    SLAM Map    │  ───────────────│   Robot Status     │
 │   (2D top-down)  │  IMU angular_vel│  Battery: 78%        │
 │                  │  LiDAR min_dist │  Mode: Auto Patrol   │
 │   occupancy grid │  Motor current  │  Speed: 0.3 m/s     │
@@ -369,7 +369,7 @@ DataProvider (ABC)
 │   + nav path     │                  │  SLAM: 67% explored │
 │   + costmap      │                  │  Uptime: 02:34:12   │
 ├──────────────────┴──────────────────┴───────────────────────┤
-│  ▶ PATROL  ⏸ STOP  📍 SET_GOAL  🔄 SLAM_RESET  ⚠ ALERTS │
+│  ▶ PATROL  ⏸ STOP   SET_GOAL   SLAM_RESET   ALERTS │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -411,19 +411,19 @@ class DashboardApp:
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
-│  Kevin Patrol Dashboard v3.1       [SIM] [LIVE] [REC]  │ ⚙ │
+│  Kevin Patrol Dashboard v3.1       [SIM] [LIVE] [REC]  │  │
 ├──────────────────┬──────────────────┬────────────────────────┤
-│                  │                  │  📡 Topic Monitor      │
-│  🗺 SLAM Map     │  📷 Camera Feed │  토픽별 Hz + 활성 상태 │
+│                  │                  │   Topic Monitor      │
+│   SLAM Map     │   Camera Feed │  토픽별 Hz + 활성 상태 │
 │  (2D top-down)   │  /image_raw      │                       │
 │                  │  + 감지 오버레이  │                       │
 ├──────────────────┼──────────────────┤                       │
 │                  │                  ├────────────────────────┤
-│  📊 Sensor Plot  │  🤖 Robot Status │  🔔 Alert History     │
+│   Sensor Plot  │   Robot Status │   Alert History     │
 │  (실시간 그래프)  │  Battery / Mode  │  타임스탬프 로그       │
 │                  │  Speed / WP      │  (최대 50건)          │
 ├──────────────────┴──────────────────┴────────────────────────┤
-│  ▶ PATROL  ⏸ STOP  📍 SET_GOAL  🔄 SLAM_RESET   ⚠ ALERTS │
+│  ▶ PATROL  ⏸ STOP   SET_GOAL   SLAM_RESET    ALERTS │
 └──────────────────────────────────────────────────────────────┘
 ```
 
@@ -436,7 +436,7 @@ class DashboardApp:
 | **Alert History** | `AlertHistoryWidget` | 타임스탬프 + 아이콘 + 색상 로그, 스크롤 영역, 최대 50건, Clear All, 다크 모드 배경 |
 | **Alert Manager** | `AlertManager` | 토스트 + 히스토리 통합 관리, 중복 5초 쿨다운, 감지 이벤트 자동 fire, 윈도우 리사이즈 대응 |
 
-**Command Bar 확장**: `📍 SET GOAL`, `⚠ ALERTS` (테스트 알림 발생) 버튼 추가
+**Command Bar 확장**: ` SET GOAL`, ` ALERTS` (테스트 알림 발생) 버튼 추가
 
 **Mock 시뮬레이터 개선**: 주기적 감지 이벤트 자동 생성 (8~15초 랜덤 간격, fall/face), 3초 후 자동 소멸
 
@@ -446,7 +446,7 @@ class DashboardApp:
 
 | 기능 | 설명 |
 |---|---|
-| SET_GOAL 모드 | Command Bar 버튼 토글 → 맵에 빨간 점선 테두리 + "🎯 SET GOAL MODE" 표시, 커서 십자 변경 |
+| SET_GOAL 모드 | Command Bar 버튼 토글 → 맵에 빨간 점선 테두리 + " SET GOAL MODE" 표시, 커서 십자 변경 |
 | 좌클릭 | Goal 설정 → 빨간 펄스 타겟 마커 (외부 링 펄스 + 내부 점 + 십자선) + 좌표 라벨 + 로봇→Goal 점선 |
 | 우클릭 | Goal 취소 |
 | 도달 판정 | 로봇-Goal 거리 1.0m 이내 시 녹색 체크 마커로 변환 |
@@ -485,9 +485,9 @@ class DashboardApp:
 |---|---|---|
 | **▶ PATROL** | `start_patrol()` → 원형 순찰 + SLAM 점진 탐색 + WP 순환 | 녹색 채움 활성 |
 | **⏸ STOP** | `stop_patrol()` → 위치 유지, speed=0, 대기 전류 | 빨간색 채움 활성 |
-| **🔄 SLAM RESET** | `reset_slam()` → grid unknown 초기화 + Goal 클리어 | 알림 토스트 |
-| **📍 SET GOAL** | Goal 모드 토글 → SLAM Map 클릭 대기 | 체크 토글 |
-| **⚠ ALERTS** | 테스트 알림 랜덤 발생 | 토스트 팝업 |
+| ** SLAM RESET** | `reset_slam()` → grid unknown 초기화 + Goal 클리어 | 알림 토스트 |
+| ** SET GOAL** | Goal 모드 토글 → SLAM Map 클릭 대기 | 체크 토글 |
+| ** ALERTS** | 테스트 알림 랜덤 발생 | 토스트 팝업 |
 
 **Phase 3 완료 상태**: 설계 문서 원안의 모든 대시보드 기능 구현 완료. Phase 4 (실전 배포) 진입 준비 완료.
 

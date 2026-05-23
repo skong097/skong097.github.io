@@ -1,5 +1,5 @@
 ---
-title: "🎙️ Voice IoT Controller"
+title: " Voice IoT Controller"
 date: 2026-03-21
 draft: true
 tags: ["smart-home", "esp32", "fastapi", "whisper", "porcupine"]
@@ -7,7 +7,7 @@ categories: ["smart-home"]
 description: "> 한국어 음성 명령으로 ESP32 스마트홈 디바이스를 제어하는 로컬 IoT 시스템 [![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python)](ht"
 ---
 
-# 🎙️ Voice IoT Controller
+#  Voice IoT Controller
 
 > 한국어 음성 명령으로 ESP32 스마트홈 디바이스를 제어하는 로컬 IoT 시스템
 
@@ -18,7 +18,7 @@ description: "> 한국어 음성 명령으로 ESP32 스마트홈 디바이스를
 
 ---
 
-## 📌 개요
+##  개요
 
 **Voice IoT Controller**는 로컬 환경에서 동작하는 한국어 음성 인식 기반 스마트홈 제어 시스템입니다.  
 외부 클라우드 없이 온프레미스 STT + LLM으로 자연어 명령을 JSON으로 변환하고, TCP/WebSocket을 통해 ESP32에 전달합니다.
@@ -35,21 +35,21 @@ TCP → ESP32 실행
 
 ---
 
-## ✨ 주요 기능
+##  주요 기능
 
-- **🎙️ 로컬 STT** — faster-whisper (small 모델, 한국어 특화)
-- **🧠 로컬 LLM** — Ollama qwen2.5:7b, 자연어 → JSON 명령 변환
-- **🔊 웨이크 워드** — Porcupine "자비스야" (오프라인)
-- **📡 ESP32 TCP 제어** — LED, 서보모터, TM1637 7세그먼트
-- **🌐 WebSocket 대시보드** — 실시간 디바이스 상태 모니터링
-- **🗺️ HOUSE MAP** — 2D 평면도 기반 LED/상태 시각화
-- **🎵 거실 음악 제어** — YouTube IFrame + 음성 명령 연동
-- **📊 통합 상태 관리** — UnifiedStateManager (ESP32 + 음악 + 웹앱 상태 일원화)
-- **🔇 노이즈 리덕션** — noisereduce 배경음 억제
+- ** 로컬 STT** — faster-whisper (small 모델, 한국어 특화)
+- ** 로컬 LLM** — Ollama qwen2.5:7b, 자연어 → JSON 명령 변환
+- ** 웨이크 워드** — Porcupine "자비스야" (오프라인)
+- ** ESP32 TCP 제어** — LED, 서보모터, TM1637 7세그먼트
+- ** WebSocket 대시보드** — 실시간 디바이스 상태 모니터링
+- ** HOUSE MAP** — 2D 평면도 기반 LED/상태 시각화
+- ** 거실 음악 제어** — YouTube IFrame + 음성 명령 연동
+- ** 통합 상태 관리** — UnifiedStateManager (ESP32 + 음악 + 웹앱 상태 일원화)
+- ** 노이즈 리덕션** — noisereduce 배경음 억제
 
 ---
 
-## 🏠 지원 디바이스
+##  지원 디바이스
 
 | Device ID | 위치 | 기능 |
 |-----------|------|------|
@@ -61,7 +61,7 @@ TCP → ESP32 실행
 
 ---
 
-## 🗂️ 프로젝트 구조
+##  프로젝트 구조
 
 ```
 voice_iot_controller/
@@ -87,7 +87,7 @@ voice_iot_controller/
 
 ---
 
-## ⚙️ 설치 및 실행
+##  설치 및 실행
 
 ### 1. 사전 요구사항
 
@@ -159,7 +159,7 @@ uvicorn server.main:app --host 0.0.0.0 --port 8000
 
 ---
 
-## 🎮 음성 명령 예시
+##  음성 명령 예시
 
 | 명령 | 동작 |
 |------|------|
@@ -176,7 +176,7 @@ uvicorn server.main:app --host 0.0.0.0 --port 8000
 
 ---
 
-## 📡 API
+##  API
 
 ### WebSocket
 
@@ -207,7 +207,7 @@ GET  /api/status        # 서버 상태
 
 ---
 
-## 📊 성능
+##  성능
 
 | 항목 | 수치 |
 |------|------|
@@ -221,7 +221,7 @@ GET  /api/status        # 서버 상태
 
 ---
 
-## 🛠️ 기술 스택
+##  기술 스택
 
 | 분류 | 기술 |
 |------|------|
@@ -239,7 +239,7 @@ GET  /api/status        # 서버 상태
 
 ---
 
-## 📝 개발 로그
+##  개발 로그
 
 | 버전 | 날짜 | 주요 변경사항 |
 |------|------|--------------|
@@ -253,7 +253,7 @@ GET  /api/status        # 서버 상태
 
 ---
 
-## 🔧 알려진 이슈
+##  알려진 이슈
 
 - VAD energy 기반 발화 감지는 배경음이 높은 환경에서 한계 존재 → Silero VAD 교체 검토 중
 - YouTube 자동재생 차단 정책 → 브라우저에서 한 번 이상 수동 재생 후 음성 제어 가능
@@ -261,7 +261,7 @@ GET  /api/status        # 서버 상태
 
 ---
 
-## 📄 라이선스
+##  라이선스
 
 MIT License
 

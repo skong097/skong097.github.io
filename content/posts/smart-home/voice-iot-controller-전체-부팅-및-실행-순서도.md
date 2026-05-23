@@ -135,8 +135,8 @@ lifespan 진입 (앱 시작 직후 자동 실행)
       HTTP : 0.0.0.0:8000
       WS   : ws://0.0.0.0:8000/ws
     ────────────────────────────────────────────────────
-      LLM  : ✅ exaone3.5:latest
-      STT  : ✅ base / wake=헤이IoT
+      LLM  :  exaone3.5:latest
+      STT  :  base / wake=헤이IoT
     ════════════════════════════════════════════════════
     │
     ▼
@@ -216,7 +216,7 @@ STTEngine IDLE 상태
     ▼
 LISTENING 상태 전환
     │  WS broadcast: {type:"wake_detected"}
-    │  브라우저/PyQt6 → 뱃지 "🎙 LISTENING"
+    │  브라우저/PyQt6 → 뱃지 " LISTENING"
     │
     ▼
 VAD 발화 수집

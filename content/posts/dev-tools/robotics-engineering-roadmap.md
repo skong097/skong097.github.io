@@ -31,16 +31,16 @@ Smart Factory Physical AI 프로젝트는 기존 7개 프로젝트 경험을 통
 
 | # | Project | Status | Keywords | Blog 소재 |
 |---|---------|--------|----------|----------|
-| 1 | Kevin 3D Patrol Sim | ✅ | Robotics, SLAM, OpenGL | 3D 시뮬레이션 개발기 |
-| 2 | Kevin Patrol Dashboard | ✅ | ROS2, PyQt6, Monitoring | PyQt6 대시보드 + 3테마 |
-| 3 | Home Safe Solution | ✅ | ST-GCN, Fall Detection | 낙상감지 91.89% 달성기 |
-| 4 | EyeCon (피노키오) | ✅ | AI/ML, LLM, Real-time | 실시간 심리분석 Ollama |
-| 5 | Home Guard Bot | ✅ | ROS2, FastAPI, LLM | guard_brain LLM 노드 |
-| 6 | ROS2 Commander | ✅ | Education, Gamification | 게임으로 ROS2 학습 |
-| 7 | MyPet | 🔧 | CV, Gesture Recognition | 핸드 제스처 가상 반려견 |
-| 8 | **Smart Factory Dashboard** | 🆕 | Physical AI, Digital Twin, MLOps | 공장 모니터링 대시보드 |
-| 9 | **Isaac Sim Integration** | 🆕 | NVIDIA, Simulation | Isaac Sim + ROS2 연동 |
-| 10 | **Predictive Maintenance** | 🆕 | AI/ML, IoT, Time Series | 설비 고장 예측 AI |
+| 1 | Kevin 3D Patrol Sim |  | Robotics, SLAM, OpenGL | 3D 시뮬레이션 개발기 |
+| 2 | Kevin Patrol Dashboard |  | ROS2, PyQt6, Monitoring | PyQt6 대시보드 + 3테마 |
+| 3 | Home Safe Solution |  | ST-GCN, Fall Detection | 낙상감지 91.89% 달성기 |
+| 4 | EyeCon (피노키오) |  | AI/ML, LLM, Real-time | 실시간 심리분석 Ollama |
+| 5 | Home Guard Bot |  | ROS2, FastAPI, LLM | guard_brain LLM 노드 |
+| 6 | ROS2 Commander |  | Education, Gamification | 게임으로 ROS2 학습 |
+| 7 | MyPet |  | CV, Gesture Recognition | 핸드 제스처 가상 반려견 |
+| 8 | **Smart Factory Dashboard** |  | Physical AI, Digital Twin, MLOps | 공장 모니터링 대시보드 |
+| 9 | **Isaac Sim Integration** |  | NVIDIA, Simulation | Isaac Sim + ROS2 연동 |
+| 10 | **Predictive Maintenance** |  | AI/ML, IoT, Time Series | 설비 고장 예측 AI |
 
 ---
 
@@ -90,7 +90,7 @@ Smart Factory Physical AI 프로젝트는 기존 7개 프로젝트 경험을 통
 │  Sensor Heatmap      │  Camera Vision       │  ROS2 Topics  │
 │  (온도/진동/압력)      │  (YOLO 불량검출)      │  Status Panel │
 ├─────────────────────┴─────────────────────┴────────────────┤
-│  [SIM] [LIVE]  | ▶ START  ⏸ STOP  ⚠ ALERTS  ⚙ CONFIG    │
+│  [SIM] [LIVE]  | ▶ START  ⏸ STOP   ALERTS   CONFIG    │
 └──────────────────────────────────────────────────────────────┘
 ```
 
@@ -398,13 +398,13 @@ AIOps는 AI를 활용하여 IT/OT 운영을 자동화하는 방법론이며, MLO
 
 | 취약점 유형 | 설명 | SROS2 방어 여부 |
 |-----------|------|----------------|
-| Topic Sniffing | 비인증 노드가 토픽 목록 및 데이터 도청 | ✅ SROS2 적용 시 차단 |
-| Topic Injection | 악의적 메시지 발행으로 로봇 오동작 유도 | ✅ SROS2 적용 시 차단 |
-| Service Flooding | DDS Service 대량 요청으로 DoS 공격 | ⚠️ 부분적 방어 (요청 제한 필요) |
-| Keystore Exfiltration | 공급망 공격으로 SROS2 인증서 탈취 | ❌ SROS2로 방어 불가 |
-| Discovery Spoofing | 가짜 노드 등록으로 네트워크 침투 | ⚠️ 부분적 방어 |
-| Parameter Tampering | 로봇 파라미터 무단 변경 | ✅ SROS2 적용 시 차단 |
-| Authorized Node Attack | 인증된 노드가 권한 범위 내 악의적 행위 | ❌ 방어 불가 (행위 감지 필요) |
+| Topic Sniffing | 비인증 노드가 토픽 목록 및 데이터 도청 |  SROS2 적용 시 차단 |
+| Topic Injection | 악의적 메시지 발행으로 로봇 오동작 유도 |  SROS2 적용 시 차단 |
+| Service Flooding | DDS Service 대량 요청으로 DoS 공격 |  부분적 방어 (요청 제한 필요) |
+| Keystore Exfiltration | 공급망 공격으로 SROS2 인증서 탈취 |  SROS2로 방어 불가 |
+| Discovery Spoofing | 가짜 노드 등록으로 네트워크 침투 |  부분적 방어 |
+| Parameter Tampering | 로봇 파라미터 무단 변경 |  SROS2 적용 시 차단 |
+| Authorized Node Attack | 인증된 노드가 권한 범위 내 악의적 행위 |  방어 불가 (행위 감지 필요) |
 
 ### Smart Factory 보안 적용 방안
 

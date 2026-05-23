@@ -1,5 +1,5 @@
 ---
-title: "📋 Work Log — 2026-02-07 (Final)"
+title: " Work Log — 2026-02-07 (Final)"
 date: 2026-03-21
 draft: true
 tags: ["dev-tools", "pyqt6"]
@@ -7,13 +7,13 @@ categories: ["dev-tools"]
 description: "- GUI 실시간 모니터링 시 10초 후 크래시 원인 조사 및 해결 - RF 모델 GUI 통합 (binary 모델 적용) - DB 저장 에러 수정"
 ---
 
-# 📋 Work Log — 2026-02-07 (Final)
+#  Work Log — 2026-02-07 (Final)
 
 ## 프로젝트: Home Safe Solution - 낙상 감지 시스템
 
 ---
 
-## 🎯 오늘의 목표
+##  오늘의 목표
 
 - GUI 실시간 모니터링 시 10초 후 크래시 원인 조사 및 해결
 - RF 모델 GUI 통합 (binary 모델 적용)
@@ -22,7 +22,7 @@ description: "- GUI 실시간 모니터링 시 10초 후 크래시 원인 조사
 
 ---
 
-## ✅ 완료 작업
+##  완료 작업
 
 ### 1. GUI 크래시 원인 조사 (체계적 단계별 테스트)
 
@@ -32,14 +32,14 @@ description: "- GUI 실시간 모니터링 시 10초 후 크래시 원인 조사
 
 | 테스트 | 구성 | 결과 |
 |--------|------|------|
-| 카메라 단독 | cv2.VideoCapture | ✅ 72초+ 정상 |
-| 카메라 + YOLO | CLI, GUI 없음 | ✅ 20초+ (26fps) |
-| 카메라 + YOLO + RF | CLI, GUI 없음 | ✅ 20초+ (26.5fps) |
-| PyQt6 + YOLO (간단 GUI) | QTimer + QLabel | ✅ 1분+ 정상 |
-| monitoring_page: YOLO만 | skeleton 없음 | ✅ 1분+ 정상 |
-| monitoring_page: + skeleton | RF 없음 | ✅ 30초+ 정상 |
-| monitoring_page: + RF 추론 | UI 업데이트 없음 | ❌ 10초 크래시 |
-| monitoring_page: + RF (n_jobs=1) | 스레드 제한 | ✅ 안정 동작 |
+| 카메라 단독 | cv2.VideoCapture |  72초+ 정상 |
+| 카메라 + YOLO | CLI, GUI 없음 |  20초+ (26fps) |
+| 카메라 + YOLO + RF | CLI, GUI 없음 |  20초+ (26.5fps) |
+| PyQt6 + YOLO (간단 GUI) | QTimer + QLabel |  1분+ 정상 |
+| monitoring_page: YOLO만 | skeleton 없음 |  1분+ 정상 |
+| monitoring_page: + skeleton | RF 없음 |  30초+ 정상 |
+| monitoring_page: + RF 추론 | UI 업데이트 없음 |  10초 크래시 |
+| monitoring_page: + RF (n_jobs=1) | 스레드 제한 |  안정 동작 |
 
 **근본 원인:** `RandomForestClassifier`의 `n_jobs=16`이 QTimer 메인루프 안에서 매 프레임 16개 스레드를 생성 → 메모리 누수(RSS 949MB→1721MB, 10초만에 800MB 증가) → OOM Killer가 프로세스 강제 종료
 
@@ -51,8 +51,8 @@ description: "- GUI 실시간 모니터링 시 10초 후 크래시 원인 조사
 
 | 경로 | 상태 | features | classes |
 |------|------|----------|---------|
-| `models_integrated/3class/` | ❌ 손상 | 50개, 이름 없음 | [1] (class 1개) |
-| `models_integrated/binary/` | ✅ 정상 | 181개, 이름 있음 | [0, 1] |
+| `models_integrated/3class/` |  손상 | 50개, 이름 없음 | [1] (class 1개) |
+| `models_integrated/binary/` |  정상 | 181개, 이름 있음 | [0, 1] |
 
 **조치:** binary 모델로 경로 변경, binary(2class) → 3class 형식 변환하여 기존 UI 호환 유지
 
@@ -170,9 +170,9 @@ norm_y = np.clip((y - bbox_y_min) / bbox_height, 0, 1)
 
 | 동작 | v2 (비정규화) | v3 (30영상) | v3b (60영상) | v3b (301영상) |
 |------|-------------|------------|-------------|--------------|
-| 서있기 | ❌ Fallen | ✅ Normal | ✅ Normal | ✅ Normal |
-| 앉기 | ✅ Normal | ✅ Normal | ✅ Normal | ✅ Normal |
-| 쓰러짐 | ❌ Normal | △ 50% 미만 | △ 65%+ | **✅ 매우 좋음** |
+| 서있기 |  Fallen |  Normal |  Normal |  Normal |
+| 앉기 |  Normal |  Normal |  Normal |  Normal |
+| 쓰러짐 |  Normal | △ 50% 미만 | △ 65%+ | ** 매우 좋음** |
 
 ---
 
@@ -202,7 +202,7 @@ norm_y = np.clip((y - bbox_y_min) / bbox_height, 0, 1)
 
 ---
 
-## 📁 파일 구조
+##  파일 구조
 
 ### 모델 백업
 
@@ -267,7 +267,7 @@ norm_y = np.clip((y - bbox_y_min) / bbox_height, 0, 1)
 
 ---
 
-## 📁 파일 구조
+##  파일 구조
 
 ### 모델 백업
 
@@ -326,7 +326,7 @@ norm_y = np.clip((y - bbox_y_min) / bbox_height, 0, 1)
 | Normal (Train) | 137 | 1,423 | |
 | Fallen (Train) | 37 | 617 | |
 
-**데이터 누수 검증:** 중복 시퀀스 1개, 중복 동영상 0개 ✅
+**데이터 누수 검증:** 중복 시퀀스 1개, 중복 동영상 0개 
 
 ---
 
@@ -374,18 +374,18 @@ Best Epoch 6, Early stopping at 21 (45초 완료)
 
 **최종 비교 결과:**
 
-| 지표 | 🌲 RF | 🚀 ST-GCN v2 |
+| 지표 |  RF |  ST-GCN v2 |
 |------|-------|-------------|
 | **Accuracy** | 97.99% | **99.63%** |
 | **F1** | 94.48% | **99.40%** |
 | **AUC** | 99.71% | **99.98%** |
-| **추론 속도** | **0.01ms** ⚡ | 0.34ms |
+| **추론 속도** | **0.01ms**  | 0.34ms |
 | **모델 크기** | 43.96MB | **29.77MB** |
 | **테스트 단위** | 28,611 프레임 | 534 시퀀스 |
 
 ---
 
-## 📁 파일 구조
+##  파일 구조
 
 ### RF 모델
 
@@ -488,26 +488,26 @@ if max_dist > 0:
 
 ---
 
-## 📊 현재 시스템 상태
+##  현재 시스템 상태
 
 | 항목 | 상태 |
 |------|------|
-| GUI 안정성 | ✅ 안정 동작 |
-| RF 추론 | ✅ 실시간 (n_jobs=1, F1=94.5%) |
-| ST-GCN v2 추론 | ✅ 실시간 GPU (Acc=99.63%) |
-| 모델 선택 다이얼로그 | ✅ RF / ST-GCN v2 선택 |
-| 서기 감지 | ✅ Normal (RF, ST-GCN 모두) |
-| 앉기 감지 | ✅ Normal (RF, ST-GCN 모두) |
-| 쓰러짐 감지 | ✅ Fall (RF, ST-GCN 모두) |
-| 확률 바 표시 | ✅ softmax 확률 정상 반영 |
-| FN Detection Acc | ✅ Fallen 기준 정상 동작 |
-| DB 저장 | ✅ Normal/Fall 모두 정상 기록 |
-| 대시보드 | ✅ 낙상 탐지율 표시 |
-| 모델 비교 리포트 | ✅ RF vs ST-GCN v2 (2모델) |
+| GUI 안정성 |  안정 동작 |
+| RF 추론 |  실시간 (n_jobs=1, F1=94.5%) |
+| ST-GCN v2 추론 |  실시간 GPU (Acc=99.63%) |
+| 모델 선택 다이얼로그 |  RF / ST-GCN v2 선택 |
+| 서기 감지 |  Normal (RF, ST-GCN 모두) |
+| 앉기 감지 |  Normal (RF, ST-GCN 모두) |
+| 쓰러짐 감지 |  Fall (RF, ST-GCN 모두) |
+| 확률 바 표시 |  softmax 확률 정상 반영 |
+| FN Detection Acc |  Fallen 기준 정상 동작 |
+| DB 저장 |  Normal/Fall 모두 정상 기록 |
+| 대시보드 |  낙상 탐지율 표시 |
+| 모델 비교 리포트 |  RF vs ST-GCN v2 (2모델) |
 
 ---
 
-## 📌 다음 작업
+##  다음 작업
 
 1. 추론 임계값 조정 검토 (50%→40% 등)
 2. FN Detection Acc 기반 알림 트리거 구현
@@ -516,7 +516,7 @@ if max_dist > 0:
 
 ---
 
-## 💡 교훈
+##  교훈
 
 ### sklearn n_jobs와 Qt 메인루프 충돌
 QTimer 안에서 멀티스레드 sklearn 추론 시 메모리 누수. GUI 환경에서는 반드시 `n_jobs=1`.

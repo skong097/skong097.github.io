@@ -111,17 +111,17 @@ Raspberry Pi 5 (8GB)
 ### 2.2 통신 채널 QoS 설계
 
 ```
-🔴 /robot_N/pose              → BEST_EFFORT  10Hz   TTL 5s   (위치, 최신값만)
-🟡 /robot_N/map_delta         → RELIABLE     1Hz    TTL 60s  (지도 delta)
-🟡 /robot_N/elevation_layer   → RELIABLE     2Hz    -        (elevation)
-🟡 /robot_N/low_obstacle_layer→ RELIABLE     2Hz    -        (저고도 장애물)
-🟢 /swarm/elevation_global    → RELIABLE     0.5Hz  -        (병합 후 GCS)
-🟢 /swarm/election            → RELIABLE     이벤트  KEEP_ALL (리더 선출)
-🟢 /swarm/heartbeat           → BEST_EFFORT  1Hz    -        (리더 생존 확인)
-🟢 /swarm/frontier_claims     → RELIABLE     이벤트  KEEP_ALL (frontier 예약)
-🟢 /swarm/comm_events         → RELIABLE     이벤트  -        (통신 이상)
-🟢 /swarm/victim              → RELIABLE     이벤트  KEEP_ALL (생존자 감지)
-🟢 /robot_N/rssi              → BEST_EFFORT  0.5Hz  -        (신호 강도)
+ /robot_N/pose              → BEST_EFFORT  10Hz   TTL 5s   (위치, 최신값만)
+ /robot_N/map_delta         → RELIABLE     1Hz    TTL 60s  (지도 delta)
+ /robot_N/elevation_layer   → RELIABLE     2Hz    -        (elevation)
+ /robot_N/low_obstacle_layer→ RELIABLE     2Hz    -        (저고도 장애물)
+ /swarm/elevation_global    → RELIABLE     0.5Hz  -        (병합 후 GCS)
+ /swarm/election            → RELIABLE     이벤트  KEEP_ALL (리더 선출)
+ /swarm/heartbeat           → BEST_EFFORT  1Hz    -        (리더 생존 확인)
+ /swarm/frontier_claims     → RELIABLE     이벤트  KEEP_ALL (frontier 예약)
+ /swarm/comm_events         → RELIABLE     이벤트  -        (통신 이상)
+ /swarm/victim              → RELIABLE     이벤트  KEEP_ALL (생존자 감지)
+ /robot_N/rssi              → BEST_EFFORT  0.5Hz  -        (신호 강도)
 ```
 
 ### 2.3 Robot 역할 분류
@@ -297,7 +297,7 @@ ros2 run rmw_zenoh_cpp init_rmw_zenoh_router
 from rclpy.qos import QoSProfile, ReliabilityPolicy, DurabilityPolicy, HistoryPolicy
 
 # ─────────────────────────────────────────────────────────
-# 🔴 HIGH: 로봇 위치, 상태, RSSI (10Hz, 손실 허용, 최신값만)
+#  HIGH: 로봇 위치, 상태, RSSI (10Hz, 손실 허용, 최신값만)
 # ─────────────────────────────────────────────────────────
 POSE_QOS = QoSProfile(
     reliability=ReliabilityPolicy.BEST_EFFORT,   # UDP: 빠름, 손실 허용
@@ -307,7 +307,7 @@ POSE_QOS = QoSProfile(
 )
 
 # ─────────────────────────────────────────────────────────
-# 🟡 MEDIUM: 지도 delta, Elevation Layer (1~2Hz, 손실 불허)
+#  MEDIUM: 지도 delta, Elevation Layer (1~2Hz, 손실 불허)
 # ─────────────────────────────────────────────────────────
 MAP_QOS = QoSProfile(
     reliability=ReliabilityPolicy.RELIABLE,       # TCP: 보장, 약간 느림
@@ -317,7 +317,7 @@ MAP_QOS = QoSProfile(
 )
 
 # ─────────────────────────────────────────────────────────
-# 🟢 LOW: 생존자 감지, Leader Election, 통신 이벤트 (이벤트 기반)
+#  LOW: 생존자 감지, Leader Election, 통신 이벤트 (이벤트 기반)
 # ─────────────────────────────────────────────────────────
 EVENT_QOS = QoSProfile(
     reliability=ReliabilityPolicy.RELIABLE,
@@ -1035,7 +1035,7 @@ class LeaderElection(Node):
         self._leader_dead_votes   = set()   # 투표 초기화
         self._quorum_retry_count  = 0
         self.get_logger().info(
-            f'Robot {self.robot_id}: LEADER 선출됨! 🏆 '
+            f'Robot {self.robot_id}: LEADER 선출됨!  '
             f'(쿼럼 {len(self._leader_dead_votes) + 1}대 합의)'
         )
         self.election_pub.publish(String(data=json.dumps({
@@ -1109,7 +1109,7 @@ if __name__ == '__main__':
 
 ## 9. Redis Blackboard + Semantic Event Memory
 
-### 9.0 🆕 보완: Redis HA 복제 (고가용성 설계)
+### 9.0  보완: Redis HA 복제 (고가용성 설계)
 
 > **문제**: 현재 설계는 Leader 로봇의 Redis에 모든 정보를 집중하는 계층형 방식이다.  
 > Leader가 물리적 충격으로 즉사하면 새 리더 선출 전까지 **Frontier Claim과 Semantic Memory가 전량 소실**된다.  
@@ -1139,10 +1139,10 @@ if __name__ == '__main__':
 └─────────────────────────────────────────────────────────────┘
 
 복제 대상:
-  ✅ 생존자 위치 (victims hash)         — 절대 소실 불가
-  ✅ Semantic Event Memory (events:*)   — Leader 컨텍스트 승계
-  ✅ Frontier Claim (frontier:claim:*)  — 중복 탐색 방지
-  ❌ 로봇 위치 (robot:N:state TTL 5s)   — 복제 불필요 (빠른 재생성)
+   생존자 위치 (victims hash)         — 절대 소실 불가
+   Semantic Event Memory (events:*)   — Leader 컨텍스트 승계
+   Frontier Claim (frontier:claim:*)  — 중복 탐색 방지
+   로봇 위치 (robot:N:state TTL 5s)   — 복제 불필요 (빠른 재생성)
 ```
 
 #### 복제 대상 분리 전략
@@ -1198,7 +1198,7 @@ cat << 'SCRIPT' > ~/ghost5_ws/scripts/promote_replica.sh
 # 사용법: ./promote_replica.sh <replica_robot_ip>
 REPLICA_IP=${1:-"192.168.1.102"}
 redis-cli -h ${REPLICA_IP} -p 6379 -a ghost5secure! REPLICAOF NO ONE
-echo "✅ Robot-2 Redis 복제본을 Master로 승격 완료 (IP: ${REPLICA_IP})"
+echo " Robot-2 Redis 복제본을 Master로 승격 완료 (IP: ${REPLICA_IP})"
 SCRIPT
 chmod +x ~/ghost5_ws/scripts/promote_replica.sh
 ```
@@ -1618,7 +1618,7 @@ class SemanticMemory:
 
 ## 10. 2.5D Elevation Map 구현
 
-### 10.0 🆕 보완: IMU 기반 동적 보정 (Dynamic Calibration)
+### 10.0  보완: IMU 기반 동적 보정 (Dynamic Calibration)
 
 > **문제**: RPLiDAR C1 Z-stack 누적은 로봇 주행 중 진동·경사로 인해  
 > 수평 스캔 빔이 바닥을 쳐서 **고스트 장애물(Ghost Obstacle)**을 생성할 위험이 있다.  
@@ -1947,9 +1947,9 @@ class LidarElevationNode(Node):
              hits 충족해도 확정 불가 → 순간적 이동 물체 잔상 억제
 
         두 필터 조합 효과:
-          정적 잔해 → hits 빠르게 누적 + 오래 유지 → 장애물 확정 ✅
-          이동 물체 → hits 적음 OR 지속 시간 짧음 → 미확정/소멸 ✅
-          노이즈    → Ray-casting으로 clearing + Temporal로 이중 억제 ✅
+          정적 잔해 → hits 빠르게 누적 + 오래 유지 → 장애물 확정 
+          이동 물체 → hits 적음 OR 지속 시간 짧음 → 미확정/소멸 
+          노이즈    → Ray-casting으로 clearing + Temporal로 이중 억제 
         """
         if not self.elevation_cells:
             return
@@ -2078,7 +2078,7 @@ global_costmap:
 
 ## 11. Rendezvous 프로토콜 구현
 
-### 11.0 🆕 보완: Communication Gradient Map (지능적 랑데부 지점 선택)
+### 11.0  보완: Communication Gradient Map (지능적 랑데부 지점 선택)
 
 > **문제**: 기존 설계는 신호 단절 시 단순히 '마지막 양호 지점' 한 점으로 복귀한다.  
 > 그 지점 자체가 이미 잔해로 막혔거나 무너졌을 수 있고, 여러 번 방문했던 경로가 이미 봉쇄된 상황을 전혀 고려하지 않는다.  
@@ -2652,7 +2652,7 @@ class ProximityDetectorNode(Node):
             })
             self.victim_pub.publish(String(data=detection))
             self.get_logger().warn(
-                f'⚠️ Robot {self.robot_id}: 생존자 감지 '
+                f' Robot {self.robot_id}: 생존자 감지 '
                 f'(신뢰도 {combined:.2f}, 거리 {np.median(us_arr):.2f}m)'
             )
 ```
@@ -2742,7 +2742,7 @@ class VictimFuser(Node):
         # TODO: 실제 위치 TF 조회 후 설정
         self.victim_pub.publish(msg)
         self.get_logger().warn(
-            f'🚨 Robot {self.robot_id}: 생존자 최종 보고 (신뢰도 {confidence:.2f})'
+            f' Robot {self.robot_id}: 생존자 최종 보고 (신뢰도 {confidence:.2f})'
         )
 ```
 
@@ -2981,7 +2981,7 @@ int32   frontiers_remaining
 > **설계 원칙**: 오프셋 페이징(offset/limit) 대신 **커서(cursor) 기반 페이징**을 사용한다.  
 > 이유: 실시간 데이터(Frontier claim, 로봇 상태, 이벤트 로그)는 지속적으로 추가/삭제되므로 offset 기반은 중복 조회 및 누락이 발생한다.
 
-### 16.0 🆕 보완: Election Phase 엣지 케이스 처리
+### 16.0  보완: Election Phase 엣지 케이스 처리
 
 > **문제**: Leader Election 진행 중(Election Phase)에 GCS나 다른 로봇이 Redis에 쓰기 시도를 하면  
 > Replica 승격 과정과 충돌하여 데이터 불일치가 발생할 수 있다.  
@@ -2996,8 +2996,8 @@ int32   frontiers_remaining
 정상 운영                     Leader Election 진행 중
 (write_lock = 0)             (write_lock = 1)
 
-  쓰기 허용 ✅                  쓰기 차단 ❌ (5초 TTL)
-  읽기 허용 ✅                  읽기 허용 ✅ (stale 데이터 명시)
+  쓰기 허용                   쓰기 차단  (5초 TTL)
+  읽기 허용                   읽기 허용  (stale 데이터 명시)
   API 응답: 200                 API 응답: 200 + warning 헤더
                                   X-Election-Status: in_progress
                                   X-Data-Staleness: possible
@@ -3497,12 +3497,12 @@ def get_all_events_safe() -> list[dict]:
         election_status = resp.headers.get('X-Election-Status', 'stable')
         if election_status == 'in_progress':
             retry_ms = int(resp.headers.get('X-Retry-After-Ms', 500))
-            print(f'⚠️  Election 진행 중 — 데이터 stale 가능 (재시도 권고: {retry_ms}ms)')
+            print(f'  Election 진행 중 — 데이터 stale 가능 (재시도 권고: {retry_ms}ms)')
 
         data = resp.json()
 
         if data.get('election_warning'):
-            print(f'  ℹ️  election_warning=True: 이 페이지 데이터는 구 버전일 수 있습니다.')
+            print(f'  ℹ  election_warning=True: 이 페이지 데이터는 구 버전일 수 있습니다.')
 
         all_events.extend(data['items'])
 
@@ -3842,9 +3842,9 @@ class LatencyBenchmark(Node):
                 # 목표 검증
                 p95 = sorted_l[p95_idx]
                 if p95 > 50:
-                    self.get_logger().warn(f'⚠️  P95 목표(50ms) 초과: {p95:.2f}ms')
+                    self.get_logger().warn(f'  P95 목표(50ms) 초과: {p95:.2f}ms')
                 else:
-                    self.get_logger().info(f'✅ P95 목표 달성: {p95:.2f}ms')
+                    self.get_logger().info(f' P95 목표 달성: {p95:.2f}ms')
 
 
 def main():
@@ -3862,7 +3862,7 @@ if __name__ == '__main__':
 
 ## 20. Pinky Pro 하드웨어 최적화
 
-### 20.1 🆕 다이나믹셀 XL330 슬립 감지 + EKF 가중치 보정
+### 20.1  다이나믹셀 XL330 슬립 감지 + EKF 가중치 보정
 
 > **문제**: 재난 현장의 미끄러운 잔해 위에서는 XL330 바퀴 슬립(Slip)이 심하여  
 > 엔코더 기반 오도메트리가 실제 이동과 크게 달라진다.  
@@ -3992,7 +3992,7 @@ def main():
     rclpy.shutdown()
 ```
 
-### 20.2 🆕 RPLiDAR C1 Energy Saving Mode
+### 20.2  RPLiDAR C1 Energy Saving Mode
 
 > **문제**: Raspberry Pi 5에서 다수 노드 동시 실행 시 배터리 소모가 극심하다.  
 > RPLiDAR C1의 모터는 탐색 여부와 무관하게 항상 최고 속도로 회전한다.  
@@ -4194,7 +4194,7 @@ Node(
 ),
 ```
 
-### 20.5 🆕 Pinky Pro 센서 배치 최적화 다이어그램
+### 20.5  Pinky Pro 센서 배치 최적화 다이어그램
 
 > 재난 현장에서 로봇의 안정성을 높이기 위한 센서 기하학적 보정 구조와  
 > 핵심 알고리즘 연동 흐름을 하나의 다이어그램으로 정리한다.

@@ -96,12 +96,12 @@ python3 tests/unit/test_leader_election_m08.py
 
 | 완료 조건 | 하드웨어/멀티프로세스 필요 | 상태 |
 |---|---|---|
-| 5대 시뮬 → Robot-5 Leader 선출 | ✅ | ⬜ |
-| Robot-5 종료 → Robot-4 3초 내 선출 | ✅ | ⬜ |
-| Election Storm 없음 확인 | ✅ | ⬜ |
-| 쿼럼 미달 승격 차단 확인 | ✅ | ⬜ |
-| [B2] 지수 백오프 로그 확인 | ✅ | ⬜ |
-| [B2] WriteBlockedError 발생/복구 | ✅ | ⬜ |
+| 5대 시뮬 → Robot-5 Leader 선출 |  | ⬜ |
+| Robot-5 종료 → Robot-4 3초 내 선출 |  | ⬜ |
+| Election Storm 없음 확인 |  | ⬜ |
+| 쿼럼 미달 승격 차단 확인 |  | ⬜ |
+| [B2] 지수 백오프 로그 확인 |  | ⬜ |
+| [B2] WriteBlockedError 발생/복구 |  | ⬜ |
 
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: "🤖 Home Guard Bot — 라즈베리파이 탑재 계획"
+title: " Home Guard Bot — 라즈베리파이 탑재 계획"
 date: 2026-03-21
 draft: true
 tags: ["ros2"]
@@ -7,7 +7,7 @@ categories: ["ros2"]
 description: "> **목표:** PC(GPU) + RPi 5 분산 아키텍처 > **작성일:** 2026-02-14 > **예정:** 차주 (2026-02-16 ~ )"
 ---
 
-# 🤖 Home Guard Bot — 라즈베리파이 탑재 계획
+#  Home Guard Bot — 라즈베리파이 탑재 계획
 
 > **목표:** PC(GPU) + RPi 5 분산 아키텍처
 > **작성일:** 2026-02-14

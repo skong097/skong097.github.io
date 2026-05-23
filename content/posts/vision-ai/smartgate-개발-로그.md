@@ -34,7 +34,7 @@ description: "| 항목 | 내용 | |------|------| | 프로젝트명 | SmartGate 
              ▼
 ┌─────────────────────────┐
 │  2팩터: 제스처 인증      │  MediaPipe Hands (mp.solutions)
-│  number: 수신호 시퀀스   │  예: ☝ → ✊ → 3개
+│  number: 수신호 시퀀스   │  예:  →  → 3개
 │  shape : 도형 드로잉     │  예: ○ → △ → □
 └────────────┬────────────┘
              │ 성공
@@ -140,7 +140,7 @@ LOCKED ──(30초 경과)────▶ IDLE  fail_count 초기화
 gesture_auth:
   # number 모드
   mode: "number"
-  sequence: [1, 0, 3]       # ☝ → ✊ → 3개
+  sequence: [1, 0, 3]       #  →  → 3개
   timeout_sec: 7.0
 
   # shape 모드 (전환 시 주석 교체)
@@ -192,11 +192,11 @@ python main.py
 
 | 항목 | 결과 |
 |------|------|
-| 얼굴 인식 | ✅ 정상 (stephen 38장, 유사도 ~0.74) |
-| number 모드 [1,0,3] | ✅ 정상 동작 |
-| shape 모드 ○△□ | ✅ 정상 동작 |
-| 한글 UI | ✅ 나눔폰트 정상 렌더링 |
-| ACCESS GRANTED | ✅ 정상 표시 |
+| 얼굴 인식 |  정상 (stephen 38장, 유사도 ~0.74) |
+| number 모드 [1,0,3] |  정상 동작 |
+| shape 모드 ○△□ |  정상 동작 |
+| 한글 UI |  나눔폰트 정상 렌더링 |
+| ACCESS GRANTED |  정상 표시 |
 
 ---
 

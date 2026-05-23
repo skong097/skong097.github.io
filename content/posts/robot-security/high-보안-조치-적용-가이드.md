@@ -1,5 +1,5 @@
 ---
-title: "🔴 HIGH 보안 조치 적용 가이드"
+title: " HIGH 보안 조치 적용 가이드"
 date: 2026-03-21
 draft: true
 tags: ["robot-security", "jwt", "hmac"]
@@ -7,7 +7,7 @@ categories: ["robot-security"]
 description: "> **iot-repo-1 · Voice IoT Controller** > 작성일: 2026-03-06 | NIST SP 800-213 / OWASP IoT Top 10 기반 이 문서는 HIGH 우선순위 보안 3개 "
 ---
 
-# 🔴 HIGH 보안 조치 적용 가이드
+#  HIGH 보안 조치 적용 가이드
 
 > **iot-repo-1 · Voice IoT Controller**  
 > 작성일: 2026-03-06 | NIST SP 800-213 / OWASP IoT Top 10 기반
@@ -54,7 +54,7 @@ bash scripts/harden_setup.sh
 - `settings.yaml`, `face_db/` 파일 권한 강화 (`chmod 600/700`)
 - `.gitignore`에 민감 파일 추가
 
-> ⚠️ `.env`는 절대 git에 커밋하지 마세요.
+>  `.env`는 절대 git에 커밋하지 마세요.
 
 ---
 
@@ -72,25 +72,25 @@ cp security_output/server/face_store.py server/face_store.py
 
 기존 코드 (camera_stream.py 등에서 찾아 교체):
 ```python
-# ❌ 기존 — 평문 로드
+#  기존 — 평문 로드
 with open("face_db/encodings.pkl", "rb") as f:
     face_db = pickle.load(f)
 ```
 
 교체 코드:
 ```python
-# ✅ 변경 — 암호화 로드
+#  변경 — 암호화 로드
 from server.face_store import load_embeddings, save_embeddings
 face_db = load_embeddings()
 ```
 
 저장 시:
 ```python
-# ❌ 기존
+#  기존
 with open("face_db/encodings.pkl", "wb") as f:
     pickle.dump(face_db, f)
 
-# ✅ 변경
+#  변경
 from server.face_store import save_embeddings
 save_embeddings(face_db)
 ```
@@ -179,10 +179,10 @@ cp security_output/server/esp32_secure.py server/esp32_secure.py
 ### 4-2. command_router.py TCP 송신 부분 교체
 
 ```python
-# ❌ 기존 — 평문 TCP 전송
+#  기존 — 평문 TCP 전송
 writer.write(json.dumps(cmd).encode() + b"\n")
 
-# ✅ 변경 — HMAC 서명 패킷 전송
+#  변경 — HMAC 서명 패킷 전송
 from server.esp32_secure import SecureTCPClient
 client = SecureTCPClient(host=ESP32_IP, port=9000)
 await client.send(cmd)
@@ -193,7 +193,7 @@ await client.send(cmd)
 `docs/esp32_hmac_verify.cpp`의 `verifyAndParse()` 함수를 ESP32 TCP 수신 루프에 통합합니다.  
 `SECRET_KEY`를 `.env`의 `ESP32_SECRET` 값과 동일하게 설정하세요.
 
-> 💡 ESP32 시크릿 키 관리: NVS(Non-Volatile Storage)에 저장하면 펌웨어 소스 노출 시에도 안전합니다.
+>  ESP32 시크릿 키 관리: NVS(Non-Volatile Storage)에 저장하면 펌웨어 소스 노출 시에도 안전합니다.
 
 ---
 
@@ -244,10 +244,10 @@ print("cmd:", parsed["cmd"])
 
 | 순서 | 항목 | 소요 시간 | 서버 재시작 필요 |
 |------|------|-----------|-----------------|
-| 1 | `harden_setup.sh` 실행 | 1분 | ❌ |
-| 2 | 얼굴 임베딩 암호화 (`face_store.py`) | 30분 | ✅ |
-| 3 | FastAPI JWT 인증 (`auth.py`) | 1~2시간 | ✅ |
-| 4 | TCP HMAC 서명 (`esp32_secure.py`) | 2~3시간 | ✅ + ESP32 OTA |
+| 1 | `harden_setup.sh` 실행 | 1분 |  |
+| 2 | 얼굴 임베딩 암호화 (`face_store.py`) | 30분 |  |
+| 3 | FastAPI JWT 인증 (`auth.py`) | 1~2시간 |  |
+| 4 | TCP HMAC 서명 (`esp32_secure.py`) | 2~3시간 |  + ESP32 OTA |
 
 ---
 

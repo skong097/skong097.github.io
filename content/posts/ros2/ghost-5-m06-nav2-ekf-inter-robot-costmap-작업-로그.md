@@ -93,12 +93,12 @@ python3 tests/unit/test_nav_m06.py --robot-id 1 --check-nav --check-costmap
 
 | 완료 조건 | 검증 방법 | 하드웨어 필요 | 상태 |
 |---|---|---|---|
-| NavigateToPose 목적지 이동 성공 | Action 결과 STATUS_SUCCEEDED | ✅ | ⬜ |
-| 슬립 감지 로그 출력 확인 | warn 로그 "슬립 감지!" 출력 | ✅ | ⬜ |
-| EKF 오도메트리 정확도 < 5cm | 1m 이동 후 오차 측정 | ✅ | ⬜ |
-| [B4] robot_poses_array 5Hz | Hz 샘플 평균 4~6Hz | ❌ (로컬 테스트 가능) | ⬜ |
-| [B4] costmap 장애물 마킹 | RViz2 시각 확인 | ✅ | ⬜ |
-| [B4] 0.3s 내 장애물 자동 삭제 | TTL 초과 후 costmap 확인 | ✅ | ⬜ |
+| NavigateToPose 목적지 이동 성공 | Action 결과 STATUS_SUCCEEDED |  | ⬜ |
+| 슬립 감지 로그 출력 확인 | warn 로그 "슬립 감지!" 출력 |  | ⬜ |
+| EKF 오도메트리 정확도 < 5cm | 1m 이동 후 오차 측정 |  | ⬜ |
+| [B4] robot_poses_array 5Hz | Hz 샘플 평균 4~6Hz |  (로컬 테스트 가능) | ⬜ |
+| [B4] costmap 장애물 마킹 | RViz2 시각 확인 |  | ⬜ |
+| [B4] 0.3s 내 장애물 자동 삭제 | TTL 초과 후 costmap 확인 |  | ⬜ |
 
 ---
 

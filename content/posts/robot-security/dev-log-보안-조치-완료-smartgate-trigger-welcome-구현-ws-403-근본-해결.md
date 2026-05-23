@@ -18,7 +18,7 @@ description: "- **프로젝트:** iot-repo-1 Voice IoT Controller - **작업자:
 
 ## 완료 항목
 
-### ✅ 1 — SmartGate `_entrance_light_on()` 버그 수정
+###  1 — SmartGate `_entrance_light_on()` 버그 수정
 
 - **파일:** `server/smartgate/manager.py`
 - **문제:** `from protocol.schema import cmd_light` — 존재하지 않는 함수 호출 → ImportError
@@ -28,7 +28,7 @@ description: "- **프로젝트:** iot-repo-1 Voice IoT Controller - **작업자:
 
 ---
 
-### ✅ 2 — WebSocket 403 근본 원인 해결 (재발 방지)
+###  2 — WebSocket 403 근본 원인 해결 (재발 방지)
 
 - **파일:** `web/index_dashboard.html`, `server/api_routes.py`
 
@@ -54,7 +54,7 @@ description: "- **프로젝트:** iot-repo-1 Voice IoT Controller - **작업자:
 
 ---
 
-### ✅ 3 — `api_routes.py` 얼굴 등록 500 오류 수정
+###  3 — `api_routes.py` 얼굴 등록 500 오류 수정
 
 - **파일:** `server/api_routes.py`
 - **문제:** `smartgate_register_face()` 내부에 `import cv2` 누락 → `NameError: name 'cv2' is not defined`
@@ -62,7 +62,7 @@ description: "- **프로젝트:** iot-repo-1 Voice IoT Controller - **작업자:
 
 ---
 
-### ✅ 4 — `trigger_welcome()` 시뮬레이션 테스트 엔드포인트 추가
+###  4 — `trigger_welcome()` 시뮬레이션 테스트 엔드포인트 추가
 
 - **파일:** `server/main.py`
 - **추가 엔드포인트:** `POST /debug/smartgate/welcome-test`
@@ -71,7 +71,7 @@ description: "- **프로젝트:** iot-repo-1 Voice IoT Controller - **작업자:
 
 ---
 
-### ✅ 5 — SmartGate 전체 2FA 흐름 실물 검증 완료
+###  5 — SmartGate 전체 2FA 흐름 실물 검증 완료
 
 **테스트 환경:** ESP32-CAM 연결, mediapipe 0.10.14 설치
 
@@ -79,14 +79,14 @@ description: "- **프로젝트:** iot-repo-1 Voice IoT Controller - **작업자:
 
 ```
 SmartGate ARM
-    → 얼굴 인식 (InsightFace buffalo_sc ArcFace) ✅
-    → Liveness yaw 챌린지 (mediapipe 0.10.14) ✅
-    → 제스처 인증 [1, 0, 3] ✅
-    → 게이트 오픈 (서보 5초) ✅
+    → 얼굴 인식 (InsightFace buffalo_sc ArcFace) 
+    → Liveness yaw 챌린지 (mediapipe 0.10.14) 
+    → 제스처 인증 [1, 0, 3] 
+    → 게이트 오픈 (서보 5초) 
     → welcome_pending = True
-    → 현관 PIR 감지 (POST /pir-event) ✅
-    → 💡 현관 조명 ON (TCP → ESP32, 보드 연결 시)
-    → 🔊 TTS "Stephen님 어서오세요. 환영합니다." ✅
+    → 현관 PIR 감지 (POST /pir-event) 
+    →  현관 조명 ON (TCP → ESP32, 보드 연결 시)
+    →  TTS "Stephen님 어서오세요. 환영합니다." 
 ```
 
 **보안 로직 검증:**
@@ -97,7 +97,7 @@ SmartGate ARM
 
 ---
 
-### ✅ 6 — mediapipe 설치 (Liveness 활성화)
+###  6 — mediapipe 설치 (Liveness 활성화)
 
 ```bash
 pip install mediapipe==0.10.14 --break-system-packages

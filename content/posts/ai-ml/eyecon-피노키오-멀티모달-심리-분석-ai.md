@@ -63,11 +63,11 @@ EyeCon은 현재 다음과 같은 주요 기능을 구현하고 있습니다:
 ### 성과 지표
 
 - **구현 완료 기능:**
-  - MediaPipe Face Mesh 및 홍채 추적 (✅)
-  - 스트레스 스코어 계산 (✅)
-  - PyQt6 GUI 및 실시간 데이터 시각화 (✅)
-  - Edge TTS 음성 출력 및 Google Speech Recognition 음성 입력 (✅)
-  - Ollama LLM 대화 시스템 (✅)
+  - MediaPipe Face Mesh 및 홍채 추적 ()
+  - 스트레스 스코어 계산 ()
+  - PyQt6 GUI 및 실시간 데이터 시각화 ()
+  - Edge TTS 음성 출력 및 Google Speech Recognition 음성 입력 ()
+  - Ollama LLM 대화 시스템 ()
 
 - **개선 방향:**
   - 감정 분류 모델 도입을 통한 정확성 향상

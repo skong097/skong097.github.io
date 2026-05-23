@@ -9,7 +9,7 @@ description: "``` /home/gjkong/dev_ws/yolo/myproj/ │"
 
 # Home Safe Solution - 파일 배치 가이드
 
-## 📁 정확한 디렉토리 구조
+##  정확한 디렉토리 구조
 
 ```
 /home/gjkong/dev_ws/yolo/myproj/
@@ -51,7 +51,7 @@ description: "``` /home/gjkong/dev_ws/yolo/myproj/ │"
 └── test_pipeline.py                        # ⭐ 테스트 스크립트 (루트)
 ```
 
-## 🔧 설치 순서
+##  설치 순서
 
 ### 1. pipeline/ 폴더 생성 및 파일 복사
 ```bash
@@ -78,7 +78,7 @@ cd /home/gjkong/dev_ws/yolo/myproj
 python test_pipeline.py
 ```
 
-## ⚠️ config.py 경로 수정 필요
+##  config.py 경로 수정 필요
 
 `pipeline/config.py` 파일 상단의 경로가 맞는지 확인:
 
@@ -95,7 +95,7 @@ PIPELINE_DIR = PROJECT_DIR / "pipeline"
 REPORT_DIR = PROJECT_DIR / "scripts/admin/Model_Compare_Report"
 ```
 
-## 🔗 main_window.py 통합
+##  main_window.py 통합
 
 `gui/main_window.py`에서:
 
@@ -111,7 +111,7 @@ class MainWindow(QMainWindow):
         # stacked_widget 또는 tab에 추가
 ```
 
-## 📋 실행 방법
+##  실행 방법
 
 ```bash
 # GUI 실행

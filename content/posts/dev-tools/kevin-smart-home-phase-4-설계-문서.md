@@ -27,26 +27,26 @@ v0.4.0까지 독립 실행 중이던 **PyOpenGL 3D 하우스 모델**을
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│  Kevin Smart Home Dashboard v1.0          [🌙 테마 선택 ▼]  │
+│  Kevin Smart Home Dashboard v1.0          [ 테마 선택 ▼]  │
 ├──────────────────────────┬──────────────────────────────────┤
-│                          │  📡 센서 패널                     │
+│                          │   센서 패널                     │
 │   [PyOpenGL 3D 뷰]       │  온도: 22.5°C   습도: 55%        │
 │                          │  조도: 450lux   가스: 정상        │
 │   - LED 점등 시각화       ├──────────────────────────────────┤
-│   - PIR 인디케이터        │  🤖 Kevin 상태                   │
-│   - 알람 와이어프레임      │  kevin-01: 🟢 외출 중            │
-│   - 차고문 애니메이션      │  kevin-02: 🔵 청소 중            │
-│                          │  kevin-03: 🟡 대기               │
+│   - PIR 인디케이터        │   Kevin 상태                   │
+│   - 알람 와이어프레임      │  kevin-01:  외출 중            │
+│   - 차고문 애니메이션      │  kevin-02:  청소 중            │
+│                          │  kevin-03:  대기               │
 │   [회전] [줌] [리셋]      ├──────────────────────────────────┤
-│                          │  🎬 시나리오                      │
-│                          │  현재: ☀️ 낮 시나리오             │
+│                          │   시나리오                      │
+│                          │  현재:  낮 시나리오             │
 │                          │  [오전] [오후] [저녁] [야간]      │
 │                          ├──────────────────────────────────┤
-│                          │  💡 공간 LED 제어                 │
+│                          │   공간 LED 제어                 │
 │                          │  [현관] [거실] [주방] [욕실]      │
 │                          │  [안방] [차고] [전체ON] [전체OFF] │
 ├──────────────────────────┴──────────────────────────────────┤
-│  📋 이벤트 로그                                              │
+│   이벤트 로그                                              │
 │  [14:32] kevin-02 청소 완료 — 거실                           │
 │  [14:15] 외부 PIR 감지 → 알람 발송                           │
 └─────────────────────────────────────────────────────────────┘
@@ -64,13 +64,13 @@ PyQt6에서 OpenGL을 사용하는 표준 방법은 `QOpenGLWidget`을 상속받
 ```
 기존 구조 (GLUT 기반, 독립 실행)
   glutInit → glutCreateWindow → glutMainLoop
-  ❌ PyQt6에 내장 불가
+   PyQt6에 내장 불가
 
 변경 구조 (QOpenGLWidget 기반, PyQt6 내장)
   QOpenGLWidget.initializeGL()    ← GL 초기화
   QOpenGLWidget.paintGL()         ← 매 프레임 렌더링
   QOpenGLWidget.resizeGL()        ← 창 크기 변경 대응
-  ✅ PyQt6 레이아웃에 위젯으로 삽입 가능
+   PyQt6 레이아웃에 위젯으로 삽입 가능
 ```
 
 ### 2.2 렌더링 루프 타이머
@@ -101,21 +101,21 @@ def wheelEvent(self, event): ...
 kevin_smart_home/
 │
 ├── gui/
-│   ├── main_dashboard.py          ← 🆕 PyQt6 메인 윈도우
-│   ├── opengl_widget.py           ← 🆕 QOpenGLWidget 기반 3D 뷰
-│   ├── sensor_panel.py            ← 🆕 센서 데이터 패널
-│   ├── control_panel.py           ← 🆕 LED / 시나리오 제어
-│   └── event_log_widget.py        ← 🆕 이벤트 로그 위젯
+│   ├── main_dashboard.py          ←  PyQt6 메인 윈도우
+│   ├── opengl_widget.py           ←  QOpenGLWidget 기반 3D 뷰
+│   ├── sensor_panel.py            ←  센서 데이터 패널
+│   ├── control_panel.py           ←  LED / 시나리오 제어
+│   └── event_log_widget.py        ←  이벤트 로그 위젯
 │
 ├── digital_twin/
-│   ├── house_model.py             ← ✏️ v0.4 → v0.5 (QOpenGLWidget 호환)
-│   ├── sensor_simulator.py        ← ✏️ v0.2 → v0.3 (시그널 연동)
-│   └── data_bridge.py             ← 🆕 GUI ↔ 3D 모델 데이터 브릿지
+│   ├── house_model.py             ←  v0.4 → v0.5 (QOpenGLWidget 호환)
+│   ├── sensor_simulator.py        ←  v0.2 → v0.3 (시그널 연동)
+│   └── data_bridge.py             ←  GUI ↔ 3D 모델 데이터 브릿지
 │
-└── main_dashboard.py              ← 🆕 진입점 (dashboard 모드)
+└── main_dashboard.py              ←  진입점 (dashboard 모드)
 ```
 
-> ⚠️ DEV_RULES 원칙 3 준수: Kevin Patrol 코드는 복사 후 수정
+>  DEV_RULES 원칙 3 준수: Kevin Patrol 코드는 복사 후 수정
 
 ---
 
@@ -279,8 +279,8 @@ QMainWindow
 | 창 생성 | `glutCreateWindow()` | PyQt6가 관리 |
 | 렌더링 | `glutDisplayFunc()` | `paintGL()` |
 
-> ✅ 렌더링 로직(박스, LED, PIR, 알람 색상 등)은 **100% 재사용**  
-> ✅ GLUT 의존성만 제거하고 QOpenGLWidget 인터페이스로 교체
+>  렌더링 로직(박스, LED, PIR, 알람 색상 등)은 **100% 재사용**  
+>  GLUT 의존성만 제거하고 QOpenGLWidget 인터페이스로 교체
 
 ---
 

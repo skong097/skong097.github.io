@@ -4,14 +4,14 @@ date: 2026-03-21
 draft: true
 tags: ["smart-home"]
 categories: ["smart-home"]
-description: "- **프로젝트:** iot-repo-1 Voice IoT Controller - **날짜:** 2026-03-07 - **상태:** 🔴 미해결"
+description: "- **프로젝트:** iot-repo-1 Voice IoT Controller - **날짜:** 2026-03-07 - **상태:**  미해결"
 ---
 
 # ISSUE — 방해금지(dnd) 모드 미등록 인물 TTS 알람 미억제
 
 - **프로젝트:** iot-repo-1 Voice IoT Controller
 - **날짜:** 2026-03-07
-- **상태:** 🔴 미해결
+- **상태:**  미해결
 - **관련 파일:** `server/camera_stream.py`, `server/command_router.py`, `web/index_dashboard.html`
 
 ---
@@ -20,7 +20,7 @@ description: "- **프로젝트:** iot-repo-1 Voice IoT Controller - **날짜:** 
 
 방해금지 모드 활성화 상태에서 미등록 인물 감지 시:
 - TTS 음성 알람 발생 (억제 안 됨)
-- 웹 대시보드 `🚨 현관 미등록 인물 감지` 알람 팝업 발생
+- 웹 대시보드 ` 현관 미등록 인물 감지` 알람 팝업 발생
 
 ---
 

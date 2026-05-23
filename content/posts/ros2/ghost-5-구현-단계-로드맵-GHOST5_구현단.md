@@ -29,7 +29,7 @@ description: "> GPS-denied Hazard Operation with Swarm Team — 5 Units > 작성
 9. [Phase 7 — PX4 SITL + 최종 검증](#9-phase-7--px4-sitl--최종-검증-m18m20)
 10. [진입 조건 체크리스트](#10-진입-조건-체크리스트)
 11. [개발 세션 로그 규칙](#11-개발-세션-로그-규칙)
-12. [🆕 보완 사항 상세](#12-보완-사항-상세)
+12. [ 보완 사항 상세](#12-보완-사항-상세)
 
 ---
 
@@ -355,7 +355,7 @@ hits <= 0 → 셀 삭제 (Ghost Trail 제거)
 | 10cm ≤ h < 22cm | 60 (주의) |
 | h ≥ 22cm | 100 (통과 불가) |
 
-> ⚠️ **[보완 B3] Elevation Map 메모리 관리 최적화** — 상세 내용은 [섹션 12.3](#123-b3--25d-elevation-map-메모리-관리-최적화-m07) 참조
+>  **[보완 B3] Elevation Map 메모리 관리 최적화** — 상세 내용은 [섹션 12.3](#123-b3--25d-elevation-map-메모리-관리-최적화-m07) 참조
 
 **핵심 보완 요약**
 - `elevation_cells` 딕셔너리 → `float32` Numpy 2D Array 교체 (연산 속도 + 메모리 효율)
@@ -405,7 +405,7 @@ VICTORY 선언 전 최소 3대가 /swarm/leader_dead 투표
 쿼럼 미달 → QUORUM_TIMEOUT(5s) 대기 후 재시도 (최대 3회)
 ```
 
-> ⚠️ **[보완 B2] Redis HA 승격 레이스 컨디션 방지** — 상세 내용은 [섹션 12.2](#122-b2--redis-ha-승격-write-lock-레이스-컨디션-방지-m08-m13) 참조
+>  **[보완 B2] Redis HA 승격 레이스 컨디션 방지** — 상세 내용은 [섹션 12.2](#122-b2--redis-ha-승격-write-lock-레이스-컨디션-방지-m08-m13) 참조
 
 **핵심 보완 요약**
 - `ElectionGuard.safe_write()`: 선형 백오프 → 지수 백오프 교체 (base=0.5s, max=8s)
@@ -786,7 +786,7 @@ enu_z = -ned_z
 | PX4 | v1.16.0+ |
 | Python | 3.12+ |
 
-> ⚠️ **[보완 B1] PX4-ROS2 시각 동기화** — 상세 내용은 [섹션 12.1](#121-b1--px4-ros2-시각-동기화-m18) 참조
+>  **[보완 B1] PX4-ROS2 시각 동기화** — 상세 내용은 [섹션 12.1](#121-b1--px4-ros2-시각-동기화-m18) 참조
 
 **핵심 보완 요약**
 - `px4_topic_bridge.py`에 `TimesyncStatus` 구독 → PX4 클록 오프셋 계산 → 모든 `/drone/*` 헤더 스탬프를 `self.get_clock().now()`로 강제 대체
@@ -936,7 +936,7 @@ commit:
 
 ---
 
-## 12. 🆕 보완 사항 상세
+## 12.  보완 사항 상세
 
 > v1.1에서 추가된 3가지 보완 사항의 구현 세부 내용.  
 > 각 보완은 해당 모듈 섹션의 완료 조건에도 `[B1]`, `[B2]`, `[B3]` 태그로 반영됨.
@@ -1004,7 +1004,7 @@ class PX4TopicBridge(Node):
         enu_z = -msg.z
 
         pose = PoseStamped()
-        # ✅ 핵심: PX4 원본 타임스탬프 대신 ROS2 현재 시계 사용
+        #  핵심: PX4 원본 타임스탬프 대신 ROS2 현재 시계 사용
         pose.header.stamp    = self._ros2_stamp().to_msg()
         pose.header.frame_id = 'map'
         pose.pose.position.x = enu_x
@@ -1030,7 +1030,7 @@ class AnyNodeUsingTF(Node):
     def __init__(self):
         super().__init__('...')
 
-        # ✅ 기본값 10s → 30s로 확장
+        #  기본값 10s → 30s로 확장
         # 이유: 드론 좌표가 네트워크 지연으로 최대 수 초 늦게 도착할 수 있음
         #       TF Buffer가 짧으면 과거 위치 조회 실패 → ExtrapolationException
         self.tf_buffer = tf2_ros.Buffer(
