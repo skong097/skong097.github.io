@@ -225,7 +225,7 @@ author: ''
 
 <div class="tech-grid">
   <div class="tech-card">
-    <div class="tech-card-title">빅데이터 인프라 <span style="font-size:0.6rem;font-weight:500;opacity:0.7;margin-left:0.4rem;padding:2px 7px;border-radius:5px;background:rgba(124,106,239,0.12);border:1px solid rgba(124,106,239,0.22);">NCsoft 19년</span></div>
+    <div class="tech-card-title">빅데이터 인프라</div>
     <div class="tech-tags">
       <span class="tech-tag">Hadoop v2/v3</span>
       <span class="tech-tag">HDFS</span>
