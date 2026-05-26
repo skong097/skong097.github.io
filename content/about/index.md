@@ -389,7 +389,7 @@ author: ''
 
 <div class="about-section-title">최근 프로젝트</div>
 
-<p class="about-intro" style="text-align:left !important; max-width:100%; margin:0 0 1rem; font-size:0.92rem; opacity:0.65;">애드인에듀 Physical AI 양성과정 (2025.12 ~ 2026.06)는 실물 로봇을 활용한 VLA(Vision-Language-Action) 모방학습 기반 Physical AI 엔지니어링 과정에서 팀 단위로 수행한 4개 프로젝트입니다.</p>
+<p class="about-intro" style="text-align:left !important; max-width:100%; margin:0 0 1rem; font-size:0.92rem; opacity:0.65;">실물 로봇을 활용한 VLA(Vision-Language-Action) 모방학습 기반 Physical AI 엔지니어링 과정에서 팀 단위로 수행한 4개 프로젝트입니다. — 애드인에듀 Physical AI 양성과정 (2025.12 ~ 2026.06)</p>
 
 <div class="project-list">
   <a class="project-link" href="https://github.com/skong097/vision_ai" target="_blank" rel="noopener">
@@ -422,7 +422,7 @@ author: ''
   </a>
 </div>
 
-<div class="about-section-title" style="margin-top:2.5rem;">기타 GitHub 활동</div>
+<div class="about-section-title" style="margin-top:2.5rem;">기타 활동</div>
 
 <div class="project-list">
   <a class="project-link" href="https://github.com/skong097/multi-robot-monitor" target="_blank" rel="noopener">
