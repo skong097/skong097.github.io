@@ -8,10 +8,6 @@ ShowReadingTime: false
 ShowPostNavLinks: false
 hideMeta: true
 author: ''
-cover:
-  image: images/covers/about-cover.png
-  alt: About Stephen
-  hidden: false
 ---
 
 <style>
@@ -221,7 +217,9 @@ cover:
 <!-- ═══ 3D 히어로 (Claude & Gemini 엔티티) ═══ -->
 {{< about-3d >}}
 
-<p class="about-intro" style="text-align:left !important; max-width:100%; margin:1rem 0;">로보틱스 소프트웨어 개발자. 자율 순찰 로봇, 컴퓨터 비전, ROS2 기반 시스템을 개발하고 있습니다.</p>
+<p class="about-intro" style="text-align:left !important; max-width:100%; margin:1rem 0;">23년간 대규모 IT 인프라의 무중단 운영을 책임져 온 엔지니어입니다. 다음 20년은 사람을 직접 돕는 Physical AI 시스템에 그 경험을 쓰려 합니다.</p>
+
+<p class="about-intro" style="text-align:left !important; max-width:100%; margin:0.5rem 0 1rem;">현재는 ROS2 기반 자율 순찰 로봇과 컴퓨터 비전 시스템을 개발하며, 매주 블로그에 학습·실습을 기록하고 있습니다.</p>
 
 <div class="about-section-title">기술 스택</div>
 
