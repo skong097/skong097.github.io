@@ -232,7 +232,6 @@ author: ''
       <span class="tech-tag">HDFS Router (RBF)</span>
       <span class="tech-tag">Hive</span>
       <span class="tech-tag">Impala</span>
-      <span class="tech-tag">HBase</span>
       <span class="tech-tag">YARN</span>
       <span class="tech-tag">ZooKeeper</span>
       <span class="tech-tag">Ranger</span>
@@ -248,7 +247,6 @@ author: ''
       <span class="tech-tag">Grafana</span>
       <span class="tech-tag">InfluxDB</span>
       <span class="tech-tag">Prometheus</span>
-      <span class="tech-tag">Zenoss</span>
       <span class="tech-tag">이상탐지·장애예측</span>
     </div>
   </div>
@@ -270,9 +268,7 @@ author: ''
     <div class="tech-card-title">MLOps / AIOps</div>
     <div class="tech-tags">
       <span class="tech-tag">MLflow</span>
-      <span class="tech-tag">Kubeflow</span>
       <span class="tech-tag">Airflow</span>
-      <span class="tech-tag">CI/CD for ML</span>
       <span class="tech-tag">Model Monitoring</span>
       <span class="tech-tag">XGBoost</span>
       <span class="tech-tag">LightGBM</span>
@@ -284,7 +280,6 @@ author: ''
       <span class="tech-tag">ROS2 Jazzy</span>
       <span class="tech-tag">Nav2</span>
       <span class="tech-tag">SLAM Toolbox</span>
-      <span class="tech-tag">BehaviorTree.CPP</span>
       <span class="tech-tag">Gazebo</span>
       <span class="tech-tag">micro-ROS</span>
     </div>
@@ -294,6 +289,7 @@ author: ''
     <div class="tech-tags">
       <span class="tech-tag">YOLO v8/v11</span>
       <span class="tech-tag">ST-GCN (PYSKL 전이학습)</span>
+      <span class="tech-tag">CNN</span>
       <span class="tech-tag">Random Forest</span>
       <span class="tech-tag">PyTorch</span>
       <span class="tech-tag">TensorFlow</span>
@@ -306,6 +302,7 @@ author: ''
       <span class="tech-tag">OpenCV</span>
       <span class="tech-tag">MediaPipe Face Mesh</span>
       <span class="tech-tag">Pose Estimation</span>
+      <span class="tech-tag">Tracking</span>
       <span class="tech-tag">Liveness Detection</span>
       <span class="tech-tag">HSV 색공간</span>
     </div>
@@ -317,16 +314,6 @@ author: ''
       <span class="tech-tag">Porcupine 웨이크워드</span>
       <span class="tech-tag">Ollama 로컬 LLM</span>
       <span class="tech-tag">한국어 자연어 제어</span>
-    </div>
-  </div>
-  <div class="tech-card">
-    <div class="tech-card-title">AI Agent</div>
-    <div class="tech-tags">
-      <span class="tech-tag">Tool Use</span>
-      <span class="tech-tag">LLM 제어</span>
-      <span class="tech-tag">자율 판단</span>
-      <span class="tech-tag">Agent Flow</span>
-      <span class="tech-tag">Orchestration</span>
     </div>
   </div>
   <div class="tech-card">
