@@ -35,18 +35,41 @@
   .about-3d-title-bar {
     position: absolute;
     top: 0; left: 0; right: 0;
+    height: 4.5rem;
     z-index: 10;
     text-align: center;
     padding: 1.5rem 2rem 0;
     pointer-events: none;
   }
 
-  .about-3d-title-bar h2 {
-    font-family: 'Space Mono', monospace;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #e0e0e8;
-    text-shadow: 0 2px 20px rgba(124, 106, 239, 0.3);
+  .about-3d-floating {
+    position: absolute;
+    top: 1.6rem;
+    left: 0; right: 0;
+    text-align: center;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    color: #e8e8f0;
+    text-shadow: 0 2px 24px rgba(124, 106, 239, 0.45), 0 0 12px rgba(167, 139, 250, 0.25);
+    opacity: 0;
+    animation: aboutFloatFade 8s ease-in-out infinite;
+    will-change: opacity, transform;
+  }
+
+  .about-3d-floating.second {
+    animation-delay: -4s;
+    color: #f4eede;
+    text-shadow: 0 2px 24px rgba(251, 191, 36, 0.4), 0 0 12px rgba(253, 230, 138, 0.25);
+  }
+
+  @keyframes aboutFloatFade {
+    0%   { opacity: 0; transform: translateY(10px); }
+    15%  { opacity: 1; transform: translateY(0); }
+    45%  { opacity: 1; transform: translateY(0); }
+    60%  { opacity: 0; transform: translateY(-10px); }
+    100% { opacity: 0; transform: translateY(-10px); }
   }
 
   .about-3d-label {
@@ -92,7 +115,7 @@
 
   @media (max-width: 768px) {
     #about-3d-wrapper { height: 360px; }
-    .about-3d-title-bar h2 { font-size: 1.2rem; }
+    .about-3d-floating { font-size: 1.05rem; top: 1.2rem; }
     .about-3d-label { left: 1rem; }
     .about-3d-label .name { font-size: 0.65rem; }
     .about-3d-label .trait { font-size: 0.55rem; }
@@ -100,7 +123,8 @@
 </style>
 
 <div class="about-3d-title-bar">
-  <h2>About Me</h2>
+  <div class="about-3d-floating">사람을 돕는 Physical AI</div>
+  <div class="about-3d-floating second">신뢰받는 로봇을 만듭니다.</div>
 </div>
 
 <div class="about-3d-label">

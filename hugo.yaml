@@ -65,7 +65,7 @@ menu:
     url: /search/
     weight: 50
   - identifier: about
-    name: About
+    name: About me
     url: /about/
     weight: 60
 outputs:
