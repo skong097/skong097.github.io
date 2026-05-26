@@ -225,11 +225,66 @@ author: ''
 
 <div class="tech-grid">
   <div class="tech-card">
+    <div class="tech-card-title">빅데이터 인프라 <span style="font-size:0.6rem;font-weight:500;opacity:0.7;margin-left:0.4rem;padding:2px 7px;border-radius:5px;background:rgba(124,106,239,0.12);border:1px solid rgba(124,106,239,0.22);">NCsoft 19년</span></div>
+    <div class="tech-tags">
+      <span class="tech-tag">Hadoop v2/v3</span>
+      <span class="tech-tag">HDFS</span>
+      <span class="tech-tag">HDFS Router (RBF)</span>
+      <span class="tech-tag">Hive</span>
+      <span class="tech-tag">Impala</span>
+      <span class="tech-tag">HBase</span>
+      <span class="tech-tag">YARN</span>
+      <span class="tech-tag">ZooKeeper</span>
+      <span class="tech-tag">Ranger</span>
+      <span class="tech-tag">Kafka</span>
+      <span class="tech-tag">NiFi</span>
+      <span class="tech-tag">Cloudera → Apache 이관</span>
+    </div>
+  </div>
+  <div class="tech-card">
+    <div class="tech-card-title">모니터링·관측성</div>
+    <div class="tech-tags">
+      <span class="tech-tag">ELK Stack</span>
+      <span class="tech-tag">Grafana</span>
+      <span class="tech-tag">InfluxDB</span>
+      <span class="tech-tag">Prometheus</span>
+      <span class="tech-tag">Zenoss</span>
+      <span class="tech-tag">이상탐지·장애예측</span>
+    </div>
+  </div>
+  <div class="tech-card">
+    <div class="tech-card-title">인프라·OS·네트워크</div>
+    <div class="tech-tags">
+      <span class="tech-tag">OpenStack</span>
+      <span class="tech-tag">Linux</span>
+      <span class="tech-tag">Windows Server</span>
+      <span class="tech-tag">TCP/IP</span>
+      <span class="tech-tag">DNS</span>
+      <span class="tech-tag">VPN</span>
+      <span class="tech-tag">방화벽</span>
+      <span class="tech-tag">HA 이중화</span>
+      <span class="tech-tag">DR 구축</span>
+    </div>
+  </div>
+  <div class="tech-card">
+    <div class="tech-card-title">MLOps / AIOps</div>
+    <div class="tech-tags">
+      <span class="tech-tag">MLflow</span>
+      <span class="tech-tag">Kubeflow</span>
+      <span class="tech-tag">Airflow</span>
+      <span class="tech-tag">CI/CD for ML</span>
+      <span class="tech-tag">Model Monitoring</span>
+      <span class="tech-tag">XGBoost</span>
+      <span class="tech-tag">LightGBM</span>
+    </div>
+  </div>
+  <div class="tech-card">
     <div class="tech-card-title">Robotics & ROS2</div>
     <div class="tech-tags">
       <span class="tech-tag">ROS2 Jazzy</span>
       <span class="tech-tag">Nav2</span>
       <span class="tech-tag">SLAM Toolbox</span>
+      <span class="tech-tag">BehaviorTree.CPP</span>
       <span class="tech-tag">Gazebo</span>
       <span class="tech-tag">micro-ROS</span>
     </div>
@@ -237,28 +292,60 @@ author: ''
   <div class="tech-card">
     <div class="tech-card-title">AI / ML / DL</div>
     <div class="tech-tags">
-      <span class="tech-tag">YOLO</span>
-      <span class="tech-tag">ST-GCN</span>
+      <span class="tech-tag">YOLO v8/v11</span>
+      <span class="tech-tag">ST-GCN (PYSKL 전이학습)</span>
       <span class="tech-tag">Random Forest</span>
-      <span class="tech-tag">Ollama</span>
-      <span class="tech-tag">TensorFlow</span>
       <span class="tech-tag">PyTorch</span>
+      <span class="tech-tag">TensorFlow</span>
+      <span class="tech-tag">Ollama</span>
     </div>
   </div>
   <div class="tech-card">
     <div class="tech-card-title">Computer Vision</div>
     <div class="tech-tags">
       <span class="tech-tag">OpenCV</span>
-      <span class="tech-tag">MediaPipe</span>
-      <span class="tech-tag">실시간 감지</span>
+      <span class="tech-tag">MediaPipe Face Mesh</span>
+      <span class="tech-tag">Pose Estimation</span>
+      <span class="tech-tag">Liveness Detection</span>
+      <span class="tech-tag">HSV 색공간</span>
+    </div>
+  </div>
+  <div class="tech-card">
+    <div class="tech-card-title">Voice & LLM</div>
+    <div class="tech-tags">
+      <span class="tech-tag">faster-whisper STT</span>
+      <span class="tech-tag">Porcupine 웨이크워드</span>
+      <span class="tech-tag">Ollama 로컬 LLM</span>
+      <span class="tech-tag">한국어 자연어 제어</span>
+    </div>
+  </div>
+  <div class="tech-card">
+    <div class="tech-card-title">AI Agent</div>
+    <div class="tech-tags">
+      <span class="tech-tag">Tool Use</span>
+      <span class="tech-tag">LLM 제어</span>
+      <span class="tech-tag">자율 판단</span>
+      <span class="tech-tag">Agent Flow</span>
+      <span class="tech-tag">Orchestration</span>
+    </div>
+  </div>
+  <div class="tech-card">
+    <div class="tech-card-title">Edge / IoT</div>
+    <div class="tech-tags">
+      <span class="tech-tag">ESP32</span>
+      <span class="tech-tag">ESP32-CAM</span>
+      <span class="tech-tag">AES 암호화 저장</span>
+      <span class="tech-tag">TCP / 시리얼</span>
     </div>
   </div>
   <div class="tech-card">
     <div class="tech-card-title">Application</div>
     <div class="tech-tags">
       <span class="tech-tag">Python</span>
-      <span class="tech-tag">PyQt6</span>
+      <span class="tech-tag">C++</span>
       <span class="tech-tag">FastAPI</span>
+      <span class="tech-tag">WebSocket</span>
+      <span class="tech-tag">PyQt6</span>
       <span class="tech-tag">PyQtGraph</span>
     </div>
   </div>
@@ -273,51 +360,7 @@ author: ''
     </div>
   </div>
   <div class="tech-card">
-    <div class="tech-card-title">MLOps / AIOps</div>
-    <div class="tech-tags">
-      <span class="tech-tag">MLflow</span>
-      <span class="tech-tag">Kubeflow</span>
-      <span class="tech-tag">Airflow</span>
-      <span class="tech-tag">Prometheus</span>
-      <span class="tech-tag">Grafana</span>
-      <span class="tech-tag">ELK Stack</span>
-      <span class="tech-tag">CI/CD for ML</span>
-      <span class="tech-tag">Model Monitoring</span>
-      <span class="tech-tag">Hadoop</span>
-      <span class="tech-tag">YARN</span>
-      <span class="tech-tag">HDFS</span>
-    </div>
-  </div>
-  <div class="tech-card">
-    <div class="tech-card-title">AI Agent</div>
-    <div class="tech-tags">
-      <span class="tech-tag">Tool Use</span>
-      <span class="tech-tag">LLM 제어</span>
-      <span class="tech-tag">자율 판단</span>
-      <span class="tech-tag">Agent Flow</span>
-      <span class="tech-tag">Orchestration</span>
-    </div>
-  </div>
-  <div class="tech-card">
-    <div class="tech-card-title">Voice & LLM</div>
-    <div class="tech-tags">
-      <span class="tech-tag">faster-whisper STT</span>
-      <span class="tech-tag">Porcupine 웨이크워드</span>
-      <span class="tech-tag">Ollama</span>
-      <span class="tech-tag">한국어 자연어 제어</span>
-    </div>
-  </div>
-  <div class="tech-card">
-    <div class="tech-card-title">Edge / IoT</div>
-    <div class="tech-tags">
-      <span class="tech-tag">ESP32</span>
-      <span class="tech-tag">ESP32-CAM</span>
-      <span class="tech-tag">AES 암호화 저장</span>
-      <span class="tech-tag">TCP / 시리얼</span>
-    </div>
-  </div>
-  <div class="tech-card">
-    <div class="tech-card-title">VLA & Imitation Learning <span style="font-size:0.65rem;font-weight:500;opacity:0.7;margin-left:0.4rem;padding:2px 8px;border-radius:6px;background:rgba(255,180,0,0.12);border:1px solid rgba(255,180,0,0.25);">연구·프로젝트 진행 중</span></div>
+    <div class="tech-card-title">VLA & Imitation Learning <span style="font-size:0.6rem;font-weight:500;opacity:0.7;margin-left:0.4rem;padding:2px 7px;border-radius:5px;background:rgba(255,180,0,0.12);border:1px solid rgba(255,180,0,0.25);">연구·진행 중</span></div>
     <div class="tech-tags">
       <span class="tech-tag">LeRobot</span>
       <span class="tech-tag">ACT Policy</span>
@@ -326,59 +369,89 @@ author: ''
       <span class="tech-tag">CUDA 12.8</span>
     </div>
   </div>
+  <div class="tech-card">
+    <div class="tech-card-title">자격증 · 어학</div>
+    <div class="tech-tags">
+      <span class="tech-tag">Azure AZ-900</span>
+      <span class="tech-tag">MCSE</span>
+      <span class="tech-tag">MCDBA</span>
+      <span class="tech-tag">OCP (Oracle)</span>
+      <span class="tech-tag">HP Master ASE (고가용성)</span>
+      <span class="tech-tag">HP LINUX ASE</span>
+      <span class="tech-tag">HP CSA (HP-UX)</span>
+      <span class="tech-tag">SCSA (Sun)</span>
+      <span class="tech-tag">ITIL Foundation</span>
+      <span class="tech-tag">네트워크관리사 2급</span>
+      <span class="tech-tag">IELTS 5.5 (2025)</span>
+    </div>
+  </div>
 </div>
 
-<div class="about-section-title">주요 프로젝트</div>
+<div class="about-section-title">주요 프로젝트 — 애드인에듀 Physical AI 양성과정 (2025.12 ~ 2026.06)</div>
+
+<p class="about-intro" style="text-align:left !important; max-width:100%; margin:0 0 1rem; font-size:0.92rem; opacity:0.65;">실물 로봇을 활용한 VLA(Vision-Language-Action) 모방학습 기반 Physical AI 엔지니어링 과정에서 팀 단위로 수행한 4개 프로젝트입니다.</p>
 
 <div class="project-list">
-  <a class="project-link" href="/projects/kevin-patrol-fleet/">
+  <a class="project-link" href="https://github.com/skong097/vision_ai" target="_blank" rel="noopener">
     <div>
-      <div class="project-link-title">Kevin Patrol Fleet</div>
-      <div class="project-link-desc">다중 로봇 플릿 모니터링 시스템</div>
+      <div class="project-link-title">Home Care-Vision AI</div>
+      <div class="project-link-desc">1인 가구 홈케어링 — 낙상 감지 ST-GCN Fine-tuned 정확도 99.63% · Recall 99.40%</div>
+    </div>
+    <span class="project-link-arrow">↗</span>
+  </a>
+  <a class="project-link" href="https://github.com/skong097/voice_iot_home" target="_blank" rel="noopener">
+    <div>
+      <div class="project-link-title">Voice IoT Controller</div>
+      <div class="project-link-desc">"자비스야" 한국어 웨이크워드 + 로컬 LLM 자연어 제어 · SmartGate 얼굴·제스처 2-factor 인증</div>
+    </div>
+    <span class="project-link-arrow">↗</span>
+  </a>
+  <a class="project-link" href="/categories/robotics/">
+    <div>
+      <div class="project-link-title">ARASEO / DALIMI</div>
+      <div class="project-link-desc">자율주행 택시 시스템 — Pinky 로봇 · ROS2 Jazzy · 미니시티 시뮬+실물 운용 · 관제 PWA</div>
     </div>
     <span class="project-link-arrow">→</span>
   </a>
-  <a class="project-link" href="/projects/kevin-patrol-dashboard/">
+  <a class="project-link" href="/categories/robotics/">
     <div>
-      <div class="project-link-title">Kevin Patrol Dashboard</div>
-      <div class="project-link-desc">자율 순찰 로봇 실시간 모니터링</div>
+      <div class="project-link-title">MOCA 카페 로봇 <span style="font-size:0.6rem;font-weight:500;opacity:0.7;margin-left:0.4rem;padding:2px 7px;border-radius:5px;background:rgba(255,180,0,0.12);border:1px solid rgba(255,180,0,0.25);">진행 중 · 6/4 마감</span></div>
+      <div class="project-link-desc">BehaviorTree 6-state FSM 모객 시나리오 · 감정(Valence-Arousal) 실시간 인식 · 운영 모드 오케스트레이터</div>
     </div>
     <span class="project-link-arrow">→</span>
   </a>
-  <a class="project-link" href="/projects/home-safe-solution/">
+</div>
+
+<div class="about-section-title" style="margin-top:2.5rem;">기타 GitHub 활동</div>
+
+<div class="project-list">
+  <a class="project-link" href="https://github.com/skong097/multi-robot-monitor" target="_blank" rel="noopener">
     <div>
-      <div class="project-link-title">Home Safe Solution</div>
-      <div class="project-link-desc">Vision AI 기반 낙상 감지 시스템</div>
+      <div class="project-link-title">Multi-Robot Monitor</div>
+      <div class="project-link-desc">다중 로봇 운영 상태·이벤트 모니터링 대시보드</div>
     </div>
-    <span class="project-link-arrow">→</span>
+    <span class="project-link-arrow">↗</span>
   </a>
-  <a class="project-link" href="/projects/eyecon-pinocchio/">
+  <a class="project-link" href="https://github.com/skong097/kevin_sim" target="_blank" rel="noopener">
     <div>
-      <div class="project-link-title">EyeCon (피노키오)</div>
-      <div class="project-link-desc">실시간 대화 분석 시스템</div>
+      <div class="project-link-title">Kevin Sim</div>
+      <div class="project-link-desc">ROS2 시뮬레이터 + 학습용 미션 게임</div>
     </div>
-    <span class="project-link-arrow">→</span>
+    <span class="project-link-arrow">↗</span>
   </a>
-  <a class="project-link" href="/projects/home-guard-bot/">
+  <a class="project-link" href="https://github.com/skong097/lerobot_il_study" target="_blank" rel="noopener">
     <div>
-      <div class="project-link-title">Home Guard Bot</div>
-      <div class="project-link-desc">LLM + ROS2 통합 가드 로봇</div>
+      <div class="project-link-title">LeRobot IL Study</div>
+      <div class="project-link-desc">VLA · 모방학습 (ACT / SmolVLA / Pi0) 실습</div>
     </div>
-    <span class="project-link-arrow">→</span>
+    <span class="project-link-arrow">↗</span>
   </a>
-  <a class="project-link" href="/projects/ros2-commander/">
+  <a class="project-link" href="https://github.com/skong097/ros2_fundamental" target="_blank" rel="noopener">
     <div>
-      <div class="project-link-title">ROS2 Commander</div>
-      <div class="project-link-desc">게임형 ROS2 학습 애플리케이션</div>
+      <div class="project-link-title">ROS2 Fundamental</div>
+      <div class="project-link-desc">ROS2 기초 교육 및 시뮬레이션 자료</div>
     </div>
-    <span class="project-link-arrow">→</span>
-  </a>
-  <a class="project-link" href="/projects/home-guard-bot-agent/">
-    <div>
-      <div class="project-link-title">Guard Brain Agent</div>
-      <div class="project-link-desc">LLM 기반 자율 판단 AI 에이전트</div>
-    </div>
-    <span class="project-link-arrow">→</span>
+    <span class="project-link-arrow">↗</span>
   </a>
 </div>
 
