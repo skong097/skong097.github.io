@@ -253,7 +253,6 @@ author: ''
   <div class="tech-card">
     <div class="tech-card-title">인프라·OS·네트워크</div>
     <div class="tech-tags">
-      <span class="tech-tag">OpenStack</span>
       <span class="tech-tag">Linux</span>
       <span class="tech-tag">Windows Server</span>
       <span class="tech-tag">TCP/IP</span>
@@ -280,6 +279,8 @@ author: ''
       <span class="tech-tag">ROS2 Jazzy</span>
       <span class="tech-tag">Nav2</span>
       <span class="tech-tag">SLAM Toolbox</span>
+      <span class="tech-tag">MoveIt</span>
+      <span class="tech-tag">RViz</span>
       <span class="tech-tag">Gazebo</span>
       <span class="tech-tag">micro-ROS</span>
     </div>
@@ -313,7 +314,6 @@ author: ''
       <span class="tech-tag">faster-whisper STT</span>
       <span class="tech-tag">Porcupine 웨이크워드</span>
       <span class="tech-tag">Ollama 로컬 LLM</span>
-      <span class="tech-tag">한국어 자연어 제어</span>
     </div>
   </div>
   <div class="tech-card">
