@@ -1,7 +1,7 @@
 ---
 title: "차선 주행 중 스쿨존의 빨간색이 진입금지 자홍색과 헷갈리는 문제 — HSV 색공간에서 분리하기"
 date: 2026-05-23
-draft: true
+draft: false
 tags: ["robotics", "opencv", "computer-vision", "autonomous-driving", "hsv"]
 categories: ["robotics"]
 summary: "ARASEO 자율주행 로봇의 차선 주행에서 스쿨존 바닥 표식의 빨간색이 자홍색 진입금지 표식과 HSV 색공간에서 겹쳐 오인식되던 문제를, 마스크 분리와 별도 검출 영역으로 해결한 기록"

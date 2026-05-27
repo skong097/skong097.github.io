@@ -1,7 +1,7 @@
 ---
 title: "ARASEO 관제 대시보드 — 다수 로봇 좌표를 지도 위에서 어긋나지 않게 표시하기"
 date: 2026-05-23
-draft: true
+draft: false
 tags: ["robotics", "ros2", "dashboard", "fleet", "coordinate-transform"]
 categories: ["robotics"]
 summary: "여러 대의 자율주행 로봇이 발행하는 좌표와 관제 화면의 지도 좌표가 어긋나는 문제, 그리고 한 로봇의 코드에 박혀 있던 로봇 번호 고정값을 추적·해결한 기록"

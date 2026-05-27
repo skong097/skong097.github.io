@@ -1,7 +1,7 @@
 ---
 title: "colcon symlink 빌드 환경에서 웹 대시보드 정적 파일이 404로 사라지던 이유"
 date: 2026-05-23
-draft: true
+draft: false
 tags: ["robotics", "ros2", "colcon", "fastapi", "static-files", "symlink"]
 categories: ["robotics"]
 summary: "MOCA 카페 로봇의 관제 웹 대시보드를 ROS 빌드 환경(colcon symlink 설치)에서 띄우면 HTML·JS·CSS가 404로 사라지던 문제를, 정적 파일 prefix 분리와 symlink 추적 허용으로 해결한 기록"

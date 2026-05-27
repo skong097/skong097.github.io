@@ -1,7 +1,7 @@
 ---
 title: "MOCA 카페 로봇 — 여러 운영 모드를 우선순위로 선점·자동 복귀시키는 OpServer 설계"
 date: 2026-05-23
-draft: true
+draft: false
 tags: ["robotics", "ros2", "fsm", "orchestration", "fastapi", "websocket"]
 categories: ["robotics"]
 summary: "서빙·순회·안내·모객·대기 다섯 가지 운영 모드를 오가는 카페 로봇에서, 모드 전환 충돌과 잔류를 막기 위해 OpServer에 우선순위 기반 모드 오케스트레이터, 비동기 재시도, 자동 대기 복귀를 설계한 기록"

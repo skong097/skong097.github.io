@@ -361,6 +361,7 @@ author: ''
     <div class="tech-tags">
       <span class="tech-tag">Azure AZ-900</span>
       <span class="tech-tag">MCSE</span>
+      <span class="tech-tag">LPIC-2</span>
       <span class="tech-tag">MCDBA</span>
       <span class="tech-tag">OCP (Oracle)</span>
       <span class="tech-tag">HP Master ASE (고가용성)</span>

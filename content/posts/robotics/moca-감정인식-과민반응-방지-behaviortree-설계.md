@@ -1,7 +1,7 @@
 ---
 title: "MOCA 카페 로봇 — 손님의 순간 표정 변화에 과민반응하지 않으면서, 부정 반응에는 즉시 멈추기"
 date: 2026-05-23
-draft: true
+draft: false
 tags: ["robotics", "behaviortree", "ros2", "cpp", "hri", "emotion-recognition"]
 categories: ["robotics"]
 summary: "MOCA 카페 모객 로봇이 손님의 표정에서 감정을 실시간으로 읽되, 순간적인 표정 변화에는 과민반응하지 않고 명확히 부정적인 반응에만 즉시 멈추도록 — ReactiveFallback + EMA + 히스테리시스로 설계한 기록"

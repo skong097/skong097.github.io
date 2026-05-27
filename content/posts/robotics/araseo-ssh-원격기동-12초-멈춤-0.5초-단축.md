@@ -1,7 +1,7 @@
 ---
 title: "관제 화면이 12초 동안 멈췄던 이유 — SSH 원격 기동을 0.5초로 줄인 과정"
 date: 2026-05-23
-draft: true
+draft: false
 tags: ["robotics", "ssh", "fastapi", "dashboard", "process-management"]
 categories: ["robotics"]
 summary: "ARASEO 관제 대시보드에서 로봇을 원격 기동할 때 발생하던 12초 멈춤의 원인을 추적하고, SSH 입출력 분리와 독립 세션으로 0.5초까지 단축한 기록"
