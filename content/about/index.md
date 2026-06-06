@@ -162,7 +162,7 @@ author: ''
 /* ── Gallery ──────────────────────────────────────────── */
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 1rem;
   margin-bottom: 1rem;
 }
@@ -173,6 +173,7 @@ author: ''
   overflow: hidden;
   background: rgba(255,255,255,0.02);
   transition: 0.3s ease;
+  cursor: zoom-in;
 }
 .gallery-item:hover {
   border-color: rgba(0,200,220,0.35);
@@ -215,6 +216,77 @@ author: ''
   margin-top: 2px;
 }
 
+/* ── Gallery Lightbox (popup) ─────────────────────────── */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: rgba(0,0,0,0.88);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+.lightbox-overlay.open {
+  display: flex;
+  animation: lightboxFade 0.2s ease;
+}
+@keyframes lightboxFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.lightbox-content {
+  position: relative;
+  max-width: 92vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.lightbox-img {
+  max-width: 92vw;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.6);
+}
+.lightbox-caption {
+  margin-top: 0.9rem;
+  text-align: center;
+  color: #fff;
+}
+.lightbox-caption .t {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.lightbox-caption .d {
+  font-size: 0.85rem;
+  opacity: 0.78;
+  margin-top: 3px;
+}
+.lightbox-close {
+  position: fixed;
+  top: 1.2rem;
+  right: 1.4rem;
+  width: 2.6rem;
+  height: 2.6rem;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+.lightbox-close:hover {
+  background: rgba(255,255,255,0.25);
+  transform: rotate(90deg);
+}
+
 /* ── Contact ──────────────────────────────────────────── */
 .contact-row {
   display: flex;
@@ -254,10 +326,12 @@ author: ''
 @media (min-width: 1100px) {
   .tech-grid { grid-template-columns: repeat(5, 1fr); }
   .project-list { grid-template-columns: repeat(3, 1fr); }
+  .gallery-grid { grid-template-columns: repeat(3, 1fr); }
 }
 @media (min-width: 768px) and (max-width: 1099px) {
   .tech-grid { grid-template-columns: repeat(3, 1fr); }
   .project-list { grid-template-columns: repeat(2, 1fr); }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 767px) {
   .post-single .main, .post-single main.main { width: 95% !important; }
@@ -512,6 +586,18 @@ author: ''
   </figure>
 </div>
 
+<!-- 갤러리 라이트박스(팝업) -->
+<div class="lightbox-overlay" id="gallery-lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+  <button class="lightbox-close" type="button" aria-label="닫기">&times;</button>
+  <div class="lightbox-content">
+    <img class="lightbox-img" src="" alt="">
+    <div class="lightbox-caption">
+      <div class="t"></div>
+      <div class="d"></div>
+    </div>
+  </div>
+</div>
+
 <div class="about-section-title">연락처</div>
 
 <div class="contact-row">
@@ -528,3 +614,46 @@ author: ''
     skong097@gmail.com
   </a>
 </div>
+
+<script>
+(function () {
+  var overlay = document.getElementById('gallery-lightbox');
+  if (!overlay) return;
+  var lbImg = overlay.querySelector('.lightbox-img');
+  var lbT = overlay.querySelector('.lightbox-caption .t');
+  var lbD = overlay.querySelector('.lightbox-caption .d');
+  var closeBtn = overlay.querySelector('.lightbox-close');
+
+  function open(item) {
+    var img = item.querySelector('img');
+    if (!img) return;
+    lbImg.src = img.getAttribute('data-full') || img.currentSrc || img.src;
+    lbImg.alt = img.alt || '';
+    var t = item.querySelector('.gallery-caption-title');
+    var d = item.querySelector('.gallery-caption-desc');
+    lbT.textContent = t ? t.textContent : '';
+    lbD.textContent = d ? d.textContent : '';
+    overlay.classList.add('open');
+    overlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+  function close() {
+    overlay.classList.remove('open');
+    overlay.setAttribute('aria-hidden', 'true');
+    lbImg.src = '';
+    document.body.style.overflow = '';
+  }
+
+  // 모든 갤러리 카드에 위임 — 항목이 늘어나도 자동 적용
+  document.querySelectorAll('.gallery-item').forEach(function (item) {
+    item.addEventListener('click', function () { open(item); });
+  });
+  overlay.addEventListener('click', function (e) {
+    if (e.target === overlay) close();
+  });
+  closeBtn.addEventListener('click', close);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && overlay.classList.contains('open')) close();
+  });
+})();
+</script>
