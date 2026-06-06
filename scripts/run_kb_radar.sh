@@ -50,6 +50,8 @@ fi
 BEFORE_HASH="$( [[ -f "$ITEMS_JSON" ]] && md5sum "$ITEMS_JSON" | cut -d' ' -f1 || echo none )"
 
 echo "[KB Radar] 수집 시작 (dry-run=$DRY_RUN, group=${GROUP:-all})"
+echo "[KB Radar] 진행 중입니다… claude -p(print) 모드라 완료까지 중간 로그가 보이지 않습니다."
+echo "[KB Radar] 키워드/그룹 수에 따라 수 분 걸릴 수 있습니다. 중단하지 말고 기다려 주세요."
 cd "$REPO_ROOT"
 # 무인(cron) 실행을 위해 필요한 도구를 미리 허용한다. (WebSearch/WebFetch=수집, Read/Write/Edit=JSON 갱신, Bash=sha1sum 등)
 # 로그는 collect.log 에 누적(.gitignore 대상). pipefail 환경에서도 아래 요약이 출력되도록 실패를 흡수한다.

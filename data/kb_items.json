@@ -1,4 +1,83 @@
 {
-  "last_collected": null,
-  "items": []
+  "last_collected": "2026-06-06",
+  "items": [
+    {
+      "id": "53673799b9f54a3e84b549e5eeea2aa1319374e2",
+      "group": "physical-ai",
+      "category": "paper",
+      "title": "Cosmos 3: Omnimodal World Models for Physical AI",
+      "summary": "언어·이미지·비디오·오디오·행동을 하나의 Mixture-of-Transformers 구조에서 함께 처리·생성하는 옴니모달 월드 모델 계열을 제안한 논문이다. 자기회귀 추론 트랜스포머와 확산 기반 생성 트랜스포머를 결합해 물리 추론, 월드 생성, 행동 생성을 단일 모델로 통합한다. 모델 체크포인트와 합성 데이터셋, 평가 벤치마크를 오픈 라이선스로 공개했다.",
+      "source": "arXiv",
+      "authors": "",
+      "published": "2026-06-01",
+      "collected": "2026-06-06",
+      "url": "https://arxiv.org/abs/2606.02800",
+      "archived": false
+    },
+    {
+      "id": "0c7c0ecaedd66be51b67aa004a504907134bde3d",
+      "group": "physical-ai",
+      "category": "paper",
+      "title": "Building The Ph(ysical)AI Layer Of Machine Intelligence",
+      "summary": "통계적 학습 대신 신호 이론 원리(푸리에 분해, 에너지 보존, 대칭성)를 내장한 약 199만 파라미터의 소형 인코더를 제안한다. 무선 주파수(RF) 데이터만으로 학습했음에도 동결된 인코더가 오디오·이미지·텍스트·비디오로 미세조정 없이 전이된다. 물리적으로 근거 있는 과제에서 84.5%, 의미 중심 과제에서 70% 정확도를 보여 물리 이해와 의미 이해의 경계를 시사한다.",
+      "source": "arXiv",
+      "authors": "Ulbert Jose Botero 외",
+      "published": "2026-06-02",
+      "collected": "2026-06-06",
+      "url": "https://arxiv.org/abs/2606.04106",
+      "archived": false
+    },
+    {
+      "id": "4d97c047414f0a99152aaaed42a46fa5e8108c4f",
+      "group": "physical-ai",
+      "category": "paper",
+      "title": "Can VLA Models Learn from Real-World Data Continually without Forgetting?",
+      "summary": "비전-언어-행동(VLA) 모델이 실제 로봇 데이터를 순차적으로 학습할 때 기존 능력을 유지할 수 있는지 조사한 논문이다. 잡기·누르기·천 조작 등 4개 실세계 과제를 순차 구성한 데이터셋에서 다양한 시연으로 학습하면 심각한 파국적 망각이 발생함을 보였다. 경험 재생 기법을 평가하고 장기 운용 로봇 배치를 위한 실무적 권고를 제시한다.",
+      "source": "arXiv",
+      "authors": "Jiarun Zhu 외",
+      "published": "2026-05-26",
+      "collected": "2026-06-06",
+      "url": "https://arxiv.org/abs/2605.26820",
+      "archived": false
+    },
+    {
+      "id": "056b8b20ca49db6162712c29867db790404c3272",
+      "group": "physical-ai",
+      "category": "paper",
+      "title": "Qwen-VLA: Unifying Vision-Language-Action Modeling across Tasks, Environments, and Robot Embodiments",
+      "summary": "조작·내비게이션 등으로 파편화된 임바디드 의사결정 문제를 단일 모델로 통합하는 비전-언어-행동(VLA) 일반화 모델을 제안한다. 비전-언어 백본에 DiT 기반 흐름 매칭 행동 디코더를 결합하고, 로봇별 텍스트 설명을 프롬프트로 덧붙여 여러 로봇 형태를 한 모델로 지원한다. LIBERO 97.9%, 실세계 ALOHA OOD 평균 76.9% 등 다수 벤치마크에서 성능을 보고했다.",
+      "source": "arXiv",
+      "authors": "",
+      "published": "2026-05-29",
+      "collected": "2026-06-06",
+      "url": "https://arxiv.org/abs/2605.30280",
+      "archived": false
+    },
+    {
+      "id": "76ff77a25b36937378749072c6932ba6d3ec57fb",
+      "group": "physical-ai",
+      "category": "article",
+      "title": "촉각 5지 핸드를 통합한 휴머노이드 정교 조작 레퍼런스 설계 공개",
+      "summary": "양손에 손끝당 1,000픽셀 이상·0.02N 감도의 디지털 촉각 센서를 갖춘 5지 핸드를 휴머노이드 본체에 통합한 레퍼런스 로봇 구성이 공개됐다. 본체 31자유도에 손당 22자유도를 더해 총 75자유도를 확보했으며, 인핸드 회전과 양손 협응 같은 장기 복합 조작을 겨냥한다. 시뮬레이션·학습·평가를 실배포 전에 수행하도록 개발 워크플로를 통합해 셋업 시간을 단축한다고 설명한다.",
+      "source": "PR Newswire",
+      "authors": "",
+      "published": "2026-06-01",
+      "collected": "2026-06-06",
+      "url": "https://www.prnewswire.com/news-releases/sharpa-brings-dexterous-tactile-manipulation-to-the-nvidia-isaac-gr00t-reference-humanoid-robot-302787201.html",
+      "archived": false
+    },
+    {
+      "id": "3f750df280cda38e33bcc2c4d3911ad1d0e80aaf",
+      "group": "physical-ai",
+      "category": "person",
+      "title": "임바디드 AI·VLA 로봇 대모델 산업 동향 보고서 2026",
+      "summary": "월드 모델이 데이터 부족 문제를 푸는 '데이터 생성기·시뮬레이션 엔진'으로 부상하며 표준 기술로 자리잡고 있다고 분석한 산업 보고서다. 2025년 이후 로봇 대모델이 단일 하드웨어 제약을 넘어 여러 로봇 플랫폼·시나리오로 배포 가능해지고, 오픈소스화와 완성차 업체의 진입이 가속되고 있다고 본다. VLA는 인지-결정-실행 주기를 발전시켰으나 물리 세계의 다양성·불확실성 한계로 월드 모델로의 전환이 진행 중이라고 평가한다.",
+      "source": "GlobeNewswire (Research and Markets)",
+      "authors": "",
+      "published": "2026-05-13",
+      "collected": "2026-06-06",
+      "url": "https://www.globenewswire.com/news-release/2026/05/13/3293694/0/en/embodied-ai-robot-large-model-including-vla-research-report-2026-world-models-are-about-to-become-standard-and-oems-enter-and-accelerate-mass-production-and-application.html",
+      "archived": false
+    }
+  ]
 }
