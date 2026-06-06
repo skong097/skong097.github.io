@@ -159,6 +159,62 @@ author: ''
   margin-top: 2px;
 }
 
+/* ── Gallery ──────────────────────────────────────────── */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.gallery-item {
+  position: relative;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.02);
+  transition: 0.3s ease;
+}
+.gallery-item:hover {
+  border-color: rgba(0,200,220,0.35);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.28);
+}
+[data-theme="light"] .gallery-item {
+  border-color: rgba(0,0,0,0.08);
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+[data-theme="light"] .gallery-item:hover {
+  border-color: rgba(60,130,246,0.3);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+}
+.gallery-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 16 / 10;
+}
+.gallery-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1.4rem 1.1rem 0.85rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.35) 55%, transparent 100%);
+  color: #fff;
+}
+.gallery-caption-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.gallery-caption-desc {
+  font-size: 0.78rem;
+  opacity: 0.82;
+  margin-top: 2px;
+}
+
 /* ── Contact ──────────────────────────────────────────── */
 .contact-row {
   display: flex;
@@ -208,6 +264,7 @@ author: ''
   .about-3d-frame { height: 360px; }
   .tech-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
   .project-list { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 400px) {
   .tech-grid { grid-template-columns: 1fr; }
@@ -403,7 +460,7 @@ author: ''
   </a>
   <a class="project-link" href="/categories/robotics/">
     <div>
-      <div class="project-link-title">MOCA 카페 로봇 <span style="font-size:0.6rem;font-weight:500;opacity:0.7;margin-left:0.4rem;padding:2px 7px;border-radius:5px;background:rgba(255,180,0,0.12);border:1px solid rgba(255,180,0,0.25);">진행 중 · 6/4 마감</span></div>
+      <div class="project-link-title">MOCA 카페 로봇</div>
       <div class="project-link-desc">BehaviorTree 6-state FSM 모객 시나리오 · 감정(Valence-Arousal) 실시간 인식 · 운영 모드 오케스트레이터</div>
     </div>
     <span class="project-link-arrow">→</span>
@@ -441,6 +498,18 @@ author: ''
     </div>
     <span class="project-link-arrow">↗</span>
   </a>
+</div>
+
+<div class="about-section-title" style="margin-top:2.5rem;">갤러리</div>
+
+<div class="gallery-grid">
+  <figure class="gallery-item" style="margin:0;">
+    <img src="/images/gallery/moca-gallery.gif" alt="MOCA 카페 로봇 모객 시나리오 데모" loading="lazy">
+    <figcaption class="gallery-caption">
+      <div class="gallery-caption-title">MOCA 카페 로봇</div>
+      <div class="gallery-caption-desc">BehaviorTree 모객 시나리오 · 감정 인식 운영 데모</div>
+    </figcaption>
+  </figure>
 </div>
 
 <div class="about-section-title">연락처</div>
