@@ -1,0 +1,168 @@
+{
+  "fetched": "2026-06-06",
+  "user": "skong097",
+  "repos": [
+    {
+      "name": "skong097.github.io",
+      "description": "For blog auto deployment",
+      "language": "HTML",
+      "url": "https://github.com/skong097/skong097.github.io",
+      "stars": 0,
+      "updated": "2026-06-06",
+      "topics": []
+    },
+    {
+      "name": "skong097",
+      "description": "",
+      "language": "Other",
+      "url": "https://github.com/skong097/skong097",
+      "stars": 0,
+      "updated": "2026-06-06",
+      "topics": []
+    },
+    {
+      "name": "moca_presentation",
+      "description": "moca_presentation html version",
+      "language": "HTML",
+      "url": "https://github.com/skong097/moca_presentation",
+      "stars": 0,
+      "updated": "2026-06-05",
+      "topics": []
+    },
+    {
+      "name": "moca_pai",
+      "description": "moca_pai (PAI Final Project)",
+      "language": "C++",
+      "url": "https://github.com/skong097/moca_pai",
+      "stars": 0,
+      "updated": "2026-06-05",
+      "topics": []
+    },
+    {
+      "name": "tellcode",
+      "description": "tellcode",
+      "language": "Shell",
+      "url": "https://github.com/skong097/tellcode",
+      "stars": 0,
+      "updated": "2026-05-31",
+      "topics": []
+    },
+    {
+      "name": "2ch_servocam",
+      "description": "2ch_servocam",
+      "language": "Python",
+      "url": "https://github.com/skong097/2ch_servocam",
+      "stars": 0,
+      "updated": "2026-05-31",
+      "topics": []
+    },
+    {
+      "name": "pinocchio",
+      "description": "Multi-modal 기반 감정 상태 분석기",
+      "language": "Python",
+      "url": "https://github.com/skong097/pinocchio",
+      "stars": 0,
+      "updated": "2026-05-26",
+      "topics": []
+    },
+    {
+      "name": "robot_arm_reactor",
+      "description": "robot_arm_reactor",
+      "language": "Python",
+      "url": "https://github.com/skong097/robot_arm_reactor",
+      "stars": 0,
+      "updated": "2026-05-26",
+      "topics": []
+    },
+    {
+      "name": "omx_reactor",
+      "description": "omx_reactor",
+      "language": "Python",
+      "url": "https://github.com/skong097/omx_reactor",
+      "stars": 0,
+      "updated": "2026-05-26",
+      "topics": []
+    },
+    {
+      "name": "kevin_sim",
+      "description": "ROS2 Simulator & Newbie Test Game",
+      "language": "Python",
+      "url": "https://github.com/skong097/kevin_sim",
+      "stars": 0,
+      "updated": "2026-05-25",
+      "topics": []
+    },
+    {
+      "name": "vision_ai",
+      "description": "YOLO, RandomForest, ST-GCN 기반 이상 행동 (낙상) 감지 솔루션 개발",
+      "language": "Python",
+      "url": "https://github.com/skong097/vision_ai",
+      "stars": 0,
+      "updated": "2026-05-23",
+      "topics": []
+    },
+    {
+      "name": "lerobot_il_study",
+      "description": "lerobot_il_study",
+      "language": "Python",
+      "url": "https://github.com/skong097/lerobot_il_study",
+      "stars": 0,
+      "updated": "2026-05-23",
+      "topics": []
+    },
+    {
+      "name": "vision-game",
+      "description": "",
+      "language": "Python",
+      "url": "https://github.com/skong097/vision-game",
+      "stars": 0,
+      "updated": "2026-05-23",
+      "topics": []
+    },
+    {
+      "name": "multi-robot-monitor",
+      "description": "multi-robots operation status and event monitoring dashboard",
+      "language": "Python",
+      "url": "https://github.com/skong097/multi-robot-monitor",
+      "stars": 0,
+      "updated": "2026-05-22",
+      "topics": []
+    },
+    {
+      "name": "voice_iot_home",
+      "description": "iot 기반 smarthome controller (PAI 2nd Project)",
+      "language": "Python",
+      "url": "https://github.com/skong097/voice_iot_home",
+      "stars": 0,
+      "updated": "2026-05-22",
+      "topics": []
+    },
+    {
+      "name": "smartgate",
+      "description": "얼굴 인식 + 제스쳐 인식 2factor 인증 ",
+      "language": "Python",
+      "url": "https://github.com/skong097/smartgate",
+      "stars": 0,
+      "updated": "2026-05-22",
+      "topics": []
+    },
+    {
+      "name": "ros2_fundamental",
+      "description": "ros2 기초 교육 및 시뮬레이션 자료",
+      "language": "Other",
+      "url": "https://github.com/skong097/ros2_fundamental",
+      "stars": 0,
+      "updated": "2026-02-17",
+      "topics": []
+    },
+    {
+      "name": "gaze_puzzle",
+      "description": "사진 속 보물 가리키기",
+      "language": "Python",
+      "url": "https://github.com/skong097/gaze_puzzle",
+      "stars": 0,
+      "updated": "2026-02-09",
+      "topics": []
+    }
+  ]
+}

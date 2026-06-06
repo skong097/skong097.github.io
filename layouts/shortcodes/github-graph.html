@@ -1,0 +1,230 @@
+{{/* github-graph — /projects/ 상단 GitHub 레포 force-directed 그래프 뷰
+     데이터: data/github_repos.json (scripts/fetch_github_repos.sh / CI 생성)
+     의존성 없음(바닐라 JS + SVG). PaperMod 다크/라이트 연동. */}}
+<div class="gh-graph-wrap" id="ghGraph">
+  <div class="gh-graph-head">
+    <span class="gh-graph-title">GitHub Projects</span>
+    <span class="gh-graph-sub" id="ghGraphSub"></span>
+  </div>
+  <svg class="gh-graph-svg" id="ghGraphSvg" viewBox="0 0 960 420" preserveAspectRatio="xMidYMid meet" aria-label="GitHub 프로젝트 그래프"></svg>
+  <div class="gh-graph-tip" id="ghGraphTip" hidden></div>
+  <div class="gh-graph-empty" id="ghGraphEmpty" hidden>
+    GitHub 프로젝트를 준비 중입니다 ·
+    <a href="https://github.com/skong097" target="_blank" rel="noopener">github.com/skong097</a>
+  </div>
+</div>
+
+<style>
+.gh-graph-wrap{
+  --gh-bg:#f0f2f5; --gh-card:#ffffff; --gh-border:#e2e6ea;
+  --gh-text:#1a202c; --gh-text2:#64748b; --gh-edge:#cbd5e1; --gh-hub:#0891b2;
+  position:relative; background:var(--gh-bg); border:1px solid var(--gh-border);
+  border-radius:14px; margin:0 0 2rem; overflow:hidden;
+  font-family:'Noto Sans KR',sans-serif; transition:background .3s,border-color .3s;
+}
+[data-theme="dark"] .gh-graph-wrap{
+  --gh-bg:#0a0e17; --gh-card:#111827; --gh-border:#1e2d3d;
+  --gh-text:#e2e8f0; --gh-text2:#64748b; --gh-edge:#243244; --gh-hub:#00e5ff;
+}
+.gh-graph-head{
+  position:absolute; top:0; left:0; right:0; z-index:2; pointer-events:none;
+  display:flex; align-items:baseline; gap:.6rem; padding:.9rem 1.1rem;
+}
+.gh-graph-title{ font-family:'JetBrains Mono',monospace; font-weight:700; font-size:1rem; color:var(--gh-hub); }
+.gh-graph-sub{ font-family:'JetBrains Mono',monospace; font-size:.7rem; color:var(--gh-text2); }
+.gh-graph-svg{ display:block; width:100%; height:420px; touch-action:none; cursor:grab; }
+.gh-edge{ stroke:var(--gh-edge); stroke-width:1; transition:opacity .2s; }
+.gh-node{ cursor:pointer; }
+.gh-node circle{ transition:opacity .2s, stroke-width .2s; }
+.gh-node-label{ fill:var(--gh-text); font-family:'JetBrains Mono',monospace; font-size:9px; pointer-events:none; user-select:none; }
+.gh-hub-label{ fill:var(--gh-text); font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:700; pointer-events:none; }
+.gh-dim{ opacity:.15; }
+.gh-graph-tip{
+  position:absolute; z-index:3; max-width:260px; pointer-events:none;
+  background:var(--gh-card); border:1px solid var(--gh-border); border-radius:8px;
+  padding:.6rem .7rem; font-size:.74rem; color:var(--gh-text); line-height:1.45;
+  box-shadow:0 6px 20px rgba(0,0,0,.18);
+}
+.gh-graph-tip .t-name{ font-weight:700; color:var(--gh-hub); display:block; margin-bottom:.2rem; }
+.gh-graph-tip .t-meta{ color:var(--gh-text2); font-family:'JetBrains Mono',monospace; font-size:.68rem; margin-top:.3rem; }
+.gh-graph-empty{ padding:3rem 1rem; text-align:center; color:var(--gh-text2); font-size:.85rem; }
+.gh-graph-empty a{ color:var(--gh-hub); }
+@media (max-width:768px){ .gh-graph-svg{ height:300px; } }
+</style>
+
+<script>
+(function(){
+  const GD = JSON.parse({{ (site.Data.github_repos) | jsonify }});
+  const repos = (GD && GD.repos) || [];
+  const user  = (GD && GD.user) || "skong097";
+  const svg = document.getElementById('ghGraphSvg');
+  const tip = document.getElementById('ghGraphTip');
+  const wrap = document.getElementById('ghGraph');
+  const sub = document.getElementById('ghGraphSub');
+
+  if (!repos.length){
+    document.getElementById('ghGraphEmpty').hidden = false;
+    svg.style.display = 'none';
+    return;
+  }
+  sub.textContent = repos.length + " repos";
+
+  const SVGNS = "http://www.w3.org/2000/svg";
+  const W = 960, H = 420, CX = W/2, CY = H/2;
+  const LANG_COLORS = {
+    "Python":"#3b82f6","C++":"#f97316","C":"#64748b","JavaScript":"#eab308",
+    "TypeScript":"#0ea5e9","HTML":"#ef4444","CSS":"#8b5cf6","Shell":"#22c55e",
+    "Jupyter Notebook":"#f59e0b","Java":"#dc2626","Go":"#06b6d4","Rust":"#a16207",
+    "Dockerfile":"#0d9488","Other":"#94a3b8"
+  };
+  function colorOf(lang){
+    if (LANG_COLORS[lang]) return LANG_COLORS[lang];
+    let h=0; for(let i=0;i<lang.length;i++) h=(h*31+lang.charCodeAt(i))%360;
+    return "hsl("+h+",60%,55%)";
+  }
+  function esc(s){ return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+
+  const nodes = [];
+  const edges = [];
+  const byId = {};
+  function addNode(n){ n.x=CX+(Math.random()-0.5)*200; n.y=CY+(Math.random()-0.5)*120; n.vx=0; n.vy=0; nodes.push(n); byId[n.id]=n; return n; }
+
+  const hub = addNode({id:"__hub", type:"hub", label:user, r:24});
+  hub.x=CX; hub.y=CY;
+  const langSet = {};
+  repos.forEach(r=>{ langSet[r.language]=(langSet[r.language]||0)+1; });
+  Object.keys(langSet).forEach(lang=>{
+    const ln = addNode({id:"lang:"+lang, type:"lang", label:lang, color:colorOf(lang), r:13});
+    edges.push({a:hub.id, b:ln.id, rest:140});
+  });
+  repos.forEach(r=>{
+    const rn = addNode({id:"repo:"+r.name, type:"repo", label:r.name, color:colorOf(r.language), r:6+Math.min(6,r.stars), data:r});
+    edges.push({a:"lang:"+r.language, b:rn.id, rest:64});
+  });
+
+  const edgeEls = edges.map(e=>{
+    const l=document.createElementNS(SVGNS,"line"); l.setAttribute("class","gh-edge"); svg.appendChild(l);
+    e.el=l; return e;
+  });
+  const nodeEls = nodes.map(n=>{
+    const g=document.createElementNS(SVGNS,"g"); g.setAttribute("class","gh-node");
+    const c=document.createElementNS(SVGNS,"circle");
+    c.setAttribute("r",n.r);
+    c.setAttribute("fill", n.type==="hub" ? "var(--gh-hub)" : (n.color||"#94a3b8"));
+    c.setAttribute("stroke","var(--gh-card)"); c.setAttribute("stroke-width","2");
+    g.appendChild(c);
+    if(n.type!=="repo" || n.r>=8){
+      const t=document.createElementNS(SVGNS,"text");
+      t.setAttribute("class", n.type==="hub"?"gh-hub-label":"gh-node-label");
+      t.setAttribute("text-anchor","middle"); t.setAttribute("dy", n.r + 11);
+      t.textContent = n.type==="hub" ? "@"+n.label : n.label;
+      g.appendChild(t);
+    }
+    svg.appendChild(g); n.g=g; n.c=c;
+    return n;
+  });
+
+  const adj = {};
+  nodes.forEach(n=> adj[n.id]=new Set([n.id]));
+  edges.forEach(e=>{ adj[e.a].add(e.b); adj[e.b].add(e.a); });
+
+  const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let dragging=null, hover=null, langFilter=null, dragMoved=false, downX=0, downY=0;
+
+  function showTip(n, evt){
+    const r=n.data;
+    let html = '<span class="t-name">'+esc(n.type==="repo"?r.name:n.label)+'</span>';
+    if(n.type==="repo"){
+      if(r.description) html += esc(r.description);
+      html += '<div class="t-meta">'+esc(r.language)+' · ★'+esc(r.stars)+' · '+esc(r.updated)+'</div>';
+    } else if(n.type==="lang"){
+      html += '<div class="t-meta">'+langSet[n.label]+' repos</div>';
+    } else {
+      html += '<div class="t-meta">GitHub 프로필</div>';
+    }
+    tip.innerHTML=html; tip.hidden=false;
+    const wr=wrap.getBoundingClientRect();
+    tip.style.left=Math.min(wr.width-270,(evt.clientX-wr.left+12))+"px";
+    tip.style.top=(evt.clientY-wr.top+12)+"px";
+  }
+  function hideTip(){ tip.hidden=true; }
+
+  function applyHighlight(){
+    const focus = hover ? adj[hover.id] : null;
+    nodeEls.forEach(n=>{
+      let on=true;
+      if(focus) on=focus.has(n.id);
+      else if(langFilter) on = (n.type==="hub")||(n.id==="lang:"+langFilter)||(n.type==="repo"&&n.data.language===langFilter);
+      n.g.classList.toggle("gh-dim", !on);
+    });
+    edgeEls.forEach(e=>{
+      let on=true;
+      if(focus) on = (e.a===hover.id||e.b===hover.id);
+      else if(langFilter) on = (e.a==="lang:"+langFilter)||(e.b==="lang:"+langFilter)||(e.a==="__hub"&&e.b==="lang:"+langFilter);
+      e.el.classList.toggle("gh-dim", !on);
+    });
+  }
+
+  nodeEls.forEach(n=>{
+    n.g.addEventListener("pointerenter", e=>{ hover=n; showTip(n,e); applyHighlight(); });
+    n.g.addEventListener("pointermove", e=>{ if(hover===n) showTip(n,e); });
+    n.g.addEventListener("pointerleave", ()=>{ hover=null; hideTip(); applyHighlight(); });
+    n.g.addEventListener("pointerdown", e=>{ dragging=n; dragMoved=false; downX=e.clientX; downY=e.clientY; n.g.setPointerCapture(e.pointerId); svg.style.cursor="grabbing"; });
+    n.g.addEventListener("pointerup", e=>{
+      svg.style.cursor="grab";
+      if(dragging===n && !dragMoved){
+        if(n.type==="repo"){ window.open(n.data.url,"_blank","noopener"); }
+        else if(n.type==="hub"){ window.open("https://github.com/"+user,"_blank","noopener"); }
+        else if(n.type==="lang"){ langFilter = (langFilter===n.label)?null:n.label; applyHighlight(); }
+      }
+      dragging=null;
+    });
+  });
+  svg.addEventListener("pointermove", e=>{
+    if(!dragging) return;
+    if(Math.hypot(e.clientX-downX, e.clientY-downY) > 4) dragMoved=true;
+    const pt=svg.getBoundingClientRect();
+    dragging.x=(e.clientX-pt.left)/pt.width*W;
+    dragging.y=(e.clientY-pt.top)/pt.height*H;
+    dragging.vx=0; dragging.vy=0;
+  });
+
+  function tick(){
+    for(let i=0;i<nodes.length;i++){
+      const a=nodes[i];
+      for(let j=i+1;j<nodes.length;j++){
+        const b=nodes[j];
+        let dx=a.x-b.x, dy=a.y-b.y; let d2=dx*dx+dy*dy; if(d2<1)d2=1;
+        const f=2200/d2; const d=Math.sqrt(d2);
+        const fx=f*dx/d, fy=f*dy/d;
+        a.vx+=fx; a.vy+=fy; b.vx-=fx; b.vy-=fy;
+      }
+    }
+    edges.forEach(e=>{
+      const a=byId[e.a], b=byId[e.b];
+      let dx=b.x-a.x, dy=b.y-a.y; let d=Math.sqrt(dx*dx+dy*dy)||1;
+      const f=(d-e.rest)*0.02; const fx=f*dx/d, fy=f*dy/d;
+      a.vx+=fx; a.vy+=fy; b.vx-=fx; b.vy-=fy;
+    });
+    nodes.forEach(n=>{
+      const g = n.type==="hub"?0.06:0.004;
+      n.vx += (CX-n.x)*g; n.vy += (CY-n.y)*g;
+      if(!reduce && n!==dragging){ n.vx += (Math.random()-0.5)*0.3; n.vy += (Math.random()-0.5)*0.3; }
+      n.vx*=0.9; n.vy*=0.9;
+      n.x+=n.vx; n.y+=n.vy;
+      n.x=Math.max(n.r+4,Math.min(W-n.r-4,n.x));
+      n.y=Math.max(n.r+16,Math.min(H-n.r-14,n.y));
+    });
+  }
+  function render(){
+    edges.forEach(e=>{ const a=byId[e.a],b=byId[e.b]; e.el.setAttribute("x1",a.x); e.el.setAttribute("y1",a.y); e.el.setAttribute("x2",b.x); e.el.setAttribute("y2",b.y); });
+    nodes.forEach(n=>{ n.g.setAttribute("transform","translate("+n.x+","+n.y+")"); });
+  }
+  if(reduce){
+    for(let k=0;k<400;k++) tick();
+    render();
+  } else {
+    (function loop(){ tick(); render(); requestAnimationFrame(loop); })();
+  }
+})();
+</script>

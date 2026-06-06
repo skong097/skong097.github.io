@@ -22,3 +22,17 @@ _run_kb_radar() {
   COMPREPLY=( $(compgen -W "$opts" -- "$cur") )
 }
 complete -F _run_kb_radar run_kb_radar.sh ./run_kb_radar.sh scripts/run_kb_radar.sh
+
+_fetch_github_repos() {
+  local cur prev opts
+  COMPREPLY=()
+  cur="${COMP_WORDS[COMP_CWORD]}"
+  prev="${COMP_WORDS[COMP_CWORD-1]}"
+  opts="-h --help --user --output"
+  case "$prev" in
+    --output) COMPREPLY=( $(compgen -f -- "$cur") ); return 0 ;;
+    --user) return 0 ;;
+  esac
+  COMPREPLY=( $(compgen -W "$opts" -- "$cur") )
+}
+complete -F _fetch_github_repos fetch_github_repos.sh ./fetch_github_repos.sh scripts/fetch_github_repos.sh
