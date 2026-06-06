@@ -48,9 +48,9 @@ menu:
     name: 포스트
     url: /posts/
     weight: 20
-  - identifier: dashboard
-    name: 대시보드
-    url: /dashboard/
+  - identifier: kb-radar
+    name: KB Radar
+    url: /kb-radar/
     weight: 25
   - identifier: categories
     name: 카테고리

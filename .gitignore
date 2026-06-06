@@ -9,3 +9,4 @@ Thumbs.db
 *.bak
 setup_covers.py
 covers/
+scripts/kb_radar/collect.log

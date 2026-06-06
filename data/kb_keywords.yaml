@@ -1,0 +1,37 @@
+# KB Radar 키워드 설정 — 이 파일만 편집하면 수집 대상이 바뀐다.
+# categories 허용값: paper | article | video | person
+# max_per_run: 1회 수집 시 해당 그룹의 최대 신규 항목 수
+groups:
+  - id: physical-ai
+    name: "Physical AI"
+    keywords:
+      - "Physical AI"
+      - "VLA vision language action model"
+      - "humanoid manipulation"
+    categories: [paper, article, video, person]
+    max_per_run: 6
+
+  - id: ros2-robotics
+    name: "ROS2 · Robotics"
+    keywords:
+      - "ROS2 Jazzy"
+      - "Nav2 navigation"
+      - "robot autonomy"
+    categories: [paper, article, video]
+    max_per_run: 5
+
+  - id: ai-agent
+    name: "AI Agent"
+    keywords:
+      - "LLM agent framework"
+      - "multi-agent orchestration"
+    categories: [paper, article]
+    max_per_run: 4
+
+  - id: computer-vision
+    name: "Computer Vision"
+    keywords:
+      - "YOLO object detection"
+      - "video action recognition"
+    categories: [paper, article, video]
+    max_per_run: 4
