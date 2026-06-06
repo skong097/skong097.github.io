@@ -1,0 +1,85 @@
+{{- define "main" }}
+
+{{- if (and site.Params.profileMode.enabled .IsHome) }}
+{{- partial "index_profile.html" . }}
+{{- else }} {{/* if not profileMode */}}
+
+{{- $pages := union .RegularPages .Sections }}
+{{- if .IsHome }}
+{{- $pages = where site.RegularPages "Type" "in" site.Params.mainSections }}
+{{- $pages = where $pages "Params.hiddenInHomeList" "!=" "true" }}
+{{- end }}
+
+{{- $paginator := .Paginate $pages }}
+{{- $base := mul (sub $paginator.PageNumber 1) $paginator.PagerSize }}
+
+{{/* accessible heading for screen-readers / SEO */}}
+<h1 class="term-srtitle">{{ .Title }}</h1>
+
+<section class="terminal-list" aria-label="{{ .Title | plainify }}">
+
+  {{/* ── window chrome ── */}}
+  <div class="term-head">
+    <span class="term-dots"><i></i><i></i><i></i></span>
+    <span class="term-winpath">~/{{ .Type }}{{ if eq .Kind "term" }}/{{ .Data.Term | urlize }}{{ end }} — ls</span>
+  </div>
+
+  {{/* ── prompt + command ── */}}
+  <div class="term-cmd">
+    <span class="term-user">visitor@robotics-lab</span><span class="term-colon">:</span
+    ><span class="term-cwd">~/{{ .Type }}{{ if eq .Kind "term" }}/{{ .Data.Term | urlize }}{{ end }}</span
+    ><span class="term-dollar">$</span>
+    <span class="term-typed">ls -la --sort=modified</span><span class="term-cursor"></span>
+  </div>
+
+  {{- if .Content }}
+  <div class="term-doc">{{ .Content }}</div>
+  {{- else if .Description }}
+  <p class="term-doc-line"># {{ .Description | plainify }}</p>
+  {{- end }}
+
+  <p class="term-total">// total {{ $paginator.TotalNumberOfElements }} · page {{ $paginator.PageNumber }}/{{ $paginator.TotalPages }}</p>
+
+  {{/* ── entries ── */}}
+  <ul class="term-rows">
+    {{- range $index, $page := $paginator.Pages }}
+    {{- $cat := "" }}{{ with .Params.categories }}{{ $cat = index . 0 }}{{ end }}
+    <li class="term-row">
+      <div class="tr-main">
+        <span class="tr-idx">{{ printf "%03d" (add $base (add $index 1)) }}</span>
+        <span class="tr-perm">{{ if $cat }}d{{ else }}-{{ end }}rwxr-xr-x</span>
+        {{- if $cat }}
+        <a class="tr-cat" href="{{ (printf "categories/%s/" ($cat | urlize)) | absURL }}">[{{ $cat }}]</a>
+        {{- end }}
+        <span class="tr-date">{{ .Date.Format "2006-01-02" }}</span>
+        <span class="tr-size">{{ .ReadingTime }}m</span>
+        <span class="tr-name">{{ .Title }}{{ if .Draft }} <em class="tr-draft">[draft]</em>{{ end }}</span>
+        <span class="tr-caret" aria-hidden="true">&rarr;</span>
+      </div>
+      {{- if (ne (.Param "hideSummary") true) }}
+      {{- with .Summary }}
+      <p class="tr-desc">{{ . | plainify | htmlUnescape | truncate 120 }}</p>
+      {{- end }}
+      {{- end }}
+      <a class="tr-link" aria-label="{{ .Title | plainify }}" href="{{ .Permalink }}"></a>
+    </li>
+    {{- end }}
+  </ul>
+
+  {{/* ── pagination ── */}}
+  {{- if gt $paginator.TotalPages 1 }}
+  <nav class="term-pager" aria-label="pagination">
+    {{- if $paginator.HasPrev }}
+    <a class="tp-link tp-prev" href="{{ $paginator.Prev.URL | absURL }}">$ cd ../page-{{ sub $paginator.PageNumber 1 }}</a>
+    {{- else }}<span class="tp-link tp-disabled">$ cd ../</span>{{ end }}
+    <span class="tp-pos">[{{ $paginator.PageNumber }} / {{ $paginator.TotalPages }}]</span>
+    {{- if $paginator.HasNext }}
+    <a class="tp-link tp-next" href="{{ $paginator.Next.URL | absURL }}">$ cd ../page-{{ add $paginator.PageNumber 1 }}</a>
+    {{- else }}<span class="tp-link tp-disabled">EOF</span>{{ end }}
+  </nav>
+  {{- end }}
+
+</section>
+
+{{- end }}{{/* end profileMode */}}
+{{- end }}{{- /* end main */ -}}

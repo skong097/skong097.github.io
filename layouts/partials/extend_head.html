@@ -1,7 +1,14 @@
-{{/* 
+{{/*
   layouts/partials/extend_head.html
   DOM 로드 후 JS로 강제 스타일 적용 — CSS 우선순위 문제 완전 해결
 */}}
+
+{{/* 리스트 페이지 터미널 리디자인용 모노스페이스 폰트 */}}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap">
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   // 제목 중앙 정렬
