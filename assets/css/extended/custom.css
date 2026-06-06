@@ -79,3 +79,19 @@ body:has(.projects-intro) .page-header {
   border-bottom: 1px solid var(--border);
   padding-bottom: 1rem;
 }
+
+/* ══════════════════════════════════════════════════════════════
+   CODE BLOCKS — 언어 미지정(plain) 코드 펜스 깨짐 수정
+   PaperMod 기본 `.post-content pre code` 는 `display: grid` +
+   `word-break: break-all` 을 적용한다. 이는 Chroma 하이라이트가
+   각 줄을 <span class="line"> 로 감쌀 때만 의미가 있고, 언어를
+   지정하지 않은 ``` 블록(줄 span 없음)에서는 글자가 한 자씩
+   겹치고/세로로 깨져 출력된다(특히 트리 박스문자·수식·한글).
+   → class 없는 plain <code> 에 한해 일반 블록 렌더링으로 복원.
+     (하이라이트 블록은 class="language-*" 이므로 grid 유지) */
+.post-content pre code:not([class]) {
+  display: block;
+  word-break: normal;
+  overflow-wrap: normal;
+  white-space: pre;
+}
