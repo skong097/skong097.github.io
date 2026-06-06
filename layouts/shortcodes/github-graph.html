@@ -36,8 +36,8 @@
 .gh-edge{ stroke:var(--gh-edge); stroke-width:1; transition:opacity .2s; }
 .gh-node{ cursor:pointer; }
 .gh-node circle{ transition:opacity .2s, stroke-width .2s; }
-.gh-node-label{ fill:var(--gh-text); font-family:'JetBrains Mono',monospace; font-size:9px; pointer-events:none; user-select:none; }
-.gh-hub-label{ fill:var(--gh-text); font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:700; pointer-events:none; }
+.gh-node-label{ fill:var(--gh-text); font-family:'JetBrains Mono',monospace; font-size:12px; pointer-events:none; user-select:none; }
+.gh-hub-label{ fill:var(--gh-text); font-family:'JetBrains Mono',monospace; font-size:15px; font-weight:700; pointer-events:none; }
 .gh-dim{ opacity:.15; }
 .gh-graph-tip{
   position:absolute; z-index:3; max-width:260px; pointer-events:none;
@@ -209,8 +209,8 @@
     nodes.forEach(n=>{
       const g = n.type==="hub"?0.06:0.004;
       n.vx += (CX-n.x)*g; n.vy += (CY-n.y)*g;
-      if(!reduce && n!==dragging){ n.vx += (Math.random()-0.5)*0.3; n.vy += (Math.random()-0.5)*0.3; }
-      n.vx*=0.9; n.vy*=0.9;
+      if(!reduce && n!==dragging){ n.vx += (Math.random()-0.5)*0.12; n.vy += (Math.random()-0.5)*0.12; }
+      n.vx*=0.92; n.vy*=0.92;
       n.x+=n.vx; n.y+=n.vy;
       n.x=Math.max(n.r+4,Math.min(W-n.r-4,n.x));
       n.y=Math.max(n.r+16,Math.min(H-n.r-14,n.y));
