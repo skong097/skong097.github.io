@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 300" width="880" height="300" font-family="'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace" role="img" aria-label="ReactiveFallback 트리: 안전 가드, 감정 가드, 모객 시퀀스를 매 tick 위에서부터 재평가">
+  <rect x="1" y="1" width="878" height="298" rx="14" fill="#0c1117" stroke="rgba(94,242,184,0.16)"/>
+  <rect x="1" y="1" width="878" height="46" rx="14" fill="rgba(255,255,255,0.02)"/>
+
+  <!-- title bar -->
+  <circle cx="26" cy="24" r="5.5" fill="#ff5f57"/>
+  <circle cx="44" cy="24" r="5.5" fill="#febc2e"/>
+  <circle cx="62" cy="24" r="5.5" fill="#28c840"/>
+  <text x="858" y="28" text-anchor="end" font-size="12" fill="#5d6b78">behavior tree — root</text>
+
+  <!-- root node -->
+  <rect x="40" y="70" width="220" height="48" rx="9" fill="rgba(94,242,184,0.10)" stroke="#5ef2b8" stroke-width="1.5"/>
+  <text x="150" y="100" text-anchor="middle" font-size="16" font-weight="700" fill="#e6edf3">ReactiveFallback</text>
+
+  <!-- connectors -->
+  <g stroke="#3a4654" stroke-width="1.6" fill="none">
+    <path d="M74 118 V 268"/>
+    <path d="M74 165 H 104"/>
+    <path d="M74 216 H 104"/>
+    <path d="M74 267 H 104"/>
+  </g>
+  <g fill="#3a4654">
+    <circle cx="104" cy="165" r="2.6"/>
+    <circle cx="104" cy="216" r="2.6"/>
+    <circle cx="104" cy="267" r="2.6"/>
+  </g>
+
+  <!-- child 1 : safety guard -->
+  <rect x="110" y="147" width="160" height="36" rx="8" fill="rgba(240,163,107,0.09)" stroke="#f0a36b" stroke-width="1.3"/>
+  <text x="190" y="170" text-anchor="middle" font-size="14" font-weight="600" fill="#f3c79b">안전 가드</text>
+  <text x="292" y="170" font-size="13" fill="#8c98a4">장애물 · 사람 충돌 위험  <tspan fill="#f0a36b">→</tspan>  즉시 정지</text>
+
+  <!-- child 2 : emotion guard -->
+  <rect x="110" y="198" width="160" height="36" rx="8" fill="rgba(94,242,184,0.09)" stroke="#5ef2b8" stroke-width="1.3"/>
+  <text x="190" y="221" text-anchor="middle" font-size="14" font-weight="600" fill="#b6f2d8">감정 가드</text>
+  <text x="292" y="221" font-size="13" fill="#8c98a4">지속 부정 감정  <tspan fill="#5ef2b8">→</tspan>  모객 중단 · 물러나기</text>
+
+  <!-- child 3 : engagement sequence -->
+  <rect x="110" y="249" width="160" height="36" rx="8" fill="rgba(108,182,255,0.09)" stroke="#6cb6ff" stroke-width="1.3"/>
+  <text x="190" y="272" text-anchor="middle" font-size="14" font-weight="600" fill="#b9dcff">모객 시퀀스</text>
+  <text x="292" y="272" font-size="12.5" fill="#8c98a4">IDLE <tspan fill="#6cb6ff">→</tspan> APPROACH <tspan fill="#6cb6ff">→</tspan> ICEBREAK <tspan fill="#6cb6ff">→</tspan> MINIGAME <tspan fill="#6cb6ff">→</tspan> OFFER <tspan fill="#6cb6ff">→</tspan> LEAD-IN</text>
+</svg>

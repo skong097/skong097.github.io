@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 232" width="760" height="232" font-family="'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace" role="img" aria-label="신뢰도 가중 EMA 수식: ema_t = α · w_t · x_t + (1 − α · w_t) · ema_(t−1). x_t 현재 감정 값, w_t 인식 신뢰도 0~1, α 기본 평활 강도">
+  <rect x="1" y="1" width="758" height="230" rx="14" fill="#0c1117" stroke="rgba(94,242,184,0.16)"/>
+  <rect x="1" y="1" width="758" height="46" rx="14" fill="rgba(255,255,255,0.02)"/>
+
+  <!-- title bar -->
+  <circle cx="26" cy="24" r="5.5" fill="#ff5f57"/>
+  <circle cx="44" cy="24" r="5.5" fill="#febc2e"/>
+  <circle cx="62" cy="24" r="5.5" fill="#28c840"/>
+  <text x="738" y="28" text-anchor="end" font-size="12" fill="#5d6b78">신뢰도 가중 EMA — valence · arousal</text>
+
+  <!-- equation -->
+  <text x="380" y="104" text-anchor="middle" font-size="23" font-weight="600">
+    <tspan fill="#6cb6ff">ema</tspan><tspan font-size="14" dy="6" fill="#6cb6ff">t</tspan><tspan dy="-6" fill="#8c98a4"> = </tspan
+    ><tspan fill="#5ef2b8">α</tspan><tspan fill="#8c98a4"> · </tspan
+    ><tspan fill="#f0a36b">w</tspan><tspan font-size="14" dy="6" fill="#f0a36b">t</tspan><tspan dy="-6" fill="#8c98a4"> · </tspan
+    ><tspan fill="#b6f2d8">x</tspan><tspan font-size="14" dy="6" fill="#b6f2d8">t</tspan><tspan dy="-6" fill="#8c98a4"> + (1 − </tspan
+    ><tspan fill="#5ef2b8">α</tspan><tspan fill="#8c98a4"> · </tspan
+    ><tspan fill="#f0a36b">w</tspan><tspan font-size="14" dy="6" fill="#f0a36b">t</tspan><tspan dy="-6" fill="#8c98a4">) · </tspan
+    ><tspan fill="#6cb6ff">ema</tspan><tspan font-size="14" dy="6" fill="#6cb6ff">t−1</tspan>
+  </text>
+
+  <!-- divider -->
+  <line x1="70" y1="134" x2="690" y2="134" stroke="rgba(255,255,255,0.06)"/>
+
+  <!-- legend -->
+  <text x="70" y="165" font-size="14">
+    <tspan fill="#b6f2d8">x</tspan><tspan font-size="10" dy="4" fill="#b6f2d8">t</tspan><tspan dy="-4" fill="#5d6b78">   :   </tspan><tspan fill="#9aa6b2">현재 감정 값 (valence · arousal)</tspan>
+  </text>
+  <text x="70" y="191" font-size="14">
+    <tspan fill="#f0a36b">w</tspan><tspan font-size="10" dy="4" fill="#f0a36b">t</tspan><tspan dy="-4" fill="#5d6b78">   :   </tspan><tspan fill="#9aa6b2">인식 신뢰도 (0~1) — 측면 · 가림 시 낮아짐</tspan>
+  </text>
+  <text x="70" y="217" font-size="14">
+    <tspan fill="#5ef2b8">α</tspan><tspan fill="#5d6b78">    :   </tspan><tspan fill="#9aa6b2">기본 평활 강도</tspan>
+  </text>
+</svg>
