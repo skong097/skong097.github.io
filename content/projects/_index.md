@@ -9,7 +9,10 @@ cover:
   image: images/covers/projects-cover.png
   alt: Projects
   hidden: false
+  hiddenInSingle: true
 ---
+
+{{< github-graph >}}
 
 <style>
 /* ── Projects Page Custom Styles ──────────────────────── */
