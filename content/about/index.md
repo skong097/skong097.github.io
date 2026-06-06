@@ -578,6 +578,13 @@ author: ''
 
 <div class="gallery-grid">
   <figure class="gallery-item" style="margin:0;">
+    <img src="/images/gallery/gallery_new.webp" alt="Physical AI Live WALL — 다중 프로젝트 데모 월" loading="lazy">
+    <figcaption class="gallery-caption">
+      <div class="gallery-caption-title">Physical AI Live WALL</div>
+      <div class="gallery-caption-desc">자율주행 · 낙상 감지 · 로봇 제어 · IoT 데모 월</div>
+    </figcaption>
+  </figure>
+  <figure class="gallery-item" style="margin:0;">
     <img src="/images/gallery/moca-gallery.gif" alt="MOCA 카페 로봇 모객 시나리오 데모" loading="lazy">
     <figcaption class="gallery-caption">
       <div class="gallery-caption-title">MOCA 카페 로봇</div>
