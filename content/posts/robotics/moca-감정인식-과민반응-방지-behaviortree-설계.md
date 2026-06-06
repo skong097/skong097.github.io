@@ -31,12 +31,7 @@ MOCA의 모객 시나리오는 6단계로 구성된 BehaviorTree로 동작합니
 
 `ReactiveFallback`은 자식 노드를 매 tick마다 위에서부터 다시 평가합니다. 따라서 다음 두 가지 가드를 트리의 가장 위에 올려두면, 모객의 어느 단계가 진행 중이든 매 tick 안전·감정 상태가 재평가됩니다.
 
-```
-ReactiveFallback
-├── 안전 가드 (장애물/사람 충돌 위험 → 즉시 정지)
-├── 감정 가드 (지속 부정 감정 → 모객 중단/물러나기)
-└── 모객 시퀀스 (IDLE → APPROACH → ICEBREAK → MINIGAME → OFFER → LEAD-IN)
-```
+{{< figure src="/images/diagrams/moca-reactivefallback-tree.svg" alt="ReactiveFallback 트리 구조 — 안전 가드, 감정 가드, 모객 시퀀스를 매 tick 위에서부터 재평가" >}}
 
 이 구조에서는 **부정 감정이 감지되는 순간 모객 시퀀스가 즉시 우선순위에서 밀려납니다.** Reactive 키워드가 그것을 보장합니다.
 
@@ -49,12 +44,7 @@ ReactiveFallback
 - 표정 인식 결과에는 **인식 신뢰도(confidence)**가 같이 따라옵니다. 측면을 향했거나 부분 가림이 있을 때 낮게 떨어집니다.
 - 단순 평균이 아닌 **신뢰도 가중 EMA(Exponential Moving Average)**로 valence·arousal을 갱신합니다. 신뢰도가 낮은 프레임은 과거 값에 거의 영향을 주지 못하도록 가중치가 낮게 들어갑니다.
 
-```
-ema_t = α · w_t · x_t + (1 − α · w_t) · ema_{t−1}
-  x_t    : 현재 감정 값
-  w_t    : 인식 신뢰도 (0~1)
-  α      : 기본 평활 강도
-```
+{{< figure src="/images/diagrams/moca-ema-formula.svg" alt="신뢰도 가중 EMA 수식 — ema_t = α·w_t·x_t + (1 − α·w_t)·ema_{t−1}" >}}
 
 이렇게 하면 신뢰도가 떨어지는 노이즈 프레임은 평균을 거의 흔들지 않고, 신뢰도가 높은 안정적인 프레임만 평균을 끌어당깁니다.
 
