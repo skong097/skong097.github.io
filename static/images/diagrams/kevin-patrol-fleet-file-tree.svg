@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 306" width="600" height="306" font-family="'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace" role="img" aria-label="kevin_patrol 파일 구조: core(data_provider 수정없음, robot_manager 신규), dashboard 단일 동결, dashboard_fleet 다중 신규, run_dashboard 단일, run_fleet 다중">
+  <rect x="1" y="1" width="598" height="304" rx="14" fill="#0c1117" stroke="rgba(94,242,184,0.16)"/>
+  <rect x="1" y="1" width="598" height="46" rx="14" fill="rgba(255,255,255,0.02)"/>
+  <circle cx="26" cy="24" r="5.5" fill="#ff5f57"/>
+  <circle cx="44" cy="24" r="5.5" fill="#febc2e"/>
+  <circle cx="62" cy="24" r="5.5" fill="#28c840"/>
+  <text x="578" y="28" text-anchor="end" font-size="12" fill="#5d6b78">file tree — kevin_patrol</text>
+
+  <text x="40" y="80" font-size="15" font-weight="700" fill="#6cb6ff">kevin_patrol/</text>
+
+  <!-- top-level spine -->
+  <g stroke="#3a4654" stroke-width="1.6" fill="none">
+    <path d="M66 92 V 274"/>
+    <path d="M66 112 H 94"/>
+    <path d="M66 193 H 94"/>
+    <path d="M66 220 H 94"/>
+    <path d="M66 247 H 94"/>
+    <path d="M66 274 H 94"/>
+  </g>
+  <!-- nested spine under core/ -->
+  <g stroke="#3a4654" stroke-width="1.6" fill="none">
+    <path d="M122 124 V 166"/>
+    <path d="M122 139 H 150"/>
+    <path d="M122 166 H 150"/>
+  </g>
+
+  <text x="102" y="117" font-size="14" font-weight="700" fill="#6cb6ff">core/</text>
+  <text x="158" y="144" font-size="14" fill="#5ef2b8">data_provider.py</text>
+  <text x="330" y="144" font-size="13" fill="#8c98a4"><tspan fill="#6272a4">← </tspan>수정 없음</text>
+  <text x="158" y="171" font-size="14" fill="#5ef2b8">robot_manager.py</text>
+  <text x="330" y="171" font-size="13" fill="#8c98a4"><tspan fill="#6272a4">← </tspan>신규 (래핑)</text>
+
+  <text x="102" y="198" font-size="14" font-weight="700" fill="#6cb6ff">dashboard/</text>
+  <text x="330" y="198" font-size="13" fill="#8c98a4"><tspan fill="#6272a4">← </tspan>단일 로봇 v3.2.1 (동결)</text>
+  <text x="102" y="225" font-size="14" font-weight="700" fill="#6cb6ff">dashboard_fleet/</text>
+  <text x="330" y="225" font-size="13" fill="#8c98a4"><tspan fill="#6272a4">← </tspan>다중 로봇 v3.3 (신규)</text>
+  <text x="102" y="252" font-size="14" fill="#5ef2b8">run_dashboard.py</text>
+  <text x="330" y="252" font-size="13" fill="#8c98a4"><tspan fill="#6272a4">← </tspan>단일</text>
+  <text x="102" y="279" font-size="14" fill="#5ef2b8">run_fleet.py</text>
+  <text x="330" y="279" font-size="13" fill="#8c98a4"><tspan fill="#6272a4">← </tspan>다중</text>
+</svg>

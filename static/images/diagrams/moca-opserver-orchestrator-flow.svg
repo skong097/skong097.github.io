@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 452" width="560" height="452" font-family="'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace" role="img" aria-label="OpServer 오케스트레이터 흐름: 대시보드/트리거가 새 모드를 요청하면 OpServer가 우선순위 비교·비동기 전환·완료 이벤트 수신·대기 복귀·자동 순회를 수행하고 로봇 BehaviorTree 실행 노드에 모드 변경 명령을 내린다">
+  <defs><marker id="ah" markerWidth="9" markerHeight="9" refX="5" refY="3" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 L6 3 L0 6 z" fill="#3a4654"/></marker></defs>
+  <rect x="1" y="1" width="558" height="450" rx="14" fill="#0c1117" stroke="rgba(94,242,184,0.16)"/>
+  <rect x="1" y="1" width="558" height="46" rx="14" fill="rgba(255,255,255,0.02)"/>
+  <circle cx="26" cy="24" r="5.5" fill="#ff5f57"/>
+  <circle cx="44" cy="24" r="5.5" fill="#febc2e"/>
+  <circle cx="62" cy="24" r="5.5" fill="#28c840"/>
+  <text x="538" y="28" text-anchor="end" font-size="12" fill="#5d6b78">flow — OpServer 오케스트레이터</text>
+
+  <!-- top trigger -->
+  <rect x="170" y="66" width="220" height="40" rx="8" fill="rgba(108,182,255,0.09)" stroke="#6cb6ff" stroke-width="1.3"/>
+  <text x="280" y="91" text-anchor="middle" font-size="13.5" fill="#b9dcff">대시보드 / 트리거</text>
+
+  <path d="M280 106 V 150" stroke="#3a4654" stroke-width="1.6" fill="none" marker-end="url(#ah)"/>
+  <text x="292" y="132" font-size="12" fill="#6272a4">새 모드 요청</text>
+
+  <!-- OpServer box -->
+  <rect x="140" y="152" width="280" height="172" rx="10" fill="rgba(94,242,184,0.08)" stroke="#5ef2b8" stroke-width="1.5"/>
+  <text x="280" y="180" text-anchor="middle" font-size="14.5" font-weight="700" fill="#b6f2d8">OpServer 오케스트레이터</text>
+  <g font-size="13" fill="#c9d1d9">
+    <text x="162" y="210"><tspan fill="#5ef2b8">- </tspan>우선순위 비교 (선점/큐)</text>
+    <text x="162" y="234"><tspan fill="#5ef2b8">- </tspan>비동기 전환 + 재시도</text>
+    <text x="162" y="258"><tspan fill="#5ef2b8">- </tspan>완료 이벤트 수신</text>
+    <text x="162" y="282"><tspan fill="#5ef2b8">- </tspan>자동 대기 복귀</text>
+    <text x="162" y="306"><tspan fill="#5ef2b8">- </tspan>자동 순회 시작 (idle)</text>
+  </g>
+
+  <path d="M280 324 V 368" stroke="#3a4654" stroke-width="1.6" fill="none" marker-end="url(#ah)"/>
+  <text x="292" y="350" font-size="12" fill="#6272a4">모드 변경 명령</text>
+
+  <!-- bottom node -->
+  <rect x="150" y="370" width="260" height="40" rx="8" fill="rgba(240,163,107,0.09)" stroke="#f0a36b" stroke-width="1.3"/>
+  <text x="280" y="395" text-anchor="middle" font-size="13.5" fill="#f3c79b">로봇 BehaviorTree 실행 노드</text>
+</svg>

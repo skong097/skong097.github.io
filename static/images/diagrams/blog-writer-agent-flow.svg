@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 500" width="660" height="500" font-family="'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace" role="img" aria-label="BlogWriterAgent.run() 흐름: POST /agent/write 요청을 받아 Step1 scan_references(한글 키워드 추출), Step2 read_file(첫 파일 선택), Step3 classify_category(키워드 스코어링)는 코드가 직접 실행, Step4 LLM 본문 생성(마크다운 출력)은 LLM 전담, Step5 write_post 후 Hugo 포스트 md 파일을 저장한다">
+  <defs><marker id="ah" markerWidth="9" markerHeight="9" refX="5" refY="3" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 L6 3 L0 6 z" fill="#3a4654"/></marker></defs>
+  <rect x="1" y="1" width="658" height="498" rx="14" fill="#0c1117" stroke="rgba(94,242,184,0.16)"/>
+  <rect x="1" y="1" width="658" height="46" rx="14" fill="rgba(255,255,255,0.02)"/>
+  <circle cx="26" cy="24" r="5.5" fill="#ff5f57"/>
+  <circle cx="44" cy="24" r="5.5" fill="#febc2e"/>
+  <circle cx="62" cy="24" r="5.5" fill="#28c840"/>
+  <text x="638" y="28" text-anchor="end" font-size="12" fill="#5d6b78">flow — BlogWriterAgent.run()</text>
+
+  <!-- request -->
+  <rect x="130" y="60" width="400" height="50" rx="9" fill="rgba(108,182,255,0.08)" stroke="#6cb6ff" stroke-width="1.3"/>
+  <text x="330" y="82" text-anchor="middle" font-size="13.5" font-weight="700" fill="#b9dcff">POST /agent/write</text>
+  <text x="330" y="100" text-anchor="middle" font-size="11.5" fill="#8c98a4">{"request": "ST-GCN 파인튜닝 포스트 작성해줘"}</text>
+
+  <path d="M330 110 V 150" stroke="#3a4654" stroke-width="1.6" fill="none" marker-end="url(#ah)"/>
+
+  <!-- agent box -->
+  <rect x="80" y="152" width="500" height="236" rx="10" fill="rgba(94,242,184,0.08)" stroke="#5ef2b8" stroke-width="1.5"/>
+  <text x="330" y="178" text-anchor="middle" font-size="14.5" font-weight="700" fill="#b6f2d8">BlogWriterAgent.run()</text>
+
+  <!-- Step 4 highlight -->
+  <rect x="98" y="306" width="464" height="38" rx="6" fill="rgba(108,182,255,0.10)"/>
+
+  <!-- step 1 -->
+  <text x="110" y="212" font-size="13" fill="#c9d1d9"><tspan fill="#5ef2b8">Step 1.</tspan> scan_references</text>
+  <text x="110" y="228" font-size="11" fill="#6b7682">(한글 키워드 강제 추출)</text>
+  <text x="558" y="212" text-anchor="end" font-size="11.5" fill="#6272a4">← 코드가 직접 실행</text>
+  <!-- step 2 -->
+  <text x="110" y="252" font-size="13" fill="#c9d1d9"><tspan fill="#5ef2b8">Step 2.</tspan> read_file</text>
+  <text x="110" y="268" font-size="11" fill="#6b7682">(첫 번째 파일 자동 선택)</text>
+  <text x="558" y="252" text-anchor="end" font-size="11.5" fill="#6272a4">← 코드가 직접 실행</text>
+  <!-- step 3 -->
+  <text x="110" y="292" font-size="13" fill="#c9d1d9"><tspan fill="#5ef2b8">Step 3.</tspan> classify_category</text>
+  <text x="110" y="308" font-size="11" fill="#6b7682">(키워드 스코어링)</text>
+  <text x="558" y="292" text-anchor="end" font-size="11.5" fill="#6272a4">← 코드가 직접 실행</text>
+  <!-- step 4 (LLM) -->
+  <text x="110" y="328" font-size="13" font-weight="600" fill="#e6edf3"><tspan fill="#6cb6ff">Step 4.</tspan> LLM 본문 생성</text>
+  <text x="110" y="344" font-size="11" fill="#7e8a98">(마크다운 직접 출력)</text>
+  <text x="558" y="328" text-anchor="end" font-size="11.5" fill="#6cb6ff">← LLM 전담</text>
+  <!-- step 5 -->
+  <text x="110" y="372" font-size="13" fill="#c9d1d9"><tspan fill="#5ef2b8">Step 5.</tspan> write_post</text>
+  <text x="558" y="372" text-anchor="end" font-size="11.5" fill="#6272a4">← 코드가 직접 실행</text>
+
+  <path d="M330 388 V 430" stroke="#3a4654" stroke-width="1.6" fill="none" marker-end="url(#ah)"/>
+
+  <!-- output -->
+  <rect x="200" y="432" width="260" height="42" rx="8" fill="rgba(240,163,107,0.09)" stroke="#f0a36b" stroke-width="1.3"/>
+  <text x="330" y="458" text-anchor="middle" font-size="13.5" fill="#f3c79b">Hugo 포스트 md 파일 저장</text>
+</svg>

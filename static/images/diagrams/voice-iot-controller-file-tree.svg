@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 512" width="700" height="512" font-family="'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace" role="img" aria-label="voice_iot_controller 파일 구조: server(main, stt/llm engine, command_router, tcp_server, tts_engine, websocket_hub, api_routes), config/settings.yaml, web/index.html, esp32/esp32_client.ino">
+  <rect x="1" y="1" width="698" height="510" rx="14" fill="#0c1117" stroke="rgba(94,242,184,0.16)"/>
+  <rect x="1" y="1" width="698" height="46" rx="14" fill="rgba(255,255,255,0.02)"/>
+  <circle cx="26" cy="24" r="5.5" fill="#ff5f57"/>
+  <circle cx="44" cy="24" r="5.5" fill="#febc2e"/>
+  <circle cx="62" cy="24" r="5.5" fill="#28c840"/>
+  <text x="678" y="28" text-anchor="end" font-size="12" fill="#5d6b78">file tree — voice_iot_controller</text>
+
+  <text x="40" y="80" font-size="15" font-weight="700" fill="#6cb6ff">voice_iot_controller/</text>
+
+  <!-- top-level spine -->
+  <g stroke="#3a4654" stroke-width="1.6" fill="none">
+    <path d="M66 92 V 463"/>
+    <path d="M66 112 H 94"/>
+    <path d="M66 355 H 94"/>
+    <path d="M66 409 H 94"/>
+    <path d="M66 463 H 94"/>
+  </g>
+  <!-- nested spine under server/ -->
+  <g stroke="#3a4654" stroke-width="1.6" fill="none">
+    <path d="M122 124 V 328"/>
+    <path d="M122 139 H 150"/>
+    <path d="M122 166 H 150"/>
+    <path d="M122 193 H 150"/>
+    <path d="M122 220 H 150"/>
+    <path d="M122 247 H 150"/>
+    <path d="M122 274 H 150"/>
+    <path d="M122 301 H 150"/>
+    <path d="M122 328 H 150"/>
+  </g>
+  <!-- nested spines under config/ web/ esp32/ -->
+  <g stroke="#3a4654" stroke-width="1.6" fill="none">
+    <path d="M122 367 V 382"/><path d="M122 382 H 150"/>
+    <path d="M122 421 V 436"/><path d="M122 436 H 150"/>
+    <path d="M122 475 V 490"/><path d="M122 490 H 150"/>
+  </g>
+
+  <text x="102" y="117" font-size="14" font-weight="700" fill="#6cb6ff">server/</text>
+  <text x="158" y="144" font-size="14" fill="#5ef2b8">main.py</text>
+  <text x="330" y="144" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>FastAPI + uvicorn 진입점</text>
+  <text x="158" y="171" font-size="14" fill="#5ef2b8">stt_engine.py</text>
+  <text x="330" y="171" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>faster-whisper STT 엔진</text>
+  <text x="158" y="198" font-size="14" fill="#5ef2b8">llm_engine.py</text>
+  <text x="330" y="198" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>Ollama LLM 파싱 엔진</text>
+  <text x="158" y="225" font-size="14" fill="#5ef2b8">command_router.py</text>
+  <text x="330" y="225" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>명령 라우터</text>
+  <text x="158" y="252" font-size="14" fill="#5ef2b8">tcp_server.py</text>
+  <text x="330" y="252" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>ESP32 TCP 통신 + UnifiedState</text>
+  <text x="158" y="279" font-size="14" fill="#5ef2b8">tts_engine.py</text>
+  <text x="330" y="279" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>edge-tts TTS 엔진</text>
+  <text x="158" y="306" font-size="14" fill="#5ef2b8">websocket_hub.py</text>
+  <text x="330" y="306" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>브라우저 WS 허브</text>
+  <text x="158" y="333" font-size="14" fill="#5ef2b8">api_routes.py</text>
+  <text x="330" y="333" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>REST API 라우트</text>
+
+  <text x="102" y="360" font-size="14" font-weight="700" fill="#6cb6ff">config/</text>
+  <text x="158" y="387" font-size="14" fill="#f0a36b">settings.yaml</text>
+  <text x="330" y="387" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>시스템 설정</text>
+
+  <text x="102" y="414" font-size="14" font-weight="700" fill="#6cb6ff">web/</text>
+  <text x="158" y="441" font-size="14" fill="#f0a36b">index.html</text>
+  <text x="330" y="441" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>HOUSE MAP 대시보드</text>
+
+  <text x="102" y="468" font-size="14" font-weight="700" fill="#6cb6ff">esp32/</text>
+  <text x="158" y="495" font-size="14" fill="#f0a36b">esp32_client.ino</text>
+  <text x="330" y="495" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>Arduino ESP32 TCP 클라이언트</text>
+</svg>

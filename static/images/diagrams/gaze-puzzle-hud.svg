@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 440" width="720" height="440" font-family="'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace" role="img" aria-label="gaze_puzzle 게임 화면 구성(1280×720): 상단 HUD에 Time, Found 2/4, Level 1, EASY, Score 80 표시, 하단 힌트에 Flip:Next Fist:Restart Cross:Quit, 중앙은 숨은그림찾기 플레이 영역">
+  <rect x="1" y="1" width="718" height="438" rx="14" fill="#0c1117" stroke="rgba(94,242,184,0.16)"/>
+  <rect x="1" y="1" width="718" height="46" rx="14" fill="rgba(255,255,255,0.02)"/>
+  <circle cx="26" cy="24" r="5.5" fill="#ff5f57"/>
+  <circle cx="44" cy="24" r="5.5" fill="#febc2e"/>
+  <circle cx="62" cy="24" r="5.5" fill="#28c840"/>
+  <text x="698" y="28" text-anchor="end" font-size="12" fill="#5d6b78">screen — gaze_puzzle HUD (1280×720)</text>
+
+  <!-- game viewport -->
+  <rect x="40" y="64" width="640" height="344" rx="8" fill="#11161d" stroke="#2a3540" stroke-width="1.3"/>
+
+  <!-- top HUD strip -->
+  <rect x="40" y="64" width="640" height="38" rx="8" fill="rgba(94,242,184,0.06)"/>
+  <line x1="40" y1="102" x2="680" y2="102" stroke="#2a3540" stroke-width="1"/>
+  <text x="58" y="88" font-size="13" fill="#8c98a4">Time: <tspan fill="#e6edf3">12.3s</tspan>   Found: <tspan fill="#5ef2b8">2/4</tspan>   Level: <tspan fill="#e6edf3">1</tspan>   <tspan fill="#f0a36b" font-weight="700">EASY</tspan>   Score: <tspan fill="#e6edf3">80</tspan></text>
+
+  <!-- center play area -->
+  <text x="360" y="232" text-anchor="middle" font-size="13" fill="#3f4b57">숨은그림찾기 플레이 영역</text>
+  <!-- green pointing cursor -->
+  <circle cx="430" cy="270" r="11" fill="none" stroke="#5ef2b8" stroke-width="2"/>
+  <circle cx="430" cy="270" r="2.5" fill="#5ef2b8"/>
+  <text x="448" y="274" font-size="11.5" fill="#6272a4">검지 포인팅 커서</text>
+
+  <!-- bottom hint strip -->
+  <line x1="40" y1="372" x2="680" y2="372" stroke="#2a3540" stroke-width="1"/>
+  <text x="360" y="393" text-anchor="middle" font-size="12.5" fill="#8c98a4"><tspan fill="#6cb6ff">Flip</tspan>:Next   <tspan fill="#6cb6ff">Fist</tspan>:Restart   <tspan fill="#6cb6ff">Cross</tspan>:Quit</text>
+</svg>

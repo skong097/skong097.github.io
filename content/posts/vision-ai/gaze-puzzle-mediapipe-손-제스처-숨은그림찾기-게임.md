@@ -129,12 +129,7 @@ python main.py
 
 게임 화면은 1280×720 해상도에서 구성됩니다:
 
-```
-┌──────────────────────────────────────────────────┐
-│ Time: 12.3s  Found: 2/4  Level: 1  EASY  Score: 80│
-│                     Flip:Next  Fist:Restart  Cross:Quit│
-├───────
-```
+{{< figure src="/images/diagrams/gaze-puzzle-hud.svg" alt="gaze_puzzle 게임 화면 구성 — 상단 HUD(Time·Found 2/4·Level·EASY·Score)와 하단 힌트(Flip:Next·Fist:Restart·Cross:Quit), 중앙 숨은그림찾기 플레이 영역" >}}
 
 ---
 

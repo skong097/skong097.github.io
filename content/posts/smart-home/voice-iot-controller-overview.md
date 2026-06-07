@@ -46,23 +46,7 @@ TCP → ESP32 실행
 
 전체 시스템은 **FastAPI 단일 서버**를 중심으로 REST, WebSocket, TCP 세 가지 프로토콜을 동시에 처리하는 구조다.
 
-```
-┌──────────────────────────────────────────────────────┐
-│                   INPUT PIPELINE                      │
-│   마이크 → Whisper STT → Ollama LLM → JSON 명령   │
-└─────────────────────┬────────────────────────────────┘
-                      ↓
-┌──────────────────────────────────────────────────────┐
-│            CORE SERVER (FastAPI · Python)             │
-│  REST :8000 │ WebSocket /ws │ TCP Server :9000       │
-│  stt_engine · llm_engine · command_router            │
-│  tcp_server · websocket_hub · tts_engine             │
-└──────┬──────────────────────────────┬────────────────┘
-       │ WebSocket                    │ TCP Socket
-       ↓                              ↓
-  Web Dashboard              ESP32 × 5대 (5개 방)
-  (브라우저 실시간)           LED / 서보 / 센서 / 7세그먼트
-```
+{{< figure src="/images/diagrams/voice-iot-controller-architecture.svg" alt="voice_iot_controller 아키텍처 — INPUT PIPELINE(마이크→Whisper STT→Ollama LLM→JSON 명령) → CORE SERVER(FastAPI, REST :8000·WebSocket /ws·TCP :9000) → WebSocket으로 Web Dashboard, TCP로 ESP32 5대" >}}
 
 핵심 설계 원칙은 **하나의 서버가 모든 것을 통합**하는 것이다. HTTP API, 브라우저 실시간 통신, ESP32 하드웨어 제어가 모두 하나의 FastAPI 앱 안에서 비동기로 동작한다.
 
@@ -147,24 +131,7 @@ ESP32는 전원이 켜지면 자동으로 WiFi 연결 → TCP 서버 접속 → 
 
 ## 프로젝트 구조
 
-```
-voice_iot_controller/
-├── server/
-│   ├── main.py              # FastAPI + uvicorn 진입점
-│   ├── stt_engine.py        # faster-whisper STT 엔진
-│   ├── llm_engine.py        # Ollama LLM 파싱 엔진
-│   ├── command_router.py    # 명령 라우터
-│   ├── tcp_server.py        # ESP32 TCP 통신 + UnifiedState
-│   ├── tts_engine.py        # edge-tts TTS 엔진
-│   ├── websocket_hub.py     # 브라우저 WS 허브
-│   └── api_routes.py        # REST API 라우트
-├── config/
-│   └── settings.yaml        # 시스템 설정
-├── web/
-│   └── index.html           # HOUSE MAP 대시보드
-└── esp32/
-    └── esp32_client.ino     # Arduino ESP32 TCP 클라이언트
-```
+{{< figure src="/images/diagrams/voice-iot-controller-file-tree.svg" alt="voice_iot_controller 프로젝트 구조 — server(main·stt_engine·llm_engine·command_router·tcp_server·tts_engine·websocket_hub·api_routes), config/settings.yaml, web/index.html, esp32/esp32_client.ino" >}}
 
 ---
 

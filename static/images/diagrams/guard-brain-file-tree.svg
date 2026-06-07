@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 282" width="560" height="282" font-family="'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace" role="img" aria-label="guard_brain_agent 파일 구조: config.py 설정, tools.py 도구 5개, prompts.py 프롬프트, agent.py 코어, main.py FastAPI 서버, requirements.txt">
+  <rect x="1" y="1" width="558" height="280" rx="14" fill="#0c1117" stroke="rgba(94,242,184,0.16)"/>
+  <rect x="1" y="1" width="558" height="46" rx="14" fill="rgba(255,255,255,0.02)"/>
+  <circle cx="26" cy="24" r="5.5" fill="#ff5f57"/>
+  <circle cx="44" cy="24" r="5.5" fill="#febc2e"/>
+  <circle cx="62" cy="24" r="5.5" fill="#28c840"/>
+  <text x="538" y="28" text-anchor="end" font-size="12" fill="#5d6b78">file tree — guard_brain_agent</text>
+
+  <text x="40" y="80" font-size="14" font-weight="700" fill="#6cb6ff">~/dev_ws/ai_agent/guard_brain_agent/</text>
+
+  <g stroke="#3a4654" stroke-width="1.6" fill="none">
+    <path d="M66 92 V 247"/>
+    <path d="M66 112 H 94"/>
+    <path d="M66 139 H 94"/>
+    <path d="M66 166 H 94"/>
+    <path d="M66 193 H 94"/>
+    <path d="M66 220 H 94"/>
+    <path d="M66 247 H 94"/>
+  </g>
+
+  <text x="102" y="117" font-size="14" fill="#5ef2b8">config.py</text>
+  <text x="230" y="117" font-size="13" fill="#8c98a4"><tspan fill="#6272a4">← </tspan>설정값 (모델명, 포트)</text>
+  <text x="102" y="144" font-size="14" fill="#5ef2b8">tools.py</text>
+  <text x="230" y="144" font-size="13" fill="#8c98a4"><tspan fill="#6272a4">← </tspan>도구 함수 5개 (Mock)</text>
+  <text x="102" y="171" font-size="14" fill="#5ef2b8">prompts.py</text>
+  <text x="230" y="171" font-size="13" fill="#8c98a4"><tspan fill="#6272a4">← </tspan>LLM 시스템 프롬프트</text>
+  <text x="102" y="198" font-size="14" fill="#5ef2b8">agent.py</text>
+  <text x="230" y="198" font-size="13" fill="#8c98a4"><tspan fill="#6272a4">← </tspan>에이전트 코어 (판단 루프)</text>
+  <text x="102" y="225" font-size="14" fill="#5ef2b8">main.py</text>
+  <text x="230" y="225" font-size="13" fill="#8c98a4"><tspan fill="#6272a4">← </tspan>FastAPI 서버</text>
+  <text x="102" y="252" font-size="14" fill="#f0a36b">requirements.txt</text>
+</svg>

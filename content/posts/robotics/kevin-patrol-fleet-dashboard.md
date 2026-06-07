@@ -125,16 +125,7 @@ painter.setBrush(QColor(255, 50, 50, int(200 * alpha)))
 
 ## 프로젝트 분리 구조
 
-```
-kevin_patrol/
-├── core/
-│   ├── data_provider.py      ← 수정 없음
-│   └── robot_manager.py      ← 신규 (래핑)
-├── dashboard/                 ← 단일 로봇 v3.2.1 (동결)
-├── dashboard_fleet/           ← 다중 로봇 v3.3 (신규)
-├── run_dashboard.py           ← 단일
-└── run_fleet.py               ← 다중
-```
+{{< figure src="/images/diagrams/kevin-patrol-fleet-file-tree.svg" alt="kevin_patrol 프로젝트 분리 구조 — core(data_provider 수정 없음, robot_manager 신규 래핑), dashboard 단일 로봇 v3.2.1 동결, dashboard_fleet 다중 로봇 v3.3 신규, run_dashboard·run_fleet 진입점" >}}
 
 방식 C(dashboard_fleet + core에 robot_manager 추가)를 선택한 이유는 `core/`를 공유하면서도 기존 코드에 영향을 주지 않기 때문입니다.
 
