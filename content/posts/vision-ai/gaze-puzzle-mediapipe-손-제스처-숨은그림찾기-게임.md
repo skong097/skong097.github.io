@@ -34,18 +34,7 @@ draft: false
 
 ### 파일 구조
 
-```
-gaze_puzzle/
-├── main.py               # 게임 실행 진입점
-├── hand_tracker.py        # MediaPipe Hands 검지 추적 및 제스처 인식
-├── puzzle_generator.py    # 초급 및 중급 퍼즐 생성기
-├── requirements.txt       # Python 패키지 목록
-├── README.md              # 문서화 파일
-└── assets/                # 퍼즐 이미지 (jpg/png 자동 인식)
-    ├── 01_marathon.jpg
-    ├── 02_hobbit_door.jpg
-    └── ...
-```
+{{< figure src="/images/diagrams/gaze-puzzle-file-tree.svg" alt="gaze_puzzle 프로젝트 파일 구조 — main.py 진입점, hand_tracker.py 손 추적, puzzle_generator.py 퍼즐 생성, requirements.txt, README.md, assets 이미지 폴더" >}}
 
 ### 환경 설정
 

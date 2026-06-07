@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 384" width="820" height="384" font-family="'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace" role="img" aria-label="gaze_puzzle 프로젝트 파일 구조: main.py 진입점, hand_tracker.py 손 추적, puzzle_generator.py 퍼즐 생성, requirements.txt, README.md, assets 이미지 폴더">
+  <rect x="1" y="1" width="818" height="382" rx="14" fill="#0c1117" stroke="rgba(94,242,184,0.16)"/>
+  <rect x="1" y="1" width="818" height="46" rx="14" fill="rgba(255,255,255,0.02)"/>
+
+  <!-- title bar -->
+  <circle cx="26" cy="24" r="5.5" fill="#ff5f57"/>
+  <circle cx="44" cy="24" r="5.5" fill="#febc2e"/>
+  <circle cx="62" cy="24" r="5.5" fill="#28c840"/>
+  <text x="798" y="28" text-anchor="end" font-size="12" fill="#5d6b78">file tree — gaze_puzzle</text>
+
+  <!-- root -->
+  <text x="40" y="80" font-size="15" font-weight="700" fill="#6cb6ff">gaze_puzzle/</text>
+
+  <!-- top-level spine + ticks -->
+  <g stroke="#3a4654" stroke-width="1.6" fill="none">
+    <path d="M66 92 V 262"/>
+    <path d="M66 112 H 94"/>
+    <path d="M66 142 H 94"/>
+    <path d="M66 172 H 94"/>
+    <path d="M66 202 H 94"/>
+    <path d="M66 232 H 94"/>
+    <path d="M66 262 H 94"/>
+  </g>
+
+  <!-- top-level entries -->
+  <text x="102" y="117" font-size="14" fill="#5ef2b8">main.py</text>
+  <text x="330" y="117" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>게임 실행 진입점</text>
+
+  <text x="102" y="147" font-size="14" fill="#5ef2b8">hand_tracker.py</text>
+  <text x="330" y="147" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>MediaPipe Hands 검지 추적 · 제스처 인식</text>
+
+  <text x="102" y="177" font-size="14" fill="#5ef2b8">puzzle_generator.py</text>
+  <text x="330" y="177" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>초급 · 중급 퍼즐 생성기</text>
+
+  <text x="102" y="207" font-size="14" fill="#f0a36b">requirements.txt</text>
+  <text x="330" y="207" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>Python 패키지 목록</text>
+
+  <text x="102" y="237" font-size="14" fill="#f0a36b">README.md</text>
+  <text x="330" y="237" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>문서화 파일</text>
+
+  <text x="102" y="267" font-size="14" font-weight="700" fill="#6cb6ff">assets/</text>
+  <text x="330" y="267" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>퍼즐 이미지 (jpg/png 자동 인식)</text>
+
+  <!-- nested spine + ticks under assets/ -->
+  <g stroke="#3a4654" stroke-width="1.6" fill="none">
+    <path d="M162 276 V 352"/>
+    <path d="M162 292 H 190"/>
+    <path d="M162 322 H 190"/>
+    <path d="M162 352 H 190"/>
+  </g>
+
+  <!-- nested image entries -->
+  <text x="198" y="297" font-size="14" fill="#b9a7e6">01_marathon.jpg</text>
+  <text x="198" y="327" font-size="14" fill="#b9a7e6">02_hobbit_door.jpg</text>
+  <text x="198" y="357" font-size="14" fill="#5d6b78">...</text>
+</svg>
