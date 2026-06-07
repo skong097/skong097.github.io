@@ -16,6 +16,24 @@ params:
   ShowToc: true
   defaultTheme: dark
   disableThemeToggle: false
+  # ── 검색(Fuse.js) 튜닝 ──────────────────────────────
+  # ignoreLocation: 긴 본문 어디서든 매치(기본은 앞부분 위주) → recall 대폭↑
+  # threshold 0.3: 느슨한 기본 0.4 대비 잡음↓ (오타 허용은 유지)
+  # keys: title·tags·categories 가중↑ (인덱스에 tags/categories 추가됨)
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.3
+    minMatchCharLength: 2
+    ignoreLocation: true
+    keys:
+    - {name: title, weight: 0.5}
+    - {name: tags, weight: 0.2}
+    - {name: categories, weight: 0.1}
+    - {name: summary, weight: 0.1}
+    - {name: content, weight: 0.1}
   homeInfoParams:
     Title: Robotics × AI × ROS2
     Content: '자율순찰 로봇, 컴퓨터 비전, 로보틱스 시뮬레이션을 다루는 개발 블로그입니다. ROS2 기반 로봇 시스템, PyQt6 대시보드,
