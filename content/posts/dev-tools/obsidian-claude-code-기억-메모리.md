@@ -1,7 +1,7 @@
 ---
 title: "Obsidian은 Claude Code의 '기억'이 되어줄까 — 착각과 실제"
 date: 2026-06-07
-draft: true
+draft: false
 tags: ["dev-tools", "claude-code", "obsidian", "knowledge-management", "llm-wiki"]
 categories: ["dev-tools"]
 description: "Obsidian vault + Claude Code = 영구 기억? 직접 168개 노트짜리 LLM Wiki를 만들어 연결해보고 알게 된, '기억'과 '검색 접근'의 차이를 솔직하게 정리합니다."
