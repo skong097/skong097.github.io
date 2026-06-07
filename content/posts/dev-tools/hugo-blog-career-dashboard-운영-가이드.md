@@ -17,31 +17,7 @@ description: "> **블로그**: ~/dev_ws/blog (Hugo + PaperMod) > **대시보드 
 
 ## 1. 프로젝트 구조
 
-```
-~/dev_ws/blog/
-├── hugo.yaml                          # Hugo 설정 (메뉴, 테마, 사이트 정보)
-├── data/
-│   └── roadmap_data.yaml              #  대시보드 데이터 (이 파일만 수정)
-├── content/
-│   ├── dashboard/
-│   │   └── index.md                   # 대시보드 페이지 (frontmatter만)
-│   ├── posts/                         # 블로그 포스트
-│   │   ├── ros2/
-│   │   ├── computer-vision/
-│   │   ├── robotics/
-│   │   ├── ai-ml/
-│   │   └── dev-tools/
-│   ├── projects/                      # 프로젝트 페이지
-│   └── about/                         # 소개 페이지
-├── layouts/
-│   └── dashboard/
-│       └── single.html                # 대시보드 렌더링 레이아웃
-├── static/                            # 이미지, CSS 등 정적 파일
-├── themes/PaperMod/                   # 테마 (수정 금지)
-└── .github/
-    └── workflows/
-        └── hugo.yml                   # GitHub Actions 자동 배포
-```
+{{< figure src="/images/diagrams/hugo-career-blog-tree.svg" alt="블로그 프로젝트 디렉터리 구조: hugo.yaml, data/roadmap_data.yaml, content(dashboard·posts 카테고리·projects·about), layouts/dashboard, static, themes/PaperMod, .github/workflows/hugo.yml" >}}
 
 ---
 
@@ -286,23 +262,7 @@ git commit -m "style: 대시보드 모바일 레이아웃 개선"
 
 로드맵 기준 "10개 축적 → 5개 공개 + 매주 추가" 전략:
 
-```
-[Phase 1: 축적] — private repo + draft: true
-  ├── 포스트 10개 작성 (draft: true)
-  ├── 대시보드 데이터 완성
-  └── 로컬에서 최종 확인
-
-[Phase 2: 공개 전환]
-  ├── 저장소 public 전환 (또는 유지)
-  ├── 5개 포스트 draft: false
-  └── git push → 자동 배포
-
-[Phase 3: 운영] — 매주 반복
-  ├── 월: YAML 데이터 업데이트 (학습 로그, 프로젝트 진척)
-  ├── 수: 신규 포스트 1개 작성 (draft: true)
-  ├── 금: 1개 포스트 공개 (draft: false)
-  └── 금: git push
-```
+{{< figure src="/images/diagrams/hugo-career-rollout-plan.svg" alt="블로그 운영 롤아웃 플랜: Phase 1 축적(포스트 10개 작성·대시보드 데이터·로컬 확인), Phase 2 공개 전환(저장소 public·5개 draft false·git push), Phase 3 운영(매주 월 데이터 업데이트·수 신규 포스트·금 공개 및 push)" >}}
 
 ---
 

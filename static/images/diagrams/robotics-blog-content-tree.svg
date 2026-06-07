@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 740" width="620" height="740" font-family="'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace" role="img" aria-label="블로그 content 디렉터리 구조: posts(ros2·computer-vision·robotics·ai-ml·dev-tools 카테고리별 글), projects(프로젝트 포트폴리오), about/index.md">
+  <rect x="1" y="1" width="618" height="738" rx="14" fill="#0c1117" stroke="rgba(94,242,184,0.16)"/>
+  <rect x="1" y="1" width="618" height="46" rx="14" fill="rgba(255,255,255,0.02)"/>
+  <circle cx="26" cy="24" r="5.5" fill="#ff5f57"/>
+  <circle cx="44" cy="24" r="5.5" fill="#febc2e"/>
+  <circle cx="62" cy="24" r="5.5" fill="#28c840"/>
+  <text x="598" y="28" text-anchor="end" font-size="12" fill="#5d6b78">file tree — content/</text>
+
+  <text x="40" y="80" font-size="15" font-weight="700" fill="#6cb6ff">content/</text>
+
+  <!-- L1 spine -->
+  <g stroke="#3a4654" stroke-width="1.6" fill="none">
+    <path d="M66 92 V 679"/>
+    <path d="M66 112 H 94"/>
+    <path d="M66 517 H 94"/>
+    <path d="M66 679 H 94"/>
+  </g>
+  <!-- L2 spine under posts/ -->
+  <g stroke="#3a4654" stroke-width="1.6" fill="none">
+    <path d="M114 125 V 463"/>
+    <path d="M114 139 H 142"/>
+    <path d="M114 247 H 142"/>
+    <path d="M114 328 H 142"/>
+    <path d="M114 409 H 142"/>
+    <path d="M114 463 H 142"/>
+  </g>
+  <!-- L2 spine under projects/ -->
+  <g stroke="#3a4654" stroke-width="1.6" fill="none">
+    <path d="M114 530 V 652"/>
+    <path d="M114 544 H 142"/>
+    <path d="M114 571 H 142"/>
+    <path d="M114 598 H 142"/>
+    <path d="M114 625 H 142"/>
+    <path d="M114 652 H 142"/>
+  </g>
+  <!-- L2 spine under about/ -->
+  <g stroke="#3a4654" stroke-width="1.6" fill="none">
+    <path d="M114 692 V 706"/><path d="M114 706 H 142"/>
+  </g>
+  <!-- L3 spines -->
+  <g stroke="#3a4654" stroke-width="1.6" fill="none">
+    <path d="M162 152 V 220"/>
+    <path d="M162 166 H 190"/><path d="M162 193 H 190"/><path d="M162 220 H 190"/>
+    <path d="M162 260 V 301"/>
+    <path d="M162 274 H 190"/><path d="M162 301 H 190"/>
+    <path d="M162 341 V 382"/>
+    <path d="M162 355 H 190"/><path d="M162 382 H 190"/>
+    <path d="M162 422 V 436"/><path d="M162 436 H 190"/>
+    <path d="M162 476 V 490"/><path d="M162 490 H 190"/>
+  </g>
+
+  <text x="100" y="117" font-size="14" font-weight="700" fill="#6cb6ff">posts/</text>
+  <text x="148" y="144" font-size="14" font-weight="700" fill="#6cb6ff">ros2/</text>
+  <text x="330" y="144" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>ROS2 튜토리얼, 팁, 트러블슈팅</text>
+  <text x="196" y="171" font-size="14" fill="#b9a7e6">ros2-jazzy-setup.md</text>
+  <text x="196" y="198" font-size="14" fill="#b9a7e6">ros2-nav2-costmap-tuning.md</text>
+  <text x="196" y="225" font-size="14" fill="#b9a7e6">ros2-slam-toolbox-guide.md</text>
+  <text x="148" y="252" font-size="14" font-weight="700" fill="#6cb6ff">computer-vision/</text>
+  <text x="330" y="252" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>YOLO, ST-GCN, 낙상감지 등</text>
+  <text x="196" y="279" font-size="14" fill="#b9a7e6">stgcn-finetuning-91-accuracy.md</text>
+  <text x="196" y="306" font-size="14" fill="#b9a7e6">yolo-realtime-detection-pipeline.md</text>
+  <text x="148" y="333" font-size="14" font-weight="700" fill="#6cb6ff">robotics/</text>
+  <text x="330" y="333" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>하드웨어, 시뮬레이션, 통합</text>
+  <text x="196" y="360" font-size="14" fill="#b9a7e6">kevin-patrol-robot-overview.md</text>
+  <text x="196" y="387" font-size="14" fill="#b9a7e6">pyqt6-robot-dashboard.md</text>
+  <text x="148" y="414" font-size="14" font-weight="700" fill="#6cb6ff">ai-ml/</text>
+  <text x="330" y="414" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>LLM, 모델 학습, 파이프라인</text>
+  <text x="196" y="441" font-size="14" fill="#b9a7e6">ollama-exaone-realtime-analysis.md</text>
+  <text x="148" y="468" font-size="14" font-weight="700" fill="#6cb6ff">dev-tools/</text>
+  <text x="330" y="468" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>VSCode, Jupyter, Git 팁</text>
+  <text x="196" y="495" font-size="14" fill="#b9a7e6">pyqt6-dark-theme-system.md</text>
+
+  <text x="100" y="522" font-size="14" font-weight="700" fill="#6cb6ff">projects/</text>
+  <text x="330" y="522" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>프로젝트 포트폴리오 (핵심 페이지)</text>
+  <text x="148" y="549" font-size="14" fill="#b9a7e6">kevin-patrol-dashboard.md</text>
+  <text x="148" y="576" font-size="14" fill="#b9a7e6">eyecon-pinocchio.md</text>
+  <text x="148" y="603" font-size="14" fill="#b9a7e6">home-guard-bot.md</text>
+  <text x="148" y="630" font-size="14" fill="#b9a7e6">ros2-commander.md</text>
+  <text x="148" y="657" font-size="14" fill="#b9a7e6">home-safe-solution.md</text>
+
+  <text x="100" y="684" font-size="14" font-weight="700" fill="#6cb6ff">about/</text>
+  <text x="148" y="711" font-size="14" fill="#f0a36b">index.md</text>
+  <text x="330" y="711" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>자기소개 + 기술 스택 + 연락처</text>
+</svg>

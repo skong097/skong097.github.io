@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 715" width="640" height="715" font-family="'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace" role="img" aria-label="블로그 프로젝트 디렉터리 구조: hugo.yaml, data/roadmap_data.yaml, content(dashboard·posts 카테고리·projects·about), layouts/dashboard, static, themes/PaperMod, .github/workflows/hugo.yml">
+  <rect x="1" y="1" width="638" height="713" rx="14" fill="#0c1117" stroke="rgba(94,242,184,0.16)"/>
+  <rect x="1" y="1" width="638" height="46" rx="14" fill="rgba(255,255,255,0.02)"/>
+  <circle cx="26" cy="24" r="5.5" fill="#ff5f57"/>
+  <circle cx="44" cy="24" r="5.5" fill="#febc2e"/>
+  <circle cx="62" cy="24" r="5.5" fill="#28c840"/>
+  <text x="618" y="28" text-anchor="end" font-size="12" fill="#5d6b78">file tree — blog/</text>
+
+  <text x="40" y="80" font-size="15" font-weight="700" fill="#6cb6ff">~/dev_ws/blog/</text>
+
+  <!-- L1 spine -->
+  <g stroke="#3a4654" stroke-width="1.6" fill="none">
+    <path d="M66 92 V 625"/>
+    <path d="M66 112 H 94"/>
+    <path d="M66 139 H 94"/>
+    <path d="M66 193 H 94"/>
+    <path d="M66 490 H 94"/>
+    <path d="M66 571 H 94"/>
+    <path d="M66 598 H 94"/>
+    <path d="M66 625 H 94"/>
+  </g>
+  <!-- L2 spines -->
+  <g stroke="#3a4654" stroke-width="1.6" fill="none">
+    <path d="M114 152 V 166"/><path d="M114 166 H 142"/>
+    <path d="M114 206 V 463"/>
+    <path d="M114 220 H 142"/><path d="M114 274 H 142"/><path d="M114 436 H 142"/><path d="M114 463 H 142"/>
+    <path d="M114 503 V 517"/><path d="M114 517 H 142"/>
+    <path d="M114 638 V 652"/><path d="M114 652 H 142"/>
+  </g>
+  <!-- L3 spines -->
+  <g stroke="#3a4654" stroke-width="1.6" fill="none">
+    <path d="M162 233 V 247"/><path d="M162 247 H 190"/>
+    <path d="M162 287 V 409"/>
+    <path d="M162 301 H 190"/><path d="M162 328 H 190"/><path d="M162 355 H 190"/><path d="M162 382 H 190"/><path d="M162 409 H 190"/>
+    <path d="M162 530 V 544"/><path d="M162 544 H 190"/>
+    <path d="M162 665 V 679"/><path d="M162 679 H 190"/>
+  </g>
+
+  <text x="100" y="117" font-size="14" fill="#f0a36b">hugo.yaml</text>
+  <text x="360" y="117" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>Hugo 설정 (메뉴, 테마, 사이트 정보)</text>
+  <text x="100" y="144" font-size="14" font-weight="700" fill="#6cb6ff">data/</text>
+  <text x="148" y="171" font-size="14" fill="#f0a36b">roadmap_data.yaml</text>
+  <text x="360" y="171" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>대시보드 데이터 (이 파일만 수정)</text>
+  <text x="100" y="198" font-size="14" font-weight="700" fill="#6cb6ff">content/</text>
+  <text x="148" y="225" font-size="14" font-weight="700" fill="#6cb6ff">dashboard/</text>
+  <text x="196" y="252" font-size="14" fill="#b9a7e6">index.md</text>
+  <text x="360" y="252" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>대시보드 페이지 (frontmatter만)</text>
+  <text x="148" y="279" font-size="14" font-weight="700" fill="#6cb6ff">posts/</text>
+  <text x="360" y="279" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>블로그 포스트</text>
+  <text x="196" y="306" font-size="14" font-weight="700" fill="#6cb6ff">ros2/</text>
+  <text x="196" y="333" font-size="14" font-weight="700" fill="#6cb6ff">computer-vision/</text>
+  <text x="196" y="360" font-size="14" font-weight="700" fill="#6cb6ff">robotics/</text>
+  <text x="196" y="387" font-size="14" font-weight="700" fill="#6cb6ff">ai-ml/</text>
+  <text x="196" y="414" font-size="14" font-weight="700" fill="#6cb6ff">dev-tools/</text>
+  <text x="148" y="441" font-size="14" font-weight="700" fill="#6cb6ff">projects/</text>
+  <text x="360" y="441" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>프로젝트 페이지</text>
+  <text x="148" y="468" font-size="14" font-weight="700" fill="#6cb6ff">about/</text>
+  <text x="360" y="468" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>소개 페이지</text>
+  <text x="100" y="495" font-size="14" font-weight="700" fill="#6cb6ff">layouts/</text>
+  <text x="148" y="522" font-size="14" font-weight="700" fill="#6cb6ff">dashboard/</text>
+  <text x="196" y="549" font-size="14" fill="#f0a36b">single.html</text>
+  <text x="360" y="549" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>대시보드 렌더링 레이아웃</text>
+  <text x="100" y="576" font-size="14" font-weight="700" fill="#6cb6ff">static/</text>
+  <text x="360" y="576" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>이미지, CSS 등 정적 파일</text>
+  <text x="100" y="603" font-size="14" font-weight="700" fill="#6cb6ff">themes/PaperMod/</text>
+  <text x="360" y="603" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>테마 (수정 금지)</text>
+  <text x="100" y="630" font-size="14" font-weight="700" fill="#6cb6ff">.github/</text>
+  <text x="148" y="657" font-size="14" font-weight="700" fill="#6cb6ff">workflows/</text>
+  <text x="196" y="684" font-size="14" fill="#f0a36b">hugo.yml</text>
+  <text x="360" y="684" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>GitHub Actions 자동 배포</text>
+</svg>

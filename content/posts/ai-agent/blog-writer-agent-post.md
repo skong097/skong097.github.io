@@ -193,15 +193,7 @@ title, tags, description 모두 레퍼런스에서 정확히 추출됐다.
 
 ## 프로젝트 구조
 
-```
-~/dev_ws/ai_agent/blog_writer_agent/
-├── config.py      ← 경로 설정 (REFERENCES_DIR, POSTS_DIR)
-├── tools.py       ← 도구 4개 (**kwargs 방어적 설계)
-├── prompts.py     ← LLM 본문 생성 프롬프트
-├── agent.py       ← 에이전트 코어
-├── main.py        ← FastAPI 서버 (포트 8101)
-└── requirements.txt
-```
+{{< figure src="/images/diagrams/blog-writer-agent-file-tree.svg" alt="blog_writer_agent 파일 구조: config.py(경로 설정), tools.py(도구 4개), prompts.py(LLM 본문 생성 프롬프트), agent.py(에이전트 코어), main.py(FastAPI 서버 포트 8101), requirements.txt" >}}
 
 Guard Brain Agent(포트 8100)와 완전히 분리된 독립 환경이다.
 

@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 660" width="640" height="660" font-family="'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace" role="img" aria-label="Hugo 블로그 디렉터리 구조: config.toml, content(posts·projects·about.md), static(images·files), themes, .github/workflows/deploy.yml">
+  <rect x="1" y="1" width="638" height="658" rx="14" fill="#0c1117" stroke="rgba(94,242,184,0.16)"/>
+  <rect x="1" y="1" width="638" height="46" rx="14" fill="rgba(255,255,255,0.02)"/>
+  <circle cx="26" cy="24" r="5.5" fill="#ff5f57"/>
+  <circle cx="44" cy="24" r="5.5" fill="#febc2e"/>
+  <circle cx="62" cy="24" r="5.5" fill="#28c840"/>
+  <text x="618" y="28" text-anchor="end" font-size="12" fill="#5d6b78">file tree — Hugo blog/</text>
+
+  <text x="40" y="80" font-size="15" font-weight="700" fill="#6cb6ff">blog/</text>
+
+  <!-- L1 spine -->
+  <g stroke="#3a4654" stroke-width="1.6" fill="none">
+    <path d="M66 92 V 571"/>
+    <path d="M66 112 H 94"/>
+    <path d="M66 139 H 94"/>
+    <path d="M66 409 H 94"/>
+    <path d="M66 544 H 94"/>
+    <path d="M66 571 H 94"/>
+  </g>
+  <!-- L2 spine under content/ -->
+  <g stroke="#3a4654" stroke-width="1.6" fill="none">
+    <path d="M114 150 V 382"/>
+    <path d="M114 166 H 142"/>
+    <path d="M114 274 H 142"/>
+    <path d="M114 382 H 142"/>
+  </g>
+  <!-- L2 spine under static/ -->
+  <g stroke="#3a4654" stroke-width="1.6" fill="none">
+    <path d="M114 420 V 517"/>
+    <path d="M114 436 H 142"/>
+    <path d="M114 517 H 142"/>
+  </g>
+  <!-- L2 spine under .github/ -->
+  <g stroke="#3a4654" stroke-width="1.6" fill="none">
+    <path d="M114 583 V 598"/><path d="M114 598 H 142"/>
+  </g>
+  <!-- L3 spines -->
+  <g stroke="#3a4654" stroke-width="1.6" fill="none">
+    <path d="M162 178 V 247"/>
+    <path d="M162 193 H 190"/>
+    <path d="M162 220 H 190"/>
+    <path d="M162 247 H 190"/>
+    <path d="M162 286 V 355"/>
+    <path d="M162 301 H 190"/>
+    <path d="M162 328 H 190"/>
+    <path d="M162 355 H 190"/>
+    <path d="M162 448 V 490"/>
+    <path d="M162 463 H 190"/>
+    <path d="M162 490 H 190"/>
+    <path d="M162 610 V 625"/><path d="M162 625 H 190"/>
+  </g>
+
+  <text x="100" y="117" font-size="14" fill="#f0a36b">config.toml</text>
+  <text x="360" y="117" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>Hugo 설정</text>
+  <text x="100" y="144" font-size="14" font-weight="700" fill="#6cb6ff">content/</text>
+  <text x="148" y="171" font-size="14" font-weight="700" fill="#6cb6ff">posts/</text>
+  <text x="360" y="171" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>블로그 포스트</text>
+  <text x="196" y="198" font-size="14" fill="#b9a7e6">2026-02-kevin-dashboard.md</text>
+  <text x="196" y="225" font-size="14" fill="#b9a7e6">2026-02-stgcn-fall-detection.md</text>
+  <text x="196" y="252" font-size="14" fill="#6272a4">...</text>
+  <text x="148" y="279" font-size="14" font-weight="700" fill="#6cb6ff">projects/</text>
+  <text x="360" y="279" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>프로젝트 소개 (정적 페이지)</text>
+  <text x="196" y="306" font-size="14" fill="#b9a7e6">kevin-patrol.md</text>
+  <text x="196" y="333" font-size="14" fill="#b9a7e6">home-safe-solution.md</text>
+  <text x="196" y="360" font-size="14" fill="#6272a4">...</text>
+  <text x="148" y="387" font-size="14" fill="#b9a7e6">about.md</text>
+  <text x="360" y="387" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>자기 소개</text>
+  <text x="100" y="414" font-size="14" font-weight="700" fill="#6cb6ff">static/</text>
+  <text x="148" y="441" font-size="14" font-weight="700" fill="#6cb6ff">images/</text>
+  <text x="360" y="441" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>스크린샷, 다이어그램</text>
+  <text x="196" y="468" font-size="14" fill="#b9a7e6">kevin-dashboard-screenshot.png</text>
+  <text x="196" y="495" font-size="14" fill="#6272a4">...</text>
+  <text x="148" y="522" font-size="14" font-weight="700" fill="#6cb6ff">files/</text>
+  <text x="360" y="522" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>다운로드 자료 (PDF 등)</text>
+  <text x="100" y="549" font-size="14" font-weight="700" fill="#6cb6ff">themes/</text>
+  <text x="360" y="549" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>Hugo 테마</text>
+  <text x="100" y="576" font-size="14" font-weight="700" fill="#6cb6ff">.github/</text>
+  <text x="148" y="603" font-size="14" font-weight="700" fill="#6cb6ff">workflows/</text>
+  <text x="196" y="630" font-size="14" fill="#f0a36b">deploy.yml</text>
+  <text x="360" y="630" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>GitHub Actions 자동 배포</text>
+</svg>

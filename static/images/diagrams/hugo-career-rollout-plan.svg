@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 462" width="660" height="462" font-family="'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace" role="img" aria-label="블로그 운영 롤아웃 플랜: Phase 1 축적(포스트 10개 작성·대시보드 데이터·로컬 확인), Phase 2 공개 전환(저장소 public·5개 draft false·git push), Phase 3 운영(매주 월 데이터 업데이트·수 신규 포스트·금 공개 및 push)">
+  <rect x="1" y="1" width="658" height="460" rx="14" fill="#0c1117" stroke="rgba(94,242,184,0.16)"/>
+  <rect x="1" y="1" width="658" height="46" rx="14" fill="rgba(255,255,255,0.02)"/>
+  <circle cx="26" cy="24" r="5.5" fill="#ff5f57"/>
+  <circle cx="44" cy="24" r="5.5" fill="#febc2e"/>
+  <circle cx="62" cy="24" r="5.5" fill="#28c840"/>
+  <text x="638" y="28" text-anchor="end" font-size="12" fill="#5d6b78">flow — 운영 롤아웃</text>
+
+  <!-- Phase 1 -->
+  <text x="40" y="80" font-size="14.5" font-weight="700" fill="#5ef2b8">[Phase 1: 축적]<tspan fill="#6272a4" font-weight="400"> — private repo + draft: true</tspan></text>
+  <g stroke="#3a4654" stroke-width="1.6" fill="none">
+    <path d="M66 92 V 162"/>
+    <path d="M66 108 H 94"/><path d="M66 135 H 94"/><path d="M66 162 H 94"/>
+  </g>
+  <text x="102" y="113" font-size="14" fill="#c9d1d9">포스트 10개 작성 <tspan fill="#6272a4">(draft: true)</tspan></text>
+  <text x="102" y="140" font-size="14" fill="#c9d1d9">대시보드 데이터 완성</text>
+  <text x="102" y="167" font-size="14" fill="#c9d1d9">로컬에서 최종 확인</text>
+
+  <!-- Phase 2 -->
+  <text x="40" y="200" font-size="14.5" font-weight="700" fill="#6cb6ff">[Phase 2: 공개 전환]</text>
+  <g stroke="#3a4654" stroke-width="1.6" fill="none">
+    <path d="M66 212 V 282"/>
+    <path d="M66 228 H 94"/><path d="M66 255 H 94"/><path d="M66 282 H 94"/>
+  </g>
+  <text x="102" y="233" font-size="14" fill="#c9d1d9">저장소 public 전환 <tspan fill="#6272a4">(또는 유지)</tspan></text>
+  <text x="102" y="260" font-size="14" fill="#c9d1d9">5개 포스트 <tspan fill="#6272a4">draft: false</tspan></text>
+  <text x="102" y="287" font-size="14" fill="#c9d1d9">git push → 자동 배포</text>
+
+  <!-- Phase 3 -->
+  <text x="40" y="320" font-size="14.5" font-weight="700" fill="#f0a36b">[Phase 3: 운영]<tspan fill="#6272a4" font-weight="400"> — 매주 반복</tspan></text>
+  <g stroke="#3a4654" stroke-width="1.6" fill="none">
+    <path d="M66 332 V 429"/>
+    <path d="M66 348 H 94"/><path d="M66 375 H 94"/><path d="M66 402 H 94"/><path d="M66 429 H 94"/>
+  </g>
+  <text x="102" y="353" font-size="14" fill="#c9d1d9"><tspan fill="#5ef2b8">월:</tspan> YAML 데이터 업데이트 <tspan fill="#6272a4">(학습 로그, 프로젝트 진척)</tspan></text>
+  <text x="102" y="380" font-size="14" fill="#c9d1d9"><tspan fill="#5ef2b8">수:</tspan> 신규 포스트 1개 작성 <tspan fill="#6272a4">(draft: true)</tspan></text>
+  <text x="102" y="407" font-size="14" fill="#c9d1d9"><tspan fill="#5ef2b8">금:</tspan> 1개 포스트 공개 <tspan fill="#6272a4">(draft: false)</tspan></text>
+  <text x="102" y="434" font-size="14" fill="#c9d1d9"><tspan fill="#5ef2b8">금:</tspan> git push</text>
+</svg>

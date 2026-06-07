@@ -192,29 +192,7 @@ tags: [Python, OpenCV, MediaPipe, OpenGL, Pygame, pyqtgraph]
 
 ### 5.2 디렉토리 구조
 
-```
-blog/
-├── config.toml              # Hugo 설정
-├── content/
-│   ├── posts/               # 블로그 포스트
-│   │   ├── 2026-02-kevin-dashboard.md
-│   │   ├── 2026-02-stgcn-fall-detection.md
-│   │   └── ...
-│   ├── projects/            # 프로젝트 소개 (정적 페이지)
-│   │   ├── kevin-patrol.md
-│   │   ├── home-safe-solution.md
-│   │   └── ...
-│   └── about.md             # 자기 소개
-├── static/
-│   ├── images/              # 스크린샷, 다이어그램
-│   │   ├── kevin-dashboard-screenshot.png
-│   │   └── ...
-│   └── files/               # 다운로드 자료 (PDF 등)
-├── themes/                  # Hugo 테마
-└── .github/
-    └── workflows/
-        └── deploy.yml       # GitHub Actions 자동 배포
-```
+{{< figure src="/images/diagrams/blog-strategy-blog-tree.svg" alt="Hugo 블로그 디렉터리 구조: config.toml, content(posts·projects·about.md), static(images·files), themes, .github/workflows/deploy.yml" >}}
 
 ### 5.3 Front Matter 템플릿
 

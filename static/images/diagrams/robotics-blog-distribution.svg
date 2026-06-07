@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 250" width="660" height="250" font-family="'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace" role="img" aria-label="콘텐츠 확산 구조: Kevin Patrol Dashboard 완성 하나가 GitHub(소스코드+README), 블로그(상세 개발기 시리즈), YouTube(데모 영상), ROS Discourse(공유), LinkedIn(요약+링크) 5개 채널로 확산">
+  <rect x="1" y="1" width="658" height="248" rx="14" fill="#0c1117" stroke="rgba(94,242,184,0.16)"/>
+  <rect x="1" y="1" width="658" height="46" rx="14" fill="rgba(255,255,255,0.02)"/>
+  <circle cx="26" cy="24" r="5.5" fill="#ff5f57"/>
+  <circle cx="44" cy="24" r="5.5" fill="#febc2e"/>
+  <circle cx="62" cy="24" r="5.5" fill="#28c840"/>
+  <text x="638" y="28" text-anchor="end" font-size="12" fill="#5d6b78">flow — 콘텐츠 확산</text>
+
+  <text x="40" y="80" font-size="15" font-weight="700" fill="#5ef2b8">Kevin Patrol Dashboard 완성</text>
+
+  <g stroke="#3a4654" stroke-width="1.6" fill="none">
+    <path d="M66 92 V 220"/>
+    <path d="M66 112 H 94"/>
+    <path d="M66 139 H 94"/>
+    <path d="M66 166 H 94"/>
+    <path d="M66 193 H 94"/>
+    <path d="M66 220 H 94"/>
+  </g>
+
+  <text x="102" y="117" font-size="14" fill="#c9d1d9"><tspan fill="#6cb6ff" font-weight="700">GitHub: </tspan>소스코드 + README</text>
+  <text x="102" y="144" font-size="14" fill="#c9d1d9"><tspan fill="#5ef2b8" font-weight="700">블로그: </tspan>상세 개발기 (3~4편 시리즈)</text>
+  <text x="102" y="171" font-size="14" fill="#c9d1d9"><tspan fill="#f0a36b" font-weight="700">YouTube: </tspan>30초~1분 데모 영상</text>
+  <text x="102" y="198" font-size="14" fill="#c9d1d9"><tspan fill="#b9a7e6" font-weight="700">ROS Discourse: </tspan>"ROS2 기반 순찰 로봇 대시보드 만들었습니다" 공유</text>
+  <text x="102" y="225" font-size="14" fill="#c9d1d9"><tspan fill="#6cb6ff" font-weight="700">LinkedIn: </tspan>프로젝트 요약 + 영상 + 블로그 링크</text>
+</svg>

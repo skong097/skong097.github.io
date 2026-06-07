@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 290" width="640" height="290" font-family="'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace" role="img" aria-label="blog_writer_agent 파일 구조: config.py(경로 설정), tools.py(도구 4개), prompts.py(LLM 본문 생성 프롬프트), agent.py(에이전트 코어), main.py(FastAPI 서버 포트 8101), requirements.txt">
+  <rect x="1" y="1" width="638" height="288" rx="14" fill="#0c1117" stroke="rgba(94,242,184,0.16)"/>
+  <rect x="1" y="1" width="638" height="46" rx="14" fill="rgba(255,255,255,0.02)"/>
+  <circle cx="26" cy="24" r="5.5" fill="#ff5f57"/>
+  <circle cx="44" cy="24" r="5.5" fill="#febc2e"/>
+  <circle cx="62" cy="24" r="5.5" fill="#28c840"/>
+  <text x="618" y="28" text-anchor="end" font-size="12" fill="#5d6b78">file tree — blog_writer_agent</text>
+
+  <text x="40" y="80" font-size="15" font-weight="700" fill="#6cb6ff">~/dev_ws/ai_agent/blog_writer_agent/</text>
+
+  <g stroke="#3a4654" stroke-width="1.6" fill="none">
+    <path d="M66 92 V 247"/>
+    <path d="M66 112 H 94"/>
+    <path d="M66 139 H 94"/>
+    <path d="M66 166 H 94"/>
+    <path d="M66 193 H 94"/>
+    <path d="M66 220 H 94"/>
+    <path d="M66 247 H 94"/>
+  </g>
+
+  <text x="102" y="117" font-size="14" fill="#5ef2b8">config.py</text>
+  <text x="300" y="117" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>경로 설정 (REFERENCES_DIR, POSTS_DIR)</text>
+  <text x="102" y="144" font-size="14" fill="#5ef2b8">tools.py</text>
+  <text x="300" y="144" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>도구 4개 (**kwargs 방어적 설계)</text>
+  <text x="102" y="171" font-size="14" fill="#5ef2b8">prompts.py</text>
+  <text x="300" y="171" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>LLM 본문 생성 프롬프트</text>
+  <text x="102" y="198" font-size="14" fill="#5ef2b8">agent.py</text>
+  <text x="300" y="198" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>에이전트 코어</text>
+  <text x="102" y="225" font-size="14" fill="#5ef2b8">main.py</text>
+  <text x="300" y="225" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>FastAPI 서버 (포트 8101)</text>
+  <text x="102" y="252" font-size="14" fill="#f0a36b">requirements.txt</text>
+</svg>
