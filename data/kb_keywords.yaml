@@ -35,3 +35,14 @@ groups:
       - "video action recognition"
     categories: [paper, article, video]
     max_per_run: 4
+
+  - id: llm-knowledge
+    name: "LLM 학습 · 지식관리"
+    keywords:
+      - "LLM wiki"
+      - "Andrej Karpathy"
+      - "안드레카파시"
+      - "Obsidian"
+      - "옵시디언"
+    categories: [paper, article, video, person]
+    max_per_run: 5

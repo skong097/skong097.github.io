@@ -1,5 +1,5 @@
 {
-  "last_collected": "2026-06-07",
+  "last_collected": "2026-06-14",
   "items": [
     {
       "id": "53673799b9f54a3e84b549e5eeea2aa1319374e2",
@@ -480,6 +480,71 @@
       "published": "2026-06-01",
       "collected": "2026-06-07",
       "url": "https://arxiv.org/abs/2606.02522",
+      "archived": false
+    },
+    {
+      "id": "24984d8d5d0f0081f7bab7e788321d6a98cd21ac",
+      "group": "llm-knowledge",
+      "category": "paper",
+      "title": "Memory as Metabolism: A Design for Companion Knowledge Systems",
+      "summary": "대규모 언어 모델이 개인 지식을 지속적으로 유지하도록 RAG 일변도를 벗어나 '컴패니언' 지향 메모리 구조를 제안하는 논문이다. TRIAGE·DECAY·CONTEXTUALIZE·CONSOLIDATE·AUDIT 다섯 가지 운영 기능과 '메모리 중력', 소수 가설 보존 기제를 도입해 모순되는 증거가 여러 주기에 걸쳐 누적되어 기존 해석을 갱신하도록 설계한다. 단일 사용자용 지식 위키를 위한 거버넌스 틀에 초점을 둔다.",
+      "source": "arXiv",
+      "authors": "Stefan Miteski",
+      "published": "2026-04-13",
+      "collected": "2026-06-14",
+      "url": "https://arxiv.org/abs/2604.12034",
+      "archived": false
+    },
+    {
+      "id": "730437bc091e19f01cca5b51fe577c055648f6df",
+      "group": "llm-knowledge",
+      "category": "person",
+      "title": "microgpt: 의존성 없는 200줄 파이썬 GPT 구현",
+      "summary": "안드레이 카파시가 외부 의존성 없이 순수 파이썬 200줄로 GPT의 학습과 추론 전 과정을 담은 교육용 구현 microgpt를 공개했다. 데이터셋·토크나이저·자동미분 엔진·GPT-2 계열 구조·Adam 옵티마이저·학습/추론 루프를 한 파일에 포함하며, 약 3만 2천 개의 이름 데이터로 학습해 새로운 이름을 생성한다. micrograd·makemore·nanoGPT로 이어진 작업의 연장선으로 대형 언어 모델을 핵심 알고리즘으로 압축하려는 시도다.",
+      "source": "Andrej Karpathy Blog",
+      "authors": "Andrej Karpathy",
+      "published": "2026-02-12",
+      "collected": "2026-06-14",
+      "url": "http://karpathy.github.io/2026/02/12/microgpt/",
+      "archived": false
+    },
+    {
+      "id": "e47c2055302165630dae394b05e0a9f9c6476222",
+      "group": "llm-knowledge",
+      "category": "article",
+      "title": "LLM Wiki: 문서를 자동으로 상호연결된 지식베이스로 만드는 데스크톱 앱",
+      "summary": "문서를 자동으로 정리·상호연결해 지속적인 위키 형태의 지식베이스를 구축하는 크로스플랫폼 데스크톱 애플리케이션이다. 매 질의마다 처음부터 검색·생성하는 기존 RAG와 달리 자료를 점진적으로 통합해 영구적인 위키를 유지하며, 지식 그래프 시각화, Louvain 커뮤니티 탐지, 벡터 의미 검색, 로컬 HTTP API·MCP 서버 연동 등을 제공한다. 카파시가 제안한 'LLM 위키' 패턴을 구현한 오픈소스 프로젝트로 2026년 6월 8일 v0.4.23이 공개됐다.",
+      "source": "GitHub",
+      "authors": "",
+      "published": "2026-06-08",
+      "collected": "2026-06-14",
+      "url": "https://github.com/nashsu/llm_wiki",
+      "archived": false
+    },
+    {
+      "id": "52411bbba20b5a0ac41679b1691d79d0c1887c0d",
+      "group": "llm-knowledge",
+      "category": "article",
+      "title": "Obsidian + 로컬 LLM: 볼트를 세컨드 브레인으로 만드는 플러그인 5선 (2026)",
+      "summary": "Ollama 기반 로컬 LLM과 함께 쓰는 Obsidian 플러그인 다섯 가지(Smart Connections, Copilot, Text Generator, Local GPT, BMO Chatbot)를 비교한 가이드다. 의미 기반 볼트 검색을 제공하는 Smart Connections와 채팅 인터페이스를 제공하는 Copilot 조합을 권장하며, 볼트 내용을 클라우드로 보내지 않고 로컬에서 세컨드 브레인 용도의 대부분을 처리할 수 있다고 설명한다. 2026년 5월 8일 게시됐다.",
+      "source": "PromptQuorum",
+      "authors": "",
+      "published": "2026-05-08",
+      "collected": "2026-06-14",
+      "url": "https://www.promptquorum.com/power-local-llm/local-llm-with-obsidian-2026",
+      "archived": false
+    },
+    {
+      "id": "3a5f4d3873c7cd30967c6f5d59456eb47a56796a",
+      "group": "llm-knowledge",
+      "category": "video",
+      "title": "Build a 100% Private AI Second Brain: Local LLM + Obsidian (2026 Guide)",
+      "summary": "로컬 LLM과 Obsidian을 결합해 데이터를 클라우드에 보내지 않는 완전 비공개 'AI 세컨드 브레인'을 구축하는 방법을 다루는 튜토리얼 영상이다. 오픈소스 언어 모델을 Obsidian 노트와 연동해 개인 지식관리 환경을 로컬에서 구성하는 과정을 소개한다.",
+      "source": "YouTube",
+      "authors": "",
+      "published": "",
+      "collected": "2026-06-14",
+      "url": "https://www.youtube.com/watch?v=cVte1z4dy6Q",
       "archived": false
     }
   ]
