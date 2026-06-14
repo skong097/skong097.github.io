@@ -4,7 +4,7 @@ date: 2026-06-14
 tags: ["knowledge-management", "second-brain", "ai-collab", "claude", "gemini", "graphify", "benchmark", "llm-as-a-judge"]
 categories: ["ai-agent"]
 summary: "지식을 쌓는 데서 끝내지 않고, 그 지식이 AI를 실제로 더 싸게·낫게 만드는지 측정하는 닫힌 루프를 만들었다. 핵심은 측정의 '신뢰성' — 그래서 답하는 AI와 다른 계열의 AI를 독립 심판으로 두었다."
-draft: true
+draft: false
 ShowToc: true
 TocOpen: true
 ---
