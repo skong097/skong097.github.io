@@ -42,8 +42,6 @@ params:
   socialIcons:
   - name: github
     url: https://github.com/skong097
-  - name: linkedin
-    url: https://linkedin.com/in/skong097
   assets:
     favicon: /favicon.ico
   cover:
