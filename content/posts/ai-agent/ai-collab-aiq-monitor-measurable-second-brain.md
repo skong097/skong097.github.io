@@ -23,15 +23,7 @@ TocOpen: true
 
 ## 전체 그림: 캡처 → 컴파일 → 그래프 → 계측 → 루프
 
-```
-[외부] KB Radar 수집 ─┐
-                      ├─→ nextbrain LLM wiki ─→ graphify 지식그래프 ─→ AIQ Monitor
-[내부] 포스트·프로젝트 ┘   (세컨드 브레인)        (질의 가능한 구조)      (측정·계기판)
-                                                                            │
-                          ┌─────────────────────────────────────────────────┘
-                          ▼
-              지표를 보고 지식관리 방식을 바꾼다 → 다시 측정 (닫힌 루프)
-```
+{{< figure src="/images/diagrams/aiq-monitor-pipeline.svg" alt="AIQ Monitor 지식 파이프라인 아키텍처: 캡처부터 계측, 피드백 루프까지" >}}
 
 - **외부 지식**은 KB Radar가 키워드 기반으로 긁어오고, **내부 지식**은 직접 쓴 포스트와 프로젝트 기록에서 나온다.
 - 둘은 **nextbrain**의 LLM wiki로 흘러든다. Andrej Karpathy가 말한 *"한 번 컴파일, 영원히 질의(compile once, query forever)"* 패턴 — 원자적 노트 + `[[링크]]`로 엮인 세컨드 브레인이다.
