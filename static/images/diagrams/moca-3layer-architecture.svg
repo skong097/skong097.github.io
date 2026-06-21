@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 396" width="720" height="396" font-family="'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace" role="img" aria-label="MOCA 3계층 아키텍처: UI 계층의 운영 웹 대시보드와 주문 키오스크가 WebSocket/HTTP로 Service 계층의 OperationServer 및 WebService·DB·VoiceService와 통신하고, Service 계층은 ROS2로 Device 계층의 제조 로봇 컨트롤러와 서빙 로봇 컨트롤러에 연결된다">
+  <defs><marker id="ah" markerWidth="9" markerHeight="9" refX="5" refY="3" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 L6 3 L0 6 z" fill="#3a4654"/></marker></defs>
+  <rect x="1" y="1" width="718" height="394" rx="14" fill="#0c1117" stroke="rgba(94,242,184,0.16)"/>
+  <rect x="1" y="1" width="718" height="46" rx="14" fill="rgba(255,255,255,0.02)"/>
+  <circle cx="26" cy="24" r="5.5" fill="#ff5f57"/>
+  <circle cx="44" cy="24" r="5.5" fill="#febc2e"/>
+  <circle cx="62" cy="24" r="5.5" fill="#28c840"/>
+  <text x="698" y="28" text-anchor="end" font-size="12" fill="#5d6b78">diagram — MOCA 3계층 구조</text>
+
+  <!-- layer labels -->
+  <g font-size="13" font-weight="700" fill="#8c98a4">
+    <text x="24" y="101">UI</text>
+    <text x="24" y="227">Service</text>
+    <text x="24" y="349">Device</text>
+  </g>
+
+  <!-- UI layer -->
+  <rect x="96" y="76" width="250" height="40" rx="8" fill="rgba(108,182,255,0.09)" stroke="#6cb6ff" stroke-width="1.3"/>
+  <text x="221" y="101" text-anchor="middle" font-size="12.5" fill="#b9dcff">운영 웹 대시보드 / AdminGUI</text>
+  <rect x="386" y="76" width="300" height="40" rx="8" fill="rgba(108,182,255,0.09)" stroke="#6cb6ff" stroke-width="1.3"/>
+  <text x="536" y="101" text-anchor="middle" font-size="12.5" fill="#b9dcff">주문 키오스크 (OrderVUI)</text>
+
+  <path d="M221 116 V 196" stroke="#3a4654" stroke-width="1.6" fill="none" marker-end="url(#ah)"/>
+  <text x="231" y="162" font-size="11.5" fill="#6272a4">WebSocket / HTTP</text>
+  <path d="M536 116 V 196" stroke="#3a4654" stroke-width="1.6" fill="none" marker-end="url(#ah)"/>
+  <text x="546" y="162" font-size="11.5" fill="#6272a4">HTTP</text>
+
+  <!-- Service layer -->
+  <rect x="96" y="198" width="250" height="46" rx="10" fill="rgba(94,242,184,0.08)" stroke="#5ef2b8" stroke-width="1.5"/>
+  <text x="221" y="226" text-anchor="middle" font-size="13.5" font-weight="700" fill="#b6f2d8">OperationServer (OpServer)</text>
+  <rect x="386" y="198" width="300" height="46" rx="8" fill="rgba(185,167,230,0.08)" stroke="#b9a7e6" stroke-width="1.3"/>
+  <text x="536" y="226" text-anchor="middle" font-size="12.5" fill="#d9cdf2">WebService · DB · VoiceService</text>
+
+  <path d="M221 244 V 320" stroke="#3a4654" stroke-width="1.6" fill="none" marker-end="url(#ah)"/>
+  <text x="231" y="287" font-size="11.5" fill="#6272a4">ROS2</text>
+  <path d="M536 244 V 320" stroke="#3a4654" stroke-width="1.6" fill="none" marker-end="url(#ah)"/>
+  <text x="546" y="287" font-size="11.5" fill="#6272a4">ROS2</text>
+
+  <!-- Device layer -->
+  <rect x="96" y="322" width="250" height="44" rx="8" fill="rgba(240,163,107,0.09)" stroke="#f0a36b" stroke-width="1.3"/>
+  <text x="221" y="349" text-anchor="middle" font-size="12.5" fill="#f3c79b">제조 로봇 컨트롤러</text>
+  <rect x="386" y="322" width="300" height="44" rx="8" fill="rgba(240,163,107,0.09)" stroke="#f0a36b" stroke-width="1.3"/>
+  <text x="536" y="345" text-anchor="middle" font-size="12" fill="#f3c79b">서빙 로봇 컨트롤러</text>
+  <text x="536" y="360" text-anchor="middle" font-size="10.5" fill="#8c98a4">모빌리티 · 싱글암 · 인터랙션</text>
+</svg>

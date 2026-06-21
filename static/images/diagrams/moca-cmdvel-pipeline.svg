@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 248" width="760" height="248" font-family="'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace" role="img" aria-label="cmd_vel 파이프라인: 조이스틱(우선순위 100)·Nav2 자율(80)·추종(50) 세 속도 소스가 twist_mux로 모여 우선순위가 중재되고, velocity_smoother가 급가감속을 완화한 뒤, collision_monitor가 라이다로 충돌을 회피해 최종 속도 명령이 바퀴로 전달된다">
+  <defs><marker id="ah" markerWidth="9" markerHeight="9" refX="5" refY="3" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 L6 3 L0 6 z" fill="#3a4654"/></marker></defs>
+  <rect x="1" y="1" width="758" height="246" rx="14" fill="#0c1117" stroke="rgba(94,242,184,0.16)"/>
+  <rect x="1" y="1" width="758" height="46" rx="14" fill="rgba(255,255,255,0.02)"/>
+  <circle cx="26" cy="24" r="5.5" fill="#ff5f57"/>
+  <circle cx="44" cy="24" r="5.5" fill="#febc2e"/>
+  <circle cx="62" cy="24" r="5.5" fill="#28c840"/>
+  <text x="738" y="28" text-anchor="end" font-size="12" fill="#5d6b78">flow — cmd_vel 파이프라인</text>
+
+  <!-- sources -->
+  <g>
+    <rect x="22" y="70" width="150" height="36" rx="7" fill="rgba(108,182,255,0.09)" stroke="#6cb6ff" stroke-width="1.2"/>
+    <text x="97" y="93" text-anchor="middle" font-size="11.5" fill="#b9dcff">조이스틱 (100)</text>
+    <rect x="22" y="118" width="150" height="36" rx="7" fill="rgba(108,182,255,0.09)" stroke="#6cb6ff" stroke-width="1.2"/>
+    <text x="97" y="141" text-anchor="middle" font-size="11.5" fill="#b9dcff">Nav2 / 자율 (80)</text>
+    <rect x="22" y="166" width="150" height="36" rx="7" fill="rgba(108,182,255,0.09)" stroke="#6cb6ff" stroke-width="1.2"/>
+    <text x="97" y="189" text-anchor="middle" font-size="11.5" fill="#b9dcff">추종 (50)</text>
+  </g>
+  <path d="M172 88 H 196 V 136 L 214 136" stroke="#3a4654" stroke-width="1.4" fill="none" marker-end="url(#ah)"/>
+  <path d="M172 136 H 214" stroke="#3a4654" stroke-width="1.4" fill="none" marker-end="url(#ah)"/>
+  <path d="M172 184 H 196 V 136 L 214 136" stroke="#3a4654" stroke-width="1.4" fill="none"/>
+
+  <!-- twist_mux -->
+  <rect x="216" y="110" width="120" height="52" rx="9" fill="rgba(94,242,184,0.08)" stroke="#5ef2b8" stroke-width="1.4"/>
+  <text x="276" y="134" text-anchor="middle" font-size="12.5" font-weight="700" fill="#b6f2d8">twist_mux</text>
+  <text x="276" y="151" text-anchor="middle" font-size="10" fill="#8c98a4">우선순위 중재</text>
+  <path d="M336 136 H 366" stroke="#3a4654" stroke-width="1.6" fill="none" marker-end="url(#ah)"/>
+
+  <!-- smoother -->
+  <rect x="368" y="110" width="130" height="52" rx="9" fill="rgba(185,167,230,0.08)" stroke="#b9a7e6" stroke-width="1.4"/>
+  <text x="433" y="134" text-anchor="middle" font-size="12" font-weight="700" fill="#d9cdf2">velocity_smoother</text>
+  <text x="433" y="151" text-anchor="middle" font-size="10" fill="#8c98a4">급가감속 완화</text>
+  <path d="M498 136 H 528" stroke="#3a4654" stroke-width="1.6" fill="none" marker-end="url(#ah)"/>
+
+  <!-- monitor -->
+  <rect x="530" y="110" width="130" height="52" rx="9" fill="rgba(240,163,107,0.09)" stroke="#f0a36b" stroke-width="1.4"/>
+  <text x="595" y="134" text-anchor="middle" font-size="12" font-weight="700" fill="#f3c79b">collision_monitor</text>
+  <text x="595" y="151" text-anchor="middle" font-size="10" fill="#8c98a4">라이다 충돌 회피</text>
+  <path d="M660 136 H 690" stroke="#3a4654" stroke-width="1.6" fill="none" marker-end="url(#ah)"/>
+
+  <!-- wheel -->
+  <rect x="692" y="116" width="50" height="40" rx="8" fill="rgba(94,242,184,0.06)" stroke="#5ef2b8" stroke-width="1.2"/>
+  <text x="717" y="140" text-anchor="middle" font-size="12" fill="#b6f2d8">바퀴</text>
+</svg>
