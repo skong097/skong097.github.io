@@ -60,11 +60,11 @@ TocOpen: true
 
 문제는 두 런타임이 각자 자기 루프를 잡으려 한다는 것이다. rclpy는 보통 `spin()`으로 블로킹하며 자체 executor를 돌리고, FastAPI는 asyncio 이벤트 루프가 돌아야 한다. 한 프로세스에서 둘 다 메인 루프를 차지하려 하니 충돌한다.
 
-해결은 **rclpy executor를 별도 스레드에서 돌리는 것**이다. 메인 스레드는 FastAPI/uvicorn(asyncio 루프)이 WebSocket·REST를 처리하고, 백그라운드 스레드에서 rclpy executor가 토픽 구독과 서비스 응답을 처리한다.
+해결은 **FastAPI/uvicorn을 별도 스레드에서 돌리는 것**이다. 메인 스레드는 rclpy executor(`MultiThreadedExecutor.spin()`)가 토픽 구독과 서비스 응답을 처리하고, 백그라운드 데몬 스레드에서 uvicorn의 asyncio 루프가 WebSocket·REST를 처리한다.
 
-{{< figure src="/images/diagrams/moca-runtime-opserver-bridge.svg" alt="OperationServer는 단일 프로세스에서 FastAPI/uvicorn(메인 asyncio 루프)와 rclpy 노드(executor 별도 스레드 spin)를 함께 돌린다. 브라우저는 WebSocket/REST로 FastAPI와 통신하고, rclpy 노드는 call_async(SetMode)로 mode_manager에 명령하며 /mode/state 토픽을 구독한다. mode_manager는 launch로 디스패처·Nav2·cmd_vel·바퀴 체인을 실행한다" >}}
+{{< figure src="/images/diagrams/moca-runtime-opserver-bridge.svg" alt="OperationServer는 단일 프로세스에서 rclpy 노드(메인 스레드 executor spin)와 FastAPI/uvicorn(별도 데몬 스레드 asyncio 루프)을 함께 돌린다. 브라우저는 WebSocket/REST로 FastAPI와 통신하고, rclpy 노드는 call_async(SetMode)로 mode_manager에 명령하며 /mode/state 토픽을 구독한다. mode_manager는 launch로 디스패처·Nav2·cmd_vel·바퀴 체인을 실행한다" >}}
 
-- **웹 → 로봇**: WebSocket 핸들러(asyncio)가 같은 프로세스 안에서 오케스트레이터를 호출하고, 오케스트레이터가 rclpy 서비스 클라이언트의 `call_async`로 mode_manager에 명령한다. 동기 호출을 쓰면 asyncio 루프가 멈추므로 비동기로 호출하고 결과를 기다린다.
+- **웹 → 로봇**: 핸들러가 같은 프로세스 안에서 오케스트레이터를 호출하고, 오케스트레이터가 rclpy 서비스 클라이언트의 `call_async`로 mode_manager에 명령한다. REST 라우터는 동기 함수라 FastAPI 스레드풀에서 안전하게 응답을 대기하지만, WebSocket 핸들러(`async def`) 경로는 `_await_future`가 `time.sleep` 폴링으로 응답을 기다려 최대 `SetMode` 타임아웃(2초) 동안 asyncio 루프를 점유한다 — 이 타임아웃이 점유 상한 역할을 한다.
 - **로봇 → 웹**: rclpy 구독 콜백(ROS 스레드)이 받은 상태를, asyncio 루프 쪽으로 스레드 경계를 안전하게 넘겨 WebSocket으로 브로드캐스트한다. 공유 상태는 락으로 보호한다.
 
 이 과정에서 "ROS spin과 asyncio 루프 충돌", "긴 타이머 콜백이 executor를 독점하는 문제"를 실제로 겪고 해결했다. 두 비동기 세계(ROS executor / asyncio)를 잇는 다리를 스레드 경계에서 어떻게 안전하게 놓느냐가 관건이었다.
@@ -72,5 +72,5 @@ TocOpen: true
 ## 배운 점
 
 - **다섯 모드의 공통 골격을 먼저 세우니 개별 모드 구현이 단순해졌다.** "하향 서비스 + 상향 토픽 + 완료 감지"라는 틀을 공유하자, 새 모드는 디스패처 로직만 끼우면 됐다.
-- **서로 다른 두 비동기 런타임을 한 프로세스에 합칠 때는 누가 메인 루프를 갖는지 먼저 정해야 한다.** rclpy executor를 별도 스레드로 내리고 asyncio를 메인에 둔 뒤, 스레드 경계만 안전하게 처리하니 충돌이 사라졌다.
+- **서로 다른 두 비동기 런타임을 한 프로세스에 합칠 때는 누가 메인 루프를 갖는지 먼저 정해야 한다.** asyncio(uvicorn)를 별도 데몬 스레드로 내리고 rclpy executor를 메인에 둔 뒤, 스레드 경계만 안전하게 처리하니 충돌이 사라졌다.
 - 동기/비동기 통신을 **목적에 맞게 구분**한 게 통합을 깔끔하게 만들었다. 확인이 필요한 명령은 서비스, 흐르는 상태는 토픽, 장시간 주행은 피드백·취소가 되는 액션으로 나눴다.
