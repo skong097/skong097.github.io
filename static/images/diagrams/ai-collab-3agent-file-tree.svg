@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" width="720" height="360" font-family="'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace" role="img" aria-label="ai-collab 공용 워크스페이스 파일 구조: ai_agent_roles 폴더 아래 CLAUDE.md(오케스트레이터) AGENTS.md(코드·설계 리뷰어) GEMINI.md(리서치·문서·이미지 생성), shared 공동 산출물, exchange 요청 응답 리포트, claude codex gemini 작업 일지 폴더">
+  <rect x="1" y="1" width="718" height="358" rx="14" fill="#0c1117" stroke="rgba(94,242,184,0.16)"/>
+  <rect x="1" y="1" width="718" height="46" rx="14" fill="rgba(255,255,255,0.02)"/>
+  <circle cx="26" cy="24" r="5.5" fill="#ff5f57"/>
+  <circle cx="44" cy="24" r="5.5" fill="#febc2e"/>
+  <circle cx="62" cy="24" r="5.5" fill="#28c840"/>
+  <text x="698" y="28" text-anchor="end" font-size="12" fill="#5d6b78">file tree — ai-collab</text>
+
+  <text x="40" y="80" font-size="15" font-weight="700" fill="#6cb6ff">~/ai-collab/</text>
+
+  <g stroke="#3a4654" stroke-width="1.6" fill="none">
+    <path d="M66 92 V 328"/>
+    <path d="M66 112 H 94"/>
+    <path d="M66 220 H 94"/>
+    <path d="M66 247 H 94"/>
+    <path d="M66 274 H 94"/>
+    <path d="M66 301 H 94"/>
+    <path d="M66 328 H 94"/>
+  </g>
+  <g stroke="#3a4654" stroke-width="1.6" fill="none">
+    <path d="M120 119 V 193"/>
+    <path d="M120 139 H 148"/>
+    <path d="M120 166 H 148"/>
+    <path d="M120 193 H 148"/>
+  </g>
+
+  <text x="102" y="117" font-size="14" fill="#6cb6ff">ai_agent_roles/</text>
+  <text x="340" y="117" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>세 역할 + 공동 규약 (단일 진실 소스)</text>
+
+  <text x="156" y="144" font-size="14" fill="#5ef2b8">CLAUDE.md</text>
+  <text x="340" y="144" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>오케스트레이터 — 설계·구현·통합</text>
+  <text x="156" y="171" font-size="14" fill="#5ef2b8">AGENTS.md</text>
+  <text x="340" y="171" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>코드·설계 리뷰어</text>
+  <text x="156" y="198" font-size="14" fill="#5ef2b8">GEMINI.md</text>
+  <text x="340" y="198" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>리서치·문서·이미지 생성</text>
+
+  <text x="102" y="225" font-size="14" fill="#6cb6ff">shared/</text>
+  <text x="340" y="225" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>공동 산출물·상태판</text>
+  <text x="102" y="252" font-size="14" fill="#6cb6ff">exchange/</text>
+  <text x="340" y="252" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>요청↔응답 리포트</text>
+  <text x="102" y="279" font-size="14" fill="#6cb6ff">claude/</text>
+  <text x="340" y="279" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>Claude 작업 일지</text>
+  <text x="102" y="306" font-size="14" fill="#6cb6ff">codex/</text>
+  <text x="340" y="306" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>Codex 작업 일지</text>
+  <text x="102" y="333" font-size="14" fill="#6cb6ff">gemini/</text>
+  <text x="340" y="333" font-size="13" fill="#8c98a4"><tspan fill="#4a5568"># </tspan>Gemini 작업 일지</text>
+</svg>
