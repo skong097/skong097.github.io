@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 430" width="880" height="430" font-family="'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace" role="img" aria-label="Nav2 자율주행 전체 흐름: 저장된 map과 LiDAR와 odometry가 AMCL로 들어가 map 기준 로봇 위치를 만들고, 이 위치를 토대로 global costmap이 global planner로 전체 경로를, local costmap이 local controller로 실시간 속도 명령을 만든다">
+  <rect x="1" y="1" width="878" height="428" rx="14" fill="#0c1117" stroke="rgba(94,242,184,0.16)"/>
+  <rect x="1" y="1" width="878" height="46" rx="14" fill="rgba(255,255,255,0.02)"/>
+
+  <circle cx="26" cy="24" r="5.5" fill="#ff5f57"/>
+  <circle cx="44" cy="24" r="5.5" fill="#febc2e"/>
+  <circle cx="62" cy="24" r="5.5" fill="#28c840"/>
+  <text x="858" y="28" text-anchor="end" font-size="12" fill="#5d6b78">pipeline — Nav2 자율주행</text>
+
+  <defs>
+    <marker id="af" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0 0 L9 4.5 L0 9 z" fill="#3a4654"/>
+    </marker>
+  </defs>
+
+  <!-- inputs row -->
+  <g font-size="13" fill="#b9dcff">
+    <rect x="60" y="72" width="180" height="34" rx="8" fill="rgba(108,182,255,0.08)" stroke="#6cb6ff" stroke-width="1.2"/>
+    <text x="150" y="94" text-anchor="middle">저장된 map (SLAM)</text>
+    <rect x="350" y="72" width="180" height="34" rx="8" fill="rgba(108,182,255,0.08)" stroke="#6cb6ff" stroke-width="1.2"/>
+    <text x="440" y="94" text-anchor="middle">LiDAR scan</text>
+    <rect x="640" y="72" width="180" height="34" rx="8" fill="rgba(108,182,255,0.08)" stroke="#6cb6ff" stroke-width="1.2"/>
+    <text x="730" y="94" text-anchor="middle">odometry</text>
+  </g>
+
+  <!-- inputs -> AMCL -->
+  <g stroke="#3a4654" stroke-width="1.6" fill="none">
+    <path d="M150 106 V 132 H 440 V 150" marker-end="url(#af)"/>
+    <path d="M440 106 V 150" marker-end="url(#af)"/>
+    <path d="M730 106 V 132 H 440 V 150" marker-end="url(#af)"/>
+  </g>
+
+  <!-- AMCL -->
+  <rect x="320" y="152" width="240" height="48" rx="9" fill="rgba(94,242,184,0.12)" stroke="#5ef2b8" stroke-width="1.6"/>
+  <text x="440" y="181" text-anchor="middle" font-size="17" font-weight="700" fill="#b6f2d8">AMCL</text>
+
+  <!-- AMCL -> pose -->
+  <g stroke="#3a4654" stroke-width="1.6" fill="none"><path d="M440 200 V 226" marker-end="url(#af)"/></g>
+  <rect x="300" y="228" width="280" height="36" rx="8" fill="rgba(240,163,107,0.09)" stroke="#f0a36b" stroke-width="1.3"/>
+  <text x="440" y="251" text-anchor="middle" font-size="14" font-weight="600" fill="#f3c79b">map 기준 로봇 위치</text>
+
+  <!-- split to two costmaps -->
+  <g stroke="#3a4654" stroke-width="1.6" fill="none">
+    <path d="M440 264 V 290 H 230 V 308" marker-end="url(#af)"/>
+    <path d="M440 264 V 290 H 650 V 308" marker-end="url(#af)"/>
+  </g>
+
+  <!-- global branch -->
+  <rect x="80" y="310" width="300" height="40" rx="8" fill="rgba(108,182,255,0.08)" stroke="#6cb6ff" stroke-width="1.2"/>
+  <text x="230" y="335" text-anchor="middle" font-size="14" font-weight="600" fill="#b9dcff">Global costmap → Global planner</text>
+  <g stroke="#3a4654" stroke-width="1.6" fill="none"><path d="M230 350 V 374" marker-end="url(#af)"/></g>
+  <text x="230" y="392" text-anchor="middle" font-size="13" fill="#8c98a4">전체 경로 — "어느 길로 갈까?"</text>
+
+  <!-- local branch -->
+  <rect x="500" y="310" width="300" height="40" rx="8" fill="rgba(185,167,230,0.08)" stroke="#b9a7e6" stroke-width="1.2"/>
+  <text x="650" y="335" text-anchor="middle" font-size="14" font-weight="600" fill="#d6c9f2">Local costmap → Local controller</text>
+  <g stroke="#3a4654" stroke-width="1.6" fill="none"><path d="M650 350 V 374" marker-end="url(#af)"/></g>
+  <text x="650" y="392" text-anchor="middle" font-size="13" fill="#8c98a4">실시간 속도 명령 — "지금 어떻게?"</text>
+</svg>
