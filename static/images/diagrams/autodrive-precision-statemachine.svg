@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 450" width="820" height="450" font-family="'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace" role="img" aria-label="precision node 상태머신: IDLE에서 명령을 받으면 NAV_TO_APPROACH로 넘어가 approach_pose를 Nav2에 보내고, Nav2가 성공하면 SEARCH_TAG에서 tag_id를 찾고, 태그가 보이면 TAG_SERVO_ALIGN에서 precision node가 직접 /cmd_vel로 저속 정렬하며, tolerance 내에 settle되면 DONE이 된다. 어느 상태에서든 태그 상실·timeout·취소가 발생하면 FAILED로 가고 어떤 경우든 종료 시 /cmd_vel을 zero로 만든다">
+  <rect x="1" y="1" width="818" height="448" rx="14" fill="#0c1117" stroke="rgba(94,242,184,0.16)"/>
+  <rect x="1" y="1" width="818" height="46" rx="14" fill="rgba(255,255,255,0.02)"/>
+
+  <circle cx="26" cy="24" r="5.5" fill="#ff5f57"/>
+  <circle cx="44" cy="24" r="5.5" fill="#febc2e"/>
+  <circle cx="62" cy="24" r="5.5" fill="#28c840"/>
+  <text x="798" y="28" text-anchor="end" font-size="12" fill="#5d6b78">state — precision node</text>
+
+  <defs>
+    <marker id="af2" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0 0 L9 4.5 L0 9 z" fill="#3a4654"/>
+    </marker>
+    <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0 0 L9 4.5 L0 9 z" fill="#7a4a4a"/>
+    </marker>
+  </defs>
+
+  <!-- IDLE -->
+  <rect x="180" y="66" width="260" height="40" rx="8" fill="rgba(108,182,255,0.08)" stroke="#6cb6ff" stroke-width="1.2"/>
+  <text x="310" y="91" text-anchor="middle" font-size="14" font-weight="600" fill="#b9dcff">IDLE</text>
+  <g stroke="#3a4654" stroke-width="1.6" fill="none"><path d="M310 106 V 138" marker-end="url(#af2)"/></g>
+  <text x="322" y="126" font-size="12" fill="#8c98a4">precise_goal 수신</text>
+
+  <!-- NAV_TO_APPROACH -->
+  <rect x="180" y="140" width="260" height="46" rx="8" fill="rgba(108,182,255,0.08)" stroke="#6cb6ff" stroke-width="1.2"/>
+  <text x="310" y="163" text-anchor="middle" font-size="14" font-weight="600" fill="#b9dcff">NAV_TO_APPROACH</text>
+  <text x="310" y="179" text-anchor="middle" font-size="11" fill="#8c98a4">approach_pose → Nav2 NavigateToPose</text>
+  <g stroke="#3a4654" stroke-width="1.6" fill="none"><path d="M310 186 V 214" marker-end="url(#af2)"/></g>
+  <text x="322" y="205" font-size="12" fill="#8c98a4">Nav2 성공</text>
+
+  <!-- SEARCH_TAG -->
+  <rect x="180" y="216" width="260" height="46" rx="8" fill="rgba(108,182,255,0.08)" stroke="#6cb6ff" stroke-width="1.2"/>
+  <text x="310" y="239" text-anchor="middle" font-size="14" font-weight="600" fill="#b9dcff">SEARCH_TAG</text>
+  <text x="310" y="255" text-anchor="middle" font-size="11" fill="#8c98a4">detector / TF에서 tag_id 확인</text>
+  <g stroke="#3a4654" stroke-width="1.6" fill="none"><path d="M310 262 V 290" marker-end="url(#af2)"/></g>
+  <text x="322" y="281" font-size="12" fill="#8c98a4">태그 검출</text>
+
+  <!-- TAG_SERVO_ALIGN -->
+  <rect x="180" y="292" width="260" height="46" rx="8" fill="rgba(240,163,107,0.09)" stroke="#f0a36b" stroke-width="1.3"/>
+  <text x="310" y="315" text-anchor="middle" font-size="14" font-weight="600" fill="#f3c79b">TAG_SERVO_ALIGN</text>
+  <text x="310" y="331" text-anchor="middle" font-size="11" fill="#8c98a4">precision node가 /cmd_vel 직접 발행</text>
+  <g stroke="#3a4654" stroke-width="1.6" fill="none"><path d="M310 338 V 366" marker-end="url(#af2)"/></g>
+  <text x="322" y="357" font-size="12" fill="#8c98a4">tolerance 내 settle 유지</text>
+
+  <!-- DONE -->
+  <rect x="180" y="368" width="260" height="42" rx="8" fill="rgba(94,242,184,0.12)" stroke="#5ef2b8" stroke-width="1.6"/>
+  <text x="310" y="394" text-anchor="middle" font-size="15" font-weight="700" fill="#b6f2d8">DONE — /cmd_vel = zero</text>
+
+  <!-- FAILED branch -->
+  <g stroke="#7a4a4a" stroke-width="1.5" fill="none" stroke-dasharray="5 4">
+    <path d="M440 163 H 610 V 258" marker-end="url(#ar)"/>
+    <path d="M440 239 H 610"/>
+    <path d="M440 315 H 610 V 302"/>
+  </g>
+  <rect x="560" y="260" width="220" height="46" rx="8" fill="rgba(255,95,87,0.08)" stroke="#e06a63" stroke-width="1.3"/>
+  <text x="670" y="283" text-anchor="middle" font-size="14" font-weight="600" fill="#f0a6a1">FAILED</text>
+  <text x="670" y="299" text-anchor="middle" font-size="11" fill="#8c98a4">/cmd_vel = zero</text>
+  <text x="670" y="330" text-anchor="middle" font-size="11" fill="#8c98a4">태그 상실 · timeout · 취소</text>
+  <text x="670" y="346" text-anchor="middle" font-size="11" fill="#8c98a4">→ 어느 상태에서든</text>
+</svg>
