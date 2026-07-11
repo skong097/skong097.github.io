@@ -196,12 +196,6 @@ ros2 launch wasab_docking dock.launch.py tag_id:=N \
 | 9 | (1.335, -0.051, +6.2°) | (1.683, -0.013, +6.2°) |
 | 10 | (1.730, 0.527, +90° 벽법선) | — (등록yaw 오차 15°; PID+물리배치 권장) |
 
-### 7.3 촬영 순서 (cold-start 회피)
-
-`dock.launch` 첫 시도는 cold-start로 nav_failed가 나므로(정상), 촬영 테이크가 실패하지 않게:
-**재측위(tag8, median<2cm) → 카메라 pre-warm(detector 잠깐 standalone 기동→kill) → 촬영 시작
-→ dock**. 이렇게 하면 첫 테이크가 완주한다.
-
 ---
 
 ## 8. 검증 결과 (물리 15cm 확인)
