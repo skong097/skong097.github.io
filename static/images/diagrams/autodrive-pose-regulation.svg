@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 470" width="820" height="470" font-family="'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace" role="img" aria-label="AprilTag PID 정밀 도킹의 pose regulation 기하. 로봇이 목표 주차자세 G를 극좌표 ρ·α·β로 추종한다. ρ는 목표까지 거리, α는 로봇 진행방향과 목표를 잇는 선의 각도, β는 목표에서의 최종 방위 오차다. 로봇은 직선이 아니라 호를 그려 태그 법선 위로 올라타므로 좌우 offset과 yaw가 함께 0으로 수렴해 태그 정면 15cm에서 멈춘다.">
+  <rect x="1" y="1" width="818" height="468" rx="14" fill="#0c1117" stroke="rgba(94,242,184,0.16)"/>
+  <rect x="1" y="1" width="818" height="46" rx="14" fill="rgba(255,255,255,0.02)"/>
+
+  <circle cx="26" cy="24" r="5.5" fill="#ff5f57"/>
+  <circle cx="44" cy="24" r="5.5" fill="#febc2e"/>
+  <circle cx="62" cy="24" r="5.5" fill="#28c840"/>
+  <text x="798" y="28" text-anchor="end" font-size="12" fill="#5d6b78">geometry — pose regulation</text>
+
+  <defs>
+    <marker id="ph" markerWidth="10" markerHeight="10" refX="7.5" refY="5" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#6cb6ff"/>
+    </marker>
+    <marker id="pgo" markerWidth="10" markerHeight="10" refX="7.5" refY="5" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#5ef2b8"/>
+    </marker>
+    <marker id="parc" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0 0 L9 4.5 L0 9 z" fill="#f0a36b"/>
+    </marker>
+  </defs>
+
+  <!-- wall + AprilTag -->
+  <rect x="680" y="90" width="14" height="300" fill="rgba(140,152,164,0.18)" stroke="#3a4654" stroke-width="1"/>
+  <rect x="656" y="205" width="24" height="24" fill="rgba(185,167,230,0.15)" stroke="#b9a7e6" stroke-width="1.4"/>
+  <text x="668" y="252" text-anchor="middle" font-size="11" fill="#b9a7e6">AprilTag</text>
+
+  <!-- arc path robot -> goal -->
+  <path d="M180 330 C 340 300 470 217 555 217" fill="none" stroke="#f0a36b" stroke-width="2.2" stroke-dasharray="1 0" marker-end="url(#parc)"/>
+  <text x="360" y="255" font-size="11" fill="#f3c79b">호 경로 — 태그 법선 위로 올라탐</text>
+
+  <!-- straight line robot -> goal (rho) -->
+  <path d="M180 330 L560 217" fill="none" stroke="#8c98a4" stroke-width="1.4" stroke-dasharray="5 4"/>
+  <text x="366" y="300" font-size="13" fill="#c9d3dd" transform="rotate(-16.6 366 300)">ρ = |G|</text>
+
+  <!-- goal pose G -->
+  <circle cx="560" cy="217" r="6" fill="#5ef2b8"/>
+  <text x="560" y="200" text-anchor="middle" font-size="12" font-weight="700" fill="#b6f2d8">G  (정면 15cm)</text>
+  <!-- goal heading arrow (toward tag) -->
+  <path d="M560 217 L636 217" fill="none" stroke="#5ef2b8" stroke-width="2.2" marker-end="url(#pgo)"/>
+  <text x="600" y="236" text-anchor="middle" font-size="11" fill="#8c98a4">목표 방위 θ_G</text>
+
+  <!-- robot -->
+  <circle cx="180" cy="330" r="14" fill="rgba(108,182,255,0.14)" stroke="#6cb6ff" stroke-width="1.6"/>
+  <text x="180" y="366" text-anchor="middle" font-size="12" fill="#b9dcff">로봇</text>
+  <!-- robot heading arrow -->
+  <path d="M180 330 L268 288" fill="none" stroke="#6cb6ff" stroke-width="2.2" marker-end="url(#ph)"/>
+  <text x="252" y="305" font-size="11" fill="#8c98a4">진행방향</text>
+
+  <!-- alpha arc at robot (between heading and line-to-goal) -->
+  <path d="M232 309 A 58 58 0 0 1 238 313" fill="none" stroke="#f0a36b" stroke-width="1.6"/>
+  <text x="250" y="333" font-size="13" font-weight="700" fill="#f3c79b">α</text>
+
+  <!-- beta arc at goal (between incoming line and goal heading) -->
+  <path d="M600 217 A 40 40 0 0 0 597 205" fill="none" stroke="#f0a36b" stroke-width="1.6"/>
+  <text x="612" y="212" font-size="13" font-weight="700" fill="#f3c79b">β</text>
+
+  <!-- control law box -->
+  <rect x="60" y="392" width="700" height="56" rx="8" fill="rgba(255,255,255,0.02)" stroke="#3a4654" stroke-width="1"/>
+  <text x="80" y="416" font-size="13" fill="#c9d3dd">v = k_ρ·ρ　　　wz = k_α·α + k_β·β　　　(k_α &gt; k_ρ,  k_β &lt; 0 : 안정 조건)</text>
+  <text x="80" y="436" font-size="11" fill="#8c98a4">ρ &lt; tol_x 이면 병진 정지 → 최종 yaw 정렬만.  ey→0, eyaw→0, ex→0 이 함께 수렴한다.</text>
+</svg>
