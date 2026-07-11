@@ -14,7 +14,7 @@ TocOpen: true
 이 글은 그 위에서 실제로 정밀 도킹을 성공시킨 기록이다.
 
 콘솔 지휘용 Nav2 접근 → AprilTag PID **정면 15cm 정밀 도킹**을 4개 태그(7/8/9/10)에서 성립시켰고,
-tag8↔tag7↔tag9 이동 도킹을 end-to-end로 완주했다(물리 15cm 정지선 검증). 데모 촬영도 성공했다.
+tag8↔tag7↔tag9 이동 도킹을 end-to-end로 완주했다(물리 15cm 정지선 검증).
 
 {{< figure src="/images/auto_drive/nav2-pid-tag9-docking-demo.gif" alt="Pinky 로봇이 Nav2로 tag9 접근점까지 이동한 뒤 AprilTag를 보며 저속 PID로 정렬해 태그 정면 15cm에서 멈추는 정밀 도킹 데모" >}}
 
