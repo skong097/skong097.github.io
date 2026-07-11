@@ -66,13 +66,7 @@ v = k_rho·ρ (reverse면 -),  wz = k_alpha·α + k_beta·β,  clamp
 (`atan2(Σsin, Σcos)`)을 쓴다. 노드 `_on_tag`에서 **x/y는 raw, yaw만 필터**한다.
 대칭 flip이 ~0으로 수렴하면서 wz가 안정됐다.
 
-## 3. dry-run 먼저 — 모션 전 방향 검증
-
-`cmd_vel_enabled:=false`로 서보를 기동해 docking_state의 **계산 vx/wz 부호**를 읽어
-방향과 안정성을 확인한 뒤 실주행했다. (CPU 이슈는 실제 nav을 돌려야 나오므로 dry-run으로는
-재현되지 않는다.)
-
-## 4. Nav2 이동 도킹 — 반복 nav_failed의 진범
+## 3. Nav2 이동 도킹 — 반복 nav_failed의 진범
 
 이동 도킹의 Nav2 접근이 `nav_failed`로 자주 실패했다. 층층이 원인을 벗겨냈다.
 
@@ -87,11 +81,11 @@ v = k_rho·ρ (reverse면 -),  wz = k_alpha·α + k_beta·β,  clamp
 5. **파라미터 오조준**: "acknowledge goal request timeout"은 `wait_for_service_timeout`가
    아니라 `default_server_timeout`(200ms, ack 대기)이 지배한다. `wait_for_service_timeout 4000`
    시도는 무효 → **1000 원복**.
-6. **★ 진범 = 저배터리**: 위 처방들로 개선됐으나 잔여 실패가 지속됐다. `.50`의
+6. **진범 = 저배터리**: 위 처방들로 개선됐으나 잔여 실패가 지속됐다. `.50`의
    **6.9V/17%**에서 controller loop이 **20→8Hz**로 굶은 것이 근본 원인이었다.
    **`.44` 신선 배터리로 교체하니 nav이 안정 완주**했다. (성공했던 초반 런들은 배터리가 더 높았다.)
 
-## 5. tag10 — Nav2 이동 불가(구조적)
+## 4. tag10 — Nav2 이동 불가(구조적)
 
 tag10 접근점(0.5m standoff)이 **내벽 박스**에 2cm로 붙어 costmap inflation상 도달 불가였다.
 위쪽 standoff 0.30 접근점은 도달 가능하나 **등록 yaw ±13° 오차** + 30cm 근접으로 서보가
@@ -100,25 +94,25 @@ tag10 접근점(0.5m standoff)이 **내벽 박스**에 2cm로 붙어 costmap inf
 **조치**: tag10은 **PID + 물리 배치**(정면 30cm 수동 배치, `nav_enabled:=false`)로 DONE
 (ex 7.6 / ey 1.7). 이동 도킹은 tag7/8/9만으로 한다.
 
-## 6. `.44` 온보딩 — 데모 로봇 교체
+## 5. `.44` 온보딩 — 데모 로봇 교체
 
 `.50` 저배터리로 `.44`(신선)로 교체했다. **`.50`의 working 상태를 통째로 백업 후 배포**했다:
 `wasab_docking`(소스) + `wasab_robot_agent` + `~/.wasab/tag_map_poses.yaml`를 tar로 묶어
 `.44`에 추출하고 `map12`를 복사한 뒤 `colcon build`(2 pkg).
 
-**★ `.50` 카메라값(fx 588.6 / camera_to_base.x 0.023)이 `.44`에서도 15cm 정확** →
+**`.50` 카메라값(fx 588.6 / camera_to_base.x 0.023)이 `.44`에서도 15cm 정확** →
 **재캘리브 불필요**(개체차 무시 가능).
 
 ---
 
-## 7. 최종 설정값 (확정)
+## 6. 최종 설정값 (확정)
 
-### 7.1 `precision_parking.yaml`
+### 6.1 `precision_parking.yaml`
 
 ```yaml
 tag_id: 8                    # 파킹 대상별 launch 오버라이드
 tag_size_m: 0.06             # 실측
-# 카메라 (⚠ .50 실측값, .44도 그대로 15cm OK — 개체차 무시가능)
+# 카메라 (.50 실측값, .44도 그대로 15cm OK — 개체차 무시가능)
 camera.fx: 588.6             # = 635/1.0788 (2점 적합, fy=fx 가정)
 camera.fy: 588.6
 camera.cx: 320.0 ; camera.cy: 240.0   # 근사(미보정 — 좌우/yaw 정확도는 개선 안 됨)
@@ -134,17 +128,17 @@ k_alpha: 1.2                 # G 방향 조향 (>k_rho, 안정조건)
 k_beta: -0.4                 # 최종 방위 (<0, 안정조건)
 kyaw: 0.9                    # ρ 도달 후 최종 yaw 정렬
 max_vx: 0.02 ; max_vx_back: 0.01 ; max_wz: 0.20
-tol_x: 0.015 ; tol_y: 0.010 ; tol_yaw: 0.04   # ★tol_y 0.010 (옛 0.04로 되돌리지 말 것)
+tol_x: 0.015 ; tol_y: 0.010 ; tol_yaw: 0.04   # tol_y 0.010 (옛 0.04로 되돌리지 말 것)
 yaw_filter_window: 6         # eyaw circular-mean
 settle_time_s: 0.4 ; settle_min_frames: 5
 overall_timeout_s: 45.0 ; tag_lost_timeout_s: 0.5 ; search_timeout_s: 10.0
 control_rate_hz: 20.0
 ```
 
-### 7.2 `nav2_params_0709.yaml` (AMCL/BT 핵심)
+### 6.2 `nav2_params_0709.yaml` (AMCL/BT 핵심)
 
 ```yaml
-amcl: alpha1~5: 0.2 ; recovery_alpha_fast/slow: 0.0 ; sigma_hit: 0.05   # ★주행중 밀림 해소
+amcl: alpha1~5: 0.2 ; recovery_alpha_fast/slow: 0.0 ; sigma_hit: 0.05   # 주행중 밀림 해소
       laser_model_type: likelihood_field ; z_hit 0.5 ; z_rand 0.5
       min_particles 1000 ; max_particles 2500 ; update_min_d/a 0.05
 bt_navigator: wait_for_service_timeout: 1000 ; default_server_timeout: 200
@@ -156,7 +150,7 @@ controller_server: controller_frequency: 20.0
 [sigma_hit 딥다이브](../amcl-sigma-hit-작은-아레나에서-측위가-흘러내린-이유/)에서 다뤘다.
 목표 20cm 앞에서 자기 위치를 19cm 틀리게 알면 접근 자체가 벽을 친다.
 
-### 7.3 휠 캘리브 (bringup, 개체별)
+### 6.3 휠 캘리브 (bringup, 개체별)
 
 ```text
 .44 / .50 : wheel_radius 0.0279, wheel_separation 0.1000
@@ -165,9 +159,9 @@ controller_server: controller_frequency: 20.0
 
 ---
 
-## 8. 운영 절차 (재현용)
+## 7. 운영 절차 (재현용)
 
-### 8.1 스택 기동 (`.44`, 도메인 50)
+### 7.1 스택 기동 (`.44`, 도메인 50)
 
 ```bash
 # 공통 헤더
@@ -184,7 +178,7 @@ ros2 launch pinky_navigation navigation_launch.xml \
   params_file:=$HOME/wasab/wasab_navigation/wasab_nav2/params/nav2_params_0709.yaml
 ```
 
-### 8.2 CLI 이동 도킹
+### 7.2 CLI 이동 도킹
 
 ```bash
 ros2 launch wasab_docking dock.launch.py tag_id:=N \
@@ -202,7 +196,7 @@ ros2 launch wasab_docking dock.launch.py tag_id:=N \
 | 9 | (1.335, -0.051, +6.2°) | (1.683, -0.013, +6.2°) |
 | 10 | (1.730, 0.527, +90° 벽법선) | — (등록yaw 오차 15°; PID+물리배치 권장) |
 
-### 8.3 촬영 순서 (cold-start 회피)
+### 7.3 촬영 순서 (cold-start 회피)
 
 `dock.launch` 첫 시도는 cold-start로 nav_failed가 나므로(정상), 촬영 테이크가 실패하지 않게:
 **재측위(tag8, median<2cm) → 카메라 pre-warm(detector 잠깐 standalone 기동→kill) → 촬영 시작
@@ -210,7 +204,7 @@ ros2 launch wasab_docking dock.launch.py tag_id:=N \
 
 ---
 
-## 9. 검증 결과 (물리 15cm 확인)
+## 8. 검증 결과 (물리 15cm 확인)
 
 | 런 | 로봇 | done_error_x | done_error_y | 비고 |
 |---|---|---|---|---|
@@ -224,12 +218,11 @@ ros2 launch wasab_docking dock.launch.py tag_id:=N \
 
 ---
 
-## 10. 미해결 / 후속
+## 9. 미해결 / 후속
 
 - cx/cy·왜곡 미보정 → 태그 좌우(y)·yaw 정밀도 한계(체스보드 필요)
 - tag10 등록 yaw 재등록(비스듬히) 또는 벽법선 사용
 - Pi5 CPU 근본 저감(선택): detector rate↓ / smoother 제거 등 (배터리 충분하면 불필요)
-- 콘솔 버튼(agent) 경로 end-to-end 촬영 (지금까지 CLI로 검증)
 
 이 도킹 구조를 처음 두 단계(Nav2 접근 + AprilTag 저속 PID)로 나눈 배경과 초기 설계는
 [Nav2로 가까이 가고, AprilTag PID로 정확히 멈추기](../nav2-apriltag-pid-정밀주차/)에 정리해 두었다.
