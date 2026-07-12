@@ -1,5 +1,5 @@
 ---
-title: "Nav2로 가까이, AprilTag PID로 정확히 — 정밀 도킹 성공 기록"
+title: "Nav2로 가까이, AprilTag PID(pose regulation)로 정확히 — 정밀 도킹 성공 기록"
 date: 2026-07-11
 tags: ["auto-drive", "ros2", "nav2", "apriltag", "pid", "pose-regulation", "docking", "precision-parking", "wasab", "pinky"]
 categories: ["robotics"]
