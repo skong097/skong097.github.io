@@ -3,7 +3,7 @@ title: "Nav2로 가까이, AprilTag PID(pose regulation)로 정확히 — 정밀
 date: 2026-07-11
 tags: ["auto-drive", "ros2", "nav2", "apriltag", "pid", "pose-regulation", "docking", "precision-parking", "wasab", "pinky"]
 categories: ["robotics"]
-summary: "map11과 sigma_hit 0.05 위에서, Nav2 접근 + AprilTag PID로 4개 태그(7/8/9/10)에서 정면 15cm 정밀 도킹을 성립시켰다. 옛 P-제어의 좌우 offset 한계를 pose regulation(ρ,α,β)으로, 평면 마커의 yaw ±flip을 YawFilter로 풀었고, 반복되던 Nav2 nav_failed의 진범이 저배터리였음을 짚는다. 시행착오와 최종 확정 설정값을 정리한다."
+summary: "map11과 sigma_hit 0.05 위에서, Nav2 접근 + AprilTag PID(pose regulation)로 4개 태그(7/8/9/10)에서 정면 15cm 정밀 도킹을 성립시켰다. 옛 P-제어의 좌우 offset 한계를 pose regulation(ρ,α,β)으로, 평면 마커의 yaw ±flip을 YawFilter로 풀었고, 반복되던 Nav2 nav_failed의 진범이 저배터리였음을 짚는다. 시행착오와 최종 확정 설정값을 정리한다."
 draft: false
 ShowToc: true
 TocOpen: true
@@ -13,7 +13,7 @@ TocOpen: true
 ([맵을 만들기 전에 로봇을 먼저 검증해야 하는 이유](../로봇을-먼저-검증하라-라이다편향과-preflight-게이트/)).
 이 글은 그 위에서 실제로 정밀 도킹을 성공시킨 기록이다.
 
-콘솔 지휘용 Nav2 접근 → AprilTag PID **정면 15cm 정밀 도킹**을 4개 태그(7/8/9/10)에서 성립시켰고,
+콘솔 지휘용 Nav2 접근 → AprilTag PID(pose regulation) **정면 15cm 정밀 도킹**을 4개 태그(7/8/9/10)에서 성립시켰고,
 tag8↔tag7↔tag9 이동 도킹을 end-to-end로 완주했다(물리 15cm 정지선 검증).
 
 {{< figure src="/images/auto_drive/nav2-pid-tag9-docking-demo.gif" alt="Pinky 로봇이 Nav2로 tag9 접근점까지 이동한 뒤 AprilTag를 보며 저속 PID로 정렬해 태그 정면 15cm에서 멈추는 정밀 도킹 데모" >}}
