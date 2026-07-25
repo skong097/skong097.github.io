@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>로봇 모듈별 CPU 자원 및 Agent 역할 분석</title>
+  <style>
+    :root{--bg:#f4f7fb;--card:#fff;--ink:#182230;--muted:#64748b;--line:#dbe3ed;
+      --blue:#2563eb;--cyan:#0891b2;--amber:#d97706;--red:#dc2626;--green:#059669}
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);
+      font:15px/1.65 system-ui,-apple-system,"Noto Sans KR",sans-serif}
+    header{background:linear-gradient(135deg,#172554,#1d4ed8);color:white;padding:50px 24px}
+    header>div,main{max-width:1120px;margin:auto} h1{margin:0 0 10px;font-size:32px}
+    header p{margin:0;color:#dbeafe} main{padding:28px 20px 60px}
+    section{background:var(--card);border:1px solid var(--line);border-radius:16px;
+      padding:24px;margin:0 0 20px;box-shadow:0 4px 18px #0f172a0a}
+    h2{font-size:21px;margin:0 0 16px} h3{font-size:17px;margin:22px 0 10px}
+    .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .metric{background:#f8fafc;border:1px solid var(--line);border-radius:12px;padding:16px}
+    .metric b{display:block;font-size:25px;color:var(--blue)} .metric span{color:var(--muted)}
+    .warn{border-left:5px solid var(--amber);background:#fffbeb;padding:14px 16px;border-radius:8px}
+    .ok{border-left:5px solid var(--green);background:#ecfdf5;padding:14px 16px;border-radius:8px}
+    .bad{color:var(--red);font-weight:700}.good{color:var(--green);font-weight:700}
+    .tag{display:inline-block;padding:2px 8px;border-radius:999px;background:#eef2ff;color:#3730a3;font-size:12px}
+    table{width:100%;border-collapse:collapse;margin:10px 0 18px}
+    th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line)}
+    th{background:#f8fafc;color:#475569;font-size:13px} td.num{text-align:right;font-variant-numeric:tabular-nums}
+    .barrow{display:grid;grid-template-columns:110px 1fr 65px;gap:12px;align-items:center;margin:12px 0}
+    .track{height:16px;background:#e2e8f0;border-radius:999px;overflow:hidden}
+    .fill{height:100%;border-radius:999px}.nav{background:var(--blue)}.bring{background:var(--cyan)}
+    .amcl{background:var(--amber)}.agent{background:var(--green)}
+    code{background:#eef2f7;border-radius:5px;padding:2px 5px}
+    pre{background:#111827;color:#e5e7eb;padding:16px;border-radius:10px;overflow:auto}
+    li{margin:5px 0}.small{font-size:13px;color:var(--muted)}
+    @media(max-width:800px){.cards{grid-template-columns:1fr 1fr}.tablewrap{overflow:auto}}
+    @media(max-width:480px){.cards{grid-template-columns:1fr}.barrow{grid-template-columns:85px 1fr 55px}}
+  </style>
+</head>
+<body>
+<header><div>
+  <h1>로봇 모듈별 CPU 자원 및 Agent 역할 분석</h1>
+  <p>pinky@192.168.2.9 · 2026-07-25 12:08 KST · 1초 간격 12회 실측</p>
+</div></header>
+<main>
+  <section>
+    <h2>핵심 결과</h2>
+    <div class="cards">
+      <div class="metric"><b>45.4%</b><span>4코어 전체 대비 네 영역 CPU</span></div>
+      <div class="metric"><b>2.46%</b><span>4코어 전체 대비 Agent CPU</span></div>
+      <div class="metric"><b>605 MiB</b><span>네 영역 RSS 합계</span></div>
+      <div class="metric"><b style="color:var(--red)">81.3°C</b><span>측정 시 CPU 온도</span></div>
+    </div>
+    <p class="warn"><strong>판단:</strong> CPU의 주 소비원은 Nav2이며 agent는 네 영역 합산 CPU의
+      약 5.4%다. 메모리 여유는 충분하지만 온도가 높아 열 스로틀링 여부를 별도로 확인해야 한다.</p>
+  </section>
+
+  <section>
+    <h2>시스템 전체 상태</h2>
+    <div class="tablewrap"><table>
+      <thead><tr><th>항목</th><th>측정값</th><th>해석</th></tr></thead>
+      <tbody>
+        <tr><td>CPU</td><td>4 logical CPUs</td><td>프로세스 100% = 코어 하나</td></tr>
+        <tr><td>Load average</td><td>8.86 / 7.04 / 6.16</td><td>코어 수보다 높음</td></tr>
+        <tr><td>CPU 사용</td><td>user 47.02% + system 21.75%</td><td>idle 31.03%</td></tr>
+        <tr><td>I/O wait</td><td>0.02%</td><td>저장장치가 주 병목은 아님</td></tr>
+        <tr><td>메모리</td><td>1,300 / 3,784 MiB 사용</td><td>available 2,483 MiB</td></tr>
+        <tr><td>Swap</td><td>0 / 1,023 MiB</td><td>메모리 압박 없음</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section>
+    <h2>영역별 CPU 구성</h2>
+    <p class="small">막대는 네 영역 CPU 합계 181.76% 내 비율이다.</p>
+    <div class="barrow"><strong>Nav2</strong><div class="track"><div class="fill nav" style="width:73.3%"></div></div><span>73.3%</span></div>
+    <div class="barrow"><strong>Bringup</strong><div class="track"><div class="fill bring" style="width:12.3%"></div></div><span>12.3%</span></div>
+    <div class="barrow"><strong>AMCL</strong><div class="track"><div class="fill amcl" style="width:8.9%"></div></div><span>8.9%</span></div>
+    <div class="barrow"><strong>Agent</strong><div class="track"><div class="fill agent" style="width:5.4%"></div></div><span>5.4%</span></div>
+    <div class="tablewrap"><table>
+      <thead><tr><th>영역</th><th>평균 프로세스 CPU</th><th>4코어 전체 대비</th><th>RSS</th></tr></thead>
+      <tbody>
+        <tr><td>Bringup</td><td class="num">22.40%</td><td class="num">5.60%</td><td class="num">79.1 MiB</td></tr>
+        <tr><td>AMCL</td><td class="num">16.24%</td><td class="num">4.06%</td><td class="num">47.3 MiB</td></tr>
+        <tr><td>Nav2</td><td class="num">133.29%</td><td class="num">33.32%</td><td class="num">401.2 MiB</td></tr>
+        <tr><td>Agent</td><td class="num">9.83%</td><td class="num">2.46%</td><td class="num">77.7 MiB</td></tr>
+        <tr><th>합계</th><th class="num">181.76%</th><th class="num">45.44%</th><th class="num">605.3 MiB</th></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section>
+    <h2>Nav2 세부 부하</h2>
+    <div class="tablewrap"><table>
+      <thead><tr><th>프로세스</th><th>평균 CPU</th><th>RSS</th></tr></thead>
+      <tbody>
+        <tr><td>lifecycle_manager_navigation</td><td class="num">24.23%</td><td class="num">42.3 MiB</td></tr>
+        <tr><td>bt_navigator</td><td class="num">19.98%</td><td class="num">70.2 MiB</td></tr>
+        <tr><td>controller_server</td><td class="num">19.65%</td><td class="num">54.6 MiB</td></tr>
+        <tr><td>behavior_server</td><td class="num">17.40%</td><td class="num">50.2 MiB</td></tr>
+        <tr><td>planner_server</td><td class="num">15.65%</td><td class="num">57.1 MiB</td></tr>
+        <tr><td>smoother_server</td><td class="num">14.40%</td><td class="num">46.2 MiB</td></tr>
+        <tr><td>waypoint_follower</td><td class="num">11.07%</td><td class="num">43.7 MiB</td></tr>
+        <tr><td>velocity_smoother</td><td class="num">10.91%</td><td class="num">36.9 MiB</td></tr>
+      </tbody>
+    </table></div>
+    <p class="warn"><code>lifecycle_manager_navigation</code>이 가장 높은 CPU를 사용했다.
+      lifecycle 상태 조회, DDS 통신, logging 또는 executor wake-up이 과도한지 추가 측정할 가치가 있다.</p>
+  </section>
+
+  <section>
+    <h2>Agent가 담당하는 역할</h2>
+    <h3>로봇 domain ↔ 관제 domain 브리지</h3>
+    <ul>
+      <li>두 개의 ROS 2 context와 executor thread로 domain을 분리한다.</li>
+      <li>관제 명령을 queue에 넣고 로봇 executor에서 안전하게 재발행한다.</li>
+      <li>AMCL pose, 배터리, 태그 및 도킹 상태를 관제 domain으로 전달한다.</li>
+    </ul>
+    <h3>상태와 heartbeat</h3>
+    <ul>
+      <li>현재 위치·yaw·배터리·모드 스냅샷을 관리한다.</li>
+      <li>2 Hz로 <code>/robots/heartbeat</code>를 발행한다.</li>
+      <li>재측위와 도킹 결과 이벤트를 관제에 전달한다.</li>
+    </ul>
+    <h3>명령·안전 관리</h3>
+    <ul>
+      <li>원격 <code>cmd_vel</code>, 모드, initial pose 명령을 로봇 domain으로 중계한다.</li>
+      <li>20 Hz queue drain과 0.3초 수동 명령 watchdog을 수행한다.</li>
+      <li>재측위 detector와 도킹 process의 시작·timeout·종료를 관리한다.</li>
+    </ul>
+    <p class="ok"><strong>Agent 자원 판단:</strong> 평균 CPU 9.83%는 단일 코어의 약 1/10,
+      4코어 전체의 2.46%다. 로봇 전체 CPU 병목의 주원인은 아니며, 77.7 MiB RSS는
+      두 ROS context, executor, 통신 endpoint 및 session 상태의 비용으로 볼 수 있다.</p>
+  </section>
+
+  <section>
+    <h2>최근 2주 CPU 튜닝 효과</h2>
+    <p>분석 기간은 <strong>2026-07-11~07-25</strong>다. 같은 실험 안에서 전후 조건과
+      수치가 확인되는 기록만 비교했으며, 서로 다른 날짜의 절대값은 직접 비교하지 않았다.</p>
+    <div class="tablewrap"><table>
+      <thead><tr><th>영역</th><th>변경</th><th>변경 전</th><th>변경 후</th><th>효과</th><th>판정</th></tr></thead>
+      <tbody>
+        <tr><td>Agent</td><td>TransformListener 제거, /amcl_pose 전환</td><td class="num">약 30%</td><td class="num">7.5~9%</td><td class="good">-21~-22.5%p<br>70~75%↓</td><td><span class="tag">채택</span></td></tr>
+        <tr><td>Agent</td><td>/tf 입력 제거 원인 격리</td><td class="num">30%</td><td class="num">10%</td><td class="good">-20%p<br>66.7%↓</td><td>원인 확인</td></tr>
+        <tr><td>Bringup 주변</td><td>중복 joint_state_publisher 제거</td><td class="num">base load 2.6</td><td class="num">2.0</td><td class="good">-0.6<br>23.1%↓</td><td><span class="tag">채택</span></td></tr>
+        <tr><td>Bringup/AMCL</td><td>LiDAR 요청 10→8 Hz</td><td class="num">실제 10.00 Hz</td><td class="num">실제 10.00 Hz</td><td>입력 변화 0</td><td>원복</td></tr>
+        <tr><td>Nav2</td><td>정상 composition 구성</td><td class="num">idle 9<br>peak 23.0</td><td class="num">idle 5~7.6<br>peak 9.7</td><td class="good">idle 15.6~44.4%↓<br>peak 57.8%↓</td><td>효과 큼·미채택</td></tr>
+        <tr><td>Nav2</td><td>bond timeout 4→10초</td><td>heartbeat 오판 teardown</td><td>오판 0건<br>76초·약 1 m 주행</td><td>장애 내성 개선</td><td>현재 미채택</td></tr>
+        <tr><td>Nav2</td><td>controller 20→10 Hz</td><td class="num">120.63%</td><td class="num">123.90%</td><td class="bad">+3.27%p<br>2.7%↑</td><td>원복</td></tr>
+        <tr><td>Nav2</td><td>local costmap update 10→5 Hz</td><td class="num">120.63%</td><td class="num">122.11%</td><td class="bad">+1.48%p<br>1.2%↑</td><td>원복</td></tr>
+        <tr><td>AMCL</td><td>beams 60, particles 1000~2500</td><td>동일</td><td>동일</td><td>단독 A/B 없음</td><td>성공 기준 유지</td></tr>
+      </tbody>
+    </table></div>
+    <p class="small">JSP의 base load는 1분 load average이며 프로세스 CPU 백분율이 아니다. 따라서 Bringup CPU 절감률로 환산하지 않았다.</p>
+    <h3>무엇이 실제로 효과가 있었나</h3>
+    <p class="ok"><strong>가장 확실한 keeper는 Agent 경량화다.</strong> 35~55 Hz <code>/tf</code>가 Python executor를 깨우던 구조를 제거해 CPU를 약 70~75% 낮췄고, agent ON 도킹 8→7→9 완주까지 확인했다. 현재 실측 9.83%도 튜닝 후 범위와 대체로 맞는다.</p>
+    <p>Bringup 계층에서는 실제 엔코더 기반 <code>/joint_states</code>와 겹치는 JSP를 제거해 base load가 2.6에서 2.0으로 낮아졌다. AMCL 자체는 검증된 직접 튜닝이 없으며, 현재 16.24%는 기준값이지 절감 결과가 아니다.</p>
+    <h3>효과가 없거나 아직 채택하지 않은 것</h3>
+    <p>Nav2 controller와 local costmap의 주기를 절반으로 낮춰도 합계 CPU가 줄지 않아 성공 기준인 controller 20 Hz, local 10/2 Hz, global 1/1 Hz로 원복했다. Composition은 peak load를 57.8% 낮춰 가장 큰 잠재 효과를 보였지만 당시 bond와 경로·충돌 계층의 운영 검증이 끝나지 않아 현재 설정으로 채택하지 않았다.</p>
+    <h3>현재 유지 설정</h3>
+    <div class="tablewrap"><table>
+      <thead><tr><th>영역</th><th>현재 값</th><th>근거</th></tr></thead>
+      <tbody>
+        <tr><td>Bringup</td><td>중복 JSP 없음, DenseBoost 실제 10 Hz</td><td>JSP 제거만 효과 확인</td></tr>
+        <tr><td>AMCL</td><td>beams 60, particles 1000~2500</td><td>기능 성공 기준</td></tr>
+        <tr><td>Nav2</td><td>non-composition, controller 20 Hz, local 10/2 Hz, global 1/1 Hz</td><td>주기 하향 효과 없음</td></tr>
+        <tr><td>Agent</td><td>/amcl_pose + /initialpose, 상시 TransformListener 없음</td><td>CPU 70~75% 감소</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section>
+    <h2>권장 후속 분석</h2>
+    <ol>
+      <li>정지·Nav2 주행·순찰·재측위·도킹 상태를 각각 60초 이상 측정한다.</li>
+      <li>Agent 단독 실행 비교로 두 DDS context와 20 Hz drain timer의 순수 비용을 분리한다.</li>
+      <li><code>lifecycle_manager_navigation</code>의 callback, logging 및 상태 조회 빈도를 확인한다.</li>
+      <li><code>vcgencmd get_throttled</code>로 현재·과거 열/전압 스로틀링 플래그를 확인한다.</li>
+    </ol>
+    <pre>vcgencmd measure_temp
+vcgencmd get_throttled
+pidstat -u -r -w -p &lt;PID 목록&gt; 1 60
+mpstat -P ALL 1 60</pre>
+  </section>
+
+  <section>
+    <h2>측정 범위와 한계</h2>
+    <ul>
+      <li>Bringup은 핵심 <code>bringup</code> process만 포함했다. LiDAR와 상태 publisher는 제외했다.</li>
+      <li>AMCL은 <code>amcl</code>만 포함했고 map server와 localization lifecycle manager는 제외했다.</li>
+      <li>Nav2는 navigation lifecycle manager와 7개 navigation server를 포함했다.</li>
+      <li>RSS 합계에는 shared page가 중복 계산될 수 있다.</li>
+      <li>현재 운용 상태의 12초 관측값이므로 조건을 통제한 단독 벤치마크와 구분해야 한다.</li>
+    </ul>
+    <p class="small">근거: cpu-tuning-nav2-docking-2026-07-13.md, worklog-2026-07-14-agent-cpu-root-cause.md, worklog-2026-07-14-agent-cpu-fix-and-docking-success.md, worklog-2026-07-15-87-docking-success-settings-and-cpu.md, worklog-2026-07-20-systemd-stack-and-cpu-tuning.md</p>
+  </section>
+</main>
+</body>
+</html>

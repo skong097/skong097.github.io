@@ -1,0 +1,689 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WaSaB Robot Agent Process Map - 2026-07-14</title>
+  <style>
+    :root {
+      --bg: #f6f7f9;
+      --ink: #17202a;
+      --muted: #5d6875;
+      --line: #c8d0da;
+      --panel: #ffffff;
+      --robot: #e7f0ff;
+      --console: #e9f7ef;
+      --proc: #fff4d7;
+      --risk: #ffe7e2;
+      --nav: #efe9ff;
+      --accent: #315b9e;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans CJK KR",
+        "Apple SD Gothic Neo", Arial, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.45;
+    }
+
+    header {
+      padding: 28px 32px 18px;
+      background: #17202a;
+      color: #fff;
+    }
+
+    header h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      letter-spacing: 0;
+    }
+
+    header p {
+      margin: 0;
+      color: #d9e2ec;
+      max-width: 980px;
+    }
+
+    main {
+      padding: 24px 32px 40px;
+      max-width: 1480px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      margin: 28px 0 12px;
+      font-size: 20px;
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      font-size: 16px;
+    }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 14px 0 0;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 9px;
+      border-radius: 6px;
+      background: #fff;
+      color: var(--ink);
+      border: 1px solid var(--line);
+      font-size: 13px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .dot.robot { background: var(--robot); border: 1px solid #8fb4ef; }
+    .dot.console { background: var(--console); border: 1px solid #8bc69c; }
+    .dot.proc { background: var(--proc); border: 1px solid #e0b857; }
+    .dot.nav { background: var(--nav); border: 1px solid #b09de8; }
+    .dot.risk { background: var(--risk); border: 1px solid #e49386; }
+
+    .board {
+      display: grid;
+      grid-template-columns: 1.1fr 1.1fr 1.2fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .lane {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+      min-width: 0;
+      box-shadow: 0 1px 2px rgba(20, 30, 40, 0.05);
+    }
+
+    .lane.robot { border-top: 6px solid #8fb4ef; }
+    .lane.console { border-top: 6px solid #8bc69c; }
+    .lane.proc { border-top: 6px solid #e0b857; }
+
+    .node {
+      margin: 10px 0;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    .node.robot { background: var(--robot); }
+    .node.console { background: var(--console); }
+    .node.proc { background: var(--proc); }
+    .node.nav { background: var(--nav); }
+    .node.risk { background: var(--risk); }
+
+    .node strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 14px;
+    }
+
+    .node code,
+    td code,
+    li code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 12px;
+      background: rgba(0, 0, 0, 0.06);
+      padding: 1px 4px;
+      border-radius: 4px;
+    }
+
+    .muted {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(150px, 1fr));
+      gap: 10px;
+      align-items: center;
+      margin: 10px 0 4px;
+    }
+
+    .step {
+      position: relative;
+      padding: 12px;
+      min-height: 76px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .step:not(:last-child)::after {
+      content: ">";
+      position: absolute;
+      right: -9px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--accent);
+      font-weight: 700;
+      background: var(--bg);
+      padding: 0 2px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    th,
+    td {
+      border-bottom: 1px solid var(--line);
+      padding: 9px 10px;
+      text-align: left;
+      vertical-align: top;
+      font-size: 14px;
+    }
+
+    th {
+      background: #edf1f5;
+      font-weight: 700;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+
+    .grid2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .command-flows {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    .command-flows > div {
+      min-width: 0;
+    }
+
+    .command-flows .flow {
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .command-flows .step {
+      min-height: auto;
+      padding: 12px 14px;
+      overflow-wrap: anywhere;
+    }
+
+    .command-flows .step:not(:last-child)::after {
+      content: "v";
+      right: 50%;
+      top: auto;
+      bottom: -15px;
+      transform: translateX(50%);
+      background: var(--bg);
+    }
+
+    .node,
+    .step,
+    th,
+    td {
+      overflow-wrap: anywhere;
+    }
+
+    .node code,
+    .step code,
+    td code,
+    th code,
+    li code {
+      white-space: normal;
+      overflow-wrap: anywhere;
+    }
+
+    .callout {
+      border-left: 5px solid #d86a5c;
+      background: var(--risk);
+      padding: 12px 14px;
+      border-radius: 8px;
+      margin-top: 12px;
+    }
+
+    .callout.ok {
+      border-left-color: #4f9d69;
+      background: #e9f7ef;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(220px, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .summary-item {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px;
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+
+    .summary-item strong {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 14px;
+    }
+
+
+    ul {
+      margin: 8px 0 0;
+      padding-left: 18px;
+    }
+
+    li { margin: 4px 0; }
+
+    @media (max-width: 1080px) {
+      .board,
+      .grid2,
+      .summary-grid,
+      .flow {
+        grid-template-columns: 1fr;
+      }
+
+      .step:not(:last-child)::after {
+        content: "v";
+        right: 50%;
+        top: auto;
+        bottom: -14px;
+        transform: translateX(50%);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>WaSaB Robot Agent Process Map</h1>
+    <p>
+      현재 코드 기준: <code>wasab_robot_agent.agent_node</code>가 로봇 로컬 ROS 도메인과
+      콘솔 공유 도메인을 2-Context로 연결한다. agent pose는 <code>/amcl_pose</code> 기반으로
+      경량화했고, 도킹 detector는 Nav2 접근이 끝난 뒤 <code>SEARCH_TAG</code>에서만 기동한다.
+    </p>
+    <div class="legend">
+      <span class="pill"><span class="dot robot"></span>robot_ctx / 로봇 로컬 도메인</span>
+      <span class="pill"><span class="dot console"></span>console_ctx / 콘솔 공유 도메인</span>
+      <span class="pill"><span class="dot proc"></span>agent가 띄우는 서브프로세스</span>
+      <span class="pill"><span class="dot nav"></span>외부 상시 Nav2/bringup 스택</span>
+      <span class="pill"><span class="dot risk"></span>해결된 CPU 고갈 / 남은 검증 지점</span>
+    </div>
+  </header>
+
+  <main>
+    <h2>0. agent가 필요한 이유</h2>
+    <div class="callout ok">
+      핵심 이유는 로봇 내부 ROS graph를 콘솔에 직접 노출하지 않고, 로봇별 경계면을 하나 두어
+      <code>ROS_DOMAIN_ID</code> 분리, 다중 로봇 이름 충돌, 운영 정책을 한 곳에서 흡수하기 위해서다.
+      현재 구현은 표준 <code>domain_bridge</code> 패키지가 아니라 agent 내부의 2-Context 수동 브리지다.
+    </div>
+    <section class="summary-grid">
+      <div class="summary-item">
+        <strong>도메인 분리</strong>
+        로봇은 자기 로컬 <code>ROS_DOMAIN_ID</code>에서 Nav2, AMCL, bringup을 유지하고,
+        콘솔은 공유 <code>WASAB_CONSOLE_DOMAIN</code>에서 fleet 상태와 명령만 다룬다.
+      </div>
+      <div class="summary-item">
+        <strong>로봇별 이름 경계</strong>
+        로봇 내부 전역 토픽 <code>/cmd_vel</code>, <code>/initialpose</code>를
+        콘솔 쪽 <code>/robot_&lt;id&gt;/cmd_vel</code>, <code>/robot_&lt;id&gt;/set_initialpose</code>로 분리한다.
+      </div>
+      <div class="summary-item">
+        <strong>콘솔 단순화</strong>
+        AdminGUI는 로봇 내부 launch, detector, relocalizer, Nav2 세부 토픽을 직접 알지 않고
+        명령 발행과 이벤트 구독만 담당한다.
+      </div>
+      <div class="summary-item">
+        <strong>운영 정책 게이트</strong>
+        재측위 detector가 켜진 상태의 도킹 거부, 명령 watchdog, timeout 정리 같은 정책을
+        UI가 아니라 로봇 가까운 agent에서 일관되게 처리한다.
+      </div>
+      <div class="summary-item">
+        <strong>네트워크 장애 격리</strong>
+        콘솔 DDS 연결이 흔들려도 로봇 로컬 Nav2와 정밀주차 FSM은 로봇 안에서 계속 실행되고,
+        agent가 상태와 결과를 다시 올리는 완충층이 된다.
+      </div>
+      <div class="summary-item">
+        <strong>가벼운 gateway 원칙</strong>
+        agent는 실시간 제어기가 아니라 저주파 상태 요약과 명령 relay를 맡는다.
+        고주파 <code>/tf</code> 소비는 제거하고 <code>/amcl_pose</code> 기반으로 경량화했다.
+      </div>
+    </section>
+
+    <h2>0-1. agent가 하는 일</h2>
+    <div class="callout ok">
+      agent는 로봇 안에 상주하는 현장 매니저다. 콘솔 버튼과 명령을 실제 로봇 동작으로 바꾸고,
+      필요한 무거운 프로세스를 켜고 끄며, 결과와 상태를 다시 콘솔로 올려준다.
+    </div>
+    <section class="summary-grid">
+      <div class="summary-item">
+        <strong>콘솔 명령 전달</strong>
+        수동 조종, 초기 위치 설정, 모드 변경, 재측위, 도킹 명령을 받아 로봇 로컬 ROS 토픽으로 안전하게 전달한다.
+      </div>
+      <div class="summary-item">
+        <strong>재측위 실행</strong>
+        재측위 버튼을 받으면 AprilTag detector와 relocalizer를 켜고, 성공 또는 timeout 후 detector를 종료해 CPU를 회수한다.
+      </div>
+      <div class="summary-item">
+        <strong>도킹 실행</strong>
+        목표 태그 위치를 읽고 approach pose를 계산한 뒤, 필요하면 Nav2 접근 주행을 실행하고 정밀 주차 단계로 넘긴다.
+      </div>
+      <div class="summary-item">
+        <strong>프로세스 생명주기 관리</strong>
+        재측위 launch와 도킹 launch를 on-demand로 실행하고, 완료·실패·stop·timeout·agent 종료 시 관련 process group을 정리한다.
+      </div>
+      <div class="summary-item">
+        <strong>상태 보고</strong>
+        heartbeat, 배터리, 모드, 위치, 태그 관측, 재측위 결과, 도킹 결과를 콘솔 공유 도메인으로 발행한다.
+      </div>
+      <div class="summary-item">
+        <strong>충돌 방지와 CPU 절감</strong>
+        재측위 detector가 켜져 있으면 도킹을 거부해 카메라 충돌을 막고, pose 소스를 <code>/tf</code>에서 <code>/amcl_pose</code>로 바꿔 CPU를 낮춘다.
+      </div>
+    </section>
+
+    <h2>1. 전체 런타임 구조</h2>
+    <section class="board">
+      <div class="lane console">
+        <h3>콘솔 공유 도메인</h3>
+        <div class="node console">
+          <strong>Admin GUI / 관제 PC</strong>
+          <span class="muted">
+            로봇별 명령 토픽 발행, heartbeat/tag/dock 이벤트 구독.
+          </span>
+          <ul>
+            <li><code>/robot_&lt;id&gt;/cmd_vel</code></li>
+            <li><code>/robot_&lt;id&gt;/set_initialpose</code></li>
+            <li><code>/robot_&lt;id&gt;/relocalize_cmd</code></li>
+            <li><code>/robot_&lt;id&gt;/dock_cmd</code></li>
+          </ul>
+        </div>
+        <div class="node console">
+          <strong>wasab_agent_console_&lt;id&gt;</strong>
+          <span class="muted">
+            <code>console_ctx</code>. 콘솔 명령은 큐에 넣기만 하고, 로봇 도메인 publish는 하지 않는다.
+          </span>
+          <ul>
+            <li>2Hz heartbeat/event drain timer</li>
+            <li><code>/robots/heartbeat</code> publish</li>
+            <li><code>/robots/tag_status</code> publish</li>
+            <li><code>/robots/relocalize_event</code> publish</li>
+            <li><code>/robots/dock_event</code> publish</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="lane robot">
+        <h3>RobotAgent 프로세스</h3>
+        <div class="node robot">
+          <strong>python3 -m wasab_robot_agent.agent_node</strong>
+          <span class="muted">
+            <code>scripts/start_agent.sh</code>가 기동. entry point는 <code>agent</code>.
+          </span>
+          <ul>
+            <li>프로세스 내부에 ROS context 2개 생성</li>
+            <li><code>_to_robot</code> queue로 cross-context 명령 전달</li>
+            <li>서브프로세스 process group 관리</li>
+            <li>로그: <code>~/agent.log</code>, dock/relocalize 별도 로그</li>
+          </ul>
+        </div>
+        <div class="node robot">
+          <strong>wasab_agent_robot_&lt;id&gt;</strong>
+          <span class="muted">
+            <code>robot_ctx</code>. 로봇 로컬 ROS_DOMAIN_ID에서 실제 로컬 토픽 발행.
+          </span>
+          <ul>
+            <li>20Hz drain/watchdog timer</li>
+            <li><code>/amcl_pose</code> subscription으로 heartbeat pose 갱신</li>
+            <li><code>/initialpose</code> 수신 시 pose 즉시 반영</li>
+            <li><code>POSE_STALE_S=5.0</code>: 오래된 pose면 dock nav 판정에서 Nav2 사용</li>
+            <li><code>/cmd_vel</code>, <code>/initialpose</code>, <code>/wasab/cmd_mode</code> publish</li>
+            <li><code>/wasab/tag_observation</code>, <code>/battery/voltage</code>, <code>/wasab/docking_state</code> subscribe</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="lane proc">
+        <h3>On-demand 서브프로세스</h3>
+        <div class="node proc">
+          <strong>relocalization.launch.py</strong>
+          <span class="muted">콘솔 재측위 시작 요청 시 agent가 실행.</span>
+          <ul>
+            <li><code>apriltag_detector</code></li>
+            <li><code>apriltag_relocalizer</code></li>
+            <li>timeout: 30s</li>
+            <li>로그: <code>~/agent_detector.log</code></li>
+          </ul>
+        </div>
+        <div class="node proc">
+          <strong>dock.launch.py</strong>
+          <span class="muted">콘솔 도킹 시작 요청 시 agent가 실행.</span>
+          <ul>
+            <li><code>precision_parking</code> 단일 Node launch</li>
+            <li>Nav2 접근 중 detector 프로세스 없음</li>
+            <li><code>SEARCH_TAG</code> 진입 시 precision_parking이 <code>apriltag_detector</code> spawn</li>
+            <li>DONE/FAILED/stop/shutdown 시 detector 회수</li>
+            <li>timeout: 90s</li>
+            <li>로그: <code>~/agent_dock.log</code></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <h2>2. agent 내부 모듈 책임</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>파일 / 모듈</th>
+          <th>주요 책임</th>
+          <th>런타임 영향</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>wasab_robot_agent.agent_node</code></td>
+          <td>2-Context 생성, topic relay, heartbeat, dock/relocalize subprocess lifecycle 관리, <code>/amcl_pose</code> 기반 pose snapshot</td>
+          <td>상시 실행. TF listener 제거 후 robot_ctx CPU 약 30%에서 약 8%로 하락.</td>
+        </tr>
+        <tr>
+          <td><code>wasab_robot_agent.helpers</code></td>
+          <td>heartbeat/tag_status/dock_event JSON 생성, command 분류, process group kill helper</td>
+          <td>agent 타이머와 이벤트 drain에서 호출.</td>
+        </tr>
+        <tr>
+          <td><code>wasab_robot_agent.dock_session</code></td>
+          <td><code>/wasab/docking_state</code>를 <code>/robots/dock_event</code>로 종결 판정</td>
+          <td>dock 세션 active 중 실패/완료/timeout/cancel 판정. terminal 수신 시 dock process group 회수.</td>
+        </tr>
+        <tr>
+          <td><code>wasab_docking.dock_approach</code></td>
+          <td>등록 tag pose와 standoff로 Nav2 approach pose 계산</td>
+          <td>dock start 시 1회 계산. 태그 미등록이면 launch 전 실패 처리.</td>
+        </tr>
+        <tr>
+          <td><code>wasab_docking.tag_map_poses</code></td>
+          <td><code>~/.wasab/tag_map_poses.yaml</code> 로드</td>
+          <td>dock target tag pose lookup.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>3. 명령 흐름</h2>
+    <section class="command-flows">
+      <div>
+        <h3>재측위</h3>
+        <div class="flow">
+          <div class="step">GUI<br><code>/robot_&lt;id&gt;/relocalize_cmd</code></div>
+          <div class="step">console_ctx<br>queue enqueue</div>
+          <div class="step">robot_ctx<br><code>_sink_relocalize</code></div>
+          <div class="step">launch<br><code>relocalization.launch.py</code></div>
+          <div class="step">success/timeout<br><code>/robots/relocalize_event</code></div>
+        </div>
+        <div class="callout ok">
+          재측위 detector는 on-demand이며, 성공 후 <code>/initialpose</code> flush 유예를 둔 뒤 종료한다.
+        </div>
+      </div>
+
+      <div>
+        <h3>도킹</h3>
+        <div class="flow">
+          <div class="step">GUI<br><code>/robot_&lt;id&gt;/dock_cmd</code></div>
+          <div class="step">agent<br>tag map load + fresh pose 판정</div>
+          <div class="step">launch<br><code>dock.launch.py</code></div>
+          <div class="step">Nav2 approach<br>detector 없음</div>
+          <div class="step"><code>SEARCH_TAG</code><br>detector spawn</div>
+          <div class="step">PID servo<br><code>/cmd_vel</code></div>
+        </div>
+        <div class="callout ok">
+          도킹 detector 지연기동 적용 완료. 실기 로그에서 NAV 중 detector 부재, Nav2 성공 후
+          <code>SEARCH_TAG</code>에서 detector 기동, 8→7→9 콘솔 경로 완주를 확인했다.
+        </div>
+      </div>
+    </section>
+
+    <h2>4. agent가 관리하는 ROS 토픽</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>방향</th>
+          <th>토픽</th>
+          <th>역할</th>
+          <th>비고</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Console -> Agent</td>
+          <td><code>/robot_&lt;id&gt;/cmd_vel</code></td>
+          <td>선택 로봇 수동 속도 명령</td>
+          <td>robot_ctx가 <code>/cmd_vel</code>로 재발행. 0.3s watchdog.</td>
+        </tr>
+        <tr>
+          <td>Console -> Agent</td>
+          <td><code>/robot_&lt;id&gt;/set_initialpose</code></td>
+          <td>초기 위치 지정</td>
+          <td>robot_ctx가 <code>/initialpose</code>로 복사 발행.</td>
+        </tr>
+        <tr>
+          <td>Console -> Agent</td>
+          <td><code>/robot_&lt;id&gt;/relocalize_cmd</code></td>
+          <td>detector start/stop, calibrate, rearm</td>
+          <td>detector start는 agent가 로컬 launch 실행.</td>
+        </tr>
+        <tr>
+          <td>Console -> Agent</td>
+          <td><code>/robot_&lt;id&gt;/dock_cmd</code></td>
+          <td>도킹 start/stop</td>
+          <td>agent가 approach pose 계산 후 dock launch 실행. 재측위 detector 활성 중이면 즉시 거부.</td>
+        </tr>
+        <tr>
+          <td>Robot -> Console</td>
+          <td><code>/robots/heartbeat</code></td>
+          <td>id, ip, mode, battery, pose</td>
+          <td>2Hz, best effort.</td>
+        </tr>
+        <tr>
+          <td>Robot -> Console</td>
+          <td><code>/robots/tag_status</code></td>
+          <td>최근 tag observation 요약</td>
+          <td><code>/wasab/tag_observation</code> snapshot 기반.</td>
+        </tr>
+        <tr>
+          <td>Robot -> Console</td>
+          <td><code>/robots/dock_event</code></td>
+          <td>started, done, failed, cancelled, timeout</td>
+          <td><code>/wasab/docking_state</code> terminal 상태 기반.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>5. 외부 상시 스택과의 관계</h2>
+    <section class="board">
+      <div class="node nav">
+        <strong>pinky_bringup</strong>
+        <span class="muted">모터, odom, joint/robot state, battery 등 로봇 기본 bringup.</span>
+        <ul>
+          <li><code>/cmd_vel</code> 소비</li>
+          <li><code>/battery/voltage</code> 제공</li>
+        </ul>
+      </div>
+      <div class="node nav">
+        <strong>localization / AMCL</strong>
+        <span class="muted"><code>/amcl_pose</code>와 map-to-base TF 제공. agent heartbeat pose는 이제 <code>/amcl_pose</code>를 소비.</span>
+        <ul>
+          <li><code>/initialpose</code> 소비</li>
+          <li><code>/amcl_pose</code> 제공</li>
+          <li><code>map -> base_footprint</code> TF 제공(agent는 직접 구독하지 않음)</li>
+        </ul>
+      </div>
+      <div class="node nav risk">
+        <strong>Nav2 navigation stack</strong>
+        <span class="muted">도킹 접근 구간의 실제 이동 담당. agent CPU 이슈는 완화됐고, 남은 이슈는 방향별 좁은 경로와 저배터리 재검증.</span>
+        <ul>
+          <li><code>/navigate_to_pose</code> action server</li>
+          <li><code>cmd_vel_nav -> velocity_smoother -> /cmd_vel</code></li>
+          <li>.87 성공값 유지: controller 20Hz, costmap 10/2, inflation 0.06</li>
+        </ul>
+      </div>
+    </section>
+
+    <h2>6. 이슈 / 원인분석 / 해결조치</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>이슈</th>
+          <th>원인분석</th>
+          <th>해결조치 / 결과</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>콘솔 도킹(agent ON) 시 Nav2 주행 중 멈춤 또는 <code>nav_failed</code>.</td>
+          <td>py-spy 결과 agent CPU의 약 85%가 rclpy executor wait-set 재구성. <code>TransformListener</code>가 <code>/tf</code> 35~55Hz로 robot_ctx를 계속 깨웠다. TF 연산 자체는 거의 0%.</td>
+          <td>agent pose 소스를 TF polling에서 <code>/amcl_pose</code> 이벤트로 변경. <code>TransformListener</code>와 5Hz pose timer 제거. robot_ctx CPU 약 30% → 약 8%.</td>
+        </tr>
+        <tr>
+          <td>Nav2 접근 중 detector와 CPU/카메라 경합 가능성.</td>
+          <td>기존 도킹 launch는 detector와 precision_parking을 co-launch했다. Nav2 주행 중 detector 부하를 분리할 필요가 있었다.</td>
+          <td><code>dock.launch.py</code>에서 detector 제거. <code>precision_parking</code>이 <code>SEARCH_TAG</code>에서만 detector spawn. NAV 중 detector=0, SEARCH_TAG 이후 기동 확인.</td>
+        </tr>
+        <tr>
+          <td>재측위 detector와 도킹 detector 동시 카메라 점유 가능성.</td>
+          <td>재측위 detector가 살아있는 상태에서 dock을 시작하면 늦은 camera busy 또는 spawn 실패로 보일 수 있다.</td>
+          <td>agent가 재측위 detector 활성 중 dock start를 즉시 거부하고 <code>reloc_detector_active</code> 사유로 이벤트 발행.</td>
+        </tr>
+        <tr>
+          <td>tag9 → tag7 방향 실패와 콘솔 버튼 재시도 flakiness.</td>
+          <td>tag9→tag7은 좁은 중간 지점 collision이 반복됐다. 단, worklog 기준 저배터리 영향도 아직 미배제다.</td>
+          <td>8 → 7 → 9 콘솔 경로 완주 확인. 데모는 성공 방향 우선. 배터리 충전 후 tag7→tag9, 8→7→9, 9→7 재검증이 다음 1순위.</td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+</body>
+</html>

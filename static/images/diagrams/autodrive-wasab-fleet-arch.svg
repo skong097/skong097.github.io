@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" width="900" height="520" font-family="'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace" role="img" aria-label="WaSaB 다중로봇 관제 시스템 구조. 콘솔 도메인 50에는 통합 관제 콘솔 GUI, 사용자 웹앱, 오버헤드 CCTV가 있고, 로봇 함대는 로봇별 도메인 51에서 54로 분리되어 각 로봇이 Nav2 자율주행, AMCL 측위, AprilTag 도킹, 순찰 코디네이터를 실행한다. 각 로봇에서 실행되는 wasab_robot_agent가 두 도메인을 잇는 브리지로, 로봇 상태를 heartbeat와 이벤트로 콘솔에 올리고 콘솔의 cmd_vel과 모드 명령을 로봇으로 내려보낸다.">
+  <rect x="1" y="1" width="898" height="518" rx="14" fill="#0c1117" stroke="rgba(94,242,184,0.16)"/>
+  <rect x="1" y="1" width="898" height="46" rx="14" fill="rgba(255,255,255,0.02)"/>
+
+  <circle cx="26" cy="24" r="5.5" fill="#ff5f57"/>
+  <circle cx="44" cy="24" r="5.5" fill="#febc2e"/>
+  <circle cx="62" cy="24" r="5.5" fill="#28c840"/>
+  <text x="878" y="28" text-anchor="end" font-size="12" fill="#5d6b78">fleet — WaSaB 다중로봇 관제</text>
+
+  <defs>
+    <marker id="af" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0 0 L9 4.5 L0 9 z" fill="#3a4654"/>
+    </marker>
+  </defs>
+
+  <!-- 콘솔 도메인 50 container -->
+  <rect x="40" y="66" width="820" height="112" rx="10" fill="rgba(108,182,255,0.05)" stroke="rgba(108,182,255,0.35)" stroke-width="1.2"/>
+  <text x="58" y="88" font-size="12" fill="#6cb6ff">콘솔 PC · 노트북 — 도메인 50</text>
+
+  <rect x="62" y="100" width="242" height="60" rx="8" fill="rgba(108,182,255,0.08)" stroke="#6cb6ff" stroke-width="1.2"/>
+  <text x="183" y="124" text-anchor="middle" font-size="14" font-weight="600" fill="#b9dcff">통합 관제 콘솔</text>
+  <text x="183" y="144" text-anchor="middle" font-size="12" fill="#8c98a4">PyQt6 GUI · 맵 · PID</text>
+
+  <rect x="329" y="100" width="242" height="60" rx="8" fill="rgba(108,182,255,0.08)" stroke="#6cb6ff" stroke-width="1.2"/>
+  <text x="450" y="124" text-anchor="middle" font-size="14" font-weight="600" fill="#b9dcff">사용자 웹앱</text>
+  <text x="450" y="144" text-anchor="middle" font-size="12" fill="#8c98a4">FastAPI · 교사/안전관리자</text>
+
+  <rect x="596" y="100" width="242" height="60" rx="8" fill="rgba(185,167,230,0.08)" stroke="#b9a7e6" stroke-width="1.2"/>
+  <text x="717" y="124" text-anchor="middle" font-size="14" font-weight="600" fill="#d6c9f2">오버헤드 CCTV</text>
+  <text x="717" y="144" text-anchor="middle" font-size="12" fill="#8c98a4">천정 카메라 · Zone 감지</text>
+
+  <!-- bridge band -->
+  <g stroke="#3a4654" stroke-width="1.6" fill="none">
+    <path d="M405 214 V 178" marker-end="url(#af)"/>
+    <path d="M495 178 V 214" marker-end="url(#af)"/>
+  </g>
+  <text x="398" y="200" text-anchor="end" font-size="11.5" fill="#5ef2b8">heartbeat 2Hz · 이벤트 ↑</text>
+  <text x="502" y="200" font-size="11.5" fill="#f0a36b">↓ cmd_vel · cmd_mode</text>
+
+  <!-- agent pill (bridge) -->
+  <rect x="285" y="214" width="330" height="54" rx="10" fill="rgba(94,242,184,0.12)" stroke="#5ef2b8" stroke-width="1.7"/>
+  <text x="450" y="238" text-anchor="middle" font-size="15" font-weight="700" fill="#b6f2d8">wasab_robot_agent</text>
+  <text x="450" y="257" text-anchor="middle" font-size="12" fill="#9fe6c8">2-context 도메인 브리지 (로봇마다 실행)</text>
+
+  <!-- agent to robot fleet -->
+  <g stroke="#3a4654" stroke-width="1.6" fill="none">
+    <path d="M405 306 V 268" marker-end="url(#af)"/>
+    <path d="M495 268 V 306" marker-end="url(#af)"/>
+  </g>
+  <text x="398" y="290" text-anchor="end" font-size="11.5" fill="#8c98a4">/amcl_pose · battery ↑</text>
+  <text x="502" y="290" font-size="11.5" fill="#8c98a4">↓ 로컬 /cmd_vel · /initialpose</text>
+
+  <!-- 로봇 함대 container -->
+  <rect x="40" y="306" width="820" height="188" rx="10" fill="rgba(94,242,184,0.04)" stroke="rgba(94,242,184,0.30)" stroke-width="1.2"/>
+  <text x="58" y="328" font-size="12" fill="#5ef2b8">로봇 함대 — Pinky · RPi5 — 로봇별 도메인 51 / 52 / 53 / 54</text>
+
+  <rect x="58" y="342" width="186" height="58" rx="8" fill="rgba(108,182,255,0.08)" stroke="#6cb6ff" stroke-width="1.2"/>
+  <text x="151" y="366" text-anchor="middle" font-size="13" font-weight="600" fill="#b9dcff">Nav2</text>
+  <text x="151" y="386" text-anchor="middle" font-size="11.5" fill="#8c98a4">자율주행</text>
+
+  <rect x="256" y="342" width="186" height="58" rx="8" fill="rgba(108,182,255,0.08)" stroke="#6cb6ff" stroke-width="1.2"/>
+  <text x="349" y="366" text-anchor="middle" font-size="13" font-weight="600" fill="#b9dcff">AMCL</text>
+  <text x="349" y="386" text-anchor="middle" font-size="11.5" fill="#8c98a4">LiDAR 측위</text>
+
+  <rect x="454" y="342" width="186" height="58" rx="8" fill="rgba(240,163,107,0.09)" stroke="#f0a36b" stroke-width="1.3"/>
+  <text x="547" y="366" text-anchor="middle" font-size="13" font-weight="600" fill="#f3c79b">AprilTag 도킹</text>
+  <text x="547" y="386" text-anchor="middle" font-size="11.5" fill="#8c98a4">PID 정밀 주차</text>
+
+  <rect x="652" y="342" width="186" height="58" rx="8" fill="rgba(240,163,107,0.09)" stroke="#f0a36b" stroke-width="1.3"/>
+  <text x="745" y="366" text-anchor="middle" font-size="13" font-weight="600" fill="#f3c79b">순찰 코디네이터</text>
+  <text x="745" y="386" text-anchor="middle" font-size="11.5" fill="#8c98a4">웨이포인트 · 양보</text>
+
+  <text x="450" y="432" text-anchor="middle" font-size="12" fill="#8c98a4">각 로봇은 자기 도메인에 격리 — 로봇 간 토픽이 서로 섞이지 않는다</text>
+  <text x="450" y="466" text-anchor="middle" font-size="12" fill="#6272a4">agent만이 로봇 도메인과 콘솔 도메인 50을 동시에 붙잡는 유일한 프로세스</text>
+</svg>
