@@ -47,11 +47,7 @@ AMCL로 위치를 추정하고, 마지막 몇 cm는 AprilTag PID로 붙인다
 아래는 순찰 한 사이클을 처음부터 끝까지 돌린 것이다. 웨이포인트를 따라 돌고,
 출발지로 복귀한다.
 
-{{< figure src="/images/auto_drive/wasab-patrol-fullcycle-2x.gif" alt="Pinky 로봇이 순찰 웨이포인트를 한 바퀴 순회하고 출발 지점으로 복귀하는 전체 순찰 사이클 데모, 2배속" caption="순찰 풀사이클 (2배속) — 웨이포인트 순회 후 복귀" >}}
-
-같은 장면을 실제 속도로 보면 로봇이 각 지점에서 얼마나 신중하게 감·가속하는지 보인다.
-
-{{< figure src="/images/auto_drive/wasab-patrol-fullcycle-1x.gif" alt="같은 순찰 풀사이클을 실제 속도로 재생한 데모, 1배속" caption="같은 순찰 사이클 (1배속, 실제 속도)" >}}
+{{< figure src="/images/auto_drive/wasab-patrol-fullcycle-1x.gif" alt="Pinky 로봇이 순찰 웨이포인트를 한 바퀴 순회하고 출발 지점으로 복귀하는 전체 순찰 사이클 데모, 실제 속도" caption="순찰 풀사이클 (실제 속도) — 웨이포인트 순회 후 복귀" >}}
 
 ---
 
@@ -146,19 +142,17 @@ DOCK_TIMEOUT_S = 90.0         # dock 전체 백스톱(Nav2 접근 + 서보 여�
 
 재측위가 성공하는 순간 — 흩어져 있던 파티클 구름이 한 점으로 수렴한다.
 
-{{< figure src="/images/auto_drive/wasab-relocalize-success-2x.gif" alt="재측위 명령 후 AMCL 파티클 구름이 한 지점으로 수렴하며 로봇 위치가 잡히는 재측위 성공 순간, 2배속" caption="재측위 성공 — initialpose 반영과 동시에 detector 종료" >}}
+{{< figure src="/images/auto_drive/wasab-relocalize-success-1x.gif" alt="재측위 명령 후 AMCL 파티클 구름이 한 지점으로 수렴하며 로봇 위치가 잡히는 재측위 성공 순간, 실제 속도" caption="재측위 성공 — initialpose 반영과 동시에 detector 종료" >}}
 
 여러 로봇을 차례로 재측위하는 것도 콘솔에서 그대로 된다.
 
-{{< figure src="/images/auto_drive/wasab-relocalize-multi-2x.gif" alt="콘솔에서 여러 로봇을 연속으로 재측위해 각 로봇의 위치를 차례로 다시 잡는 복수 재측위 데모, 2배속" caption="복수 재측위 — 함대 각 로봇을 콘솔에서 순차 재측위" >}}
+{{< figure src="/images/auto_drive/wasab-relocalize-multi-1x.gif" alt="콘솔에서 여러 로봇을 연속으로 재측위해 각 로봇의 위치를 차례로 다시 잡는 복수 재측위 데모, 실제 속도" caption="복수 재측위 — 함대 각 로봇을 콘솔에서 순차 재측위" >}}
 
 도킹도 마찬가지로 agent가 세션을 연다 — Nav2로 접근점까지 데려가고, AprilTag PID가
 마지막 정렬을 하며, 성공·실패 이벤트를 콘솔로 올린다. 아래는 순찰을 마친 로봇이
 홈(충전대)으로 복귀해 도킹하는 장면이다.
 
-{{< figure src="/images/auto_drive/wasab-home-docking-2x.gif" alt="순찰을 마친 Pinky 로봇이 홈 충전대로 복귀해 AprilTag를 보며 정밀 도킹하는 데모, 2배속" caption="홈 복귀 도킹 (2배속) — Nav2 접근 후 AprilTag PID 정렬" >}}
-
-{{< figure src="/images/auto_drive/wasab-home-docking-1x.gif" alt="같은 홈 복귀 도킹을 실제 속도로 재생한 데모, 1배속" caption="같은 홈 복귀 도킹 (1배속, 실제 속도)" >}}
+{{< figure src="/images/auto_drive/wasab-home-docking-1x.gif" alt="순찰을 마친 Pinky 로봇이 홈 충전대로 복귀해 AprilTag를 보며 정밀 도킹하는 데모, 실제 속도" caption="홈 복귀 도킹 (실제 속도) — Nav2 접근 후 AprilTag PID 정렬" >}}
 
 ---
 
@@ -255,7 +249,7 @@ agent는 heartbeat·명령 중계·세션 관리로 항상 바쁘고, 두 도메
 로봇 base에 직접 붙는 **독립 relay(systemd 상시 서비스)**로 분리해, agent가 죽어 있어도
 동작하게 했다. 안전 경로는 최대한 짧고 독립적이어야 한다.
 
-{{< figure src="/images/auto_drive/wasab-estop-all-stop-2x.gif" alt="콘솔에서 전체 긴급정지를 실행하자 함대의 모든 로봇이 즉시 정지하는 데모, 2배속" caption="전체 긴급정지 — agent를 우회하는 독립 정지 경로로 함대 일괄 정지" >}}
+{{< figure src="/images/auto_drive/wasab-estop-all-stop-1x.gif" alt="콘솔에서 전체 긴급정지를 실행하자 함대의 모든 로봇이 즉시 정지하는 데모, 실제 속도" caption="전체 긴급정지 — agent를 우회하는 독립 정지 경로로 함대 일괄 정지" >}}
 
 ---
 
