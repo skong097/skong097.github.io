@@ -85,6 +85,12 @@ outputs:
   - HTML
   - RSS
   - JSON
+# 날짜 디렉터리(0710/ 등)로 옮기기 전에 auto_drive 루트에 남은 레거시 원본 초안.
+# front matter가 없어 그대로 두면 라이브 페이지로 발행된다. 파일은 보존하고 빌드에서만 제외.
+# (날짜 디렉터리 초안은 각 디렉터리의 _index.md 에서 build.render:never 로 처리)
+ignoreFiles:
+- content/posts/auto_drive/blog-\d{4}-\d{2}-\d{2}-.*\.md$
+- content/posts/auto_drive/nav2-costmap-amcl-notes-\d{4}-\d{2}-\d{2}\.md$
 markup:
   goldmark:
     renderer:
