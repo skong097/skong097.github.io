@@ -1,0 +1,692 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ROS 2 로봇 CPU 부하 튜닝 — 미들웨어 교체와 중복 노드 제거</title>
+<style>
+  :root{
+    --bg:#fff; --fg:#14171c; --muted:#5d6673; --line:#e4e8ef; --card:#f7f9fc;
+    --accent:#2f5bea; --good:#0d8a52; --bad:#c02626; --warn:#b45309; --hl:#fff8e1;
+    --code-bg:#0f1420; --code-fg:#e6ebf5;
+    --mono: ui-monospace, SFMono-Regular, "JetBrains Mono", Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#0e1116; --fg:#e7ecf3; --muted:#98a3b2; --line:#232a36; --card:#151a22;
+           --accent:#7aa2ff; --good:#4ade80; --bad:#f87171; --warn:#fbbf24; --hl:#2a2410;
+           --code-bg:#080b11; --code-fg:#dce5f1; }
+  }
+  :root[data-theme="dark"]{ --bg:#0e1116; --fg:#e7ecf3; --muted:#98a3b2; --line:#232a36; --card:#151a22;
+           --accent:#7aa2ff; --good:#4ade80; --bad:#f87171; --warn:#fbbf24; --hl:#2a2410;
+           --code-bg:#080b11; --code-fg:#dce5f1; }
+  :root[data-theme="light"]{ --bg:#fff; --fg:#14171c; --muted:#5d6673; --line:#e4e8ef; --card:#f7f9fc;
+           --accent:#2f5bea; --good:#0d8a52; --bad:#c02626; --warn:#b45309; --hl:#fff8e1;
+           --code-bg:#0f1420; --code-fg:#e6ebf5; }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);line-height:1.7;
+       font-family:-apple-system,BlinkMacSystemFont,"Pretendard","Noto Sans KR",Segoe UI,Roboto,sans-serif;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px 120px}
+  header.hero{padding:56px 0 28px;border-bottom:3px solid var(--fg);margin-bottom:32px}
+  .kicker{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:10px}
+  h1{font-size:38px;line-height:1.25;margin:0 0 14px;letter-spacing:-.02em}
+  .lede{font-size:17px;color:var(--muted);margin:0 0 20px;max-width:70ch}
+  .meta{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{font-size:12.5px;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:4px 12px;color:var(--muted)}
+  h2{font-size:25px;margin:52px 0 8px;letter-spacing:-.01em;padding-top:14px;border-top:1px solid var(--line)}
+  h3{font-size:18px;margin:30px 0 6px}
+  h4{font-size:15.5px;margin:20px 0 4px}
+  p{margin:10px 0}
+  ul,ol{margin:10px 0;padding-left:22px} li{margin:5px 0}
+  code{font-family:var(--mono);font-size:.88em;background:var(--card);border:1px solid var(--line);border-radius:4px;padding:1px 5px}
+  pre{background:var(--code-bg);color:var(--code-fg);padding:16px 18px;border-radius:10px;overflow-x:auto;
+      font-family:var(--mono);font-size:13px;line-height:1.6;margin:14px 0}
+  pre code{background:none;border:none;padding:0;color:inherit;font-size:inherit}
+  .tw{overflow-x:auto;margin:16px 0}
+  table{border-collapse:collapse;width:100%;font-size:14px;min-width:520px}
+  th,td{border:1px solid var(--line);padding:8px 11px;text-align:left}
+  th{background:var(--card);font-weight:650;white-space:nowrap}
+  td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  tr.total td{font-weight:700;background:var(--card)}
+  .good{color:var(--good);font-weight:650}
+  .bad{color:var(--bad);font-weight:650}
+  .hl{background:var(--hl)}
+  .card{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);
+        border-radius:8px;padding:14px 18px;margin:18px 0}
+  .card.good{border-left-color:var(--good)}
+  .card.warn{border-left-color:var(--warn)}
+  .card.bad{border-left-color:var(--bad)}
+  .card h4{margin:0 0 6px}
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin:22px 0}
+  .kpi{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px}
+  .kpi .v{font-size:30px;font-weight:750;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+  .kpi .l{font-size:12.5px;color:var(--muted);margin-top:2px}
+  .kpi .s{font-size:12px;color:var(--muted);margin-top:6px}
+  .flow{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px;
+        font-family:var(--mono);font-size:13px;line-height:1.75;overflow-x:auto;white-space:pre;margin:14px 0}
+  .toggle{position:fixed;right:16px;top:14px;border:1px solid var(--line);background:var(--card);
+          color:var(--fg);border-radius:8px;padding:6px 11px;font-size:13px;cursor:pointer;z-index:9}
+  footer{margin-top:56px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+  @media (max-width:640px){ h1{font-size:29px} .wrap{padding:0 16px 80px} }
+</style>
+</head>
+<body>
+<button class="toggle" id="tg">🌓</button>
+<div class="wrap">
+
+<header class="hero">
+  <div class="kicker">Robotics · Performance Engineering</div>
+  <h1>ROS 2 로봇 CPU 부하 튜닝 — 미들웨어 교체와 중복 노드 제거</h1>
+  <p class="lede">4코어 라즈베리파이에서 Nav2 스택이 <b>정지 상태에서도 CPU의 60% 이상</b>을 소비했다.
+     두 가지 레버를 각각 A/B 측정으로 검증하고, 그 과정에서 진짜 병목이 따로 있다는 것도 확인했다.</p>
+  <div class="meta">
+    <span class="chip">2026-07-29 실측</span>
+    <span class="chip">ROS 2 Jazzy</span>
+    <span class="chip">RPi4(로봇44·50) · RPi5(로봇31)</span>
+    <span class="chip">조건 3종 × 60초</span>
+    <span class="chip">mpstat · pidstat</span>
+  </div>
+</header>
+
+<div class="kpis">
+  <div class="kpi"><div class="v good">−34.2%p</div><div class="l">① 미들웨어 교체 (순찰)</div><div class="s">프로세스 CPU 270.6 → 236.4</div></div>
+  <div class="kpi"><div class="v good">−19.0%p</div><div class="l">② 중복 노드 제거</div><div class="s">joint_state_publisher · 위험 없음</div></div>
+  <div class="kpi"><div class="v bad">87.9%</div><div class="l">진짜 병목 — 카메라</div><div class="s">apriltag_detector 단독</div></div>
+  <div class="kpi"><div class="v bad">3배</div><div class="l">보드 세대 차이</div><div class="s">RPi4 vs RPi5 — 같은 코드 CPU 1/4 (§9-B)</div></div>
+  <div class="kpi"><div class="v good">20%</div><div class="l">★도킹 완주의 임계</div><div class="s">보드가 아니라 CPU 여유 — RPi4도 완주 (§9-C)</div></div>
+  <div class="kpi"><div class="v">≈ 동일</div><div class="l">컨텍스트 스위치</div><div class="s">미들웨어 무관 · 150~190/s</div></div>
+</div>
+
+<div class="card"><h4>두 개의 튜닝 포인트</h4>
+<table style="margin:6px 0">
+<tr><th>#</th><th>튜닝 포인트</th><th>결과</th><th>위험</th></tr>
+<tr><td><b>①</b></td><td>미들웨어 교체 Fast DDS → Cyclone DDS</td><td class="good">순찰 −34.19%p (−12.6%)</td><td>중 — 전 노드 동시 전환 필요</td></tr>
+<tr><td><b>②</b></td><td>중복 <code>joint_state_publisher</code> 제거</td><td class="good">−19.01%p, 실기 검증 완료</td><td class="good">없음</td></tr>
+</table>
+<p>①은 §1~§8, ②는 <b>§9-A</b>, 교차검증 <b>§9-B</b>, <b>4번째 로봇 재정정 §9-C</b>, 종합 판단은 <b>§9-C-4</b>.</p></div>
+
+<h2>1. 배경 — ROS 2에서 DDS란</h2>
+
+<h3>1-1. ROS 1과 결정적으로 다른 점</h3>
+<p>ROS 1은 중앙 <code>roscore</code>가 노드를 중개했다. 마스터가 죽으면 전체가 멈췄다.
+<strong>ROS 2는 마스터를 없애고 그 자리에 산업 표준 통신 미들웨어 DDS(Data Distribution Service)를 넣었다.</strong></p>
+<div class="flow">[ROS 1]  노드 ──▶ roscore(마스터) ──▶ 노드     중앙 집중 · 단일 실패점
+[ROS 2]  노드 ◀──▶ DDS 분산 디스커버리 ◀──▶ 노드   마스터 없음 · P2P</div>
+
+<h3>1-2. 계층 구조 — 교체가 가능한 이유</h3>
+<div class="flow">애플리케이션        내 노드 (rclpy / rclcpp)
+──────────────────────────────────────────────
+클라이언트 라이브러리  rcl (C 공통 구현)
+──────────────────────────────────────────────
+★ 추상 계층         rmw   ← 여기서 DDS 구현체를 갈아 끼운다
+──────────────────────────────────────────────
+DDS 구현체          Fast DDS │ Cyclone DDS │ Connext │ …
+──────────────────────────────────────────────
+전송                UDP / TCP / 공유메모리</div>
+<p><strong><code>RMW_IMPLEMENTATION</code> 환경변수 하나로 구현체를 교체한다.</strong> 애플리케이션 코드는 한 줄도 바뀌지 않는다.
+이 실험이 성립하는 이유다.</p>
+
+<h3>1-3. DDS가 실제로 하는 일</h3>
+<div class="tw"><table>
+<tr><th>기능</th><th>설명</th><th>로봇에서의 의미</th></tr>
+<tr><td><b>디스커버리</b></td><td>노드가 서로를 자동으로 찾음(SPDP/SEDP)</td><td><code>roscore</code> 없이 로봇·PC 노드가 자동 연결</td></tr>
+<tr><td><b>QoS</b></td><td>신뢰성·내구성·이력 등 22종 정책</td><td>센서는 유실 허용(BEST_EFFORT), 맵은 늦게 붙어도 수신(TRANSIENT_LOCAL)</td></tr>
+<tr><td><b>도메인 격리</b></td><td><code>ROS_DOMAIN_ID</code>로 논리 분리</td><td>로봇마다 도메인을 나눠 다중 로봇 운용</td></tr>
+<tr><td><b>직렬화·전송</b></td><td>CDR 직렬화 + UDP 멀티캐스트/유니캐스트</td><td>대역폭·지연·<b>CPU 비용</b>이 여기서 발생</td></tr>
+</table></div>
+
+<h3>1-4. 두 구현체</h3>
+<div class="tw"><table>
+<tr><th></th><th>Fast DDS (eProsima)</th><th>Cyclone DDS (Eclipse)</th></tr>
+<tr><td>ROS 2 Jazzy</td><td><b>기본값</b></td><td>선택 설치</td></tr>
+<tr><td>특징</td><td>기능 풍부(공유메모리·디스커버리 서버·XML 프로파일)</td><td>경량·단순, 작은 코드베이스</td></tr>
+<tr><td>설정</td><td>XML 프로파일 + <code>ROS_STATIC_PEERS</code></td><td><code>CYCLONEDDS_URI</code> XML</td></tr>
+<tr><td>평판</td><td>기능성</td><td><b>자원 효율</b> — 이 실험의 가설</td></tr>
+</table></div>
+
+<h3>1-5. 왜 이 실험을 했는가</h3>
+<div class="card">
+<p>측정 대상 로봇의 상시 부하가 비정상적으로 높았다.</p>
+<ul>
+<li><b>정지 상태에서도</b> Nav2·측위·base 프로세스 합계가 <b>단일 코어 기준 243%</b>(4코어의 61%)</li>
+<li>임무(순찰·도킹)가 추가로 쓰는 건 <b>+10~27%p뿐</b> — 부하의 본체는 “스택이 떠 있다는 사실 자체”</li>
+<li>정지 중인데도 노드마다 <b>초당 150~185회 컨텍스트 스위치</b> → 계산이 아니라 <b>통신 대기·깨어남 비용</b></li>
+</ul>
+<p>이 구조라면 미들웨어 교체가 유효한 레버일 수 있다는 가설을 세우고 A/B를 설계했다.</p>
+</div>
+
+<h2>2. 측정 방법</h2>
+<div class="tw"><table>
+<tr><th>항목</th><th>내용</th></tr>
+<tr><td>대상</td><td>로봇 1대(동일 하드웨어·동일 코드), <b>Raspberry Pi 4 Model B</b> / 4코어 / 3,784 MiB · 최대 1.8GHz</td></tr>
+<tr><td>미들웨어</td><td>A = <code>rmw_fastrtps_cpp</code>(기본) · B = <code>rmw_cyclonedds_cpp</code> 2.2.3</td></tr>
+<tr><td>조건</td><td>① 정지(임무 없음) ② 순찰 주행 중 ③ 도킹 + 카메라(AprilTag 검출)</td></tr>
+<tr><td>표본</td><td>조건당 <b>60초</b>(도킹만 40초), 1초 간격</td></tr>
+<tr><td>도구</td><td><code>mpstat -P ALL</code>(시스템) · <code>pidstat -u -w</code>(프로세스 CPU·컨텍스트 스위치)</td></tr>
+<tr><td>부가</td><td><code>vcgencmd measure_temp</code> / <code>get_throttled</code>(열 스로틀링) · <code>/proc/loadavg</code></td></tr>
+<tr><td>통제</td><td>A·B 사이 <b>재부팅</b>으로 상태 초기화. 코드·설정·맵·임무 경로 동일</td></tr>
+</table></div>
+<p><b>CPU 표기</b> — 프로세스 CPU는 단일 코어 기준(<code>100%</code> = 코어 1개 점유). 4코어 총량은 <code>400%</code>다.
+시스템 사용률은 4코어 평균 백분율이다.</p>
+
+<pre><code>PIDS=$(pgrep -d, -f "sllidar_node|/bringup|map_server|/amcl|lifecycle_manager|\
+controller_server|smoother_server|planner_server|behavior_server|bt_navigator|\
+waypoint_follower|velocity_smoother|agent_node|detector|precision_parking")
+
+mpstat 1 60 &gt; /tmp/_mp.$L &amp;                      # 시스템 전체
+pidstat -u -w -p "$PIDS" 1 60 &gt; /tmp/_ps.$L &amp;   # 프로세스별 CPU + 컨텍스트 스위치
+wait</code></pre>
+
+<h2>3. 기준점 — ROS 스택이 없을 때</h2>
+<pre><code>CPU    user 1.71%   system 1.73%   iowait 0.54%   idle 96.02%
+load   0.20 / 0.52 / 0.34      온도 53.5°C      throttled 0x0
+메모리  813 / 3,784 MiB</code></pre>
+<p><strong>이 기기는 ROS가 없으면 사실상 놀고 있다.</strong> 이후의 부하는 전부 ROS 스택이 만든 것이다.</p>
+
+<h2>4. 시스템 전체 결과</h2>
+<div class="tw"><table>
+<tr><th>지표</th><th class="n">A-1 정지</th><th class="n">B-1 정지</th><th class="n">A-2 순찰</th><th class="n">B-2 순찰</th><th class="n">A-3b 도킹</th><th class="n">B-3b 도킹</th></tr>
+<tr><td>미들웨어</td><td class="n">FastDDS</td><td class="n">Cyclone</td><td class="n">FastDDS</td><td class="n">Cyclone</td><td class="n">FastDDS</td><td class="n">Cyclone</td></tr>
+<tr><td>측정 길이</td><td class="n">60초</td><td class="n">60초</td><td class="n">60초</td><td class="n">60초</td><td class="n">40초</td><td class="n">40초</td></tr>
+<tr class="hl"><td><b>CPU 사용률</b></td><td class="n">68.5%</td><td class="n">71.9%</td><td class="n">78.3%</td><td class="n good">73.4%</td><td class="n">88.2%</td><td class="n">93.1%</td></tr>
+<tr><td>user</td><td class="n">46.93</td><td class="n good">39.76</td><td class="n">53.72</td><td class="n good">42.22</td><td class="n">61.96</td><td class="n">56.18</td></tr>
+<tr><td>system</td><td class="n">21.38</td><td class="n bad">29.72</td><td class="n">24.35</td><td class="n bad">28.73</td><td class="n">26.03</td><td class="n bad">34.35</td></tr>
+<tr><td>iowait</td><td class="n">0.03</td><td class="n">0.06</td><td class="n">0.02</td><td class="n">0.03</td><td class="n">0.02</td><td class="n">0.05</td></tr>
+<tr><td>irq/soft 등</td><td class="n">0.14</td><td class="n">2.38</td><td class="n">0.25</td><td class="n">2.41</td><td class="n">0.22</td><td class="n">2.47</td></tr>
+<tr><td>idle</td><td class="n">31.52</td><td class="n">28.09</td><td class="n">21.66</td><td class="n good">26.61</td><td class="n">11.77</td><td class="n">6.95</td></tr>
+<tr class="total"><td>프로세스 CPU 합계</td><td class="n">243.82</td><td class="n">220.67</td><td class="n">270.57</td><td class="n">236.38</td><td class="n">210.52</td><td class="n">208.76</td></tr>
+<tr><td>load 시작 → 종료</td><td class="n">6.18→9.33</td><td class="n">11.46→8.75</td><td class="n">6.70→12.12</td><td class="n">9.72→13.34</td><td class="n">18.08→19.93</td><td class="n">11.43→12.70</td></tr>
+<tr><td>온도 시작 → 종료</td><td class="n">67.6→67.2</td><td class="n">79.8→79.3</td><td class="n">71.1→71.1</td><td class="n">79.8→80.3</td><td class="n">77.9→76.9</td><td class="n">83.2→82.3</td></tr>
+<tr><td>throttled</td><td class="n">0x0</td><td class="n">0x0</td><td class="n">0x0</td><td class="n">0x0</td><td class="n">0x0</td><td class="n bad">0xe0008 ★</td></tr>
+</table></div>
+<div class="card bad"><h4>★ B-3b는 열 스로틀링 발생 → 비교값으로 사용 불가</h4>
+<p><code>0xe0008</code> = soft temp limit 발생 + 주파수 캡 + 스로틀링 발생. 배터리 저하 상태이기도 했다.</p></div>
+
+<h2>5. 프로세스별 CPU</h2>
+
+<h3>5-1. 정지 상태</h3>
+<div class="tw"><table>
+<tr><th>프로세스</th><th class="n">A-1 FastDDS</th><th class="n">B-1 Cyclone</th><th class="n">차이</th></tr>
+<tr><td>sllidar_node</td><td class="n">24.79</td><td class="n">23.44</td><td class="n good">−1.35</td></tr>
+<tr><td>bringup</td><td class="n">24.16</td><td class="n">21.88</td><td class="n good">−2.28</td></tr>
+<tr><td>lifecycle_manager (nav)</td><td class="n">22.39</td><td class="n">26.67</td><td class="n bad">+4.28</td></tr>
+<tr><td>bt_navigator</td><td class="n">18.78</td><td class="n">16.04</td><td class="n good">−2.74</td></tr>
+<tr><td>controller_server</td><td class="n">18.28</td><td class="n">16.71</td><td class="n good">−1.57</td></tr>
+<tr><td>behavior_server</td><td class="n">16.44</td><td class="n">14.65</td><td class="n good">−1.79</td></tr>
+<tr><td>amcl</td><td class="n">15.26</td><td class="n">15.98</td><td class="n">+0.72</td></tr>
+<tr><td>planner_server</td><td class="n">14.60</td><td class="n">14.00</td><td class="n good">−0.60</td></tr>
+<tr><td>smoother_server</td><td class="n">13.15</td><td class="n">12.80</td><td class="n">−0.35</td></tr>
+<tr><td>lifecycle_manager (loc)</td><td class="n">12.26</td><td class="n">13.06</td><td class="n">+0.80</td></tr>
+<tr><td>agent_node</td><td class="n">10.96</td><td class="n">12.93</td><td class="n bad">+1.97</td></tr>
+<tr><td>map_server</td><td class="n">10.48</td><td class="n">10.43</td><td class="n">−0.05</td></tr>
+<tr><td>waypoint_follower</td><td class="n">10.26</td><td class="n">10.60</td><td class="n">+0.34</td></tr>
+<tr><td>velocity_smoother</td><td class="n">10.18</td><td class="n">10.85</td><td class="n">+0.67</td></tr>
+<tr><td>battery_publisher</td><td class="n">1.91</td><td class="n">0.63</td><td class="n good">−1.28</td></tr>
+<tr class="total"><td>합계</td><td class="n">243.82</td><td class="n">220.67</td><td class="n good">−23.15</td></tr>
+</table></div>
+
+<h3>5-2. 순찰 주행 중</h3>
+<div class="tw"><table>
+<tr><th>프로세스</th><th class="n">A-2 FastDDS</th><th class="n">B-2 Cyclone</th><th class="n">차이</th></tr>
+<tr class="hl"><td><b>bt_navigator</b></td><td class="n">36.03</td><td class="n">23.75</td><td class="n good">−12.28</td></tr>
+<tr><td>bringup</td><td class="n">29.69</td><td class="n">25.42</td><td class="n good">−4.27</td></tr>
+<tr><td>lifecycle_manager (nav)</td><td class="n">21.82</td><td class="n">26.48</td><td class="n bad">+4.66</td></tr>
+<tr><td>controller_server</td><td class="n">20.96</td><td class="n">18.44</td><td class="n good">−2.52</td></tr>
+<tr><td>sllidar_node</td><td class="n">20.41</td><td class="n">23.17</td><td class="n bad">+2.76</td></tr>
+<tr><td>amcl</td><td class="n">18.89</td><td class="n">18.17</td><td class="n good">−0.72</td></tr>
+<tr><td>behavior_server</td><td class="n">15.64</td><td class="n">14.49</td><td class="n good">−1.15</td></tr>
+<tr><td>planner_server</td><td class="n">14.43</td><td class="n">14.02</td><td class="n">−0.41</td></tr>
+<tr><td>smoother_server</td><td class="n">12.68</td><td class="n">12.61</td><td class="n">−0.07</td></tr>
+<tr><td>agent_node</td><td class="n">12.41</td><td class="n">13.61</td><td class="n">+1.20</td></tr>
+<tr><td>lifecycle_manager (loc)</td><td class="n">11.99</td><td class="n">12.87</td><td class="n">+0.88</td></tr>
+<tr><td>waypoint_follower</td><td class="n">11.86</td><td class="n">11.16</td><td class="n">−0.70</td></tr>
+<tr><td>velocity_smoother</td><td class="n">11.43</td><td class="n">11.28</td><td class="n">−0.15</td></tr>
+<tr><td>map_server</td><td class="n">10.28</td><td class="n">10.33</td><td class="n">+0.05</td></tr>
+<tr><td>battery_publisher</td><td class="n">1.91</td><td class="n">0.58</td><td class="n good">−1.33</td></tr>
+<tr class="total"><td>합계</td><td class="n">270.57</td><td class="n">236.38</td><td class="n good">−34.19</td></tr>
+</table></div>
+
+<h3>5-3. 도킹 + 카메라 <span style="color:var(--bad)">(B는 스로틀링 상태)</span></h3>
+<div class="tw"><table>
+<tr><th>프로세스</th><th class="n">A-3b FastDDS</th><th class="n">B-3b Cyclone</th></tr>
+<tr><td>bringup</td><td class="n">27.32</td><td class="n">26.52</td></tr>
+<tr><td>lifecycle_manager (nav)</td><td class="n">20.28</td><td class="n">24.59</td></tr>
+<tr><td>agent_node</td><td class="n">18.23</td><td class="n">20.90</td></tr>
+<tr><td>sllidar_node</td><td class="n">16.58</td><td class="n">14.21</td></tr>
+<tr><td>controller_server</td><td class="n">16.38</td><td class="n">14.41</td></tr>
+<tr><td>bt_navigator</td><td class="n">15.98</td><td class="n">12.43</td></tr>
+<tr><td>amcl</td><td class="n">15.38</td><td class="n">15.73</td></tr>
+<tr><td>behavior_server</td><td class="n">14.36</td><td class="n">12.68</td></tr>
+<tr><td>planner_server</td><td class="n">13.11</td><td class="n">12.36</td></tr>
+<tr><td>lifecycle_manager (loc)</td><td class="n">12.04</td><td class="n">13.23</td></tr>
+<tr><td>smoother_server</td><td class="n">11.64</td><td class="n">11.24</td></tr>
+<tr><td>map_server</td><td class="n">10.26</td><td class="n">10.79</td></tr>
+<tr><td>velocity_smoother</td><td class="n">9.07</td><td class="n">9.39</td></tr>
+<tr><td>waypoint_follower</td><td class="n">9.04</td><td class="n">9.41</td></tr>
+<tr><td>battery_publisher</td><td class="n">0.85</td><td class="n">0.87</td></tr>
+<tr class="total"><td>합계</td><td class="n">210.52</td><td class="n">208.76</td></tr>
+</table></div>
+<div class="card warn"><h4>카메라(detector)가 최대 소비자다</h4>
+<p>detector 프로세스는 측정 종료 시점에 이미 종료돼 표에 없다. 그러나 시스템 실사용은
+A-3b 기준 88.2%(= 352.8% / 4코어)인데 측정된 합계는 210.52%뿐 — <b>차이 약 142%가 detector 몫</b>이다.
+<b>카메라가 켜지는 순간 idle이 31.5% → 11.8%로 붕괴</b>한다.</p></div>
+
+<h2>6. 컨텍스트 스위치 (초당)</h2>
+<div class="tw"><table>
+<tr><th>프로세스</th><th class="n">A-1 cs</th><th class="n">B-1 cs</th><th class="n">A-1 nvcs</th><th class="n">B-1 nvcs</th><th class="n">A-2 cs</th><th class="n">B-2 cs</th></tr>
+<tr><td>bt_navigator</td><td class="n">176.0</td><td class="n">185.7</td><td class="n">123.3</td><td class="n">107.7</td><td class="n">293.0</td><td class="n">232.1</td></tr>
+<tr><td>controller_server</td><td class="n">184.6</td><td class="n">173.6</td><td class="n">139.8</td><td class="n">108.7</td><td class="n">169.5</td><td class="n">174.4</td></tr>
+<tr><td>velocity_smoother</td><td class="n">173.9</td><td class="n">178.5</td><td class="n">99.0</td><td class="n">90.7</td><td class="n">170.8</td><td class="n">187.6</td></tr>
+<tr><td>lifecycle_manager (loc)</td><td class="n">171.1</td><td class="n">163.9</td><td class="n">166.9</td><td class="n">177.4</td><td class="n">165.8</td><td class="n">165.9</td></tr>
+<tr><td>lifecycle_manager (nav)</td><td class="n">169.6</td><td class="n">141.0</td><td class="n">229.3</td><td class="n">280.9</td><td class="n">159.9</td><td class="n">143.1</td></tr>
+<tr><td>map_server</td><td class="n">168.0</td><td class="n">161.4</td><td class="n">134.1</td><td class="n">122.3</td><td class="n">164.8</td><td class="n">163.2</td></tr>
+<tr><td>behavior_server</td><td class="n">167.2</td><td class="n">154.8</td><td class="n">123.5</td><td class="n">116.3</td><td class="n">151.3</td><td class="n">157.2</td></tr>
+<tr><td>amcl</td><td class="n">166.3</td><td class="n">168.3</td><td class="n">139.8</td><td class="n">154.1</td><td class="n">163.5</td><td class="n">169.6</td></tr>
+<tr><td>planner_server</td><td class="n">158.4</td><td class="n">163.6</td><td class="n">94.4</td><td class="n">88.8</td><td class="n">145.8</td><td class="n">163.9</td></tr>
+<tr><td>smoother_server</td><td class="n">155.8</td><td class="n">153.1</td><td class="n">110.9</td><td class="n">87.2</td><td class="n">147.3</td><td class="n">153.0</td></tr>
+<tr><td>waypoint_follower</td><td class="n">153.6</td><td class="n">156.4</td><td class="n">99.5</td><td class="n">86.0</td><td class="n">143.0</td><td class="n">157.0</td></tr>
+<tr><td>bringup</td><td class="n">62.3</td><td class="n">31.3</td><td class="n">258.6</td><td class="n">287.8</td><td class="n">77.5</td><td class="n">37.7</td></tr>
+<tr><td>battery_publisher</td><td class="n">24.2</td><td class="n">24.2</td><td class="n">13.7</td><td class="n">10.6</td><td class="n">24.1</td><td class="n">24.1</td></tr>
+<tr><td>sllidar_node</td><td class="n">20.6</td><td class="n">20.3</td><td class="n">26.8</td><td class="n">25.4</td><td class="n">20.7</td><td class="n">20.3</td></tr>
+<tr><td>agent_node</td><td class="n">2.0</td><td class="n">2.0</td><td class="n">1.0</td><td class="n">0.4</td><td class="n">2.1</td><td class="n">2.1</td></tr>
+</table></div>
+<div class="card"><h4>컨텍스트 스위치는 두 미들웨어가 사실상 동일하다</h4>
+<p>노드당 초당 150~190회 수준이 그대로 유지된다. 이 깨어남 빈도는 <b>DDS 구현체가 아니라
+노드의 타이머·콜백 주기 구조</b>에서 나온다는 뜻이다.</p></div>
+
+<h2>7. 결과 해석</h2>
+
+<h3>7-1. 순찰 주행 — CycloneDDS가 유의미하게 낫다</h3>
+<pre><code>CPU 사용률         78.3%  →  73.4%    (−4.9%p)
+user CPU           53.72  →  42.22    (−11.50%p)
+프로세스 CPU 합계   270.57 →  236.38   (−34.19%p, −12.6%)
+bt_navigator       36.03  →  23.75    (−12.28%p, −34%)
+idle               21.66% →  26.61%   (+4.95%p 여유 확보)</code></pre>
+<div class="card good"><h4>★ 불리한 조건에서 달성한 결과</h4>
+<p>B-2는 온도 79.8°C(A는 71.1°C), 시작 load 9.72(A는 6.70)로 <b>열·부하가 더 나쁜 상태</b>에서
+측정됐음에도 CPU를 덜 썼다. 보수적으로 해석해도 유효한 개선이다.</p></div>
+
+<h3>7-2. 정지 상태 — 상쇄되어 뚜렷하지 않다</h3>
+<pre><code>프로세스 CPU 합계   243.82 → 220.67   (−23.15%p)   개선
+user CPU           46.93  → 39.76    (−7.17%p)    개선
+system CPU         21.38  → 29.72    (+8.34%p)    악화
+전체 사용률         68.5%  → 71.9%    (+3.4%p)     소폭 악화</code></pre>
+<p><b>user는 줄고 system은 느는 교환</b>이 일관되게 나타난다. 정지 상태에서는 둘이 상쇄된다.
+다만 B-1은 79.8°C·load 11.46에서 시작해 A-1(67.6°C·6.18)보다 불리했으므로,
+동일 조건이었다면 격차는 더 좁거나 역전됐을 가능성이 있다.</p>
+
+<h3>7-3. 도킹 — 측정 무효</h3>
+<pre><code>A-3b  throttled = 0x0        스로틀링 없음
+B-3b  throttled = 0xe0008    soft temp limit 발생 + 주파수 캡 + 스로틀링 발생
+      온도 83.2 → 82.3°C, 배터리 저하 상태</code></pre>
+<p>스로틀링이 걸리면 같은 부하에서도 처리량이 떨어져 CPU 수치가 왜곡된다. <b>재측정 대상</b>이다.</p>
+
+<h3>7-4. 종합 판단</h3>
+<div class="tw"><table>
+<tr><th>조건</th><th>판정</th><th>근거</th></tr>
+<tr><td>순찰 주행</td><td class="good">CycloneDDS 우세</td><td>CPU −4.9%p, 프로세스 합계 −12.6%, 불리한 열 조건에서 달성</td></tr>
+<tr><td>정지</td><td>판단 유보</td><td>user↓ / system↑ 상쇄, 조건 불일치</td></tr>
+<tr><td>도킹 + 카메라</td><td class="bad">측정 무효</td><td>열 스로틀링 발생</td></tr>
+<tr><td>컨텍스트 스위치</td><td>차이 없음</td><td>두 구현체 모두 150~190/s</td></tr>
+</table></div>
+<div class="card"><h4>결론</h4>
+<p>실제 주행 부하가 걸리는 구간에서 CycloneDDS가 유리하다는 신호가 관측됐다. 다만 정지 조건의
+조건 불일치와 도킹 조건의 스로틀링 때문에, 채택 결정에는 <b>냉각 상태에서의 3조건 재측정</b>이 필요하다.</p>
+<p><b>이 실험은 근본 병목이 DDS가 아님도 함께 보여준다</b> — 카메라가 약 142%, Nav2 스택이 약 133%를
+쓰는 구조에서 미들웨어 교체로 얻는 것은 두 자릿수 %p 수준이다.</p></div>
+
+<h2>8. 전환 과정에서 겪은 함정 4건</h2>
+<p>CycloneDDS 전환은 환경변수 하나로 끝나지 않았다. WiFi·다중 인터페이스 환경에서 네 번 막혔다.</p>
+
+<div class="card bad"><h4>① <code>ROS_STATIC_PEERS</code>가 디스커버리를 방해</h4>
+<pre><code>증상  로봇에서는 PC 노드가 보이는데 PC에서는 로봇 노드가 안 보임(비대칭)
+원인  Fast DDS 계열 설정. Cyclone 에서는 도움이 안 되고 간섭
+조치  Cyclone 을 쓰는 셸에서  unset ROS_STATIC_PEERS</code></pre></div>
+
+<div class="card bad"><h4>② WiFi 멀티캐스트로는 데이터가 전달되지 않음</h4>
+<pre><code>증상  디스커버리 성공(노드·토픽 목록 보임)인데 topic echo 데이터 0건
+원인  Cyclone 기본 AllowMulticast=true → 데이터도 멀티캐스트. WiFi AP가 사실상 차단
+조치  &lt;AllowMulticast&gt;spdp&lt;/AllowMulticast&gt;  + &lt;Peers&gt; 상대 IP 명시</code></pre>
+<p>Fast DDS에서 <code>ROS_STATIC_PEERS</code>로 유니캐스트를 강제했던 것과 <b>같은 문제·같은 해법</b>이다.</p></div>
+
+<div class="card bad"><h4>③ 인터페이스 고정이 같은 호스트 통신을 끊음</h4>
+<pre><code>증상  AllowMulticast=false + 원격 피어만 지정 → 로봇 내부 노드끼리도 서로 못 찾음
+      (도메인 노드 수 0 — 스택이 떠 있어도 기능적으로 죽은 상태)
+원인  &lt;Interfaces&gt;&lt;NetworkInterface name="wlan0"/&gt; 고정 시 루프백 경로가 빠짐
+조치  인터페이스 고정 제거 + AllowMulticast=spdp</code></pre></div>
+
+<div class="card bad"><h4>④ 이종 미들웨어는 통신되지 않는다</h4>
+<p>로봇을 Cyclone으로 바꾸자 Fast DDS인 관제 PC와 통신이 <b>완전히 끊겼다</b>(heartbeat 미수신).
+ROS 2는 RMW 혼용을 보장하지 않는다. <b>한 시스템의 모든 참가자를 같은 구현체로 맞춰야 한다.</b>
+이 실험도 로봇 15개 프로세스 + PC 콘솔 + 웹앱 백엔드를 전부 전환한 뒤에야 측정이 가능했다.</p></div>
+
+<h3>최종 설정</h3>
+<pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;CycloneDDS xmlns="https://cdds.io/config"&gt;
+  &lt;Domain id="any"&gt;
+    &lt;General&gt;
+      &lt;AllowMulticast&gt;spdp&lt;/AllowMulticast&gt;   &lt;!-- 디스커버리만 멀티캐스트, 데이터는 유니캐스트 --&gt;
+    &lt;/General&gt;
+    &lt;Discovery&gt;
+      &lt;Peers&gt;&lt;Peer address="상대_IP"/&gt;&lt;/Peers&gt;
+    &lt;/Discovery&gt;
+  &lt;/Domain&gt;
+&lt;/CycloneDDS&gt;</code></pre>
+<pre><code>export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+export CYCLONEDDS_URI=file://$HOME/cyclonedds.xml
+unset ROS_STATIC_PEERS
+
+# 실제 적용 확인 — 환경변수가 아니라 로드된 라이브러리로 검증
+grep -o "librmw_[a-z_]*" /proc/&lt;PID&gt;/maps | sort -u</code></pre>
+
+<h2>9. 측정 신뢰성에 대한 기록</h2>
+<div class="card warn">
+<ol>
+<li><b>A와 B의 열·부하 조건이 완전히 같지 않다.</b> A는 부팅 17분·67.6°C, B는 재기동 반복 후 79.8°C에서 시작.
+    → <b>B에 불리한 방향</b>이므로 순찰에서 B가 이긴 결과는 보수적으로 봐도 유효하다.</li>
+<li><b>도킹(B-3b)은 스로틀링으로 무효</b>다.</li>
+<li>측정 중 <code>pidstat</code> 출력 해석에서 두 번의 오독이 있었고 원본 데이터로 정정했다.
+    <code>%CPU</code>는 8번째 컬럼(4번째는 <code>%usr</code>)이며, <code>-u -w</code> 동시 출력 시
+    <b>Average 블록이 두 개</b>로 뒤쪽이 컨텍스트 스위치다.
+    이 문서의 모든 수치는 원본에서 재추출한 값이다.</li>
+<li>각 조건 <b>1회 측정</b>이다. 반복 측정으로 분산을 확인하지 않았다.</li>
+</ol>
+</div>
+
+<h2>9-A. ★후속 실험 — 깨어남을 줄이는 튜닝 (미들웨어보다 큰 효과)</h2>
+<p>DDS 교체가 두 자릿수 %p 수준이라는 결론에 이어, <b>“무엇이 노드를 깨우는가”</b>를 직접 추적했다.
+결과적으로 <b>미들웨어 교체보다 이쪽이 더 확실한 이득</b>을 냈다.</p>
+
+<h3>9-A-1. 깨어남 유발원 실측</h3>
+<p>컨텍스트 스위치는 통신 미들웨어가 아니라 <b>발행 주기</b>에서 나온다. 실측하니 정확히 맞아떨어졌다.</p>
+<div class="tw"><table>
+<tr><th>토픽</th><th class="n">주기</th><th>비고</th></tr>
+<tr class="hl"><td><b>/tf</b></td><td class="n"><b>67.0 Hz</b></td><td>최대 유발원</td></tr>
+<tr><td>/odom</td><td class="n">30.1 Hz</td><td></td></tr>
+<tr class="hl"><td><b>/joint_states</b></td><td class="n"><b>50.6 Hz</b></td><td>★bringup은 30Hz만 내는데 50Hz — 중복 발행자 존재</td></tr>
+<tr><td>/scan</td><td class="n">10.1 Hz</td><td></td></tr>
+</table></div>
+<p><code>/tf</code> + <code>/odom</code> + <code>/scan</code> = <b>107회/초</b>. 여기에 각 노드 타이머(10~20Hz)와
+lifecycle bond(10Hz)를 더하면 관측된 <code>cswch/s 150~190</code>과 일치한다.</p>
+<div class="card warn"><h4>과거 튜닝이 실패한 이유도 여기서 설명된다</h4>
+<p>controller 20→10Hz(<span class="bad">+3.27%p</span>), local costmap 10→5Hz(<span class="bad">+1.48%p</span>)로
+타이머를 낮췄지만 <b>지배항인 <code>/tf</code> 67Hz를 건드리지 않아</b> 효과가 없었다.</p></div>
+
+<h3>9-A-2. /tf 67Hz의 정체 — 발행자 3개</h3>
+<div class="flow">/pinky_bringup          30Hz    odom → base_footprint   (bringup.py:88, 1/30 타이머)
+/robot_state_publisher  ~30Hz   base → 바퀴 관절 TF     (joint_states 수신마다 재발행)
+/amcl                   저빈도   map → odom
+                        ─────
+                        합계 ≈ 67Hz</div>
+<pre><code># pinky_bringup/bringup.py:88
+self.timer = self.create_timer(1.0 / 30.0, self.update_and_publish)
+    → _publish_tf()            odom → base TF
+    → _publish_odometry()      /odom
+    → _publish_joint_states()  /joint_states</code></pre>
+<p>그런데 <code>/joint_states</code> 실측이 <b>50.6Hz</b> — bringup(30Hz) 외에
+<b><code>joint_state_publisher</code> 노드가 20.6Hz를 추가</b>하고 있었다.
+이 노드는 URDF 기반 기본 발행자로 <b>엔코더 실측값이 아닌 값</b>을 낸다.</p>
+
+<h3>9-A-3. 조치 — 중복 joint_state_publisher 제거</h3>
+<div class="tw"><table>
+<tr><th>지표</th><th class="n">제거 전</th><th class="n">제거 후(즉시)</th><th class="n">제거 후(안정)</th><th class="n">변화(안정)</th></tr>
+<tr class="hl"><td><b>CPU 사용률</b></td><td class="n">66.9%</td><td class="n">71.4%</td><td class="n good">66.1%</td><td class="n good">−0.8%p</td></tr>
+<tr><td>user</td><td class="n">35.28</td><td class="n">37.22</td><td class="n good">32.63</td><td class="n good">−2.65</td></tr>
+<tr><td>system</td><td class="n">29.16</td><td class="n">31.60</td><td class="n">30.90</td><td class="n">+1.74</td></tr>
+<tr class="hl"><td><b>idle</b></td><td class="n">33.07</td><td class="n">28.62</td><td class="n good">33.90</td><td class="n good">+0.83%p</td></tr>
+<tr class="total"><td>프로세스 CPU 합계</td><td class="n">240.67</td><td class="n">223.23</td><td class="n">221.66</td><td class="n good">−19.01%p</td></tr>
+<tr class="hl"><td><b>joint_state_publisher</b></td><td class="n"><b>17.43</b></td><td class="n">—</td><td class="n">— (제거)</td><td class="n good">−17.43</td></tr>
+<tr><td>robot_state_publisher</td><td class="n">3.93</td><td class="n">2.53</td><td class="n">2.33</td><td class="n good">−1.60 (−41%)</td></tr>
+<tr><td>RSP 컨텍스트 스위치 (cs / nvcs)</td><td class="n">50.2 / 68.6</td><td class="n">30.7 / 39.7</td><td class="n">—</td><td class="n good">−39% / −42%</td></tr>
+<tr class="hl"><td><b>/tf 주기</b></td><td class="n"><b>67.0 Hz</b></td><td class="n"><b>55.9 Hz</b></td><td class="n">—</td><td class="n good">−16.6%</td></tr>
+<tr class="hl"><td><b>/joint_states 주기</b></td><td class="n"><b>50.6 Hz</b></td><td class="n"><b>30.0 Hz</b></td><td class="n">—</td><td class="n good">−40.7%</td></tr>
+<tr><td>load 시작</td><td class="n">7.60</td><td class="n bad">18.44 ★오염</td><td class="n">4.21</td><td class="n">—</td></tr>
+<tr><td>온도 시작</td><td class="n">74.5°C</td><td class="n">77.9°C</td><td class="n">70.6°C</td><td class="n">−3.9</td></tr>
+</table></div>
+<div class="card good"><h4>단일 조치로 프로세스 CPU 19.01%p 감소</h4>
+<p>CycloneDDS 전환으로 얻은 순찰 구간 개선(−34.19%p)의 절반을 넘으며,
+<b>설정 변경 없이 불필요한 노드 하나를 끄는 것만으로</b> 달성했다.</p>
+<p>★<b>측정 조건에 주의</b>: 제거 직후 측정은 시작 load 18.44로 오염돼 시스템 사용률이 오히려 나빠 보였다.
+순찰·도킹 실기가 끝난 뒤 load 4.21·70.6°C의 <b>안정 상태에서 재측정</b>하니
+프로세스 합계 −19.01%p, <b>idle +0.83%p</b>로 시스템 전체 개선까지 확인됐다.</p></div>
+
+<h3>9-A-4. 안전성 검증 — 정적 + 실기 이중 확인</h3>
+<h4>① TF 체인 정적 확인 (제거 후)</h4>
+<pre><code>map → odom                     Translation [-0.000, -0.000, 0.000]   정상
+odom → base_footprint          Translation [ 0.000,  0.000, 0.000]   정상
+base_footprint → rplidar_link  Translation [-0.017,  0.000, 0.125]   정상</code></pre>
+<h4>② 순찰 실기 (60초)</h4>
+<pre><code>CPU 사용률 70.3%  ·  프로세스 합계 245.34%  ·  load 8.30 → 10.10
+/cmd_vel 0.06 m/s 연속 발행 · AMCL 위치 갱신 · 경로 추종 정상
+bt_navigator 26.92% · controller_server 19.09% · bringup 29.54%  ← 실제 주행 부하</code></pre>
+<h4>③ 도킹 실기 (40초)</h4>
+<pre><code>CPU 사용률 90.1%  ·  프로세스 합계 302.55%  ·  idle 7.53%  ·  온도 77.9 → 81.3°C
+NAV_TO_APPROACH(43초) → SEARCH_TAG(0.1초) → TAG_SERVO_ALIGN → 육안 성공</code></pre>
+<div class="card good"><h4>주행·도킹 모두 정상</h4>
+<p><code>joint_state_publisher</code>는 주행에 불필요하다는 것이 실기로 확정됐다.
+2026-07-07 문서가 이 노드를 <b>“잔류(필수, 하드웨어)”</b>로 분류한 것은 <b>오분류이며 정정 대상</b>이다.</p></div>
+
+<h3>9-A-5. ★detector(카메라) 실측 — 단일 최대 소비자</h3>
+<div class="tw"><table>
+<tr><th>프로세스</th><th class="n">%CPU</th></tr>
+<tr class="hl"><td><b>apriltag_detector</b></td><td class="n"><b>87.91</b></td></tr>
+<tr><td>bringup</td><td class="n">29.45</td></tr>
+<tr><td>lifecycle_manager (nav)</td><td class="n">23.48</td></tr>
+<tr><td>agent_node</td><td class="n">20.65</td></tr>
+<tr><td>bt_navigator</td><td class="n">16.71</td></tr>
+<tr><td>amcl</td><td class="n">15.38</td></tr>
+<tr class="total"><td>합계</td><td class="n">302.55</td></tr>
+</table></div>
+<ul>
+<li>이전에는 측정 창을 벗어나 “약 142% 추정”이었으나 <b>87.91%로 직접 측정</b>됐다.</li>
+<li><b>JSP 제거분 17.43%가 그대로 여유로 작동했다</b> — 도킹 시 idle이 <b>7.53%</b>까지 떨어졌으므로,
+    제거하지 않았다면 여유가 사실상 0이었을 것이다.</li>
+<li>카메라 가동 중 온도가 <b>77.9 → 81.3°C로 4°C 급등</b>한다. 스로틀링 임계에 근접한다.</li>
+</ul>
+
+<h3>9-A-6. 부수 관측 — 태그 검출이 빨라졌다</h3>
+<pre><code>SEARCH_TAG → TAG_SERVO_ALIGN 소요 시간
+  2026-07-27  로봇31  4초   (load 4.05)
+  2026-07-27  로봇50  12초  (load 9~13)
+  2026-07-29  로봇44  0.1초 (JSP 제거 상태)</code></pre>
+<p>detector 프레임 지연이 완화된 것으로 보인다. 다만 <b>정렬 중 <code>tag_lost</code>는 여전히 발생</b>했으므로
+(NAV·검출은 성공, 24초 정렬 후 실패), 원인은 CPU가 아닌 다른 요인(근접 시 카메라 FOV 잘림 등)으로 좁혀진다.</p>
+
+<h3>9-A-7. 함대 현황과 한계</h3>
+<div class="card warn">
+<ul>
+<li><b>로봇50에는 <code>joint_state_publisher</code>가 2개</b> 떠 있었다(로봇44는 1개). 2026-07-25에 “제거·채택”으로
+    기록됐으나 <b>launch 파일을 고치지 않아 재기동마다 되살아난</b> 것으로 보인다.
+    → <b>영구 조치는 프로세스 kill이 아니라 launch 수정이어야 한다.</b></li>
+<li>제거 직후 측정은 시작 load 18.44로 오염돼 시스템 사용률이 나빠 보였으나,
+    <b>안정 상태 재측정(load 4.21·70.6°C)에서 idle +0.83%p·프로세스 합계 −19.01%p로 개선이 확인</b>됐다.
+    → 실기 측정에서 <b>직전 작업의 잔여 부하가 결과를 뒤집을 수 있다</b>는 교훈.</li>
+<li>각 조건 <b>1회 측정</b>이며 반복 측정으로 분산은 확인하지 않았다.</li>
+</ul>
+</div>
+
+<h3>9-A-8. 종합 — 어디를 손대야 하는가</h3>
+<div class="tw"><table>
+<tr><th>레버</th><th>효과</th><th>위험</th><th>비고</th></tr>
+<tr class="hl"><td><b>중복 joint_state_publisher 제거</b></td><td class="n good">−19.01%p</td><td class="good">없음</td><td>실기 검증 완료. <b>1순위</b></td></tr>
+<tr><td>CycloneDDS 전환(순찰)</td><td class="n good">−34.19%p</td><td>중 (전 노드 전환)</td><td>§7-1</td></tr>
+<tr class="hl"><td><b>detector 최적화</b></td><td class="n bad">최대 87.91%</td><td>미검토</td><td><b>잠재 효과 최대</b></td></tr>
+<tr><td>/tf 30 → 20Hz (bringup 타이머)</td><td class="n">미측정</td><td>소 (제어 피드백)</td><td>후속 후보</td></tr>
+<tr><td>미사용 Nav2 서버 제거</td><td class="n">미측정</td><td>중 (BT 확인 필요)</td><td>waypoint_follower · smoother</td></tr>
+<tr><td><s>controller 20→10Hz</s></td><td class="n bad">+3.27%p (악화)</td><td>—</td><td>기각됨</td></tr>
+<tr><td><s>local costmap 10→5Hz</s></td><td class="n bad">+1.48%p (악화)</td><td>—</td><td>기각됨</td></tr>
+</table></div>
+<div class="card"><h4>결론</h4>
+<p>이 시스템의 부하 순위는 <b>detector(88%) &gt; Nav2 스택 &gt; joint_state_publisher(17%) &gt; 미들웨어 선택</b>이다.
+미들웨어 교체보다 <b>불필요한 노드를 끄고 카메라를 최적화하는 쪽이 투자 대비 효과가 크다.</b></p></div>
+
+<h2>9-B. ★3번째 로봇 교차검증 — 절대 수치는 하드웨어 세대에 좌우된다</h2>
+<p>로봇31(3번째 개체)에서 <b>같은 스택·같은 CycloneDDS·같은 JSP 제거 상태</b>로 재검증한 결과 CPU가 3분의 1로 나왔다.
+처음에는 열 스로틀링 탓으로 판단했으나, <b>하드웨어를 확인하니 보드 세대가 달랐다.</b></p>
+<div class="tw"><table>
+<tr><th></th><th>로봇31</th><th>로봇44 · 50</th></tr>
+<tr class="hl"><td><b>보드</b></td><td class="good"><b>Raspberry Pi 5 Model B Rev 1.0</b></td><td>Raspberry Pi 4 Model B Rev 1.5</td></tr>
+<tr><td>CPU</td><td>Cortex-A76</td><td>Cortex-A72</td></tr>
+<tr class="hl"><td><b>최대 클럭</b></td><td class="good"><b>2,400 MHz</b></td><td>1,800 MHz</td></tr>
+<tr><td>코어</td><td>4</td><td>4</td></tr>
+<tr><td>측정 시 온도</td><td class="good">56~59°C</td><td class="bad">70~81°C</td></tr>
+<tr><td><code>throttled</code></td><td>관측 불가(<code>/dev/vcio</code> 없음)</td><td class="bad">0x80000 (soft temp limit 이력)</td></tr>
+</table></div>
+<div class="card bad"><h4>3배 차이의 주원인은 하드웨어 세대다</h4>
+<p>RPi5는 클럭이 1.33배 높고 A76은 A72 대비 IPC가 크게 앞서, 같은 작업의 <code>%CPU</code>가 2~3배 낮게 나온다.
+<b>열 스로틀링은 부차적 요인</b>이다.</p>
+<p>★이 문서의 §1~§9-A 측정은 <b>전부 RPi4(로봇44·50)</b>에서 이뤄졌다.</p></div>
+
+<h3>9-B-1. 동일 조건인데 3배 차이</h3>
+<div class="tw"><table>
+<tr><th>지표</th><th class="n">로봇31 정지</th><th class="n">로봇31 순찰</th><th class="n">로봇31 도킹</th><th class="n">로봇44 정지</th><th class="n">로봇44 순찰</th><th class="n">로봇44 도킹</th></tr>
+<tr class="hl"><td><b>CPU 사용률</b></td><td class="n good">25.5%</td><td class="n good">26.2%</td><td class="n good">35.2%</td><td class="n">66.1%</td><td class="n">70.3%</td><td class="n bad">90.1%</td></tr>
+<tr><td>user</td><td class="n">16.54</td><td class="n">17.71</td><td class="n">25.81</td><td class="n">32.63</td><td class="n">36.92</td><td class="n">55.04</td></tr>
+<tr><td>system</td><td class="n">7.89</td><td class="n">7.58</td><td class="n">9.41</td><td class="n">30.90</td><td class="n">30.86</td><td class="n">35.07</td></tr>
+<tr class="hl"><td><b>idle</b></td><td class="n good">74.54</td><td class="n good">73.68</td><td class="n good">63.61</td><td class="n">33.90</td><td class="n">29.68</td><td class="n bad">7.53</td></tr>
+<tr class="total"><td>프로세스 CPU 합계</td><td class="n">81.52</td><td class="n">92.28</td><td class="n">87.76 ※</td><td class="n">221.66</td><td class="n">245.34</td><td class="n">302.55</td></tr>
+<tr class="hl"><td><b>온도</b></td><td class="n good">56.8°C</td><td class="n good">57.9°C</td><td class="n good">59.5 → 56.8°C</td><td class="n">70.6°C</td><td class="n">75.4°C</td><td class="n bad">77.9 → 81.3°C</td></tr>
+<tr><td>throttled</td><td class="n">측정 불가 ※※</td><td class="n">—</td><td class="n">—</td><td class="n bad">0x80000</td><td class="n bad">0x80000</td><td class="n bad">0x80000</td></tr>
+</table></div>
+<p style="font-size:13.5px;color:var(--muted)">※ 로봇31 도킹은 detector가 측정창을 벗어나 합계에 미포함(시스템 사용률과의 차이 ≈ 53%가 detector 몫으로 추정).<br>
+※※ 로봇31은 <code>/dev/vcio</code>가 없어 <code>vcgencmd</code> 사용 불가. 온도는 <code>/sys/class/thermal</code>로 대체.</p>
+
+<h3>9-B-2. 프로세스별 — 라이다 노드가 12배 차이</h3>
+<div class="tw"><table>
+<tr><th>프로세스 (순찰 중)</th><th class="n">로봇31</th><th class="n">로봇44</th><th class="n">비율</th></tr>
+<tr><td>bringup</td><td class="n">16.03</td><td class="n">29.54</td><td class="n">54%</td></tr>
+<tr><td>bt_navigator</td><td class="n">9.23</td><td class="n">26.92</td><td class="n">34%</td></tr>
+<tr><td>lifecycle_manager</td><td class="n">9.30</td><td class="n">26.04</td><td class="n">36%</td></tr>
+<tr><td>amcl</td><td class="n">7.85</td><td class="n">17.59</td><td class="n">45%</td></tr>
+<tr><td>controller_server</td><td class="n">7.40</td><td class="n">19.09</td><td class="n">39%</td></tr>
+<tr class="hl"><td><b>sllidar_node</b></td><td class="n"><b>1.93</b></td><td class="n"><b>24.83</b></td><td class="n bad">8% ★</td></tr>
+<tr><td>robot_state_publisher</td><td class="n">0.92</td><td class="n">2.35</td><td class="n">39%</td></tr>
+<tr class="total"><td>합계</td><td class="n">92.28</td><td class="n">245.34</td><td class="n">38%</td></tr>
+</table></div>
+<div class="card bad"><h4>세대 차이만으로는 설명이 안 되는 폭</h4>
+<p>동일 드라이버·동일 10Hz인 <code>sllidar_node</code>가 <b>12배</b> 차이난다.
+세대 성능차(2~3배)를 넘으므로 <b>RPi4의 열 스로틀링이 겹친 것</b>으로 봤다
+(로봇44는 측정 내내 <code>throttled=0x80000</code>, 70~81°C).</p>
+<p>⚠️ <b>이 추정은 §9-C-5에서 반증됐다.</b> 스로틀링이 없는 로봇87(RPi4)이 오히려 <b>29.44</b>로 더 높았다 —
+이 격차는 열이 아니라 <b>순수한 보드 성능차</b>다.</p></div>
+
+<h3>9-B-3. 스택 동작 자체는 동일하다</h3>
+<pre><code>로봇31   정지  81.52 → 순찰  92.28    +10.76  (+13.2%)
+로봇44   정지 221.66 → 순찰 245.34    +23.68  (+10.7%)</code></pre>
+<p><b>주행이 추가로 만드는 부하 비율은 두 로봇이 거의 같다.</b> 즉 스택 동작 자체는 동일하며,
+차이는 전부 <b>바닥값(상시 비용)</b>에 있다. 그 바닥값을 가르는 것이 <b>보드 성능</b>이다.</p>
+
+<h3>9-B-4. ★tag_lost는 CPU 부하 문제로 확정</h3>
+<div class="tw"><table>
+<tr><th></th><th>로봇31</th><th>로봇44</th></tr>
+<tr><td>도킹 중 idle</td><td class="good"><b>63.61%</b></td><td class="bad"><b>7.53%</b></td></tr>
+<tr><td>상태 전이</td><td class="good">NAV → SEARCH_TAG → TAG_SERVO_ALIGN → SETTLE → <b>DONE</b></td><td class="bad">TAG_SERVO_ALIGN → <b>FAILED(tag_lost)</b></td></tr>
+<tr><td>결과</td><td class="good"><b>완주</b></td><td>실패(육안으로는 정차 성공)</td></tr>
+<tr><td>온도 변화</td><td class="good">59.5 → 56.8°C (하강)</td><td class="bad">77.9 → 81.3°C (상승)</td></tr>
+</table></div>
+<div class="card good"><h4>CPU 여유가 있으면 정렬 단계를 끝까지 통과한다</h4>
+<p>§9-A-6에서 “원인은 CPU가 아닌 다른 요인(FOV 잘림 등)으로 좁혀진다”고 적었던 추정은 <b>틀렸다. 정정한다.</b>
+2026-07-27에 로봇31(load 4.05)이 성공하고 로봇50(load 9~13)이 실패했던 기록과도 일치한다.</p>
+<p>★<b>원인이 클럭(보드 세대)이든 열이든, “CPU 여유 부족이 도킹 실패로 이어진다”는 인과는 동일하다.</b>
+오히려 더 분명해진다 — <b>RPi4에는 이 스택이 빠듯하고, RPi5에서는 여유롭다.</b></p></div>
+
+<h3>9-B-5. 이 발견이 앞선 결론에 미치는 영향</h3>
+<div class="tw"><table>
+<tr><th>결론</th><th>판정</th><th>이유</th></tr>
+<tr><td>JSP 제거 효과 (−19.01%p)</td><td class="good">✅ 유효</td><td>동일 로봇·동일 조건 전후 비교</td></tr>
+<tr><td>CycloneDDS 순찰 개선 (−34.19%p)</td><td class="good">✅ 유효</td><td>동일 로봇 A/B</td></tr>
+<tr><td>“정지 상태 4코어의 61% 소비”</td><td class="bad">⚠️ RPi4 한정</td><td>RPi5(로봇31)에서는 <b>20%</b> (81.52/400)</td></tr>
+<tr><td>“detector 87.91%”</td><td class="bad">⚠️ RPi4 기준 상한값</td><td>RPi5에서는 절반 이하로 추정</td></tr>
+<tr><td>tag_lost 원인</td><td class="good">✅ CPU 여유 부족으로 확정</td><td>§9-B-4</td></tr>
+<tr><td>컨텍스트 스위치 절대값</td><td class="bad">⚠️ 보드·클럭 영향</td><td>같은 보드 안에서만 비교할 것</td></tr>
+<tr><td><b>서로 다른 로봇 간 절대값 비교</b></td><td class="bad">❌ 불가</td><td>보드 세대가 다르면 %CPU 자체가 다른 척도다</td></tr>
+</table></div>
+
+<h3>9-B-6. 진짜 우선순위가 바뀌었다</h3>
+<pre><code>기존 판단   detector(88%) &gt; Nav2 스택 &gt; joint_state_publisher(17%) &gt; 미들웨어
+1차 정정    보드 세대(RPi4 vs RPi5) &gt; detector &gt; JSP 제거 &gt; 미들웨어 &gt; (RPi4의 냉각)
+★최종 정정  RPi4 냉각 관리 &gt; detector &gt; JSP 제거 &gt; 미들웨어 &gt; (보드 교체는 마지막)   ← §9-C</code></pre>
+<div class="card"><h4>같은 코드가 RPi5에서는 CPU 4분의 1로 돈다</h4>
+<p>다만 <b>이것이 곧 “보드를 바꿔야 한다”는 뜻은 아니다</b> — 4번째 로봇(87)이 반례를 제공했다(§9-C).</p>
+<ol>
+<li><b>RPi4의 냉각 관리</b> — 로봇87은 RPi4임에도 <code>throttled=0x0</code>을 유지해 <b>도킹을 완주</b>했다(§9-C)</li>
+<li><b>detector 최적화</b> — 단일 최대 소비자</li>
+<li><b>JSP 제거·미들웨어 튜닝</b> — 검증된 −19%p·−34%p</li>
+<li><code>vcgencmd get_throttled</code>를 <b>운영 점검 항목에 상시 포함</b></li>
+<li>로봇31(RPi5)에 <code>/dev/vcio</code> 생성해 스로틀링 관측 가능하게</li>
+<li><b>로봇 간 절대 성능 비교 금지</b> — 보드 세대를 명시하지 않은 비교는 무의미하다</li>
+</ol></div>
+
+<h2>9-C. ★4번째 로봇(87)으로 재정정 — RPi4로도 도킹이 완주한다</h2>
+<p>로봇87은 <b>RPi4이면서 <code>throttled=0x0</code></b>(스로틀링 이력 없음)인 유일한 개체다.
+§9-B에서 분리하지 못했던 <b>“보드 세대 vs 열 상태”</b>를 가르는 대조군이 됐다.</p>
+
+<h3>9-C-1. 세 조건 측정 (CycloneDDS · JSP 0개)</h3>
+<div class="tw"><table>
+<tr><th>지표</th><th class="n">로봇31 RPi5</th><th class="n">로봇87 RPi4 <code>0x0</code></th><th class="n">로봇44 RPi4 <code>0x80000</code></th></tr>
+<tr><td>정지 CPU / 합계</td><td class="n">25.5% / 81.52</td><td class="n">61.1% / 215.22</td><td class="n">66.1% / 221.66</td></tr>
+<tr><td>순찰 CPU / 합계</td><td class="n">26.2% / 92.28</td><td class="n">67.4% / 239.07</td><td class="n">70.3% / 245.34</td></tr>
+<tr class="hl"><td><b>도킹 CPU / idle</b></td><td class="n">35.2% / <b>63.61%</b></td><td class="n">79.4% / <b>20.58%</b></td><td class="n">90.1% / <b>7.53%</b></td></tr>
+<tr><td>순찰 증가폭</td><td class="n">+10.76 (13.2%)</td><td class="n">+23.85 (11.1%)</td><td class="n">+23.68 (10.7%)</td></tr>
+<tr><td>온도(정지→도킹)</td><td class="n">56.8 → 59.5°C</td><td class="n">57.5 → 75.5°C</td><td class="n bad">70.6 → 81.3°C</td></tr>
+<tr class="hl"><td><b>도킹 결과</b></td><td class="n good"><b>DONE 완주</b></td><td class="n good"><b>DONE 완주</b> ★</td><td class="n bad"><b>tag_lost 실패</b></td></tr>
+</table></div>
+
+<h3>9-C-2. 결론 1 — 정지 상태에서 열의 기여는 3%뿐</h3>
+<pre><code>같은 RPi4끼리   정지 215.22 vs 221.66   차이 3.0%   (스로틀링 유무에도 불구)
+                순찰 239.07 vs 245.34   차이 2.6%
+RPi4 → RPi5     정지 215.22 vs  81.52   차이 62%</code></pre>
+<p><b>정지·순찰의 절대값을 가르는 것은 보드 세대</b>이고, 열은 3% 남짓이다.</p>
+
+<h3>9-C-3. 결론 2 — 그러나 도킹 성패는 열이 갈랐다</h3>
+<pre><code>로봇87 RPi4  throttled=0x0      도킹 idle 20.58%  →  DONE 완주
+로봇44 RPi4  throttled=0x80000  도킹 idle  7.53%  →  tag_lost 실패</code></pre>
+<div class="card warn"><p><b>같은 보드인데 결과가 갈렸다.</b> 정지 측정에서는 3%였던 차이가,
+<b>부하가 몰리는 도킹 구간에서는 성패를 가른다.</b> 정지 측정만으로는 보이지 않는 차이다.</p></div>
+
+<h3>9-C-4. ★“보드 교체가 답”이라는 결론은 철회한다</h3>
+<p>§9-B 초안에서 “보드 교체의 효과가 압도적”이라고 썼으나, <b>로봇87이 RPi4로 도킹을 완주</b>하면서 반증됐다.</p>
+<pre><code>idle 63.61%(RPi5)  → 완주
+idle 20.58%(RPi4)  → 완주    ← ★RPi4로도 된다
+idle  7.53%(RPi4)  → 실패</code></pre>
+<div class="card good"><h4>임계는 보드가 아니라 CPU 여유다</h4>
+<p>RPi4라도 <b>여유가 20% 남으면 도킹이 완주</b>한다. 따라서 실용적 우선순위는
+<b>냉각 관리 → detector 최적화 → JSP 제거·미들웨어 튜닝</b>이며, 보드 교체는 마지막 수단이다.</p></div>
+
+<h3>9-C-5. sllidar_node 격차도 재정정</h3>
+<div class="tw"><table>
+<tr><th></th><th class="n">로봇31 RPi5</th><th class="n">로봇87 RPi4 <code>0x0</code></th><th class="n">로봇44 RPi4 <code>0x80000</code></th></tr>
+<tr><td>정지</td><td class="n">1.93</td><td class="n">29.44</td><td class="n">24.79</td></tr>
+<tr><td>순찰</td><td class="n">1.93</td><td class="n">26.99</td><td class="n">20.41</td></tr>
+</table></div>
+<p><b>스로틀링이 없는 로봇87이 오히려 더 높다.</b> §9-B-2에서 “세대차를 넘으므로 열 스로틀링이 겹친 것”이라고
+쓴 추정은 <b>반증됐다</b> — 이 격차는 <b>순수한 보드 성능차</b>다.</p>
+
+<h3>9-C-6. 부수 확인 — agent만 다른 미들웨어면 도킹이 통째로 멈춘다</h3>
+<pre><code>bt_navigator(Nav2)  librmw_cyclonedds_cpp
+agent_node          librmw_fastrtps_cpp    ← Cyclone 소싱 안 된 터미널에서 기동
+  → agent 가 띄운 precision_parking 도 FastDDS 상속
+  → navigate_to_pose 액션 서버를 못 봄 → nav_status=pending 영구 유지
+  → 60초 후 NAV_CANCELING → FAILED(nav_timeout), 로봇은 한 번도 안 움직임</code></pre>
+<p><code>/cmd_vel_nav</code>가 비어 있고 <code>/scan</code>·<code>/amcl_pose</code>는 정상인 조합이 이 증상의 지문이다.
+→ §8 함정 ④(RMW 혼용 불가)의 구체 사례. <b>agent 재기동 후 도킹은 DONE 완주.</b></p>
+
+<h2>10. 다음 단계</h2>
+<ol>
+<li><b>냉각·충전 후 3조건 재측정</b> — 특히 도킹 + 카메라</li>
+<li><b>카메라(detector) 최적화</b> — 약 142%로 최대 소비자. 해상도·프레임률·검출 주기 검토</li>
+<li><b><code>lifecycle_manager</code> 부하 규명</b> — 관리 프로세스가 실무 노드보다 CPU를 더 쓰는 현상
+    (FastDDS 22.39% · Cyclone 26.67%, 강제 선점 229~281/s로 최다)</li>
+<li>반복 측정으로 분산 확인 후 채택 여부 결정</li>
+</ol>
+
+<footer>
+  측정·분석 2026-07-29 · ROS 2 Jazzy · Raspberry Pi 5(4코어) · 수치는 <code>mpstat</code>/<code>pidstat</code> 원본에서 재추출
+</footer>
+</div>
+<script>
+  const r=document.documentElement,t=document.getElementById('tg');
+  t.addEventListener('click',()=>{const c=r.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+    r.setAttribute('data-theme',c==='dark'?'light':'dark');});
+</script>
+</body>
+</html>

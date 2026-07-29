@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 330" width="900" height="330" font-family="'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace" role="img" aria-label="CPU 부하 우선순위가 두 번 정정된 과정. 처음 판단은 detector 88퍼센트, Nav2 스택, joint_state_publisher 17퍼센트, 미들웨어 순이었다. 3번째 로봇인 RPi5 개체로 교차검증한 뒤 1차 정정에서는 보드 세대가 가장 앞으로 왔다. 4번째 로봇인 스로틀링 없는 RPi4가 도킹을 완주하면서 최종 정정에서는 RPi4 냉각 관리, detector 최적화, joint_state_publisher 제거, 미들웨어 순이 되고 보드 교체는 마지막 수단으로 밀렸다.">
+  <rect x="1" y="1" width="898" height="328" rx="14" fill="#0c1117" stroke="rgba(94,242,184,0.16)"/>
+  <rect x="1" y="1" width="898" height="46" rx="14" fill="rgba(255,255,255,0.02)"/>
+
+  <circle cx="26" cy="24" r="5.5" fill="#ff5f57"/>
+  <circle cx="44" cy="24" r="5.5" fill="#febc2e"/>
+  <circle cx="62" cy="24" r="5.5" fill="#28c840"/>
+  <text x="878" y="28" text-anchor="end" font-size="12" fill="#5d6b78">revision — 부하 우선순위 2회 정정</text>
+
+  <!-- row 1 -->
+  <rect x="40" y="70" width="820" height="54" rx="9" fill="rgba(255,255,255,0.02)" stroke="#243040" stroke-width="1"/>
+  <text x="60" y="94" font-size="11.5" fill="#6272a4">기존 판단</text>
+  <text x="60" y="112" font-size="11" fill="#3a4654">로봇 1대</text>
+  <text x="170" y="103" font-size="12.5" fill="#8c98a4">detector(88%) &gt; Nav2 스택 &gt; joint_state_publisher(17%) &gt; 미들웨어</text>
+
+  <!-- row 2 -->
+  <rect x="40" y="134" width="820" height="54" rx="9" fill="rgba(240,163,107,0.05)" stroke="rgba(240,163,107,0.35)" stroke-width="1"/>
+  <text x="60" y="158" font-size="11.5" fill="#f0a36b">1차 정정</text>
+  <text x="60" y="176" font-size="11" fill="#6272a4">+ 로봇31 RPi5</text>
+  <text x="170" y="167" font-size="12.5" fill="#f3c79b">보드 세대(RPi4 vs RPi5) &gt; detector &gt; JSP 제거 &gt; 미들웨어 &gt; (RPi4 냉각)</text>
+
+  <!-- row 3 -->
+  <rect x="40" y="198" width="820" height="54" rx="9" fill="rgba(94,242,184,0.07)" stroke="#5ef2b8" stroke-width="1.4"/>
+  <text x="60" y="222" font-size="11.5" fill="#5ef2b8">★ 최종 정정</text>
+  <text x="60" y="240" font-size="11" fill="#6272a4">+ 로봇87 RPi4</text>
+  <text x="170" y="231" font-size="12.5" font-weight="600" fill="#b6f2d8">RPi4 냉각 관리 &gt; detector &gt; JSP 제거 &gt; 미들웨어 &gt; (보드 교체는 마지막)</text>
+
+  <line x1="40" y1="274" x2="860" y2="274" stroke="#243040" stroke-width="1"/>
+  <text x="450" y="300" text-anchor="middle" font-size="12" fill="#8c98a4">개체를 하나 더 붙일 때마다 결론이 바뀌었다 — 1대 측정으로 내린 판단은 함대에서 살아남지 못한다</text>
+</svg>

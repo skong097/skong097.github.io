@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 350" width="900" height="350" font-family="'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace" role="img" aria-label="도킹 중 CPU idle 여유와 도킹 성패의 관계. RPi5 보드인 로봇31은 idle 63.61퍼센트로 도킹을 완주했고, RPi4이면서 스로틀링 이력이 없는 로봇87은 idle 20.58퍼센트로 역시 도킹을 완주했으며, RPi4이면서 스로틀링 이력 0x80000이 있는 로봇44는 idle 7.53퍼센트로 tag_lost 실패했다. 임계는 보드 세대가 아니라 CPU 여유이며 RPi4라도 여유가 20퍼센트 남으면 도킹이 완주한다.">
+  <rect x="1" y="1" width="898" height="348" rx="14" fill="#0c1117" stroke="rgba(94,242,184,0.16)"/>
+  <rect x="1" y="1" width="898" height="46" rx="14" fill="rgba(255,255,255,0.02)"/>
+
+  <circle cx="26" cy="24" r="5.5" fill="#ff5f57"/>
+  <circle cx="44" cy="24" r="5.5" fill="#febc2e"/>
+  <circle cx="62" cy="24" r="5.5" fill="#28c840"/>
+  <text x="878" y="28" text-anchor="end" font-size="12" fill="#5d6b78">result — 도킹 성패를 가른 것</text>
+
+  <text x="46" y="74" font-size="12" fill="#8c98a4">도킹 구간 idle 여유 (%)</text>
+
+  <!-- threshold line -->
+  <line x1="410" y1="86" x2="410" y2="290" stroke="#f0a36b" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <text x="418" y="80" font-size="11.5" fill="#f0a36b">idle 20% — 관측된 임계</text>
+
+  <!-- row 1 : robot 31 -->
+  <text x="46" y="110" font-size="13" font-weight="600" fill="#b9dcff">로봇31</text>
+  <text x="128" y="110" font-size="11.5" fill="#8c98a4">RPi5 · Cortex-A76</text>
+  <rect x="300" y="96" width="380" height="18" rx="4" fill="rgba(255,255,255,0.05)"/>
+  <rect x="300" y="96" width="345" height="18" rx="4" fill="rgba(94,242,184,0.45)"/>
+  <text x="655" y="110" font-size="12" font-weight="600" fill="#b6f2d8">63.61%</text>
+  <rect x="712" y="94" width="142" height="22" rx="6" fill="rgba(94,242,184,0.12)" stroke="#5ef2b8" stroke-width="1.1"/>
+  <text x="783" y="109" text-anchor="middle" font-size="11.5" fill="#b6f2d8">DONE 완주</text>
+
+  <!-- row 2 : robot 87 -->
+  <text x="46" y="176" font-size="13" font-weight="600" fill="#b9dcff">로봇87</text>
+  <text x="128" y="176" font-size="11.5" fill="#8c98a4">RPi4 · throttled 0x0</text>
+  <rect x="300" y="162" width="380" height="18" rx="4" fill="rgba(255,255,255,0.05)"/>
+  <rect x="300" y="162" width="112" height="18" rx="4" fill="rgba(94,242,184,0.45)"/>
+  <text x="655" y="176" font-size="12" font-weight="600" fill="#b6f2d8">20.58%</text>
+  <rect x="712" y="160" width="142" height="22" rx="6" fill="rgba(94,242,184,0.12)" stroke="#5ef2b8" stroke-width="1.1"/>
+  <text x="783" y="175" text-anchor="middle" font-size="11.5" fill="#b6f2d8">★ DONE 완주</text>
+
+  <!-- row 3 : robot 44 -->
+  <text x="46" y="242" font-size="13" font-weight="600" fill="#b9dcff">로봇44</text>
+  <text x="128" y="242" font-size="11.5" fill="#8c98a4">RPi4 · throttled 0x80000</text>
+  <rect x="300" y="228" width="380" height="18" rx="4" fill="rgba(255,255,255,0.05)"/>
+  <rect x="300" y="228" width="41" height="18" rx="4" fill="rgba(255,95,87,0.55)"/>
+  <text x="655" y="242" font-size="12" font-weight="600" fill="#f3c79b">7.53%</text>
+  <rect x="712" y="226" width="142" height="22" rx="6" fill="rgba(255,95,87,0.10)" stroke="#ff5f57" stroke-width="1.1"/>
+  <text x="783" y="241" text-anchor="middle" font-size="11.5" fill="#ffb3ae">tag_lost 실패</text>
+
+  <line x1="46" y1="290" x2="854" y2="290" stroke="#243040" stroke-width="1"/>
+  <text x="450" y="314" text-anchor="middle" font-size="12.5" fill="#5ef2b8">임계는 보드가 아니라 CPU 여유 — RPi4라도 20%가 남으면 도킹은 완주한다</text>
+  <text x="450" y="334" text-anchor="middle" font-size="11.5" fill="#6272a4">정지 상태만 보면 두 RPi4의 차이는 3%뿐이었다. 부하가 몰리는 구간에서만 갈린다</text>
+</svg>

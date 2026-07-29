@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" width="900" height="420" font-family="'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace" role="img" aria-label="ROS 2의 미들웨어 계층 구조. 위에서부터 애플리케이션 계층의 내 노드 rclpy 또는 rclcpp, 클라이언트 라이브러리 rcl, 추상 계층 rmw, DDS 구현체 Fast DDS와 Cyclone DDS와 Connext, 그리고 전송 계층의 UDP TCP 공유메모리 순으로 쌓인다. rmw 추상 계층에서 환경변수 RMW_IMPLEMENTATION 하나만 바꾸면 DDS 구현체를 갈아 끼울 수 있고 애플리케이션 코드는 바뀌지 않는다.">
+  <rect x="1" y="1" width="898" height="418" rx="14" fill="#0c1117" stroke="rgba(94,242,184,0.16)"/>
+  <rect x="1" y="1" width="898" height="46" rx="14" fill="rgba(255,255,255,0.02)"/>
+
+  <circle cx="26" cy="24" r="5.5" fill="#ff5f57"/>
+  <circle cx="44" cy="24" r="5.5" fill="#febc2e"/>
+  <circle cx="62" cy="24" r="5.5" fill="#28c840"/>
+  <text x="878" y="28" text-anchor="end" font-size="12" fill="#5d6b78">stack — ROS 2 rmw 계층</text>
+
+  <!-- layer 1 -->
+  <text x="196" y="100" text-anchor="end" font-size="11.5" fill="#6272a4">애플리케이션</text>
+  <rect x="210" y="76" width="470" height="46" rx="8" fill="rgba(108,182,255,0.07)" stroke="#6cb6ff" stroke-width="1.1"/>
+  <text x="445" y="104" text-anchor="middle" font-size="13.5" fill="#b9dcff">내 노드 (rclpy / rclcpp)</text>
+
+  <!-- layer 2 -->
+  <text x="196" y="160" text-anchor="end" font-size="11.5" fill="#6272a4">클라이언트 라이브러리</text>
+  <rect x="210" y="136" width="470" height="46" rx="8" fill="rgba(108,182,255,0.07)" stroke="#6cb6ff" stroke-width="1.1"/>
+  <text x="445" y="164" text-anchor="middle" font-size="13.5" fill="#b9dcff">rcl (C 공통 구현)</text>
+
+  <!-- layer 3 : rmw highlight -->
+  <text x="196" y="220" text-anchor="end" font-size="11.5" fill="#5ef2b8">★ 추상 계층</text>
+  <rect x="210" y="196" width="470" height="46" rx="8" fill="rgba(94,242,184,0.13)" stroke="#5ef2b8" stroke-width="1.7"/>
+  <text x="445" y="224" text-anchor="middle" font-size="14" font-weight="700" fill="#b6f2d8">rmw</text>
+
+  <text x="700" y="209" font-size="11.5" fill="#5ef2b8">← 환경변수</text>
+  <text x="700" y="226" font-size="11.5" fill="#9fe6c8">RMW_IMPLEMENTATION</text>
+  <text x="700" y="243" font-size="11.5" fill="#5ef2b8">하나로 교체</text>
+
+  <!-- layer 4 -->
+  <text x="196" y="280" text-anchor="end" font-size="11.5" fill="#6272a4">DDS 구현체</text>
+  <rect x="210" y="256" width="470" height="46" rx="8" fill="rgba(240,163,107,0.09)" stroke="#f0a36b" stroke-width="1.3"/>
+  <text x="445" y="284" text-anchor="middle" font-size="13" fill="#f3c79b">Fast DDS · Cyclone DDS · Connext · …</text>
+
+  <!-- layer 5 -->
+  <text x="196" y="340" text-anchor="end" font-size="11.5" fill="#6272a4">전송</text>
+  <rect x="210" y="316" width="470" height="46" rx="8" fill="rgba(185,167,230,0.07)" stroke="#b9a7e6" stroke-width="1.1"/>
+  <text x="445" y="344" text-anchor="middle" font-size="13" fill="#d6c9f2">UDP / TCP / 공유메모리</text>
+
+  <text x="450" y="390" text-anchor="middle" font-size="12" fill="#8c98a4">애플리케이션 코드는 한 줄도 바뀌지 않는다 — 이것이 이 A/B 실험이 성립하는 이유</text>
+</svg>
