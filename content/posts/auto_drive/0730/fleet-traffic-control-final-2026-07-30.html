@@ -1,0 +1,230 @@
+<title>다중 로봇 충돌 제어 — 최종 알고리즘과 규칙</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+:root{--bg:#0f1420;--fg:#e6ebf3;--mut:#95a3b8;--card:#161d2b;--line:#26314a;--pri:#5aa9ff;--acc:#ffcf5e;--warn:#ff7a7a;--ok:#5ddc9a}
+@media (prefers-color-scheme: light){:root{--bg:#f7f9fc;--fg:#16202e;--mut:#5a6b82;--card:#fff;--line:#dde5f0;--pri:#0b62d6;--acc:#a06a00;--warn:#c62828;--ok:#0d7a4a}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.75 -apple-system,BlinkMacSystemFont,"Pretendard","Noto Sans KR",Segoe UI,sans-serif;
+ padding:48px 20px 96px;-webkit-font-smoothing:antialiased}
+main{max-width:900px;margin:0 auto}
+h1{font-size:30px;line-height:1.35;margin:0 0 8px;letter-spacing:-.02em}
+h2{font-size:22px;margin:52px 0 14px;padding-top:14px;border-top:1px solid var(--line);letter-spacing:-.01em}
+h3{font-size:17px;margin:32px 0 10px;color:var(--pri)}
+h1+p{color:var(--mut);margin-top:0}
+p{margin:12px 0}
+hr{border:0;border-top:1px solid var(--line);margin:36px 0}
+code{background:rgba(127,150,190,.16);padding:.12em .4em;border-radius:4px;font-size:.88em;
+ font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace}
+pre{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;overflow-x:auto;margin:16px 0}
+pre code{background:none;padding:0;font-size:13px;line-height:1.6;white-space:pre}
+blockquote{margin:18px 0;padding:12px 16px;border-left:3px solid var(--acc);background:var(--card);border-radius:0 8px 8px 0;color:var(--mut)}
+.tw{overflow-x:auto;margin:16px 0;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;min-width:460px;font-size:14.5px}
+th,td{padding:9px 13px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--card);font-weight:600;color:var(--mut);white-space:nowrap}
+tr:last-child td{border-bottom:0}
+ul,ol{margin:12px 0;padding-left:22px}
+li{margin:5px 0}
+strong{color:var(--fg);font-weight:650}
+em{color:var(--mut)}
+.star{color:var(--acc)}
+</style>
+<main>
+<h1 id="s0">다중 로봇 충돌 제어 — 최종 알고리즘과 규칙</h1>
+<p><strong>WaSaB 함대 통행 중재(Traffic Arbiter)</strong> · 2026-07-30 실기 확정판 로봇 3대(44 · 50 · 87) 실기 검증 · 115 tests green · 커밋 <code>1a9df11</code></p>
+<blockquote>이 문서가 최종 설계다. 같은 날 오전에 쓴 <code>fleet-traffic-control-2026-07-30.md</code> 는 그 시점의 설계(좌표 투영 기반 점유, 배터리 우선권)를 담고 있어 <strong>현행과 다르다.</strong> 표준·논문 조사 부분(2장)만 그쪽이 더 자세하다.</blockquote>
+<hr>
+<h2 id="s4">0. 요약</h2>
+<p>순찰이든 도킹이든 <strong>모드와 무관하게</strong> 같은 규칙을 적용한다. PC 한 대에 중재 노드를 두고, 모든 로봇이 <strong>다음 구간으로 출발하기 전에 승인을 받는다</strong>. 로봇 쪽 코드는 한 줄도 바꾸지 않았다.</p>
+<p>핵심 설계는 하루치 실기가 깎아낸 결과다.</p>
+<div class="tw"><table><thead><tr><th>설계 결정</th><th>이유</th></tr></thead><tbody><tr><td>점유를 <strong>홉</strong>으로 센다 (좌표 투영 폐기)</td><td>Nav2 는 벽을 피해 크게 돌아 직선 엣지와 한참 떨어져 다닌다. 좌표를 링 선분에 투영하면 지나가지도 않은 노드를 잠근다</td></tr><tr><td>출발 노드를 <strong>도착할 때까지</strong> 쥔다</td><td>즉시 놓으면 뒤차가 0.2 초 만에 승인받아 0.27 m 까지 붙는다</td></tr><tr><td>우선순위는 <strong>선착순</strong> 하나</td><td>배터리·화재 조건은 한 대가 계속 조건에 걸리면 영구 우선권이 되어 나머지를 굶긴다</td></tr><tr><td>지형 규칙은 <strong>실측으로 증명된 2 개만</strong></td><td>근거 없는 규칙은 처리량만 깎는다 (실기에서 44.5 초 대기 유발)</td></tr></tbody></table></div>
+<p><strong>최종 실기 결과 — 3대 동시 순환, 51초간 승인 14건 · 충돌 0 · 대기 0.</strong></p>
+<hr>
+<h2 id="s10">1. 문제 — 이 규모에서는 교과서가 안 맞는다</h2>
+<p>아레나는 <strong>2.10 × 1.24 m</strong>, 로봇 폭은 <strong>0.20 m</strong>다. 표준 AGV 교통 관리(VDA 5050, Open-RMF)는 수십 미터 창고를 전제한다. 그 규모에서 &quot;노드 하나를 잠근다&quot;는 몇 미터를 비우는 것이지만, 우리 맵에서 노드 하나는 <strong>로봇 두 대 폭</strong>이다.</p>
+<h3 id="s12">1-1. 아레나 위상 — 링이 아니라 θ 모양</h3>
+<p>맵(<code>wasab_map12</code>, 105×62 @ 0.02 m)을 풀어보면 단순한 링이 아니다.</p>
+<pre><code>세로 복도 3개 (왼쪽 · 가운데 · 오른쪽) + 위쪽 가로 복도
+남쪽 가운데가 막혀 있다  →  S 와 tag9 사이에 직통로가 없다</code></pre>
+<p>그래서 순찰 링의 <code>B → tag9</code> 구간은 <strong>중앙 내벽을 넘어 M · tag10 옆을 스쳐 돌아간다</strong>. 직선거리 0.62 m 인데 실제 주행은 1.24 m 다. 이 한 구간이 오늘 사고의 절반을 만들었다.</p>
+<h3 id="s16">1-2. 통로 폭 — 로봇이 겨우 지나간다</h3>
+<p>실제 주행 경로 위에서 잰 최소 벽여유(로봇 중심에서 벽까지):</p>
+<div class="tw"><table><thead><tr><th>구간</th><th>최소 벽여유</th><th>통로 폭</th><th>부족 구간 비율</th></tr></thead><tbody><tr><td>tag8-G</td><td>0.120 m</td><td>0.24 m</td><td>19 %</td></tr><tr><td>G-S</td><td>0.160 m</td><td>0.32 m</td><td>0 %</td></tr><tr><td>S-B</td><td>0.140 m</td><td>0.28 m</td><td>9 %</td></tr><tr><td>B-tag9</td><td>0.140 m</td><td>0.28 m</td><td>3 %</td></tr><tr><td>tag9-tag10</td><td>0.140 m</td><td>0.28 m</td><td>3 %</td></tr><tr><td>tag10-M</td><td>0.180 m</td><td>0.36 m</td><td>0 %</td></tr><tr><td>M-tag7</td><td>0.140 m</td><td>0.28 m</td><td><strong>44 %</strong></td></tr><tr><td>tag7-tag8</td><td>0.120 m</td><td>0.24 m</td><td>12 %</td></tr></tbody></table></div>
+<p>로봇 Nav2 설정은 <code>robot_radius 0.10</code> + <code>inflation_radius 0.06</code> = <strong>필요 벽여유 0.16 m</strong>다. 8구간 중 6구간이 이 값에 못 미친다. <strong>충돌 제어와 무관한 별개의 물리적 제약</strong>이며 5장에서 다룬다.</p>
+<hr>
+<h2 id="s21">2. 참고한 표준과 연구</h2>
+<h3 id="s22">2-1. VDA 5050 3.0.0 — 상태 모델 채택</h3>
+<p>독일자동차공업협회(VDA)·기계공업협회(VDMA)의 AGV–마스터제어 통신 표준. <strong>가져온 것은 <code>zone request</code> 의 응답 상태 모델</strong>이다.</p>
+<div class="tw"><table><thead><tr><th>상태</th><th>뜻</th><th>우리 구현</th></tr></thead><tbody><tr><td><code>GRANTED</code></td><td>승인</td><td>출발 허용</td></tr><tr><td><code>QUEUED</code></td><td>대기열에 넣음, 아직 승인 아님</td><td>노드에서 대기 (fail-closed)</td></tr><tr><td><code>REJECTED</code></td><td>요청 자체가 잘못됨</td><td>링에 없는 노드·태그, 순서 역전</td></tr><tr><td><code>REVOKED</code></td><td>이미 준 승인을 회수</td><td><strong>미구현</strong> (아래)</td></tr></tbody></table></div>
+<blockquote>정확히 하자면 이 4개는 VDA 5050 의 <code>zone request</code> 에 대한 <code>responseType</code> 이다. 표준에는 <code>requestStatus</code>(<code>REQUESTED/GRANTED/QUEUED/REVOKED/EXPIRED</code>)도 따로 있고, 우리가 &quot;corridor 승인&quot;이라 부를 만한 것은 표준에서는 엣지 속성으로 별개다.</blockquote>
+<p><strong>채택하지 않은 메커니즘 — base / horizon.</strong> VDA 5050 은 주문을 <code>released=true</code> 인 base 와 <code>released=false</code> 인 horizon 으로 나눠 보내고, 마스터가 horizon 을 base 로 승격시키며 흐름을 제어한다. 우리는 로봇 코드를 바꾸지 않기로 했으므로 대신 <strong>출발 전 1구간 승인</strong>을 택했다. 결과적으로 base 길이가 항상 1인 특수한 경우다.</p>
+<p><strong>REVOKED 를 안 만든 이유.</strong> 승인을 회수하려면 이미 달리는 로봇을 세워야 한다. 우리 로봇은 <code>cmd_vel</code> 워치독이 없어서 발행자를 죽여도 마지막 속도로 계속 간다. 회수보다 <strong>애초에 안 주는 쪽</strong>이 안전하다.</p>
+<h3 id="s28">2-2. Open-RMF — 제어 수준 구분 개념만</h3>
+<p>Open-RMF 는 로봇을 <strong>full control</strong>(경로까지 지시)과 <strong>read-only</strong>(로봇이 알아서 가고 관측만)로 나눈다. 이 구분을 그대로 빌렸다.</p>
+<ul><li><strong>순찰</strong> = full control 에 가깝다 → 승인 없으면 안 간다 (<strong>fail-closed</strong>)</li><li><strong>도킹</strong> = read-only 에 가깝다 → 중재기가 죽어도 진행하되 경고 배너를 띄운다 (<strong>fail-open</strong>)</li></ul>
+<p>도킹은 이미 검증된 정밀 주차 시퀀스가 있고, 중간에 멈추면 오히려 위험하다.</p>
+<h3 id="s32">2-3. Lifelong MAPF — 실행 감시 원칙만</h3>
+<p>Zahrádka(2025), Yan(2025, REMAP), Yan(2026, LSMART) 등 lifelong MAPF 연구에서 <strong>플래너는 가져오지 않았다.</strong> 8노드짜리 맵에 최적 경로 계획은 과하다. 가져온 것은 하나다.</p>
+<blockquote>계획은 실행 중에 깨진다. 계획기보다 <strong>실행 감시자</strong>가 중요하다.</blockquote>
+<p>그래서 중재기는 경로를 짜지 않고, <strong>매 tick 마다 실제 점유를 다시 계산해 판정만 한다.</strong></p>
+<hr>
+<h2 id="s37">3. 최종 알고리즘</h2>
+<h3 id="s38">3-1. 구조 — 전부 PC, 로봇 무접촉</h3>
+<pre><code>[로봇 44/50/87]  agent  --(/robots/heartbeat, 2Hz, BEST_EFFORT)--&gt;  도메인 50
+                                                                        │
+[PC] patrol_node ×3  --(/traffic/request)--&gt;  [PC] wasab_traffic  --(/traffic/grant)--&gt;
+                                                    tick 5Hz              │
+                                                                          └-&gt; 웹앱 종합 이벤트</code></pre>
+<div class="tw"><table><thead><tr><th>구성 요소</th><th>위치</th><th>역할</th></tr></thead><tbody><tr><td><code>traffic_rules.py</code></td><td>PC</td><td>순수 판정 로직 (ROS 의존 없음, 전량 단위 테스트)</td></tr><tr><td><code>traffic_node.py</code></td><td>PC</td><td>ROS 배선만 (구독·발행·타이머)</td></tr><tr><td><code>patrol_node.py</code></td><td>PC</td><td>로봇별 순찰 상태기계 + 요청/게이트</td></tr><tr><td><code>agent_node.py</code></td><td>로봇</td><td><strong>변경 없음</strong> — 기존 heartbeat 를 그대로 쓴다</td></tr></tbody></table></div>
+<p>로봇에는 아무것도 배포하지 않는다. 리소스가 부족하고, 4대에 배포·재기동하는 것 자체가 사고 원인이 되어 왔다.</p>
+<h3 id="s42">3-2. 링 그래프 — 8노드</h3>
+<pre><code>tag8 → G → S → B → tag9 → tag10 → M → tag7 → (tag8)</code></pre>
+<div class="tw"><table><thead><tr><th>#</th><th>이름</th><th>좌표 (x, y, yaw)</th><th>비고</th></tr></thead><tbody><tr><td>0</td><td>tag8</td><td>−0.002, 0.044, −1.651</td><td>AprilTag 8 approach</td></tr><tr><td>1</td><td><strong>G</strong></td><td>0.400, 0.060, 0.085</td><td>교무실(ZoneE) 남쪽 복도 — 2026-07-30 추가</td></tr><tr><td>2</td><td>S</td><td>0.809, 0.113, −0.167</td><td>남쪽 커버 경유점</td></tr><tr><td>3</td><td><strong>B</strong></td><td>0.909, 0.324, 1.305</td><td>내벽 왼쪽 세로 복도 — 2026-07-30 추가</td></tr><tr><td>4</td><td>tag9</td><td>1.449, 0.013, 0.200</td><td>AprilTag 9 approach</td></tr><tr><td>5</td><td>tag10</td><td>1.440, 0.661, 2.949</td><td>AprilTag 10 approach</td></tr><tr><td>6</td><td>M</td><td>0.850, 0.660, −2.992</td><td>위쪽 가로 복도 중간 — 2026-07-30 추가</td></tr><tr><td>7</td><td>tag7</td><td>0.009, 0.533, 1.625</td><td>AprilTag 7 approach</td></tr></tbody></table></div>
+<p><strong>노드를 늘린 이유</strong>: 한 구간이 길수록 그 구간을 잡은 로봇이 링을 오래 막는다.</p>
+<div class="tw"><table><thead><tr><th>분할</th><th>이전</th><th>이후</th></tr></thead><tbody><tr><td>M</td><td>tag10→tag7 1.437 m</td><td>0.590 + 0.851 m</td></tr><tr><td>B</td><td>S→tag9 실주행 1.24 m</td><td>0.233 + 0.623 m</td></tr><tr><td>G</td><td>tag8→S 0.814 m</td><td>0.402 + 0.412 m</td></tr></tbody></table></div>
+<p><strong>노드 간격 제약</strong>: 판정 반경 <code>NODE_TOL_M = 0.10 m</code> 이므로 두 노드는 0.20 m 이상 떨어져야 구분된다. 현재 최소 간격은 S–B 의 <strong>0.233 m</strong>. (실측 정차 오차는 0.031~0.039 m)</p>
+<h3 id="s48">3-3. <span class="star">★</span>점유 모델 — 홉으로 센다</h3>
+<p>가장 여러 번 뒤집힌 부분이고, 최종형이 가장 단순하다.</p>
+<pre><code># Occupancy.occupied() — 승인 보유 로봇은 pose 를 보지 않는다
+for rid, targets in self._grant.items():      # 승인이 있으면 그것만
+    out |= targets
+for rid, s in self._pose.items():             # 승인이 없을 때만 pose
+    if rid not in self._grant:
+        out |= s</code></pre>
+<div class="tw"><table><thead><tr><th>로봇 상태</th><th>점유</th></tr></thead><tbody><tr><td><strong>승인 보유(주행 중)</strong></td><td><code>{출발 노드, 도착 노드, 그 엣지}</code> — 좌표는 보지 않는다</td></tr><tr><td><strong>정차(승인 없음)</strong></td><td><code>{가장 가까운 노드}</code> 하나 — 엣지를 추정하지 않는다</td></tr></tbody></table></div>
+<p><strong>왜 좌표 투영을 버렸나.</strong> 이전 구현은 pose 를 링 선분에 기하 투영해 &quot;지금 어느 엣지 위인가&quot;를 유도했다. 그런데 Nav2 는 벽을 피해 크게 돌아 직선 선분과 한참 떨어져 다닌다. 실기에서 로봇 44 의 측위가 무너져 좌표가 중앙 내벽 안 <code>(0.570, 0.365)</code> 으로 들어가자, 투영 결과가 <code>M–tag7</code> 로 나와 <strong>거기 있지도 않은 로봇이 노드 M · tag7 과 그 엣지를 잠갔다.</strong> 로봇 87 이 그 때문에 B 에서 41 초를 섰다.</p>
+<p><strong>왜 출발 노드를 도착까지 쥐나.</strong> &quot;홉 간격 1&quot;을 문자 그대로 구현해 출발 노드를 승인 즉시 놓아 봤다. 결과:</p>
+<pre><code>1785409690.72   50  tag9→tag10 승인   (tag9 즉시 해제)
+1785409690.92   44  B→tag9    승인    ← 0.2 초 뒤
+결과            50 이 복도 0.3 m 지점에서 간격 0.269 m 로 갇혀 284 초간 정지</code></pre>
+<p>벽여유 0.12 m 복도에서 뒤차가 0.27 m 까지 붙으면 앞차의 local costmap 이 좌우 벽 + 후방 로봇으로 둘러싸여 유효 궤적을 못 만든다. 출발 노드를 쥐면 <strong>뒤차는 앞차가 다음 노드에 닿은 뒤에야 들어온다</strong> — 두 로봇 사이에 항상 한 구간이 통째로 비어 있다.</p>
+<h3 id="s56">3-4. 승인 판정 — 모아서 한 번에</h3>
+<p>요청이 오는 즉시 승인하면 먼저 도착한 요청이 이미 출발해버려 우선순위를 적용할 자리가 없다. 그래서 <code>pending</code> 에 모아 <strong>5 Hz tick 마다 일괄 판정</strong>한다.</p>
+<pre><code>tick():
+  1. 기동 유예(3초) 중이면 전원 QUEUED/&quot;startup&quot;
+     — 아직 heartbeat 가 안 온 로봇이 물리적으로 자리를 차지하고 있을 수 있다
+  2. pending 을 우선순위로 정렬            ← 선착순: (−대기 tick 수, robot_id)
+  3. 각 요청에 대해:
+       need  = { 도착 노드, 요청 엣지 }
+       busy  = 나를 뺀 모든 로봇의 점유
+       clash = need ∩ busy
+       clash 가 비었으면 → 지형 규칙 검사(3-5)
+       그래도 비었으면   → GRANTED, occ 에 즉시 반영(같은 tick 의 뒷 요청이 본다)
+       아니면            → 보류
+  4. 보류된 것들의 사유 계산 (pass 종료 후 — 이번 tick 의 승인이 다 반영된 뒤)
+       막은 로봇이 승인 보유 또는 엣지 위    → &quot;moving&quot;
+       가만히 서 있음                        → &quot;static&quot;
+       임자가 이미 없음(이번 pass 에서 떠남) → &quot;moving&quot;</code></pre>
+<p><strong>우선순위 — 선착순 하나뿐이다.</strong></p>
+<pre><code>def priority_key(meta, fire_xy=None, age=0):
+    return (-int(age), int(meta[&quot;rid&quot;]))     # 오래 기다린 순, 동률이면 id</code></pre>
+<p>원래는 <code>저배터리 → 화재 근접 → id</code> 였다. 실기에서 로봇 87 이 6.93 V 로 계속 임계(7.0 V) 아래였고, 그 결과 <strong>87 은 평균 0.1 초만 기다린 반면 44 · 50 은 B 에서 최대 16.4 초 섰다.</strong> 충전소 배차나 화재 출동 같은 실제 동작이 붙어 있지 않으니 교차로 순서만 바꿀 뿐이라, 이득 없이 기아만 만들었다. 두 조건 모두 제거했다.</p>
+<h3 id="s62">3-5. 좁은 복도 보호 — 실측으로 증명된 2개만</h3>
+<p>링 그래프상 겹치지 않는데 <strong>실제 주행 경로는 겹치는</strong> 경우가 있다. <code>B→tag9</code> 이 중앙 내벽을 넘어 M · tag10 옆을 스치기 때문이다.</p>
+<p>실측 궤적(leg 122 회, 양 끝점 0.22 m 제외)으로 차선 간 최단거리를 전수 조사한 결과:</p>
+<div class="tw"><table><thead><tr><th>조합</th><th>실측 거리</th><th>규칙</th></tr></thead><tbody><tr><td>B-tag9 ↔ 엣지 tag10-M</td><td><strong>0.001 m</strong></td><td><span class="star">★</span> 상호배제</td></tr><tr><td>B-tag9 ↔ 노드 M</td><td><strong>0.144 m</strong> (실기 재현 0.154 m)</td><td><span class="star">★</span> 상호배제</td></tr><tr><td>B-tag9 ↔ 노드 tag10</td><td>0.232 m</td><td>뺐음</td></tr><tr><td>B-tag9 ↔ 엣지 M-tag7</td><td>0.402 m</td><td>뺐음</td></tr><tr><td>그 외 전부</td><td>0.488 m 이상</td><td>규칙 없음</td></tr></tbody></table></div>
+<pre><code># 노드 인덱스: 0=tag8 1=G 2=S 3=B 4=tag9 5=tag10 6=M 7=tag7
+conflict_edges:
+  - [[3, 4], [5, 6]]     # B-tag9 ↔ tag10-M   같은 통로를 공유한다
+conflict_edge_nodes:
+  - [[3, 4], 6]          # B-tag9 ↔ 노드 M</code></pre>
+<p><strong>규칙의 뜻을 정확히</strong>: B 에 선 로봇과 M 에 선 로봇은 0.34 m 로 서로 방해하지 않는다. 막는 것은 <strong><code>B→tag9</code> 을 &quot;주행&quot;하는 것</strong>이다 — 그 경로가 M 옆 0.15 m 를 스치기 때문이다.</p>
+<p><strong>엣지↔노드 규칙은 정차 중인 로봇에만 적용한다.</strong> 주행 중인 로봇도 출발 노드를 쥐고 있지만 그건 &quot;아직 그 근처를 안 비웠다&quot;는 뜻이지 &quot;거기 서 있다&quot;는 뜻이 아니다. 떠나는 중까지 노드 점유로 세면 앞차가 <code>M→tag7</code> 을 다 갈 때까지 뒤차가 B 에 묶인다 (실기에서 44.5 초 관측).</p>
+<p>두 규칙은 빈틈없이 이어진다:</p>
+<div class="tw"><table><thead><tr><th>앞차 상태</th><th>앞차 점유</th><th>B 의 뒤차</th></tr></thead><tbody><tr><td><code>tag10→M</code> 주행 중</td><td>엣지 tag10-M + 노드 M</td><td>엣지 규칙에 걸림 → 대기</td></tr><tr><td>M 에 정차</td><td>노드 M</td><td>노드 규칙에 걸림 → 대기</td></tr><tr><td><code>M→tag7</code> 승인받음</td><td>엣지 M-tag7 + 노드 tag7</td><td>아무것도 안 걸림 → <strong>즉시 출발</strong></td></tr></tbody></table></div>
+<h3 id="s71">3-6. 점유 해제 — 세 경로</h3>
+<div class="tw"><table><thead><tr><th>계기</th><th>동작</th></tr></thead><tbody><tr><td><strong>도착</strong></td><td>heartbeat 마다 <code>clear_if_arrived()</code> — 승인 목표 중 <code>reach_tol(0.10 m)</code> 안에 든 것만 해제. 목표별로 따로 지운다</td></tr><tr><td><strong>도킹 종료</strong></td><td><code>/robots/dock_event</code> 의 <code>done</code>/<code>failed</code> → 그 로봇 승인 전체 해제</td></tr><tr><td><strong>로봇 소실</strong></td><td>heartbeat 15 초 무수신 → <code>forget(rid)</code> 로 점유·pending·meta 전부 삭제</td></tr></tbody></table></div>
+<p><strong>소실 해제(<code>STALE_RELEASE_S = 15.0</code>)가 없으면</strong> 전원을 끈 로봇이 blocker 로 영원히 남아 링이 잠긴다. 2026-07-30 하루에 네 번 발생했고 그때마다 중재 노드를 재기동해 때웠다. 물리적으로 남아 있는 경우의 방어는 각 로봇 Nav2 의 costmap 이다.</p>
+<h3 id="s74">3-7. 고장 시 동작</h3>
+<div class="tw"><table><thead><tr><th>상황</th><th>동작</th><th>근거</th></tr></thead><tbody><tr><td>중재기 무응답 (순찰)</td><td>대기 유지 (<strong>fail-closed</strong>)</td><td>승인 없이 움직이면 충돌</td></tr><tr><td>중재기 무응답 (도킹)</td><td>진행 + 웹앱 경고 배너 (<strong>fail-open</strong>)</td><td>정밀 주차 중단이 더 위험</td></tr><tr><td>중재기 재기동</td><td>순찰 노드가 <strong>5 초마다 요청 재전송</strong>(seq 유지) → 자동 복구</td><td>재기동 시 pending 소실</td></tr><tr><td>내 heartbeat 8 초 무수신</td><td>목표 취소 + 정지 + 알림</td><td>중재기가 못 보는 로봇은 주행하지 않는다</td></tr><tr><td>요청 seq 역전</td><td><code>REJECTED &quot;stale_seq&quot;</code> — 단, pending 이 10 tick(2초) 넘으면 낮은 seq 도 받는다</td><td>순찰 노드 재시작 시 seq 가 1 로 리셋</td></tr></tbody></table></div>
+<p><strong><code>REQ_RETRY_S = 5.0</code> 이 없던 시절</strong>: 요청은 노드 도착 때 한 번만 나갔다. 중재기를 재기동하면 pending 을 잃는데 로봇은 오지 않을 승인을 영원히 기다렸다 — 3 대가 2 분간 멎었다.</p>
+<h3 id="s77">3-8. 상수 표</h3>
+<div class="tw"><table><thead><tr><th>상수</th><th>값</th><th>위치</th><th>뜻</th></tr></thead><tbody><tr><td><code>TICK_S</code></td><td>0.2 s (5 Hz)</td><td>traffic_node</td><td>일괄 판정 주기</td></tr><tr><td><code>NODE_TOL_M</code></td><td>0.10 m</td><td>traffic_rules</td><td>&quot;이 노드에 서 있다&quot; 판정 반경</td></tr><tr><td><code>reach_tol</code></td><td>0.10 m</td><td>waypoints.yaml</td><td>순찰 도착 판정</td></tr><tr><td><code>STARTUP_GRACE_S</code></td><td>3.0 s</td><td>traffic_node</td><td>기동 직후 전원 QUEUED</td></tr><tr><td><code>HEARTBEAT_STALE_S</code></td><td>5.0 s</td><td>traffic_node</td><td>경고만 (점유 유지)</td></tr><tr><td><code>STALE_RELEASE_S</code></td><td>15.0 s</td><td>traffic_node</td><td>점유 해제 (로봇 소실 판정)</td></tr><tr><td><code>STALE_SEQ_GRACE_TICKS</code></td><td>10 (2 s)</td><td>traffic_rules</td><td>이보다 오래된 pending 은 낮은 seq 도 수용</td></tr><tr><td><code>OWN_HB_TIMEOUT_S</code></td><td>8.0 s</td><td>patrol_node</td><td>내가 안 보이면 주행 중단 (15 초 해제보다 먼저)</td></tr><tr><td><code>REQ_RETRY_S</code></td><td>5.0 s</td><td>patrol_node</td><td>승인 대기 중 요청 재전송</td></tr><tr><td><code>EDGE_WAIT_TIMEOUT_S</code></td><td>20.0 s</td><td>patrol_node</td><td>이보다 오래 대기하면 pause + 알림</td></tr><tr><td><code>YIELD_TIMEOUT_S</code></td><td>20.0 s</td><td>patrol_node</td><td>YIELD 지속 시 pause + 알림</td></tr><tr><td><code>FIRE_ACTIVE_S</code></td><td>60.0 s</td><td>traffic_rules</td><td>화재 이벤트 유효 시간 (현재 우선순위 미사용)</td></tr></tbody></table></div>
+<h3 id="s79">3-9. 이벤트 로깅</h3>
+<p><code>/traffic/grant</code> 를 웹앱 백엔드가 구독해 <strong>실제로 기다린 경우만</strong> 종합 이벤트에 남긴다.</p>
+<div class="tw"><table><thead><tr><th>상황</th><th>이벤트 타입</th><th>내용</th></tr></thead><tbody><tr><td>QUEUED</td><td><code>트래픽제어 · 대기 시작</code></td><td>사유(한글) + blocker 로봇 이름</td></tr><tr><td>이전에 QUEUED 였다가 GRANTED</td><td><code>트래픽제어 · 대기 해제</code></td><td><code>대기 N.N초 후 통과</code></td></tr></tbody></table></div>
+<p>프론트엔드는 <code>트래픽제어</code> 태그를 파란색(<code>--primary</code>)으로 표시한다. 중재 노드는 <strong>상태가 바뀔 때만</strong> 발행한다 — 막힌 로봇마다 5 Hz 로 쏘지 않는다.</p>
+<hr>
+<h2 id="s84">4. 우리 맵에서의 검증 — 실기가 깎아낸 결함들</h2>
+<p>단위 테스트만으로는 절대 안 나오는 것들이다. 시간순으로 정리한다.</p>
+<h3 id="s86">4-1. QoS 불일치 — 96 tests green 인데 승인이 다 났다</h3>
+<p>중재기가 heartbeat 를 기본 QoS(RELIABLE)로 구독했는데 agent 는 BEST_EFFORT 로 발행했다. <strong>한 건도 못 받아 점유표가 영원히 비었고 아무나 승인했다.</strong> 띄워보기 전엔 안 보인다.</p>
+<h3 id="s88">4-2. 기하 투영이 틀렸다 — tag10→tag7 전 구간 오분류</h3>
+<p>&quot;가장 가까운 2노드&quot;로 엣지를 판정했더니 <code>tag10→tag7</code>(1.437 m) 구간에서 79/79 샘플이 잘못 나왔다. 노드 간격이 불균등하고 S 가 한가운데 있어서다. 링 선분 투영 + 끝점 클램프로 고쳤다. 사용자의 물리적 직관이 잡아냈다 — <em>&quot;tag9 에 바짝 붙어 있는데 S 를 점유한다는 게 말이 안 되지.&quot;</em></p>
+<h3 id="s90">4-3. 처리량을 얻으려다 추돌 — 가까운 끝점만 잠그기</h3>
+<p>엣지 위 로봇이 가까운 끝점 하나만 잠그게 했더니(1.79 → 1.00 노드), 앞차가 긴 엣지 중간을 넘는 순간 뒤쪽 노드가 열려 <strong>뒤차가 0.7 m 뒤까지 따라붙어 tag10 부근에서 추돌</strong>했다. 되돌렸다.</p>
+<h3 id="s92">4-4. 건너뛰기가 링에 없는 대각선을 만들었다</h3>
+<p>막힌 노드를 건너뛰게 했더니 인덱스가 2 씩 늘어 <code>tag7→S</code>, <code>S→tag10</code> 같은 <strong>링에 없는 엣지</strong>를 주행했다. 중재기가 모르는 경로라 아무도 막지 못했고 아레나 한가운데서 충돌했다. 건너뛰기 제거.</p>
+<h3 id="s94">4-5. 순찰 예약이 해제되지 않았다</h3>
+<p><code>on_arrive</code> 가 도킹 이벤트에서만 불렸다. 순찰은 그런 이벤트가 없어서, 한 바퀴 돈 로봇이 지나온 노드를 전부 쥔 채 남았다. heartbeat 마다 <code>clear_if_arrived()</code> 로 자가 감지하게 했다.</p>
+<h3 id="s96">4-6. 유령 점유 — 하루 네 번</h3>
+<p>전원을 끈 로봇의 점유가 영원히 남아 링을 잠갔다. 그때마다 중재 노드를 재기동해 때웠다. 사용자 지적: <em>&quot;이거 왜 자꾸 반복되게 만들어&quot;</em>, <em>&quot;근본적으로 해결해&quot;</em> → <code>STALE_RELEASE_S</code> 도입.</p>
+<h3 id="s98">4-7. 재시작 seq 잠금</h3>
+<p>순찰 노드를 재시작하면 seq 가 1 로 리셋되는데, 승인 못 받고 남은 pending 이 그걸 영원히 거부했다. 나이 기반 유예(<code>STALE_SEQ_GRACE_TICKS</code>)로 해결.</p>
+<h3 id="s100">4-8. agent 는 죽었는데 로봇은 계속 갔다</h3>
+<p>15 초 소실 해제를 넣자 <strong>로봇이 중재기에 안 보이면서 계속 움직이는 구간</strong>이 생겼다. 사용자 지적으로 발견 — <em>&quot;agent 를 종료했다가 살리면, 순찰 프로세스도 종료되어야 하는 것 아닌가?&quot;</em> → <code>OWN_HB_TIMEOUT_S = 8.0</code> 으로 15 초 해제보다 먼저 멈추게 했다.</p>
+<h3 id="s102">4-9. <span class="star">★</span>차선 겹침 — 규칙 밖의 충돌</h3>
+<p>로봇 44(<code>B→tag9</code>)와 50(<code>tag10→M</code>)이 동시에 승인받았다. 링 그래프상 노드를 공유하지 않아 규칙상 문제가 없었다. 그런데 실제로는:</p>
+<div class="tw"><table><thead><tr><th>시각</th><th>로봇44 (B→tag9)</th><th>로봇50 (tag10→M)</th><th>간격</th></tr></thead><tbody><tr><td>31.0</td><td>(0.928, 0.555)</td><td>(0.946, 0.626)</td><td>0.074 m</td></tr><tr><td>37.0</td><td>(0.814, 0.643)</td><td>(0.946, 0.626)</td><td>0.133 m ← 44 여기서 6초 정지</td></tr><tr><td>43.0</td><td>(0.903, 0.630)</td><td>(0.946, 0.626)</td><td><strong>0.043 m</strong></td></tr><tr><td>49.0</td><td>(0.982, 0.733)</td><td>(0.946, 0.626)</td><td>0.113 m</td></tr></tbody></table></div>
+<p><strong>25 초 동안 물리적으로 맞닿아 있었다.</strong> 서로 밀며 바퀴가 헛돌아 오도메트리가 망가졌고, 44 의 AMCL 이 붕괴해 <strong>1 초에 0.675 m 튀어 중앙 내벽 안으로 들어갔다.</strong></p>
+<p>여기서 인과를 한 번 잘못 짚었다 — 처음엔 &quot;AMCL 이 먼저 튀어서 벽에 박았다&quot;고 봤으나, 점프 직후 좌표가 즉시 고정된 것을 보고 <strong>끼임이 먼저, 위치 점프가 결과</strong>임을 확인했다.</p>
+<p>→ <code>conflict_edges</code> 규칙의 근거가 된 사건.</p>
+<h3 id="s108">4-10. 유령 점유가 만든 41 초 대기</h3>
+<p>4-9 로 벽 안에 갇힌 44 의 좌표가 <code>M–tag7</code> 로 투영돼 노드 M · tag7 과 엣지를 잠갔다. 거기 있지도 않은 로봇 때문에 87 이 B 에서 41 초를 섰다. → <strong>점유를 홉 기반으로 바꾼 결정적 계기</strong>(3-3).</p>
+<h3 id="s110">4-11. 뒤차가 0.2 초 만에 따라붙었다</h3>
+<p>출발 노드를 승인 즉시 놓는 방식에서, 50 이 tag9 을 떠난 0.2 초 뒤 44 가 승인받아 간격 0.269 m 로 붙었고 50 이 복도에서 284 초간 갇혔다. 사용자 지적 — <em>&quot;왜 한 홉을 유지해야 하는데 44 가 바로 붙어 있어?&quot;</em> → 출발 노드를 도착까지 쥐도록 되돌렸다(3-3).</p>
+<h3 id="s112">4-12. 최종 확인 — 3대 동시 순환</h3>
+<pre><code>50   seq 14 → 19   6구간 연속 승인   QUEUED 0
+44   seq 14 → 17   4구간 연속 승인   QUEUED 0
+87   seq 14 → 17   4구간 연속 승인   QUEUED 0
+                   51초 동안 승인 14건, 대기 0건</code></pre>
+<p>세 대가 링에 고르게 분산돼 서로 다른 구간을 지나며 <strong>한 대도 멈추지 않고 동시에 돌았다.</strong></p>
+<hr>
+<h2 id="s116">5. 한계 (정직하게)</h2>
+<h3 id="s117">5-1. 통로 폭 — 충돌 제어 밖의 벽</h3>
+<pre><code>robot_radius 0.10 + inflation_radius 0.06 = 필요 벽여유 0.16 m
+실제 통로 최소 벽여유                        0.12 ~ 0.14 m</code></pre>
+<p>로봇 중심이 벽에서 0.16 m 안으로 들어가면 local costmap 이 자기 위치를 치명 영역으로 판정한다. 컨트롤러가 유효 궤적을 못 만들고 목표를 포기한다 — <strong>라이프사이클은 전부 active 인데 <code>/cmd_vel_nav</code> 가 한 건도 안 나오는 상태</strong>가 된다. 실측 사례:</p>
+<pre><code>로봇50   tag9→tag10 진입 후 0.3 m 전진 → 벽여유 0.120 m 지점에서 정지 → 284 초간 이동 0.000 m
+로봇87   M→tag7 주행 중 벽여유 0.100 m 지점에서 정지</code></pre>
+<p>&quot;어떨 땐 통과하고 어떨 땐 낀다&quot;의 정체다. 통로 대부분은 0.14~0.20 m 라 지나가지만, 측위가 몇 cm 만 틀어지면 걸린다. <strong>충돌 제어 로직으로는 해결할 수 없다.</strong></p>
+<div class="tw"><table><thead><tr><th>선택지</th><th>내용</th><th>비용</th></tr></thead><tbody><tr><td>1</td><td><code>inflation_radius</code> 0.06 → 0.02 (필요 0.12 m, 가장 좁은 지점과 동일)</td><td>로봇 4대 재배포 + Nav2 재기동</td></tr><tr><td>2</td><td>통로를 물리적으로 넓힌다</td><td>아레나 개조</td></tr><tr><td>3</td><td>현행 유지, 낀 로봇은 수동 구조</td><td>시연 중 개입 필요</td></tr></tbody></table></div>
+<h3 id="s123">5-2. 실기 미검증 항목</h3>
+<ul><li><strong>출발 노드를 도착까지 유지</strong>(3-3 후반) — 4-11 재발 방지책. 코드·테스트는 완료했으나</li></ul>
+<p>마지막 주행 시점의 중재기는 아직 이전 동작(즉시 해제)이었다. 다음 주행에서 확인해야 한다.</p>
+<h3 id="s126">5-3. 미구현</h3>
+<ul><li><strong>REVOKED</strong> — 이미 준 승인의 회수. <code>cmd_vel</code> 워치독 부재로 위험하다고 판단해 보류.</li><li><strong>교착 복구(후진)</strong> — 6장.</li><li><strong>넓은 구간 완화</strong> — <code>G-S</code>, <code>tag10-M</code> 두 구간은 통로 폭이 충분(0.32 / 0.36 m)하므로</li></ul>
+<p>출발 노드를 즉시 놓아도 안전하다. 8구간 중 2개뿐이라 이득이 작아 보류.</p>
+<ul><li><strong>도킹 게이트 (Phase 2)</strong> — 웹앱/콘솔 도킹 버튼의 중재 연동은 미착수.</li><li><strong>라이다 intensity 기반 주차</strong> — 87 라이다의 intensity 고유값이 0 과 47 둘뿐이라</li></ul>
+<p>반사 세기 구분이 어려울 가능성이 크다. 본격 검토 전 확인 필요.</p>
+<h3 id="s131">5-4. 측위 신뢰도</h3>
+<p>heartbeat 좌표는 AMCL 추정치다. 오늘 로그에서 <strong>1 초에 0.30 m 이상 튄 점프가 8 건</strong> (수동 재측위 제외) 관측됐고, 그중 5 건은 다른 로봇이 0.6 m 이내에 있을 때였다. 좁은 복도에서 다른 로봇이 스캔에 잡히면 정합이 무너진다. 중재기가 좌표에 의존하지 않도록 홉 기반으로 바꾼 것이 이 문제에 대한 1차 방어다.</p>
+<hr>
+<h2 id="s134">6. 다음 — 교착 복구 설계 초안</h2>
+<pre><code>1. 감지   승인을 쥔 채 pose 변화가 20 초간 0  →  &#x27;낌&#x27; 판정
+          (실측 근거: 284 초간 좌표 소수점 셋째 자리까지 동일)
+2. 선택   낀 로봇이 아니라 뒤에서 대기 중인 로봇이 후진
+          낀 쪽은 정의상 못 움직인다. 뒤차가 물러나야 앞차의 costmap 이 열린다
+          후진 목표 = 그 로봇이 지나온 이전 노드
+3. 실행   Nav2 behavior_server 의 BackUp 호출
+          직접 cmd_vel 을 쓰지 않는다 — pinky 는 워치독이 없어 발행자가 죽으면
+          마지막 속도로 계속 간다
+4. 한계   2 회까지만 시도, 실패 시 웹앱 알림. 무한 후진 금지</code></pre>
+<hr>
+<h2 id="s137">7. 이 작업에서 남길 만한 것</h2>
+<ol><li><strong>단위 테스트는 QoS 를 못 잡는다.</strong> 96 tests green 이어도 띄워봐야 안다.</li><li><strong>좌표를 믿고 규칙을 세우지 마라.</strong> 측위가 무너지면 규칙이 흉기가 된다.</li></ol>
+<p>홉처럼 이산적이고 검증 가능한 양으로 판정하라.</p>
+<ol><li><strong>우선권 조건은 영구 우선권이 될 수 있다.</strong> 임계 아래에 계속 머무는 로봇 하나가</li></ol>
+<p>나머지를 굶긴다. 실제 동작(배차·출동)이 없는 우선순위는 이득 없이 기아만 만든다.</p>
+<ol><li><strong>규칙은 실측으로만 늘려라.</strong> 0.4 m 이상 떨어진 조합에 규칙을 걸면 처리량만 깎인다.</li><li><strong>사용자의 물리적 관측이 로그보다 정확할 때가 있다.</strong> &quot;육안으로 안 부딪혔다&quot;는 지적이</li></ol>
+<p>좌표 데이터의 신뢰도를 의심하게 만들었고, 실제로 그 좌표는 붕괴 직전 값이었다.</p>
+<ol><li><strong>인과를 거꾸로 짚기 쉽다.</strong> &quot;AMCL 이 튀어서 박았다&quot;가 아니라 &quot;박혀서 AMCL 이 튀었다&quot;였다.</li></ol>
+<hr>
+<h2 id="s146">8. 참고 자료</h2>
+<div class="tw"><table><thead><tr><th>자료</th><th>채택 범위</th></tr></thead><tbody><tr><td>VDA 5050 3.0.0 — <em>Interface for the communication between automated guided vehicles and a master control</em></td><td>zone request 상태 모델(GRANTED/QUEUED/REJECTED/REVOKED). base/horizon 미채택</td></tr><tr><td>Open-RMF — <em>Open Robotics Middleware Framework</em>, traffic schedule &amp; fleet adapter</td><td>full control / read-only 제어 수준 구분 개념</td></tr><tr><td>Zahrádka, D. (2025) — Lifelong MAPF 실행 감시</td><td>원칙만: 계획보다 실행 감시</td></tr><tr><td>Yan, Z. et al. (2025) — REMAP</td><td>원칙만</td></tr><tr><td>Yan, Z. et al. (2026) — LSMART</td><td>원칙만</td></tr></tbody></table></div>
+<h3 id="s148">관련 문서</h3>
+<ul><li><code>docs/fleet-traffic-control-2026-07-30.md</code> — 오전 시점 설계 (표준·논문 조사가 더 상세, 알고리즘은 현행과 다름)</li><li><code>docs/superpowers/specs/2026-07-29-fleet-traffic-control-design.md</code> — 설계 스펙</li><li><code>docs/superpowers/plans/2026-07-29-fleet-traffic-control.md</code> — 구현 계획</li><li><code>docs/worklog-2026-07-30-traffic-control-field-test.md</code> — 실기 워크로그</li></ul>
+<h3 id="s150">코드 지도</h3>
+<div class="tw"><table><thead><tr><th>파일</th><th>핵심</th></tr></thead><tbody><tr><td><code>wasab_navigation/wasab_patrol/wasab_patrol/traffic_rules.py</code></td><td><code>Occupancy</code>, <code>Arbiter</code>, <code>priority_key</code>, <code>occupancy_of</code></td></tr><tr><td><code>wasab_navigation/wasab_patrol/wasab_patrol/traffic_node.py</code></td><td>ROS 배선, heartbeat QoS, <code>gone_rids</code></td></tr><tr><td><code>wasab_navigation/wasab_patrol/wasab_patrol/patrol_node.py</code></td><td>요청/게이트, <code>REQ_RETRY_S</code>, <code>OWN_HB_TIMEOUT_S</code></td></tr><tr><td><code>wasab_navigation/wasab_patrol/config/waypoints.yaml</code></td><td>8노드 링, <code>conflict_edges</code>, <code>conflict_edge_nodes</code></td></tr><tr><td><code>wasab_gui/user_gui/backend/ros_bridge.py</code></td><td><code>/traffic/grant</code> → 종합 이벤트</td></tr><tr><td><code>wasab_gui/user_gui/frontend/app.js</code></td><td><code>PATROL_WPS</code>, <code>트래픽제어</code> 태그</td></tr></tbody></table></div>
+<p><strong>테스트</strong>: <code>wasab_navigation/wasab_patrol/test/</code> — 115 tests (<code>test_traffic_rules.py</code> · <code>test_traffic_node_helpers.py</code> · <code>test_patrol_node_helpers.py</code>)</p>
+</main>
