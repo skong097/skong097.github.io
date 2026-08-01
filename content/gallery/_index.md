@@ -268,6 +268,25 @@ header.post-header h1 { font-size:40px; text-align:center; }
 <div class="s">다수 로봇 좌표계 정합 · 원격 기동 12초 → 0.5초</div></div></div>
 </div>
 
+<p class="gal-sub">주행 실기 <span>— 트랙 위 실제 주행</span></p>
+
+<div class="gal-grid" style="margin-top:14px">
+<div class="gal-item">
+<video src="/images/gallery/demo/차선 주행 다중 교차.mp4" controls loop muted playsinline preload="metadata"></video>
+<div class="gal-cap"><span class="n">LANE FOLLOW</span><span class="t">차선 주행 — 다중 교차 구간</span>
+<div class="s">시가지 트랙에서 교차 구간을 연속 통과. 차선이 갈라지고 겹치는 구간에서도 자기 차선을 놓치지 않는다 · 57초</div></div></div>
+
+<div class="gal-item">
+<video src="/images/gallery/demo/장애물 감지.mp4" controls loop muted playsinline preload="metadata"></video>
+<div class="gal-cap"><span class="n">OBSTACLE</span><span class="t">장애물 감지 — 선행 차량 정지</span>
+<div class="s">앞차를 인지해 추돌 전에 멈추고, 앞이 비면 다시 출발한다 · 1분 25초</div></div></div>
+
+<div class="gal-item">
+<video src="/images/gallery/demo/십자 교차로 주행.mp4" controls loop muted playsinline preload="metadata"></video>
+<div class="gal-cap"><span class="n">INTERSECTION</span><span class="t">십자 교차로 — 2대 교행</span>
+<div class="s">점선 교차로에서 두 대가 서로 다른 방향으로 진입해 통과 · 14초</div></div></div>
+</div>
+
 <p class="gal-sub">원본 화질 영상 <span>— DALIMI CONTROL 관제 화면 전체</span></p>
 
 <div class="gal-grid wide">
