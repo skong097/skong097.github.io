@@ -263,9 +263,6 @@ header.post-header h1 { font-size:40px; text-align:center; }
 <div class="gal-item"><img src="/images/gallery/demo/araseo-intersection.gif" alt="십자 교차로" loading="lazy">
 <div class="gal-cap"><span class="n">SCENE 03</span><span class="t">십자 교차로 주행</span></div></div>
 
-<div class="gal-item"><img src="/images/gallery/demo/araseo-dashboard.gif" alt="실시간 관제" loading="lazy">
-<div class="gal-cap"><span class="n">SCENE 04</span><span class="t">실시간 관제 대시보드</span>
-<div class="s">다수 로봇 좌표계 정합 · 원격 기동 12초 → 0.5초</div></div></div>
 </div>
 
 <p class="gal-sub">주행 실기 <span>— 트랙 위 실제 주행</span></p>
