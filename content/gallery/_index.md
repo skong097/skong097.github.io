@@ -83,6 +83,11 @@ header.post-header h1 { font-size:40px; text-align:center; }
 
 <div class="gal-grid tall">
 <div class="gal-item">
+<video src="/images/gallery/demo/3대 충돌제어성공.webm" controls loop muted playsinline preload="metadata"></video>
+<div class="gal-cap"><span class="n">TRAFFIC CONTROL</span><span class="t">3대 통행 중재 성공 — 전체 2분 55초</span>
+<div class="s">순찰 개시부터 로봇 3대(Pinky-44 · 50 · 87)가 좁은 복도에서 서로를 피해 가는 전 과정. 좌표가 아니라 홉 단위로 점유를 세어 중재한다 · 충돌 0 · 대기 0</div></div></div>
+
+<div class="gal-item">
 <video src="/images/gallery/demo/순찰fullcycle.webm" controls loop muted playsinline preload="metadata"></video>
 <div class="gal-cap"><span class="n">FULL CYCLE</span><span class="t">순찰 full cycle — 전체 3분 36초</span>
 <div class="s">출발 → 경유지 순회 → 이벤트 확인 → 홈 복귀까지 한 번도 끊지 않고 수행</div></div></div>
@@ -132,9 +137,9 @@ header.post-header h1 { font-size:40px; text-align:center; }
 <div class="gal-cap"><span class="n">SCENE 02</span><span class="t">1인 추종 주행</span>
 <div class="s">카메라 → LiDAR 폴백 · 목표 거리 1.5m 유지</div></div></div>
 
-<div class="gal-item"><img src="/images/gallery/demo/moca-minigame.gif" alt="미니게임" loading="lazy">
-<div class="gal-cap"><span class="n">SCENE 03</span><span class="t">미니게임 (닌자)</span>
-<div class="s">BehaviorTree 모객 시나리오 4단계 중 하나</div></div></div>
+<div class="gal-item"><img src="/images/gallery/demo/moca-reaction.gif" alt="실시간 감정에 따른 로봇 리액션" loading="lazy">
+<div class="gal-cap"><span class="n">SCENE 03</span><span class="t">실시간 감정에 따른 로봇 리액션</span>
+<div class="s">표정에서 읽은 Valence-Arousal 로 반응을 고른다 · 감정이 바뀌면 반응도 바뀐다</div></div></div>
 
 <div class="gal-item"><img src="/images/gallery/demo/moca-handshake.gif" alt="악수 · 교감" loading="lazy">
 <div class="gal-cap"><span class="n">SCENE 04</span><span class="t">악수 · 교감 HRI</span>
