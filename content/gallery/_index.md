@@ -15,10 +15,18 @@ header.post-header h1 { font-size:40px; text-align:center; }
 .gal-intro { text-align:center; color:var(--secondary); margin:0 auto 2.4rem; max-width:640px; line-height:1.7; }
 
 .gal-sec { margin:0 0 3.2rem; scroll-margin-top:80px; }
-.gal-sec h2 { font-size:22px; margin:0 0 .3rem; display:flex; align-items:center; gap:.5rem; }
+.gal-sec h2 { font-size:21px; margin:0 0 .55rem; display:inline-flex; flex-wrap:wrap;
+  align-items:center; gap:.55rem; color:#fff; padding:.44rem .9rem; border-radius:9px;
+  line-height:1.35; }
 .gal-sec h2 .tag { font-size:11px; font-weight:600; letter-spacing:.06em; padding:3px 9px; border-radius:99px;
-  background:var(--code-bg); color:var(--secondary); text-transform:uppercase; }
+  background:rgba(255,255,255,.2); color:#fff; text-transform:uppercase; }
 .gal-sec .desc { color:var(--secondary); font-size:14px; margin:0 0 1.2rem; line-height:1.6; }
+
+/* 프로젝트별 제목 배경색 — 포트폴리오 PPT 강조색과 동일 */
+#wasab    h2 { background:#0F766E; }   /* WaSaB */
+#moca     h2 { background:#6B4FE0; }   /* MOCA */
+#araseo   h2 { background:#2563EB; }   /* ARASEO · DALIMI */
+#homecare h2 { background:#0E7C7B; }   /* 홈케어링 */
 
 .gal-grid { display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); }
 .gal-grid.wide { grid-template-columns:1fr; }
