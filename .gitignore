@@ -10,3 +10,6 @@ Thumbs.db
 setup_covers.py
 covers/
 scripts/kb_radar/collect.log
+
+# KB Radar cron 실행 로그
+scripts/kb_radar/cron.log
