@@ -25,6 +25,7 @@ header.post-header h1 { font-size:40px; text-align:center; }
 
 .gal-item { background:var(--entry); border-radius:10px; overflow:hidden; border:1px solid rgba(128,128,128,.18); }
 .gal-item img { width:100%; height:auto; display:block; }
+.gal-item video { width:100%; height:auto; display:block; background:#111; }
 .gal-cap { padding:9px 12px 11px; }
 .gal-cap .n { font-size:10px; font-weight:700; letter-spacing:.08em; color:#c8a24a; display:block; margin-bottom:2px; }
 .gal-cap .t { font-size:13px; font-weight:600; line-height:1.4; }
@@ -153,13 +154,18 @@ header.post-header h1 { font-size:40px; text-align:center; }
 <div class="gal-item"><img src="/images/gallery/demo/homecare-pose.gif" alt="Pose 스켈레톤 추정" loading="lazy">
 <div class="gal-cap"><span class="n">SCENE 01</span><span class="t">Pose 스켈레톤 추정</span>
 <div class="s">YOLO v11 Pose — 17 keypoint</div></div></div>
+</div>
 
-<div class="gal-item"><img src="/images/gallery/demo/homecare-normal.gif" alt="정상 활동" loading="lazy">
-<div class="gal-cap"><span class="n">SCENE 02</span><span class="t">정상 활동 — [OK] Normal</span></div></div>
+<div class="gal-grid wide" style="margin-top:14px">
+<div class="gal-item">
+<video src="/images/gallery/demo/homecare-fall-detection.mp4" controls loop muted playsinline preload="metadata"></video>
+<div class="gal-cap"><span class="n">SCENE 02</span><span class="t">낙상 실시간 감지 — 관제 화면 전체</span>
+<div class="s">쓰러짐 발생 → ST-GCN 판정 <code>[FALL]</code> Confidence 100% → 이벤트 로그 적재 · 보호자 호출까지 한 화면. 56초<br>ST-GCN Fine-tuned 정확도 99.63% · Recall 99.40%</div></div></div>
 
-<div class="gal-item"><img src="/images/gallery/demo/homecare-fall.gif" alt="낙상 감지" loading="lazy">
-<div class="gal-cap"><span class="n">SCENE 03</span><span class="t">낙상 순간 — [FALL] 감지</span>
-<div class="s">ST-GCN Fine-tuned 정확도 99.63% · Recall 99.40%</div></div></div>
+<div class="gal-item">
+<video src="/images/gallery/demo/homecare-normal-activity.mp4" controls loop muted playsinline preload="metadata"></video>
+<div class="gal-cap"><span class="n">SCENE 03</span><span class="t">정상 활동 — 오탐 없음 구간</span>
+<div class="s">앉기·눕기·보행 등 낙상과 혼동되기 쉬운 자세를 2분 11초 연속 판정. 전 구간 <code>Normal</code> 유지로 오탐(False Positive) 억제를 확인.</div></div></div>
 </div>
 
 <p class="desc" style="margin-top:1rem">
