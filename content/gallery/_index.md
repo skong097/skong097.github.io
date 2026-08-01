@@ -324,8 +324,8 @@ header.post-header h1 { font-size:40px; text-align:center; }
 <div class="gal-grid wide" style="margin-top:14px">
 <div class="gal-item">
 <video src="/images/gallery/demo/정상활동.mp4" controls loop muted playsinline preload="metadata"></video>
-<div class="gal-cap"><span class="n">SCENE 02</span><span class="t">정상 활동 — [OK] Normal</span>
-<div class="s">앉기·눕기·보행 등 낙상과 혼동되기 쉬운 자세를 2분 11초 연속 판정. 전 구간 <code>Normal</code> 유지로 오탐(False Positive) 억제를 확인.</div></div></div>
+<div class="gal-cap"><span class="n">SCENE 02</span><span class="t">정상 활동 → 낙상 — 무편집 2분 11초</span>
+<div class="s">앞 1분은 서기·걷기·앉기를 <code>[OK] Normal</code> 로 유지해 오탐(False Positive)이 없음을 보이고, 62초 지점의 실제 쓰러짐부터 <code>[DANGER] Fallen</code> 으로 넘어간다. 구간을 자르지 않고 한 번에 담았다.</div></div></div>
 
 <div class="gal-item">
 <video src="/images/gallery/demo/낙상탐지.mp4" controls loop muted playsinline preload="metadata"></video>
