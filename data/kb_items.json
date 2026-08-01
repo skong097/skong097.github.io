@@ -1,5 +1,5 @@
 {
-  "last_collected": "2026-06-14",
+  "last_collected": "2026-08-01",
   "items": [
     {
       "id": "53673799b9f54a3e84b549e5eeea2aa1319374e2",
@@ -12,7 +12,7 @@
       "published": "2026-06-01",
       "collected": "2026-06-06",
       "url": "https://arxiv.org/abs/2606.02800",
-      "archived": false
+      "archived": true
     },
     {
       "id": "0c7c0ecaedd66be51b67aa004a504907134bde3d",
@@ -25,7 +25,7 @@
       "published": "2026-06-02",
       "collected": "2026-06-06",
       "url": "https://arxiv.org/abs/2606.04106",
-      "archived": false
+      "archived": true
     },
     {
       "id": "4d97c047414f0a99152aaaed42a46fa5e8108c4f",
@@ -38,7 +38,7 @@
       "published": "2026-05-26",
       "collected": "2026-06-06",
       "url": "https://arxiv.org/abs/2605.26820",
-      "archived": false
+      "archived": true
     },
     {
       "id": "056b8b20ca49db6162712c29867db790404c3272",
@@ -51,7 +51,7 @@
       "published": "2026-05-29",
       "collected": "2026-06-06",
       "url": "https://arxiv.org/abs/2605.30280",
-      "archived": false
+      "archived": true
     },
     {
       "id": "76ff77a25b36937378749072c6932ba6d3ec57fb",
@@ -64,7 +64,7 @@
       "published": "2026-06-01",
       "collected": "2026-06-06",
       "url": "https://www.prnewswire.com/news-releases/sharpa-brings-dexterous-tactile-manipulation-to-the-nvidia-isaac-gr00t-reference-humanoid-robot-302787201.html",
-      "archived": false
+      "archived": true
     },
     {
       "id": "3f750df280cda38e33bcc2c4d3911ad1d0e80aaf",
@@ -77,7 +77,7 @@
       "published": "2026-05-13",
       "collected": "2026-06-06",
       "url": "https://www.globenewswire.com/news-release/2026/05/13/3293694/0/en/embodied-ai-robot-large-model-including-vla-research-report-2026-world-models-are-about-to-become-standard-and-oems-enter-and-accelerate-mass-production-and-application.html",
-      "archived": false
+      "archived": true
     },
     {
       "id": "a7de2a39e860034a7006517bd0c679764821a4a2",
@@ -90,7 +90,7 @@
       "published": "2026-03-09",
       "collected": "2026-06-06",
       "url": "https://arxiv.org/abs/2603.08122",
-      "archived": false
+      "archived": true
     },
     {
       "id": "710a904740eb72727edc2d889d37267385631c53",
@@ -103,7 +103,7 @@
       "published": "2026-03-12",
       "collected": "2026-06-06",
       "url": "https://arxiv.org/abs/2603.12260",
-      "archived": false
+      "archived": true
     },
     {
       "id": "3d1ecec3f60ddbe4eb36b37622a424848fdfe88c",
@@ -116,7 +116,7 @@
       "published": "2026-02-18",
       "collected": "2026-06-06",
       "url": "https://arxiv.org/abs/2602.16710",
-      "archived": false
+      "archived": true
     },
     {
       "id": "02b21882b34ef019721c14cec66fafbdd2cd121c",
@@ -129,7 +129,7 @@
       "published": "2026-05-31",
       "collected": "2026-06-06",
       "url": "https://nvidianews.nvidia.com/news/nvidia-open-humanoid-robot-reference-design",
-      "archived": false
+      "archived": true
     },
     {
       "id": "c00207c1d5407af99950c533f45a11898a3052e9",
@@ -142,7 +142,7 @@
       "published": "2026-05-14",
       "collected": "2026-06-06",
       "url": "https://www.artificialintelligence-news.com/news/physical-ai-humanoid-robots-factories/",
-      "archived": false
+      "archived": true
     },
     {
       "id": "d06858ecd84a2d996e7037acc445a9341c9b468e",
@@ -155,7 +155,7 @@
       "published": "2025-12-05",
       "collected": "2026-06-06",
       "url": "https://www.youtube.com/watch?v=o78yp8ZBTYw",
-      "archived": false
+      "archived": true
     },
     {
       "id": "c2e0091a6ce3ebe62950e38b16b5b6c69ba1ae88",
@@ -168,7 +168,7 @@
       "published": "2026-01-16",
       "collected": "2026-06-06",
       "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12846292/",
-      "archived": false
+      "archived": true
     },
     {
       "id": "aa020feda65b883cc566382aeac9534b28af2a65",
@@ -181,7 +181,7 @@
       "published": "2026-05-18",
       "collected": "2026-06-06",
       "url": "https://arxiv.org/abs/2605.18045",
-      "archived": false
+      "archived": true
     },
     {
       "id": "f03a776f5df5b0d4084449bc4ab4801de58acedb",
@@ -194,7 +194,7 @@
       "published": "2026-04-21",
       "collected": "2026-06-06",
       "url": "https://arxiv.org/abs/2605.17264",
-      "archived": false
+      "archived": true
     },
     {
       "id": "8f505f3637c67be35211963ad44abcc58cd29145",
@@ -207,7 +207,7 @@
       "published": "2025-10-23",
       "collected": "2026-06-06",
       "url": "https://ekumenlabs.com/blog/posts/deep-dive-into-openrmf/",
-      "archived": false
+      "archived": true
     },
     {
       "id": "cb57547d7ef5cbe87647ee8019b81eb168f3e095",
@@ -220,7 +220,7 @@
       "published": "2025-10-28",
       "collected": "2026-06-06",
       "url": "https://vimeo.com/1136164030",
-      "archived": false
+      "archived": true
     },
     {
       "id": "d391a0d88fa4763fb390415a244969dbcaa27af9",
@@ -233,7 +233,7 @@
       "published": "2026-05-04",
       "collected": "2026-06-06",
       "url": "https://arxiv.org/abs/2605.02801",
-      "archived": false
+      "archived": true
     },
     {
       "id": "3d378b9eef7099c59bfe9beaf6a8bc7d1d352e3f",
@@ -246,7 +246,7 @@
       "published": "2026-03-25",
       "collected": "2026-06-06",
       "url": "https://arxiv.org/abs/2603.22386",
-      "archived": false
+      "archived": true
     },
     {
       "id": "82b9a0e1b5736a6b1e906563c4b22cf3dc63f9f1",
@@ -259,7 +259,7 @@
       "published": "2026-05-14",
       "collected": "2026-06-06",
       "url": "https://opensource.microsoft.com/blog/2026/05/14/conductor-deterministic-orchestration-for-multi-agent-ai-workflows/",
-      "archived": false
+      "archived": true
     },
     {
       "id": "9e74ce2675e3138874fdef558df0265c9e7ded40",
@@ -272,7 +272,7 @@
       "published": "2026-01-19",
       "collected": "2026-06-06",
       "url": "https://arxiv.org/abs/2601.12882",
-      "archived": false
+      "archived": true
     },
     {
       "id": "c943c1942bb211880d9b8d211b19efdf1f452311",
@@ -285,7 +285,7 @@
       "published": "2026-06-02",
       "collected": "2026-06-06",
       "url": "https://arxiv.org/abs/2606.03490",
-      "archived": false
+      "archived": true
     },
     {
       "id": "b496ce4f819d62fa753cb5c418b7e1945dc028e3",
@@ -298,7 +298,7 @@
       "published": "2026-01-14",
       "collected": "2026-06-06",
       "url": "https://blog.roboflow.com/yolo26/",
-      "archived": false
+      "archived": true
     },
     {
       "id": "df21bbfc7852e0d94ec7433e23722de726512b6b",
@@ -311,7 +311,7 @@
       "published": "2026-05-04",
       "collected": "2026-06-06",
       "url": "https://arxiv.org/abs/2605.02834",
-      "archived": false
+      "archived": true
     },
     {
       "id": "f2082b4a397eda05c34f33dbb7ed09066c3e959d",
@@ -324,7 +324,7 @@
       "published": "2026-06-04",
       "collected": "2026-06-07",
       "url": "https://arxiv.org/abs/2606.06491",
-      "archived": false
+      "archived": true
     },
     {
       "id": "f3075dde6e3504bbed551b42e44e91172a76a72a",
@@ -337,7 +337,7 @@
       "published": "2026-06-01",
       "collected": "2026-06-07",
       "url": "https://arxiv.org/abs/2606.02486",
-      "archived": false
+      "archived": true
     },
     {
       "id": "80d404db4ca937758789bff48d25b81409791832",
@@ -350,7 +350,7 @@
       "published": "2026-05-18",
       "collected": "2026-06-07",
       "url": "https://arxiv.org/abs/2606.00054",
-      "archived": false
+      "archived": true
     },
     {
       "id": "98987eabe52af8a7699b959d6ef7ec306894ef4a",
@@ -363,7 +363,7 @@
       "published": "2026-05-06",
       "collected": "2026-06-07",
       "url": "https://www.foxnews.com/tech/new-ai-brain-lets-robots-move-like-humans",
-      "archived": false
+      "archived": true
     },
     {
       "id": "1bf67b8a661aa058230bbf60df24f7ce2f0e50a5",
@@ -376,7 +376,7 @@
       "published": "2026-03-30",
       "collected": "2026-06-07",
       "url": "https://arxiv.org/abs/2603.28271",
-      "archived": false
+      "archived": true
     },
     {
       "id": "fcd49be1a75d88c28384baf9024edc7d9da29f83",
@@ -389,7 +389,7 @@
       "published": "2026-03-16",
       "collected": "2026-06-07",
       "url": "https://arxiv.org/abs/2603.15359",
-      "archived": false
+      "archived": true
     },
     {
       "id": "b6ce46883cf9bcca9d1eda01d7ad4b91ee6067cd",
@@ -402,7 +402,7 @@
       "published": "2026-06-02",
       "collected": "2026-06-07",
       "url": "https://arxiv.org/abs/2606.03115",
-      "archived": false
+      "archived": true
     },
     {
       "id": "b45cef0350487526019bab6dff93907254ca4ff7",
@@ -415,7 +415,7 @@
       "published": "2026-04-13",
       "collected": "2026-06-07",
       "url": "https://arxiv.org/abs/2604.11378",
-      "archived": false
+      "archived": true
     },
     {
       "id": "195c633e7bbab550f1751656e071d4bb9373cc81",
@@ -428,7 +428,7 @@
       "published": "2026-02-26",
       "collected": "2026-06-07",
       "url": "https://arxiv.org/abs/2602.22808",
-      "archived": false
+      "archived": true
     },
     {
       "id": "47419e21e34408635574c1f019b81eee4a0b4181",
@@ -441,7 +441,7 @@
       "published": "2026-06-01",
       "collected": "2026-06-07",
       "url": "https://blog.jetbrains.com/pycharm/2026/06/top-agentic-frameworks-for-building-applications-2026/",
-      "archived": false
+      "archived": true
     },
     {
       "id": "670e8901b39d2235b4b9801f41fe03022e7016ae",
@@ -454,7 +454,7 @@
       "published": "2026-06-02",
       "collected": "2026-06-07",
       "url": "https://arxiv.org/abs/2606.03748",
-      "archived": false
+      "archived": true
     },
     {
       "id": "00132bfa99dbe59a55da637373786fdf2380b2b0",
@@ -467,7 +467,7 @@
       "published": "2026-06-03",
       "collected": "2026-06-07",
       "url": "https://arxiv.org/abs/2606.04345",
-      "archived": false
+      "archived": true
     },
     {
       "id": "cb63c66b5774533cee1f42a887cdd7abfe8eac70",
@@ -480,7 +480,7 @@
       "published": "2026-06-01",
       "collected": "2026-06-07",
       "url": "https://arxiv.org/abs/2606.02522",
-      "archived": false
+      "archived": true
     },
     {
       "id": "24984d8d5d0f0081f7bab7e788321d6a98cd21ac",
@@ -493,7 +493,7 @@
       "published": "2026-04-13",
       "collected": "2026-06-14",
       "url": "https://arxiv.org/abs/2604.12034",
-      "archived": false
+      "archived": true
     },
     {
       "id": "730437bc091e19f01cca5b51fe577c055648f6df",
@@ -506,7 +506,7 @@
       "published": "2026-02-12",
       "collected": "2026-06-14",
       "url": "http://karpathy.github.io/2026/02/12/microgpt/",
-      "archived": false
+      "archived": true
     },
     {
       "id": "e47c2055302165630dae394b05e0a9f9c6476222",
@@ -519,7 +519,7 @@
       "published": "2026-06-08",
       "collected": "2026-06-14",
       "url": "https://github.com/nashsu/llm_wiki",
-      "archived": false
+      "archived": true
     },
     {
       "id": "52411bbba20b5a0ac41679b1691d79d0c1887c0d",
@@ -532,7 +532,7 @@
       "published": "2026-05-08",
       "collected": "2026-06-14",
       "url": "https://www.promptquorum.com/power-local-llm/local-llm-with-obsidian-2026",
-      "archived": false
+      "archived": true
     },
     {
       "id": "3a5f4d3873c7cd30967c6f5d59456eb47a56796a",
@@ -545,7 +545,7 @@
       "published": "",
       "collected": "2026-06-14",
       "url": "https://www.youtube.com/watch?v=cVte1z4dy6Q",
-      "archived": false
+      "archived": true
     },
     {
       "id": "f7adba82ffc46acb3248e6d35a3fad15d37e8d0e",
@@ -558,7 +558,7 @@
       "published": "2026-05-21",
       "collected": "2026-06-13",
       "url": "https://arxiv.org/abs/2605.22183",
-      "archived": false
+      "archived": true
     },
     {
       "id": "ea58866e757d82f42900c20817409d6d6f452409",
@@ -571,7 +571,7 @@
       "published": "2026-06-04",
       "collected": "2026-06-13",
       "url": "https://arxiv.org/abs/2606.06556",
-      "archived": false
+      "archived": true
     },
     {
       "id": "e09c86b1231526c08758f7fab79e0568b2832c7c",
@@ -584,7 +584,7 @@
       "published": "2026-06-08",
       "collected": "2026-06-13",
       "url": "https://digg.com/ai/m1bi0k06",
-      "archived": false
+      "archived": true
     },
     {
       "id": "35d2111ade9d3be9ecd6217beea29cd3b3750438",
@@ -597,7 +597,7 @@
       "published": "2026-06-03",
       "collected": "2026-06-13",
       "url": "https://3d-llm-vla.github.io/",
-      "archived": false
+      "archived": true
     },
     {
       "id": "62bc72a18618d2246cac4353253356a991d195e3",
@@ -610,7 +610,7 @@
       "published": "2026-04-09",
       "collected": "2026-06-13",
       "url": "https://arxiv.org/abs/2604.08009",
-      "archived": false
+      "archived": true
     },
     {
       "id": "234d131d7df7309592507c87dc3edc75c709bd05",
@@ -623,7 +623,7 @@
       "published": "2026-02-01",
       "collected": "2026-06-13",
       "url": "https://arxiv.org/abs/2602.01226",
-      "archived": false
+      "archived": true
     },
     {
       "id": "cc088f75e828012f8b7e225048695ad43fc06d08",
@@ -636,7 +636,7 @@
       "published": "2026-05-22",
       "collected": "2026-06-13",
       "url": "https://discourse.openrobotics.org/t/ros-2-lyrical-luth-released/55021",
-      "archived": false
+      "archived": true
     },
     {
       "id": "05492931143651899cb56eae6b8a9bf72f1af577",
@@ -649,7 +649,7 @@
       "published": "2026-05-07",
       "collected": "2026-06-13",
       "url": "https://aegisai.in/ai-in-robotics-complete-2026-guide-edge-ai-ros2-autonomous-systems/",
-      "archived": false
+      "archived": true
     },
     {
       "id": "3c7455632161d1dc296d310afbc61d175267e3ab",
@@ -662,7 +662,7 @@
       "published": "2026-05-27",
       "collected": "2026-06-13",
       "url": "https://arxiv.org/html/2605.27898v1",
-      "archived": false
+      "archived": true
     },
     {
       "id": "d5dd01360c56aec401a1e40bf0ff64fddbb1e08c",
@@ -675,7 +675,7 @@
       "published": "2026-05-19",
       "collected": "2026-06-13",
       "url": "https://arxiv.org/html/2605.19337v1",
-      "archived": false
+      "archived": true
     },
     {
       "id": "d39fdf563cbfd44a850019acb6d17e0600a778d7",
@@ -688,7 +688,7 @@
       "published": "",
       "collected": "2026-06-13",
       "url": "https://www.innoflexion.com/blog/multi-agent-orchestration-enterprise-genai-2026",
-      "archived": false
+      "archived": true
     },
     {
       "id": "6375b455e10292c92fd7b28e0aa95700fd44a5dc",
@@ -701,7 +701,7 @@
       "published": "2026-03-07",
       "collected": "2026-06-13",
       "url": "https://arxiv.org/abs/2603.07022",
-      "archived": false
+      "archived": true
     },
     {
       "id": "26df85f573afa1ea1b71d6317ec54d863d91d57a",
@@ -714,7 +714,7 @@
       "published": "2026-01-29",
       "collected": "2026-06-13",
       "url": "https://arxiv.org/abs/2602.00168",
-      "archived": false
+      "archived": true
     },
     {
       "id": "f3b0e91fb0bd9ac30752d97334c546c3f646ccda",
@@ -727,7 +727,7 @@
       "published": "2026-02-22",
       "collected": "2026-06-13",
       "url": "https://datature.io/blog/yolo26-the-edge-first-evolution-of-real-time-object-detection",
-      "archived": false
+      "archived": true
     },
     {
       "id": "4d4acde32db6b301786da22598aeea49cf7333bf",
@@ -740,6 +740,422 @@
       "published": "2026-04-29",
       "collected": "2026-06-13",
       "url": "https://www.youtube.com/watch?v=FNnI-GwlHKo",
+      "archived": true
+    },
+    {
+      "id": "d27c1bb3efa9428f8ca6f7f84fbc340d67cfdf50",
+      "group": "isaac-sim",
+      "category": "paper",
+      "title": "NVIDIA Isaac Sim: Enabling Scalable, GPU-Accelerated Simulation for Robotics",
+      "summary": "Isaac Sim을 시스템·응용 두 관점에서 정리한 서베이 논문이다. GPU 가속 기반 대규모 병렬 학습과 물리 모델링, 합성 데이터 생성 파이프라인의 구조를 설명하고 다른 시뮬레이터와 비교한다. 다섯 개 주요 응용 분야의 대표 연구를 분석해 공통 사용 패턴과 한계를 정리하고, 오픈월드 학습·사용성 개선을 향후 과제로 제시한다.",
+      "source": "arXiv",
+      "authors": "Sicong Gao, Maurice Pagnucco, Tomasz Bednarz, Yang Song",
+      "published": "2026-06-02",
+      "collected": "2026-08-01",
+      "url": "https://arxiv.org/abs/2606.03551",
+      "archived": false
+    },
+    {
+      "id": "eee0d2c2600fe34f30d469eda75ef15915dcbdbf",
+      "group": "isaac-sim",
+      "category": "article",
+      "title": "Isaac Sim 6.0 Early Developer Release 공지",
+      "summary": "Isaac Sim 6.0의 오픈소스 얼리 개발자 릴리스가 공개됐다. PhysX와 Newton 두 물리 백엔드를 함께 지원하고, Warp 기반 Core Experimental API가 기존 PyTorch 기반 API를 대체하며 URDF/MJCF 임포터가 USD Exchange SDK 위에 재작성됐다. ROS 2 Jazzy 네이티브 소싱과 Python 3.12 지원, H.264 압축 RGB 퍼블리싱, RTX LiDAR 메타데이터의 PointCloud2 포함, Robot Inspector·Robot Poser 등 로봇 저작 도구가 추가됐다.",
+      "source": "GitHub",
+      "authors": "",
+      "published": "2026-03-16",
+      "collected": "2026-08-01",
+      "url": "https://github.com/isaac-sim/IsaacSim/discussions/538",
+      "archived": false
+    },
+    {
+      "id": "826b86ee70bfac254efc48dda973236d20654af8",
+      "group": "isaac-sim",
+      "category": "article",
+      "title": "Newton Adds Contact-Rich Manipulation and Locomotion Capabilities for Industrial Robotics",
+      "summary": "GPU 가속 오픈소스 물리 엔진 Newton 1.0 GA가 GTC 2026에서 공개됐다. Warp와 OpenUSD 위에 구축돼 접촉이 많은 조작과 보행, 변형체 시뮬레이션을 다룬다. Isaac Lab에서는 태스크 정의와 PPO 학습 루프를 그대로 둔 채 물리 백엔드만 교체해 동일 환경을 여러 엔진에서 검증할 수 있고, Isaac Sim 6.0과는 OpenUSD를 공통 데이터 계층으로 연동된다.",
+      "source": "NVIDIA Technical Blog",
+      "authors": "",
+      "published": "2026-03-16",
+      "collected": "2026-08-01",
+      "url": "https://developer.nvidia.com/blog/newton-adds-contact-rich-manipulation-and-locomotion-capabilities-for-industrial-robotics/",
+      "archived": false
+    },
+    {
+      "id": "c641c48d91389c46689039339f96d2cfcbb9753f",
+      "group": "isaac-sim",
+      "category": "article",
+      "title": "Develop Humanoid Robot Policies End-to-End with NVIDIA Isaac GR00T",
+      "summary": "휴머노이드 정책 개발을 시뮬레이션부터 실기 배포까지 하나로 묶는 Isaac GR00T 플랫폼을 소개한다. Isaac Lab-Arena가 데이터 생성·정책 학습·평가용 시뮬레이션 환경 구성과 배포 전 정책 검증을 담당하고, 그 아래에서 Isaac Sim이 시뮬레이션 엔진 역할을 한다. GR00T 1.7은 실제 사람 시연 약 32,000시간과 시뮬레이션 8,000시간으로 사전학습한 VLA 모델이다.",
+      "source": "NVIDIA Technical Blog",
+      "authors": "",
+      "published": "2026-07-07",
+      "collected": "2026-08-01",
+      "url": "https://developer.nvidia.com/blog/develop-humanoid-robot-policies-end-to-end-with-nvidia-isaac-gr00t/",
+      "archived": false
+    },
+    {
+      "id": "8f2b11ec3cc6b12d7136b0b898a9ec5c64cb352a",
+      "group": "isaac-sim",
+      "category": "article",
+      "title": "국내 교육 재단, Isaac Sim 기반 고교생 로봇 시뮬레이션 대회 개최",
+      "summary": "국내 한 교육 재단이 NVIDIA Isaac Sim을 활용한 고교생 대상 로봇 시뮬레이션 대회를 연다고 발표했다. 고가 장비 없이 일반 노트북만으로 로봇 제어와 시뮬레이션을 실습할 수 있게 단계별 가이드북과 AI 학습 튜터, 교사용 지도서를 제공한다. 10월 예선은 안정적 보행 미션, 본선은 장애물 회피 AI 미션으로 진행되며 학생 연구데이터는 오픈소스로 공개된다.",
+      "source": "뉴스핌",
+      "authors": "",
+      "published": "2026-07-16",
+      "collected": "2026-08-01",
+      "url": "https://www.newspim.com/news/view/20260716000621",
+      "archived": false
+    },
+    {
+      "id": "9b5cdf17a333460df453743c016af6ec7121b101",
+      "group": "isaac-sim",
+      "category": "article",
+      "title": "Isaac Sim 기반 모바일 매니퓰레이터 VR 원격조작 기술 공개",
+      "summary": "국내 한 로봇 기업이 Isaac Sim 안에서 모바일 매니퓰레이터를 VR로 직접 조작하는 기술과 오픈소스 코드를 공개했다. 실제 로봇의 제어 환경을 재현하기 위해 ROS 2 기반 DDS 브리지를 자체 개발했고, 주방·테이블·창고 등 여러 가상 작업 공간을 제공한다. 수집한 조작 데이터는 모방학습과 VLA 모델 개발에 쓰여, 실물 하드웨어 없이 대규모 학습 데이터를 만드는 것이 목적이다.",
+      "source": "로봇신문",
+      "authors": "",
+      "published": "2026-06-05",
+      "collected": "2026-08-01",
+      "url": "https://www.irobotnews.com/news/articleView.html?idxno=46726",
+      "archived": false
+    },
+    {
+      "id": "0092ed519ac47df2147b1391a9a8ccf48cc6493d",
+      "group": "isaac-sim",
+      "category": "article",
+      "title": "Build and Orchestrate End-to-End SDG Workflows with NVIDIA Isaac Sim and NVIDIA OSMO",
+      "summary": "Isaac Sim에서 합성 데이터 생성(SDG) 파이프라인을 클라우드 규모로 구성하는 방법을 다룬 기술 문서다. Omniverse NuRec로 실제 센서 데이터에서 3D 환경을 복원하고 SimReady 에셋으로 씬을 구성한 뒤, MobilityGen으로 점유 격자와 로봇 궤적·센서 데이터를 기록한다. 생성된 데이터는 Cosmos Transfer로 시각적 변형을 더해 sim-to-real 격차를 줄이고, OSMO가 다단계 파이프라인의 실행·모니터링을 담당한다.",
+      "source": "NVIDIA Technical Blog",
+      "authors": "",
+      "published": "2026-01-07",
+      "collected": "2026-08-01",
+      "url": "https://developer.nvidia.com/blog/build-synthetic-data-pipelines-to-train-smarter-robots-with-nvidia-isaac-sim/",
+      "archived": false
+    },
+    {
+      "id": "4f3d208eaf380164a640f3cc205205408caee4f3",
+      "group": "isaac-sim",
+      "category": "article",
+      "title": "Isaac Lab in 2026: A Practical Guide to Training Robot Policies at GPU Scale",
+      "summary": "Isaac Sim 위에 얹히는 학습 계층으로서 Isaac Lab의 구조와 실무 워크플로를 정리한 가이드다. 환경 정의·로봇 에셋·강화학습 라이브러리 연동을 설명하고, GPU에서 다수 환경을 동시에 돌려 CPU 기반보다 빠르게 정책을 학습하는 방식을 다룬다. sim-to-real 전이에는 표적화된 도메인 랜덤화, 시뮬레이션의 전체 상태를 활용하는 비대칭 학습, 하드웨어를 고려한 보상 설계, 분포별 체계적 평가가 필요하다고 정리한다.",
+      "source": "Awesome Robots",
+      "authors": "Bob Jiang",
+      "published": "2026-03-11",
+      "collected": "2026-08-01",
+      "url": "https://www.awesomerobots.xyz/blog/isaac-lab-gpu-simulation-robot-learning-2026",
+      "archived": false
+    },
+    {
+      "id": "2e3987cc6221907df97a21388aedb77f40562bad",
+      "group": "physical-ai",
+      "category": "paper",
+      "title": "Vision Language Action (VLA) Models for Unmanned Aerial Robotics and Bimanual Manipulation: A Review",
+      "summary": "2017~2026년 사이 VLA 연구 183편을 아키텍처·학습 레시피·행동 표현·양팔 협응·UAV 항법·언어 접지·메모리/월드모델 등 7개 축으로 정리한 리뷰 논문이다. 저자들은 양팔 조작에서 개발된 기법이 무인항공기 제어로도 전이된다는 점을 정리하고, 두 도메인에 걸친 14개 후속 연구 방향을 제시한다.",
+      "source": "arXiv",
+      "authors": "Inkyu Sa, Chanoh Park, Hea-Min Lee, Donghee Noh, Ho Seok Ahn",
+      "published": "2026-07-07",
+      "collected": "2026-08-01",
+      "url": "https://arxiv.org/abs/2607.06706",
+      "archived": false
+    },
+    {
+      "id": "c6d0cb462df6c3c12193ac10a98843f8f6c495d3",
+      "group": "physical-ai",
+      "category": "paper",
+      "title": "TurboVLA: Real-Time Vision-Language-Action Model at 32 Hz on an RTX 4090 with <1 GB VRAM",
+      "summary": "LLM을 중심에 두는 기존 VLA 구조 대신 시각·언어를 각각 인코딩한 뒤 경량 상호작용 모듈로 결합하는 직접 매핑(V + L → A) 방식을 제안한다. 파라미터 0.2B로 LIBERO 벤치마크 평균 성공률 97.7%, 추론 지연 31.2ms, VRAM 0.9GB를 보고해 소비자용 RTX 4090에서 실시간 동작을 시연했다.",
+      "source": "arXiv",
+      "authors": "Hengyi Xie, Chenfei Yao, Xianjin Wu 외",
+      "published": "2026-07-29",
+      "collected": "2026-08-01",
+      "url": "https://arxiv.org/abs/2607.27205",
+      "archived": false
+    },
+    {
+      "id": "70aaa5da7ad24fdbe6372339e7586e49c6c58a71",
+      "group": "physical-ai",
+      "category": "paper",
+      "title": "Training-Free Acceleration for Vision-Language-Action Models with Action Caching and Refinement",
+      "summary": "플로우 매칭 기반 VLA 모델의 추론 병목을 학습 없이 줄이기 위해 과거 중간 행동을 재사용하는 외부 캐시 ActionCache를 제안한다. 멀티모달 키로 유사 문맥을 검색해 재사용하며, pi-0.5와 GR00T-N1.6에서 각각 최대 11.75배·34.43배 가속을 보고했다.",
+      "source": "arXiv",
+      "authors": "Ryuji Oi, Hikari Otsuka, Kosuke Matsushima 외",
+      "published": "2026-07-07",
+      "collected": "2026-08-01",
+      "url": "https://arxiv.org/abs/2607.06370",
+      "archived": false
+    },
+    {
+      "id": "4aaf5abe486da64ae020e06f6605b273b63f0331",
+      "group": "physical-ai",
+      "category": "paper",
+      "title": "A Tutorial on World Models and Physical AI",
+      "summary": "월드 모델을 예측·계획 능력의 기반으로 보고, 구조화된 동역학을 명시적으로 학습하는 방식과 표현 안에 예측 정보를 암묵적으로 담는 방식을 구분해 정리한 튜토리얼이다. 두 접근이 로보틱스 등 피지컬 AI에서 어떻게 상호보완되는지와, 계층적 추론·장기 계획에 남은 과제를 함께 다룬다.",
+      "source": "arXiv",
+      "authors": "Il-Seok Oh",
+      "published": "2026-06-11",
+      "collected": "2026-08-01",
+      "url": "https://arxiv.org/abs/2606.12783",
+      "archived": false
+    },
+    {
+      "id": "23fe0ee9b4681a6a163b3bb5a0f43db22c1c28ae",
+      "group": "physical-ai",
+      "category": "article",
+      "title": "World Foundation Models and the Oversight of Physical AI",
+      "summary": "로봇·자율주행처럼 물리 세계와 상호작용하는 AI는 오류가 사람이 검토하기 전에 곧바로 움직임으로 바뀌기 때문에 전 생애주기 감독이 필요하다고 주장하는 스탠퍼드 로스쿨 CodeX 기고문이다. 학습·하드웨어 통합·배포 단계별로 위험을 식별하고 여러 조직에 걸친 책임 소재를 명확히 하는 'AI Life Cycle Core Principles' 프레임워크를 제시한다.",
+      "source": "Stanford Law School CodeX",
+      "authors": "Eran Kahana",
+      "published": "2026-07-28",
+      "collected": "2026-08-01",
+      "url": "https://law.stanford.edu/2026/07/28/world-foundation-models-and-the-oversight-of-physical-ai/",
+      "archived": false
+    },
+    {
+      "id": "0a203f5697156fb9bf18e9329f15e160d62a9642",
+      "group": "physical-ai",
+      "category": "article",
+      "title": "USC, RSS 2026에서 휴머노이드·로봇 학습·3D 조작 연구 3편 발표",
+      "summary": "시드니에서 열린 RSS 2026에서 USC 연구진이 인간 영상 데이터와 로봇 데이터를 결합해 조작 기술을 학습하는 파운데이션 모델 Psi-0를 발표했다. 성공뿐 아니라 실패에서도 학습하도록 하는 보상 모델 Robometer와, 물체 삽입·서랍 열기 같은 정밀 조작을 위한 3D 시각 프레임워크 CLAMP도 함께 공개했다.",
+      "source": "USC Viterbi School of Engineering",
+      "authors": "",
+      "published": "2026-07-15",
+      "collected": "2026-08-01",
+      "url": "https://viterbischool.usc.edu/news/2026/07/usc-advances-humanoid-robotics-robot-learning-and-3d-manipulation-at-rss-2026/",
+      "archived": false
+    },
+    {
+      "id": "9f05b6961f60010fc287aef59cec9ef23ef178cb",
+      "group": "ros2-robotics",
+      "category": "paper",
+      "title": "The Three Dimensions of ROS 2 Middleware",
+      "summary": "ROS 2 미들웨어를 공간(Space)·시간(Time)·상태(State) 세 축으로 나누어 구조적 한계를 분석한 서베이다. DDS와 Zenoh 같은 구현이 무선·자원 제약 환경에서 시간 예측성, 네트워크 토폴로지 추상화, 상태 연속성 사이에서 겪는 트레이드오프를 정리하고 후속 연구 로드맵을 제시한다.",
+      "source": "arXiv",
+      "authors": "Sanghoon Lee, Taehun Kim, Angelo Corsaro, Kyung-Joon Park",
+      "published": "2026-07-01",
+      "collected": "2026-08-01",
+      "url": "https://arxiv.org/abs/2607.01304",
+      "archived": false
+    },
+    {
+      "id": "971446d932c158e02ac59e45e2d5d70db34edf28",
+      "group": "ros2-robotics",
+      "category": "paper",
+      "title": "ZONDA: Zero-shot Object Navigation with Dynamic Avoidance in Multi-floor Environments",
+      "summary": "다층 건물과 동적 장애물이 있는 환경에서 제로샷 물체 탐색을 수행하는 프레임워크를 제안한다. 계단 이동을 위한 휴리스틱 층간 계획, 오탐을 줄이는 비전-언어 모델 기반 다시점 목표 검증, 보행자 예측 기반 선제 회피의 세 요소로 구성되며 이족 로봇 실험과 시뮬레이션에서 기존 베이스라인 대비 개선을 보고했다.",
+      "source": "arXiv",
+      "authors": "Shaomin Liang, Xuanhong Liao, Shiyao Zhang",
+      "published": "2026-07-23",
+      "collected": "2026-08-01",
+      "url": "https://arxiv.org/abs/2607.21025",
+      "archived": false
+    },
+    {
+      "id": "4e47dd35bbc2178be55fe18e855ced1af5d7fef4",
+      "group": "ros2-robotics",
+      "category": "article",
+      "title": "ROS News for the Week of July 13th, 2026",
+      "summary": "Autoware가 오픈소스 L2 자율주행 스택 Vision Pilot를 공개한 소식과 Nav2 SAM3 시맨틱 내비게이션, CycloneDDS 설정 최적화 도구, PS5 카메라용 ROS 2 노드 등 주간 패키지 소식을 정리했다. 커뮤니티 이슈로는 출처를 밝히지 않은 AI 생성 PR 유입 문제와 투명성 요청도 함께 다뤘다.",
+      "source": "Open Robotics Discourse",
+      "authors": "",
+      "published": "2026-07-17",
+      "collected": "2026-08-01",
+      "url": "https://discourse.openrobotics.org/t/ros-news-for-the-week-of-july-13th-2026/56756",
+      "archived": false
+    },
+    {
+      "id": "f5cb41fcc2eda0cc77f0888f65e39b7ee0c105ec",
+      "group": "ros2-robotics",
+      "category": "article",
+      "title": "ROS News for the Week of July 6th, 2026",
+      "summary": "위성 영상과 DEM으로 지형을 생성하는 Gazebo Terrain Generator, 시계열·2D/3D 시각화를 지원하는 PlotJuggler v4.0, pip 설치형 로봇 제어 인터페이스 RUBI v2 등 도구 소식을 정리했다. OSRF 신임 최고프로그램책임자 임명과 ROS 문서 개편 리뷰어 모집 등 재단 소식도 포함된다.",
+      "source": "Open Robotics Discourse",
+      "authors": "",
+      "published": "2026-07-10",
+      "collected": "2026-08-01",
+      "url": "https://discourse.openrobotics.org/t/ros-news-for-the-week-of-july-6th-2026/56384",
+      "archived": false
+    },
+    {
+      "id": "0f025e7a1f864c9583edd5e5853d6f10ae271fec",
+      "group": "ros2-robotics",
+      "category": "article",
+      "title": "Autoware Vision Pilot — 오픈소스 L2 ADAS 스택 공개",
+      "summary": "Autoware Foundation이 전방 단안 카메라 한 대만으로 차선 유지·적응형 크루즈·전방 충돌 경고·자동 긴급제동을 제공하는 오픈소스 L2 ADAS 스택을 공개했다. 고정밀 3D 지도 없이 맵리스로 동작하며, 안전용 인지 AI 모델과 성능용 End-to-End AI 모델을 병렬 처리하는 하이브리드 구조를 채택했고 Apache 2.0 라이선스로 배포된다.",
+      "source": "GitHub (autowarefoundation)",
+      "authors": "",
+      "published": "",
+      "collected": "2026-08-01",
+      "url": "https://github.com/autowarefoundation/vision_pilot",
+      "archived": false
+    },
+    {
+      "id": "bbb1a60e8a89ddd84d43e3e148b64ef91a3d73cb",
+      "group": "ai-agent",
+      "category": "paper",
+      "title": "AgenticSTS: A Bounded-Memory Testbed for Long-Horizon LLM Agents",
+      "summary": "장기 과제를 수행하는 LLM 에이전트가 전체 대화 기록을 누적하지 않고, 매 결정마다 타입 기반 검색으로 새로 조립한 메시지만 사용하는 제한 메모리 계약을 제안한다. 수백 번의 전술·전략 결정이 필요한 덱빌딩 게임을 테스트베드로 삼았으며, 명시적 스킬 계층을 추가하자 기본 설정 승률이 30%에서 60%로 올랐다고 보고한다.",
+      "source": "arXiv",
+      "authors": "Xiangchen Cheng, Yunwei Jiang, Jianwen Sun 외",
+      "published": "2026-07-02",
+      "collected": "2026-08-01",
+      "url": "https://arxiv.org/abs/2607.02255",
+      "archived": false
+    },
+    {
+      "id": "181c2c17125e46ad13d88f750ce81090e1bd90f0",
+      "group": "ai-agent",
+      "category": "article",
+      "title": "The 2026-07-28 Specification — MCP 스펙 개정",
+      "summary": "Model Context Protocol이 양방향 상태 유지 구조에서 상태 없는(stateless) 요청/응답 구조로 전환됐다. 서버 주도 콜백을 대체하는 Multi Round-Trip Requests, 게이트웨이 연동을 위한 헤더 기반 라우팅, 결정적 정렬을 갖춘 캐시 가능한 목록 응답이 도입됐고, 확장(extensions) 프레임워크 공식화와 12개월 폐기 유예 정책도 함께 정의됐다.",
+      "source": "Model Context Protocol Blog",
+      "authors": "David Soria Parra, Den Delimarsky",
+      "published": "2026-07-28",
+      "collected": "2026-08-01",
+      "url": "https://blog.modelcontextprotocol.io/posts/2026-07-28/",
+      "archived": false
+    },
+    {
+      "id": "8bd4f9680a759eb447c8727f31820ffe1d14d109",
+      "group": "ai-agent",
+      "category": "article",
+      "title": "The Great Agent Framework Consolidation: LangGraph, CrewAI, Google ADK, AutoGen 비교 (2026)",
+      "summary": "Microsoft가 기존 AutoGen을 유지보수 모드로 전환하고 Semantic Kernel과 통합해 Microsoft Agent Framework 1.0을 내놓으면서 멀티에이전트 프레임워크 시장이 정리되고 있다고 분석한다. 실무 선택 기준으로 상태 관리·통제가 중요한 워크플로에는 LangGraph, 역할 기반 빠른 프로토타이핑에는 CrewAI, Google Cloud 네이티브 배포에는 ADK를 제시하며 MCP·A2A 같은 상호운용 표준 지원을 필수 조건으로 꼽았다.",
+      "source": "Medium",
+      "authors": "Eray ALTILI",
+      "published": "",
+      "collected": "2026-08-01",
+      "url": "https://ealtili.medium.com/the-great-agent-framework-consolidation-how-langgraph-crewai-google-adk-and-autogen-stack-up-in-45c9331b5858",
+      "archived": false
+    },
+    {
+      "id": "de4060fa684cb22eb8e130157a2ceeb106f909a3",
+      "group": "ai-agent",
+      "category": "paper",
+      "title": "Harness-MU: A Safe, Governed, and Effective Harness for Multi-User LLM Agents",
+      "summary": "여러 사용자가 공유하는 LLM 에이전트 환경에서 거버넌스 제약을 LLM의 판단에 맡기지 말고 실행 훅으로 강제해야 한다고 주장한다. 언어 생성과 안전 오케스트레이션을 분리한 모델 비종속 프레임워크로, 접근 제어 공격에 대한 프라이버시 보호와 함께 지시 준수 정확도를 최대 48.9%p 개선했다고 보고한다.",
+      "source": "arXiv",
+      "authors": "Wangxuan Fan, Xiaoyu Nie, Zhongxiang Dai",
+      "published": "2026-06-20",
+      "collected": "2026-08-01",
+      "url": "https://arxiv.org/abs/2606.21856",
+      "archived": false
+    },
+    {
+      "id": "d993a35a3001f50ea908e983944d8fc821dc48ba",
+      "group": "computer-vision",
+      "category": "paper",
+      "title": "VocaDet: Sample-Driven Open-Vocabulary Object Detection and Segmentation via Visual Tokenization and Vector Database Retrieval",
+      "summary": "재학습 없이 사용자가 제공한 양성·음성 샘플만으로 임의 카테고리를 탐지·분할하는 오픈 보캐뷸러리 프레임워크다. DINOv3 특징을 병합 군집화해 이산적 시각 토큰으로 만들고 확장 가능한 벡터 DB에 객체 메모리로 저장해 검색 기반으로 인식하며, 고정 카메라 환경을 위한 배경 필터링을 추가했다.",
+      "source": "arXiv",
+      "authors": "ZhiXin Sun",
+      "published": "2026-07-09",
+      "collected": "2026-08-01",
+      "url": "https://arxiv.org/abs/2607.08541",
+      "archived": false
+    },
+    {
+      "id": "636f4dc111c56659fab19f6f5cb6b70aa73d5635",
+      "group": "computer-vision",
+      "category": "paper",
+      "title": "OnPoint: Offline-to-Online Multi-Level Distillation for Point-Supervised Online Temporal Action Localization",
+      "summary": "행동 인스턴스당 시간축 점 하나만 라벨링하는 최소 주석으로 스트리밍 영상에서 행동을 검출하는 POTAL 과제를 제안한다. 오프라인 교사 모델의 지식을 온라인 학생 모델로 옮기기 위해 의사 구간 인스턴스·클래스 활성 시퀀스·예측 윈도 수준의 세 가지 증류를 사용하며, 5개 데이터셋에서 베이스라인을 크게 상회했다고 보고한다. ECCV 2026 채택.",
+      "source": "arXiv",
+      "authors": "Sakib Reza, Gauri Jagatap, Mohsen Moghaddam 외",
+      "published": "2026-07-01",
+      "collected": "2026-08-01",
+      "url": "https://arxiv.org/abs/2607.00289",
+      "archived": false
+    },
+    {
+      "id": "8baa9259505a8fb8df1c80b2df2daa6ef837a1ca",
+      "group": "computer-vision",
+      "category": "paper",
+      "title": "Understanding and Mitigating the Video-Action Generalization Gap via Temporal Ratio",
+      "summary": "영상 파운데이션 모델을 로봇 행동 데이터로 파인튜닝할 때 조합적 일반화 성능이 떨어지는 현상을 'video-action generalization gap'으로 규정했다. 행동 성분이 미래 잠재 예측에 얼마나 의존하는지를 재는 어텐션 기반 지표 Temporal Ratio를 제안하고, 이를 이용해 추론 시점에 영상 조건 신호를 적응적으로 증폭하는 가이던스 기법으로 벤치마크와 실기 과제에서 개선을 보였다.",
+      "source": "arXiv",
+      "authors": "Utkarsh A. Mishra, Yongxin Chen, Danfei Xu 외",
+      "published": "2026-07-09",
+      "collected": "2026-08-01",
+      "url": "https://arxiv.org/abs/2607.08127",
+      "archived": false
+    },
+    {
+      "id": "c6e6b88bf21989a804e959cf0ddcf93c22adc5a3",
+      "group": "computer-vision",
+      "category": "article",
+      "title": "Ultralytics YOLO26, Intel 프로세서용 실시간 추론 최적화",
+      "summary": "Ultralytics가 Intel과 협력해 YOLO26 모델을 OpenVINO 툴킷에 최적화했다고 발표했다. CPU 기반 기존 인프라에서 최대 10배 빠른 추론과 5ms 미만 지연을 제시하며, 별도 GPU 없이 제조·물류·유통·로보틱스 현장에 배포할 수 있는 단일 명령 워크플로를 제공한다.",
+      "source": "Ultralytics",
+      "authors": "",
+      "published": "2026-07-14",
+      "collected": "2026-08-01",
+      "url": "https://www.ultralytics.com/news/ultralytics-yolo26-to-bring-real-time-computer-vision-to-intel-processors",
+      "archived": false
+    },
+    {
+      "id": "2aaa2f72b9ce2733c571e363c4fdcb3231e40e5d",
+      "group": "llm-knowledge",
+      "category": "paper",
+      "title": "From Passive Retrieval to Active Memory Navigation: Learning to Use Memory as a Structured Action Space",
+      "summary": "장기 사용자 메모리를 수동적으로 검색되는 컨텍스트가 아니라 구조화된 행동 공간으로 다루는 프레임워크 NapMem을 제안한다. 대화·메모리 레코드·토픽·프로필을 출처 관계로 잇는 다층 피라미드로 이력을 조직하고, 강화학습으로 에이전트가 계층 사이를 전략적으로 탐색하도록 학습시켜 메모리 집약 과제에서 일반 추론 능력을 유지하며 경쟁력 있는 성능을 보였다.",
+      "source": "arXiv",
+      "authors": "Yue Xu, Yutao Sun, Yihao Liu 외",
+      "published": "2026-07-07",
+      "collected": "2026-08-01",
+      "url": "https://arxiv.org/abs/2607.05794",
+      "archived": false
+    },
+    {
+      "id": "b24e3e1a5568978b6298ee9d70985d0f8c26e85b",
+      "group": "llm-knowledge",
+      "category": "article",
+      "title": "Karpathy's LLM Wiki as Agent Memory",
+      "summary": "Karpathy의 LLM Wiki 설계를 AI 에이전트의 장기 메모리 아키텍처로 해석한 글이다. 원본 자료·유지되는 위키·스키마 규칙의 3계층 구조가 시맨틱·엔티티·에피소드·요약 등 서로 다른 유형의 기억을 담을 수 있음을 설명하고, 컨퍼런스 기획 사례로 세션 간에 지식이 누적되는 방식을 보인다.",
+      "source": "Agentic AI Foundation (AAIF)",
+      "authors": "Angie Jones",
+      "published": "2026-06-08",
+      "collected": "2026-08-01",
+      "url": "https://aaif.io/blog/karpathys-llm-wiki-as-agent-memory",
+      "archived": false
+    },
+    {
+      "id": "bc3e4e0e390d6b959b6fc8ea5e6d19f1d03493c4",
+      "group": "llm-knowledge",
+      "category": "article",
+      "title": "How I Took Karpathy's LLM Wiki and Built an AI-Powered Second Brain in Obsidian",
+      "summary": "Karpathy의 LLM Wiki 개념을 Obsidian과 Claude Code로 구현한 개인 구축기다. 원본 소스, LLM이 생성한 위키 페이지, 이를 통제하는 스키마의 3계층과 URL 수집·인박스 처리·위키 린트의 3가지 핵심 동작으로 시스템을 구성했다.",
+      "source": "Substack (AI Maker)",
+      "authors": "Wyndo",
+      "published": "2026-04-16",
+      "collected": "2026-08-01",
+      "url": "https://aimaker.substack.com/p/llm-wiki-obsidian-knowledge-base-andrej-karphaty",
+      "archived": false
+    },
+    {
+      "id": "a32bb683a3f5be8f75dacd63d6a71743e982703c",
+      "group": "llm-knowledge",
+      "category": "article",
+      "title": "second-brain — Obsidian용 LLM 유지 개인 지식베이스 저장소",
+      "summary": "Karpathy의 LLM Wiki 패턴과 Agent Skills 표준을 기반으로 만든 오픈소스 저장소다. raw/ 폴더에 기사·논문·노트를 넣으면 에이전트가 상호 링크와 인덱스를 갖춘 위키 페이지로 컴파일하며, 설치 마법사·소스 수집·위키 질의·상태 점검의 4개 스킬을 제공한다.",
+      "source": "GitHub",
+      "authors": "NicholasSpisak",
+      "published": "",
+      "collected": "2026-08-01",
+      "url": "https://github.com/NicholasSpisak/second-brain",
+      "archived": false
+    },
+    {
+      "id": "bb90c1b811025b0f2f79eb68ff3cd0edd32e9dfe",
+      "group": "llm-knowledge",
+      "category": "person",
+      "title": "Andrej Karpathy — Sequoia Ascent 2026 대담 요약",
+      "summary": "Karpathy는 LLM이 디지털 업무의 새로운 프로그래밍 계층이 되었고 컨텍스트 윈도가 코드를 대체하는 흐름을 'Software 3.0'으로 정리했다. 코딩·수학처럼 정답을 검증할 수 있는 영역에서 자동화가 가장 빠르게 진행되지만 시스템 설계·보안·이해에는 여전히 사람의 판단이 필요하다고 보며, 전문적인 '에이전틱 엔지니어링'과 즉흥적인 '바이브 코딩'을 구분한다.",
+      "source": "karpathy.bearblog.dev",
+      "authors": "Andrej Karpathy",
+      "published": "2026-04-30",
+      "collected": "2026-08-01",
+      "url": "https://karpathy.bearblog.dev/sequoia-ascent-2026/",
       "archived": false
     }
   ]

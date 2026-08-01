@@ -20,6 +20,20 @@ groups:
     categories: [paper, article, video]
     max_per_run: 5
 
+  - id: isaac-sim
+    name: "NVIDIA Isaac Sim"
+    keywords:
+      - "NVIDIA Isaac Sim"
+      - "아이작 심"
+      - "Isaac Sim ROS 2 bridge"
+      - "Isaac Sim AMR humanoid manipulator simulation"
+      - "Isaac Sim camera lidar IMU sensor simulation"
+      - "Isaac Sim SLAM navigation manipulation"
+      - "Isaac Sim synthetic data generation"
+      - "Isaac Lab reinforcement learning"
+    categories: [paper, article, video]
+    max_per_run: 8
+
   - id: ai-agent
     name: "AI Agent"
     keywords:
