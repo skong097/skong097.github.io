@@ -60,6 +60,10 @@ menu:
     name: 프로젝트
     url: /projects/
     weight: 10
+  - identifier: gallery
+    name: 갤러리
+    url: /gallery/
+    weight: 15
   - identifier: posts
     name: 포스트
     url: /posts/
