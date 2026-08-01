@@ -22,6 +22,11 @@ header.post-header h1 { font-size:40px; text-align:center; }
 
 .gal-grid { display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); }
 .gal-grid.wide { grid-template-columns:1fr; }
+.gal-grid.tall { grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); align-items:start; }
+
+.gal-sub { font-size:12px; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+  color:var(--secondary); margin:2rem 0 .8rem; padding-top:1rem; border-top:1px dashed rgba(128,128,128,.25); }
+.gal-sub span { font-weight:400; text-transform:none; letter-spacing:0; }
 
 .gal-item { background:var(--entry); border-radius:10px; overflow:hidden; border:1px solid rgba(128,128,128,.18); }
 .gal-item img { width:100%; height:auto; display:block; }
@@ -75,6 +80,35 @@ header.post-header h1 { font-size:40px; text-align:center; }
 <div class="gal-item"><img src="/images/gallery/demo/wasab-console.png" alt="통합 관제 콘솔" loading="lazy">
 <div class="gal-cap"><span class="n">CONSOLE</span><span class="t">통합 관제 — 실시간 위치·상태</span>
 <div class="s">교사·안전관리자용 웹 관제 화면 · 기존 통신 계약 무변경</div></div></div>
+</div>
+
+<p class="gal-sub">원본 화질 영상 <span>— 관제 화면 전체를 무편집으로 담았습니다</span></p>
+
+<div class="gal-grid tall">
+<div class="gal-item">
+<video src="/images/gallery/demo/순찰fullcycle.webm" controls loop muted playsinline preload="metadata"></video>
+<div class="gal-cap"><span class="n">FULL CYCLE</span><span class="t">순찰 full cycle — 전체 3분 36초</span>
+<div class="s">출발 → 경유지 순회 → 이벤트 확인 → 홈 복귀까지 한 번도 끊지 않고 수행</div></div></div>
+
+<div class="gal-item">
+<video src="/images/gallery/demo/긴급정지전체로봇정지.webm" controls loop muted playsinline preload="metadata"></video>
+<div class="gal-cap"><span class="n">E-STOP</span><span class="t">원격 SW 긴급정지 — 전체 로봇 정지</span>
+<div class="s">관제 화면 <code>정지</code> 한 번으로 주행 중인 전 로봇을 동시에 멈춘다 · 1분 19초</div></div></div>
+
+<div class="gal-item">
+<video src="/images/gallery/demo/홈복귀도킹성공.webm" controls loop muted playsinline preload="metadata"></video>
+<div class="gal-cap"><span class="n">DOCKING</span><span class="t">홈 복귀 도킹 성공 — 전체 과정</span>
+<div class="s">복귀 명령 → AprilTag 전역 재측위 → PID 정렬 → 도킹 완료 · 1분 22초</div></div></div>
+
+<div class="gal-item">
+<video src="/images/gallery/demo/재측위성공.webm" controls loop muted playsinline preload="metadata"></video>
+<div class="gal-cap"><span class="n">RELOCALIZE</span><span class="t">AprilTag 전역 재측위 성공</span>
+<div class="s">흘러내린 추정 위치를 태그 관측 한 번으로 되돌린다 · 30초</div></div></div>
+
+<div class="gal-item">
+<video src="/images/gallery/demo/복수재측위.webm" controls loop muted playsinline preload="metadata"></video>
+<div class="gal-cap"><span class="n">RELOCALIZE ×N</span><span class="t">복수 로봇 동시 재측위</span>
+<div class="s">온라인 로봇 3대를 관제 화면에서 한꺼번에 재측위 · 34초</div></div></div>
 </div>
 
 <p class="desc" style="margin-top:1rem">
@@ -138,6 +172,20 @@ header.post-header h1 { font-size:40px; text-align:center; }
 <div class="s">다수 로봇 좌표계 정합 · 원격 기동 12초 → 0.5초</div></div></div>
 </div>
 
+<p class="gal-sub">원본 화질 영상 <span>— DALIMI CONTROL 관제 화면 전체</span></p>
+
+<div class="gal-grid wide">
+<div class="gal-item">
+<video src="/images/gallery/demo/실시간위치맵4.webm" controls loop muted playsinline preload="metadata"></video>
+<div class="gal-cap"><span class="n">FLEET MAP</span><span class="t">실시간 위치 맵 — 차량 6대 운용</span>
+<div class="s">1880×1410mm 실측 맵 위에 전 차량의 좌표·주행 상태·다음 목적지를 동시에 표시. 마트·회사·공원·학교 4개 정류장 순회 · 49초</div></div></div>
+
+<div class="gal-item">
+<video src="/images/gallery/demo/실시간위치맵2.webm" controls loop muted playsinline preload="metadata"></video>
+<div class="gal-cap"><span class="n">FLEET MAP</span><span class="t">위치 맵 · 차량 상태 테이블 연동</span>
+<div class="s">각 차량의 X·Y 좌표와 TARGET·HINT(STRAIGHT / LEFT / U-TURN)가 맵과 같은 주기로 갱신된다 · 17초</div></div></div>
+</div>
+
 <p class="desc" style="margin-top:1rem">
 관련 글 —
 <a href="/posts/robotics/araseo-차선주행-스쿨존-hsv-색공간-구분/">HSV 색공간 분리</a> ·
@@ -158,14 +206,14 @@ header.post-header h1 { font-size:40px; text-align:center; }
 
 <div class="gal-grid wide" style="margin-top:14px">
 <div class="gal-item">
-<video src="/images/gallery/demo/homecare-fall-detection.mp4" controls loop muted playsinline preload="metadata"></video>
-<div class="gal-cap"><span class="n">SCENE 02</span><span class="t">낙상 실시간 감지 — 관제 화면 전체</span>
-<div class="s">쓰러짐 발생 → ST-GCN 판정 <code>[FALL]</code> Confidence 100% → 이벤트 로그 적재 · 보호자 호출까지 한 화면. 56초<br>ST-GCN Fine-tuned 정확도 99.63% · Recall 99.40%</div></div></div>
+<video src="/images/gallery/demo/정상활동.mp4" controls loop muted playsinline preload="metadata"></video>
+<div class="gal-cap"><span class="n">SCENE 02</span><span class="t">정상 활동 — [OK] Normal</span>
+<div class="s">앉기·눕기·보행 등 낙상과 혼동되기 쉬운 자세를 2분 11초 연속 판정. 전 구간 <code>Normal</code> 유지로 오탐(False Positive) 억제를 확인.</div></div></div>
 
 <div class="gal-item">
-<video src="/images/gallery/demo/homecare-normal-activity.mp4" controls loop muted playsinline preload="metadata"></video>
-<div class="gal-cap"><span class="n">SCENE 03</span><span class="t">정상 활동 — 오탐 없음 구간</span>
-<div class="s">앉기·눕기·보행 등 낙상과 혼동되기 쉬운 자세를 2분 11초 연속 판정. 전 구간 <code>Normal</code> 유지로 오탐(False Positive) 억제를 확인.</div></div></div>
+<video src="/images/gallery/demo/낙상탐지.mp4" controls loop muted playsinline preload="metadata"></video>
+<div class="gal-cap"><span class="n">SCENE 03</span><span class="t">낙상 순간 — [FALL] 감지</span>
+<div class="s">쓰러짐 발생 → ST-GCN 판정 <code>[FALL]</code> Confidence 100% → 이벤트 로그 적재 · 보호자 호출까지 한 화면. 56초<br>ST-GCN Fine-tuned 정확도 99.63% · Recall 99.40%</div></div></div>
 </div>
 
 <p class="desc" style="margin-top:1rem">
