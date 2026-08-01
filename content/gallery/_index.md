@@ -88,9 +88,9 @@ header.post-header h1 { font-size:40px; text-align:center; }
 <div class="s">순찰 개시부터 로봇 3대(Pinky-44 · 50 · 87)가 좁은 복도에서 서로를 피해 가는 전 과정. 좌표가 아니라 홉 단위로 점유를 세어 중재한다 · 충돌 0 · 대기 0</div></div></div>
 
 <div class="gal-item">
-<video src="/images/gallery/demo/순찰fullcycle.webm" controls loop muted playsinline preload="metadata"></video>
-<div class="gal-cap"><span class="n">FULL CYCLE</span><span class="t">순찰 full cycle — 전체 3분 36초</span>
-<div class="s">출발 → 경유지 순회 → 이벤트 확인 → 홈 복귀까지 한 번도 끊지 않고 수행</div></div></div>
+<video src="/images/gallery/demo/홈복귀도킹성공.webm" controls loop muted playsinline preload="metadata"></video>
+<div class="gal-cap"><span class="n">DOCKING</span><span class="t">홈 복귀 도킹 성공 — 전체 과정</span>
+<div class="s">복귀 명령 → AprilTag 전역 재측위 → PID 정렬 → 도킹 완료 · 1분 22초</div></div></div>
 
 <div class="gal-item">
 <video src="/images/gallery/demo/긴급정지전체로봇정지.webm" controls loop muted playsinline preload="metadata"></video>
@@ -98,9 +98,9 @@ header.post-header h1 { font-size:40px; text-align:center; }
 <div class="s">관제 화면 <code>정지</code> 한 번으로 주행 중인 전 로봇을 동시에 멈춘다 · 1분 19초</div></div></div>
 
 <div class="gal-item">
-<video src="/images/gallery/demo/홈복귀도킹성공.webm" controls loop muted playsinline preload="metadata"></video>
-<div class="gal-cap"><span class="n">DOCKING</span><span class="t">홈 복귀 도킹 성공 — 전체 과정</span>
-<div class="s">복귀 명령 → AprilTag 전역 재측위 → PID 정렬 → 도킹 완료 · 1분 22초</div></div></div>
+<video src="/images/gallery/demo/순찰fullcycle.webm" controls loop muted playsinline preload="metadata"></video>
+<div class="gal-cap"><span class="n">FULL CYCLE</span><span class="t">순찰 full cycle — 전체 3분 36초</span>
+<div class="s">출발 → 경유지 순회 → 이벤트 확인 → 홈 복귀까지 한 번도 끊지 않고 수행</div></div></div>
 
 <div class="gal-item">
 <video src="/images/gallery/demo/재측위성공.webm" controls loop muted playsinline preload="metadata"></video>
