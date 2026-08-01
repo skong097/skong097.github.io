@@ -77,9 +77,6 @@ header.post-header h1 { font-size:40px; text-align:center; }
 <div class="gal-cap"><span class="n">PARALLEL OPS</span><span class="t">순찰 · 도킹 동시 운용</span>
 <div class="s">한 로봇이 도킹하는 동안 다른 로봇은 순찰을 계속한다</div></div></div>
 
-<div class="gal-item"><img src="/images/gallery/demo/wasab-console.png" alt="통합 관제 콘솔" loading="lazy">
-<div class="gal-cap"><span class="n">CONSOLE</span><span class="t">통합 관제 — 실시간 위치·상태</span>
-<div class="s">교사·안전관리자용 웹 관제 화면 · 기존 통신 계약 무변경</div></div></div>
 </div>
 
 <p class="gal-sub">원본 화질 영상 <span>— 관제 화면 전체를 무편집으로 담았습니다</span></p>
