@@ -44,6 +44,7 @@ header.post-header h1 { font-size:40px; text-align:center; }
 <p class="desc">학교 환경에서 모바일 로봇 4대를 하나의 관제 시스템으로 운용합니다. 아키텍처 설계부터 관제 콘솔, 자율주행·측위 튜닝, 순찰 통행 중재, 원격 긴급정지, 실기 검증까지 전 범위를 직접 수행하였습니다.</p>
 
 <div class="gal-grid">
+
 <div class="gal-item"><img src="/images/gallery/demo/wasab-traffic-control.gif" alt="로봇 3대 통행 중재" loading="lazy">
 <div class="gal-cap"><span class="n">TRAFFIC CONTROL</span><span class="t">로봇 3대 통행 중재</span>
 <div class="s">좌표를 버리고 홉으로 점유를 셈 · 51초 승인 14건 · 충돌 0 · 대기 0</div></div></div>
@@ -52,13 +53,7 @@ header.post-header h1 { font-size:40px; text-align:center; }
 <div class="gal-cap"><span class="n">FLEET PATROL</span><span class="t">로봇 3대 동시 순찰</span>
 <div class="s">도메인 격리 + 2-Context 브리지로 4대를 한 화면에서 운용</div></div></div>
 
-<div class="gal-item"><img src="/images/gallery/demo/wasab-pid-parking.gif" alt="PID 정밀 주차" loading="lazy">
-<div class="gal-cap"><span class="n">PRECISION DOCKING</span><span class="t">PID 정밀 주차</span>
-<div class="s">AprilTag 전역 재측위 후 태그 기준 15cm 정렬</div></div></div>
 
-<div class="gal-item"><img src="/images/gallery/demo/wasab-navigation.gif" alt="Nav2 자율주행" loading="lazy">
-<div class="gal-cap"><span class="n">NAVIGATION</span><span class="t">Nav2 자율주행 · 경로 재계획</span>
-<div class="s">AMCL 측위 튜닝으로 1m 주행 후 오차 27cm → 4cm</div></div></div>
 
 <div class="gal-item"><img src="/images/gallery/demo/wasab-homedock.gif" alt="홈 복귀 도킹" loading="lazy">
 <div class="gal-cap"><span class="n">HOME RETURN</span><span class="t">홈 복귀 — AprilTag 도킹</span>
@@ -67,6 +62,14 @@ header.post-header h1 { font-size:40px; text-align:center; }
 <div class="gal-item"><img src="/images/gallery/demo/wasab-patrol-cycle.gif" alt="순찰 full cycle" loading="lazy">
 <div class="gal-cap"><span class="n">FULL CYCLE</span><span class="t">순찰 full cycle</span>
 <div class="s">지정 경로 무한 순회 · 이벤트 감지 시 현장 확인</div></div></div>
+
+<div class="gal-item"><img src="/images/gallery/demo/wasab-homedock-success.gif" alt="홈 복귀 도킹 성공" loading="lazy">
+<div class="gal-cap"><span class="n">DOCKING</span><span class="t">홈 복귀 도킹 성공</span>
+<div class="s">AprilTag 전역 재측위 후 PID 정렬 — 태그 기준 15cm</div></div></div>
+
+<div class="gal-item"><img src="/images/gallery/demo/wasab-patrol-dock-parallel.gif" alt="순찰·도킹 동시 운용" loading="lazy">
+<div class="gal-cap"><span class="n">PARALLEL OPS</span><span class="t">순찰 · 도킹 동시 운용</span>
+<div class="s">한 로봇이 도킹하는 동안 다른 로봇은 순찰을 계속한다</div></div></div>
 
 <div class="gal-item"><img src="/images/gallery/demo/wasab-console.png" alt="통합 관제 콘솔" loading="lazy">
 <div class="gal-cap"><span class="n">CONSOLE</span><span class="t">통합 관제 — 실시간 위치·상태</span>
