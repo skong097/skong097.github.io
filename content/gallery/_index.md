@@ -14,7 +14,7 @@ header.post-header h1 { font-size:40px; text-align:center; }
 
 .gal-intro { text-align:center; color:var(--secondary); margin:0 auto 2.4rem; max-width:640px; line-height:1.7; }
 
-.gal-sec { margin:0 0 3.2rem; }
+.gal-sec { margin:0 0 3.2rem; scroll-margin-top:80px; }
 .gal-sec h2 { font-size:22px; margin:0 0 .3rem; display:flex; align-items:center; gap:.5rem; }
 .gal-sec h2 .tag { font-size:11px; font-weight:600; letter-spacing:.06em; padding:3px 9px; border-radius:99px;
   background:var(--code-bg); color:var(--secondary); text-transform:uppercase; }
@@ -45,7 +45,7 @@ header.post-header h1 { font-size:40px; text-align:center; }
 각 항목의 설계 배경과 실패·정정 과정은 아래 링크한 기술 글에 적어 두었습니다.
 </p>
 
-<div class="gal-sec">
+<div class="gal-sec" id="wasab">
 <h2>WaSaB — 다중 로봇 통합관제 <span class="tag">심화과정 · 단독 수행</span></h2>
 <p class="desc">학교 환경에서 모바일 로봇 4대를 하나의 관제 시스템으로 운용합니다. 아키텍처 설계부터 관제 콘솔, 자율주행·측위 튜닝, 순찰 통행 중재, 원격 긴급정지, 실기 검증까지 전 범위를 직접 수행하였습니다.</p>
 
@@ -122,7 +122,7 @@ header.post-header h1 { font-size:40px; text-align:center; }
 </p>
 </div>
 
-<div class="gal-sec">
+<div class="gal-sec" id="moca">
 <h2>MOCA — 카페 서빙·모객 로봇 <span class="tag">6인 팀 · 최우수상</span></h2>
 <p class="desc">점주 한 명과 로봇들이 한 매장에서 주문·제조·서빙·모객을 자율로 수행합니다. 동작 제어 전반과 감정 분석 파이프라인, 명령 안전 중재를 담당하였습니다.</p>
 
@@ -253,7 +253,7 @@ header.post-header h1 { font-size:40px; text-align:center; }
 </p>
 </div>
 
-<div class="gal-sec">
+<div class="gal-sec" id="araseo">
 <h2>ARASEO / DALIMI — 자율주행 택시 <span class="tag">팀 프로젝트</span></h2>
 <p class="desc">소형 자율주행 로봇을 택시처럼 운용합니다. 차선 인지·추종, 관제 대시보드, 사용자 PWA 웹앱을 담당하였습니다.</p>
 
@@ -311,7 +311,7 @@ header.post-header h1 { font-size:40px; text-align:center; }
 </p>
 </div>
 
-<div class="gal-sec">
+<div class="gal-sec" id="homecare">
 <h2>Home Care-Vision AI — 낙상 감지 <span class="tag">5인 팀</span></h2>
 <p class="desc">가정 내 낙상·기절을 실시간 감지해 보호자에게 알립니다. AI 모델 학습과 데이터 파이프라인, 통합 모니터링 UI 를 담당하였습니다.</p>
 
