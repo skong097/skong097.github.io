@@ -144,6 +144,105 @@ header.post-header h1 { font-size:40px; text-align:center; }
 <div class="s">Valence-Arousal 감정 분석으로 친밀도 판단 후 진행</div></div></div>
 </div>
 
+<p class="gal-sub">모객 · 그룹 접근 <span>— 인지 화면과 실제 현장을 나란히</span></p>
+
+<div class="gal-grid wide">
+<div class="gal-item">
+<video src="/images/gallery/demo/그룹접근_합본.mp4" controls loop muted playsinline preload="metadata"></video>
+<div class="gal-cap"><span class="n">GROUP APPROACH</span><span class="t">그룹 접근 — 인지 화면 · 현장 합본</span>
+<div class="s">왼쪽은 로봇이 보는 화면(<code>track_id</code> · <code>group_id</code>), 오른쪽은 같은 순간의 실제 현장. 2인 그룹과 1인을 각각 다른 그룹으로 묶어 접근 대상을 고른다 · 25초</div></div></div>
+
+<div class="gal-item">
+<video src="/images/gallery/demo/모객분석_고객화남_가로통합_1배속.mp4" controls loop muted playsinline preload="metadata"></video>
+<div class="gal-cap"><span class="n">ABORT ON ANGER</span><span class="t">부정 감정 감지 → 모객 즉시 중단</span>
+<div class="s">접근 중 고객의 Valence 가 음(-)으로 꺾이면 시나리오를 끝까지 밀지 않고 물러난다. 1배속 · 1분 6초</div></div></div>
+
+<div class="gal-item">
+<video src="/images/gallery/demo/감정분석_표정분석_가로통합.mp4" controls loop muted playsinline preload="metadata"></video>
+<div class="gal-cap"><span class="n">FACE ANALYSIS</span><span class="t">표정 분석 — 분석 화면 · 실물 합본</span>
+<div class="s">얼굴에서 뽑은 지표가 대시보드에 실시간으로 꽂히는 과정 · 28초</div></div></div>
+</div>
+
+<p class="gal-sub">관제 · 감정 분석 대시보드</p>
+
+<div class="gal-grid" style="margin-top:14px">
+<div class="gal-item">
+<video src="/images/gallery/demo/전체.mp4" controls loop muted playsinline preload="metadata"></video>
+<div class="gal-cap"><span class="n">CONSOLE</span><span class="t">통합 관제 — 전체 흐름</span>
+<div class="s">매장 평면도 위 로봇 위치 · 모드 전환 · 다음 순회까지 1분 27초 연속</div></div></div>
+
+<div class="gal-item">
+<video src="/images/gallery/demo/이벤트.mp4" controls loop muted playsinline preload="metadata"></video>
+<div class="gal-cap"><span class="n">EVENT</span><span class="t">이벤트 처리 — 테이블 호출</span>
+<div class="s">T01~T05 테이블에서 발생한 이벤트를 모드별로 배차 · 36초</div></div></div>
+
+<div class="gal-item">
+<video src="/images/gallery/demo/감정추이분석_ema.mp4" controls loop muted playsinline preload="metadata"></video>
+<div class="gal-cap"><span class="n">EMA</span><span class="t">감정 추이 — EMA 평활</span>
+<div class="s">프레임 단위 감정값은 튄다. 지수이동평균으로 눌러야 판단이 흔들리지 않는다 · 30초</div></div></div>
+
+<div class="gal-item">
+<video src="/images/gallery/demo/모객분석_감정추이_라포스코어.mp4" controls loop muted playsinline preload="metadata"></video>
+<div class="gal-cap"><span class="n">RAPPORT</span><span class="t">라포 스코어 산출</span>
+<div class="s">Valence-Arousal · 참여 이벤트 · 미니게임 결과를 합쳐 친밀도 점수로 · 45초</div></div></div>
+
+<div class="gal-item">
+<video src="/images/gallery/demo/표정분석_omx_reaction.mp4" controls loop muted playsinline preload="metadata"></video>
+<div class="gal-cap"><span class="n">REACTION</span><span class="t">표정 분석 → 로봇 반응 연동</span>
+<div class="s">분석 결과가 로봇팔·표정 반응으로 이어지는 구간 · 28초</div></div></div>
+
+<div class="gal-item">
+<video src="/images/gallery/demo/rapport_minigame_가로통합.mp4" controls loop muted playsinline preload="metadata"></video>
+<div class="gal-cap"><span class="n">RAPPORT × GAME</span><span class="t">라포 분석 · 미니게임 합본</span>
+<div class="s">게임 중 감정 궤적이 어떻게 움직이는지 분석 화면과 현장을 함께 · 24초</div></div></div>
+</div>
+
+<p class="gal-sub">미니게임 · 교감</p>
+
+<div class="gal-grid" style="margin-top:14px">
+<div class="gal-item">
+<video src="/images/gallery/demo/카페닌자.mp4" controls loop muted playsinline preload="metadata"></video>
+<div class="gal-cap"><span class="n">MINIGAME</span><span class="t">카페 닌자 — 게임 화면</span>
+<div class="s">검지로 메뉴를 베고 폭탄을 피한다. 난이도 3단 · 15초</div></div></div>
+
+<div class="gal-item">
+<video src="/images/gallery/demo/moca_ninja_demo_trim.mp4" controls loop muted playsinline preload="metadata"></video>
+<div class="gal-cap"><span class="n">MINIGAME</span><span class="t">카페 닌자 — 손동작 인식 플레이</span>
+<div class="s">MediaPipe 손 추적으로 검지 끝 좌표를 칼날로 · 13초</div></div></div>
+</div>
+
+<div class="gal-grid tall" style="margin-top:14px">
+<div class="gal-item">
+<video src="/images/gallery/demo/고객접근_매장홍보.mp4" controls loop muted playsinline preload="metadata"></video>
+<div class="gal-cap"><span class="n">APPROACH</span><span class="t">고객 접근 · 매장 홍보</span>
+<div class="s">복도에서 사람을 찾아 다가가 말을 건다 · 30초</div></div></div>
+
+<div class="gal-item">
+<video src="/images/gallery/demo/minigame_best.mp4" controls loop muted playsinline preload="metadata"></video>
+<div class="gal-cap"><span class="n">MINIGAME</span><span class="t">미니게임 실기 — 전 과정</span>
+<div class="s">접근부터 게임 종료·반응까지 · 25초</div></div></div>
+
+<div class="gal-item">
+<video src="/images/gallery/demo/사용자인터렉션1.mp4" controls loop muted playsinline preload="metadata"></video>
+<div class="gal-cap"><span class="n">HRI</span><span class="t">사용자 인터랙션 ①</span>
+<div class="s">표정 디스플레이로 상태를 사람에게 알린다 · 9초</div></div></div>
+
+<div class="gal-item">
+<video src="/images/gallery/demo/사용자인터렉션2.mp4" controls loop muted playsinline preload="metadata"></video>
+<div class="gal-cap"><span class="n">HRI</span><span class="t">사용자 인터랙션 ②</span>
+<div class="s">부정 반응일 때의 표정 전환 · 6초</div></div></div>
+
+<div class="gal-item">
+<video src="/images/gallery/demo/omx_reaction2.mp4" controls loop muted playsinline preload="metadata"></video>
+<div class="gal-cap"><span class="n">ARM REACTION</span><span class="t">로봇팔 반응 ①</span>
+<div class="s">감정 판정 결과에 따른 OpenMANIPULATOR 동작 · 7초</div></div></div>
+
+<div class="gal-item">
+<video src="/images/gallery/demo/omx_reation_best.mp4" controls loop muted playsinline preload="metadata"></video>
+<div class="gal-cap"><span class="n">ARM REACTION</span><span class="t">로봇팔 반응 ②</span>
+<div class="s">가장 잘 나온 반응 구간 · 4초</div></div></div>
+</div>
+
 <p class="desc" style="margin-top:1rem">
 관련 글 —
 <a href="/posts/robotics/moca-감정인식-과민반응-방지-behaviortree-설계/">감정 인식 · ReactiveFallback</a> ·
