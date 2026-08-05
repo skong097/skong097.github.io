@@ -537,3 +537,27 @@ body:has(.projects-intro) .page-header {
 
 .gal-note { font-size:13px; color:var(--secondary); background:var(--code-bg); border-radius:8px;
   padding:14px 16px; margin:2.6rem 0 0; line-height:1.7; }
+
+/* ── 헤더 한 줄 유지 (영문판 줄바꿈 방지) ─────────────────
+   PaperMod 는 .nav 가 flex-wrap:wrap 이고 .logo 가 flex-wrap:inherit 라
+   폭이 모자라면 "제목 / | / English" 가 서로 다른 줄로 갈라진다.
+   영문 라벨은 한글보다 넓어(합계 56 vs 50) 메뉴도 통째로 다음 줄로 밀린다. */
+.logo,
+.logo-switches,
+.lang-switch {
+  flex-wrap: nowrap;
+}
+
+.logo a {
+  white-space: nowrap;
+}
+
+/* 메뉴 항목 간격을 24px → 16px 로 좁혀 영문 라벨 폭을 흡수한다(약 56px 확보).
+   그래도 넘치면 #menu 의 overflow-x:auto 가 가로 스크롤로 받아낸다. */
+#menu {
+  min-width: 0;
+}
+
+#menu li + li {
+  margin-inline-start: 16px;
+}
