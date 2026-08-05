@@ -6,10 +6,10 @@
     <span class="gh-graph-title">GitHub Projects</span>
     <span class="gh-graph-sub" id="ghGraphSub"></span>
   </div>
-  <svg class="gh-graph-svg" id="ghGraphSvg" viewBox="0 0 960 420" preserveAspectRatio="xMidYMid meet" aria-label="GitHub 프로젝트 그래프"></svg>
+  <svg class="gh-graph-svg" id="ghGraphSvg" viewBox="0 0 960 420" preserveAspectRatio="xMidYMid meet" aria-label="{{ i18n "ghGraphAriaLabel" }}"></svg>
   <div class="gh-graph-tip" id="ghGraphTip" hidden></div>
   <div class="gh-graph-empty" id="ghGraphEmpty" hidden>
-    GitHub 프로젝트를 준비 중입니다 ·
+    {{ i18n "ghGraphEmpty" }} &middot;
     <a href="https://github.com/skong097" target="_blank" rel="noopener">github.com/skong097</a>
   </div>
 </div>
@@ -140,7 +140,7 @@
     } else if(n.type==="lang"){
       html += '<div class="t-meta">'+langSet[n.label]+' repos</div>';
     } else {
-      html += '<div class="t-meta">GitHub 프로필</div>';
+      html += '<div class="t-meta">' + {{ i18n "ghGraphProfile" | jsonify | safeJS }} + '</div>';
     }
     tip.innerHTML=html; tip.hidden=false;
     const wr=wrap.getBoundingClientRect();

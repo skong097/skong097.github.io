@@ -100,33 +100,38 @@ body:has(.kbr-wrap) .page-header { display: none; }
 <div class="kbr-wrap">
   <header class="kbr-header">
     <div class="kbr-header-inner">
-      <h2>KB Radar <span>| 지식 레이더</span></h2>
+      <h2>KB Radar <span>| {{ i18n "kbRadarSubtitle" }}</span></h2>
       <div class="kbr-meta">
         Last collected: <strong id="kbrLast">—</strong> &middot;
         Items: <strong id="kbrCount">0</strong>
       </div>
     </div>
     <div class="kbr-filters" id="kbrFilters">
-      <span class="kbr-chip on" data-cat="paper">논문</span>
-      <span class="kbr-chip on" data-cat="article">기사</span>
-      <span class="kbr-chip on" data-cat="video">영상</span>
-      <span class="kbr-chip on" data-cat="person">인물</span>
-      <span class="kbr-chip" id="kbrArchive" data-archive>아카이브 포함</span>
-      <input class="kbr-search" id="kbrSearch" type="search" placeholder="제목·요약·그룹 검색…">
+      <span class="kbr-chip on" data-cat="paper">{{ i18n "kbrCatPaper" }}</span>
+      <span class="kbr-chip on" data-cat="article">{{ i18n "kbrCatArticle" }}</span>
+      <span class="kbr-chip on" data-cat="video">{{ i18n "kbrCatVideo" }}</span>
+      <span class="kbr-chip on" data-cat="person">{{ i18n "kbrCatPerson" }}</span>
+      <span class="kbr-chip" id="kbrArchive" data-archive>{{ i18n "kbrArchiveToggle" }}</span>
+      <input class="kbr-search" id="kbrSearch" type="search" placeholder="{{ i18n "kbrSearchPlaceholder" }}">
     </div>
   </header>
 
   <main class="kbr-main" id="kbrMain"></main>
 
   <footer class="kbr-footer">
-    KB Radar &mdash; 키워드 기반 지식 수집 &middot; Stephen Kong &middot; {{ now.Year }}
+    KB Radar &mdash; {{ i18n "kbrFooterTagline" }} &middot; Stephen Kong &middot; {{ now.Year }}
   </footer>
 </div>
 
 <script>
 const KB = JSON.parse({{ (site.Data.kb_items) | jsonify }});
 const ITEMS = (KB && KB.items) || [];
-const CAT_LABEL = { paper: "논문", article: "기사", video: "영상", person: "인물" };
+const CAT_LABEL = {
+  paper:   {{ i18n "kbrCatPaper"   | jsonify | safeJS }},
+  article: {{ i18n "kbrCatArticle" | jsonify | safeJS }},
+  video:   {{ i18n "kbrCatVideo"   | jsonify | safeJS }},
+  person:  {{ i18n "kbrCatPerson"  | jsonify | safeJS }}
+};
 const PAGE_SIZE = 6;
 
 const state = { cats: new Set(["paper","article","video","person"]), archived: false, q: "", page: 1 };
@@ -152,7 +157,7 @@ function cardHtml(it) {
   const cat = CAT_LABEL[it.category] ? it.category : "article";
   const date = it.published || it.collected || "";
   const src = it.source || "";
-  const title = it.title ? esc(it.title) : "(제목 없음)";
+  const title = it.title ? esc(it.title) : {{ i18n "kbrUntitled" | jsonify | safeJS }};
   return `<div class="kbr-card${it.archived ? ' archived' : ''}">
     <span class="kbr-badge ${cat}">${CAT_LABEL[cat] || cat}</span>
     <div class="kbr-card-title"><a href="${esc(it.url)}" target="_blank" rel="noopener">${title}</a></div>
@@ -170,12 +175,13 @@ function render() {
   document.getElementById("kbrCount").textContent = shown.length;
 
   if (ITEMS.length === 0) {
-    main.innerHTML = `<div class="kbr-empty">아직 수집된 항목이 없습니다.<br>
-      <code>scripts/run_kb_radar.sh</code> 를 실행하면 항목이 채워집니다.</div>`;
+    main.innerHTML = '<div class="kbr-empty">' + {{ i18n "kbrEmptyNoItems" | jsonify | safeJS }}
+      + '<br><code>scripts/run_kb_radar.sh</code> ' + {{ i18n "kbrEmptyNoItemsHint" | jsonify | safeJS }}
+      + '</div>';
     return;
   }
   if (shown.length === 0) {
-    main.innerHTML = `<div class="kbr-empty">필터 조건에 맞는 항목이 없습니다.</div>`;
+    main.innerHTML = '<div class="kbr-empty">' + {{ i18n "kbrEmptyNoMatch" | jsonify | safeJS }} + '</div>';
     return;
   }
 
@@ -188,11 +194,11 @@ function render() {
 
   let html = `<div class="kbr-grid">${slice.map(cardHtml).join("")}</div>`;
   if (pages > 1) {
-    html += `<nav class="kbr-pager">
-      <button type="button" data-page="prev"${state.page === 1 ? " disabled" : ""}>&lsaquo; 이전</button>
-      <span class="kbr-pageinfo"><strong>${state.page}</strong> / ${pages}</span>
-      <button type="button" data-page="next"${state.page === pages ? " disabled" : ""}>다음 &rsaquo;</button>
-    </nav>`;
+    html += '<nav class="kbr-pager">'
+      + '<button type="button" data-page="prev"' + (state.page === 1 ? ' disabled' : '') + '>&lsaquo; ' + {{ i18n "kbrPagerPrev" | jsonify | safeJS }} + '</button>'
+      + '<span class="kbr-pageinfo"><strong>' + state.page + '</strong> / ' + pages + '</span>'
+      + '<button type="button" data-page="next"' + (state.page === pages ? ' disabled' : '') + '>' + {{ i18n "kbrPagerNext" | jsonify | safeJS }} + ' &rsaquo;</button>'
+      + '</nav>';
   }
   main.innerHTML = html;
 }
