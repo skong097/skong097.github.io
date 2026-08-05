@@ -10,6 +10,29 @@
 {{- $pages = where $pages "Params.hiddenInHomeList" "!=" "true" }}
 {{- end }}
 
+{{/* ── EN: 영문 포스트가 아직 없으므로 한국어 포스트를 빌려 노출한다 ──
+     홈과 posts 섹션으로만 한정한다. 카테고리/태그 term 페이지까지 차용하면
+     언어가 뒤섞여 오히려 혼란스럽다. */}}
+{{- $isHome := .IsHome }}
+{{- $borrowedKo := false }}
+{{- if and (eq site.Language.Lang "en") (or .IsHome (eq .Type "posts")) }}
+  {{- if eq (len $pages) 0 }}
+    {{- range site.Sites }}
+      {{- if eq .Language.Lang "ko" }}
+        {{- $koPages := where .RegularPages "Type" "in" site.Params.mainSections }}
+        {{/* hiddenInHomeList 필터는 원본과 동일하게 홈에서만 적용한다 */}}
+        {{- if $isHome }}
+          {{- $koPages = where $koPages "Params.hiddenInHomeList" "!=" "true" }}
+        {{- end }}
+        {{- if gt (len $koPages) 0 }}
+          {{- $pages = $koPages }}
+          {{- $borrowedKo = true }}
+        {{- end }}
+      {{- end }}
+    {{- end }}
+  {{- end }}
+{{- end }}
+
 {{- $paginator := .Paginate $pages }}
 {{- $base := mul (sub $paginator.PageNumber 1) $paginator.PagerSize }}
 
@@ -36,6 +59,10 @@
   <div class="term-doc">{{ .Content }}</div>
   {{- else if .Description }}
   <p class="term-doc-line"># {{ .Description | plainify }}</p>
+  {{- end }}
+
+  {{- if $borrowedKo }}
+  <p class="term-doc-line">// {{ i18n "koPostsNotice" }}</p>
   {{- end }}
 
   <p class="term-total">// total {{ $paginator.TotalNumberOfElements }} · page {{ $paginator.PageNumber }}/{{ $paginator.TotalPages }}</p>

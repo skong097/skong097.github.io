@@ -8,6 +8,25 @@
 {{/* 포스트 리스트 — 2열 그리드 */}}
 <div id="home-posts-wrapper">
   {{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+
+  {{/* ── EN 홈: 영문 포스트가 없으면 한국어 포스트를 빌려 노출 ── */}}
+  {{- $borrowedKo := false }}
+  {{- if and (eq site.Language.Lang "en") (eq (len $pages) 0) }}
+    {{- range site.Sites }}
+      {{- if eq .Language.Lang "ko" }}
+        {{- $koPages := where .RegularPages "Type" "in" site.Params.mainSections }}
+        {{- if gt (len $koPages) 0 }}
+          {{- $pages = $koPages }}
+          {{- $borrowedKo = true }}
+        {{- end }}
+      {{- end }}
+    {{- end }}
+  {{- end }}
+
+  {{- if $borrowedKo }}
+  <p class="home-ko-notice">{{ i18n "koPostsNotice" }}</p>
+  {{- end }}
+
   {{- $paginator := .Paginate $pages }}
 
   <div class="home-post-grid">
