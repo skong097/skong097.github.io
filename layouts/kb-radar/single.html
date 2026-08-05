@@ -53,12 +53,18 @@ body:has(.kbr-wrap) .page-header { display: none; }
   background: var(--card); color: var(--text); }
 
 .kbr-main { max-width: 1400px; margin: 0 auto; padding: 1.5rem; }
-.kbr-group { margin-bottom: 2rem; }
-.kbr-group-title { font-family: var(--mono); font-size: 0.95rem; font-weight: 700;
-  color: var(--text); margin: 0 0 0.9rem; padding-bottom: 0.4rem;
-  border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 0.5rem; }
-.kbr-group-count { font-size: 0.7rem; color: var(--text-muted); font-weight: 400; }
 .kbr-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem; }
+
+.kbr-pager { display: flex; align-items: center; justify-content: center;
+  gap: 1rem; margin-top: 1.75rem; }
+.kbr-pager button { padding: 0.4rem 0.9rem; font-family: var(--mono); font-size: 0.75rem;
+  border: 1px solid var(--border); background: var(--card); color: var(--text-2);
+  border-radius: var(--radius); cursor: pointer; transition: all .2s; }
+.kbr-pager button:hover:not(:disabled) { color: var(--accent); border-color: var(--border-accent); }
+.kbr-pager button:disabled { opacity: 0.35; cursor: default; }
+.kbr-pageinfo { font-family: var(--mono); font-size: 0.75rem; color: var(--text-2);
+  min-width: 4.5rem; text-align: center; }
+.kbr-pageinfo strong { color: var(--text); }
 
 .kbr-card { background: var(--card); border: 1px solid var(--border);
   border-radius: var(--radius); padding: 1.1rem; display: flex; flex-direction: column;
@@ -119,12 +125,11 @@ body:has(.kbr-wrap) .page-header { display: none; }
 
 <script>
 const KB = JSON.parse({{ (site.Data.kb_items) | jsonify }});
-const KW = JSON.parse({{ (site.Data.kb_keywords) | jsonify }});
 const ITEMS = (KB && KB.items) || [];
-const GROUPS = (KW && KW.groups) || [];
 const CAT_LABEL = { paper: "논문", article: "기사", video: "영상", person: "인물" };
+const PAGE_SIZE = 6;
 
-const state = { cats: new Set(["paper","article","video","person"]), archived: false, q: "" };
+const state = { cats: new Set(["paper","article","video","person"]), archived: false, q: "", page: 1 };
 
 document.getElementById("kbrLast").textContent = (KB && KB.last_collected) || "—";
 
@@ -169,31 +174,43 @@ function render() {
       <code>scripts/run_kb_radar.sh</code> 를 실행하면 항목이 채워집니다.</div>`;
     return;
   }
+  if (shown.length === 0) {
+    main.innerHTML = `<div class="kbr-empty">필터 조건에 맞는 항목이 없습니다.</div>`;
+    return;
+  }
 
-  const order = GROUPS.map(g => g.id);
-  const nameOf = {}; GROUPS.forEach(g => nameOf[g.id] = g.name);
-  const orphans = [...new Set(shown.map(i => i.group).filter(g => !order.includes(g)))];
-  const allGroups = order.concat(orphans);
+  shown.sort((a,b) => (b.published || b.collected || "").localeCompare(a.published || a.collected || ""));
 
-  let html = "";
-  allGroups.forEach(gid => {
-    const list = shown.filter(i => i.group === gid);
-    if (list.length === 0) return;
-    list.sort((a,b) => (b.published || b.collected || "").localeCompare(a.published || a.collected || ""));
-    html += `<section class="kbr-group">
-      <h3 class="kbr-group-title">${esc(nameOf[gid] || gid)}
-        <span class="kbr-group-count">${list.length}</span></h3>
-      <div class="kbr-grid">${list.map(cardHtml).join("")}</div>
-    </section>`;
-  });
-  main.innerHTML = html || `<div class="kbr-empty">필터 조건에 맞는 항목이 없습니다.</div>`;
+  const pages = Math.ceil(shown.length / PAGE_SIZE);
+  state.page = Math.min(Math.max(state.page, 1), pages);
+  const start = (state.page - 1) * PAGE_SIZE;
+  const slice = shown.slice(start, start + PAGE_SIZE);
+
+  let html = `<div class="kbr-grid">${slice.map(cardHtml).join("")}</div>`;
+  if (pages > 1) {
+    html += `<nav class="kbr-pager">
+      <button type="button" data-page="prev"${state.page === 1 ? " disabled" : ""}>&lsaquo; 이전</button>
+      <span class="kbr-pageinfo"><strong>${state.page}</strong> / ${pages}</span>
+      <button type="button" data-page="next"${state.page === pages ? " disabled" : ""}>다음 &rsaquo;</button>
+    </nav>`;
+  }
+  main.innerHTML = html;
 }
+
+// 페이저는 render() 가 매번 다시 그리므로 컨테이너에 위임 바인딩한다.
+document.getElementById("kbrMain").addEventListener("click", e => {
+  const btn = e.target.closest(".kbr-pager button");
+  if (!btn) return;
+  state.page += (btn.dataset.page === "next" ? 1 : -1);
+  render();
+});
 
 document.querySelectorAll(".kbr-chip[data-cat]").forEach(chip => {
   chip.addEventListener("click", () => {
     const c = chip.dataset.cat;
     if (state.cats.has(c)) { state.cats.delete(c); chip.classList.remove("on"); }
     else { state.cats.add(c); chip.classList.add("on"); }
+    state.page = 1;
     render();
   });
 });
@@ -201,10 +218,12 @@ const archChip = document.getElementById("kbrArchive");
 archChip.addEventListener("click", () => {
   state.archived = !state.archived;
   archChip.classList.toggle("on", state.archived);
+  state.page = 1;
   render();
 });
 document.getElementById("kbrSearch").addEventListener("input", e => {
   state.q = e.target.value.trim().toLowerCase();
+  state.page = 1;
   render();
 });
 
