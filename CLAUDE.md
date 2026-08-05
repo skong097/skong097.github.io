@@ -48,6 +48,42 @@
 - 트리 커넥터는 텍스트 박스문자 대신 SVG `path`(세로 spine + 가로 tick)로 그린다 → 정렬 깨짐 원천 차단
 - 루트에 `role="img"` + `aria-label` 지정
 
+## 포스트는 한/영 두 벌로 작성한다 (필수)
+
+이 블로그는 한국어(`/`) + 영어(`/en/`) 이중 언어다. **새 포스트는 반드시 한/영 쌍으로 만든다.**
+
+### 파일 명명
+
+| | 파일 | URL |
+|---|---|---|
+| 한국어 | `content/posts/<category>/<english-slug>.md` | `/posts/<category>/<한글-슬러그>/` |
+| 영어 | `content/posts/<category>/<english-slug>.en.md` | `/en/posts/<category>/<english-slug>/` |
+
+- **두 파일의 basename 이 같아야** Hugo 가 번역본으로 연결하고 헤더 토글이 서로를 가리킨다. `translationKey` 는 불필요하다.
+- 한국어 파일 front matter 에 `slug: <한글-슬러그>` 를 넣어 기존 한글 URL 관례를 유지한다.
+- 영어 파일에는 `slug` 를 넣지 않는다 — 영문 basename 이 그대로 URL 이 된다.
+
+### front matter
+
+`date` · `categories` · `tags` · `draft` 는 두 파일이 **동일해야 한다.** 다르면 목록 정렬과 분류가 어긋난다.
+`title` · `description` · `summary` 만 각 언어로 쓴다.
+
+### UI 문구
+
+템플릿에 한글을 하드코딩하지 않는다. `i18n/ko.yaml` · `i18n/en.yaml` 에 키를 추가하고 `{{ i18n "key" }}` 로 쓴다.
+**JS 안에서는 `{{ i18n "key" | jsonify | safeJS }}`** — `safeJS` 를 빼면 Hugo 의 컨텍스트 이스케이프가 한 번 더 걸려
+`"\"논문\""` 처럼 따옴표가 문자열에 박힌다.
+
+### 다이어그램
+
+- SVG 라벨이 한글이면 `<name>-en.svg` 를 따로 만들어 영문 파일에서 참조한다.
+- 라벨이 영문·기호뿐이면 두 언어가 같은 SVG 를 공유한다.
+
+### 하지 않는 것
+
+- 기존 포스트(2026-08-05 이전 발행분)를 소급 번역하지 않는다. 한국어 원문 그대로 두고, `/en/posts/` 에는 안내 배너와 함께 노출된다.
+- projects/gallery 페이지의 `.projects-*` · `.gal-*` CSS 는 `assets/css/extended/custom.css` 에 있다(ko/en 공용). `.md` 안에 다시 넣지 말 것.
+
 ## 기타
 
 - 전 직장 업체명(NCsoft 등) 절대 노출 금지.

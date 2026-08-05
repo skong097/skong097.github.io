@@ -1,7 +1,6 @@
 ---
-title: 프로젝트
+title: Projects
 layout: single
-url: /projects/
 ShowToc: false
 ShowReadingTime: false
 hideMeta: true
@@ -35,7 +34,7 @@ header.post-header h1 {
 </style>
 
 <p class="projects-intro">
-  로보틱스, 컴퓨터 비전, AI 분야에서 진행한 프로젝트들입니다.
+  Projects in robotics, computer vision, and AI.
 </p>
 
 <div class="projects-grid">
@@ -43,9 +42,9 @@ header.post-header h1 {
   <div class="project-card" style="--card-accent: #ec4899;">
     <span class="project-card-status status-active">Active</span>
     <div class="project-card-title">MOCA — Cafe Service Robot</div>
-    <div class="project-card-subtitle">카페 모객·서빙·안내 자율 로봇</div>
+    <div class="project-card-subtitle">Autonomous cafe robot for greeting, serving, and guidance</div>
     <div class="project-card-desc">
-      BehaviorTree 기반 6단계 모객 시나리오와 손님 표정 감정(Valence-Arousal) 실시간 분석을 결합한 모바일 매니퓰레이터 카페 로봇. 5가지 운영 모드(서빙·순회·안내·모객·대기)를 우선순위 기반 오케스트레이터가 자동 전환·복귀시키며, 운영자는 웹 대시보드에서 원격 관제합니다.
+      A mobile-manipulator cafe robot combining a six-stage BehaviorTree greeting scenario with real-time customer facial-emotion analysis (Valence-Arousal). A priority-based orchestrator switches between and returns from five operating modes (serving, patrol, guidance, greeting, standby), while operators supervise remotely from a web dashboard.
     </div>
     <div class="project-card-tags">
       <span class="project-card-tag">ROS2 Jazzy</span>
@@ -57,8 +56,8 @@ header.post-header h1 {
       <span class="project-card-tag">FastAPI · WebSocket</span>
     </div>
     <div class="project-card-links">
-      <a class="project-card-link" href="/posts/robotics/moca-감정인식-과민반응-방지-behaviortree-설계/">감정 인식 BT →</a>
-      <a class="project-card-link" href="/posts/robotics/moca-운영모드-오케스트레이터-우선순위-선점/">운영 모드 →</a>
+      <a class="project-card-link" href="/posts/robotics/moca-감정인식-과민반응-방지-behaviortree-설계/">Emotion-aware BT →</a>
+      <a class="project-card-link" href="/posts/robotics/moca-운영모드-오케스트레이터-우선순위-선점/">Operating modes →</a>
       <a class="project-card-link" href="/posts/robotics/moca-colcon-symlink-정적파일-404-해결/">colcon 404 →</a>
     </div>
   </div>
@@ -66,9 +65,9 @@ header.post-header h1 {
   <div class="project-card" style="--card-accent: #14b8a6;">
     <span class="project-card-status status-done">Done</span>
     <div class="project-card-title">ARASEO — Autonomous Taxi</div>
-    <div class="project-card-subtitle">미니시티 자율주행 택시 시스템</div>
+    <div class="project-card-subtitle">Mini-city autonomous taxi system</div>
     <div class="project-card-desc">
-      소형 자율주행 로봇(Pinky)을 택시처럼 운용하는 미니시티 시스템. PWA 웹앱으로 목적지를 호출하면 자동 배차·자율주행·결제까지 이어지고, 관제 대시보드에서 다수 로봇 운행을 실시간으로 관제합니다. 차선 인지·추종, 좌표계 정합, 원격 기동 응답성 등 운영 안정성에 초점.
+      A mini-city system that operates small autonomous robots (Pinky) like taxis. Hailing a destination from the PWA web app triggers automatic dispatch, autonomous driving, and payment end to end, while a control dashboard supervises multiple robots in real time. The focus is operational stability: lane detection and following, coordinate-frame alignment, and remote-startup responsiveness.
     </div>
     <div class="project-card-tags">
       <span class="project-card-tag">Python</span>
@@ -79,18 +78,18 @@ header.post-header h1 {
       <span class="project-card-tag">SQLite</span>
     </div>
     <div class="project-card-links">
-      <a class="project-card-link" href="/posts/robotics/araseo-관제대시보드-다수로봇-좌표계-일치시키기/">좌표계 일치 →</a>
-      <a class="project-card-link" href="/posts/robotics/araseo-ssh-원격기동-12초-멈춤-0.5초-단축/">SSH 12→0.5초 →</a>
-      <a class="project-card-link" href="/posts/robotics/araseo-차선주행-스쿨존-hsv-색공간-구분/">HSV 분리 →</a>
+      <a class="project-card-link" href="/posts/robotics/araseo-관제대시보드-다수로봇-좌표계-일치시키기/">Frame alignment →</a>
+      <a class="project-card-link" href="/posts/robotics/araseo-ssh-원격기동-12초-멈춤-0.5초-단축/">SSH 12s → 0.5s →</a>
+      <a class="project-card-link" href="/posts/robotics/araseo-차선주행-스쿨존-hsv-색공간-구분/">HSV separation →</a>
     </div>
   </div>
 
   <div class="project-card" style="--card-accent: #00c8dc;">
     <span class="project-card-status status-active">Active</span>
     <div class="project-card-title">Kevin Patrol Fleet Dashboard</div>
-    <div class="project-card-subtitle">다중 로봇 플릿 모니터링 시스템</div>
+    <div class="project-card-subtitle">Multi-robot fleet monitoring system</div>
     <div class="project-card-desc">
-      5~10대 자율 순찰 로봇을 동시에 모니터링하는 PyQt6 대시보드. Fleet Overview 미니맵에서 전체 로봇 위치, 상태, 감지 이벤트를 실시간으로 파악할 수 있습니다.
+      A PyQt6 dashboard for monitoring 5–10 autonomous patrol robots at once. The Fleet Overview minimap shows every robot's position, status, and detection events in real time.
     </div>
     <div class="project-card-tags">
       <span class="project-card-tag">Python</span>
@@ -100,7 +99,7 @@ header.post-header h1 {
       <span class="project-card-tag">Nav2</span>
     </div>
     <div class="project-card-links">
-      <a class="project-card-link" href="/projects/kevin-patrol-fleet/">상세 보기 →</a>
+      <a class="project-card-link" href="/projects/kevin-patrol-fleet/">Details →</a>
       <a class="project-card-link" href="https://github.com/skong097/kevin_patrol_fleet" target="_blank">GitHub →</a>
     </div>
   </div>
@@ -108,9 +107,9 @@ header.post-header h1 {
   <div class="project-card" style="--card-accent: #3c82f6;">
     <span class="project-card-status status-done">Done</span>
     <div class="project-card-title">Kevin Patrol Dashboard</div>
-    <div class="project-card-subtitle">자율 순찰 로봇 모니터링 대시보드</div>
+    <div class="project-card-subtitle">Autonomous patrol robot monitoring dashboard</div>
     <div class="project-card-desc">
-      단일 로봇 실시간 모니터링 시스템. SLAM 3D 뷰포트, 카메라 피드, 센서 시계열 그래프, 얼굴/낙상 감지, ROS2 토픽 모니터링을 하나의 화면에 통합합니다.
+      A real-time monitoring system for a single robot. It brings a SLAM 3D viewport, camera feed, sensor time-series plots, face and fall detection, and ROS2 topic monitoring together on one screen.
     </div>
     <div class="project-card-tags">
       <span class="project-card-tag">Python</span>
@@ -119,7 +118,7 @@ header.post-header h1 {
       <span class="project-card-tag">ROS2</span>
     </div>
     <div class="project-card-links">
-      <a class="project-card-link" href="/projects/kevin-patrol-dashboard/">상세 보기 →</a>
+      <a class="project-card-link" href="/projects/kevin-patrol-dashboard/">Details →</a>
       <a class="project-card-link" href="https://github.com/skong097/kevin_patrol" target="_blank">GitHub →</a>
     </div>
   </div>
@@ -127,9 +126,9 @@ header.post-header h1 {
   <div class="project-card" style="--card-accent: #8b5cf6;">
     <span class="project-card-status status-done">Done</span>
     <div class="project-card-title">Home Safe Solution</div>
-    <div class="project-card-subtitle">Vision AI 기반 낙상 감지 시스템</div>
+    <div class="project-card-subtitle">Vision-AI fall detection system</div>
     <div class="project-card-desc">
-      YOLO + ST-GCN + Random Forest를 결합한 실시간 낙상 감지. GUI에서 모델 전환, 실시간 추론, 데이터베이스 기록까지 통합 파이프라인을 제공합니다.
+      Real-time fall detection combining YOLO, ST-GCN, and Random Forest. The GUI provides an integrated pipeline covering model switching, live inference, and database logging.
     </div>
     <div class="project-card-tags">
       <span class="project-card-tag">Python</span>
@@ -139,17 +138,17 @@ header.post-header h1 {
       <span class="project-card-tag">OpenCV</span>
     </div>
     <div class="project-card-links">
-      <a class="project-card-link" href="/projects/home-safe-solution/">상세 보기 →</a>
+      <a class="project-card-link" href="/projects/home-safe-solution/">Details →</a>
       <a class="project-card-link" href="https://github.com/skong097/vision_ai" target="_blank">GitHub →</a>
     </div>
   </div>
 
   <div class="project-card" style="--card-accent: #f59e0b;">
     <span class="project-card-status status-done">Done</span>
-    <div class="project-card-title">EyeCon (피노키오) v3.5</div>
-    <div class="project-card-subtitle">실시간 대화 분석 시스템</div>
+    <div class="project-card-title">EyeCon (Pinocchio) v3.5</div>
+    <div class="project-card-subtitle">Real-time conversation analysis system</div>
     <div class="project-card-desc">
-      Ollama EXAONE 7.8B 기반으로 13개 메트릭 + 7개 감정을 실시간 분석. 레이더 차트, LLM 대화 전략, 1.5초 응답 시간을 달성한 4-패널 대시보드입니다.
+      Real-time analysis of 13 metrics and 7 emotions, built on Ollama EXAONE 7.8B. A four-panel dashboard with radar charts, LLM conversation strategies, and a 1.5-second response time.
     </div>
     <div class="project-card-tags">
       <span class="project-card-tag">Python</span>
@@ -159,16 +158,16 @@ header.post-header h1 {
       <span class="project-card-tag">NLP</span>
     </div>
     <div class="project-card-links">
-      <a class="project-card-link" href="/projects/eyecon-pinocchio/">상세 보기 →</a>
+      <a class="project-card-link" href="/projects/eyecon-pinocchio/">Details →</a>
     </div>
   </div>
 
   <div class="project-card" style="--card-accent: #10b981;">
     <span class="project-card-status status-done">Done</span>
     <div class="project-card-title">Home Guard Bot</div>
-    <div class="project-card-subtitle">LLM + ROS2 통합 가드 로봇</div>
+    <div class="project-card-subtitle">LLM + ROS2 integrated guard robot</div>
     <div class="project-card-desc">
-      FastAPI v0.2에 TTS+JSON 기능을 결합하고, ROS2 Jazzy의 guard_brain 노드에서 LLM과 센서 데이터를 융합하는 지능형 경비 로봇 시스템입니다.
+      An intelligent security robot system that adds TTS and JSON capabilities to FastAPI v0.2 and fuses LLM output with sensor data in a `guard_brain` node on ROS2 Jazzy.
     </div>
     <div class="project-card-tags">
       <span class="project-card-tag">Python</span>
@@ -178,16 +177,16 @@ header.post-header h1 {
       <span class="project-card-tag">TTS</span>
     </div>
     <div class="project-card-links">
-      <a class="project-card-link" href="/projects/home-guard-bot/">상세 보기 →</a>
+      <a class="project-card-link" href="/projects/home-guard-bot/">Details →</a>
     </div>
   </div>
 
   <div class="project-card" style="--card-accent: #f43f5e;">
     <span class="project-card-status status-done">Done</span>
     <div class="project-card-title">ROS2 Commander</div>
-    <div class="project-card-subtitle">게임형 ROS2 학습 애플리케이션</div>
+    <div class="project-card-subtitle">Gamified ROS2 learning application</div>
     <div class="project-card-desc">
-      ROS2 개념을 게임으로 학습하는 인터랙티브 애플리케이션. 토픽, 서비스, 액션, 파라미터 등 ROS2 핵심 개념을 실습하며 익힐 수 있습니다.
+      An interactive application for learning ROS2 concepts through gameplay. Core concepts — topics, services, actions, and parameters — are picked up hands-on.
     </div>
     <div class="project-card-tags">
       <span class="project-card-tag">Python</span>
@@ -195,7 +194,7 @@ header.post-header h1 {
       <span class="project-card-tag">ROS2</span>
     </div>
     <div class="project-card-links">
-      <a class="project-card-link" href="/projects/ros2-commander/">상세 보기 →</a>
+      <a class="project-card-link" href="/projects/ros2-commander/">Details →</a>
     </div>
   </div>
 

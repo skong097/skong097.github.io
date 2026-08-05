@@ -1,0 +1,661 @@
+---
+title: About me
+layout: single
+ShowToc: false
+ShowBreadCrumbs: false
+ShowReadingTime: false
+ShowPostNavLinks: false
+hideMeta: true
+author: ''
+---
+
+<style>
+/* ── About Page - Container 확장 ──────────────────────── */
+.post-single .post-content {
+  max-width: 1200px !important;
+  width: 100% !important;
+  margin: 0 auto;
+}
+.post-single .main,
+.post-single main.main {
+  max-width: 1200px !important;
+  width: 92% !important;
+}
+
+
+
+/* ── About Intro ──────────────────────────────────────── */
+.about-intro {
+  text-align: left;
+  padding: 1rem 0 0.5rem;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  opacity: 0.8;
+}
+
+/* ── Section Title ────────────────────────────────────── */
+.about-section-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 2.5rem 0 1.2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid rgba(0,200,220,0.2);
+  letter-spacing: -0.02em;
+}
+[data-theme="light"] .about-section-title {
+  border-bottom-color: rgba(60,130,246,0.2);
+}
+
+/* ── Tech Stack Grid ──────────────────────────────────── */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.tech-card {
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 1.2rem 1.3rem;
+  background: rgba(255,255,255,0.02);
+  transition: 0.3s ease;
+}
+.tech-card:hover {
+  border-color: rgba(0,200,220,0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+[data-theme="light"] .tech-card {
+  border-color: rgba(0,0,0,0.08);
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+[data-theme="light"] .tech-card:hover {
+  border-color: rgba(60,130,246,0.3);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+.tech-card-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.7rem;
+  opacity: 0.5;
+}
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.tech-tag {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  background: rgba(0,200,220,0.08);
+  border: 1px solid rgba(0,200,220,0.15);
+  transition: 0.2s ease;
+}
+.tech-tag:hover {
+  background: rgba(0,200,220,0.15);
+}
+[data-theme="light"] .tech-tag {
+  background: rgba(60,130,246,0.06);
+  border-color: rgba(60,130,246,0.12);
+}
+
+/* ── Project List Grid ────────────────────────────────── */
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+.project-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  padding: 0.9rem 1.2rem;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 10px;
+  text-decoration: none;
+  color: inherit;
+  transition: 0.3s ease;
+}
+.project-link:hover {
+  border-color: rgba(0,200,220,0.3);
+  background: rgba(0,200,220,0.04);
+  transform: translateX(4px);
+}
+[data-theme="light"] .project-link {
+  border-color: rgba(0,0,0,0.08);
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+}
+[data-theme="light"] .project-link:hover {
+  border-color: rgba(60,130,246,0.3);
+  background: rgba(60,130,246,0.03);
+}
+.project-link-arrow {
+  font-size: 1.2rem;
+  opacity: 0.3;
+  transition: 0.2s;
+  flex-shrink: 0;
+}
+.project-link:hover .project-link-arrow {
+  opacity: 0.8;
+  transform: translateX(3px);
+}
+.project-link-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.project-link-desc {
+  font-size: 0.8rem;
+  opacity: 0.55;
+  margin-top: 2px;
+}
+
+/* ── Gallery ──────────────────────────────────────────── */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.gallery-item {
+  position: relative;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.02);
+  transition: 0.3s ease;
+  cursor: zoom-in;
+}
+.gallery-item:hover {
+  border-color: rgba(0,200,220,0.35);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.28);
+}
+[data-theme="light"] .gallery-item {
+  border-color: rgba(0,0,0,0.08);
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+[data-theme="light"] .gallery-item:hover {
+  border-color: rgba(60,130,246,0.3);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+}
+.gallery-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 16 / 10;
+}
+.gallery-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1.4rem 1.1rem 0.85rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.35) 55%, transparent 100%);
+  color: #fff;
+}
+.gallery-caption-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.gallery-caption-desc {
+  font-size: 0.78rem;
+  opacity: 0.82;
+  margin-top: 2px;
+}
+
+/* ── Gallery Lightbox (popup) ─────────────────────────── */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: rgba(0,0,0,0.88);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+.lightbox-overlay.open {
+  display: flex;
+  animation: lightboxFade 0.2s ease;
+}
+@keyframes lightboxFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.lightbox-content {
+  position: relative;
+  max-width: 92vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.lightbox-img {
+  max-width: 92vw;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.6);
+}
+.lightbox-caption {
+  margin-top: 0.9rem;
+  text-align: center;
+  color: #fff;
+}
+.lightbox-caption .t {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.lightbox-caption .d {
+  font-size: 0.85rem;
+  opacity: 0.78;
+  margin-top: 3px;
+}
+.lightbox-close {
+  position: fixed;
+  top: 1.2rem;
+  right: 1.4rem;
+  width: 2.6rem;
+  height: 2.6rem;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+.lightbox-close:hover {
+  background: rgba(255,255,255,0.25);
+  transform: rotate(90deg);
+}
+
+/* ── Contact ──────────────────────────────────────────── */
+.contact-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.4rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.03);
+  color: inherit;
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+.contact-btn:hover {
+  border-color: rgba(0,200,220,0.4);
+  background: rgba(0,200,220,0.08);
+  transform: translateY(-2px);
+}
+[data-theme="light"] .contact-btn {
+  border-color: rgba(0,0,0,0.1);
+  background: #fff;
+}
+[data-theme="light"] .contact-btn:hover {
+  border-color: rgba(60,130,246,0.4);
+  background: rgba(60,130,246,0.05);
+}
+
+/* ── Responsive ───────────────────────────────────────── */
+@media (min-width: 1100px) {
+  .tech-grid { grid-template-columns: repeat(5, 1fr); }
+  .project-list { grid-template-columns: repeat(3, 1fr); }
+  .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (min-width: 768px) and (max-width: 1099px) {
+  .tech-grid { grid-template-columns: repeat(3, 1fr); }
+  .project-list { grid-template-columns: repeat(2, 1fr); }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 767px) {
+  .post-single .main, .post-single main.main { width: 95% !important; }
+  .about-3d-frame { height: 360px; }
+  .tech-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
+  .project-list { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 400px) {
+  .tech-grid { grid-template-columns: 1fr; }
+}
+</style>
+
+<!-- ═══ 3D Hero (Claude & Gemini entities) ═══ -->
+{{< about-3d >}}
+
+<p class="about-intro" style="text-align:left !important; max-width:100%; margin:1rem 0;">I'm an engineer who spent 23 years responsible for the uninterrupted operation of large-scale IT infrastructure. For the next 20 years, I want to put that experience to work on Physical AI systems that directly help people.</p>
+
+<p class="about-intro" style="text-align:left !important; max-width:100%; margin:0.5rem 0 1rem;">I'm currently developing ROS2-based autonomous patrol robots and computer vision systems, and documenting my learning and hands-on work on this blog every week.</p>
+
+<div class="about-section-title">Tech Stack</div>
+
+<div class="tech-grid">
+  <div class="tech-card">
+    <div class="tech-card-title">Big Data Infrastructure</div>
+    <div class="tech-tags">
+      <span class="tech-tag">Hadoop v2/v3</span>
+      <span class="tech-tag">HDFS</span>
+      <span class="tech-tag">HDFS Router (RBF)</span>
+      <span class="tech-tag">Hive</span>
+      <span class="tech-tag">Impala</span>
+      <span class="tech-tag">YARN</span>
+      <span class="tech-tag">ZooKeeper</span>
+      <span class="tech-tag">Ranger</span>
+      <span class="tech-tag">Kafka</span>
+      <span class="tech-tag">NiFi</span>
+      <span class="tech-tag">Cloudera → Apache Migration</span>
+    </div>
+  </div>
+  <div class="tech-card">
+    <div class="tech-card-title">Monitoring & Observability</div>
+    <div class="tech-tags">
+      <span class="tech-tag">ELK Stack</span>
+      <span class="tech-tag">Grafana</span>
+      <span class="tech-tag">InfluxDB</span>
+      <span class="tech-tag">Prometheus</span>
+      <span class="tech-tag">Anomaly Detection & Failure Prediction</span>
+    </div>
+  </div>
+  <div class="tech-card">
+    <div class="tech-card-title">Infrastructure · OS · Network</div>
+    <div class="tech-tags">
+      <span class="tech-tag">Linux</span>
+      <span class="tech-tag">Windows Server</span>
+      <span class="tech-tag">TCP/IP</span>
+      <span class="tech-tag">DNS</span>
+      <span class="tech-tag">VPN</span>
+      <span class="tech-tag">Firewall</span>
+      <span class="tech-tag">HA Redundancy</span>
+      <span class="tech-tag">DR Setup</span>
+    </div>
+  </div>
+  <div class="tech-card">
+    <div class="tech-card-title">MLOps / AIOps</div>
+    <div class="tech-tags">
+      <span class="tech-tag">MLflow</span>
+      <span class="tech-tag">Airflow</span>
+      <span class="tech-tag">Model Monitoring</span>
+      <span class="tech-tag">XGBoost</span>
+      <span class="tech-tag">LightGBM</span>
+    </div>
+  </div>
+  <div class="tech-card">
+    <div class="tech-card-title">Robotics & ROS2</div>
+    <div class="tech-tags">
+      <span class="tech-tag">ROS2 Jazzy</span>
+      <span class="tech-tag">Nav2</span>
+      <span class="tech-tag">SLAM Toolbox</span>
+      <span class="tech-tag">MoveIt</span>
+      <span class="tech-tag">RViz</span>
+      <span class="tech-tag">Gazebo</span>
+      <span class="tech-tag">micro-ROS</span>
+    </div>
+  </div>
+  <div class="tech-card">
+    <div class="tech-card-title">AI / ML / DL</div>
+    <div class="tech-tags">
+      <span class="tech-tag">YOLO v8/v11</span>
+      <span class="tech-tag">ST-GCN (PYSKL Transfer Learning)</span>
+      <span class="tech-tag">CNN</span>
+      <span class="tech-tag">Random Forest</span>
+      <span class="tech-tag">PyTorch</span>
+      <span class="tech-tag">TensorFlow</span>
+      <span class="tech-tag">Ollama</span>
+    </div>
+  </div>
+  <div class="tech-card">
+    <div class="tech-card-title">Computer Vision</div>
+    <div class="tech-tags">
+      <span class="tech-tag">OpenCV</span>
+      <span class="tech-tag">MediaPipe Face Mesh</span>
+      <span class="tech-tag">Pose Estimation</span>
+      <span class="tech-tag">Tracking</span>
+      <span class="tech-tag">Liveness Detection</span>
+      <span class="tech-tag">HSV Color Space</span>
+    </div>
+  </div>
+  <div class="tech-card">
+    <div class="tech-card-title">Voice & LLM</div>
+    <div class="tech-tags">
+      <span class="tech-tag">faster-whisper STT</span>
+      <span class="tech-tag">Porcupine Wake Word</span>
+      <span class="tech-tag">Ollama Local LLM</span>
+    </div>
+  </div>
+  <div class="tech-card">
+    <div class="tech-card-title">Edge / IoT</div>
+    <div class="tech-tags">
+      <span class="tech-tag">ESP32</span>
+      <span class="tech-tag">ESP32-CAM</span>
+      <span class="tech-tag">AES Encrypted Storage</span>
+      <span class="tech-tag">TCP / Serial</span>
+    </div>
+  </div>
+  <div class="tech-card">
+    <div class="tech-card-title">Application</div>
+    <div class="tech-tags">
+      <span class="tech-tag">Python</span>
+      <span class="tech-tag">C++</span>
+      <span class="tech-tag">FastAPI</span>
+      <span class="tech-tag">WebSocket</span>
+      <span class="tech-tag">PyQt6</span>
+      <span class="tech-tag">PyQtGraph</span>
+    </div>
+  </div>
+  <div class="tech-card">
+    <div class="tech-card-title">DevOps</div>
+    <div class="tech-tags">
+      <span class="tech-tag">Git</span>
+      <span class="tech-tag">GitHub Actions</span>
+      <span class="tech-tag">Docker</span>
+      <span class="tech-tag">VS Code</span>
+      <span class="tech-tag">Jupyter</span>
+    </div>
+  </div>
+  <div class="tech-card">
+    <div class="tech-card-title">VLA & Imitation Learning <span style="font-size:0.6rem;font-weight:500;opacity:0.7;margin-left:0.4rem;padding:2px 7px;border-radius:5px;background:rgba(255,180,0,0.12);border:1px solid rgba(255,180,0,0.25);">Research / In Progress</span></div>
+    <div class="tech-tags">
+      <span class="tech-tag">LeRobot</span>
+      <span class="tech-tag">ACT Policy</span>
+      <span class="tech-tag">SmolVLA</span>
+      <span class="tech-tag">Pi0</span>
+      <span class="tech-tag">CUDA 12.8</span>
+    </div>
+  </div>
+  <div class="tech-card">
+    <div class="tech-card-title">Certifications & Languages</div>
+    <div class="tech-tags">
+      <span class="tech-tag">Azure AZ-900</span>
+      <span class="tech-tag">MCSE</span>
+      <span class="tech-tag">LPIC-2</span>
+      <span class="tech-tag">MCDBA</span>
+      <span class="tech-tag">OCP (Oracle)</span>
+      <span class="tech-tag">HP Master ASE (High Availability)</span>
+      <span class="tech-tag">HP LINUX ASE</span>
+      <span class="tech-tag">HP CSA (HP-UX)</span>
+      <span class="tech-tag">SCSA (Sun)</span>
+      <span class="tech-tag">ITIL Foundation</span>
+      <span class="tech-tag">Network Administrator, Grade 2 (Korea)</span>
+      <span class="tech-tag">IELTS 5.5 (2025)</span>
+    </div>
+  </div>
+</div>
+
+<div class="about-section-title">Recent Projects</div>
+
+<p class="about-intro" style="text-align:left !important; max-width:100%; margin:0 0 1rem; font-size:0.92rem; opacity:0.65;">Four team projects completed during a Physical AI engineering program centered on VLA (Vision-Language-Action) imitation learning with real robots. — Addinedu Physical AI Training Program (Dec 2025 – Jun 2026)</p>
+
+<div class="project-list">
+  <a class="project-link" href="https://github.com/skong097/vision_ai" target="_blank" rel="noopener">
+    <div>
+      <div class="project-link-title">Home Care-Vision AI</div>
+      <div class="project-link-desc">Home care for single-person households — fall detection with fine-tuned ST-GCN, 99.63% accuracy · 99.40% recall</div>
+    </div>
+    <span class="project-link-arrow">↗</span>
+  </a>
+  <a class="project-link" href="https://github.com/skong097/voice_iot_home" target="_blank" rel="noopener">
+    <div>
+      <div class="project-link-title">Voice IoT Controller</div>
+      <div class="project-link-desc">"Jarvis-ya" Korean wake word + local LLM natural-language control · SmartGate face/gesture 2-factor authentication</div>
+    </div>
+    <span class="project-link-arrow">↗</span>
+  </a>
+  <a class="project-link" href="/categories/robotics/">
+    <div>
+      <div class="project-link-title">ARASEO / DALIMI</div>
+      <div class="project-link-desc">Autonomous taxi system — Pinky robot · ROS2 Jazzy · mini-city sim + real-world operation · control PWA</div>
+    </div>
+    <span class="project-link-arrow">→</span>
+  </a>
+  <a class="project-link" href="/categories/robotics/">
+    <div>
+      <div class="project-link-title">MOCA Cafe Robot</div>
+      <div class="project-link-desc">BehaviorTree 6-state FSM customer-engagement scenario · real-time emotion (Valence-Arousal) recognition · operation-mode orchestrator</div>
+    </div>
+    <span class="project-link-arrow">→</span>
+  </a>
+</div>
+
+<div class="about-section-title" style="margin-top:2.5rem;">Other Activities</div>
+
+<div class="project-list">
+  <a class="project-link" href="https://github.com/skong097/multi-robot-monitor" target="_blank" rel="noopener">
+    <div>
+      <div class="project-link-title">Multi-Robot Monitor</div>
+      <div class="project-link-desc">Dashboard for monitoring multi-robot operational status and events</div>
+    </div>
+    <span class="project-link-arrow">↗</span>
+  </a>
+  <a class="project-link" href="https://github.com/skong097/kevin_sim" target="_blank" rel="noopener">
+    <div>
+      <div class="project-link-title">Kevin Sim</div>
+      <div class="project-link-desc">ROS2 simulator + mission-based learning game</div>
+    </div>
+    <span class="project-link-arrow">↗</span>
+  </a>
+  <a class="project-link" href="https://github.com/skong097/lerobot_il_study" target="_blank" rel="noopener">
+    <div>
+      <div class="project-link-title">LeRobot IL Study</div>
+      <div class="project-link-desc">VLA · imitation learning (ACT / SmolVLA / Pi0) practice</div>
+    </div>
+    <span class="project-link-arrow">↗</span>
+  </a>
+  <a class="project-link" href="https://github.com/skong097/ros2_fundamental" target="_blank" rel="noopener">
+    <div>
+      <div class="project-link-title">ROS2 Fundamental</div>
+      <div class="project-link-desc">ROS2 fundamentals training and simulation materials</div>
+    </div>
+    <span class="project-link-arrow">↗</span>
+  </a>
+</div>
+
+<div class="about-section-title" style="margin-top:2.5rem;">Gallery</div>
+
+<div class="gallery-grid">
+  <figure class="gallery-item" style="margin:0;">
+    <img src="/images/gallery/gallery_new.webp" alt="Physical AI Live WALL — multi-project demo wall" loading="lazy">
+    <figcaption class="gallery-caption">
+      <div class="gallery-caption-title">Physical AI Live WALL</div>
+      <div class="gallery-caption-desc">Autonomous driving · fall detection · robot control · IoT demo wall</div>
+    </figcaption>
+  </figure>
+  <figure class="gallery-item" style="margin:0;">
+    <img src="/images/gallery/moca-gallery.gif" alt="MOCA cafe robot customer-engagement scenario demo" loading="lazy">
+    <figcaption class="gallery-caption">
+      <div class="gallery-caption-title">MOCA Cafe Robot</div>
+      <div class="gallery-caption-desc">BehaviorTree customer-engagement scenario · emotion-recognition operation demo</div>
+    </figcaption>
+  </figure>
+</div>
+
+<!-- Gallery lightbox (popup) -->
+<div class="lightbox-overlay" id="gallery-lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+  <button class="lightbox-close" type="button" aria-label="Close">&times;</button>
+  <div class="lightbox-content">
+    <img class="lightbox-img" src="" alt="">
+    <div class="lightbox-caption">
+      <div class="t"></div>
+      <div class="d"></div>
+    </div>
+  </div>
+</div>
+
+<div class="about-section-title">Contact</div>
+
+<div class="contact-row">
+  <a class="contact-btn" href="https://github.com/skong097" target="_blank">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+    GitHub
+  </a>
+  <a class="contact-btn" href="mailto:skong097@gmail.com">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+    skong097@gmail.com
+  </a>
+</div>
+
+<script>
+(function () {
+  var overlay = document.getElementById('gallery-lightbox');
+  if (!overlay) return;
+  var lbImg = overlay.querySelector('.lightbox-img');
+  var lbT = overlay.querySelector('.lightbox-caption .t');
+  var lbD = overlay.querySelector('.lightbox-caption .d');
+  var closeBtn = overlay.querySelector('.lightbox-close');
+
+  function open(item) {
+    var img = item.querySelector('img');
+    if (!img) return;
+    lbImg.src = img.getAttribute('data-full') || img.currentSrc || img.src;
+    lbImg.alt = img.alt || '';
+    var t = item.querySelector('.gallery-caption-title');
+    var d = item.querySelector('.gallery-caption-desc');
+    lbT.textContent = t ? t.textContent : '';
+    lbD.textContent = d ? d.textContent : '';
+    overlay.classList.add('open');
+    overlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+  function close() {
+    overlay.classList.remove('open');
+    overlay.setAttribute('aria-hidden', 'true');
+    lbImg.src = '';
+    document.body.style.overflow = '';
+  }
+
+  // 모든 갤러리 카드에 위임 — 항목이 늘어나도 자동 적용
+  document.querySelectorAll('.gallery-item').forEach(function (item) {
+    item.addEventListener('click', function () { open(item); });
+  });
+  overlay.addEventListener('click', function (e) {
+    if (e.target === overlay) close();
+  });
+  closeBtn.addEventListener('click', close);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && overlay.classList.contains('open')) close();
+  });
+})();
+</script>

@@ -18,12 +18,12 @@
         <span class="line2">Intelligent Robots</span>
       </h1>
       <p class="hero-desc">
-        로보틱스 엔지니어의 기술 블로그<br>
-        자율주행, 낙상 감지, Fleet 시스템 그리고 그 너머
+        {{ i18n "heroDescLine1" }}<br>
+        {{ i18n "heroDescLine2" }}
       </p>
       <div class="hero-cta">
-        <a href="/posts/" class="btn-primary">Explore Posts</a>
-        <a href="/kb-radar/" class="btn-secondary">KB Radar</a>
+        <a href="{{ "/posts/" | relLangURL }}" class="btn-primary">Explore Posts</a>
+        <a href="{{ "/kb-radar/" | relLangURL }}" class="btn-secondary">KB Radar</a>
       </div>
     </div>
   </div>

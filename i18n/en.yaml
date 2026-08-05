@@ -1,0 +1,33 @@
+# Custom template strings. Merged with PaperMod's own i18n —
+# do not redefine theme-provided keys (search, read_time, ...).
+
+kbRadarSubtitle: "Knowledge Radar"
+kbrCatPaper: "Papers"
+kbrCatArticle: "Articles"
+kbrCatVideo: "Videos"
+kbrCatPerson: "People"
+kbrArchiveToggle: "Include archive"
+kbrSearchPlaceholder: "Search title, summary, group…"
+kbrFooterTagline: "Keyword-driven knowledge collection"
+kbrUntitled: "(untitled)"
+kbrEmptyNoItems: "No items collected yet."
+kbrEmptyNoItemsHint: "to populate this view."
+kbrEmptyNoMatch: "No items match the current filters."
+kbrPagerPrev: "Prev"
+kbrPagerNext: "Next"
+
+heroDescLine1: "A robotics engineer's technical blog"
+heroDescLine2: "Autonomous driving, fall detection, fleet systems, and beyond"
+
+aboutFloatLine1: "Physical AI that helps people"
+aboutFloatLine2: "Building robots people can trust."
+aboutName: "Stephen Kong"
+aboutTraitLine1: "Robotics & Autonomous Driving Engineer —"
+aboutTraitLine2: "backed by 23 years"
+aboutTraitLine3: "of systems infrastructure"
+
+ghGraphAriaLabel: "GitHub project graph"
+ghGraphEmpty: "GitHub projects coming soon"
+ghGraphProfile: "GitHub profile"
+
+koPostsNotice: "Posts are currently written in Korean. English translations are in progress."

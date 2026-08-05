@@ -1,0 +1,33 @@
+# 커스텀 템플릿 전용 문자열. PaperMod 테마 i18n 과 병합되므로
+# 테마가 이미 가진 키(search, read_time 등)는 여기 두지 않는다.
+
+kbRadarSubtitle: "지식 레이더"
+kbrCatPaper: "논문"
+kbrCatArticle: "기사"
+kbrCatVideo: "영상"
+kbrCatPerson: "인물"
+kbrArchiveToggle: "아카이브 포함"
+kbrSearchPlaceholder: "제목·요약·그룹 검색…"
+kbrFooterTagline: "키워드 기반 지식 수집"
+kbrUntitled: "(제목 없음)"
+kbrEmptyNoItems: "아직 수집된 항목이 없습니다."
+kbrEmptyNoItemsHint: "를 실행하면 항목이 채워집니다."
+kbrEmptyNoMatch: "필터 조건에 맞는 항목이 없습니다."
+kbrPagerPrev: "이전"
+kbrPagerNext: "다음"
+
+heroDescLine1: "로보틱스 엔지니어의 기술 블로그"
+heroDescLine2: "자율주행, 낙상 감지, Fleet 시스템 그리고 그 너머"
+
+aboutFloatLine1: "사람을 돕는 Physical AI"
+aboutFloatLine2: "신뢰받는 로봇을 만듭니다."
+aboutName: "공국진"
+aboutTraitLine1: "로봇·자율주행 엔지니어 —"
+aboutTraitLine2: "23년 시스템 인프라의"
+aboutTraitLine3: "내공을 더하다"
+
+ghGraphAriaLabel: "GitHub 프로젝트 그래프"
+ghGraphEmpty: "GitHub 프로젝트를 준비 중입니다"
+ghGraphProfile: "GitHub 프로필"
+
+koPostsNotice: ""
