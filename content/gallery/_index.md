@@ -12,40 +12,6 @@ summary: 실물 로봇으로 검증한 데모 영상 모음
 header.post-header { text-align:center; width:100%; border-bottom:1px solid rgba(128,128,128,.2); padding-bottom:1rem; margin-bottom:1.2rem; }
 header.post-header h1 { font-size:40px; text-align:center; }
 
-.gal-intro { text-align:center; color:var(--secondary); margin:0 auto 2.4rem; max-width:640px; line-height:1.7; }
-
-.gal-sec { margin:0 0 3.2rem; scroll-margin-top:80px; }
-.gal-sec h2 { font-size:21px; margin:0 0 .55rem; display:inline-flex; flex-wrap:wrap;
-  align-items:center; gap:.55rem; color:#fff; padding:.44rem .9rem; border-radius:9px;
-  line-height:1.35; }
-.gal-sec h2 .tag { font-size:11px; font-weight:600; letter-spacing:.06em; padding:3px 9px; border-radius:99px;
-  background:rgba(255,255,255,.2); color:#fff; text-transform:uppercase; }
-.gal-sec .desc { color:var(--secondary); font-size:14px; margin:0 0 1.2rem; line-height:1.6; }
-
-/* 프로젝트별 제목 배경색 — 포트폴리오 PPT 강조색과 동일 */
-#wasab    h2 { background:#0F766E; }   /* WaSaB */
-#moca     h2 { background:#6B4FE0; }   /* MOCA */
-#araseo   h2 { background:#2563EB; }   /* ARASEO · DALIMI */
-#homecare h2 { background:#0E7C7B; }   /* 홈케어링 */
-
-.gal-grid { display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); }
-.gal-grid.wide { grid-template-columns:1fr; }
-.gal-grid.tall { grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); align-items:start; }
-
-.gal-sub { font-size:12px; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
-  color:var(--secondary); margin:2rem 0 .8rem; padding-top:1rem; border-top:1px dashed rgba(128,128,128,.25); }
-.gal-sub span { font-weight:400; text-transform:none; letter-spacing:0; }
-
-.gal-item { background:var(--entry); border-radius:10px; overflow:hidden; border:1px solid rgba(128,128,128,.18); }
-.gal-item img { width:100%; height:auto; display:block; }
-.gal-item video { width:100%; height:auto; display:block; background:#111; }
-.gal-cap { padding:9px 12px 11px; }
-.gal-cap .n { font-size:10px; font-weight:700; letter-spacing:.08em; color:#c8a24a; display:block; margin-bottom:2px; }
-.gal-cap .t { font-size:13px; font-weight:600; line-height:1.4; }
-.gal-cap .s { font-size:12px; color:var(--secondary); margin-top:3px; line-height:1.5; }
-
-.gal-note { font-size:13px; color:var(--secondary); background:var(--code-bg); border-radius:8px;
-  padding:14px 16px; margin:2.6rem 0 0; line-height:1.7; }
 </style>
 
 <p class="gal-intro">
