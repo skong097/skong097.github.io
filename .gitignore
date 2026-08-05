@@ -16,3 +16,6 @@ scripts/kb_radar/cron.log
 
 # superpowers SDD scratch
 .superpowers/
+
+# WSL: Windows 다운로드 출처 메타데이터 (NTFS ADS)
+*:Zone.Identifier
