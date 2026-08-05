@@ -1,14 +1,111 @@
 baseURL: https://skong097.github.io/
-languageCode: ko
-title: Stephen's Robotics Lab
 theme: PaperMod
+
+defaultContentLanguage: ko
+defaultContentLanguageInSubdir: false
 
 googleAnalytics: ""
 
+languages:
+  ko:
+    languageName: 한국어
+    languageCode: ko
+    weight: 1
+    title: Stephen's Robotics Lab
+    params:
+      description: ROS2 · AI/ML · AI Agent · Computer Vision · Robotics 프로젝트 기록
+      homeInfoParams:
+        Title: Robotics × AI × ROS2
+        Content: '자율순찰 로봇, 컴퓨터 비전, 로보틱스 시뮬레이션을 다루는 개발 블로그입니다. ROS2 기반 로봇 시스템, PyQt6 대시보드,
+          YOLO/ST-GCN 비전 파이프라인, LLM 통합 등 실전 프로젝트 경험을 공유합니다. AI Agent 기반 자동화 도구 개발과 에이전트
+          협업 Flow 구축도 함께 다룹니다. '
+    menu:
+      main:
+      - identifier: home
+        name: 홈
+        url: /
+        weight: 5
+      - identifier: projects
+        name: 프로젝트
+        url: /projects/
+        weight: 10
+      - identifier: gallery
+        name: 갤러리
+        url: /gallery/
+        weight: 15
+      - identifier: posts
+        name: 포스트
+        url: /posts/
+        weight: 20
+      - identifier: kb-radar
+        name: KB Radar
+        url: /kb-radar/
+        weight: 25
+      - identifier: categories
+        name: 카테고리
+        url: /categories/
+        weight: 30
+      - identifier: search
+        name: 검색
+        url: /search/
+        weight: 50
+      - identifier: about
+        name: About me
+        url: /about/
+        weight: 60
+  en:
+    languageName: English
+    languageCode: en
+    weight: 2
+    title: Stephen's Robotics Lab
+    params:
+      description: ROS2 · AI/ML · AI Agent · Computer Vision · Robotics project notes
+      homeInfoParams:
+        Title: Robotics × AI × ROS2
+        Content: 'A development blog on autonomous patrol robots, computer vision, and robotics simulation.
+          Covers ROS2-based robot systems, PyQt6 dashboards, YOLO/ST-GCN vision pipelines, and LLM integration
+          from hands-on projects, along with AI-agent automation tooling and multi-agent collaboration flows. '
+    menu:
+      main:
+      - identifier: home
+        name: Home
+        url: /
+        weight: 5
+      - identifier: projects
+        name: Projects
+        url: /projects/
+        weight: 10
+      - identifier: gallery
+        name: Gallery
+        url: /gallery/
+        weight: 15
+      - identifier: posts
+        name: Posts
+        url: /posts/
+        weight: 20
+      - identifier: kb-radar
+        name: KB Radar
+        url: /kb-radar/
+        weight: 25
+      - identifier: categories
+        name: Categories
+        url: /categories/
+        weight: 30
+      - identifier: search
+        name: Search
+        url: /search/
+        weight: 50
+      - identifier: about
+        name: About me
+        url: /about/
+        weight: 60
+
 params:
   env: production
-  description: ROS2 · AI/ML · AI Agent · Computer Vision · Robotics 프로젝트 기록
   author: Stephen Kong
+  mainSections:
+  - posts
+  displayFullLangName: true
   ShowReadingTime: true
   ShowPostNavLinks: true
   ShowBreadCrumbs: false
@@ -34,11 +131,6 @@ params:
     - {name: categories, weight: 0.1}
     - {name: summary, weight: 0.1}
     - {name: content, weight: 0.1}
-  homeInfoParams:
-    Title: Robotics × AI × ROS2
-    Content: '자율순찰 로봇, 컴퓨터 비전, 로보틱스 시뮬레이션을 다루는 개발 블로그입니다. ROS2 기반 로봇 시스템, PyQt6 대시보드,
-      YOLO/ST-GCN 비전 파이프라인, LLM 통합 등 실전 프로젝트 경험을 공유합니다. AI Agent 기반 자동화 도구 개발과 에이전트
-      협업 Flow 구축도 함께 다룹니다. '
   socialIcons:
   - name: github
     url: https://github.com/skong097
@@ -50,40 +142,7 @@ params:
     hidden: false
     hiddenInList: false
     hiddenInSingle: false
-menu:
-  main:
-  - identifier: home
-    name: 홈
-    url: /
-    weight: 5
-  - identifier: projects
-    name: 프로젝트
-    url: /projects/
-    weight: 10
-  - identifier: gallery
-    name: 갤러리
-    url: /gallery/
-    weight: 15
-  - identifier: posts
-    name: 포스트
-    url: /posts/
-    weight: 20
-  - identifier: kb-radar
-    name: KB Radar
-    url: /kb-radar/
-    weight: 25
-  - identifier: categories
-    name: 카테고리
-    url: /categories/
-    weight: 30
-  - identifier: search
-    name: 검색
-    url: /search/
-    weight: 50
-  - identifier: about
-    name: About me
-    url: /about/
-    weight: 60
+
 outputs:
   home:
   - HTML
