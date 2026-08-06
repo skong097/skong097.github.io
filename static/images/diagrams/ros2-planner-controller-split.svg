@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" width="900" height="500" font-family="'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace" role="img" aria-label="Planner Server 와 Controller Server 의 여섯 축 비교. Planner 는 어느 길로 갈지를 지도 전체를 보고 1 Hz 로 탐색해 nav_msgs/Path 를 내며 완결성과 최적성을 중시한다. Controller 는 지금 어떤 속도로 갈지를 주변 몇 미터만 보고 20에서 50 Hz 로 최적화해 geometry_msgs/Twist 를 내며 동역학 제약과 즉시 회피를 중시한다. 분리한 이유는 전역 탐색을 20 Hz 로 돌릴 수 없고 충돌 회피는 20 Hz 여야 하기 때문이다.">
+  <rect x="1" y="1" width="898" height="498" rx="14" fill="#0c1117" stroke="rgba(94,242,184,0.16)"/>
+  <rect x="1" y="1" width="898" height="46" rx="14" fill="rgba(255,255,255,0.02)"/>
+
+  <circle cx="26" cy="24" r="5.5" fill="#ff5f57"/>
+  <circle cx="44" cy="24" r="5.5" fill="#febc2e"/>
+  <circle cx="62" cy="24" r="5.5" fill="#28c840"/>
+  <text x="878" y="28" text-anchor="end" font-size="12" fill="#5d6b78">nav2 — planner vs controller</text>
+
+  <!-- headers -->
+  <rect x="190" y="68" width="330" height="52" rx="9" fill="rgba(108,182,255,0.10)" stroke="#6cb6ff" stroke-width="1.4"/>
+  <text x="355" y="90" text-anchor="middle" font-size="14" font-weight="700" fill="#b9dcff">Planner Server</text>
+  <text x="355" y="109" text-anchor="middle" font-size="10.5" fill="#8c98a4">전역 · 느리게 · 넓게</text>
+
+  <rect x="534" y="68" width="330" height="52" rx="9" fill="rgba(94,242,184,0.10)" stroke="#5ef2b8" stroke-width="1.4"/>
+  <text x="699" y="90" text-anchor="middle" font-size="14" font-weight="700" fill="#b6f2d8">Controller Server</text>
+  <text x="699" y="109" text-anchor="middle" font-size="10.5" fill="#8c98a4">지역 · 빠르게 · 좁게</text>
+
+  <!-- rows -->
+  <rect x="36" y="132" width="828" height="38" rx="6" fill="rgba(255,255,255,0.025)"/>
+  <text x="48" y="156" font-size="11" fill="#5d6b78">질문</text>
+  <text x="204" y="156" font-size="12" fill="#c9d1d9">"어느 길로 갈까?"</text>
+  <text x="548" y="156" font-size="12" fill="#c9d1d9">"지금 어떤 속도로?"</text>
+
+  <rect x="36" y="178" width="828" height="38" rx="6" fill="rgba(255,255,255,0.01)"/>
+  <text x="48" y="202" font-size="11" fill="#5d6b78">보는 범위</text>
+  <text x="204" y="202" font-size="12" fill="#c9d1d9">지도 전체 (global costmap)</text>
+  <text x="548" y="202" font-size="12" fill="#c9d1d9">주변 몇 m (local costmap)</text>
+
+  <rect x="36" y="224" width="828" height="38" rx="6" fill="rgba(255,255,255,0.025)"/>
+  <text x="48" y="248" font-size="11" fill="#5d6b78">주기</text>
+  <text x="204" y="248" font-size="12" font-weight="700" fill="#6cb6ff">1 Hz</text>
+  <text x="252" y="248" font-size="11" fill="#8c98a4">(또는 goal 당 1회)</text>
+  <text x="548" y="248" font-size="12" font-weight="700" fill="#5ef2b8">20 ~ 50 Hz</text>
+
+  <rect x="36" y="270" width="828" height="38" rx="6" fill="rgba(255,255,255,0.01)"/>
+  <text x="48" y="294" font-size="11" fill="#5d6b78">출력</text>
+  <text x="204" y="294" font-size="12" fill="#c9d1d9">nav_msgs/Path</text>
+  <text x="548" y="294" font-size="12" fill="#c9d1d9">geometry_msgs/Twist</text>
+
+  <rect x="36" y="316" width="828" height="38" rx="6" fill="rgba(255,255,255,0.025)"/>
+  <text x="48" y="340" font-size="11" fill="#5d6b78">알고리즘</text>
+  <text x="204" y="340" font-size="12" fill="#c9d1d9">탐색 — A* · Hybrid-A* · Lattice</text>
+  <text x="548" y="340" font-size="12" fill="#c9d1d9">최적화 — DWA · MPPI · RPP</text>
+
+  <rect x="36" y="362" width="828" height="38" rx="6" fill="rgba(255,255,255,0.01)"/>
+  <text x="48" y="386" font-size="11" fill="#5d6b78">관심사</text>
+  <text x="204" y="386" font-size="12" fill="#c9d1d9">완결성 · 최적성</text>
+  <text x="548" y="386" font-size="12" fill="#c9d1d9">동역학 제약 · 즉시 회피</text>
+
+  <!-- divider -->
+  <path d="M527 68 V 400" stroke="#3a4654" stroke-width="1" stroke-dasharray="3 5" fill="none"/>
+
+  <!-- bottom band -->
+  <rect x="36" y="420" width="828" height="56" rx="9" fill="rgba(240,163,107,0.07)" stroke="#f0a36b" stroke-width="1.2"/>
+  <text x="52" y="444" font-size="12" font-weight="700" fill="#f3c79b">분리 이유, 한 줄</text>
+  <text x="52" y="464" font-size="11.5" fill="#8c98a4">전역 탐색은 20 Hz 로 돌릴 수 없고, 충돌 회피는 20 Hz 여야 한다 — 하나의 알고리즘이 둘 다 만족할 수 없어서 층을 쪼갰다.</text>
+</svg>

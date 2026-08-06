@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 470" width="900" height="470" font-family="'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace" role="img" aria-label="이 글 전체를 하나로 꿴 지도. 왼쪽 세로 기둥은 노드·토픽·액션·QoS·lifecycle 을 제공하는 ROS 2 코어이고, 오른쪽은 아래에서 위로 쌓인다. 맨 아래 TF 가 모든 좌표의 기반이고, 그 위에 AMCL 측위, 그 위에 코스트맵, 그 위에 Planner 와 Controller, 맨 위에 BT Navigator 가 있다. 아래가 무너지면 위는 반드시 무너진다.">
+  <rect x="1" y="1" width="898" height="468" rx="14" fill="#0c1117" stroke="rgba(94,242,184,0.16)"/>
+  <rect x="1" y="1" width="898" height="46" rx="14" fill="rgba(255,255,255,0.02)"/>
+
+  <circle cx="26" cy="24" r="5.5" fill="#ff5f57"/>
+  <circle cx="44" cy="24" r="5.5" fill="#febc2e"/>
+  <circle cx="62" cy="24" r="5.5" fill="#28c840"/>
+  <text x="878" y="28" text-anchor="end" font-size="12" fill="#5d6b78">overview — 하나로 꿰기</text>
+
+  <!-- left pillar : ROS 2 core -->
+  <rect x="36" y="76" width="150" height="340" rx="10" fill="rgba(140,152,164,0.06)" stroke="#5d6b78" stroke-width="1.3"/>
+  <text transform="rotate(-90 111 246)" x="111" y="240" text-anchor="middle" font-size="14" font-weight="700" fill="#c9d1d9">ROS 2 코어  §1</text>
+  <text transform="rotate(-90 111 246)" x="111" y="262" text-anchor="middle" font-size="10.5" fill="#6272a4">node · topic · action · QoS · lifecycle</text>
+
+  <!-- BT navigator -->
+  <rect x="200" y="76" width="664" height="60" rx="9" fill="rgba(240,163,107,0.09)" stroke="#f0a36b" stroke-width="1.4"/>
+  <text x="216" y="100" font-size="13" font-weight="700" fill="#f3c79b">BT Navigator</text>
+  <text x="848" y="100" text-anchor="end" font-size="11" fill="#f0a36b">§2</text>
+  <text x="216" y="120" font-size="10.5" fill="#8c98a4">행동트리로 조율 — 언제 재계획하고, 실패하면 무엇으로 복구할지</text>
+
+  <!-- planner / controller -->
+  <rect x="200" y="146" width="327" height="60" rx="9" fill="rgba(108,182,255,0.09)" stroke="#6cb6ff" stroke-width="1.4"/>
+  <text x="216" y="170" font-size="13" font-weight="700" fill="#b9dcff">Planner</text>
+  <text x="511" y="170" text-anchor="end" font-size="11" fill="#6cb6ff">§3</text>
+  <text x="216" y="190" font-size="10.5" fill="#8c98a4">느리게 · 넓게 · 1 Hz</text>
+
+  <rect x="537" y="146" width="327" height="60" rx="9" fill="rgba(94,242,184,0.09)" stroke="#5ef2b8" stroke-width="1.4"/>
+  <text x="553" y="170" font-size="13" font-weight="700" fill="#b6f2d8">Controller</text>
+  <text x="848" y="170" text-anchor="end" font-size="11" fill="#5ef2b8">§3</text>
+  <text x="553" y="190" font-size="10.5" fill="#8c98a4">빠르게 · 좁게 · 20~50 Hz</text>
+
+  <!-- costmap -->
+  <rect x="200" y="216" width="664" height="60" rx="9" fill="rgba(185,167,230,0.08)" stroke="#b9a7e6" stroke-width="1.3"/>
+  <text x="216" y="240" font-size="13" font-weight="700" fill="#d6c9f2">Costmap 2D</text>
+  <text x="848" y="240" text-anchor="end" font-size="11" fill="#b9a7e6">§2</text>
+  <text x="216" y="260" font-size="10.5" fill="#8c98a4">지도와 센서를 하나의 비용 격자로 — 위 두 층은 이 격자만 본다</text>
+
+  <!-- localization -->
+  <rect x="200" y="286" width="664" height="60" rx="9" fill="rgba(94,242,184,0.06)" stroke="#5ef2b8" stroke-width="1.3"/>
+  <text x="216" y="310" font-size="13" font-weight="700" fill="#b6f2d8">Localization — AMCL</text>
+  <text x="848" y="310" text-anchor="end" font-size="11" fill="#5ef2b8">§4</text>
+  <text x="216" y="330" font-size="10.5" fill="#8c98a4">"나는 지금 어디 있나" → map → odom 보정 발행</text>
+
+  <!-- TF -->
+  <rect x="200" y="356" width="664" height="60" rx="9" fill="rgba(108,182,255,0.06)" stroke="#6cb6ff" stroke-width="1.5"/>
+  <text x="216" y="380" font-size="13" font-weight="700" fill="#b9dcff">TF (tf2)</text>
+  <text x="848" y="380" text-anchor="end" font-size="11" fill="#6cb6ff">§5</text>
+  <text x="216" y="400" font-size="10.5" fill="#8c98a4">모든 좌표의 기반 — 여기가 끊기면 위의 네 층이 전부 멈춘다</text>
+
+  <!-- footer -->
+  <rect x="36" y="430" width="828" height="24" rx="6" fill="rgba(240,163,107,0.06)"/>
+  <text x="52" y="446" font-size="11" fill="#8c98a4">디버깅 순서도 이 그림과 같다 — 위에서 증상이 보여도, 원인은 대개 아래층에 있다.</text>
+</svg>

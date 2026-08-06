@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" width="960" height="560" font-family="'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace" role="img" aria-label="The TF frame chain and bring-up order. The top panel shows the REP-105 chain: AMCL or SLAM publishes map to odom, the base driver publishes odom to base_link, and URDF with robot_state_publisher publishes base_link to laser_link and camera_link over /tf_static. The bottom panel lists the five bring-up steps — URDF and robot_state_publisher, base driver, sensor drivers, localization, then Nav2 — each verified with view_frames or tf2_echo before moving on.">
+  <rect x="1" y="1" width="958" height="558" rx="14" fill="#0c1117" stroke="rgba(94,242,184,0.16)"/>
+  <rect x="1" y="1" width="958" height="46" rx="14" fill="rgba(255,255,255,0.02)"/>
+
+  <circle cx="26" cy="24" r="5.5" fill="#ff5f57"/>
+  <circle cx="44" cy="24" r="5.5" fill="#febc2e"/>
+  <circle cx="62" cy="24" r="5.5" fill="#28c840"/>
+  <text x="938" y="28" text-anchor="end" font-size="12" fill="#5d6b78">tf2 — frame chain &amp; bring-up order</text>
+
+  <defs>
+    <marker id="tf-ah-en" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0 0 L9 4.5 L0 9 z" fill="#3a4654"/>
+    </marker>
+  </defs>
+
+  <text x="36" y="80" font-size="12.5" font-weight="700" fill="#e6edf3">① The REP-105 chain — a different node owns each edge</text>
+
+  <rect x="56" y="112" width="130" height="50" rx="9" fill="rgba(108,182,255,0.10)" stroke="#6cb6ff" stroke-width="1.5"/>
+  <text x="121" y="143" text-anchor="middle" font-size="15" font-weight="700" fill="#b9dcff">map</text>
+
+  <rect x="286" y="112" width="130" height="50" rx="9" fill="rgba(94,242,184,0.10)" stroke="#5ef2b8" stroke-width="1.5"/>
+  <text x="351" y="143" text-anchor="middle" font-size="15" font-weight="700" fill="#b6f2d8">odom</text>
+
+  <rect x="516" y="112" width="150" height="50" rx="9" fill="rgba(185,167,230,0.10)" stroke="#b9a7e6" stroke-width="1.5"/>
+  <text x="591" y="143" text-anchor="middle" font-size="14" font-weight="700" fill="#d6c9f2">base_link</text>
+
+  <rect x="766" y="86" width="140" height="42" rx="8" fill="rgba(240,163,107,0.08)" stroke="#f0a36b" stroke-width="1.2"/>
+  <text x="836" y="112" text-anchor="middle" font-size="12" fill="#f3c79b">laser_link</text>
+
+  <rect x="766" y="146" width="140" height="42" rx="8" fill="rgba(240,163,107,0.08)" stroke="#f0a36b" stroke-width="1.2"/>
+  <text x="836" y="172" text-anchor="middle" font-size="12" fill="#f3c79b">camera_link</text>
+
+  <g stroke="#3a4654" stroke-width="1.8" fill="none">
+    <path d="M186 137 H 280" marker-end="url(#tf-ah-en)"/>
+    <path d="M416 137 H 510" marker-end="url(#tf-ah-en)"/>
+    <path d="M666 137 H 716 V 107 H 760" marker-end="url(#tf-ah-en)"/>
+    <path d="M716 137 V 167 H 760" marker-end="url(#tf-ah-en)"/>
+  </g>
+
+  <text x="233" y="104" text-anchor="middle" font-size="11.5" font-weight="700" fill="#5ef2b8">AMCL / SLAM</text>
+  <text x="233" y="182" text-anchor="middle" font-size="10.5" fill="#8c98a4">no drift · may jump</text>
+
+  <text x="463" y="104" text-anchor="middle" font-size="11.5" font-weight="700" fill="#b9a7e6">base driver</text>
+  <text x="463" y="182" text-anchor="middle" font-size="10.5" fill="#8c98a4">continuous · drifts</text>
+
+  <text x="836" y="208" text-anchor="middle" font-size="10.5" fill="#8c98a4">URDF + rsp → /tf_static</text>
+
+  <rect x="56" y="222" width="850" height="26" rx="6" fill="rgba(240,163,107,0.06)"/>
+  <text x="72" y="239" font-size="11" fill="#8c98a4">One parent per frame, no cycles. Different nodes may own different edges — tf2 assembles them into one tree.</text>
+
+  <path d="M36 268 H 924" stroke="#3a4654" stroke-width="1" stroke-dasharray="3 5" fill="none"/>
+
+  <text x="36" y="294" font-size="12.5" font-weight="700" fill="#e6edf3">② Bring-up order — verify each step before the next</text>
+
+  <rect x="450" y="312" width="300" height="26" rx="6" fill="rgba(108,182,255,0.06)"/>
+  <circle cx="72" cy="325" r="13" fill="rgba(94,242,184,0.12)" stroke="#5ef2b8" stroke-width="1.2"/>
+  <text x="72" y="330" text-anchor="middle" font-size="12" font-weight="700" fill="#5ef2b8">1</text>
+  <text x="98" y="330" font-size="11.5" fill="#c9d1d9">URDF · robot_state_publisher</text>
+  <text x="462" y="329" font-size="10" fill="#6cb6ff">ros2 run tf2_tools view_frames</text>
+
+  <rect x="450" y="356" width="300" height="26" rx="6" fill="rgba(108,182,255,0.06)"/>
+  <circle cx="72" cy="369" r="13" fill="rgba(94,242,184,0.12)" stroke="#5ef2b8" stroke-width="1.2"/>
+  <text x="72" y="374" text-anchor="middle" font-size="12" font-weight="700" fill="#5ef2b8">2</text>
+  <text x="98" y="374" font-size="11.5" fill="#c9d1d9">base driver → odom→base_link</text>
+  <text x="462" y="373" font-size="10" fill="#6cb6ff">ros2 run tf2_ros tf2_echo odom base_link</text>
+
+  <rect x="450" y="400" width="300" height="26" rx="6" fill="rgba(108,182,255,0.06)"/>
+  <circle cx="72" cy="413" r="13" fill="rgba(94,242,184,0.12)" stroke="#5ef2b8" stroke-width="1.2"/>
+  <text x="72" y="418" text-anchor="middle" font-size="12" font-weight="700" fill="#5ef2b8">3</text>
+  <text x="98" y="418" font-size="11.5" fill="#c9d1d9">sensor drivers → check frame_id</text>
+  <text x="462" y="417" font-size="9.5" fill="#6cb6ff">ros2 topic echo /scan --field header.frame_id</text>
+
+  <rect x="450" y="444" width="300" height="26" rx="6" fill="rgba(108,182,255,0.06)"/>
+  <circle cx="72" cy="457" r="13" fill="rgba(94,242,184,0.12)" stroke="#5ef2b8" stroke-width="1.2"/>
+  <text x="72" y="462" text-anchor="middle" font-size="12" font-weight="700" fill="#5ef2b8">4</text>
+  <text x="98" y="462" font-size="11.5" fill="#c9d1d9">localization → map→odom</text>
+  <text x="462" y="461" font-size="10" fill="#6cb6ff">ros2 run tf2_ros tf2_echo map odom</text>
+
+  <rect x="450" y="488" width="300" height="26" rx="6" fill="rgba(108,182,255,0.06)"/>
+  <circle cx="72" cy="501" r="13" fill="rgba(94,242,184,0.12)" stroke="#5ef2b8" stroke-width="1.2"/>
+  <text x="72" y="506" text-anchor="middle" font-size="12" font-weight="700" fill="#5ef2b8">5</text>
+  <text x="98" y="506" font-size="11.5" fill="#c9d1d9">bring up Nav2</text>
+  <text x="462" y="505" font-size="10" fill="#6cb6ff">check the chain in the rviz2 TF display</text>
+
+  <path d="M72 338 V 356" stroke="#3a4654" stroke-width="1.2" fill="none"/>
+  <path d="M72 382 V 400" stroke="#3a4654" stroke-width="1.2" fill="none"/>
+  <path d="M72 426 V 444" stroke="#3a4654" stroke-width="1.2" fill="none"/>
+  <path d="M72 470 V 488" stroke="#3a4654" stroke-width="1.2" fill="none"/>
+
+  <rect x="36" y="524" width="888" height="24" rx="6" fill="rgba(255,90,90,0.06)"/>
+  <text x="52" y="540" font-size="11" fill="#8c98a4">If it isn't one connected tree, everything above it fails — and the cause is usually an earlier step, not the one you're staring at.</text>
+</svg>

@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 440" width="920" height="440" font-family="'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace" role="img" aria-label="The Costmap 2D layer structure. On the left, the static map, laser scan, point cloud and filter masks feed into static_layer, obstacle_layer, inflation_layer and costmap_filter, which are baked in order to produce the final cost grid on the right with values from 0 to 255. 253 means inscribed collision, 254 means a lethal obstacle and 255 means unknown.">
+  <rect x="1" y="1" width="918" height="438" rx="14" fill="#0c1117" stroke="rgba(94,242,184,0.16)"/>
+  <rect x="1" y="1" width="918" height="46" rx="14" fill="rgba(255,255,255,0.02)"/>
+
+  <circle cx="26" cy="24" r="5.5" fill="#ff5f57"/>
+  <circle cx="44" cy="24" r="5.5" fill="#febc2e"/>
+  <circle cx="62" cy="24" r="5.5" fill="#28c840"/>
+  <text x="898" y="28" text-anchor="end" font-size="12" fill="#5d6b78">costmap_2d — baking the layers</text>
+
+  <text x="36" y="70" font-size="11" font-weight="600" fill="#5d6b78">inputs</text>
+  <text x="290" y="70" font-size="11" font-weight="600" fill="#5d6b78">layers (applied bottom-up, in order)</text>
+  <text x="650" y="70" font-size="11" font-weight="600" fill="#5d6b78">output</text>
+
+  <rect x="36" y="80" width="180" height="46" rx="8" fill="rgba(108,182,255,0.08)" stroke="#6cb6ff" stroke-width="1.2"/>
+  <text x="50" y="99" font-size="12" font-weight="600" fill="#b9dcff">/map</text>
+  <text x="50" y="117" font-size="10.5" fill="#6272a4">OccupancyGrid</text>
+
+  <rect x="36" y="142" width="180" height="46" rx="8" fill="rgba(240,163,107,0.08)" stroke="#f0a36b" stroke-width="1.2"/>
+  <text x="50" y="161" font-size="12" font-weight="600" fill="#f3c79b">/scan</text>
+  <text x="50" y="179" font-size="10.5" fill="#6272a4">LaserScan</text>
+
+  <rect x="36" y="204" width="180" height="46" rx="8" fill="rgba(240,163,107,0.08)" stroke="#f0a36b" stroke-width="1.2"/>
+  <text x="50" y="223" font-size="12" font-weight="600" fill="#f3c79b">/points</text>
+  <text x="50" y="241" font-size="10.5" fill="#6272a4">PointCloud2</text>
+
+  <rect x="36" y="266" width="180" height="46" rx="8" fill="rgba(185,167,230,0.08)" stroke="#b9a7e6" stroke-width="1.2"/>
+  <text x="50" y="285" font-size="12" font-weight="600" fill="#d6c9f2">filter masks</text>
+  <text x="50" y="303" font-size="10.5" fill="#6272a4">keepout · speed limit</text>
+
+  <defs>
+    <marker id="cm-ah-en" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0 0 L9 4.5 L0 9 z" fill="#3a4654"/>
+    </marker>
+  </defs>
+  <g stroke="#3a4654" stroke-width="1.5" fill="none">
+    <path d="M216 103 H 284" marker-end="url(#cm-ah-en)"/>
+    <path d="M216 165 H 284" marker-end="url(#cm-ah-en)"/>
+    <path d="M216 227 V 190 H 284" marker-end="url(#cm-ah-en)"/>
+    <path d="M216 289 H 284" marker-end="url(#cm-ah-en)"/>
+  </g>
+
+  <rect x="290" y="80" width="310" height="46" rx="8" fill="rgba(108,182,255,0.07)" stroke="#6cb6ff" stroke-width="1.2"/>
+  <text x="304" y="99" font-size="12" font-weight="600" fill="#b9dcff">static_layer</text>
+  <text x="304" y="117" font-size="10.5" fill="#8c98a4">bakes the stored map into the grid</text>
+
+  <rect x="290" y="142" width="310" height="46" rx="8" fill="rgba(240,163,107,0.07)" stroke="#f0a36b" stroke-width="1.2"/>
+  <text x="304" y="161" font-size="12" font-weight="600" fill="#f3c79b">obstacle_layer / voxel_layer</text>
+  <text x="304" y="179" font-size="10.5" fill="#8c98a4">marking · raytrace clearing</text>
+
+  <rect x="290" y="204" width="310" height="46" rx="8" fill="rgba(94,242,184,0.07)" stroke="#5ef2b8" stroke-width="1.2"/>
+  <text x="304" y="223" font-size="12" font-weight="600" fill="#b6f2d8">inflation_layer</text>
+  <text x="304" y="241" font-size="10.5" fill="#8c98a4">inflate by robot radius → treat robot as a point</text>
+
+  <rect x="290" y="266" width="310" height="46" rx="8" fill="rgba(185,167,230,0.07)" stroke="#b9a7e6" stroke-width="1.2"/>
+  <text x="304" y="285" font-size="12" font-weight="600" fill="#d6c9f2">costmap_filter</text>
+  <text x="304" y="303" font-size="10.5" fill="#8c98a4">keepout zones · per-zone speed limits</text>
+
+  <path d="M275 103 V 289" stroke="#3a4654" stroke-width="1.2" stroke-dasharray="3 4" fill="none"/>
+  <path d="M600 196 H 640" stroke="#3a4654" stroke-width="1.8" fill="none" marker-end="url(#cm-ah-en)"/>
+
+  <rect x="648" y="80" width="236" height="232" rx="9" fill="rgba(255,255,255,0.02)" stroke="#3a4654" stroke-width="1.2"/>
+  <text x="664" y="103" font-size="12" font-weight="700" fill="#e6edf3">final cost grid</text>
+  <text x="664" y="121" font-size="10.5" fill="#6272a4">0 – 255 per cell</text>
+
+  <rect x="664" y="136" width="14" height="14" rx="3" fill="#2b6a4e"/>
+  <text x="688" y="148" font-size="11" fill="#8c98a4">0 — free space</text>
+
+  <rect x="664" y="164" width="14" height="14" rx="3" fill="#7a6a3a"/>
+  <text x="688" y="176" font-size="11" fill="#8c98a4">1–252 — has cost</text>
+
+  <rect x="664" y="192" width="14" height="14" rx="3" fill="#a05a3a"/>
+  <text x="688" y="204" font-size="11" fill="#8c98a4">253 — inscribed</text>
+
+  <rect x="664" y="220" width="14" height="14" rx="3" fill="#8f3b3b"/>
+  <text x="688" y="232" font-size="11" fill="#8c98a4">254 — lethal</text>
+
+  <rect x="664" y="248" width="14" height="14" rx="3" fill="#3a4654"/>
+  <text x="688" y="260" font-size="11" fill="#8c98a4">255 — unknown</text>
+
+  <text x="664" y="292" font-size="10.5" fill="#6272a4">planner &amp; controller see only this</text>
+
+  <rect x="36" y="336" width="418" height="72" rx="9" fill="rgba(108,182,255,0.05)" stroke="#6cb6ff" stroke-width="1.2"/>
+  <text x="52" y="360" font-size="12.5" font-weight="700" fill="#b9dcff">Global Costmap</text>
+  <text x="52" y="380" font-size="11" fill="#8c98a4">whole map · 1–5 Hz</text>
+  <text x="52" y="398" font-size="11" fill="#6272a4">consumed by the Planner Server</text>
+
+  <rect x="466" y="336" width="418" height="72" rx="9" fill="rgba(94,242,184,0.05)" stroke="#5ef2b8" stroke-width="1.2"/>
+  <text x="482" y="360" font-size="12.5" font-weight="700" fill="#b6f2d8">Local Costmap</text>
+  <text x="482" y="380" font-size="11" fill="#8c98a4">rolling window around the robot (e.g. 3×3 m) · 5–20 Hz</text>
+  <text x="482" y="398" font-size="11" fill="#6272a4">consumed by the Controller Server</text>
+</svg>

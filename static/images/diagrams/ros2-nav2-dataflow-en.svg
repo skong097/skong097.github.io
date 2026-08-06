@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 450" width="960" height="450" font-family="'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace" role="img" aria-label="Nav2 data flow. The BT Navigator receives a goal and calls the Planner Server, which produces a path from the global costmap; the Controller Server then turns that path into cmd_vel while watching the local costmap. cmd_vel passes through the Velocity Smoother and Collision Monitor into ros2_control. As the wheels turn, encoders produce odometry and the odom to base_link transform, while AMCL compares the scan against the map to publish the map to odom transform. Without those transforms the costmaps cannot place sensor data on the map.">
+  <rect x="1" y="1" width="958" height="448" rx="14" fill="#0c1117" stroke="rgba(94,242,184,0.16)"/>
+  <rect x="1" y="1" width="958" height="46" rx="14" fill="rgba(255,255,255,0.02)"/>
+
+  <circle cx="26" cy="24" r="5.5" fill="#ff5f57"/>
+  <circle cx="44" cy="24" r="5.5" fill="#febc2e"/>
+  <circle cx="62" cy="24" r="5.5" fill="#28c840"/>
+  <text x="938" y="28" text-anchor="end" font-size="12" fill="#5d6b78">nav2 — data flow</text>
+
+  <defs>
+    <marker id="n2-ah-en" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0 0 L9 4.5 L0 9 z" fill="#3a4654"/>
+    </marker>
+    <marker id="n2-ahd-en" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0 0 L9 4.5 L0 9 z" fill="#6272a4"/>
+    </marker>
+  </defs>
+
+  <g stroke="#6272a4" stroke-width="1.3" stroke-dasharray="4 4" fill="none">
+    <path d="M920 349 H 940 V 82 H 346 V 100" marker-end="url(#n2-ahd-en)"/>
+    <path d="M567 82 V 100" marker-end="url(#n2-ahd-en)"/>
+    <path d="M809 266 V 294 H 140 V 316" marker-end="url(#n2-ahd-en)"/>
+  </g>
+  <text x="660" y="74" text-anchor="middle" font-size="10.5" fill="#6272a4">no TF, no way to place sensors on the map</text>
+  <text x="430" y="289" text-anchor="middle" font-size="10.5" fill="#6272a4">wheels turn</text>
+
+  <rect x="256" y="104" width="180" height="58" rx="9" fill="rgba(108,182,255,0.08)" stroke="#6cb6ff" stroke-width="1.3"/>
+  <text x="270" y="126" font-size="12.5" font-weight="700" fill="#b9dcff">Global Costmap</text>
+  <text x="270" y="146" font-size="10" fill="#8c98a4">/map · static · inflation</text>
+
+  <rect x="472" y="104" width="190" height="58" rx="9" fill="rgba(94,242,184,0.08)" stroke="#5ef2b8" stroke-width="1.3"/>
+  <text x="486" y="126" font-size="12.5" font-weight="700" fill="#b6f2d8">Local Costmap</text>
+  <text x="486" y="146" font-size="10" fill="#8c98a4">/scan · /points · rolling window</text>
+
+  <g stroke="#3a4654" stroke-width="1.6" fill="none">
+    <path d="M346 162 V 196" marker-end="url(#n2-ah-en)"/>
+    <path d="M567 162 V 196" marker-end="url(#n2-ah-en)"/>
+  </g>
+
+  <rect x="40" y="200" width="180" height="66" rx="9" fill="rgba(240,163,107,0.09)" stroke="#f0a36b" stroke-width="1.4"/>
+  <text x="54" y="222" font-size="12.5" font-weight="700" fill="#f3c79b">BT Navigator</text>
+  <text x="54" y="241" font-size="10" fill="#8c98a4">behavior tree · takes goal</text>
+  <text x="54" y="257" font-size="10" fill="#6272a4">recovery → Behavior Server</text>
+
+  <rect x="256" y="200" width="180" height="66" rx="9" fill="rgba(108,182,255,0.09)" stroke="#6cb6ff" stroke-width="1.4"/>
+  <text x="270" y="222" font-size="12.5" font-weight="700" fill="#b9dcff">Planner Server</text>
+  <text x="270" y="241" font-size="10" fill="#8c98a4">global search · 1 Hz</text>
+  <text x="270" y="257" font-size="10" fill="#6272a4">NavFn · Smac Hybrid-A*</text>
+
+  <rect x="472" y="200" width="190" height="66" rx="9" fill="rgba(94,242,184,0.09)" stroke="#5ef2b8" stroke-width="1.4"/>
+  <text x="486" y="222" font-size="12.5" font-weight="700" fill="#b6f2d8">Controller Server</text>
+  <text x="486" y="241" font-size="10" fill="#8c98a4">path following · 20–50 Hz</text>
+  <text x="486" y="257" font-size="10" fill="#6272a4">MPPI · RPP · DWB</text>
+
+  <rect x="698" y="200" width="222" height="66" rx="9" fill="rgba(185,167,230,0.09)" stroke="#b9a7e6" stroke-width="1.4"/>
+  <text x="712" y="222" font-size="12.5" font-weight="700" fill="#d6c9f2">Velocity Smoother</text>
+  <text x="712" y="241" font-size="10" fill="#8c98a4">+ Collision Monitor (last safety net)</text>
+  <text x="712" y="257" font-size="10" fill="#6272a4">→ ros2_control → motors</text>
+
+  <g stroke="#3a4654" stroke-width="1.8" fill="none">
+    <path d="M220 233 H 250" marker-end="url(#n2-ah-en)"/>
+    <path d="M436 233 H 466" marker-end="url(#n2-ah-en)"/>
+    <path d="M662 233 H 692" marker-end="url(#n2-ah-en)"/>
+  </g>
+  <text x="235" y="192" text-anchor="middle" font-size="9.5" fill="#8c98a4">goal</text>
+  <text x="451" y="192" text-anchor="middle" font-size="9.5" fill="#8c98a4">Path</text>
+  <text x="677" y="192" text-anchor="middle" font-size="9.5" fill="#8c98a4">/cmd_vel</text>
+
+  <rect x="40" y="320" width="200" height="58" rx="9" fill="rgba(140,152,164,0.06)" stroke="#5d6b78" stroke-width="1.2"/>
+  <text x="54" y="342" font-size="12" font-weight="700" fill="#c9d1d9">wheel encoders</text>
+  <text x="54" y="362" font-size="10" fill="#8c98a4">/odom (nav_msgs/Odometry)</text>
+
+  <rect x="270" y="320" width="210" height="58" rx="9" fill="rgba(185,167,230,0.08)" stroke="#b9a7e6" stroke-width="1.2"/>
+  <text x="284" y="342" font-size="12" font-weight="700" fill="#d6c9f2">TF odom → base_link</text>
+  <text x="284" y="362" font-size="10" fill="#8c98a4">continuous · fast · drifts</text>
+
+  <rect x="510" y="320" width="180" height="58" rx="9" fill="rgba(94,242,184,0.08)" stroke="#5ef2b8" stroke-width="1.2"/>
+  <text x="524" y="342" font-size="12" font-weight="700" fill="#b6f2d8">AMCL</text>
+  <text x="524" y="362" font-size="10" fill="#8c98a4">matches /scan to /map</text>
+
+  <rect x="720" y="320" width="200" height="58" rx="9" fill="rgba(108,182,255,0.08)" stroke="#6cb6ff" stroke-width="1.2"/>
+  <text x="734" y="342" font-size="12" font-weight="700" fill="#b9dcff">TF map → odom</text>
+  <text x="734" y="362" font-size="10" fill="#8c98a4">drift correction · may jump</text>
+
+  <g stroke="#3a4654" stroke-width="1.6" fill="none">
+    <path d="M240 349 H 264" marker-end="url(#n2-ah-en)"/>
+    <path d="M480 349 H 504" marker-end="url(#n2-ah-en)"/>
+    <path d="M690 349 H 714" marker-end="url(#n2-ah-en)"/>
+  </g>
+
+  <rect x="40" y="400" width="880" height="26" rx="6" fill="rgba(94,242,184,0.05)"/>
+  <text x="56" y="417" font-size="11" fill="#8c98a4">The BT Navigator re-calls the planner at 1 Hz; in between, the controller runs nonstop at 20–50 Hz — that gap is what §3 is about.</text>
+</svg>

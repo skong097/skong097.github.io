@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" width="960" height="560" font-family="'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace" role="img" aria-label="TF 프레임 체인과 기동 순서. 위쪽은 REP-105 체인으로 map 에서 odom 은 AMCL 이나 SLAM 이, odom 에서 base_link 는 베이스 드라이버가, base_link 에서 laser_link 와 camera_link 는 URDF 와 robot_state_publisher 가 /tf_static 으로 발행한다. 아래쪽은 다섯 단계 기동 순서로, URDF 와 robot_state_publisher, 베이스 드라이버, 센서 드라이버, Localization, Nav2 순서로 올리며 각 단계마다 view_frames 나 tf2_echo 로 검증한다.">
+  <rect x="1" y="1" width="958" height="558" rx="14" fill="#0c1117" stroke="rgba(94,242,184,0.16)"/>
+  <rect x="1" y="1" width="958" height="46" rx="14" fill="rgba(255,255,255,0.02)"/>
+
+  <circle cx="26" cy="24" r="5.5" fill="#ff5f57"/>
+  <circle cx="44" cy="24" r="5.5" fill="#febc2e"/>
+  <circle cx="62" cy="24" r="5.5" fill="#28c840"/>
+  <text x="938" y="28" text-anchor="end" font-size="12" fill="#5d6b78">tf2 — 프레임 체인 &amp; 기동 순서</text>
+
+  <defs>
+    <marker id="tf-ah" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0 0 L9 4.5 L0 9 z" fill="#3a4654"/>
+    </marker>
+  </defs>
+
+  <!-- panel 1 -->
+  <text x="36" y="80" font-size="12.5" font-weight="700" fill="#e6edf3">① REP-105 프레임 체인 — 엣지마다 발행 주체가 다르다</text>
+
+  <rect x="56" y="112" width="130" height="50" rx="9" fill="rgba(108,182,255,0.10)" stroke="#6cb6ff" stroke-width="1.5"/>
+  <text x="121" y="143" text-anchor="middle" font-size="15" font-weight="700" fill="#b9dcff">map</text>
+
+  <rect x="286" y="112" width="130" height="50" rx="9" fill="rgba(94,242,184,0.10)" stroke="#5ef2b8" stroke-width="1.5"/>
+  <text x="351" y="143" text-anchor="middle" font-size="15" font-weight="700" fill="#b6f2d8">odom</text>
+
+  <rect x="516" y="112" width="150" height="50" rx="9" fill="rgba(185,167,230,0.10)" stroke="#b9a7e6" stroke-width="1.5"/>
+  <text x="591" y="143" text-anchor="middle" font-size="14" font-weight="700" fill="#d6c9f2">base_link</text>
+
+  <rect x="766" y="86" width="140" height="42" rx="8" fill="rgba(240,163,107,0.08)" stroke="#f0a36b" stroke-width="1.2"/>
+  <text x="836" y="112" text-anchor="middle" font-size="12" fill="#f3c79b">laser_link</text>
+
+  <rect x="766" y="146" width="140" height="42" rx="8" fill="rgba(240,163,107,0.08)" stroke="#f0a36b" stroke-width="1.2"/>
+  <text x="836" y="172" text-anchor="middle" font-size="12" fill="#f3c79b">camera_link</text>
+
+  <g stroke="#3a4654" stroke-width="1.8" fill="none">
+    <path d="M186 137 H 280" marker-end="url(#tf-ah)"/>
+    <path d="M416 137 H 510" marker-end="url(#tf-ah)"/>
+    <path d="M666 137 H 716 V 107 H 760" marker-end="url(#tf-ah)"/>
+    <path d="M716 137 V 167 H 760" marker-end="url(#tf-ah)"/>
+  </g>
+
+  <text x="233" y="104" text-anchor="middle" font-size="11.5" font-weight="700" fill="#5ef2b8">AMCL / SLAM</text>
+  <text x="233" y="182" text-anchor="middle" font-size="10.5" fill="#8c98a4">drift 없음 · 점프 가능</text>
+
+  <text x="463" y="104" text-anchor="middle" font-size="11.5" font-weight="700" fill="#b9a7e6">베이스 드라이버</text>
+  <text x="463" y="182" text-anchor="middle" font-size="10.5" fill="#8c98a4">연속 · drift 누적</text>
+
+  <text x="836" y="208" text-anchor="middle" font-size="10.5" fill="#8c98a4">URDF + rsp → /tf_static</text>
+
+  <rect x="56" y="222" width="850" height="26" rx="6" fill="rgba(240,163,107,0.06)"/>
+  <text x="72" y="239" font-size="11" fill="#8c98a4">부모는 하나뿐이고 사이클은 없다. 엣지를 서로 다른 노드가 발행해도 tf2 가 하나의 트리로 조립한다.</text>
+
+  <!-- divider -->
+  <path d="M36 268 H 924" stroke="#3a4654" stroke-width="1" stroke-dasharray="3 5" fill="none"/>
+
+  <!-- panel 2 -->
+  <text x="36" y="294" font-size="12.5" font-weight="700" fill="#e6edf3">② 기동 순서 — 각 단계를 검증하고 다음으로 넘어간다</text>
+
+  <!-- step rows -->
+  <rect x="450" y="312" width="300" height="26" rx="6" fill="rgba(108,182,255,0.06)"/>
+  <circle cx="72" cy="325" r="13" fill="rgba(94,242,184,0.12)" stroke="#5ef2b8" stroke-width="1.2"/>
+  <text x="72" y="330" text-anchor="middle" font-size="12" font-weight="700" fill="#5ef2b8">1</text>
+  <text x="98" y="330" font-size="11.5" fill="#c9d1d9">URDF · robot_state_publisher</text>
+  <text x="462" y="329" font-size="10" fill="#6cb6ff">ros2 run tf2_tools view_frames</text>
+
+  <rect x="450" y="356" width="300" height="26" rx="6" fill="rgba(108,182,255,0.06)"/>
+  <circle cx="72" cy="369" r="13" fill="rgba(94,242,184,0.12)" stroke="#5ef2b8" stroke-width="1.2"/>
+  <text x="72" y="374" text-anchor="middle" font-size="12" font-weight="700" fill="#5ef2b8">2</text>
+  <text x="98" y="374" font-size="11.5" fill="#c9d1d9">베이스 드라이버 → odom→base_link</text>
+  <text x="462" y="373" font-size="10" fill="#6cb6ff">ros2 run tf2_ros tf2_echo odom base_link</text>
+
+  <rect x="450" y="400" width="300" height="26" rx="6" fill="rgba(108,182,255,0.06)"/>
+  <circle cx="72" cy="413" r="13" fill="rgba(94,242,184,0.12)" stroke="#5ef2b8" stroke-width="1.2"/>
+  <text x="72" y="418" text-anchor="middle" font-size="12" font-weight="700" fill="#5ef2b8">3</text>
+  <text x="98" y="418" font-size="11.5" fill="#c9d1d9">센서 드라이버 → frame_id 대조</text>
+  <text x="462" y="417" font-size="9.5" fill="#6cb6ff">ros2 topic echo /scan --field header.frame_id</text>
+
+  <rect x="450" y="444" width="300" height="26" rx="6" fill="rgba(108,182,255,0.06)"/>
+  <circle cx="72" cy="457" r="13" fill="rgba(94,242,184,0.12)" stroke="#5ef2b8" stroke-width="1.2"/>
+  <text x="72" y="462" text-anchor="middle" font-size="12" font-weight="700" fill="#5ef2b8">4</text>
+  <text x="98" y="462" font-size="11.5" fill="#c9d1d9">Localization → map→odom</text>
+  <text x="462" y="461" font-size="10" fill="#6cb6ff">ros2 run tf2_ros tf2_echo map odom</text>
+
+  <rect x="450" y="488" width="300" height="26" rx="6" fill="rgba(108,182,255,0.06)"/>
+  <circle cx="72" cy="501" r="13" fill="rgba(94,242,184,0.12)" stroke="#5ef2b8" stroke-width="1.2"/>
+  <text x="72" y="506" text-anchor="middle" font-size="12" font-weight="700" fill="#5ef2b8">5</text>
+  <text x="98" y="506" font-size="11.5" fill="#c9d1d9">Nav2 기동</text>
+  <text x="462" y="505" font-size="10" fill="#6cb6ff">rviz2 TF display 로 체인 확인</text>
+
+  <path d="M72 338 V 356" stroke="#3a4654" stroke-width="1.2" fill="none"/>
+  <path d="M72 382 V 400" stroke="#3a4654" stroke-width="1.2" fill="none"/>
+  <path d="M72 426 V 444" stroke="#3a4654" stroke-width="1.2" fill="none"/>
+  <path d="M72 470 V 488" stroke="#3a4654" stroke-width="1.2" fill="none"/>
+
+  <rect x="36" y="524" width="888" height="24" rx="6" fill="rgba(255,90,90,0.06)"/>
+  <text x="52" y="540" font-size="11" fill="#8c98a4">하나의 연결된 트리로 안 보이면 그 위 모든 것이 실패한다 — 원인은 대개 지금 보는 단계가 아니라 앞 단계에 있다.</text>
+</svg>

@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" width="900" height="520" font-family="'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace" role="img" aria-label="ROS 2 계층 스택. 아래에서 위로 OS와 하드웨어, DDS(Fast DDS·Cyclone DDS), DDS 벤더를 추상화하는 RMW, 언어 공통 C 코어인 rcl, 언어 바인딩인 rclcpp와 rclpy, 그리고 최상단의 Nav2·MoveIt2·ros2_control 응용 프레임워크가 쌓인다. QoS와 분산 discovery 는 DDS 계층에서 올라오며 그 때문에 ROS1 의 roscore 같은 마스터가 없다.">
+  <rect x="1" y="1" width="898" height="518" rx="14" fill="#0c1117" stroke="rgba(94,242,184,0.16)"/>
+  <rect x="1" y="1" width="898" height="46" rx="14" fill="rgba(255,255,255,0.02)"/>
+
+  <circle cx="26" cy="24" r="5.5" fill="#ff5f57"/>
+  <circle cx="44" cy="24" r="5.5" fill="#febc2e"/>
+  <circle cx="62" cy="24" r="5.5" fill="#28c840"/>
+  <text x="878" y="28" text-anchor="end" font-size="12" fill="#5d6b78">stack — ROS 2 계층</text>
+
+  <!-- layer 0 : application frameworks -->
+  <rect x="40" y="72" width="545" height="58" rx="9" fill="rgba(94,242,184,0.09)" stroke="#5ef2b8" stroke-width="1.4"/>
+  <text x="58" y="97" font-size="13.5" font-weight="700" fill="#b6f2d8">응용 프레임워크</text>
+  <text x="58" y="117" font-size="11.5" fill="#8c98a4">Nav2 · MoveIt2 · ros2_control · SLAM Toolbox · robot_localization</text>
+
+  <!-- layer 1 : client library -->
+  <rect x="40" y="140" width="545" height="58" rx="9" fill="rgba(108,182,255,0.09)" stroke="#6cb6ff" stroke-width="1.4"/>
+  <text x="58" y="165" font-size="13.5" font-weight="700" fill="#b9dcff">Client Library</text>
+  <text x="58" y="185" font-size="11.5" fill="#8c98a4">rclcpp · rclpy · rclrs — 언어 바인딩</text>
+
+  <!-- layer 2 : rcl -->
+  <rect x="40" y="208" width="545" height="58" rx="9" fill="rgba(108,182,255,0.05)" stroke="#6cb6ff" stroke-width="1.2"/>
+  <text x="58" y="233" font-size="13.5" font-weight="700" fill="#b9dcff">rcl (C)</text>
+  <text x="58" y="253" font-size="11.5" fill="#8c98a4">언어 공통 코어 — node · timer · action · lifecycle</text>
+
+  <!-- layer 3 : rmw -->
+  <rect x="40" y="276" width="545" height="58" rx="9" fill="rgba(185,167,230,0.09)" stroke="#b9a7e6" stroke-width="1.4"/>
+  <text x="58" y="301" font-size="13.5" font-weight="700" fill="#d6c9f2">RMW</text>
+  <text x="58" y="321" font-size="11.5" fill="#8c98a4">rmw_fastrtps_cpp · rmw_cyclonedds_cpp — DDS 추상화</text>
+
+  <!-- layer 4 : dds -->
+  <rect x="40" y="344" width="545" height="58" rx="9" fill="rgba(240,163,107,0.09)" stroke="#f0a36b" stroke-width="1.4"/>
+  <text x="58" y="369" font-size="13.5" font-weight="700" fill="#f3c79b">DDS</text>
+  <text x="58" y="389" font-size="11.5" fill="#8c98a4">Fast DDS (기본) · Cyclone DDS · RTI Connext</text>
+
+  <!-- layer 5 : os / hw -->
+  <rect x="40" y="412" width="545" height="58" rx="9" fill="rgba(140,152,164,0.06)" stroke="#5d6b78" stroke-width="1.2"/>
+  <text x="58" y="437" font-size="13.5" font-weight="700" fill="#8c98a4">OS / 하드웨어</text>
+  <text x="58" y="457" font-size="11.5" fill="#6272a4">Ubuntu Linux · RTOS · MCU (micro-ROS)</text>
+
+  <!-- callout connectors -->
+  <g stroke="#3a4654" stroke-width="1.2" stroke-dasharray="3 4" fill="none">
+    <path d="M585 101 H 612"/>
+    <path d="M585 169 H 612"/>
+    <path d="M585 305 H 612"/>
+    <path d="M585 373 H 612"/>
+  </g>
+
+  <text x="620" y="97" font-size="11.5" font-weight="600" fill="#5ef2b8">이 글 2~5장의 무대</text>
+  <text x="620" y="115" font-size="11" fill="#6272a4">Nav2 = 주행 스택</text>
+
+  <text x="620" y="165" font-size="11.5" font-weight="600" fill="#6cb6ff">개발자가 만지는 API</text>
+  <text x="620" y="183" font-size="11" fill="#6272a4">topic · service · action</text>
+
+  <text x="620" y="301" font-size="11.5" font-weight="600" fill="#b9a7e6">벤더 교체 지점</text>
+  <text x="620" y="319" font-size="11" fill="#6272a4">RMW_IMPLEMENTATION</text>
+
+  <text x="620" y="369" font-size="11.5" font-weight="600" fill="#f0a36b">QoS · 분산 discovery</text>
+  <text x="620" y="387" font-size="11" fill="#6272a4">→ roscore 가 없다</text>
+
+  <!-- footer note -->
+  <rect x="40" y="484" width="820" height="24" rx="6" fill="rgba(240,163,107,0.06)"/>
+  <text x="54" y="500" font-size="11" fill="#8c98a4">ROS1 과의 결정적 차이는 이 그림의 아래 두 칸에 있다 — 마스터가 사라지고, QoS 가 개발자에게 노출됐다.</text>
+</svg>
