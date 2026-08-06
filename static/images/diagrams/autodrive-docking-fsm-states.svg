@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 390" width="900" height="390" font-family="'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace" role="img" aria-label="도킹 FSM 의 8개 상태와 제어 소유권 구분. IDLE 에서 NAV_TO_APPROACH, SEARCH_TAG, TAG_SERVO_ALIGN, SETTLE 을 거쳐 DONE 으로 간다. NAV_TO_APPROACH 와 NAV_CANCELING 구간은 Nav2 가 cmd_vel 을 소유하므로 정밀주차 노드가 발행을 금지하고, TAG_SERVO_ALIGN 과 SETTLE 구간은 정밀주차 노드가 PID 로 소유한다. 타임아웃이나 tolerance 미달이면 FAILED 로 빠지고, ESTOP 은 상태 전이가 아니라 순수 모듈 밖에서 노드가 설정하는 래치다.">
+  <rect x="1" y="1" width="898" height="388" rx="14" fill="#0c1117" stroke="rgba(94,242,184,0.16)"/>
+  <rect x="1" y="1" width="898" height="46" rx="14" fill="rgba(255,255,255,0.02)"/>
+
+  <circle cx="26" cy="24" r="5.5" fill="#ff5f57"/>
+  <circle cx="44" cy="24" r="5.5" fill="#febc2e"/>
+  <circle cx="62" cy="24" r="5.5" fill="#28c840"/>
+  <text x="878" y="28" text-anchor="end" font-size="12" fill="#5d6b78">state_machine.py — 도킹 FSM</text>
+
+  <!-- ownership bands -->
+  <rect x="150" y="102" width="170" height="142" rx="9" fill="rgba(108,182,255,0.05)" stroke="#6cb6ff" stroke-width="1" stroke-dasharray="5 4"/>
+  <text x="235" y="94" text-anchor="middle" font-size="10.5" fill="#6cb6ff">Nav2 가 cmd_vel 소유 · _NO_PUBLISH</text>
+
+  <rect x="470" y="102" width="280" height="70" rx="9" fill="rgba(94,242,184,0.05)" stroke="#5ef2b8" stroke-width="1" stroke-dasharray="5 4"/>
+  <text x="610" y="94" text-anchor="middle" font-size="10.5" fill="#5ef2b8">정밀주차 노드가 소유 · pose regulation</text>
+
+  <!-- row 1 -->
+  <rect x="50" y="118" width="90" height="36" rx="7" fill="rgba(140,152,164,0.10)" stroke="#8c98a4" stroke-width="1.1"/>
+  <text x="95" y="141" text-anchor="middle" font-size="11.5" fill="#c3ccd6">IDLE</text>
+
+  <rect x="160" y="118" width="150" height="36" rx="7" fill="rgba(108,182,255,0.12)" stroke="#6cb6ff" stroke-width="1.1"/>
+  <text x="235" y="141" text-anchor="middle" font-size="11.5" fill="#b9dcff">NAV_TO_APPROACH</text>
+
+  <rect x="340" y="118" width="120" height="36" rx="7" fill="rgba(185,167,230,0.12)" stroke="#b9a7e6" stroke-width="1.1"/>
+  <text x="400" y="141" text-anchor="middle" font-size="11.5" fill="#d3c6f0">SEARCH_TAG</text>
+
+  <rect x="480" y="118" width="150" height="36" rx="7" fill="rgba(94,242,184,0.12)" stroke="#5ef2b8" stroke-width="1.1"/>
+  <text x="555" y="141" text-anchor="middle" font-size="11.5" fill="#b6f2d8">TAG_SERVO_ALIGN</text>
+
+  <rect x="650" y="118" width="90" height="36" rx="7" fill="rgba(94,242,184,0.12)" stroke="#5ef2b8" stroke-width="1.1"/>
+  <text x="695" y="141" text-anchor="middle" font-size="11.5" fill="#b6f2d8">SETTLE</text>
+
+  <rect x="770" y="118" width="90" height="36" rx="7" fill="rgba(40,200,64,0.12)" stroke="#28c840" stroke-width="1.1"/>
+  <text x="815" y="141" text-anchor="middle" font-size="11.5" fill="#8ce89c">DONE</text>
+
+  <path d="M140 136 L154 136" fill="none" stroke="#3a4654" stroke-width="1.6"/>
+  <polygon points="160,136 152,132 152,140" fill="#3a4654"/>
+  <path d="M310 136 L334 136" fill="none" stroke="#3a4654" stroke-width="1.6"/>
+  <polygon points="340,136 332,132 332,140" fill="#3a4654"/>
+  <path d="M460 136 L474 136" fill="none" stroke="#3a4654" stroke-width="1.6"/>
+  <polygon points="480,136 472,132 472,140" fill="#3a4654"/>
+  <path d="M630 136 L644 136" fill="none" stroke="#3a4654" stroke-width="1.6"/>
+  <polygon points="650,136 642,132 642,140" fill="#3a4654"/>
+  <path d="M740 136 L764 136" fill="none" stroke="#3a4654" stroke-width="1.6"/>
+  <polygon points="770,136 762,132 762,140" fill="#3a4654"/>
+
+  <!-- row 2 -->
+  <rect x="160" y="200" width="150" height="36" rx="7" fill="rgba(108,182,255,0.12)" stroke="#6cb6ff" stroke-width="1.1"/>
+  <text x="235" y="223" text-anchor="middle" font-size="11.5" fill="#b9dcff">NAV_CANCELING</text>
+
+  <rect x="770" y="200" width="90" height="36" rx="7" fill="rgba(255,138,138,0.12)" stroke="#ff8a8a" stroke-width="1.1"/>
+  <text x="815" y="223" text-anchor="middle" font-size="11.5" fill="#ffb3b3">FAILED</text>
+
+  <path d="M200 154 L200 194" fill="none" stroke="#3a4654" stroke-width="1.6"/>
+  <polygon points="200,200 196,192 204,192" fill="#3a4654"/>
+  <text x="212" y="182" font-size="10" fill="#8c98a4">goal 취소</text>
+
+  <path d="M290 200 L290 178 L400 178 L400 160" fill="none" stroke="#3a4654" stroke-width="1.6"/>
+  <polygon points="400,154 396,162 404,162" fill="#3a4654"/>
+
+  <path d="M555 154 L555 218 L764 218" fill="none" stroke="#ff8a8a" stroke-width="1.4" stroke-dasharray="5 4"/>
+  <polygon points="770,218 762,214 762,222" fill="#ff8a8a"/>
+  <text x="600" y="212" font-size="10" fill="#ff8a8a">timeout · tolerance 미달</text>
+
+  <!-- estop overlay -->
+  <rect x="50" y="268" width="250" height="46" rx="9" fill="rgba(255,138,138,0.05)" stroke="#ff8a8a" stroke-width="1.2"/>
+  <text x="66" y="288" font-size="12.5" font-weight="600" fill="#ff8a8a">ESTOP</text>
+  <text x="66" y="306" font-size="10.5" fill="#8c98a4">순수 모듈 밖 — 노드가 설정한다</text>
+
+  <text x="320" y="288" font-size="11" fill="#8c98a4">어느 상태 · 임무 중에도 우선한다. 상태 전이로 멈추는 것이 아니라</text>
+  <text x="320" y="306" font-size="11" fill="#8c98a4">base 가 모터 직전에서 <tspan fill="#ff8a8a">cmd_vel 을 무시하는 래치</tspan>로 끊는다.</text>
+
+  <text x="50" y="352" font-size="11.5" fill="#8c98a4">TAG_SERVO_ALIGN 은 단순 P 제어가 아니라 <tspan fill="#5ef2b8">pose regulation (ρ, α, β)</tspan> 이다 — diff-drive 는 제자리 회전으로 좌우 offset 을 지울 수 없으므로,</text>
+  <text x="50" y="370" font-size="11.5" fill="#8c98a4">로봇이 <tspan fill="#5ef2b8">호를 그려 태그 법선 위로 올라타</tspan> ey → 0, eyaw → 0, ex → 0 순으로 수렴한다.</text>
+</svg>

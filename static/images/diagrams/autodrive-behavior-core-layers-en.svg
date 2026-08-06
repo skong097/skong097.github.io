@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 650" width="900" height="650" font-family="'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace" role="img" aria-label="Behavior core layer map. The top-level B0 FSM is not implemented; the agent merely relays a mode string, so no coordination layer exists. Below it, two lower execution state machines are implemented and field-verified: the patrol FSM in patrol_planner.py and the docking FSM in state_machine.py. Beside the patrol FSM, the traffic arbiter exchanges requests and grants, and it is a rule engine rather than an FSM. Both state machines delegate navigation missions to the Nav2 bt_navigator instead of a custom BT executor, and below that base and bringup drive the motors. E-STOP sits outside the FSM layers and latches the final stage right before the motors.">
+  <rect x="1" y="1" width="898" height="648" rx="14" fill="#0c1117" stroke="rgba(94,242,184,0.16)"/>
+  <rect x="1" y="1" width="898" height="46" rx="14" fill="rgba(255,255,255,0.02)"/>
+
+  <circle cx="26" cy="24" r="5.5" fill="#ff5f57"/>
+  <circle cx="44" cy="24" r="5.5" fill="#febc2e"/>
+  <circle cx="62" cy="24" r="5.5" fill="#28c840"/>
+  <text x="878" y="28" text-anchor="end" font-size="12" fill="#5d6b78">behavior core — layer map</text>
+
+  <!-- B0 : not implemented -->
+  <rect x="305" y="68" width="555" height="78" rx="10" fill="rgba(98,114,164,0.06)" stroke="#6272a4" stroke-width="1.2" stroke-dasharray="6 4"/>
+  <text x="322" y="92" font-size="13" font-weight="600" fill="#8c98a4">B0 top-level FSM — owns mode transitions</text>
+  <text x="845" y="92" text-anchor="end" font-size="12" fill="#ff8a8a">NOT BUILT</text>
+  <text x="322" y="114" font-size="11.5" fill="#6272a4">in practice the agent only relays the /wasab/cmd_mode string,</text>
+  <text x="322" y="132" font-size="11.5" fill="#6272a4">and each node decides on its own → no coordination layer</text>
+
+  <path d="M442 146 L442 196" fill="none" stroke="#3a4654" stroke-width="1.6" stroke-dasharray="3 5"/>
+  <path d="M735 146 L735 196" fill="none" stroke="#3a4654" stroke-width="1.6" stroke-dasharray="3 5"/>
+  <polygon points="442,202 438,194 446,194" fill="#3a4654"/>
+  <polygon points="735,202 731,194 739,194" fill="#3a4654"/>
+
+  <!-- traffic arbiter : rule engine, not FSM -->
+  <rect x="40" y="204" width="225" height="96" rx="10" fill="rgba(240,163,107,0.05)" stroke="#f0a36b" stroke-width="1.2"/>
+  <text x="55" y="228" font-size="13" font-weight="600" fill="#f0a36b">traffic arbiter</text>
+  <text x="55" y="250" font-size="11.5" fill="#f3c79b">traffic_rules.Arbiter</text>
+  <text x="55" y="270" font-size="11.5" fill="#8c98a4">rule engine — not an FSM</text>
+  <text x="55" y="289" font-size="11" fill="#6272a4">no state labels, no table</text>
+
+  <path d="M271 246 L313 246" fill="none" stroke="#f0a36b" stroke-width="1.4"/>
+  <polygon points="319,246 311,242 311,250" fill="#f0a36b"/>
+  <path d="M319 260 L277 260" fill="none" stroke="#5ef2b8" stroke-width="1.4"/>
+  <polygon points="271,260 279,256 279,264" fill="#5ef2b8"/>
+  <text x="295" y="318" text-anchor="middle" font-size="10" fill="#8c98a4">req / grant</text>
+
+  <!-- patrol FSM -->
+  <rect x="325" y="204" width="235" height="96" rx="10" fill="rgba(94,242,184,0.05)" stroke="#5ef2b8" stroke-width="1.2"/>
+  <text x="340" y="228" font-size="13" font-weight="600" fill="#5ef2b8">patrol FSM</text>
+  <text x="545" y="228" text-anchor="end" font-size="11" fill="#5ef2b8">field-verified</text>
+  <text x="340" y="250" font-size="11.5" fill="#b6f2d8">patrol_planner.py</text>
+  <text x="340" y="270" font-size="11.5" fill="#8c98a4">PATROL / YIELD / WAIT_EDGE</text>
+  <text x="340" y="289" font-size="11" fill="#6272a4">hysteresis · fail-closed</text>
+
+  <!-- docking FSM -->
+  <rect x="610" y="204" width="250" height="96" rx="10" fill="rgba(94,242,184,0.05)" stroke="#5ef2b8" stroke-width="1.2"/>
+  <text x="625" y="228" font-size="13" font-weight="600" fill="#5ef2b8">docking FSM</text>
+  <text x="845" y="228" text-anchor="end" font-size="11" fill="#5ef2b8">field-verified</text>
+  <text x="625" y="250" font-size="11.5" fill="#b6f2d8">state_machine.py</text>
+  <text x="625" y="270" font-size="11.5" fill="#8c98a4">IDLE → … → DONE / FAILED</text>
+  <text x="625" y="289" font-size="11" fill="#6272a4">8 states + ESTOP (set by node)</text>
+
+  <!-- converge into Nav2 BT -->
+  <path d="M442 300 L442 344 L735 344 L735 300" fill="none" stroke="#3a4654" stroke-width="1.8"/>
+  <path d="M588 344 L588 374" fill="none" stroke="#3a4654" stroke-width="1.8"/>
+  <polygon points="588,380 584,372 592,372" fill="#3a4654"/>
+
+  <rect x="333" y="382" width="510" height="74" rx="10" fill="rgba(185,167,230,0.05)" stroke="#b9a7e6" stroke-width="1.2"/>
+  <text x="348" y="406" font-size="13" font-weight="600" fill="#b9a7e6">B1 = Nav2 BT · bt_navigator</text>
+  <text x="828" y="406" text-anchor="end" font-size="11.5" fill="#8c98a4">➜ delegated, no custom executor</text>
+  <text x="348" y="428" font-size="11.5" fill="#d3c6f0">navigate_to_pose_w_replanning_and_recovery</text>
+  <text x="348" y="447" font-size="11" fill="#6272a4">replanning · retry · recovery already run in a proven tree</text>
+
+  <path d="M588 456 L588 486" fill="none" stroke="#3a4654" stroke-width="1.8"/>
+  <polygon points="588,492 584,484 592,484" fill="#3a4654"/>
+
+  <!-- estop overlay -->
+  <rect x="40" y="494" width="225" height="62" rx="10" fill="rgba(255,138,138,0.05)" stroke="#ff8a8a" stroke-width="1.2"/>
+  <text x="55" y="518" font-size="13" font-weight="600" fill="#ff8a8a">E-STOP overlay</text>
+  <text x="55" y="540" font-size="11" fill="#8c98a4">outside the FSM · last stage</text>
+
+  <path d="M271 525 L327 525" fill="none" stroke="#ff8a8a" stroke-width="1.6"/>
+  <polygon points="333,525 325,521 325,529" fill="#ff8a8a"/>
+
+  <rect x="333" y="494" width="510" height="62" rx="10" fill="rgba(108,182,255,0.05)" stroke="#6cb6ff" stroke-width="1.2"/>
+  <text x="348" y="518" font-size="13" font-weight="600" fill="#6cb6ff">base · bringup</text>
+  <text x="828" y="518" text-anchor="end" font-size="11.5" fill="#ff8a8a">4-line latch — the only robot file we edited</text>
+  <text x="348" y="540" font-size="11" fill="#8c98a4">cmd_vel → motors</text>
+
+  <path d="M588 556 L588 582" fill="none" stroke="#3a4654" stroke-width="1.8"/>
+  <polygon points="588,588 584,580 592,580" fill="#3a4654"/>
+  <text x="588" y="606" text-anchor="middle" font-size="12" fill="#8c98a4">motors</text>
+
+  <text x="40" y="632" font-size="11.5" fill="#8c98a4">dashed = <tspan fill="#6272a4">string relay, not coordination</tspan>. The two FSMs never see each other, and <tspan fill="#ff8a8a">only the stop path skips these layers</tspan>.</text>
+</svg>

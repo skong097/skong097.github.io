@@ -9,17 +9,24 @@
 <div id="home-posts-wrapper">
   {{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
 
-  {{/* ── EN 홈: 영문 포스트가 없으면 한국어 포스트를 빌려 노출 ── */}}
+  {{/* ── EN 홈: 아직 영문판이 없는 한국어 포스트를 빌려 함께 노출 ──
+       영문 포스트가 하나라도 생기면 빌려오기를 멈추던 예전 조건은
+       첫 번역본이 나온 순간 나머지 한국어 글을 전부 감췄다. */}}
   {{- $borrowedKo := false }}
-  {{- if and (eq site.Language.Lang "en") (eq (len $pages) 0) }}
+  {{- if eq site.Language.Lang "en" }}
+    {{- $koOnly := slice }}
     {{- range site.Sites }}
       {{- if eq .Language.Lang "ko" }}
-        {{- $koPages := where .RegularPages "Type" "in" site.Params.mainSections }}
-        {{- if gt (len $koPages) 0 }}
-          {{- $pages = $koPages }}
-          {{- $borrowedKo = true }}
+        {{- range (where .RegularPages "Type" "in" site.Params.mainSections) }}
+          {{- if not .Translations }}
+            {{- $koOnly = $koOnly | append . }}
+          {{- end }}
         {{- end }}
       {{- end }}
+    {{- end }}
+    {{- if gt (len $koOnly) 0 }}
+      {{- $pages = sort ($pages | append $koOnly) "Date" "desc" }}
+      {{- $borrowedKo = true }}
     {{- end }}
   {{- end }}
 

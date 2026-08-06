@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 650" width="900" height="650" font-family="'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace" role="img" aria-label="행동코어 계층 지도. 맨 위의 B0 상위 FSM 은 미구현이며 실제로는 agent 가 모드 문자열을 중계할 뿐 조율 계층이 없다. 그 아래 순찰 FSM(patrol_planner.py)과 도킹 FSM(state_machine.py) 두 개의 하위 실행 상태기계가 구현·실기 검증됐고, 순찰 FSM 옆에는 FSM 이 아닌 규칙 엔진인 통행 중재기가 요청과 승인을 주고받는다. 두 상태기계는 주행 임무를 자체 BT 실행기 없이 Nav2 bt_navigator 에 위임하며, 그 아래 base 와 bringup 이 모터를 돌린다. E-STOP 은 FSM 계층 밖에서 모터 직전 최종단을 직접 래치한다.">
+  <rect x="1" y="1" width="898" height="648" rx="14" fill="#0c1117" stroke="rgba(94,242,184,0.16)"/>
+  <rect x="1" y="1" width="898" height="46" rx="14" fill="rgba(255,255,255,0.02)"/>
+
+  <circle cx="26" cy="24" r="5.5" fill="#ff5f57"/>
+  <circle cx="44" cy="24" r="5.5" fill="#febc2e"/>
+  <circle cx="62" cy="24" r="5.5" fill="#28c840"/>
+  <text x="878" y="28" text-anchor="end" font-size="12" fill="#5d6b78">behavior core — 계층 지도</text>
+
+  <!-- B0 : not implemented -->
+  <rect x="305" y="68" width="555" height="78" rx="10" fill="rgba(98,114,164,0.06)" stroke="#6272a4" stroke-width="1.2" stroke-dasharray="6 4"/>
+  <text x="322" y="92" font-size="13" font-weight="600" fill="#8c98a4">B0 상위 FSM — 모드 전이 · 운영자 개입을 소유</text>
+  <text x="845" y="92" text-anchor="end" font-size="12" fill="#ff8a8a">미구현</text>
+  <text x="322" y="114" font-size="11.5" fill="#6272a4">실제로는 agent 가 /wasab/cmd_mode 문자열을 중계할 뿐이고,</text>
+  <text x="322" y="132" font-size="11.5" fill="#6272a4">모드에 따른 판단은 각 노드가 따로 한다 → 조율 계층 없음</text>
+
+  <path d="M442 146 L442 196" fill="none" stroke="#3a4654" stroke-width="1.6" stroke-dasharray="3 5"/>
+  <path d="M735 146 L735 196" fill="none" stroke="#3a4654" stroke-width="1.6" stroke-dasharray="3 5"/>
+  <polygon points="442,202 438,194 446,194" fill="#3a4654"/>
+  <polygon points="735,202 731,194 739,194" fill="#3a4654"/>
+
+  <!-- traffic arbiter : rule engine, not FSM -->
+  <rect x="40" y="204" width="225" height="96" rx="10" fill="rgba(240,163,107,0.05)" stroke="#f0a36b" stroke-width="1.2"/>
+  <text x="55" y="228" font-size="13" font-weight="600" fill="#f0a36b">통행 중재</text>
+  <text x="55" y="250" font-size="11.5" fill="#f3c79b">traffic_rules.Arbiter</text>
+  <text x="55" y="270" font-size="11.5" fill="#8c98a4">규칙 엔진 — FSM 아님</text>
+  <text x="55" y="289" font-size="11" fill="#6272a4">상태 라벨 · 전이표 없음</text>
+
+  <path d="M271 246 L313 246" fill="none" stroke="#f0a36b" stroke-width="1.4"/>
+  <polygon points="319,246 311,242 311,250" fill="#f0a36b"/>
+  <path d="M319 260 L277 260" fill="none" stroke="#5ef2b8" stroke-width="1.4"/>
+  <polygon points="271,260 279,256 279,264" fill="#5ef2b8"/>
+  <text x="295" y="318" text-anchor="middle" font-size="10" fill="#8c98a4">req / grant</text>
+
+  <!-- patrol FSM -->
+  <rect x="325" y="204" width="235" height="96" rx="10" fill="rgba(94,242,184,0.05)" stroke="#5ef2b8" stroke-width="1.2"/>
+  <text x="340" y="228" font-size="13" font-weight="600" fill="#5ef2b8">순찰 FSM</text>
+  <text x="545" y="228" text-anchor="end" font-size="11" fill="#5ef2b8">실기 검증</text>
+  <text x="340" y="250" font-size="11.5" fill="#b6f2d8">patrol_planner.py</text>
+  <text x="340" y="270" font-size="11.5" fill="#8c98a4">PATROL / YIELD / WAIT_EDGE</text>
+  <text x="340" y="289" font-size="11" fill="#6272a4">히스테리시스 · fail-closed</text>
+
+  <!-- docking FSM -->
+  <rect x="610" y="204" width="250" height="96" rx="10" fill="rgba(94,242,184,0.05)" stroke="#5ef2b8" stroke-width="1.2"/>
+  <text x="625" y="228" font-size="13" font-weight="600" fill="#5ef2b8">도킹 FSM</text>
+  <text x="845" y="228" text-anchor="end" font-size="11" fill="#5ef2b8">실기 검증</text>
+  <text x="625" y="250" font-size="11.5" fill="#b6f2d8">state_machine.py</text>
+  <text x="625" y="270" font-size="11.5" fill="#8c98a4">IDLE → … → DONE / FAILED</text>
+  <text x="625" y="289" font-size="11" fill="#6272a4">8상태 + ESTOP (노드가 설정)</text>
+
+  <!-- converge into Nav2 BT -->
+  <path d="M442 300 L442 344 L735 344 L735 300" fill="none" stroke="#3a4654" stroke-width="1.8"/>
+  <path d="M588 344 L588 374" fill="none" stroke="#3a4654" stroke-width="1.8"/>
+  <polygon points="588,380 584,372 592,372" fill="#3a4654"/>
+
+  <rect x="333" y="382" width="510" height="74" rx="10" fill="rgba(185,167,230,0.05)" stroke="#b9a7e6" stroke-width="1.2"/>
+  <text x="348" y="406" font-size="13" font-weight="600" fill="#b9a7e6">B1 = Nav2 BT · bt_navigator</text>
+  <text x="828" y="406" text-anchor="end" font-size="11.5" fill="#8c98a4">➜ 자체 실행기 없이 위임</text>
+  <text x="348" y="428" font-size="11.5" fill="#d3c6f0">navigate_to_pose_w_replanning_and_recovery</text>
+  <text x="348" y="447" font-size="11" fill="#6272a4">재계획 · 재시도 · recovery 는 이미 검증된 트리가 수행한다</text>
+
+  <path d="M588 456 L588 486" fill="none" stroke="#3a4654" stroke-width="1.8"/>
+  <polygon points="588,492 584,484 592,484" fill="#3a4654"/>
+
+  <!-- estop overlay -->
+  <rect x="40" y="494" width="225" height="62" rx="10" fill="rgba(255,138,138,0.05)" stroke="#ff8a8a" stroke-width="1.2"/>
+  <text x="55" y="518" font-size="13" font-weight="600" fill="#ff8a8a">E-STOP 오버레이</text>
+  <text x="55" y="540" font-size="11" fill="#8c98a4">FSM 밖 · 모터 직전 최종단</text>
+
+  <path d="M271 525 L327 525" fill="none" stroke="#ff8a8a" stroke-width="1.6"/>
+  <polygon points="333,525 325,521 325,529" fill="#ff8a8a"/>
+
+  <rect x="333" y="494" width="510" height="62" rx="10" fill="rgba(108,182,255,0.05)" stroke="#6cb6ff" stroke-width="1.2"/>
+  <text x="348" y="518" font-size="13" font-weight="600" fill="#6cb6ff">base · bringup</text>
+  <text x="828" y="518" text-anchor="end" font-size="11.5" fill="#ff8a8a">래치 4줄 — 로봇 파일을 고친 유일한 곳</text>
+  <text x="348" y="540" font-size="11" fill="#8c98a4">cmd_vel → 모터</text>
+
+  <path d="M588 556 L588 582" fill="none" stroke="#3a4654" stroke-width="1.8"/>
+  <polygon points="588,588 584,580 592,580" fill="#3a4654"/>
+  <text x="588" y="606" text-anchor="middle" font-size="12" fill="#8c98a4">모터</text>
+
+  <text x="40" y="632" font-size="11.5" fill="#8c98a4">점선 = 조율이 아니라 <tspan fill="#6272a4">문자열 중계</tspan>. 두 FSM 은 서로의 존재를 모르고, <tspan fill="#ff8a8a">정지 경로만 FSM 계층을 통과하지 않는다</tspan>.</text>
+</svg>
