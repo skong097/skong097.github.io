@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 552" width="920" height="552" font-family="'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace" role="img" aria-label="Four different deficits behind an agent that is not yet an expert. A knowledge gap shows up as wrong facts and is fixed with retrieval, not fine-tuning. A procedure gap shows up as right steps in the wrong order and is fixed with workflows and checklists. A judgment gap shows up as refusing to decide and is fixed with a decision corpus and review loops, not retrieval. A grounding gap shows up as being confidently wrong and is fixed with tools, verifiers and a real environment, not a bigger model. The grounding gap is the most common.">
+  <rect x="1" y="1" width="918" height="550" rx="14" fill="#0c1117" stroke="rgba(94,242,184,0.16)"/>
+  <rect x="1" y="1" width="918" height="46" rx="14" fill="rgba(255,255,255,0.02)"/>
+
+  <circle cx="26" cy="24" r="5.5" fill="#ff5f57"/>
+  <circle cx="44" cy="24" r="5.5" fill="#febc2e"/>
+  <circle cx="62" cy="24" r="5.5" fill="#28c840"/>
+  <text x="898" y="28" text-anchor="end" font-size="12" fill="#5d6b78">diagnosis — four deficits</text>
+
+  <!-- (1) knowledge -->
+  <rect x="40" y="74" width="415" height="204" rx="10" fill="rgba(108,182,255,0.06)" stroke="#6cb6ff" stroke-width="1.2"/>
+  <text x="60" y="106" font-size="14" font-weight="700" fill="#b9dcff">1 · Knowledge — doesn't know</text>
+  <text x="60" y="132" font-size="9.5" fill="#5d6b78">symptom</text>
+  <text x="60" y="150" font-size="11.5" fill="#c9d4de">gets facts · APIs · specs wrong</text>
+  <text x="60" y="180" font-size="9.5" fill="#5d6b78">fix</text>
+  <text x="60" y="198" font-size="11.5" fill="#5ef2b8">retrieval / RAG · inject the docs</text>
+  <text x="60" y="228" font-size="9.5" fill="#5d6b78">don't</text>
+  <text x="60" y="246" font-size="11.5" fill="#f0a36b">fine-tune — facts go stale, weights can't</text>
+
+  <!-- (2) procedure -->
+  <rect x="465" y="74" width="415" height="204" rx="10" fill="rgba(108,182,255,0.06)" stroke="#6cb6ff" stroke-width="1.2"/>
+  <text x="485" y="106" font-size="14" font-weight="700" fill="#b9dcff">2 · Procedure — wrong order</text>
+  <text x="485" y="132" font-size="9.5" fill="#5d6b78">symptom</text>
+  <text x="485" y="150" font-size="11.5" fill="#c9d4de">every step right, sequence wrong</text>
+  <text x="485" y="180" font-size="9.5" fill="#5d6b78">fix</text>
+  <text x="485" y="198" font-size="11.5" fill="#5ef2b8">workflows · checklists · scaffolding</text>
+  <text x="485" y="228" font-size="9.5" fill="#5d6b78">don't</text>
+  <text x="485" y="246" font-size="11.5" fill="#f0a36b">just write a longer prompt</text>
+
+  <!-- (3) judgment -->
+  <rect x="40" y="288" width="415" height="204" rx="10" fill="rgba(185,167,230,0.07)" stroke="#b9a7e6" stroke-width="1.2"/>
+  <text x="60" y="320" font-size="14" font-weight="700" fill="#d6c9f2">3 · Judgment — can't choose</text>
+  <text x="60" y="346" font-size="9.5" fill="#5d6b78">symptom</text>
+  <text x="60" y="364" font-size="11.5" fill="#c9d4de">argues both sides, never decides</text>
+  <text x="60" y="394" font-size="9.5" fill="#5d6b78">fix</text>
+  <text x="60" y="412" font-size="11.5" fill="#5ef2b8">decision corpus · small SFT · review loop</text>
+  <text x="60" y="442" font-size="9.5" fill="#5d6b78">don't</text>
+  <text x="60" y="460" font-size="11.5" fill="#f0a36b">RAG — judgment isn't retrievable</text>
+
+  <!-- (4) grounding -->
+  <rect x="465" y="288" width="415" height="204" rx="10" fill="rgba(94,242,184,0.10)" stroke="#5ef2b8" stroke-width="2"/>
+  <text x="485" y="320" font-size="14" font-weight="700" fill="#b6f2d8">4 · Grounding — can't check</text>
+  <text x="860" y="320" text-anchor="end" font-size="10" font-weight="600" fill="#5ef2b8">most common</text>
+  <text x="485" y="346" font-size="9.5" fill="#5d6b78">symptom</text>
+  <text x="485" y="364" font-size="11.5" fill="#c9d4de">confidently wrong</text>
+  <text x="485" y="394" font-size="9.5" fill="#5d6b78">fix</text>
+  <text x="485" y="412" font-size="11.5" fill="#5ef2b8">tools · verifiers · a real environment</text>
+  <text x="485" y="442" font-size="9.5" fill="#5d6b78">don't</text>
+  <text x="485" y="460" font-size="11.5" fill="#f0a36b">reach for a bigger model</text>
+
+  <rect x="40" y="506" width="840" height="28" rx="6" fill="rgba(240,163,107,0.06)"/>
+  <text x="56" y="524" font-size="11" fill="#8c98a4">Diagnose which deficit you have before picking a fix. Skipping this step is why people jump straight to fine-tuning.</text>
+</svg>

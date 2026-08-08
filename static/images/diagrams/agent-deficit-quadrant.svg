@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 552" width="920" height="552" font-family="'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace" role="img" aria-label="에이전트가 전문가가 아닌 이유를 네 가지 결핍으로 나눈 표. 지식 결핍은 사실을 틀리게 말하는 증상이며 검색과 문서 주입으로 고치고 파인튜닝은 피한다. 절차 결핍은 순서와 누락으로 실패하며 워크플로와 체크리스트로 고친다. 판단 결핍은 결정을 회피하는 증상이며 결정 사례 코퍼스와 리뷰 루프로 고치고 검색으로는 고쳐지지 않는다. 접지 결핍은 자신 있게 틀리는 증상이며 도구와 검증기와 실행환경으로 고치고 더 큰 모델로는 고쳐지지 않는다. 접지 결핍이 가장 흔하다.">
+  <rect x="1" y="1" width="918" height="550" rx="14" fill="#0c1117" stroke="rgba(94,242,184,0.16)"/>
+  <rect x="1" y="1" width="918" height="46" rx="14" fill="rgba(255,255,255,0.02)"/>
+
+  <circle cx="26" cy="24" r="5.5" fill="#ff5f57"/>
+  <circle cx="44" cy="24" r="5.5" fill="#febc2e"/>
+  <circle cx="62" cy="24" r="5.5" fill="#28c840"/>
+  <text x="898" y="28" text-anchor="end" font-size="12" fill="#5d6b78">diagnosis — 네 가지 결핍</text>
+
+  <!-- (1) 지식 -->
+  <rect x="40" y="74" width="415" height="204" rx="10" fill="rgba(108,182,255,0.06)" stroke="#6cb6ff" stroke-width="1.2"/>
+  <text x="60" y="106" font-size="14" font-weight="700" fill="#b9dcff">1 · 지식 결핍 — 모른다</text>
+  <text x="60" y="132" font-size="9.5" fill="#5d6b78">증상</text>
+  <text x="60" y="150" font-size="11.5" fill="#c9d4de">사실 · API · 규격을 틀리게 말한다</text>
+  <text x="60" y="180" font-size="9.5" fill="#5d6b78">처방</text>
+  <text x="60" y="198" font-size="11.5" fill="#5ef2b8">검색 / RAG · 문서 주입</text>
+  <text x="60" y="228" font-size="9.5" fill="#5d6b78">하면 안 되는 것</text>
+  <text x="60" y="246" font-size="11.5" fill="#f0a36b">파인튜닝 — 사실은 낡고, 가중치는 못 고친다</text>
+
+  <!-- (2) 절차 -->
+  <rect x="465" y="74" width="415" height="204" rx="10" fill="rgba(108,182,255,0.06)" stroke="#6cb6ff" stroke-width="1.2"/>
+  <text x="485" y="106" font-size="14" font-weight="700" fill="#b9dcff">2 · 절차 결핍 — 순서를 모른다</text>
+  <text x="485" y="132" font-size="9.5" fill="#5d6b78">증상</text>
+  <text x="485" y="150" font-size="11.5" fill="#c9d4de">단계는 다 맞는데 순서 · 누락으로 실패</text>
+  <text x="485" y="180" font-size="9.5" fill="#5d6b78">처방</text>
+  <text x="485" y="198" font-size="11.5" fill="#5ef2b8">워크플로 · 체크리스트 · 스캐폴딩</text>
+  <text x="485" y="228" font-size="9.5" fill="#5d6b78">하면 안 되는 것</text>
+  <text x="485" y="246" font-size="11.5" fill="#f0a36b">프롬프트만 길게 쓰기</text>
+
+  <!-- (3) 판단 -->
+  <rect x="40" y="288" width="415" height="204" rx="10" fill="rgba(185,167,230,0.07)" stroke="#b9a7e6" stroke-width="1.2"/>
+  <text x="60" y="320" font-size="14" font-weight="700" fill="#d6c9f2">3 · 판단 결핍 — 고르지 못한다</text>
+  <text x="60" y="346" font-size="9.5" fill="#5d6b78">증상</text>
+  <text x="60" y="364" font-size="11.5" fill="#c9d4de">둘 다 그럴듯하게 말하고 결정을 회피한다</text>
+  <text x="60" y="394" font-size="9.5" fill="#5d6b78">처방</text>
+  <text x="60" y="412" font-size="11.5" fill="#5ef2b8">결정 사례 코퍼스 · 소량 SFT · 리뷰 루프</text>
+  <text x="60" y="442" font-size="9.5" fill="#5d6b78">하면 안 되는 것</text>
+  <text x="60" y="460" font-size="11.5" fill="#f0a36b">RAG — 판단은 검색으로 나오지 않는다</text>
+
+  <!-- (4) 접지 -->
+  <rect x="465" y="288" width="415" height="204" rx="10" fill="rgba(94,242,184,0.10)" stroke="#5ef2b8" stroke-width="2"/>
+  <text x="485" y="320" font-size="14" font-weight="700" fill="#b6f2d8">4 · 접지 결핍 — 확인하지 못한다</text>
+  <text x="860" y="320" text-anchor="end" font-size="10" font-weight="600" fill="#5ef2b8">가장 흔하다</text>
+  <text x="485" y="346" font-size="9.5" fill="#5d6b78">증상</text>
+  <text x="485" y="364" font-size="11.5" fill="#c9d4de">자신 있게 틀린다</text>
+  <text x="485" y="394" font-size="9.5" fill="#5d6b78">처방</text>
+  <text x="485" y="412" font-size="11.5" fill="#5ef2b8">도구 · 검증기 · 실행환경</text>
+  <text x="485" y="442" font-size="9.5" fill="#5d6b78">하면 안 되는 것</text>
+  <text x="485" y="460" font-size="11.5" fill="#f0a36b">더 큰 모델</text>
+
+  <rect x="40" y="506" width="840" height="28" rx="6" fill="rgba(240,163,107,0.06)"/>
+  <text x="56" y="524" font-size="11" fill="#8c98a4">처방을 고르기 전에 어느 결핍인지부터 판별한다. 이 단계를 건너뛰기 때문에 사람들이 곧장 파인튜닝으로 간다.</text>
+</svg>

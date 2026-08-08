@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 536" width="920" height="536" font-family="'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace" role="img" aria-label="The cost ladder for making an agent a domain expert. From the top: build an eval set, context design, give it verifiers and tools, retrieval or RAG, memory and experience, workflow decomposition, trajectory SFT, RL or best-of-N, and continual pretraining. Cheaper at the top, more expensive at the bottom. Rung three, verifiers and tools, is marked highest impact. Only the last three rungs change model weights.">
+  <defs>
+    <linearGradient id="ladderCostEn" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5ef2b8"/>
+      <stop offset="0.55" stop-color="#6cb6ff"/>
+      <stop offset="1" stop-color="#f0a36b"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="1" y="1" width="918" height="534" rx="14" fill="#0c1117" stroke="rgba(94,242,184,0.16)"/>
+  <rect x="1" y="1" width="918" height="46" rx="14" fill="rgba(255,255,255,0.02)"/>
+
+  <circle cx="26" cy="24" r="5.5" fill="#ff5f57"/>
+  <circle cx="44" cy="24" r="5.5" fill="#febc2e"/>
+  <circle cx="62" cy="24" r="5.5" fill="#28c840"/>
+  <text x="898" y="28" text-anchor="end" font-size="12" fill="#5d6b78">ladder — cost of expertise</text>
+
+  <text x="110" y="80" font-size="10" fill="#5d6b78">step</text>
+  <text x="700" y="80" text-anchor="middle" font-size="10" fill="#5d6b78">cost</text>
+  <text x="765" y="80" text-anchor="middle" font-size="10" fill="#5d6b78">impact</text>
+
+  <rect x="48" y="88" width="6" height="382" rx="3" fill="url(#ladderCostEn)"/>
+
+  <!-- 1 -->
+  <rect x="72" y="88" width="728" height="38" rx="8" fill="rgba(94,242,184,0.10)" stroke="#5ef2b8" stroke-width="1.4"/>
+  <text x="92" y="112" text-anchor="middle" font-size="12" font-weight="700" fill="#5ef2b8">1</text>
+  <text x="110" y="112" font-size="12.5" font-weight="700" fill="#b6f2d8">Build an eval set</text>
+  <text x="310" y="112" font-size="10.5" fill="#8c98a4">30–50 real cases with known-good outcomes</text>
+  <text x="700" y="112" text-anchor="middle" font-size="10.5" fill="#8c98a4">low</text>
+  <text x="765" y="112" text-anchor="middle" font-size="10.5" font-weight="700" fill="#5ef2b8">required</text>
+
+  <!-- 2 -->
+  <rect x="72" y="131" width="728" height="38" rx="8" fill="rgba(108,182,255,0.07)" stroke="#6cb6ff" stroke-width="1.2"/>
+  <text x="92" y="155" text-anchor="middle" font-size="12" font-weight="700" fill="#6cb6ff">2</text>
+  <text x="110" y="155" font-size="12.5" font-weight="700" fill="#b9dcff">Context design</text>
+  <text x="310" y="155" font-size="10.5" fill="#8c98a4">domain norms · glossary · constraints · few-shot</text>
+  <text x="700" y="155" text-anchor="middle" font-size="10.5" fill="#8c98a4">low</text>
+  <text x="765" y="155" text-anchor="middle" font-size="10.5" fill="#b9dcff">high</text>
+
+  <!-- 3 -->
+  <rect x="72" y="174" width="728" height="38" rx="8" fill="rgba(94,242,184,0.14)" stroke="#5ef2b8" stroke-width="2"/>
+  <text x="92" y="198" text-anchor="middle" font-size="12" font-weight="700" fill="#5ef2b8">3</text>
+  <text x="110" y="198" font-size="12.5" font-weight="700" fill="#b6f2d8">Verifiers and tools</text>
+  <text x="310" y="198" font-size="10.5" fill="#8c98a4">compiler · sim · tests · API · linter</text>
+  <text x="700" y="198" text-anchor="middle" font-size="10.5" fill="#8c98a4">med</text>
+  <text x="765" y="198" text-anchor="middle" font-size="10.5" font-weight="700" fill="#5ef2b8">highest</text>
+  <text x="812" y="202" font-size="10" font-weight="600" fill="#5ef2b8">best ROI</text>
+
+  <!-- 4 -->
+  <rect x="72" y="217" width="728" height="38" rx="8" fill="rgba(108,182,255,0.07)" stroke="#6cb6ff" stroke-width="1.2"/>
+  <text x="92" y="241" text-anchor="middle" font-size="12" font-weight="700" fill="#6cb6ff">4</text>
+  <text x="110" y="241" font-size="12.5" font-weight="700" fill="#b9dcff">Retrieval / RAG</text>
+  <text x="310" y="241" font-size="10.5" fill="#8c98a4">domain corpus</text>
+  <text x="700" y="241" text-anchor="middle" font-size="10.5" fill="#8c98a4">med</text>
+  <text x="765" y="241" text-anchor="middle" font-size="10.5" fill="#b9dcff">high</text>
+
+  <!-- 5 -->
+  <rect x="72" y="260" width="728" height="38" rx="8" fill="rgba(108,182,255,0.07)" stroke="#6cb6ff" stroke-width="1.2"/>
+  <text x="92" y="284" text-anchor="middle" font-size="12" font-weight="700" fill="#6cb6ff">5</text>
+  <text x="110" y="284" font-size="12.5" font-weight="700" fill="#b9dcff">Memory</text>
+  <text x="310" y="284" font-size="10.5" fill="#8c98a4">replay failure → cause → fix back in</text>
+  <text x="700" y="284" text-anchor="middle" font-size="10.5" fill="#8c98a4">med</text>
+  <text x="765" y="284" text-anchor="middle" font-size="10.5" fill="#b9dcff">high</text>
+
+  <!-- 6 -->
+  <rect x="72" y="303" width="728" height="38" rx="8" fill="rgba(108,182,255,0.07)" stroke="#6cb6ff" stroke-width="1.2"/>
+  <text x="92" y="327" text-anchor="middle" font-size="12" font-weight="700" fill="#6cb6ff">6</text>
+  <text x="110" y="327" font-size="12.5" font-weight="700" fill="#b9dcff">Workflow split</text>
+  <text x="310" y="327" font-size="10.5" fill="#8c98a4">plan → act → adversarial verify loop</text>
+  <text x="700" y="327" text-anchor="middle" font-size="10.5" fill="#8c98a4">med</text>
+  <text x="765" y="327" text-anchor="middle" font-size="10.5" fill="#b9dcff">high</text>
+
+  <!-- 7 -->
+  <rect x="72" y="346" width="728" height="38" rx="8" fill="rgba(240,163,107,0.08)" stroke="#f0a36b" stroke-width="1.2"/>
+  <text x="92" y="370" text-anchor="middle" font-size="12" font-weight="700" fill="#f0a36b">7</text>
+  <text x="110" y="370" font-size="12.5" font-weight="700" fill="#f3c79b">Trajectory SFT</text>
+  <text x="310" y="370" font-size="10.5" fill="#8c98a4">distil successful trajectories</text>
+  <text x="700" y="370" text-anchor="middle" font-size="10.5" fill="#8c98a4">high</text>
+  <text x="765" y="370" text-anchor="middle" font-size="10.5" fill="#f3c79b">med</text>
+
+  <!-- 8 -->
+  <rect x="72" y="389" width="728" height="38" rx="8" fill="rgba(240,163,107,0.08)" stroke="#f0a36b" stroke-width="1.2"/>
+  <text x="92" y="413" text-anchor="middle" font-size="12" font-weight="700" fill="#f0a36b">8</text>
+  <text x="110" y="413" font-size="12.5" font-weight="700" fill="#f3c79b">RL / best-of-N</text>
+  <text x="310" y="413" font-size="10.5" fill="#8c98a4">only if a cheap automatic verifier exists</text>
+  <text x="700" y="413" text-anchor="middle" font-size="10.5" fill="#8c98a4">high</text>
+  <text x="765" y="413" text-anchor="middle" font-size="10.5" fill="#f3c79b">high</text>
+
+  <!-- 9 -->
+  <rect x="72" y="432" width="728" height="38" rx="8" fill="rgba(140,152,164,0.05)" stroke="#5d6b78" stroke-width="1.1"/>
+  <text x="92" y="456" text-anchor="middle" font-size="12" font-weight="700" fill="#5d6b78">9</text>
+  <text x="110" y="456" font-size="12.5" font-weight="700" fill="#8c98a4">Continual pretrain</text>
+  <text x="310" y="456" font-size="10.5" fill="#6272a4">effectively never</text>
+  <text x="700" y="456" text-anchor="middle" font-size="10.5" fill="#6272a4">highest</text>
+  <text x="765" y="456" text-anchor="middle" font-size="10.5" fill="#6272a4">low–med</text>
+
+  <!-- weight-change bracket for 7~9 -->
+  <path d="M810 350 h-6 v116 h6" stroke="#f0a36b" stroke-width="1.2" fill="none" opacity="0.8"/>
+  <text x="818" y="404" font-size="9.5" font-weight="600" fill="#f0a36b">below</text>
+  <text x="818" y="418" font-size="9.5" font-weight="600" fill="#f0a36b">here you</text>
+  <text x="818" y="432" font-size="9.5" font-weight="600" fill="#f0a36b">train</text>
+
+  <rect x="48" y="486" width="852" height="28" rx="6" fill="rgba(94,242,184,0.06)"/>
+  <text x="64" y="504" font-size="11" fill="#8c98a4">Work down from the top, one rung at a time. Skipping rung 3 and jumping straight to 7–9 is the most common mistake.</text>
+</svg>

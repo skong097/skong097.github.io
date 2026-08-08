@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 536" width="920" height="536" font-family="'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace" role="img" aria-label="에이전트 전문가화의 비용 사다리. 위에서부터 평가셋 구축, 컨텍스트 설계, 검증기와 도구 부여, 검색과 RAG, 메모리와 경험 축적, 워크플로 분해, 궤적 SFT, RL과 best-of-N, 도메인 계속사전학습의 아홉 단계다. 위로 갈수록 싸고 아래로 갈수록 비싸며, 세 번째 검증기와 도구 부여가 효과 최상으로 표시된다. 마지막 세 단계만이 모델 가중치를 바꾼다.">
+  <defs>
+    <linearGradient id="ladderCost" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5ef2b8"/>
+      <stop offset="0.55" stop-color="#6cb6ff"/>
+      <stop offset="1" stop-color="#f0a36b"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="1" y="1" width="918" height="534" rx="14" fill="#0c1117" stroke="rgba(94,242,184,0.16)"/>
+  <rect x="1" y="1" width="918" height="46" rx="14" fill="rgba(255,255,255,0.02)"/>
+
+  <circle cx="26" cy="24" r="5.5" fill="#ff5f57"/>
+  <circle cx="44" cy="24" r="5.5" fill="#febc2e"/>
+  <circle cx="62" cy="24" r="5.5" fill="#28c840"/>
+  <text x="898" y="28" text-anchor="end" font-size="12" fill="#5d6b78">ladder — 전문가화 비용 사다리</text>
+
+  <text x="110" y="80" font-size="10" fill="#5d6b78">단계</text>
+  <text x="700" y="80" text-anchor="middle" font-size="10" fill="#5d6b78">비용</text>
+  <text x="765" y="80" text-anchor="middle" font-size="10" fill="#5d6b78">효과</text>
+
+  <rect x="48" y="88" width="6" height="382" rx="3" fill="url(#ladderCost)"/>
+
+  <!-- 1 -->
+  <rect x="72" y="88" width="728" height="38" rx="8" fill="rgba(94,242,184,0.10)" stroke="#5ef2b8" stroke-width="1.4"/>
+  <text x="92" y="112" text-anchor="middle" font-size="12" font-weight="700" fill="#5ef2b8">1</text>
+  <text x="110" y="112" font-size="12.5" font-weight="700" fill="#b6f2d8">평가셋 구축</text>
+  <text x="290" y="112" font-size="10.5" fill="#8c98a4">실사례 30~50건, 정답이 있는 것</text>
+  <text x="700" y="112" text-anchor="middle" font-size="10.5" fill="#8c98a4">저</text>
+  <text x="765" y="112" text-anchor="middle" font-size="10.5" font-weight="700" fill="#5ef2b8">필수</text>
+
+  <!-- 2 -->
+  <rect x="72" y="131" width="728" height="38" rx="8" fill="rgba(108,182,255,0.07)" stroke="#6cb6ff" stroke-width="1.2"/>
+  <text x="92" y="155" text-anchor="middle" font-size="12" font-weight="700" fill="#6cb6ff">2</text>
+  <text x="110" y="155" font-size="12.5" font-weight="700" fill="#b9dcff">컨텍스트 설계</text>
+  <text x="290" y="155" font-size="10.5" fill="#8c98a4">도메인 규범 · 용어 · 금지사항 · few-shot</text>
+  <text x="700" y="155" text-anchor="middle" font-size="10.5" fill="#8c98a4">저</text>
+  <text x="765" y="155" text-anchor="middle" font-size="10.5" fill="#b9dcff">상</text>
+
+  <!-- 3 -->
+  <rect x="72" y="174" width="728" height="38" rx="8" fill="rgba(94,242,184,0.14)" stroke="#5ef2b8" stroke-width="2"/>
+  <text x="92" y="198" text-anchor="middle" font-size="12" font-weight="700" fill="#5ef2b8">3</text>
+  <text x="110" y="198" font-size="12.5" font-weight="700" fill="#b6f2d8">검증기 · 도구 부여</text>
+  <text x="290" y="198" font-size="10.5" fill="#8c98a4">컴파일러 · 시뮬 · 테스트 · API · 린터</text>
+  <text x="700" y="198" text-anchor="middle" font-size="10.5" fill="#8c98a4">중</text>
+  <text x="765" y="198" text-anchor="middle" font-size="10.5" font-weight="700" fill="#5ef2b8">최상</text>
+  <text x="812" y="202" font-size="10" font-weight="600" fill="#5ef2b8">최고 ROI</text>
+
+  <!-- 4 -->
+  <rect x="72" y="217" width="728" height="38" rx="8" fill="rgba(108,182,255,0.07)" stroke="#6cb6ff" stroke-width="1.2"/>
+  <text x="92" y="241" text-anchor="middle" font-size="12" font-weight="700" fill="#6cb6ff">4</text>
+  <text x="110" y="241" font-size="12.5" font-weight="700" fill="#b9dcff">검색 / RAG</text>
+  <text x="290" y="241" font-size="10.5" fill="#8c98a4">도메인 코퍼스</text>
+  <text x="700" y="241" text-anchor="middle" font-size="10.5" fill="#8c98a4">중</text>
+  <text x="765" y="241" text-anchor="middle" font-size="10.5" fill="#b9dcff">상</text>
+
+  <!-- 5 -->
+  <rect x="72" y="260" width="728" height="38" rx="8" fill="rgba(108,182,255,0.07)" stroke="#6cb6ff" stroke-width="1.2"/>
+  <text x="92" y="284" text-anchor="middle" font-size="12" font-weight="700" fill="#6cb6ff">5</text>
+  <text x="110" y="284" font-size="12.5" font-weight="700" fill="#b9dcff">메모리 · 경험 축적</text>
+  <text x="290" y="284" font-size="10.5" fill="#8c98a4">실패 → 원인 → 조치를 다시 주입</text>
+  <text x="700" y="284" text-anchor="middle" font-size="10.5" fill="#8c98a4">중</text>
+  <text x="765" y="284" text-anchor="middle" font-size="10.5" fill="#b9dcff">상</text>
+
+  <!-- 6 -->
+  <rect x="72" y="303" width="728" height="38" rx="8" fill="rgba(108,182,255,0.07)" stroke="#6cb6ff" stroke-width="1.2"/>
+  <text x="92" y="327" text-anchor="middle" font-size="12" font-weight="700" fill="#6cb6ff">6</text>
+  <text x="110" y="327" font-size="12.5" font-weight="700" fill="#b9dcff">워크플로 분해</text>
+  <text x="290" y="327" font-size="10.5" fill="#8c98a4">계획 → 실행 → 적대적 검증 루프</text>
+  <text x="700" y="327" text-anchor="middle" font-size="10.5" fill="#8c98a4">중</text>
+  <text x="765" y="327" text-anchor="middle" font-size="10.5" fill="#b9dcff">상</text>
+
+  <!-- 7 -->
+  <rect x="72" y="346" width="728" height="38" rx="8" fill="rgba(240,163,107,0.08)" stroke="#f0a36b" stroke-width="1.2"/>
+  <text x="92" y="370" text-anchor="middle" font-size="12" font-weight="700" fill="#f0a36b">7</text>
+  <text x="110" y="370" font-size="12.5" font-weight="700" fill="#f3c79b">궤적 SFT</text>
+  <text x="290" y="370" font-size="10.5" fill="#8c98a4">성공 trajectory 증류</text>
+  <text x="700" y="370" text-anchor="middle" font-size="10.5" fill="#8c98a4">고</text>
+  <text x="765" y="370" text-anchor="middle" font-size="10.5" fill="#f3c79b">중</text>
+
+  <!-- 8 -->
+  <rect x="72" y="389" width="728" height="38" rx="8" fill="rgba(240,163,107,0.08)" stroke="#f0a36b" stroke-width="1.2"/>
+  <text x="92" y="413" text-anchor="middle" font-size="12" font-weight="700" fill="#f0a36b">8</text>
+  <text x="110" y="413" font-size="12.5" font-weight="700" fill="#f3c79b">RL / best-of-N</text>
+  <text x="290" y="413" font-size="10.5" fill="#8c98a4">싼 자동 검증기가 있을 때만</text>
+  <text x="700" y="413" text-anchor="middle" font-size="10.5" fill="#8c98a4">고</text>
+  <text x="765" y="413" text-anchor="middle" font-size="10.5" fill="#f3c79b">상</text>
+
+  <!-- 9 -->
+  <rect x="72" y="432" width="728" height="38" rx="8" fill="rgba(140,152,164,0.05)" stroke="#5d6b78" stroke-width="1.1"/>
+  <text x="92" y="456" text-anchor="middle" font-size="12" font-weight="700" fill="#5d6b78">9</text>
+  <text x="110" y="456" font-size="12.5" font-weight="700" fill="#8c98a4">계속사전학습</text>
+  <text x="290" y="456" font-size="10.5" fill="#6272a4">사실상 해당 없음</text>
+  <text x="700" y="456" text-anchor="middle" font-size="10.5" fill="#6272a4">최고</text>
+  <text x="765" y="456" text-anchor="middle" font-size="10.5" fill="#6272a4">저~중</text>
+
+  <!-- weight-change bracket for 7~9 -->
+  <path d="M810 350 h-6 v116 h6" stroke="#f0a36b" stroke-width="1.2" fill="none" opacity="0.8"/>
+  <text x="818" y="404" font-size="9.5" font-weight="600" fill="#f0a36b">여기부터</text>
+  <text x="818" y="418" font-size="9.5" font-weight="600" fill="#f0a36b">가중치를</text>
+  <text x="818" y="432" font-size="9.5" font-weight="600" fill="#f0a36b">바꾼다</text>
+
+  <rect x="48" y="486" width="852" height="28" rx="6" fill="rgba(94,242,184,0.06)"/>
+  <text x="64" y="504" font-size="11" fill="#8c98a4">위에서부터 시도하고, 막힐 때만 한 칸 내려간다. 3번을 건너뛰고 7~9번으로 직행하는 것이 가장 흔한 실수다.</text>
+</svg>
