@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 400" width="920" height="400" font-family="'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace" role="img" aria-label="두 직선이 한 점에서 만나면 60도 사분면과 120도 사분면이 함께 생긴다. 왼쪽은 위쪽 60도 쐐기를, 오른쪽은 오른쪽 120도 쐐기를 팔로 쓴 경우이며 바탕의 두 직선은 양쪽이 완전히 같다. 그래서 선분의 직선 각도로만 재면 두 경우가 구분되지 않고, 꼭짓점에서 팔 끝을 향하는 벡터의 사잇각을 따로 재야 갈린다.">
+  <rect x="1" y="1" width="918" height="398" rx="14" fill="#0c1117" stroke="rgba(94,242,184,0.16)"/>
+  <rect x="1" y="1" width="918" height="46" rx="14" fill="rgba(255,255,255,0.02)"/>
+
+  <circle cx="26" cy="24" r="5.5" fill="#ff5f57"/>
+  <circle cx="44" cy="24" r="5.5" fill="#febc2e"/>
+  <circle cx="62" cy="24" r="5.5" fill="#28c840"/>
+  <text x="898" y="28" text-anchor="end" font-size="12" fill="#5d6b78">ambiguity — 60° vs 120°</text>
+
+  <!-- ================= 왼쪽 : 60° ================= -->
+  <text x="250" y="80" text-anchor="middle" font-size="13" font-weight="700" fill="#f3c79b">60° 쐐기 — 방 안 모서리 등</text>
+  <!-- 공통 두 직선 (X) -->
+  <g stroke="#3a4654" stroke-width="1.2" stroke-dasharray="5 5">
+    <path d="M191 103 L 309 307"/>
+    <path d="M309 103 L 191 307"/>
+  </g>
+  <!-- 위쪽 쐐기를 팔로 사용 -->
+  <g stroke="#f0a36b" stroke-width="3.4" stroke-linecap="round">
+    <path d="M250 205 L 309 103"/>
+    <path d="M250 205 L 191 103"/>
+  </g>
+  <path d="M275 162 A 50 50 0 0 0 225 162" fill="none" stroke="#f0a36b" stroke-width="1.4"/>
+  <text x="250" y="150" text-anchor="middle" font-size="12" font-weight="700" fill="#f3c79b">60°</text>
+  <circle cx="250" cy="205" r="5" fill="#f0a36b"/>
+  <text x="250" y="333" text-anchor="middle" font-size="11" fill="#8c98a4">꼭짓점</text>
+
+  <!-- ================= 오른쪽 : 120° ================= -->
+  <text x="650" y="80" text-anchor="middle" font-size="13" font-weight="700" fill="#b6f2d8">120° 쐐기 — 우리 표적</text>
+  <!-- 똑같은 두 직선 (X) -->
+  <g stroke="#3a4654" stroke-width="1.2" stroke-dasharray="5 5">
+    <path d="M591 103 L 709 307"/>
+    <path d="M709 103 L 591 307"/>
+  </g>
+  <!-- 오른쪽 쐐기를 팔로 사용 -->
+  <g stroke="#5ef2b8" stroke-width="3.4" stroke-linecap="round">
+    <path d="M650 205 L 709 103"/>
+    <path d="M650 205 L 709 307"/>
+  </g>
+  <path d="M677 157 A 55 55 0 0 1 677 253" fill="none" stroke="#5ef2b8" stroke-width="1.4"/>
+  <text x="688" y="210" text-anchor="middle" font-size="12" font-weight="700" fill="#b6f2d8">120°</text>
+  <circle cx="650" cy="205" r="5" fill="#5ef2b8"/>
+  <text x="650" y="333" text-anchor="middle" font-size="11" fill="#8c98a4">꼭짓점</text>
+
+  <!-- 가운데 구분 -->
+  <path d="M450 74 V 336" stroke="#3a4654" stroke-width="1" stroke-dasharray="2 6"/>
+  <text x="450" y="210" text-anchor="middle" font-size="12" font-weight="700" fill="#5d6b78">=</text>
+
+  <!-- 설명 -->
+  <rect x="40" y="348" width="840" height="40" rx="8" fill="rgba(240,163,107,0.07)" stroke="rgba(240,163,107,0.25)"/>
+  <text x="56" y="366" font-size="11.5" fill="#f3c79b">점선은 두 변이 놓인 직선이다 — 양쪽 그림이 완전히 같다. 다른 것은 네 사분면 중 어디를 팔로 썼는가뿐.</text>
+  <text x="56" y="382" font-size="11.5" fill="#8c98a4">→ 선분의 직선 각도로 재면 둘 다 120°. 꼭짓점에서 팔 끝을 향하는 벡터의 사잇각을 재야 갈린다.</text>
+</svg>

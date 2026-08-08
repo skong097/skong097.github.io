@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 380" width="920" height="380" font-family="'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace" role="img" aria-label="Deriving the V groove apex from the intersection of two fitted lines is far more stable than using arm endpoints. Over 30 static frames the arm length standard deviation is 2.3 millimetres while the apex range standard deviation is 0.33 millimetres, a sevenfold difference, because the intersection is fitted from dozens of points along each side.">
+  <rect x="1" y="1" width="918" height="378" rx="14" fill="#0c1117" stroke="rgba(94,242,184,0.16)"/>
+  <rect x="1" y="1" width="918" height="46" rx="14" fill="rgba(255,255,255,0.02)"/>
+
+  <circle cx="26" cy="24" r="5.5" fill="#ff5f57"/>
+  <circle cx="44" cy="24" r="5.5" fill="#febc2e"/>
+  <circle cx="62" cy="24" r="5.5" fill="#28c840"/>
+  <text x="898" y="28" text-anchor="end" font-size="12" fill="#5d6b78">precision — apex by intersection</text>
+
+  <!-- 좌: 그림 -->
+  <text x="60" y="78" font-size="12.5" font-weight="700" fill="#b9dcff">Scan points land scattered along each side</text>
+
+  <!-- 두 변의 스캔 점 -->
+  <g fill="#6cb6ff">
+    <circle cx="130" cy="250" r="3"/><circle cx="152" cy="237" r="3"/><circle cx="174" cy="225" r="3"/>
+    <circle cx="196" cy="212" r="3"/><circle cx="218" cy="200" r="3"/><circle cx="240" cy="187" r="3"/>
+    <circle cx="262" cy="175" r="3"/><circle cx="284" cy="162" r="3"/>
+    <circle cx="352" cy="162" r="3"/><circle cx="374" cy="175" r="3"/><circle cx="396" cy="187" r="3"/>
+    <circle cx="418" cy="200" r="3"/><circle cx="440" cy="212" r="3"/><circle cx="462" cy="225" r="3"/>
+    <circle cx="484" cy="237" r="3"/><circle cx="506" cy="250" r="3"/>
+  </g>
+
+  <!-- 피팅 직선 (연장) -->
+  <g stroke="#5ef2b8" stroke-width="1.8" stroke-dasharray="6 5" opacity="0.85">
+    <path d="M124 253 L 330 135"/>
+    <path d="M512 253 L 306 135"/>
+  </g>
+
+  <!-- 교점 -->
+  <circle cx="318" cy="142" r="6.5" fill="#5ef2b8"/>
+  <circle cx="318" cy="142" r="12" fill="none" stroke="#5ef2b8" stroke-width="1.2" opacity="0.5"/>
+  <text x="318" y="122" text-anchor="middle" font-size="11.5" font-weight="700" fill="#b6f2d8">intersection = apex</text>
+  <text x="318" y="107" text-anchor="middle" font-size="11" fill="#5ef2b8">σ 0.33 mm</text>
+
+  <!-- arm tip 흔들림 표시 -->
+  <g stroke="#f0a36b" stroke-width="1.4" opacity="0.9">
+    <path d="M118 262 h 24"/>
+    <path d="M494 262 h 24"/>
+  </g>
+  <text x="130" y="286" text-anchor="middle" font-size="10.5" fill="#f3c79b">arm tip</text>
+  <text x="130" y="301" text-anchor="middle" font-size="10.5" fill="#f0a36b">σ 2.3 mm</text>
+  <text x="506" y="286" text-anchor="middle" font-size="10.5" fill="#f3c79b">arm tip</text>
+  <text x="506" y="301" text-anchor="middle" font-size="10.5" fill="#f0a36b">σ 2.3 mm</text>
+
+  <text x="318" y="330" text-anchor="middle" font-size="10.5" fill="#8c98a4">Where the scan happens to stop moves the tip frame to frame</text>
+
+  <!-- 우: 수치 비교 -->
+  <path d="M580 68 V 340" stroke="#3a4654" stroke-width="1" stroke-dasharray="2 6"/>
+
+  <text x="620" y="78" font-size="12.5" font-weight="700" fill="#b9dcff">Spread over 30 static frames</text>
+
+  <rect x="620" y="96" width="248" height="34" rx="7" fill="rgba(94,242,184,0.12)" stroke="#5ef2b8" stroke-width="1.6"/>
+  <text x="636" y="118" font-size="11.5" font-weight="700" fill="#b6f2d8">apex range</text>
+  <text x="852" y="118" text-anchor="end" font-size="12" font-weight="700" fill="#5ef2b8">0.33 mm</text>
+
+  <rect x="620" y="138" width="248" height="30" rx="7" fill="rgba(240,163,107,0.07)" stroke="rgba(240,163,107,0.3)"/>
+  <text x="636" y="158" font-size="11.5" fill="#f3c79b">arm length L</text>
+  <text x="852" y="158" text-anchor="end" font-size="11.5" fill="#f0a36b">2.32 mm</text>
+
+  <rect x="620" y="174" width="248" height="30" rx="7" fill="rgba(240,163,107,0.07)" stroke="rgba(240,163,107,0.3)"/>
+  <text x="636" y="194" font-size="11.5" fill="#f3c79b">arm length R</text>
+  <text x="852" y="194" text-anchor="end" font-size="11.5" fill="#f0a36b">2.27 mm</text>
+
+  <rect x="620" y="210" width="248" height="30" rx="7" fill="rgba(240,163,107,0.07)" stroke="rgba(240,163,107,0.3)"/>
+  <text x="636" y="230" font-size="11.5" fill="#f3c79b">chord</text>
+  <text x="852" y="230" text-anchor="end" font-size="11.5" fill="#f0a36b">2.45 mm</text>
+
+  <text x="620" y="268" font-size="12" font-weight="700" fill="#5ef2b8">7× tighter</text>
+  <text x="620" y="290" font-size="11" fill="#8c98a4">The intersection comes from fitting</text>
+  <text x="620" y="307" font-size="11" fill="#8c98a4">dozens of points along each side, so</text>
+  <text x="620" y="324" font-size="11" fill="#8c98a4">a few noisy endpoints barely move it</text>
+</svg>

@@ -1,0 +1,333 @@
+<title>카메라 없이 도킹하기 — 2D 라이다로 V홈을 찾아 2 cm 까지</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+:root{--bg:#0f1420;--fg:#e6ebf3;--mut:#95a3b8;--card:#161d2b;--line:#26314a;--pri:#5aa9ff;--acc:#ffcf5e;--warn:#ff7a7a;--ok:#5ddc9a}
+@media (prefers-color-scheme: light){:root{--bg:#f7f9fc;--fg:#16202e;--mut:#5a6b82;--card:#fff;--line:#dde5f0;--pri:#0b62d6;--acc:#a06a00;--warn:#c62828;--ok:#0d7a4a}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.75 -apple-system,BlinkMacSystemFont,"Pretendard","Noto Sans KR",Segoe UI,sans-serif;
+ padding:48px 20px 96px;-webkit-font-smoothing:antialiased}
+main{max-width:900px;margin:0 auto}
+h1{font-size:30px;line-height:1.35;margin:0 0 8px;letter-spacing:-.02em}
+h2{font-size:22px;margin:52px 0 14px;padding-top:14px;border-top:1px solid var(--line);letter-spacing:-.01em}
+h3{font-size:17px;margin:32px 0 10px;color:var(--pri)}
+h4{font-size:15px;margin:24px 0 8px;color:var(--mut)}
+h1+p{color:var(--mut);margin-top:0}
+p{margin:12px 0}
+hr{border:0;border-top:1px solid var(--line);margin:36px 0}
+code{background:rgba(127,150,190,.16);padding:.12em .4em;border-radius:4px;font-size:.88em;
+ font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace}
+pre{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;overflow-x:auto;margin:16px 0}
+pre code{background:none;padding:0;font-size:13px;line-height:1.6;white-space:pre}
+blockquote{margin:18px 0;padding:12px 16px;border-left:3px solid var(--acc);background:var(--card);border-radius:0 8px 8px 0;color:var(--mut)}
+.tw{overflow-x:auto;margin:16px 0;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;min-width:460px;font-size:14.5px}
+th,td{padding:9px 13px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--card);font-weight:600;color:var(--mut);white-space:nowrap}
+tr:last-child td{border-bottom:0}
+ul,ol{margin:12px 0;padding-left:24px}
+li{margin:5px 0}
+a{color:var(--pri)}
+strong{color:var(--fg);font-weight:650}
+</style>
+<main>
+<h1 id="s0">카메라 없이 도킹하기 — 2D 라이다로 V홈을 찾아 2 cm 까지</h1>
+<p>로봇 도킹의 표준 해법은 시각 마커다. AprilTag 를 벽에 붙이고, 카메라로 찍고, <code>solvePnP</code> 로 자세를 풀면 된다. 우리도 그렇게 만들어 정면 15 cm 정밀 주차까지 완성해 두었다.</p>
+<p>그런데 카메라가 고장 났다.</p>
+<pre><code>dmesg: ov5647 10-0036: ov5647_read: i2c read error, reg: 300a = -5
+       ov5647: probe of 10-0036 failed with error -5
+→ libcamera 인식 카메라 0개</code></pre>
+<p>센서 칩과 I2C 통신 자체가 끊긴 상태다. 리본 케이블을 다시 꽂기 전까지 이 로봇은 도킹을 못 한다. 그런데 <strong>라이다는 멀쩡하다.</strong> 그러면 라이다만으로 도킹할 수는 없을까?</p>
+<p>결론부터 적으면, 됐다. <strong>2D 라이다만으로 6회 도킹해 전부 성공했고, 최종 실물 간격 2 cm, 횡편차 1 mm 이내다.</strong> 그리고 제어 코드는 한 줄도 고치지 않았다.</p>
+<hr>
+<h1 id="s1">1부. 무엇을 랜드마크로 삼을 것인가</h1>
+<h2 id="s2">1-1. 2D 라이다가 주는 것</h2>
+<p>2D 라이다는 한 평면을 훑어 <strong>거리 배열 하나</strong>를 준다. 우리 것은 720개 빔, 10 Hz 다.</p>
+<pre><code>ranges[0..719],  angle_min = -π,  angle_increment = 0.0087 rad</code></pre>
+<p>각 빔을 극좌표에서 직교로 바꾸면 <strong>점 구름</strong>이 된다. 코드로는 이게 전부다.</p>
+<pre><code>def scan_to_points(ranges, angle_min, angle_increment, range_min, range_max):
+    &quot;&quot;&quot;LaserScan.ranges → [(x, y, r, index)]. inf/nan/범위 밖 빔은 버린다.&quot;&quot;&quot;
+    pts = []
+    for i, r in enumerate(ranges):
+        if r is None:
+            continue
+        r = float(r)
+        if not math.isfinite(r) or not (range_min &lt; r &lt; range_max):
+            continue
+        a = angle_min + i * angle_increment
+        pts.append((r * math.cos(a), r * math.sin(a), r, i))
+    return pts</code></pre>
+<p><code>index</code> 를 함께 들고 다니는 게 뒤에서 쓸모가 있다. 빔 번호가 건너뛰었다는 것은 그 사이에 측정 실패가 있었다는 뜻이고, 그것도 물체가 끊긴 단서다.</p>
+<p>색도, 질감도, ID 도 없다. 카메라가 "저건 8번 태그다"라고 말해 주는 것과 달리, 라이다는 "여기 뭔가 있다"만 말한다.</p>
+<p>그래서 랜드마크로 쓰려면 <strong>형상 자체가 식별자</strong>가 되어야 한다.</p>
+<h2 id="s3">1-2. V홈 — 각도가 곧 이름이다</h2>
+<p>우리가 고른 것은 끼인각 120°, 변 170 mm 의 <strong>V홈</strong>이다. 벽에 붙은 평범한 구조물이지만 라이다 입장에서는 훌륭한 표적이다. 이유는 세 가지다.</p>
+<p><strong>① 각도는 거리와 무관하다.</strong> 1 m 에서 보든 30 cm 에서 보든 120° 는 120° 다. 크기 기반 판정과 달리 거리 보정이 필요 없다.</p>
+<p><strong>② 주변에 흔치 않다.</strong> 방 안의 모서리는 대개 90° 다. 120°±20° 창을 두면 벽 모서리는 걸러진다.</p>
+<p><strong>③ 두 변이 만나므로 점 하나를 특정할 수 있다.</strong> 평평한 벽은 "어디쯤"만 알 수 있지만, 꺾인 곳은 <strong>한 점</strong>이 나온다. 뒤에 나오지만 이게 정밀도의 핵심이다.</p>
+<hr>
+<h1 id="s4">2부. 점 구름에서 V홈을 꺼내기</h1>
+<h2 id="s5">2-1. 끊고, 펴고, 짝짓는다</h2>
+<p>세 단계다.</p>
+<pre><code>① 클러스터링   점 사이가 갑자기 벌어지면 다른 물체다 → 끊는다
+② 직선 분해    한 덩어리를 직선들로 편다 (split-and-merge)
+③ 쌍 찾기      끼인각이 120°±20° 이고 끝점이 만나는 선분 쌍</code></pre>
+<p>②의 split-and-merge 는 재귀적이다. 점 뭉치에 직선을 맞추고, <strong>가장 많이 벗어난 점</strong>의 잔차가 허용치(6 mm)를 넘으면 그 점에서 둘로 쪼갠다. 쪼갠 조각에 같은 짓을 반복한다.</p>
+<pre><code>def _split(pts, tol, depth=0):
+    &quot;&quot;&quot;최대 잔차가 tol 을 넘으면 그 점에서 쪼갠다 (split-and-merge).&quot;&quot;&quot;
+    if len(pts) &lt; 8 or depth &gt; 6:
+        return [pts]
+    fl = fit_line(pts)
+    if fl[&quot;maxres&quot;] &lt;= tol:
+        return [pts]
+    k = max(range(len(pts)),
+            key=lambda i: abs((pts[i][0] - fl[&quot;mx&quot;]) * fl[&quot;nv&quot;][0]
+                              + (pts[i][1] - fl[&quot;my&quot;]) * fl[&quot;nv&quot;][1]))
+    if k &lt; 4 or k &gt; len(pts) - 4:
+        return [pts]
+    return _split(pts[:k + 1], tol, depth + 1) + _split(pts[k:], tol, depth + 1)</code></pre>
+<p><code>depth &gt; 6</code> 과 <code>k &lt; 4</code> 가 안전장치다. 노이즈가 심하면 무한히 쪼개려 들기 때문에 깊이를 막고, 끝에서 4점 이내로는 자르지 않는다 — 조각이 너무 짧으면 직선 피팅 자체가 의미를 잃는다.</p>
+<p>직선 피팅은 <strong>전최소자승</strong>(total least squares)이다. 일반 최소자승은 수직선을 못 맞추는데, 라이다 점은 어느 방향으로든 놓이므로 그러면 곤란하다.</p>
+<pre><code>sxx = sum((p[0] - mx) ** 2 for p in pts)
+syy = sum((p[1] - my) ** 2 for p in pts)
+sxy = sum((p[0] - mx) * (p[1] - my) for p in pts)
+th  = 0.5 * math.atan2(2 * sxy, sxx - syy)      # 주축 방향
+d   = (math.cos(th), math.sin(th))              # 직선 방향
+nv  = (-d[1], d[0])                             # 법선 → 잔차 계산용</code></pre>
+<p>①의 클러스터링 임계는 고정값이면 안 된다. 라이다는 <strong>먼 곳일수록 점 간격이 벌어지기</strong> 때문이다.</p>
+<pre><code>for a, b in zip(pts, pts[1:]):
+    gap = math.hypot(b[0] - a[0], b[1] - a[1])
+    # 거리에 비례한 적응 임계 — 먼 벽이 점 간격만으로 쪼개지지 않게
+    thr = max(0.02, 3.0 * b[2] * angle_increment)
+    if b[3] - a[3] &gt; 2 or gap &gt; thr:
+        clusters.append(cur); cur = [b]
+    else:
+        cur.append(b)</code></pre>
+<p>3 m 벽의 점 간격은 26 mm 인데 고정 20 mm 임계를 쓰면 멀쩡한 벽이 산산조각 난다. <code>b[3] - a[3] &gt; 2</code> 는 빔 번호가 건너뛴 경우 — 그 사이 빔이 아무것도 못 맞혔다는 뜻이라 물체가 끊긴 것으로 본다.</p>
+<h2 id="s6">2-2. ★꼭짓점은 점을 찍는 게 아니라 직선을 연장해 만든다</h2>
+<p>가장 중요한 설계 판단이 여기 있다. <strong>V홈의 꼭짓점을 "모서리에 찍힌 점"에서 구하지 않았다.</strong> 대신 <strong>두 변의 직선을 각각 피팅한 뒤 그 교점</strong>을 계산했다.</p>
+<p>쌍을 고르는 조건부터 보면 이렇다.</p>
+<pre><code>for i in range(len(segs)):
+    for j in range(i + 1, len(segs)):
+        a, b = segs[i], segs[j]
+        if not (arm[0] &lt;= a[&quot;length&quot;] &lt;= arm[1] and arm[0] &lt;= b[&quot;length&quot;] &lt;= arm[1]):
+            continue                                   # 팔 길이 8~30 cm
+        diff = abs(a[&quot;ang&quot;] - b[&quot;ang&quot;])
+        inc = 180 - min(diff, 180 - diff)
+        if abs(inc - nominal) &gt; span:
+            continue                                   # 120° ±20°
+        d = min(math.hypot(pa[0] - pb[0], pa[1] - pb[1])
+                for pa in (a[&quot;p0&quot;], a[&quot;p1&quot;]) for pb in (b[&quot;p0&quot;], b[&quot;p1&quot;]))
+        if d &gt; joint:
+            continue                                   # 두 끝점이 5 cm 이내로 만나야
+        score = abs(inc - nominal) + d * 500            # 각도 우선, 접합 간격 보조
+        if best is None or score &lt; best[&quot;score&quot;]:
+            best = dict(a=a, b=b, inc=inc, joint=d, score=score)</code></pre>
+<p>그리고 꼭짓점은 <strong>두 직선의 교점</strong>으로 푼다.</p>
+<pre><code>(x1, y1), (x2, y2) = a[&quot;p0&quot;], a[&quot;p1&quot;]
+(x3, y3), (x4, y4) = b[&quot;p0&quot;], b[&quot;p1&quot;]
+den = (x1 - x2) * (y3 - y4) - (y1 - y2) * (x3 - x4)
+if abs(den) &lt; 1e-12:                                # 평행 — 교점 없음
+    return None
+px = ((x1*y2 - y1*x2) * (x3-x4) - (x1-x2) * (x3*y4 - y3*x4)) / den
+py = ((x1*y2 - y1*x2) * (y3-y4) - (y1-y2) * (x3*y4 - y3*x4)) / den</code></pre>
+<p>방향(yaw)은 두 팔의 단위벡터를 더한 <strong>이등분선</strong>으로 구한다.</p>
+<pre><code>far = lambda s: max((s[&quot;p0&quot;], s[&quot;p1&quot;]), key=lambda p: math.hypot(p[0]-px, p[1]-py))
+ta, tb = far(a), far(b)                             # 꼭짓점에서 먼 쪽이 팔 끝
+ua = ((ta[0]-px)/armA, (ta[1]-py)/armA)
+ub = ((tb[0]-px)/armB, (tb[1]-py)/armB)
+bx, by = ua[0] + ub[0], ua[1] + ub[1]               # 두 단위벡터의 합 = 이등분선
+best[&quot;bisector&quot;] = math.degrees(math.atan2(by/bn, bx/bn))</code></pre>
+<p>왜 이게 중요한가. 실측 산포를 보면 답이 나온다. 로봇을 세워 두고 30프레임을 뜬 결과다.</p>
+<div class="tw"><table><thead><tr><th>항목</th><th>σ</th></tr></thead><tbody><tr><td><strong>꼭짓점 거리</strong></td><td><strong>0.33 mm</strong></td></tr><tr><td>팔 길이 L</td><td>2.32 mm</td></tr><tr><td>팔 길이 R</td><td>2.27 mm</td></tr><tr><td>현</td><td>2.45 mm</td></tr></tbody></table></div>
+<p><strong>팔 길이는 σ 2.3 mm 로 흔들리는데 꼭짓점은 0.33 mm 다. 7배 차이다.</strong></p>
+<p>팔 끝은 "스캔 점이 어디서 끊겼나"에 달려 있어 프레임마다 달라진다. 반면 교점은 <strong>변 전체 수십 개 점의 피팅</strong>에서 나오므로 끝점 몇 개가 흔들려도 거의 안 움직인다. 모서리 마감이 거칠어도 상관없다.</p>
+<p><strong>정작 도킹에 필요한 값이 가장 정확하다.</strong> 운이 아니라 그렇게 되도록 고른 것이다.</p>
+<hr>
+<h1 id="s7">3부. 제어부를 고치지 않는 법</h1>
+<h2 id="s8">3-1. 이미 있는 것과 없는 것</h2>
+<p>정리해 보면 필요한 세 조각 중 두 개는 이미 있었다.</p>
+<pre><code>✅ V홈이 보인다                  오프라인 도구로 검증됨
+❌ 실시간으로 pose 를 내는 노드    ← 이것만 없다
+✅ 그 pose 로 정밀 주차하는 서보   AprilTag 도킹에서 검증됨</code></pre>
+<p>가운데 한 칸만 채우면 된다. 그런데 어떻게 끼워 넣을 것인가.</p>
+<h2 id="s9">3-2. 계약을 그대로 흉내 낸다</h2>
+<p>기존 정밀 주차 노드가 소비하는 것은 <strong>딱 하나</strong>였다.</p>
+<pre><code>self.create_subscription(PoseStamped, &quot;/wasab/tag_pose&quot;, self._on_tag, 10)</code></pre>
+<p><code>PoseStamped</code>, <code>base_footprint</code> 기준 x·y·yaw. 그게 전부다. 그렇다면 <strong>라이다 검출기가 같은 모양으로 내면 제어부는 자기가 카메라를 보는지 라이다를 보는지 알 필요가 없다.</strong></p>
+<pre><code>V홈 꼭짓점(두 직선의 교점)  →  position.x, position.y
+이등분선 + 180°            →  orientation(yaw)</code></pre>
+<p>발행부는 기존 카메라 검출기의 것과 사실상 같다.</p>
+<pre><code>def _publish(self, x, y, yaw):
+    m = PoseStamped()
+    m.header.stamp = self.get_clock().now().to_msg()
+    m.header.frame_id = self.base_frame          # base_footprint
+    m.pose.position.x = x
+    m.pose.position.y = y
+    qx, qy, qz, qw = g.quat_from_yaw(yaw)
+    m.pose.orientation.x = qx; m.pose.orientation.y = qy
+    m.pose.orientation.z = qz; m.pose.orientation.w = qw
+    self.pub_pose.publish(m)</code></pre>
+<p>구독 쪽에는 함정이 하나 있다. <code>/scan</code> 의 QoS 는 개체마다 다른데, <strong>BEST_EFFORT 구독은 RELIABLE 발행자와도 호환되지만 그 반대는 안 된다.</strong> 그래서 느슨한 쪽으로 잡는다.</p>
+<pre><code>qos = QoSProfile(depth=5, history=HistoryPolicy.KEEP_LAST,
+                 reliability=ReliabilityPolicy.BEST_EFFORT)
+self.create_subscription(LaserScan, self.scan_topic, self._on_scan, qos)</code></pre>
+<p>이렇게 맞추니 <strong>제어 코드 수정이 0줄</strong>이 됐다. 새 제어기를 쓰지 않았고, PID 게인을 다시 잡지도 않았다. 몇 달에 걸쳐 실기로 다듬은 서보를 그대로 재사용했다.</p>
+<h2 id="s10">3-3. 두 검출기가 싸우지 않게</h2>
+<p>문제가 하나 있었다. 정밀 주차 노드는 시작할 때 <strong>카메라 검출기를 스스로 띄운다.</strong> 끄는 옵션이 없다. 그대로 두면 <code>/wasab/tag_pose</code> 발행자가 둘이 되어 서로 다른 값을 번갈아 밀어 넣는다.</p>
+<p>코드를 고치지 않고 피하는 방법이 있었다. <strong>토픽 리매핑</strong>이다.</p>
+<pre><code>ros2 run wasab_docking precision_parking --ros-args \
+  -p tag_goal_x:=0.07 -p cmd_vel_enabled:=true \
+  -r /wasab/tag_pose:=/wasab/vgroove_pose    # ← 라이다 쪽만 보게</code></pre>
+<p>카메라 검출기는 여전히 뜨지만 아무도 그 토픽을 안 듣는다. ROS 의 리매핑은 이럴 때 쓰라고 있는 기능이다.</p>
+<hr>
+<h1 id="s11">4부. 로봇을 움직이기 전에 잡은 버그 셋</h1>
+<p>실기 전에 세 개를 잡았다. 셋 다 <strong>로봇이 움직였으면 사고로 이어질</strong> 것들이었다.</p>
+<h2 id="s12">4-1. 60° 와 120° 를 구분하지 못한다</h2>
+<p>끼인각을 <strong>선분의 직선 각도</strong>로 구하고 있었다. 그런데 생각해 보면 60° V홈과 120° V홈은 <strong>두 직선이 완전히 동일하다.</strong> 다른 것은 팔이 어느 쪽으로 뻗었는가뿐이다.</p>
+<pre><code>       ╲   ╱          ╲       ╱
+        ╲ ╱     vs      ╲   ╱
+         V               ‾‾‾
+      60° 홈          120° 홈
+   (같은 두 직선, 다른 반쪽)</code></pre>
+<p>직선 각도만 보면 둘 다 120° 로 나온다. 방 안에 60° 모서리가 있으면 V홈으로 착각한다.</p>
+<p><strong>해법</strong>: 꼭짓점에서 팔 끝으로 가는 두 벡터의 사잇각을 따로 재서 교차 검증한다. 벡터는 방향이 있으므로 60° 와 120° 를 구분한다.</p>
+<pre><code>def included_angle(apex, tip_a, tip_b):
+    &quot;&quot;&quot;꼭짓점에서 두 팔 끝을 향하는 벡터 사이의 실제 끼인각(도).
+
+    선분의 직선 각도로 구한 값과 달리 60° 와 120° 를 구분한다.
+    &quot;&quot;&quot;
+    ua = (tip_a[0] - apex[0], tip_a[1] - apex[1])
+    ub = (tip_b[0] - apex[0], tip_b[1] - apex[1])
+    na, nb = math.hypot(*ua), math.hypot(*ub)
+    cos = (ua[0]*ub[0] + ua[1]*ub[1]) / (na * nb)
+    return math.degrees(math.acos(max(-1.0, min(1.0, cos))))</code></pre>
+<p>기존 판정은 그대로 두고 <strong>뒤에 관문을 하나 더 세우는 방식</strong>으로 붙였다. 검증된 코드를 건드리지 않으면서 구멍만 막는다.</p>
+<pre><code>inc_true = included_angle(v[&quot;apex&quot;], v[&quot;tipA&quot;], v[&quot;tipB&quot;])
+if abs(inc_true - nominal) &gt; span:
+    return None                      # 60° 모서리 등 오인 차단</code></pre>
+<p>이 버그는 <strong>테스트가 잡았다.</strong> 합성 스캔을 만드는 헬퍼를 하나 두고,</p>
+<pre><code>def synth_scan(apex=(0.55, 0.0), inc_deg=120.0, arm=0.17, bisector_deg=180.0, n=720, ...):
+    &quot;&quot;&quot;V홈 하나만 있는 합성 LaserScan.ranges 를 만든다.&quot;&quot;&quot;
+    half = math.radians(inc_deg) / 2.0
+    b = math.radians(bisector_deg)
+    dirs = [(math.cos(b + half), math.sin(b + half)),      # 두 변의 방향
+            (math.cos(b - half), math.sin(b - half))]
+    ...</code></pre>
+<p>"60° 는 검출되면 안 된다"고 단언한 테스트가 빨갛게 떴다.</p>
+<pre><code>def test_out_of_span_angle_rejected():
+    &quot;&quot;&quot;설계 ±span 밖(예: 60°)은 V홈으로 보지 않는다.&quot;&quot;&quot;
+    ranges, amin, ainc, rmin, rmax = synth_scan(inc_deg=60.0)
+    assert vg.detect(ranges, amin, ainc, rmin, rmax, EXT0) is None</code></pre>
+<p>실물 없이, 로봇을 켜지도 않고 잡은 버그다. <strong>합성 스캔을 만들 수 있다는 게 라이다의 장점</strong>이기도 하다 — 카메라라면 이런 테스트를 쓰기가 훨씬 어렵다.</p>
+<h2 id="s13">4-2. 라이다가 거꾸로 달려 있었다</h2>
+<p>화면을 띄우고 나서 사용자가 지적했다. "좌우가 바뀐 것 같다. 실제 V홈은 오른쪽인데 화면은 왼쪽이다."</p>
+<p>TF 를 떠 보니 답이 바로 나왔다.</p>
+<pre><code>base_footprint → rplidar_link
+  Translation: [-0.017, 0.000, 0.125]
+  RPY(degree): [0, 0, 180.000]          ← 180° 회전</code></pre>
+<p><strong>라이다가 뒤집혀 달려 있었고, 그 사실은 URDF 에 이미 적혀 있었다.</strong> AMCL 도 Nav2 도 TF 로 그 값을 읽어 정상 동작하고 있었다. 내 노드만 라이다 좌표를 그대로 썼던 것이다.</p>
+<p>여기서 판단이 하나 필요했다. 요청은 "좌우 대칭으로 뒤집어 그려 달라"였는데 <strong>그렇게 하면 안 된다.</strong></p>
+<div class="tw"><table><thead><tr><th>방식</th><th>정면 목표</th><th>좌우로 벗어난 목표</th></tr></thead><tbody><tr><td>거울 대칭</td><td>맞아 보임</td><td><strong>좌우가 반대로 나옴</strong></td></tr><tr><td>180° 회전</td><td>맞음</td><td>맞음</td></tr></tbody></table></div>
+<p>거울은 좌표계의 손대칭(handedness)을 뒤집는다. 당시 V홈이 정면에서 18 mm 밖에 안 벗어나 있어 차이가 안 보였을 뿐, 비스듬히 접근하면 <strong>횡방향으로 반대편에 붙는다.</strong> 필요한 것은 x·y 를 함께 뒤집는 180° 회전이었다.</p>
+<p>그리고 값을 코드에 적어 넣는 대신 <strong>TF 에서 읽도록</strong> 했다. URDF 를 단일 출처로 두면 장착이 바뀌어도 따라간다.</p>
+<pre><code>def _resolve_ext(self, lidar_frame):
+    &quot;&quot;&quot;base_frame ← lidar_frame 변환을 TF 에서 한 번만 읽어 캐시한다.&quot;&quot;&quot;
+    if self._ext_from_tf or not self.use_tf:
+        return
+    try:
+        tr = self._tf_buf.lookup_transform(self.base_frame, lidar_frame, rclpy.time.Time())
+    except Exception:
+        return                              # 아직 TF 가 안 찼다 — 다음 스캔에 재시도
+    t = tr.transform.translation
+    yaw = g.yaw_from_quat(tr.transform.rotation.x, ..., tr.transform.rotation.w)
+    self.ext = {&quot;x&quot;: t.x, &quot;y&quot;: t.y, &quot;yaw&quot;: yaw}
+    self._ext_from_tf = True</code></pre>
+<p>적용은 평범한 SE(2) 변환이다.</p>
+<pre><code>def lidar_to_base(x, y, yaw_deg, ext):
+    c, s = math.cos(ext[&quot;yaw&quot;]), math.sin(ext[&quot;yaw&quot;])
+    yaw = math.radians(yaw_deg) + ext[&quot;yaw&quot;]
+    return (ext[&quot;x&quot;] + c * x - s * y,
+            ext[&quot;y&quot;] + s * x + c * y,
+            math.atan2(math.sin(yaw), math.cos(yaw)))    # ±π 정규화</code></pre>
+<p>기동 로그로 적용 여부를 확인할 수 있게 해 두었다.</p>
+<pre><code>장착 변환 TF 적용: base_footprint←rplidar_link x=-0.017 y=0.000 yaw=180.0°</code></pre>
+<h2 id="s14">4-3. yaw 규약이 정확히 180° 반대</h2>
+<p>제어기의 오차 계산은 이렇게 생겼다.</p>
+<pre><code>&quot;yaw&quot;: normalize_angle(tyaw - tag_goal[&quot;yaw&quot;])     # tag_goal_yaw = 0.0</code></pre>
+<p>즉 <strong>로봇이 정면으로 마주봤을 때 목표물의 yaw 가 0 이어야 한다.</strong> AprilTag 는 법선이 벽 안쪽을 향해 그 조건을 만족한다. 그런데 V홈 이등분선은 꼭짓점에서 <strong>로봇 쪽</strong>을 향한다. 정면인데도 178° 가 나왔다.</p>
+<p>그대로 물렸으면 제어기가 178° 를 0 으로 만들려고 <strong>로봇을 반 바퀴 돌렸을 것이다.</strong> 이등분선에 180° 를 더해 해결했다.</p>
+<pre><code>def target_yaw_deg(bisector_deg):
+    &quot;&quot;&quot;도킹 타깃 yaw = 이등분선 + 180°.
+
+    precision_parking 은 `tag_goal_yaw: 0.0` 을 목표로 오차를 계산한다.
+    즉 로봇이 정면으로 마주봤을 때 목표물 yaw 가 0 이어야 한다. AprilTag 는 법선이
+    벽 안쪽을 향해 그 조건을 만족하는데, V홈 이등분선은 꼭짓점에서 로봇 쪽을 향하므로
+    그대로 쓰면 정확히 180° 어긋나 컨트롤러가 로봇을 반 바퀴 돌린다.
+    &quot;&quot;&quot;
+    return _norm180(bisector_deg + 180.0)</code></pre>
+<p>회귀를 막는 테스트도 함께 넣었다.</p>
+<pre><code>def test_detect_yaw_is_zero_when_facing_groove():
+    &quot;&quot;&quot;정면에서 본 합성 V홈이면 발행 yaw 가 0 근처여야 한다(180° 뒤집힘 회귀 방지).&quot;&quot;&quot;
+    ranges, amin, ainc, rmin, rmax = synth_scan(bisector_deg=180.0)
+    x, y, yaw, _info = vg.detect(ranges, amin, ainc, rmin, rmax, EXT0)
+    assert abs(math.degrees(yaw)) &lt; 3.0, math.degrees(yaw)</code></pre>
+<p>여기 곁가지가 하나 더 있다. 고친 뒤 값이 <code>358.48°</code> 로 나와서 "아직도 틀렸다"고 판단했는데, 358.48° 는 −1.52° 와 같은 각이다. 쿼터니언으로는 동일하고 제어기도 정상 해석한다. <strong>값은 맞는데 사람이 오판한 것이다.</strong> ±180° 로 정규화하도록 고쳤다. 기계가 아니라 읽는 사람을 위한 수정이다.</p>
+<hr>
+<h1 id="s15">5부. 실기</h1>
+<h2 id="s16">5-1. 안전장치가 먼저 걸렸다</h2>
+<p>첫 실행은 45초 만에 실패했다. 로그를 보니 이유가 명확했다.</p>
+<pre><code>precision_parking 시작: ... cmd_vel_enabled=False
+TAG_SERVO_ALIGN → FAILED (fail=overall_timeout)
+error_x = 0.3954</code></pre>
+<p>설정 파일에 주석이 달려 있었다. <em>"안전 기본값: 첫 실기는 dry-run(zero 발행), 방향 확인 후 true"</em>. 속도 출력이 막힌 채로 돌아간 것이다.</p>
+<p><strong>결과적으로 좋은 일이었다.</strong> 로봇이 가만히 선 채로 검출 → pose → 리매핑 → 상태기계 → 오차계산 까지 전 경로가 검증됐다. <code>error_x = 0.3954</code> 는 545 − 150 = 395 mm 로 정확했다. 그 다음에 속도를 열었다.</p>
+<h2 id="s17">5-2. 6회 전부 성공</h2>
+<div class="tw"><table><thead><tr><th>#</th><th>출발</th><th>목표</th><th>최종</th><th>오차</th><th>y</th><th>yaw</th></tr></thead><tbody><tr><td>1</td><td>545</td><td>150</td><td>161</td><td>11.8</td><td>+4.5</td><td>+1.3°</td></tr><tr><td>2</td><td>161</td><td>100</td><td>112</td><td>11.8</td><td>+2.2</td><td>+0.7°</td></tr><tr><td>3</td><td>112</td><td>70</td><td>82.4</td><td>12.6</td><td>+0.1</td><td>−0.6°</td></tr><tr><td>4</td><td>624</td><td>150</td><td>162</td><td>12.4</td><td>+6.8</td><td>+2.1°</td></tr><tr><td>5</td><td>162</td><td>70</td><td>81.3</td><td>10.4</td><td>0.0</td><td>−1.1°</td></tr><tr><td>6</td><td>645</td><td>70</td><td>82.1</td><td>12.1</td><td>−0.9</td><td>−1.4°</td></tr></tbody></table></div>
+<p>(mm 단위, 검출률 100%)</p>
+<p>70 mm 목표 3회가 <strong>82.4 / 81.3 / 82.1 mm</strong> 로 편차 1.1 mm 다. 출발이 112 mm 든 645 mm 든 같은 곳에 선다.</p>
+<h2 id="s18">5-3. 가까울수록 정렬이 좋아진다</h2>
+<p>눈에 띄는 경향이 있다. 횡편차가 <strong>4.5 → 2.2 → 0.1 mm</strong>, 각도가 <strong>1.3° → 0.6°</strong> 로 줄어든다.</p>
+<p>당연한 물리다. 라이다의 각도 분해능은 0.5° 로 고정인데, 그게 만드는 <strong>횡방향 불확실성은 거리에 비례</strong>한다. 1 m 에서 0.5° 는 8.7 mm 지만 10 cm 에서는 0.9 mm 다. 가까워질수록 같은 각도 오차가 작은 거리 오차로 환산된다.</p>
+<p><strong>즉 접근할수록 정밀해지는 구조</strong>다. 도킹에 유리한 성질이다.</p>
+<h2 id="s19">5-4. 12 mm 는 오차가 아니라 특성이다</h2>
+<p>여섯 번 모두 목표보다 <strong>11~13 mm 앞에</strong> 섰다. 우연이 아니다.</p>
+<p>정착 판정 허용치가 <code>tol_x: 15 mm</code> 다. 오차가 그 안에 들어오는 순간 멈추는데, 접근 방향이 항상 같으니 늘 비슷한 지점에서 걸린다. <strong>예측 가능한 계통 오차</strong>이므로 목표값을 12 mm 앞당기거나 허용치를 조이면 없앨 수 있다. 랜덤 오차였다면 훨씬 나쁜 소식이었다.</p>
+<hr>
+<h1 id="s20">6부. 한계 — 너무 가까우면 형상이 무너진다</h1>
+<p>이 방식에는 명확한 하한이 있다.</p>
+<pre><code>꼭짓점까지 100 mm 인데 팔은 170 mm
+→ 팔의 바깥쪽 절반이 라이다 시야 뒤로 넘어간다</code></pre>
+<p>실제로 접근하면서 끼인각이 이렇게 변했다.</p>
+<pre><code>123° → 121° → 117° → 113°     (거리 645 → 82 mm)</code></pre>
+<p>남은 짧은 조각으로 직선을 맞추니 각도가 흔들린다. 82 mm 에서는 <strong>간헐적 미검출</strong>까지 나왔다.</p>
+<p>다만 <strong>위치는 여전히 정확하다.</strong> 같은 구간에서 꼭짓점 σ 는 0.11 mm 였다. 2부에서 본 성질이 여기서도 유효하다 — 끝점이 잘려도 교점은 버틴다.</p>
+<p>그래서 이렇게 정리된다.</p>
+<div class="tw"><table><thead><tr><th>거리</th><th>위치</th><th>각도·형상</th></tr></thead><tbody><tr><td>30 cm 이상</td><td>정확</td><td>정확</td></tr><tr><td>10 cm 내외</td><td>정확</td><td>흔들림</td></tr><tr><td>5 cm 이하</td><td>미검증</td><td>검출 실패 예상</td></tr></tbody></table></div>
+<p><strong>도킹 자체는 문제없다</strong> — 목표 지점에 도달하면 멈추면 되고, 그 시점의 위치 정확도는 유지된다. 문제가 되는 것은 이 거리에서 형상을 계속 감시해야 하는 용도다. 그래서 5 cm 는 시도하지 않았다.</p>
+<hr>
+<h1 id="s21">7부. 상대 좌표와 절대 좌표</h1>
+<p>도킹이 성공한 뒤 자연스러운 질문이 나온다. "그럼 이 V홈이 지도상 어디 있는지도 알 수 있나?"</p>
+<p>알 수 있다. 로봇의 맵 좌표에 V홈의 상대 위치를 합성하면 된다.</p>
+<pre><code>V홈(map) = map→base_footprint  ⊙  V홈(base 기준)</code></pre>
+<p>그런데 실제로 세 번 재 보니 이렇게 나왔다.</p>
+<div class="tw"><table><thead><tr><th>측정 위치</th><th>x</th><th>y</th><th>yaw</th></tr></thead><tbody><tr><td>62 cm 떨어져서</td><td>0.827</td><td>−0.141</td><td>−89.8°</td></tr><tr><td>8 cm 붙어서</td><td>0.823</td><td>−0.170</td><td>−90.8°</td></tr><tr><td>66 cm</td><td>0.826</td><td>−0.123</td><td>−93.8°</td></tr><tr><td><strong>산포</strong></td><td><strong>4 mm</strong></td><td><strong>47 mm</strong></td><td><strong>4°</strong></td></tr></tbody></table></div>
+<p><strong>x 는 4 mm 안에 모이는데 y 는 47 mm 흩어진다.</strong> 라이다 상대 측정이 σ 0.1 mm 급인데 결과가 cm 급으로 흩어진다면, 그 오차는 라이다에서 온 게 아니다. <strong>전부 AMCL 이다.</strong></p>
+<p>x 가 잘 맞는 것은 그 방향이 로봇의 전후축이라 라이다 거리가 직접 반영되기 때문이고, y 와 yaw 는 측위의 횡방향·각도 오차를 그대로 물려받는다.</p>
+<p>여기서 얻는 교훈이 이 글의 결론이기도 하다.</p>
+<blockquote><strong>도킹은 절대 좌표를 몰라도 된다.</strong> 목표물까지의 상대 위치만 알면 붙을 수 있고, 그 상대 측정은 측위 오차와 무관하게 mm 급이다.</blockquote>
+<p>우리 도킹이 AMCL 이 53 cm 나 틀어져 있던 상태에서도 성공한 이유가 이것이다. 반대로 맵 좌표는 <strong>등록용 대략치</strong>로만 써야 한다. 그래서 실시간 화면에도 그렇게 명시해 두었다.</p>
+<hr>
+<h1 id="s22">정리</h1>
+<p><strong>2D 라이다로 도킹하려면</strong></p>
+<ol><li><strong>형상을 랜드마크로 삼는다.</strong> 각도는 거리와 무관하고, 주변에 흔치 않은 값을 고른다.</li><li><strong>점이 아니라 교점을 쓴다.</strong> 직선 피팅의 교점은 끝점 흔들림에 둔감하다 (σ 0.33 vs 2.3 mm).</li><li><strong>기존 제어부의 계약을 흉내 낸다.</strong> 같은 메시지를 내면 제어 코드를 안 고쳐도 된다.</li><li><strong>장착 변환은 TF 에서 읽는다.</strong> URDF 에 이미 있는 값을 코드에 복사하면 언젠가 어긋난다.</li><li><strong>좌표 규약을 코드로 확인한다.</strong> "정면일 때 0" 인지 "정면일 때 180" 인지는 추측하지 말고</li></ol>
+<p>오차 계산식을 읽는다.</p>
+<ol><li><strong>첫 실기는 속도를 막고 돌린다.</strong> 로봇이 안 움직이는 채로 전 경로를 검증할 수 있다.</li></ol>
+<p><strong>이 방식이 좋은 경우</strong></p>
+<ul><li>카메라를 못 쓰는 환경 (고장·조명·먼지)</li><li>마커를 붙일 수 없는 대상</li><li>측위가 불안정한 상황 — 상대 측정이라 영향받지 않는다</li></ul>
+<p><strong>이 방식이 나쁜 경우</strong></p>
+<ul><li>대상이 여럿이고 <strong>구분</strong>해야 할 때 (라이다는 ID 를 못 읽는다)</li><li>목표물이 아주 작거나, 아주 가까이 붙어야 할 때 (형상이 시야에서 잘린다)</li><li>주변에 비슷한 각도의 구조물이 많을 때</li></ul>
+<p>카메라와 라이다는 대체재가 아니라 <strong>서로의 실패 모드를 메우는 관계</strong>다. 태그는 ID 를 주고, 형상은 조명 없이도 mm 를 준다. 둘 다 같은 계약으로 내도록 만들어 두면, 상황에 따라 갈아 끼울 수 있다. 이번에 얻은 가장 실용적인 성과는 그것이다.</p>
+<hr>
+<h1 id="s23">참고</h1>
+<ul><li><strong>코드 없는 요약 버전</strong> <code>docs/blog-2026-08-08-lidar-vgroove-docking-nocode.md</code></li><li>검출 로직 <code>wasab_navigation/wasab_docking/wasab_docking/vgroove_logic.py</code></li><li>노드 + 실시간 화면 <code>.../vgroove_detector_node.py</code></li><li>실기 기록 <code>docs/worklog-2026-08-08-lidar-vgroove-docking.md</code></li></ul>
+</main>
