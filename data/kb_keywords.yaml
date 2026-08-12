@@ -34,6 +34,34 @@ groups:
     categories: [paper, article, video]
     max_per_run: 8
 
+  - id: robot-hand
+    name: "로봇 손 · 다지 핸드"
+    keywords:
+      - "dexterous robot hand"
+      - "multi-fingered robotic hand"
+      - "로봇 손"
+      - "다관절 로봇 핸드"
+      - "in-hand manipulation"
+      - "tactile sensing grasping"
+      - "anthropomorphic hand teleoperation"
+    categories: [paper, article, video]
+    max_per_run: 6
+
+  - id: robot-hand-vendors
+    name: "로봇 핸드 업체 · 제품"
+    keywords:
+      - "Shadow Dexterous Hand"
+      - "Allegro Hand"
+      - "LEAP Hand"
+      - "테솔로 로봇 핸드"
+      - "Tesollo DG gripper"
+      - "원익로보틱스"
+      - "Wonik Robotics"
+      - "리파인 로봇 핸드"
+      - "국내 로봇 핸드 그리퍼 기업"
+    categories: [article, video, person]
+    max_per_run: 6
+
   - id: ai-agent
     name: "AI Agent"
     keywords:
