@@ -100,8 +100,12 @@ groups:
       - "MES SCADA data integration"
       - "sensor time series ingestion factory"
       - "edge to cloud manufacturing data"
+      - "smart manufacturing researcher"
+      - "Jay Lee industrial AI"
+      - "industrial data standards expert OPC UA"
+      - "스마트팩토리 데이터 전문가"
     categories: [paper, article, video, person]
-    max_per_run: 6
+    max_per_run: 8
 
   - id: human-behavior-learning
     name: "사람 행동 데이터 학습 모델"
