@@ -88,3 +88,30 @@ groups:
       - "옵시디언"
     categories: [paper, article, video, person]
     max_per_run: 5
+
+  - id: manufacturing-data-pipeline
+    name: "제조 데이터 수집 파이프라인"
+    keywords:
+      - "manufacturing data pipeline"
+      - "제조 데이터 수집"
+      - "스마트팩토리 데이터 플랫폼"
+      - "industrial IoT data acquisition"
+      - "OPC UA MQTT data collection"
+      - "MES SCADA data integration"
+      - "sensor time series ingestion factory"
+      - "edge to cloud manufacturing data"
+    categories: [paper, article, video, person]
+    max_per_run: 6
+
+  - id: human-behavior-learning
+    name: "사람 행동 데이터 학습 모델"
+    keywords:
+      - "human activity recognition model"
+      - "사람 행동 인식 딥러닝"
+      - "human behavior modeling deep learning"
+      - "skeleton-based action recognition"
+      - "learning from human demonstration"
+      - "egocentric human video robot learning"
+      - "human motion capture dataset training"
+    categories: [paper, article, video, person]
+    max_per_run: 6
