@@ -68,7 +68,8 @@ body:has(.kbr-wrap) .page-header { display: none; }
 
 .kbr-card { background: var(--card); border: 1px solid var(--border);
   border-radius: var(--radius); padding: 1.1rem; display: flex; flex-direction: column;
-  transition: border-color .2s, box-shadow .2s, background .3s; }
+  transition: border-color .2s, box-shadow .2s, background .3s;
+  -webkit-user-select: none; user-select: none; }
 .kbr-card:hover { border-color: var(--border-accent); box-shadow: 0 0 20px var(--glow); }
 .kbr-card.archived { opacity: 0.6; }
 .kbr-badge { display: inline-block; align-self: flex-start; padding: 2px 8px;
