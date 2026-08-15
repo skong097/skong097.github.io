@@ -17,18 +17,15 @@ cover:
 <style>
 /* ── Projects Page Custom Styles ──────────────────────── */
 header.post-header {
-  text-align: center;
   width: 100%;
   border-bottom: 1px solid rgba(255,255,255,0.1);
   padding-bottom: 1rem;
   margin-bottom: 1.5rem;
 }
 header.post-header h1 {
-  font-size: 40px;
-  text-align: center;
+  font-size: 32px;
 }
 [data-theme="light"] header.post-header {
-  text-align: center;
   width: 100%;
   border-bottom-color: rgba(0,0,0,0.1);
 }

@@ -1,7 +1,6 @@
 /* ══════════════════════════════════════════════════════════════
-   PAGE HEADERS — 제목 중앙 정렬 + breadcrumbs 제거
-   ⚠ 기존 custom.css 끝에 있던 PAGE HEADERS 섹션을 삭제하고
-      이 내용으로 교체하세요
+   PAGE HEADERS — 제목 좌측 정렬 + breadcrumbs 제거
+   !important 는 PaperMod 기본값을 이기기 위해 유지한다.
    ══════════════════════════════════════════════════════════════ */
 
 /* ── breadcrumbs 제거 ── */
@@ -9,12 +8,12 @@
   display: none !important;
 }
 
-/* ── 모든 싱글 페이지 제목 중앙 (post-single 포함 높은 specificity) ── */
+/* ── 모든 싱글 페이지 제목 좌측 (post-single 포함 높은 specificity) ── */
 .post-single .post-header,
 .post-single header.post-header,
 article .post-header,
 .post-header {
-  text-align: center !important;
+  text-align: left !important;
 }
 
 .post-single .post-title,
@@ -22,31 +21,35 @@ article .post-header,
 .post-single h1.post-title,
 article h1.post-title,
 h1.post-title {
-  text-align: center !important;
+  text-align: left !important;
+  /* PaperMod 기본 40px → 목록 제목(.page-header h1)과 같은 32px */
+  font-size: 32px;
 }
 
 .post-single .post-meta,
 article .post-meta,
 .post-header .post-meta {
-  justify-content: center !important;
-  text-align: center !important;
+  justify-content: flex-start !important;
+  text-align: left !important;
   display: flex !important;
 }
 
-/* ── 리스트 페이지 (Categories, Tags, Archive 등) 제목 중앙 ── */
+/* ── 리스트 페이지 (Categories, Tags, Archive 등) 제목 좌측 ── */
 .page-header {
-  text-align: center !important;
+  text-align: left !important;
   width: 100%;
   padding-bottom: 1rem;
   margin-bottom: 1.5rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
+/* 32px = 모든 페이지 제목의 기준 크기(/posts/ 목록 제목 기준).
+   PaperMod 기본 40px 을 덮어쓴다. 싱글 페이지(.post-title)도 아래에서 32px. */
 .page-header h1 {
-  font-size: 2rem;
+  font-size: 32px;
   font-weight: 700;
   letter-spacing: -0.02em;
-  text-align: center !important;
+  text-align: left !important;
 }
 
 .light .page-header,

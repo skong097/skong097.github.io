@@ -11,26 +11,9 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  // 제목 중앙 정렬
-  document.querySelectorAll('header.post-header').forEach(function(el) {
-    el.style.setProperty('text-align', 'center', 'important');
-  });
-  document.querySelectorAll('h1.post-title').forEach(function(el) {
-    el.style.setProperty('text-align', 'center', 'important');
-  });
-  document.querySelectorAll('.post-header .post-meta').forEach(function(el) {
-    el.style.setProperty('text-align', 'center', 'important');
-    el.style.setProperty('justify-content', 'center', 'important');
-    el.style.setProperty('display', 'flex', 'important');
-  });
-
-  // 리스트 페이지 제목
-  document.querySelectorAll('.page-header').forEach(function(el) {
-    el.style.setProperty('text-align', 'center', 'important');
-  });
-  document.querySelectorAll('.page-header h1').forEach(function(el) {
-    el.style.setProperty('text-align', 'center', 'important');
-  });
+  // 제목 정렬은 assets/css/extended/custom.css 의 PAGE HEADERS 섹션에서
+  // !important 로 좌측 고정한다. 여기서 JS 로 덮어쓰면 그 CSS 를 이겨버려
+  // 정렬을 바꿀 수 없게 되므로 제목 관련 강제 지정은 두지 않는다.
 
   // Terms (Categories, Tags)
   document.querySelectorAll('.terms-tags').forEach(function(el) {

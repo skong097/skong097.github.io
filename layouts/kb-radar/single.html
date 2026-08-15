@@ -28,17 +28,18 @@ body:has(.kbr-wrap) .post-content { max-width: 100%; }
 body:has(.kbr-wrap) footer.footer { display: none; }
 body:has(.kbr-wrap) .page-header { display: none; }
 
-/* 페이지 제목 — projects/gallery 와 같은 중앙 대제목.
-   sticky 헤더 위에 두어 스크롤하면 제목은 올라가고 툴바만 남는다. */
+/* 페이지 제목 — 다른 페이지와 같은 좌측 32px 대제목.
+   sticky 헤더 위에 두어 스크롤하면 제목은 올라가고 툴바만 남는다.
+   좌우 여백은 아래 .kbr-header(2rem)와 맞춘다. */
 .kbr-title {
-  margin: 0; padding: 2rem 1rem 1.2rem;
-  text-align: center; font-family: var(--sans);
-  font-size: 40px; font-weight: 700; letter-spacing: -0.02em;
+  margin: 0; padding: 2rem 2rem 1.2rem;
+  text-align: left; font-family: var(--sans);
+  font-size: 32px; font-weight: 700; letter-spacing: -0.02em;
   color: var(--text);
   border-bottom: 1px solid var(--border);
 }
 @media (max-width: 768px) {
-  .kbr-title { font-size: 28px; padding: 1.4rem 1rem 1rem; }
+  .kbr-title { padding: 1.4rem 1rem 1rem; }
 }
 
 .kbr-header {

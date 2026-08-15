@@ -8,8 +8,8 @@ summary: Demo videos verified on physical robots
 ---
 
 <style>
-header.post-header { text-align:center; width:100%; border-bottom:1px solid rgba(128,128,128,.2); padding-bottom:1rem; margin-bottom:1.2rem; }
-header.post-header h1 { font-size:40px; text-align:center; }
+header.post-header { width:100%; border-bottom:1px solid rgba(128,128,128,.2); padding-bottom:1rem; margin-bottom:1.2rem; }
+header.post-header h1 { font-size:32px; }
 
 </style>
 
