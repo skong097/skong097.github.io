@@ -1,6 +1,7 @@
 # 커스텀 템플릿 전용 문자열. PaperMod 테마 i18n 과 병합되므로
 # 테마가 이미 가진 키(search, read_time 등)는 여기 두지 않는다.
 
+kbRadarTitle: "지식 탐색"
 kbRadarSubtitle: "지식 레이더"
 kbrCatPaper: "논문"
 kbrCatArticle: "기사"

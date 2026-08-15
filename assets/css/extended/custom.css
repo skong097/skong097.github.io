@@ -139,14 +139,6 @@ body:has(.projects-intro) .page-header {
   opacity: 0.5;
 }
 
-/* accessible-only page title */
-.term-srtitle {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0; border: 0;
-  clip: rect(0 0 0 0); overflow: hidden; white-space: nowrap;
-}
-
 /* window chrome */
 .term-head {
   display: flex;

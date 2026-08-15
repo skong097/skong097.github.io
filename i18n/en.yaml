@@ -1,6 +1,7 @@
 # Custom template strings. Merged with PaperMod's own i18n —
 # do not redefine theme-provided keys (search, read_time, ...).
 
+kbRadarTitle: "Knowledge Explorer"
 kbRadarSubtitle: "Knowledge Radar"
 kbrCatPaper: "Papers"
 kbrCatArticle: "Articles"

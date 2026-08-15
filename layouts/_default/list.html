@@ -42,8 +42,8 @@
 {{- $paginator := .Paginate $pages }}
 {{- $base := mul (sub $paginator.PageNumber 1) $paginator.PagerSize }}
 
-{{/* accessible heading for screen-readers / SEO */}}
-<h1 class="term-srtitle">{{ .Title }}</h1>
+{{/* page title — projects/gallery 와 같은 중앙 제목 (.page-header 스타일 재사용) */}}
+<header class="page-header"><h1>{{ .Title }}</h1></header>
 
 <section class="terminal-list" aria-label="{{ .Title | plainify }}">
 

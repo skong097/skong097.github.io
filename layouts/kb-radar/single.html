@@ -28,6 +28,19 @@ body:has(.kbr-wrap) .post-content { max-width: 100%; }
 body:has(.kbr-wrap) footer.footer { display: none; }
 body:has(.kbr-wrap) .page-header { display: none; }
 
+/* 페이지 제목 — projects/gallery 와 같은 중앙 대제목.
+   sticky 헤더 위에 두어 스크롤하면 제목은 올라가고 툴바만 남는다. */
+.kbr-title {
+  margin: 0; padding: 2rem 1rem 1.2rem;
+  text-align: center; font-family: var(--sans);
+  font-size: 40px; font-weight: 700; letter-spacing: -0.02em;
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+}
+@media (max-width: 768px) {
+  .kbr-title { font-size: 28px; padding: 1.4rem 1rem 1rem; }
+}
+
 .kbr-header {
   background: var(--card); border-bottom: 1px solid var(--border);
   padding: 1.5rem 2rem; position: sticky; top: 0; z-index: 50;
@@ -99,6 +112,7 @@ body:has(.kbr-wrap) .page-header { display: none; }
 </style>
 
 <div class="kbr-wrap">
+  <h1 class="kbr-title">{{ i18n "kbRadarTitle" }}</h1>
   <header class="kbr-header">
     <div class="kbr-header-inner">
       <h2>KB Radar <span>| {{ i18n "kbRadarSubtitle" }}</span></h2>
