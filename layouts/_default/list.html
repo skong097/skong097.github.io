@@ -42,10 +42,16 @@
 {{- $paginator := .Paginate $pages }}
 {{- $base := mul (sub $paginator.PageNumber 1) $paginator.PagerSize }}
 
-{{/* page title — projects/gallery 와 같은 중앙 제목 (.page-header 스타일 재사용) */}}
-<header class="page-header"><h1>{{ .Title }}</h1></header>
+{{/* page title — projects/gallery 와 같은 중앙 제목 (.page-header 스타일 재사용)
+     term 페이지는 Hugo 가 "ros2" 를 "Ros2" 로 만들어 약어가 깨진다.
+     data/term_titles.yaml 에 표기가 있으면 그걸 쓴다. */}}
+{{- $title := .Title }}
+{{- if eq .Kind "term" }}
+  {{- with index site.Data.term_titles (.Data.Term | urlize) }}{{ $title = . }}{{ end }}
+{{- end }}
+<header class="page-header"><h1>{{ $title }}</h1></header>
 
-<section class="terminal-list" aria-label="{{ .Title | plainify }}">
+<section class="terminal-list" aria-label="{{ $title | plainify }}">
 
   {{/* ── window chrome ── */}}
   <div class="term-head">
