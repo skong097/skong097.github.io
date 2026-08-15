@@ -81,5 +81,12 @@ librosa: librosa
 pygame: pygame
 sigma-hit: sigma_hit
 
+# ── 하이픈 유지 ──
+# 표에 없는 term 은 list.html 이 하이픈을 공백으로 바꾼다.
+# 아래는 하이픈이 표기의 일부라 그대로 둬야 하는 것들.
+split-and-merge: Split-and-Merge
+fine-tuning: Fine-Tuning
+cross-validation: Cross-Validation
+
 # ── 프로젝트명 ──
 wasab: WaSaB

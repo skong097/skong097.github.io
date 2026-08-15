@@ -47,7 +47,13 @@
      data/term_titles.yaml 에 표기가 있으면 그걸 쓴다. */}}
 {{- $title := .Title }}
 {{- if eq .Kind "term" }}
-  {{- with index site.Data.term_titles (.Data.Term | urlize) }}{{ $title = . }}{{ end }}
+  {{- with index site.Data.term_titles (.Data.Term | urlize) }}
+    {{- $title = . }}
+  {{- else }}
+    {{/* 표에 없으면 하이픈만 공백으로 — "Computer-Vision" → "Computer Vision".
+         하이픈을 유지해야 하는 term 은 term_titles.yaml 에 적어 보호한다. */}}
+    {{- $title = replace $title "-" " " }}
+  {{- end }}
 {{- end }}
 <header class="page-header"><h1>{{ $title }}</h1></header>
 
