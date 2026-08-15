@@ -354,35 +354,10 @@ body:has(.projects-intro) .page-header {
    Projects 페이지 (content/projects/_index.{md,en.md} 공용)
    ko/en 두 파일이 같은 마크업을 쓰므로 CSS 는 여기서만 관리한다.
    header.post-header 규칙은 페이지 스코프 유지를 위해 각 .md 에 인라인으로 남겨둔다.
-
-   팔레트는 버터크림 고정이다. 사이트 기본 테마가 dark 라서 [data-theme]
-   분기를 두면 기본 상태에서 이 팔레트가 아예 보이지 않는다. 그래서
-   body:has(.projects-intro) 에서 PaperMod 변수 자체를 덮어써
-   헤더·푸터까지 한 벌로 크림이 되게 한다(테마 토글과 무관).
    ══════════════════════════════════════════════════════ */
-body:has(.projects-intro) {
-  --theme: #FDF6EC;      /* 크림 지면 */
-  --entry: #FFFDF8;      /* 카드 */
-  --primary: #3D3226;    /* 코코브라운 — 제목 */
-  --secondary: #7A6A56;  /* 보조 텍스트 */
-  --tertiary: #F2E7D6;
-  --content: #5E5142;    /* 본문 */
-  --code-bg: #F6EEDF;
-  --border: rgba(61, 50, 38, 0.10);
-
-  /* 이 페이지 전용 액센트 */
-  --pj-butter: #F7C948;
-  --pj-mint: #7FD8BE;
-  --pj-caramel: #9A6216;  /* 링크 — 크림 위 대비 4.7:1 */
-  --pj-shadow: rgba(120, 90, 50, 0.10);
-
-  background: var(--theme);
-  color-scheme: light;
-}
-
 .projects-intro {
   font-size: 1.05rem;
-  color: var(--content);
+  opacity: 0.75;
   margin-bottom: 2rem;
   line-height: 1.7;
 }
@@ -392,11 +367,10 @@ body:has(.projects-intro) {
   gap: 1.4rem;
 }
 .project-card {
-  border: 1px solid var(--border);
+  border: 1px solid rgba(255,255,255,0.08);
   border-radius: 14px;
   padding: 1.6rem;
-  background: var(--entry);
-  box-shadow: 0 2px 8px var(--pj-shadow);
+  background: rgba(255,255,255,0.02);
   transition: 0.3s cubic-bezier(0.4,0,0.2,1);
   display: flex;
   flex-direction: column;
@@ -410,7 +384,7 @@ body:has(.projects-intro) {
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--card-accent, var(--pj-butter)), transparent);
+  background: linear-gradient(90deg, var(--card-accent, #00c8dc), transparent);
   opacity: 0;
   transition: opacity 0.3s;
 }
@@ -418,10 +392,20 @@ body:has(.projects-intro) {
   opacity: 1;
 }
 .project-card:hover {
-  border-color: rgba(154, 98, 22, 0.28);
+  border-color: rgba(0,200,220,0.3);
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(120, 90, 50, 0.16),
-              0 0 0 1px rgba(247, 201, 72, 0.35);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.25),
+              0 0 0 1px rgba(0,200,220,0.08);
+}
+[data-theme="light"] .project-card {
+  border-color: rgba(0,0,0,0.08);
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+[data-theme="light"] .project-card:hover {
+  border-color: rgba(60,130,246,0.3);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.08),
+              0 0 0 1px rgba(60,130,246,0.08);
 }
 .project-card-status {
   display: inline-block;
@@ -434,16 +418,15 @@ body:has(.projects-intro) {
   margin-bottom: 0.8rem;
   width: fit-content;
 }
-/* 뱃지는 파스텔을 면으로만 쓰고 글자는 진한 톤으로 — 크림 위 대비 확보 */
 .status-active {
-  background: rgba(127,216,190,0.28);
-  color: #2E7A62;
-  border: 1px solid rgba(127,216,190,0.55);
+  background: rgba(16,185,129,0.12);
+  color: #10b981;
+  border: 1px solid rgba(16,185,129,0.25);
 }
 .status-done {
-  background: rgba(247,201,72,0.28);
-  color: #8A6410;
-  border: 1px solid rgba(247,201,72,0.6);
+  background: rgba(0,200,220,0.1);
+  color: #00c8dc;
+  border: 1px solid rgba(0,200,220,0.2);
 }
 .project-card-title {
   font-size: 1.2rem;
@@ -451,17 +434,16 @@ body:has(.projects-intro) {
   letter-spacing: -0.02em;
   margin-bottom: 0.3rem;
 }
-/* 크림 배경에서는 opacity 로 흐리면 대비가 무너져 색을 직접 지정한다 */
 .project-card-subtitle {
   font-size: 0.88rem;
-  color: var(--secondary);
+  opacity: 0.55;
   font-weight: 500;
   margin-bottom: 0.8rem;
 }
 .project-card-desc {
   font-size: 0.88rem;
   line-height: 1.65;
-  color: var(--content);
+  opacity: 0.7;
   flex-grow: 1;
   margin-bottom: 1rem;
 }
@@ -476,22 +458,28 @@ body:has(.projects-intro) {
   border-radius: 5px;
   font-size: 0.75rem;
   font-weight: 500;
-  color: var(--content);
-  background: rgba(247,201,72,0.16);
-  border: 1px solid rgba(154,98,22,0.18);
+  background: rgba(0,200,220,0.07);
+  border: 1px solid rgba(0,200,220,0.12);
+}
+[data-theme="light"] .project-card-tag {
+  background: rgba(60,130,246,0.05);
+  border-color: rgba(60,130,246,0.1);
 }
 .project-card-links {
   display: flex;
   gap: 0.8rem;
   margin-top: auto;
   padding-top: 1rem;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+[data-theme="light"] .project-card-links {
+  border-top-color: rgba(0,0,0,0.06);
 }
 .project-card-link {
   font-size: 0.85rem;
   font-weight: 600;
   text-decoration: none;
-  color: var(--pj-caramel);
+  color: #00c8dc;
   transition: 0.2s;
   display: inline-flex;
   align-items: center;
@@ -500,6 +488,9 @@ body:has(.projects-intro) {
 .project-card-link:hover {
   opacity: 0.8;
   transform: translateX(2px);
+}
+[data-theme="light"] .project-card-link {
+  color: #3c82f6;
 }
 
 @media (max-width: 500px) {

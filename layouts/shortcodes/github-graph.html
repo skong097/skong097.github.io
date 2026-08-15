@@ -15,14 +15,16 @@
 </div>
 
 <style>
-/* 이 그래프는 /projects/ 에서만 쓰이고, 그 페이지는 테마와 무관하게
-   버터크림 고정이므로 [data-theme="dark"] 분기를 두지 않는다. */
 .gh-graph-wrap{
-  --gh-bg:#FFFDF8; --gh-card:#FFFDF8; --gh-border:#EADFCB;
-  --gh-text:#3D3226; --gh-text2:#7A6A56; --gh-edge:#E0D2BB; --gh-hub:#C77D3E;
+  --gh-bg:#f0f2f5; --gh-card:#ffffff; --gh-border:#e2e6ea;
+  --gh-text:#1a202c; --gh-text2:#64748b; --gh-edge:#cbd5e1; --gh-hub:#0891b2;
   position:relative; background:var(--gh-bg); border:1px solid var(--gh-border);
   border-radius:14px; margin:0 0 2rem; overflow:hidden;
   font-family:'Noto Sans KR',sans-serif; transition:background .3s,border-color .3s;
+}
+[data-theme="dark"] .gh-graph-wrap{
+  --gh-bg:#0a0e17; --gh-card:#111827; --gh-border:#1e2d3d;
+  --gh-text:#e2e8f0; --gh-text2:#64748b; --gh-edge:#243244; --gh-hub:#00e5ff;
 }
 .gh-graph-head{
   position:absolute; top:0; left:0; right:0; z-index:2; pointer-events:none;
@@ -41,7 +43,7 @@
   position:absolute; z-index:3; max-width:260px; pointer-events:none;
   background:var(--gh-card); border:1px solid var(--gh-border); border-radius:8px;
   padding:.6rem .7rem; font-size:.74rem; color:var(--gh-text); line-height:1.45;
-  box-shadow:0 6px 20px rgba(120,90,50,.18);
+  box-shadow:0 6px 20px rgba(0,0,0,.18);
 }
 .gh-graph-tip .t-name{ font-weight:700; color:var(--gh-hub); display:block; margin-bottom:.2rem; }
 .gh-graph-tip .t-meta{ color:var(--gh-text2); font-family:'JetBrains Mono',monospace; font-size:.68rem; margin-top:.3rem; }

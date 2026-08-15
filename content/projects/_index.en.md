@@ -18,13 +18,18 @@ cover:
 header.post-header {
   text-align: center;
   width: 100%;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
   padding-bottom: 1rem;
   margin-bottom: 1.5rem;
 }
 header.post-header h1 {
   font-size: 40px;
   text-align: center;
+}
+[data-theme="light"] header.post-header {
+  text-align: center;
+  width: 100%;
+  border-bottom-color: rgba(0,0,0,0.1);
 }
 </style>
 
@@ -34,7 +39,7 @@ header.post-header h1 {
 
 <div class="projects-grid">
 
-  <div class="project-card" style="--card-accent: #F7A8B8;">
+  <div class="project-card" style="--card-accent: #ec4899;">
     <span class="project-card-status status-active">Active</span>
     <div class="project-card-title">MOCA — Cafe Service Robot</div>
     <div class="project-card-subtitle">Autonomous cafe robot for greeting, serving, and guidance</div>
@@ -57,7 +62,7 @@ header.post-header h1 {
     </div>
   </div>
 
-  <div class="project-card" style="--card-accent: #7FD8BE;">
+  <div class="project-card" style="--card-accent: #14b8a6;">
     <span class="project-card-status status-done">Done</span>
     <div class="project-card-title">ARASEO — Autonomous Taxi</div>
     <div class="project-card-subtitle">Mini-city autonomous taxi system</div>
@@ -79,7 +84,7 @@ header.post-header h1 {
     </div>
   </div>
 
-  <div class="project-card" style="--card-accent: #8FD8E8;">
+  <div class="project-card" style="--card-accent: #00c8dc;">
     <span class="project-card-status status-active">Active</span>
     <div class="project-card-title">Kevin Patrol Fleet Dashboard</div>
     <div class="project-card-subtitle">Multi-robot fleet monitoring system</div>
@@ -99,7 +104,7 @@ header.post-header h1 {
     </div>
   </div>
 
-  <div class="project-card" style="--card-accent: #A9C7F0;">
+  <div class="project-card" style="--card-accent: #3c82f6;">
     <span class="project-card-status status-done">Done</span>
     <div class="project-card-title">Kevin Patrol Dashboard</div>
     <div class="project-card-subtitle">Autonomous patrol robot monitoring dashboard</div>
@@ -118,7 +123,7 @@ header.post-header h1 {
     </div>
   </div>
 
-  <div class="project-card" style="--card-accent: #C4B5FD;">
+  <div class="project-card" style="--card-accent: #8b5cf6;">
     <span class="project-card-status status-done">Done</span>
     <div class="project-card-title">Home Safe Solution</div>
     <div class="project-card-subtitle">Vision-AI fall detection system</div>
@@ -138,7 +143,7 @@ header.post-header h1 {
     </div>
   </div>
 
-  <div class="project-card" style="--card-accent: #F7C948;">
+  <div class="project-card" style="--card-accent: #f59e0b;">
     <span class="project-card-status status-done">Done</span>
     <div class="project-card-title">EyeCon (Pinocchio) v3.5</div>
     <div class="project-card-subtitle">Real-time conversation analysis system</div>
@@ -157,7 +162,7 @@ header.post-header h1 {
     </div>
   </div>
 
-  <div class="project-card" style="--card-accent: #A8DDB5;">
+  <div class="project-card" style="--card-accent: #10b981;">
     <span class="project-card-status status-done">Done</span>
     <div class="project-card-title">Home Guard Bot</div>
     <div class="project-card-subtitle">LLM + ROS2 integrated guard robot</div>
@@ -176,7 +181,7 @@ header.post-header h1 {
     </div>
   </div>
 
-  <div class="project-card" style="--card-accent: #F4A6A0;">
+  <div class="project-card" style="--card-accent: #f43f5e;">
     <span class="project-card-status status-done">Done</span>
     <div class="project-card-title">ROS2 Commander</div>
     <div class="project-card-subtitle">Gamified ROS2 learning application</div>
