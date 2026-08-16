@@ -32,3 +32,7 @@ ghGraphEmpty: "GitHub projects coming soon"
 ghGraphProfile: "GitHub profile"
 
 koPostsNotice: "Posts are currently written in Korean. English translations are in progress."
+
+visitorCounterAria: "Site visit statistics"
+visitorTotalViews: "Views"
+visitorUniqueVisitors: "Visitors"

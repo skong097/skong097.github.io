@@ -1,0 +1,11 @@
+{{/*
+  layouts/partials/extend_footer.html
+  GoatCounter 집계 스크립트 (쿠키 없음).
+  params.goatCounterCode 가 비었거나 개발 빌드(hugo server)면 아무것도 출력하지 않는다.
+*/}}
+{{- with site.Params.goatCounterCode }}
+  {{- if hugo.IsProduction }}
+<script data-goatcounter="https://{{ . }}.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+  {{- end }}
+{{- end }}

@@ -103,6 +103,9 @@ languages:
 params:
   env: production
   author: Stephen Kong
+  # GoatCounter 사이트 코드(https://<코드>.goatcounter.com).
+  # 비워두면 집계 스크립트와 검색 페이지의 방문자 카운터가 모두 렌더되지 않는다.
+  goatCounterCode: ""
   mainSections:
   - posts
   displayFullLangName: true

@@ -556,3 +556,21 @@ body:has(.projects-intro) .page-header {
 #menu li + li {
   margin-inline-start: 16px;
 }
+
+/* ══════════════════════════════════════════════════════
+   방문자 카운터 (검색 페이지)
+   GoatCounter /counter/TOTAL.json 을 읽어 채운다.
+   숫자가 도착하기 전 · 실패 시엔 '—' 가 남으므로
+   b 에 min-width 를 줘서 폭이 흔들리지 않게 한다.
+   ══════════════════════════════════════════════════════ */
+.visit-counter {
+  display: flex; justify-content: center; flex-wrap: wrap; gap: 24px;
+  margin: 3rem auto 0; padding-top: 1.2rem;
+  border-top: 1px dashed rgba(128,128,128,.25);
+  font-family: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  font-size: 13px; color: var(--secondary);
+}
+.visit-counter .vc-item { display: inline-flex; align-items: center; gap: 7px; }
+.visit-counter .vc-dot { width: 7px; height: 7px; border-radius: 50%; background: #5ef2b8; }
+.visit-counter .vc-dot.uniq { background: #f0a36b; }
+.visit-counter b { font-weight: 600; color: var(--primary); min-width: 2.4em; text-align: right; }

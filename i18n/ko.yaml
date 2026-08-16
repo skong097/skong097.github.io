@@ -32,3 +32,7 @@ ghGraphEmpty: "GitHub 프로젝트를 준비 중입니다"
 ghGraphProfile: "GitHub 프로필"
 
 koPostsNotice: ""
+
+visitorCounterAria: "사이트 방문 통계"
+visitorTotalViews: "총 조회"
+visitorUniqueVisitors: "방문자"
