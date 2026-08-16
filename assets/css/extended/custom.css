@@ -572,5 +572,4 @@ body:has(.projects-intro) .page-header {
 }
 .visit-counter .vc-item { display: inline-flex; align-items: center; gap: 7px; }
 .visit-counter .vc-dot { width: 7px; height: 7px; border-radius: 50%; background: #5ef2b8; }
-.visit-counter .vc-dot.uniq { background: #f0a36b; }
 .visit-counter b { font-weight: 600; color: var(--primary); min-width: 2.4em; text-align: right; }

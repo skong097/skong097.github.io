@@ -1,13 +1,13 @@
 {{/*
   layouts/partials/visitor-counter.html
   GoatCounter 의 공개 카운터 엔드포인트(/counter/TOTAL.json)를 읽어
-  사이트 전체 조회수·순 방문자를 표시한다.
+  사이트 전체 조회수를 표시한다.
+  응답의 count_unique 는 count 와 값이 동일한 하위호환 필드라 쓰지 않는다.
   goatCounterCode 가 비어 있으면 렌더하지 않는다.
 */}}
 {{- with site.Params.goatCounterCode }}
 <div class="visit-counter" aria-label="{{ i18n "visitorCounterAria" }}">
   <span class="vc-item"><i class="vc-dot"></i>{{ i18n "visitorTotalViews" }}<b id="vc-views">—</b></span>
-  <span class="vc-item"><i class="vc-dot uniq"></i>{{ i18n "visitorUniqueVisitors" }}<b id="vc-visitors">—</b></span>
 </div>
 <script>
 (function () {
@@ -15,9 +15,7 @@
     .then(function (r) { if (!r.ok) { throw new Error(r.status); } return r.json(); })
     .then(function (d) {
       var views = document.getElementById('vc-views');
-      var uniq = document.getElementById('vc-visitors');
       if (views && d.count) { views.textContent = d.count; }
-      if (uniq && d.count_unique) { uniq.textContent = d.count_unique; }
     })
     .catch(function () { /* 실패하면 '—' 를 그대로 둔다 */ });
 })();
