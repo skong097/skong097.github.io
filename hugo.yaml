@@ -41,6 +41,10 @@ languages:
         name: KB Radar
         url: /kb-radar/
         weight: 25
+      - identifier: algorithms
+        name: 알고리즘
+        url: /algorithms/
+        weight: 27
       - identifier: categories
         name: 카테고리
         url: /categories/
@@ -87,6 +91,10 @@ languages:
         name: KB Radar
         url: /kb-radar/
         weight: 25
+      - identifier: algorithms
+        name: Algorithms
+        url: /algorithms/
+        weight: 27
       - identifier: categories
         name: Categories
         url: /categories/

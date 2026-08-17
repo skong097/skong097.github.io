@@ -51,3 +51,16 @@ _fetch_visitor_daily() {
   COMPREPLY=( $(compgen -W "$opts" -- "$cur") )
 }
 complete -F _fetch_visitor_daily fetch_visitor_daily.sh ./fetch_visitor_daily.sh scripts/fetch_visitor_daily.sh
+
+_sync_algorithms() {
+  local cur prev opts
+  COMPREPLY=()
+  cur="${COMP_WORDS[COMP_CWORD]}"
+  prev="${COMP_WORDS[COMP_CWORD-1]}"
+  opts="-h --help --source --output --check"
+  case "$prev" in
+    --source|--output) COMPREPLY=( $(compgen -f -- "$cur") ); return 0 ;;
+  esac
+  COMPREPLY=( $(compgen -W "$opts" -- "$cur") )
+}
+complete -F _sync_algorithms sync_algorithms.py ./sync_algorithms.py scripts/sync_algorithms.py
