@@ -47,6 +47,12 @@ hideMeta: true
 
 **도메인 표기** — `AV` 자율주행차량 · `AGV` 산업 무인운반차/AMR · `MR` 다중로봇·플릿
 
+**유형 표기** — 제목은 「알고리즘 딕셔너리」지만 전부가 알고리즘은 아니다. 판별식은
+**"이름을 듣고 `입력 → 단계 → 출력`을 적을 수 있는가"** 하나다.
+`알고리즘`(적힌다) · `학습모델`(파라미터가 답을 만든다) · `패턴`(설계 약속) ·
+`수학모델`(수식·좌표계·지표) · `문제`(단계가 없다) · `표현`(자료구조) ·
+`구현체`(특정 알고리즘의 패키지) · `규격`(표준). **이름표를 속이지 않으려고 붙였다.**
+
 """
 
 FOOTER = """
@@ -74,12 +80,12 @@ def parse(src: Path):
         if cur is None or not line.startswith("|"):
             continue
         cells = [c.strip() for c in line.strip().strip("|").split("|")]
-        if len(cells) != 5:            # 항목 표만 5열 — 범례·백로그 표는 걸러진다
+        if len(cells) != 6:            # 항목 표만 6열 — 범례·백로그 표는 걸러진다
             continue
-        name, problem, domain = cells[0], cells[1], cells[2]
+        name, kind, problem, domain = cells[0], cells[1], cells[2], cells[3]
         if name.startswith("---") or name.startswith("알고리즘"):
             continue
-        cur[2].append((name, problem, domain))
+        cur[2].append((name, kind, problem, domain))
     return [s for s in sectors if s[2]]
 
 
@@ -89,10 +95,10 @@ def render(sectors) -> str:
     out.append(f"현재 **{len(sectors)}개 섹터 · {total}개 항목**.\n")
     for code, title, rows in sectors:
         out.append(f"\n## {code}. {title}\n")
-        out.append("| 알고리즘 | 푸는 문제 | 도메인 |")
-        out.append("|---|---|:---:|")
-        for name, problem, domain in rows:
-            out.append(f"| {name} | {problem} | {domain} |")
+        out.append("| 알고리즘 | 유형 | 푸는 문제 | 도메인 |")
+        out.append("|---|:---:|---|:---:|")
+        for name, kind, problem, domain in rows:
+            out.append(f"| {name} | {kind} | {problem} | {domain} |")
         out.append("")
     out.append(FOOTER)
     return "\n".join(out)
