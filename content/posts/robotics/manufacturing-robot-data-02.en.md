@@ -236,9 +236,6 @@ topic**. (A)
 > **This is the common cause of failed Sparkplug deployments** — a consumer that didn't account for
 > connection order **starts running with empty state.** (C)
 
-(This is the same failure I walked into myself, from the other direction — the record is in
-[I misremembered how many seconds it takes my own dashboard to grey out a robot](../heartbeat-liveness-vs-sparkplug/).)
-
 ### 5-3. Supporting machinery
 
 - **Sequence number (`seq`)** — lets the consumer detect lost or out-of-order messages (B)
