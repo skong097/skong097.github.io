@@ -188,7 +188,7 @@ hideMeta: true
 | VectorNet / TNT / MTR | 학습모델 | HD맵과 궤적을 벡터로 넣어 예측 정확도를 올린다 | AV |
 | UniAD / VAD | 학습모델 | 인지·예측·계획을 하나의 학습 가능한 그래프로 | AV |
 | World model (Wayve GAIA 등) | 학습모델 | 시뮬레이터를 손으로 안 만들고 데이터로 생성한다 | AV |
-| Diffusion policy | 학습모델 | 다봉(multi-modal) 행동 분포를 하나의 평균으로 뭉개지 않는다 | MR |
+| Diffusion policy | 학습모델 | 멀티모달 행동 분포를 하나의 평균으로 뭉개지 않는다 | MR |
 | VLA (RT-2 · π0) | 학습모델 | 언어 지시를 로봇 행동으로 직접 | MR |
 
 
