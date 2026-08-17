@@ -564,8 +564,9 @@ body:has(.projects-intro) .page-header {
    b 에 min-width 를 줘서 폭이 흔들리지 않게 한다.
    ══════════════════════════════════════════════════════ */
 .visit-counter {
-  display: flex; justify-content: center; flex-wrap: wrap; gap: 24px;
-  margin: 3rem auto 0; padding-top: 1.2rem;
+  /* 제목·본문과 같은 좌측 정렬 기준선에 맞춘다(검색 입력창만 예외적으로 중앙). */
+  display: flex; justify-content: flex-start; flex-wrap: wrap; gap: 24px;
+  margin: 3rem 0 0; padding-top: 1.2rem;
   border-top: 1px dashed rgba(128,128,128,.25);
   font-family: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
   /* 32px = 페이지 제목(.page-header h1)과 같은 크기 */
@@ -574,12 +575,19 @@ body:has(.projects-intro) .page-header {
 .visit-counter .vc-item { display: inline-flex; align-items: center; gap: 0.35em; }
 .visit-counter .vc-dot { width: 0.22em; height: 0.22em; border-radius: 50%; background: #5ef2b8; }
 .visit-counter b { font-weight: 600; color: var(--primary); min-width: 2.4em; text-align: right; }
+/* 기준 시각은 카운터(32px) 아래 한 줄로 내려 작게. flex-basis 로 줄바꿈. */
+.visit-counter .vc-asof {
+  flex-basis: 100%; text-align: left; margin-top: .5rem;
+  font-size: 12px; color: var(--secondary);
+}
+.visit-counter .vc-asof:empty { display: none; }
 
 /* ── 일별 조회수 추이 (검색 페이지, data/visitor_daily.json) ──
    막대 색은 dataviz 검증을 통과한 두 단계를 테마별로 쓴다.
    라이트 #0f8a67 / 다크 #1aa87d — 각 표면 대비 3:1 이상. */
 .visit-trend {
   --vc-bar: #0f8a67;
+  /* 카운터(Views)는 좌측 기준선, 그래프 블록만 중앙. */
   max-width: 720px; margin: 1.6rem auto 0; padding: 0;
   font-family: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
 }
@@ -587,6 +595,7 @@ body:has(.projects-intro) .page-header {
 .visit-trend figcaption {
   font-size: 12px; color: var(--secondary); text-align: center; margin-bottom: .5rem;
 }
+.visit-trend .vt-asof { display: block; margin-top: .15rem; opacity: .8; }
 .visit-trend svg { display: block; width: 100%; height: auto; }
 .visit-trend .vt-axis { stroke: var(--border); stroke-width: 1; }
 .visit-trend .vt-tick { font-size: 11px; fill: var(--secondary); }
@@ -595,3 +604,5 @@ body:has(.projects-intro) .page-header {
 .visit-trend .vt-table summary { cursor: pointer; }
 .visit-trend .vt-table table { width: auto; margin: .5rem auto 0; }
 .visit-trend .vt-table td, .visit-trend .vt-table th { padding: 2px 14px; text-align: right; }
+.visit-trend .vt-table td:first-child,
+.visit-trend .vt-table th:first-child { text-align: left; padding-left: 0; }
