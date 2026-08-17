@@ -35,3 +35,10 @@ koPostsNotice: ""
 
 visitorCounterAria: "사이트 방문 통계"
 visitorTotalViews: "총 조회"
+
+visitorTrendTitle: "일별 조회수 (최근 {{ .days }}일)"
+visitorTrendAria: "최근 {{ .days }}일 일별 조회수 추이 막대 그래프"
+visitorTrendPeak: "최고"
+visitorTrendLatest: "최근"
+visitorTrendTable: "표로 보기"
+visitorTrendDate: "날짜"

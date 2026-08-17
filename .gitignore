@@ -19,3 +19,6 @@ scripts/kb_radar/cron.log
 
 # WSL: Windows 다운로드 출처 메타데이터 (NTFS ADS)
 *:Zone.Identifier
+
+# 방문자 추이 데이터 — CI 가 빌드마다 GoatCounter API 로 생성 (커밋 대상 아님)
+data/visitor_daily.json

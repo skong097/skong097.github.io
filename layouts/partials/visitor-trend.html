@@ -1,0 +1,58 @@
+{{/*
+  layouts/partials/visitor-trend.html
+  data/visitor_daily.json (scripts/fetch_visitor_daily.sh 가 빌드 시 생성) 을 읽어
+  일별 조회수를 인라인 SVG 막대 그래프로 그린다. JS 없음 — 값은 <title> 네이티브 툴팁과
+  아래 표(details)로 제공한다. 데이터 파일이 없으면 아무것도 렌더하지 않는다.
+  막대 색은 --vc-bar (custom.css 에서 라이트/다크 각각 검증된 값으로 지정).
+*/}}
+{{- with site.Data.visitor_daily }}
+{{- $days := .days }}
+{{- if $days }}
+  {{- $n := len $days }}
+  {{- $max := 0 }}
+  {{- range $days }}{{ if gt .views $max }}{{ $max = .views }}{{ end }}{{ end }}
+  {{- $scaleMax := cond (gt $max 0) $max 1 }}
+  {{- $last := index $days (sub $n 1) }}
+
+  {{/* geometry: viewBox 좌표계로 그리고 CSS 로 폭을 100% 늘린다 */}}
+  {{- $w := 720.0 }}{{ $padL := 8.0 }}{{ $padR := 8.0 }}
+  {{- $top := 14.0 }}{{ $baseY := 112.0 }}
+  {{- $plotW := sub $w (add $padL $padR) }}
+  {{- $plotH := sub $baseY $top }}
+  {{- $slot := div $plotW $n }}
+  {{- $barW := cond (gt (sub $slot 2.0) 2.0) (sub $slot 2.0) 2.0 }}
+  {{- $r := cond (gt (div $barW 2.0) 3.0) 3.0 (div $barW 2.0) }}
+
+<figure class="visit-trend">
+  <figcaption>{{ i18n "visitorTrendTitle" (dict "days" $n) }}</figcaption>
+  <svg viewBox="0 0 {{ $w }} 140" role="img"
+       aria-label="{{ i18n "visitorTrendAria" (dict "days" $n) }}">
+    {{- range $i, $d := $days }}
+      {{- $h := div (mul (float $d.views) $plotH) (float $scaleMax) }}
+      {{- if gt $h 0.0 }}
+        {{- $x := add $padL (mul (float $i) $slot) }}
+        {{- $y := sub $baseY $h }}
+        {{- $x2 := add $x $barW }}
+      <path d="M{{ printf "%.1f" $x }},{{ $baseY }} V{{ printf "%.1f" (add $y $r) }} Q{{ printf "%.1f" $x }},{{ printf "%.1f" $y }} {{ printf "%.1f" (add $x $r) }},{{ printf "%.1f" $y }} H{{ printf "%.1f" (sub $x2 $r) }} Q{{ printf "%.1f" $x2 }},{{ printf "%.1f" $y }} {{ printf "%.1f" $x2 }},{{ printf "%.1f" (add $y $r) }} V{{ $baseY }} Z" fill="var(--vc-bar)"><title>{{ $d.date }} · {{ $d.views }}</title></path>
+      {{- end }}
+    {{- end }}
+    <line x1="{{ $padL }}" y1="{{ $baseY }}" x2="{{ sub $w $padR }}" y2="{{ $baseY }}" class="vt-axis"/>
+    <text x="{{ $padL }}" y="130" class="vt-tick">{{ (index $days 0).date }}</text>
+    <text x="{{ sub $w $padR }}" y="130" class="vt-tick" text-anchor="end">{{ $last.date }}</text>
+    <text x="{{ $padL }}" y="10" class="vt-peak">{{ i18n "visitorTrendPeak" }} {{ $max }}</text>
+    <text x="{{ sub $w $padR }}" y="10" class="vt-peak" text-anchor="end">{{ i18n "visitorTrendLatest" }} {{ $last.views }}</text>
+  </svg>
+  <details class="vt-table">
+    <summary>{{ i18n "visitorTrendTable" }}</summary>
+    <table>
+      <thead><tr><th>{{ i18n "visitorTrendDate" }}</th><th>{{ i18n "visitorTotalViews" }}</th></tr></thead>
+      <tbody>
+      {{- range $days }}
+        <tr><td>{{ .date }}</td><td>{{ .views }}</td></tr>
+      {{- end }}
+      </tbody>
+    </table>
+  </details>
+</figure>
+{{- end }}
+{{- end }}

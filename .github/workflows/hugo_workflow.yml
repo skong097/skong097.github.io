@@ -5,6 +5,9 @@ on:
   push:
     branches: ["main"]
   workflow_dispatch:
+  # 방문자 추이 그래프를 매일 새로 받기 위한 재빌드 (05:00 KST). 커밋은 하지 않는다.
+  schedule:
+    - cron: "0 20 * * *"
 
 permissions:
   contents: read
@@ -42,6 +45,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           bash scripts/fetch_github_repos.sh || echo "fetch 실패 — 커밋된 스냅샷으로 빌드"
+      - name: Refresh visitor daily stats
+        env:
+          GOATCOUNTER_TOKEN: ${{ secrets.GOATCOUNTER_TOKEN }}
+        run: |
+          bash scripts/fetch_visitor_daily.sh --days 30 || echo "fetch 실패 — 추이 그래프 없이 빌드"
       - name: Build with Hugo
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache

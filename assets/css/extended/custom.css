@@ -568,8 +568,30 @@ body:has(.projects-intro) .page-header {
   margin: 3rem auto 0; padding-top: 1.2rem;
   border-top: 1px dashed rgba(128,128,128,.25);
   font-family: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
-  font-size: 13px; color: var(--secondary);
+  /* 32px = 페이지 제목(.page-header h1)과 같은 크기 */
+  font-size: 32px; color: var(--secondary);
 }
-.visit-counter .vc-item { display: inline-flex; align-items: center; gap: 7px; }
-.visit-counter .vc-dot { width: 7px; height: 7px; border-radius: 50%; background: #5ef2b8; }
+.visit-counter .vc-item { display: inline-flex; align-items: center; gap: 0.35em; }
+.visit-counter .vc-dot { width: 0.22em; height: 0.22em; border-radius: 50%; background: #5ef2b8; }
 .visit-counter b { font-weight: 600; color: var(--primary); min-width: 2.4em; text-align: right; }
+
+/* ── 일별 조회수 추이 (검색 페이지, data/visitor_daily.json) ──
+   막대 색은 dataviz 검증을 통과한 두 단계를 테마별로 쓴다.
+   라이트 #0f8a67 / 다크 #1aa87d — 각 표면 대비 3:1 이상. */
+.visit-trend {
+  --vc-bar: #0f8a67;
+  max-width: 720px; margin: 1.6rem auto 0; padding: 0;
+  font-family: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+}
+:root[data-theme="dark"] .visit-trend { --vc-bar: #1aa87d; }
+.visit-trend figcaption {
+  font-size: 12px; color: var(--secondary); text-align: center; margin-bottom: .5rem;
+}
+.visit-trend svg { display: block; width: 100%; height: auto; }
+.visit-trend .vt-axis { stroke: var(--border); stroke-width: 1; }
+.visit-trend .vt-tick { font-size: 11px; fill: var(--secondary); }
+.visit-trend .vt-peak { font-size: 11px; fill: var(--primary); }
+.visit-trend .vt-table { margin-top: .6rem; font-size: 12px; color: var(--secondary); }
+.visit-trend .vt-table summary { cursor: pointer; }
+.visit-trend .vt-table table { width: auto; margin: .5rem auto 0; }
+.visit-trend .vt-table td, .visit-trend .vt-table th { padding: 2px 14px; text-align: right; }

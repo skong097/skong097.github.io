@@ -36,3 +36,18 @@ _fetch_github_repos() {
   COMPREPLY=( $(compgen -W "$opts" -- "$cur") )
 }
 complete -F _fetch_github_repos fetch_github_repos.sh ./fetch_github_repos.sh scripts/fetch_github_repos.sh
+
+_fetch_visitor_daily() {
+  local cur prev opts
+  COMPREPLY=()
+  cur="${COMP_WORDS[COMP_CWORD]}"
+  prev="${COMP_WORDS[COMP_CWORD-1]}"
+  opts="-h --help --days --code --output"
+  case "$prev" in
+    --output) COMPREPLY=( $(compgen -f -- "$cur") ); return 0 ;;
+    --days) COMPREPLY=( $(compgen -W "7 14 30 60 90" -- "$cur") ); return 0 ;;
+    --code) return 0 ;;
+  esac
+  COMPREPLY=( $(compgen -W "$opts" -- "$cur") )
+}
+complete -F _fetch_visitor_daily fetch_visitor_daily.sh ./fetch_visitor_daily.sh scripts/fetch_visitor_daily.sh
