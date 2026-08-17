@@ -18,7 +18,7 @@ MOCA 카페 로봇의 관제용 웹 대시보드는 FastAPI 위에 정적 HTML·
 
 브라우저 콘솔에는 다음과 비슷한 줄이 줄줄이 떴습니다.
 
-```
+```text
 GET /static/dashboard.css  404 (Not Found)
 GET /static/app.js         404 (Not Found)
 GET /static/icons/...      404 (Not Found)
@@ -36,10 +36,7 @@ API 엔드포인트(`/api/...`)는 정상이었습니다. 즉 서버는 살아 �
 
 차이는 **경로의 종류**였습니다. `colcon build --symlink-install`은 빌드 결과를 복사하지 않고 **심볼릭 링크로 install 폴더에 연결**합니다. 그것도 한 번이 아니라 여러 단계로:
 
-```
-install/<pkg>/share/<pkg>/static/  →  src/<pkg>/static/    (심볼릭)
-src/<pkg>/static/                    →  실제 정적 파일들
-```
+{{< figure src="/images/diagrams/moca-colcon-symlink-chain.svg" alt="colcon --symlink-install 환경의 정적 파일 경로 사슬 — install/share 아래 경로가 심볼릭으로 src 소스 디렉터리를 가리키고, 그것이 다시 실제 정적 파일을 가리킨다" >}}
 
 워크스페이스 구성에 따라 중간에 또 한 단계가 더 끼기도 합니다. 즉 정적 파일 요청 하나를 처리하려면 서버가 **심볼릭 링크를 여러 번 따라가야** 했습니다.
 

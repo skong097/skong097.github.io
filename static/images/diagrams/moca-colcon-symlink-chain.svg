@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 360" width="680" height="360" font-family="'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace" role="img" aria-label="colcon symlink 설치 시 정적 파일 경로 사슬: install 산출물 디렉터리가 심볼릭으로 src 소스 디렉터리를 가리키고, 그것이 다시 실제 정적 파일을 가리킨다">
+  <rect x="1" y="1" width="678" height="358" rx="14" fill="#0c1117" stroke="rgba(94,242,184,0.16)"/>
+  <rect x="1" y="1" width="678" height="46" rx="14" fill="rgba(255,255,255,0.02)"/>
+  <circle cx="26" cy="24" r="5.5" fill="#ff5f57"/>
+  <circle cx="44" cy="24" r="5.5" fill="#febc2e"/>
+  <circle cx="62" cy="24" r="5.5" fill="#28c840"/>
+  <text x="658" y="28" text-anchor="end" font-size="12" fill="#5d6b78">symlink chain — colcon --symlink-install</text>
+
+  <!-- stage 1 -->
+  <rect x="50" y="78" width="580" height="54" rx="10" fill="rgba(108,182,255,0.06)" stroke="#3a4654" stroke-width="1.6"/>
+  <text x="74" y="103" font-size="14" font-weight="700" fill="#6cb6ff">install/&lt;pkg&gt;/share/&lt;pkg&gt;/static/</text>
+  <text x="74" y="121" font-size="12" fill="#8c98a4">서버가 마운트한 경로</text>
+
+  <g stroke="#3a4654" stroke-width="1.6" fill="none">
+    <path d="M120 132 V 172"/>
+  </g>
+  <path d="M120 184 L 113 170 L 127 170 Z" fill="#3a4654"/>
+  <text x="146" y="163" font-size="12" fill="#f0a36b">심볼릭 링크</text>
+
+  <!-- stage 2 -->
+  <rect x="50" y="184" width="580" height="54" rx="10" fill="rgba(108,182,255,0.06)" stroke="#3a4654" stroke-width="1.6"/>
+  <text x="74" y="209" font-size="14" font-weight="700" fill="#6cb6ff">src/&lt;pkg&gt;/static/</text>
+  <text x="74" y="227" font-size="12" fill="#8c98a4">워크스페이스 소스 — 등록된 루트 밖</text>
+
+  <g stroke="#3a4654" stroke-width="1.6" fill="none">
+    <path d="M120 238 V 278"/>
+  </g>
+  <path d="M120 290 L 113 276 L 127 276 Z" fill="#3a4654"/>
+  <text x="146" y="269" font-size="12" fill="#f0a36b">구성에 따라 한 단계 더 끼기도</text>
+
+  <!-- stage 3 -->
+  <rect x="50" y="290" width="580" height="54" rx="10" fill="rgba(94,242,184,0.06)" stroke="#3a4654" stroke-width="1.6"/>
+  <text x="74" y="315" font-size="14" font-weight="700" fill="#5ef2b8">dashboard.css · app.js · icons/</text>
+  <text x="74" y="333" font-size="12" fill="#8c98a4">실제 정적 파일</text>
+</svg>

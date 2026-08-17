@@ -44,11 +44,7 @@ TocOpen: true
 
 가장 중요한 결정은 **기존 DataProvider 인터페이스를 건드리지 않는 것**이었습니다.
 
-```
-data_provider.py (수정 금지)
-    ↑
-robot_manager.py (새로 추가 — DataProvider 위에 래핑)
-```
+{{< figure src="/images/diagrams/kevin-patrol-dataprovider-wrapping.svg" alt="기존 data_provider.py는 수정하지 않고, 그 위에 신규 robot_manager.py가 robot_id → DataProvider 매핑을 래핑하는 2계층 구조" >}}
 
 `RobotManager`가 `robot_id → DataProvider` 매핑을 관리하고, 대시보드는 활성 로봇의 provider만 조회합니다. 이렇게 하면 단일 로봇 버전에 영향을 주지 않으면서 다중 로봇을 지원할 수 있습니다.
 

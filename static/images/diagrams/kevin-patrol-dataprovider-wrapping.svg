@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 280" width="600" height="280" font-family="'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace" role="img" aria-label="data_provider.py는 기존 인터페이스로 수정 금지이고, 그 위에 신규 robot_manager.py가 robot_id에서 DataProvider로의 매핑을 래핑한다">
+  <rect x="1" y="1" width="598" height="278" rx="14" fill="#0c1117" stroke="rgba(94,242,184,0.16)"/>
+  <rect x="1" y="1" width="598" height="46" rx="14" fill="rgba(255,255,255,0.02)"/>
+  <circle cx="26" cy="24" r="5.5" fill="#ff5f57"/>
+  <circle cx="44" cy="24" r="5.5" fill="#febc2e"/>
+  <circle cx="62" cy="24" r="5.5" fill="#28c840"/>
+  <text x="578" y="28" text-anchor="end" font-size="12" fill="#5d6b78">layering — kevin_patrol</text>
+
+  <!-- upper layer: untouched interface -->
+  <rect x="120" y="78" width="360" height="60" rx="10" fill="rgba(108,182,255,0.06)" stroke="#3a4654" stroke-width="1.6"/>
+  <text x="300" y="104" text-anchor="middle" font-size="15" font-weight="700" fill="#6cb6ff">data_provider.py</text>
+  <text x="300" y="124" text-anchor="middle" font-size="12" fill="#8c98a4">기존 인터페이스 — 수정 금지</text>
+
+  <!-- connector -->
+  <g stroke="#3a4654" stroke-width="1.6" fill="none">
+    <path d="M300 196 V 150"/>
+  </g>
+  <path d="M300 138 L 293 152 L 307 152 Z" fill="#3a4654"/>
+  <text x="320" y="177" font-size="12" fill="#6272a4">위에 래핑 (wrap)</text>
+
+  <!-- lower layer: new wrapper -->
+  <rect x="120" y="196" width="360" height="60" rx="10" fill="rgba(94,242,184,0.06)" stroke="#3a4654" stroke-width="1.6"/>
+  <text x="300" y="222" text-anchor="middle" font-size="15" font-weight="700" fill="#5ef2b8">robot_manager.py</text>
+  <text x="300" y="242" text-anchor="middle" font-size="12" fill="#8c98a4">신규 — robot_id → DataProvider 매핑</text>
+</svg>
