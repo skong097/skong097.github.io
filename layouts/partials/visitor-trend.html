@@ -7,6 +7,7 @@
 */}}
 {{- with site.Data.visitor_daily }}
 {{- $days := .days }}
+{{- $start := .start }}{{ $end := .end }}{{ $fetched := .fetched }}
 {{- if $days }}
   {{- $n := len $days }}
   {{- $max := 0 }}
@@ -24,7 +25,9 @@
   {{- $r := cond (gt (div $barW 2.0) 3.0) 3.0 (div $barW 2.0) }}
 
 <figure class="visit-trend">
-  <figcaption>{{ i18n "visitorTrendTitle" (dict "days" $n) }}</figcaption>
+  <figcaption>{{ i18n "visitorTrendTitle" (dict "days" $n) }}
+    <span class="vt-asof">{{ i18n "visitorTrendAsOf" (dict "start" $start "end" $end "fetched" $fetched) }}</span>
+  </figcaption>
   <svg viewBox="0 0 {{ $w }} 140" role="img"
        aria-label="{{ i18n "visitorTrendAria" (dict "days" $n) }}">
     {{- range $i, $d := $days }}
