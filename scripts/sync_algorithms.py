@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # PYTHON_ARGCOMPLETE_OK
-"""알고리즘 딕셔너리 정본(nextbrain MOC) → 공개 섹션(content/algorithms/_index.md) 생성.
+"""자율주행·로보틱스 기술 사전 정본(nextbrain MOC) → 공개 섹션(content/algorithms/_index.md) 생성.
 
 정본에만 있는 열(기존 노트 링크 · 내 앵커)은 공개본에서 **떨어뜨린다**.
 손으로 두 벌 유지하지 않기 위한 스크립트이므로, 공개본을 직접 편집하지 말 것.
@@ -26,10 +26,10 @@ DEFAULT_OUTPUT = REPO / "content/algorithms/_index.md"
 SECTOR_RE = re.compile(r"^## (S\d+)\. (.+)$")
 
 FRONTMATTER = """---
-title: 알고리즘 딕셔너리
+title: 자율주행 · 로보틱스 기술 사전
 layout: single
 url: /algorithms/
-summary: "자율주행 · AGV · 다중로봇에 실제로 쓰이는 알고리즘을 섹터별로 정리한 사전. 각 항목은 '이게 없으면 뭐가 안 되는가'라는 한 줄로 요약했다."
+summary: "자율주행 · AGV · 다중로봇에 실제로 쓰이는 알고리즘 · 모델 · 규격 · 설계 패턴을 섹터별로 정리한 사전. 각 항목은 '이게 없으면 뭐가 안 되는가'라는 한 줄로 요약했다."
 ShowToc: true
 TocOpen: false
 ShowReadingTime: false
@@ -47,7 +47,7 @@ hideMeta: true
 
 **도메인 표기** — `AV` 자율주행차량 · `AGV` 산업 무인운반차/AMR · `MR` 다중로봇·플릿
 
-**유형 표기** — 제목은 「알고리즘 딕셔너리」지만 전부가 알고리즘은 아니다. 판별식은
+**유형 표기** — 「기술 사전」이라 부르는 이유다. 전부가 알고리즘은 아니다. 판별식은
 **"이름을 듣고 `입력 → 단계 → 출력`을 적을 수 있는가"** 하나다.
 `알고리즘`(적힌다) · `학습모델`(파라미터가 답을 만든다) · `패턴`(설계 약속) ·
 `수학모델`(수식·좌표계·지표) · `문제`(단계가 없다) · `표현`(자료구조) ·
@@ -83,7 +83,7 @@ def parse(src: Path):
         if len(cells) != 6:            # 항목 표만 6열 — 범례·백로그 표는 걸러진다
             continue
         name, kind, problem, domain = cells[0], cells[1], cells[2], cells[3]
-        if name.startswith("---") or name.startswith("알고리즘"):
+        if name.startswith("---") or name in ("이름", "알고리즘"):
             continue
         cur[2].append((name, kind, problem, domain))
     return [s for s in sectors if s[2]]
@@ -95,7 +95,7 @@ def render(sectors) -> str:
     out.append(f"현재 **{len(sectors)}개 섹터 · {total}개 항목**.\n")
     for code, title, rows in sectors:
         out.append(f"\n## {code}. {title}\n")
-        out.append("| 알고리즘 | 유형 | 푸는 문제 | 도메인 |")
+        out.append("| 이름 | 유형 | 푸는 문제 | 도메인 |")
         out.append("|---|:---:|---|:---:|")
         for name, kind, problem, domain in rows:
             out.append(f"| {name} | {kind} | {problem} | {domain} |")
@@ -105,7 +105,7 @@ def render(sectors) -> str:
 
 
 def main() -> int:
-    p = argparse.ArgumentParser(description="알고리즘 딕셔너리 정본 → 공개 섹션 생성")
+    p = argparse.ArgumentParser(description="기술 사전 정본 → 공개 섹션 생성")
     p.add_argument("--source", type=Path, default=DEFAULT_SOURCE, help="정본 MOC 경로")
     p.add_argument("--output", type=Path, default=DEFAULT_OUTPUT, help="공개본 출력 경로")
     p.add_argument("--check", action="store_true", help="갱신하지 않고 최신 여부만 확인")

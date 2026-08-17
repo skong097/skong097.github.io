@@ -42,7 +42,7 @@ languages:
         url: /kb-radar/
         weight: 25
       - identifier: algorithms
-        name: 알고리즘
+        name: 기술 사전
         url: /algorithms/
         weight: 27
       - identifier: categories
@@ -92,7 +92,7 @@ languages:
         url: /kb-radar/
         weight: 25
       - identifier: algorithms
-        name: Algorithms
+        name: Tech Dictionary
         url: /algorithms/
         weight: 27
       - identifier: categories
