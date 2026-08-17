@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 220" width="760" height="220" font-family="'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace" role="img" aria-label="최적화 전 음성 파이프라인 — 웨이크워드에서 Whisper 2~4초, LLM 1~3초를 거쳐 ESP32까지, 총 3~7초 소요">
+  <rect x="1" y="1" width="758" height="218" rx="14" fill="#0c1117" stroke="rgba(94,242,184,0.16)"/>
+  <rect x="1" y="1" width="758" height="46" rx="14" fill="rgba(255,255,255,0.02)"/>
+  <circle cx="26" cy="24" r="5.5" fill="#ff5f57"/>
+  <circle cx="44" cy="24" r="5.5" fill="#febc2e"/>
+  <circle cx="62" cy="24" r="5.5" fill="#28c840"/>
+  <text x="738" y="28" text-anchor="end" font-size="12" fill="#5d6b78">latency — voice pipeline (before)</text>
+
+  <rect x="40" y="84" width="140" height="56" rx="10" fill="rgba(108,182,255,0.06)" stroke="#3a4654" stroke-width="1.6"/>
+  <text x="110" y="110" text-anchor="middle" font-size="14" font-weight="700" fill="#6cb6ff">웨이크워드</text>
+  <text x="110" y="128" text-anchor="middle" font-size="12" fill="#8c98a4">Porcupine</text>
+
+  <rect x="220" y="84" width="140" height="56" rx="10" fill="rgba(240,163,107,0.07)" stroke="#3a4654" stroke-width="1.6"/>
+  <text x="290" y="110" text-anchor="middle" font-size="14" font-weight="700" fill="#f0a36b">Whisper</text>
+  <text x="290" y="128" text-anchor="middle" font-size="12" fill="#8c98a4">2~4 s</text>
+
+  <rect x="400" y="84" width="140" height="56" rx="10" fill="rgba(240,163,107,0.07)" stroke="#3a4654" stroke-width="1.6"/>
+  <text x="470" y="110" text-anchor="middle" font-size="14" font-weight="700" fill="#f0a36b">LLM</text>
+  <text x="470" y="128" text-anchor="middle" font-size="12" fill="#8c98a4">1~3 s</text>
+
+  <rect x="580" y="84" width="140" height="56" rx="10" fill="rgba(94,242,184,0.06)" stroke="#3a4654" stroke-width="1.6"/>
+  <text x="650" y="110" text-anchor="middle" font-size="14" font-weight="700" fill="#5ef2b8">ESP32</text>
+  <text x="650" y="128" text-anchor="middle" font-size="12" fill="#8c98a4">실행</text>
+
+  <g stroke="#3a4654" stroke-width="1.6" fill="none">
+    <path d="M186 112 H 206"/>
+    <path d="M366 112 H 386"/>
+    <path d="M546 112 H 566"/>
+  </g>
+  <path d="M214 112 L 200 105 L 200 119 Z" fill="#3a4654"/>
+  <path d="M394 112 L 380 105 L 380 119 Z" fill="#3a4654"/>
+  <path d="M574 112 L 560 105 L 560 119 Z" fill="#3a4654"/>
+
+  <text x="380" y="180" text-anchor="middle" font-size="14" font-weight="700" fill="#f0a36b">총 소요: 3~7 초</text>
+</svg>

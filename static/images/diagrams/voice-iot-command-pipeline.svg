@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 436" width="760" height="436" font-family="'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace" role="img" aria-label="음성 명령 처리 4단계 — 자비스야 웨이크 워드 감지(Porcupine), 침실 불 켜줘 음성 인식(faster-whisper), JSON 명령으로 LLM 파싱(Ollama), TCP로 ESP32 실행">
+  <rect x="1" y="1" width="758" height="434" rx="14" fill="#0c1117" stroke="rgba(94,242,184,0.16)"/>
+  <rect x="1" y="1" width="758" height="46" rx="14" fill="rgba(255,255,255,0.02)"/>
+  <circle cx="26" cy="24" r="5.5" fill="#ff5f57"/>
+  <circle cx="44" cy="24" r="5.5" fill="#febc2e"/>
+  <circle cx="62" cy="24" r="5.5" fill="#28c840"/>
+  <text x="738" y="28" text-anchor="end" font-size="12" fill="#5d6b78">pipeline — voice_iot_controller</text>
+
+  <rect x="50" y="78" width="660" height="58" rx="10" fill="rgba(108,182,255,0.06)" stroke="#3a4654" stroke-width="1.6"/>
+  <text x="74" y="104" font-size="14" font-weight="700" fill="#6cb6ff">"자비스야"</text>
+  <text x="74" y="124" font-size="12" fill="#8c98a4">웨이크 워드 감지 (Porcupine)</text>
+
+  <rect x="50" y="168" width="660" height="58" rx="10" fill="rgba(108,182,255,0.06)" stroke="#3a4654" stroke-width="1.6"/>
+  <text x="74" y="194" font-size="14" font-weight="700" fill="#6cb6ff">"침실 불 켜줘"</text>
+  <text x="74" y="214" font-size="12" fill="#8c98a4">음성 인식 (faster-whisper)</text>
+
+  <rect x="50" y="258" width="660" height="58" rx="10" fill="rgba(240,163,107,0.07)" stroke="#3a4654" stroke-width="1.6"/>
+  <text x="74" y="284" font-size="13" font-weight="700" fill="#f0a36b">{"cmd":"led","device_id":"esp32_bedroom","state":"on"}</text>
+  <text x="74" y="304" font-size="12" fill="#8c98a4">LLM 파싱 (Ollama)</text>
+
+  <rect x="50" y="348" width="660" height="58" rx="10" fill="rgba(94,242,184,0.06)" stroke="#3a4654" stroke-width="1.6"/>
+  <text x="74" y="374" font-size="14" font-weight="700" fill="#5ef2b8">TCP → ESP32 실행</text>
+  <text x="74" y="394" font-size="12" fill="#8c98a4">침실 LED ON</text>
+
+  <g stroke="#3a4654" stroke-width="1.6" fill="none">
+    <path d="M380 136 V 156"/>
+    <path d="M380 226 V 246"/>
+    <path d="M380 316 V 336"/>
+  </g>
+  <path d="M380 164 L 373 150 L 387 150 Z" fill="#3a4654"/>
+  <path d="M380 254 L 373 240 L 387 240 Z" fill="#3a4654"/>
+  <path d="M380 344 L 373 330 L 387 330 Z" fill="#3a4654"/>
+</svg>

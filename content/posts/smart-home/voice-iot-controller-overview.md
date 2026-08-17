@@ -28,15 +28,7 @@ summary: "\"자비스야, 침실 불 켜줘\" — 로컬 STT + LLM으로 ESP32 �
 
 Voice IoT Controller는 한국어 웨이크 워드 감지부터 ESP32 디바이스 제어까지 전 과정을 로컬에서 처리한다.
 
-```
-"자비스야" → 웨이크 워드 감지 (Porcupine)
-     ↓
-"침실 불 켜줘" → 음성 인식 (faster-whisper)
-     ↓
-{"cmd":"led","device_id":"esp32_bedroom","state":"on"} → LLM 파싱 (Ollama)
-     ↓
-TCP → ESP32 실행
-```
+{{< figure src="/images/diagrams/voice-iot-command-pipeline.svg" alt="음성 명령 처리 4단계 — \"자비스야\" 웨이크 워드 감지(Porcupine) → \"침실 불 켜줘\" 음성 인식(faster-whisper) → JSON 명령으로 LLM 파싱(Ollama) → TCP로 ESP32 실행" >}}
 
 단 4단계로, 사용자의 자연어 명령이 실제 하드웨어 동작으로 이어진다.
 
@@ -83,15 +75,15 @@ TCP → ESP32 실행
 
 ## 음성 명령 예시
 
-```
-"자비스야"                → 웨이크 워드 활성화
-"침실 불 켜줘"            → 침실 LED ON
-"차고문 열어줘"           → 차고 서보 90도
-"거실 음악 틀어줘"        → YouTube 음악 재생
-"볼륨 크게"               → 볼륨 80%
-"전체 불 꺼줘"            → 전체 디바이스 LED OFF
-"외출 전 전체 점검해줘"   → 전등 + 문 + 음악 전체 상태 응답
-```
+| 음성 명령 | 동작 |
+|---|---|
+| "자비스야" | 웨이크 워드 활성화 |
+| "침실 불 켜줘" | 침실 LED ON |
+| "차고문 열어줘" | 차고 서보 90도 |
+| "거실 음악 틀어줘" | YouTube 음악 재생 |
+| "볼륨 크게" | 볼륨 80% |
+| "전체 불 꺼줘" | 전체 디바이스 LED OFF |
+| "외출 전 전체 점검해줘" | 전등 + 문 + 음악 전체 상태 응답 |
 
 자연어 명령이 LLM을 통해 정확한 JSON 구조체로 변환되므로, "불 켜줘", "조명 ON", "라이트 온"처럼 다양한 표현을 모두 이해한다.
 
@@ -101,16 +93,7 @@ TCP → ESP32 실행
 
 서버 시작부터 ESP32 연결까지의 흐름이 체계적으로 설계되어 있다.
 
-```
-uvicorn 실행
-  → settings.yaml 로드
-  → 인스턴스 생성 (TCPServer, WebSocketHub, LLMEngine, STTEngine)
-  → 상호 의존성 연결
-  → TCP :9000 LISTEN (ESP32 대기)
-  → LLM Ollama 연결 확인
-  → STT 마이크 스트림 + 웨이크 워드 대기
-  → 서버 Ready
-```
+{{< figure src="/images/diagrams/voice-iot-boot-sequence.svg" alt="서버 부팅 시퀀스 8단계 — uvicorn 실행, settings.yaml 로드, 인스턴스 생성, 상호 의존성 연결, TCP :9000 LISTEN, LLM Ollama 연결 확인, STT 마이크 스트림과 웨이크 워드 대기, 서버 Ready" >}}
 
 ESP32는 전원이 켜지면 자동으로 WiFi 연결 → TCP 서버 접속 → `register` 메시지 전송 → 명령 수신 대기 순서로 동작한다. 연결이 끊기면 자동 재연결을 시도하므로, 네트워크 불안정에도 견고하다.
 

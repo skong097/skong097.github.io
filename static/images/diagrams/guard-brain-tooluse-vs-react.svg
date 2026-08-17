@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 300" width="780" height="300" font-family="'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace" role="img" aria-label="현재 Tool Use는 상황에서 도구1·도구2·도구3을 거쳐 완료로 가는 선형 흐름이고, 다음 단계 ReAct는 도구 호출 사이에 재판단을 넣어 결과에 따라 계획을 바꿀 수 있다">
+  <rect x="1" y="1" width="778" height="298" rx="14" fill="#0c1117" stroke="rgba(94,242,184,0.16)"/>
+  <rect x="1" y="1" width="778" height="46" rx="14" fill="rgba(255,255,255,0.02)"/>
+  <circle cx="26" cy="24" r="5.5" fill="#ff5f57"/>
+  <circle cx="44" cy="24" r="5.5" fill="#febc2e"/>
+  <circle cx="62" cy="24" r="5.5" fill="#28c840"/>
+  <text x="758" y="28" text-anchor="end" font-size="12" fill="#5d6b78">Tool Use vs ReAct — guard_brain_agent</text>
+
+  <text x="40" y="78" font-size="12" fill="#8c98a4">현재 (Tool Use) — 선형</text>
+  <g stroke="#3a4654" stroke-width="1.6" fill="none">
+    <path d="M136 111 H 150"/>
+    <path d="M250 111 H 264"/>
+    <path d="M364 111 H 378"/>
+    <path d="M478 111 H 492"/>
+  </g>
+  <path d="M158 111 L 146 105 L 146 117 Z" fill="#3a4654"/>
+  <path d="M272 111 L 260 105 L 260 117 Z" fill="#3a4654"/>
+  <path d="M386 111 L 374 105 L 374 117 Z" fill="#3a4654"/>
+  <path d="M500 111 L 488 105 L 488 117 Z" fill="#3a4654"/>
+  <rect x="40" y="92" width="92" height="38" rx="8" fill="rgba(108,182,255,0.06)" stroke="#3a4654" stroke-width="1.6"/>
+  <text x="86" y="116" text-anchor="middle" font-size="13" fill="#6cb6ff">상황</text>
+  <rect x="154" y="92" width="92" height="38" rx="8" fill="rgba(108,182,255,0.06)" stroke="#3a4654" stroke-width="1.6"/>
+  <text x="200" y="116" text-anchor="middle" font-size="13" fill="#6cb6ff">도구1</text>
+  <rect x="268" y="92" width="92" height="38" rx="8" fill="rgba(108,182,255,0.06)" stroke="#3a4654" stroke-width="1.6"/>
+  <text x="314" y="116" text-anchor="middle" font-size="13" fill="#6cb6ff">도구2</text>
+  <rect x="382" y="92" width="92" height="38" rx="8" fill="rgba(108,182,255,0.06)" stroke="#3a4654" stroke-width="1.6"/>
+  <text x="428" y="116" text-anchor="middle" font-size="13" fill="#6cb6ff">도구3</text>
+  <rect x="496" y="92" width="92" height="38" rx="8" fill="rgba(94,242,184,0.06)" stroke="#3a4654" stroke-width="1.6"/>
+  <text x="542" y="116" text-anchor="middle" font-size="13" fill="#5ef2b8">완료</text>
+
+  <text x="40" y="172" font-size="12" fill="#8c98a4">다음 (ReAct) — 재판단 삽입</text>
+  <g stroke="#3a4654" stroke-width="1.6" fill="none">
+    <path d="M136 205 H 150"/>
+    <path d="M250 205 H 264"/>
+    <path d="M364 205 H 378"/>
+    <path d="M478 205 H 492"/>
+    <path d="M592 205 H 606"/>
+  </g>
+  <path d="M158 205 L 146 199 L 146 211 Z" fill="#3a4654"/>
+  <path d="M272 205 L 260 199 L 260 211 Z" fill="#3a4654"/>
+  <path d="M386 205 L 374 199 L 374 211 Z" fill="#3a4654"/>
+  <path d="M500 205 L 488 199 L 488 211 Z" fill="#3a4654"/>
+  <path d="M614 205 L 602 199 L 602 211 Z" fill="#3a4654"/>
+  <rect x="40" y="186" width="92" height="38" rx="8" fill="rgba(108,182,255,0.06)" stroke="#3a4654" stroke-width="1.6"/>
+  <text x="86" y="210" text-anchor="middle" font-size="13" fill="#6cb6ff">상황</text>
+  <rect x="154" y="186" width="92" height="38" rx="8" fill="rgba(108,182,255,0.06)" stroke="#3a4654" stroke-width="1.6"/>
+  <text x="200" y="210" text-anchor="middle" font-size="13" fill="#6cb6ff">도구1</text>
+  <rect x="268" y="186" width="92" height="38" rx="8" fill="rgba(240,163,107,0.09)" stroke="#3a4654" stroke-width="1.6"/>
+  <text x="314" y="210" text-anchor="middle" font-size="13" font-weight="700" fill="#f0a36b">재판단</text>
+  <rect x="382" y="186" width="92" height="38" rx="8" fill="rgba(108,182,255,0.06)" stroke="#3a4654" stroke-width="1.6"/>
+  <text x="428" y="210" text-anchor="middle" font-size="13" fill="#6cb6ff">도구2</text>
+  <rect x="496" y="186" width="92" height="38" rx="8" fill="rgba(240,163,107,0.09)" stroke="#3a4654" stroke-width="1.6"/>
+  <text x="542" y="210" text-anchor="middle" font-size="13" font-weight="700" fill="#f0a36b">재판단</text>
+  <rect x="610" y="186" width="92" height="38" rx="8" fill="rgba(94,242,184,0.06)" stroke="#3a4654" stroke-width="1.6"/>
+  <text x="656" y="210" text-anchor="middle" font-size="13" fill="#5ef2b8">완료</text>
+
+  <g stroke="#f0a36b" stroke-width="1.4" fill="none">
+    <path d="M314 262 V 238"/>
+  </g>
+  <path d="M314 226 L 308 240 L 320 240 Z" fill="#f0a36b"/>
+  <text x="336" y="266" font-size="12" fill="#f0a36b">결과에 따라 계획 변경 가능</text>
+</svg>

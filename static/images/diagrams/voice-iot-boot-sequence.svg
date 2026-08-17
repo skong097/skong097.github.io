@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 400" width="700" height="400" font-family="'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace" role="img" aria-label="서버 부팅 시퀀스 8단계 — uvicorn 실행, settings.yaml 로드, 인스턴스 생성, 상호 의존성 연결, TCP 9000 LISTEN, LLM Ollama 연결 확인, STT 마이크 스트림과 웨이크 워드 대기, 서버 Ready">
+  <rect x="1" y="1" width="698" height="398" rx="14" fill="#0c1117" stroke="rgba(94,242,184,0.16)"/>
+  <rect x="1" y="1" width="698" height="46" rx="14" fill="rgba(255,255,255,0.02)"/>
+  <circle cx="26" cy="24" r="5.5" fill="#ff5f57"/>
+  <circle cx="44" cy="24" r="5.5" fill="#febc2e"/>
+  <circle cx="62" cy="24" r="5.5" fill="#28c840"/>
+  <text x="678" y="28" text-anchor="end" font-size="12" fill="#5d6b78">boot sequence — uvicorn</text>
+
+  <!-- spine -->
+  <g stroke="#3a4654" stroke-width="1.6" fill="none">
+    <path d="M80 88 V 354"/>
+  </g>
+
+  <circle cx="80" cy="88" r="5" fill="#6cb6ff"/>
+  <text x="108" y="93" font-size="13" font-weight="700" fill="#6cb6ff">uvicorn 실행</text>
+
+  <circle cx="80" cy="126" r="5" fill="#3a4654"/>
+  <text x="108" y="131" font-size="13" fill="#c9d4e0">settings.yaml 로드</text>
+
+  <circle cx="80" cy="164" r="5" fill="#3a4654"/>
+  <text x="108" y="169" font-size="13" fill="#c9d4e0">인스턴스 생성 (TCPServer, WebSocketHub, LLMEngine, STTEngine)</text>
+
+  <circle cx="80" cy="202" r="5" fill="#3a4654"/>
+  <text x="108" y="207" font-size="13" fill="#c9d4e0">상호 의존성 연결</text>
+
+  <circle cx="80" cy="240" r="5" fill="#f0a36b"/>
+  <text x="108" y="245" font-size="13" fill="#c9d4e0">TCP :9000 LISTEN <tspan fill="#8c98a4">(ESP32 대기)</tspan></text>
+
+  <circle cx="80" cy="278" r="5" fill="#f0a36b"/>
+  <text x="108" y="283" font-size="13" fill="#c9d4e0">LLM Ollama 연결 확인</text>
+
+  <circle cx="80" cy="316" r="5" fill="#f0a36b"/>
+  <text x="108" y="321" font-size="13" fill="#c9d4e0">STT 마이크 스트림 + 웨이크 워드 대기</text>
+
+  <circle cx="80" cy="354" r="5" fill="#5ef2b8"/>
+  <text x="108" y="359" font-size="13" font-weight="700" fill="#5ef2b8">서버 Ready</text>
+</svg>

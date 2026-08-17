@@ -23,9 +23,7 @@ draft: false
 
 처음엔 LLM이 모든 걸 판단하도록 설계했다.
 
-```
-요청 → LLM 판단 → 도구 선택 → 도구 호출 → 결과 관찰 → 반복
-```
+{{< figure src="/images/diagrams/blog-writer-agent-tooluse-loop.svg" alt="처음 설계한 Tool Use 루프 — 요청에서 LLM 판단, 도구 선택, 도구 호출, 결과 관찰을 거쳐 다시 LLM 판단으로 돌아가는 반복 구조" >}}
 
 Guard Brain Agent(Phase 1)에서 썼던 Tool Use 패턴이다. 그런데 Blog Writer에서는 계속 문제가 생겼다.
 
@@ -131,7 +129,7 @@ curl -X POST http://localhost:8101/agent/write \
   -d '{"request": "ST-GCN 파인튜닝으로 낙상감지 91.89% 달성한 포스트 작성해줘"}'
 ```
 
-```
+```text
 [Step 1] scan_references — 'ST-GCN 파인튜닝으로 낙상감지'
   found: 6개
 

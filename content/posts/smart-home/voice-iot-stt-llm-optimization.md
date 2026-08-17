@@ -21,10 +21,7 @@ summary: "faster-whisper CPU 튜닝, Ollama 모델 업그레이드, OpenAI 전�
 
 Voice IoT Controller의 초기 파이프라인은 이런 구조였다.
 
-```
-웨이크워드 → Whisper (2~4s) → LLM (1~3s) → ESP32
-총 소요: 3~7초
-```
+{{< figure src="/images/diagrams/voice-iot-latency-before.svg" alt="최적화 전 음성 파이프라인 — 웨이크워드에서 Whisper(2~4초), LLM(1~3초)을 거쳐 ESP32까지 총 3~7초 소요" >}}
 
 "불 켜줘" 한마디에 7초를 기다리는 건 사용자 경험으로서 실패다. 특히 IoT 명령은 대부분 짧은 단문이므로, 무거운 추론이 불필요하다. 이 글에서는 STT와 LLM 각각을 어떻게 최적화했는지, 그리고 OpenAI API 전환을 시도했다가 원복한 과정까지 기록한다.
 
