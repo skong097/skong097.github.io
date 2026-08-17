@@ -20,187 +20,193 @@ hideMeta: true
 
 **도메인 표기** — `AV` 자율주행차량 · `AGV` 산업 무인운반차/AMR · `MR` 다중로봇·플릿
 
+**유형 표기** — 제목은 「알고리즘 딕셔너리」지만 전부가 알고리즘은 아니다. 판별식은
+**"이름을 듣고 `입력 → 단계 → 출력`을 적을 수 있는가"** 하나다.
+`알고리즘`(적힌다) · `학습모델`(파라미터가 답을 만든다) · `패턴`(설계 약속) ·
+`수학모델`(수식·좌표계·지표) · `문제`(단계가 없다) · `표현`(자료구조) ·
+`구현체`(특정 알고리즘의 패키지) · `규격`(표준). **이름표를 속이지 않으려고 붙였다.**
+
 
 현재 **10개 섹터 · 119개 항목**.
 
 
 ## S0. 센서 · 전처리
 
-| 알고리즘 | 푸는 문제 | 도메인 |
-|---|---|:---:|
-| 카메라 캘리브레이션 (Zhang) | 렌즈 왜곡·초점거리를 모르면 픽셀→미터 환산이 전부 틀어진다 | AV AGV |
-| IPM / BEV 역투영 | 원근 때문에 먼 차선이 좁아 보여 곡률 계산이 안 된다 | AV |
-| 호모그래피 4점 매핑 | 천장 카메라 픽셀을 바닥 실좌표로 옮겨야 한다 | AGV MR |
-| 라이다 모션 왜곡 보정 (deskew) | 스캔 1회 도는 동안 로봇이 움직여 점군이 휘어진다 | AV AGV |
-| 지면 분리 (RANSAC plane · Patchwork++) | 바닥을 장애물로 오인하면 아무 데도 못 간다 | AV |
-| Voxel grid 다운샘플 | 점군 수십만 점을 그대로 처리하면 실시간이 안 된다 | AV |
-| 센서 시각 동기화 (ApproximateTime) | 융합하려는 두 센서의 타임스탬프가 안 맞으면 융합이 오히려 해가 된다 | AV AGV |
-| 색공간 임계 (HSV) 검출 | 조명이 바뀌면 RGB 임계는 다 깨진다 | AV |
+| 알고리즘 | 유형 | 푸는 문제 | 도메인 |
+|---|:---:|---|:---:|
+| 카메라 캘리브레이션 (Zhang) | 알고리즘 | 렌즈 왜곡·초점거리를 모르면 픽셀→미터 환산이 전부 틀어진다 | AV AGV |
+| IPM 역투시 변환 | 수학모델 | 원근 때문에 먼 차선이 좁아 보여 곡률 계산이 안 된다 | AV |
+| DLT (Direct Linear Transform) | 알고리즘 | 천장 카메라 픽셀을 바닥 실좌표로 옮겨야 한다 | AGV MR |
+| 스캔 deskew (모션 보상) | 알고리즘 | 스캔 1회 도는 동안 로봇이 움직여 점군이 휘어진다 | AV AGV |
+| RANSAC 평면 적합 · Patchwork++ | 알고리즘 | 바닥을 장애물로 오인하면 아무 데도 못 간다 | AV |
+| Voxel grid 다운샘플 | 알고리즘 | 점군 수십만 점을 그대로 처리하면 실시간이 안 된다 | AV |
+| ApproximateTime 동기화 | 알고리즘 | 융합하려는 두 센서의 타임스탬프가 안 맞으면 융합이 오히려 해가 된다 | AV AGV |
+| HSV 임계 분할 | 알고리즘 | 조명이 바뀌면 RGB 임계는 다 깨진다 | AV |
 
 
 ## S1. 인지 (Perception)
 
-| 알고리즘 | 푸는 문제 | 도메인 |
-|---|---|:---:|
-| Canny + Hough 차선 | 차선이 어디 있는지 딥러닝 없이 뽑아야 한다 | AV |
-| Sliding window + polyfit | 끊긴 점선 차선을 하나의 곡선으로 이어야 한다 | AV |
-| CLRNet / UFLD / LaneNet | 고전 CV가 무너지는 조명·마모·가림에서 차선을 뽑아야 한다 | AV |
-| YOLO 계열 2D 검출 | 사람·차·표지판을 실시간으로 박스로 잡아야 한다 | AV AGV |
-| PointPillars / CenterPoint | 라이다 점군에서 3D 박스를 실시간으로 뽑아야 한다 | AV |
-| BEVFormer / BEVFusion | 카메라 여러 대를 한 BEV 좌표계에서 융합해야 한다 | AV |
-| Occupancy Network | 박스로 표현 안 되는 형태(공사자재·이물)를 다뤄야 한다 | AV |
-| 프리스페이스 세그멘테이션 | "갈 수 있는 곳"을 물체 인식 없이 직접 뽑아야 한다 | AV AGV |
-| SORT / DeepSORT / ByteTrack | 프레임마다 다시 검출된 물체가 같은 놈인지 이어야 한다 | AV MR |
-| ArUco / AprilTag | 인프라 없는 실내에서 절대 좌표 기준점이 필요하다 | AGV MR |
-| 신호등·표지판 인지 | 규칙이 바뀌는 지점(교차로·스쿨존)을 시각으로 판정해야 한다 | AV |
-| 벡터맵 색 분류 + 노이즈 제거 | 도면 이미지를 주행 가능한 벡터로 바꿔야 한다 | AV |
-| Waypoint 자동 추출 | 사람이 수백 개 경유점을 손으로 못 찍는다 | AV AGV |
-| 포즈 추정 (skeleton) | 사람의 자세/제스처를 명령·이벤트로 써야 한다 | MR |
+| 알고리즘 | 유형 | 푸는 문제 | 도메인 |
+|---|:---:|---|:---:|
+| Canny + Hough 차선 | 알고리즘 | 차선이 어디 있는지 딥러닝 없이 뽑아야 한다 | AV |
+| Sliding window + polyfit | 알고리즘 | 끊긴 점선 차선을 하나의 곡선으로 이어야 한다 | AV |
+| CLRNet / UFLD / LaneNet | 학습모델 | 고전 CV가 무너지는 조명·마모·가림에서 차선을 뽑아야 한다 | AV |
+| YOLO 계열 2D 검출 | 학습모델 | 사람·차·표지판을 실시간으로 박스로 잡아야 한다 | AV AGV |
+| PointPillars / CenterPoint | 학습모델 | 라이다 점군에서 3D 박스를 실시간으로 뽑아야 한다 | AV |
+| BEVFormer / BEVFusion | 학습모델 | 카메라 여러 대를 한 BEV 좌표계에서 융합해야 한다 | AV |
+| Occupancy Network | 학습모델 | 박스로 표현 안 되는 형태(공사자재·이물)를 다뤄야 한다 | AV |
+| 프리스페이스 세그멘테이션 | 문제 | "갈 수 있는 곳"을 물체 인식 없이 직접 뽑아야 한다 | AV AGV |
+| SORT / DeepSORT / ByteTrack | 알고리즘 | 프레임마다 다시 검출된 물체가 같은 놈인지 이어야 한다 | AV MR |
+| ArUco / AprilTag 검출 | 알고리즘 | 인프라 없는 실내에서 절대 좌표 기준점이 필요하다 | AGV MR |
+| 신호등·표지판 인지 | 문제 | 규칙이 바뀌는 지점(교차로·스쿨존)을 시각으로 판정해야 한다 | AV |
+| 벡터맵 색 분류 + 노이즈 제거 | 문제 | 도면 이미지를 주행 가능한 벡터로 바꿔야 한다 | AV |
+| Waypoint 자동 추출 | 문제 | 사람이 수백 개 경유점을 손으로 못 찍는다 | AV AGV |
+| 포즈 추정 (skeleton) | 문제 | 사람의 자세/제스처를 명령·이벤트로 써야 한다 | MR |
 
 
 ## S2. 측위 · 상태추정 (Localization & State Estimation)
 
-| 알고리즘 | 푸는 문제 | 도메인 |
-|---|---|:---:|
-| Kalman Filter | 노이즈 섞인 관측에서 참값을 최적 추정해야 한다 | 전부 |
-| **EKF** | 로봇 운동은 비선형인데 KF는 선형만 다룬다 | 전부 |
-| UKF / ESKF | 강한 비선형·자세(quaternion)에서 EKF 선형화가 무너진다 | AV |
-| 단계적 센서 융합 검증 | 센서를 한꺼번에 넣으면 어느 놈이 망쳤는지 모른다 | AGV MR |
-| **MCL / AMCL (파티클 필터)** | 사전 지도 위에서 초기 위치를 모른 채 전역 측위해야 한다 | AGV |
-| ICP / GICP | 두 점군을 겹쳐 상대 변위를 구해야 한다 | AV AGV |
-| NDT | 점 대응 없이 점군 정합을 빠르고 강건하게 해야 한다 | AV |
-| Graph SLAM / Pose graph | 누적 오차를 루프 클로저로 한 번에 되돌려야 한다 | AGV |
-| gmapping (RBPF) | 파티클마다 지도를 들고 SLAM 해야 한다 | AGV |
-| Cartographer / slam_toolbox | 실시간 SLAM + 사후 최적화를 한 스택에서 | AGV |
-| LOAM / LIO-SAM / FAST-LIO2 | 라이다+IMU로 GPS 없이 고정밀 오도메트리 | AV |
-| ORB-SLAM3 / VINS-Fusion | 카메라만으로 위치와 지도를 동시에 | AV |
-| 휠 오도메트리 캘리브레이션 (UMBmark) | 바퀴 지름·축간거리 오차가 거리에 비례해 누적된다 | AGV |
-| 천장 마커 / 외부 인프라 측위 | 벽이 없는 개방 공간은 라이다 측위가 원리적으로 불가능하다 | AGV MR |
-| UWB TWR/TDOA · 비콘 핑거프린팅 | 시야 확보가 안 되는 실내에서 전파로 위치를 | AGV |
+| 알고리즘 | 유형 | 푸는 문제 | 도메인 |
+|---|:---:|---|:---:|
+| Kalman Filter | 알고리즘 | 노이즈 섞인 관측에서 참값을 최적 추정해야 한다 | 전부 |
+| **EKF** | 알고리즘 | 로봇 운동은 비선형인데 KF는 선형만 다룬다 | 전부 |
+| UKF / ESKF | 알고리즘 | 강한 비선형·자세(quaternion)에서 EKF 선형화가 무너진다 | AV |
+| 단계적 센서 융합 검증 | 패턴 | 센서를 한꺼번에 넣으면 어느 놈이 망쳤는지 모른다 | AGV MR |
+| **MCL / AMCL (파티클 필터)** | 알고리즘 | 사전 지도 위에서 초기 위치를 모른 채 전역 측위해야 한다 | AGV |
+| ICP / GICP | 알고리즘 | 두 점군을 겹쳐 상대 변위를 구해야 한다 | AV AGV |
+| NDT | 알고리즘 | 점 대응 없이 점군 정합을 빠르고 강건하게 해야 한다 | AV |
+| Graph SLAM / Pose graph | 알고리즘 | 누적 오차를 루프 클로저로 한 번에 되돌려야 한다 | AGV |
+| gmapping (RBPF) | 알고리즘 | 파티클마다 지도를 들고 SLAM 해야 한다 | AGV |
+| Cartographer / slam_toolbox | 구현체 | 실시간 SLAM + 사후 최적화를 한 스택에서 | AGV |
+| LOAM / LIO-SAM / FAST-LIO2 | 알고리즘 | 라이다+IMU로 GPS 없이 고정밀 오도메트리 | AV |
+| ORB-SLAM3 / VINS-Fusion | 구현체 | 카메라만으로 위치와 지도를 동시에 | AV |
+| 휠 오도메트리 캘리브레이션 (UMBmark) | 알고리즘 | 바퀴 지름·축간거리 오차가 거리에 비례해 누적된다 | AGV |
+| 천장 마커 / 외부 인프라 측위 | 문제 | 벽이 없는 개방 공간은 라이다 측위가 원리적으로 불가능하다 | AGV MR |
+| UWB TWR/TDOA · 비콘 핑거프린팅 | 알고리즘 | 시야 확보가 안 되는 실내에서 전파로 위치를 | AGV |
 
 
 ## S3. 지도 · 표현 (Mapping & Representation)
 
-| 알고리즘 | 푸는 문제 | 도메인 |
-|---|---|:---:|
-| Occupancy grid (log-odds) | 센서 관측을 누적해 "여기 뭐 있나"를 확률로 | AGV MR |
-| Costmap 2D + inflation layer | 로봇을 점으로 취급하려고 장애물을 부풀린다 | AGV |
-| STVL / 3D voxel layer | 지면 위 높이가 있는 장애물을 2D 그리드가 못 본다 | AGV |
-| 2.5D Elevation map | 경사·턱을 높이로 구분해 비용에 반영해야 한다 | AGV MR |
-| Octomap / TSDF / ESDF | 3D 공간을 메모리 안에서 표현하고 거리장을 뽑아야 한다 | AV |
-| **토폴로지 그래프 / 웨이포인트 맵** | 도로처럼 갈 수 있는 길이 정해진 곳에서 그리드는 낭비다 | AV AGV |
-| Lanelet2 / OpenDRIVE / HD map | 차선 단위 규칙(방향·연결·우선권)을 지도가 들고 있어야 한다 | AV |
-| 맵 병합 (Delta merging) | 여러 로봇이 만든 지도를 하나로 합쳐야 한다 | MR |
-| 좌표 프레임 정합 (2D rigid) | 두 시스템의 좌표계가 다르면 같은 지점을 다르게 부른다 | MR |
+| 알고리즘 | 유형 | 푸는 문제 | 도메인 |
+|---|:---:|---|:---:|
+| Occupancy grid (log-odds) | 표현 | 센서 관측을 누적해 "여기 뭐 있나"를 확률로 | AGV MR |
+| Costmap 2D + inflation layer | 표현 | 로봇을 점으로 취급하려고 장애물을 부풀린다 | AGV |
+| STVL / 3D voxel layer | 구현체 | 지면 위 높이가 있는 장애물을 2D 그리드가 못 본다 | AGV |
+| 2.5D Elevation map | 표현 | 경사·턱을 높이로 구분해 비용에 반영해야 한다 | AGV MR |
+| Octomap / TSDF / ESDF | 표현 | 3D 공간을 메모리 안에서 표현하고 거리장을 뽑아야 한다 | AV |
+| **토폴로지 그래프 / 웨이포인트 맵** | 표현 | 도로처럼 갈 수 있는 길이 정해진 곳에서 그리드는 낭비다 | AV AGV |
+| Lanelet2 / OpenDRIVE / HD map | 규격 | 차선 단위 규칙(방향·연결·우선권)을 지도가 들고 있어야 한다 | AV |
+| 맵 병합 (Delta merging) | 알고리즘 | 여러 로봇이 만든 지도를 하나로 합쳐야 한다 | MR |
+| Umeyama / Kabsch 정합 | 알고리즘 | 두 시스템의 좌표계가 다르면 같은 지점을 다르게 부른다 | MR |
 
 
 ## S4. 전역 경로계획 (Global Planning)
 
-| 알고리즘 | 푸는 문제 | 도메인 |
-|---|---|:---:|
-| Dijkstra | 가중 그래프에서 최단경로를 확실히 | 전부 |
-| **A\*** | Dijkstra가 목표 방향을 무시해 너무 많이 탐색한다 | 전부 |
-| Weighted A\* / Theta\* | A\*가 격자 대각선에만 묶여 부자연스러운 지그재그를 만든다 | AGV |
-| Jump Point Search | 균일 격자에서 A\*가 같은 값 노드를 중복 전개한다 | AGV |
-| D\* / D\* Lite | 장애물이 새로 보일 때마다 전체를 다시 풀면 늦다 | AV AGV |
-| **Hybrid A\*** | 차량은 제자리 회전이 안 되는데 A\*는 그걸 모른다 | AV AGV |
-| Reeds-Shepp / Dubins | 최소 회전반경 제약 하의 최단 곡선을 닫힌 해로 | AV AGV |
-| State lattice | 운동학적으로 실행 가능한 궤적만 골라 이어붙여야 한다 | AV |
-| RRT / RRT-Connect | 고차원 공간에서 격자 탐색이 폭발한다 | MR |
-| RRT\* / Informed RRT\* / BIT\* | RRT 해는 최적이 아니다 | MR |
-| PRM | 같은 지도에서 여러 번 계획할 거면 로드맵을 미리 깔아두는 게 싸다 | AGV |
-| NavFn / Smac Planner (Nav2) | ROS 2 표준 스택에서 위를 실제로 쓰는 구현체 | AGV |
-| 경유점 라우팅 (waypoint following) | 최단경로가 아니라 "지정한 길로" 가야 하는 운영 요구 | AGV MR |
+| 알고리즘 | 유형 | 푸는 문제 | 도메인 |
+|---|:---:|---|:---:|
+| Dijkstra | 알고리즘 | 가중 그래프에서 최단경로를 확실히 | 전부 |
+| **A\*** | 알고리즘 | Dijkstra가 목표 방향을 무시해 너무 많이 탐색한다 | 전부 |
+| Weighted A\* / Theta\* | 알고리즘 | A\*가 격자 대각선에만 묶여 부자연스러운 지그재그를 만든다 | AGV |
+| Jump Point Search | 알고리즘 | 균일 격자에서 A\*가 같은 값 노드를 중복 전개한다 | AGV |
+| D\* / D\* Lite | 알고리즘 | 장애물이 새로 보일 때마다 전체를 다시 풀면 늦다 | AV AGV |
+| **Hybrid A\*** | 알고리즘 | 차량은 제자리 회전이 안 되는데 A\*는 그걸 모른다 | AV AGV |
+| Reeds-Shepp / Dubins 최단곡선 | 알고리즘 | 최소 회전반경 제약 하의 최단 곡선을 닫힌 해로 | AV AGV |
+| State lattice | 알고리즘 | 운동학적으로 실행 가능한 궤적만 골라 이어붙여야 한다 | AV |
+| RRT / RRT-Connect | 알고리즘 | 고차원 공간에서 격자 탐색이 폭발한다 | MR |
+| RRT\* / Informed RRT\* / BIT\* | 알고리즘 | RRT 해는 최적이 아니다 | MR |
+| PRM | 알고리즘 | 같은 지도에서 여러 번 계획할 거면 로드맵을 미리 깔아두는 게 싸다 | AGV |
+| NavFn / Smac Planner (Nav2) | 구현체 | ROS 2 표준 스택에서 위를 실제로 쓰는 구현체 | AGV |
+| 경유점 라우팅 (waypoint following) | 패턴 | 최단경로가 아니라 "지정한 길로" 가야 하는 운영 요구 | AGV MR |
 
 
 ## S5. 지역 계획 · 궤적 (Local Planning & Trajectory)
 
-| 알고리즘 | 푸는 문제 | 도메인 |
-|---|---|:---:|
-| **DWA / DWB** | 전역 경로는 동역학을 모른다 — 지금 낼 수 있는 속도 안에서 골라야 한다 | AGV |
-| TEB (Timed Elastic Band) | 경로를 시간 축까지 포함해 탄성체처럼 변형시켜 최적화 | AGV |
-| **MPPI** | 비용함수가 미분 불가능(충돌=0/1)하면 고전 MPC가 못 푼다 | AGV AV |
-| **MPC / NMPC** | 제약(속도·조향·충돌)을 지킨 채 미래 N스텝을 최적화해야 한다 | AV AGV |
-| Frenet frame 궤적 생성 | 도로에서는 좌표를 x/y가 아니라 "차선 따라 s, 옆으로 d"로 봐야 한다 | AV |
-| 다항식 궤적 (quintic · jerk-optimal) | 승차감은 가속도가 아니라 저크가 결정한다 | AV |
-| VO / RVO / **ORCA** | 상대도 피하는데 나도 피하면 서로 진동한다 | MR |
-| Potential field (APF) | 계획 없이 힘의 합으로 즉시 회피 — 단 지역최소에 빠진다 | MR |
-| Elastic Band | 전역 경로를 장애물이 밀어내는 고무줄로 다룬다 | AGV |
-| S-T graph / 속도 프로파일 | 어디로 갈지와 언제 갈지는 다른 문제다 | AV |
-| Bezier / Clothoid / Spline 평활 | 꺾인 경로를 그대로 따라가면 조향이 튄다 | AV AGV |
-| 가상 장애물 주입 | 소프트웨어로 "여기 못 감"을 만들어야 할 때가 있다 | AGV MR |
+| 알고리즘 | 유형 | 푸는 문제 | 도메인 |
+|---|:---:|---|:---:|
+| **DWA / DWB** | 알고리즘 | 전역 경로는 동역학을 모른다 — 지금 낼 수 있는 속도 안에서 골라야 한다 | AGV |
+| TEB (Timed Elastic Band) | 알고리즘 | 경로를 시간 축까지 포함해 탄성체처럼 변형시켜 최적화 | AGV |
+| **MPPI** | 알고리즘 | 비용함수가 미분 불가능(충돌=0/1)하면 고전 MPC가 못 푼다 | AGV AV |
+| **MPC / NMPC** | 알고리즘 | 제약(속도·조향·충돌)을 지킨 채 미래 N스텝을 최적화해야 한다 | AV AGV |
+| Frenet 궤적 생성 (Werling) | 알고리즘 | 도로에서는 좌표를 x/y가 아니라 "차선 따라 s, 옆으로 d"로 봐야 한다 | AV |
+| 다항식 궤적 (quintic · jerk-optimal) | 알고리즘 | 승차감은 가속도가 아니라 저크가 결정한다 | AV |
+| VO / RVO / **ORCA** | 알고리즘 | 상대도 피하는데 나도 피하면 서로 진동한다 | MR |
+| Potential field (APF) | 알고리즘 | 계획 없이 힘의 합으로 즉시 회피 — 단 지역최소에 빠진다 | MR |
+| Elastic Band | 알고리즘 | 전역 경로를 장애물이 밀어내는 고무줄로 다룬다 | AGV |
+| S-T graph / 속도 프로파일 | 표현 | 어디로 갈지와 언제 갈지는 다른 문제다 | AV |
+| Bezier / Clothoid / Spline 평활 | 수학모델 | 꺾인 경로를 그대로 따라가면 조향이 튄다 | AV AGV |
+| 가상 장애물 주입 | 패턴 | 소프트웨어로 "여기 못 감"을 만들어야 할 때가 있다 | AGV MR |
 
 
 ## S6. 제어 · 경로추종 (Control)
 
-| 알고리즘 | 푸는 문제 | 도메인 |
-|---|---|:---:|
-| PID | 목표와 현재의 차이를 어떻게 명령으로 바꿀 것인가 | 전부 |
-| **Pure Pursuit** | 경로 위 전방점 하나만 보고 조향을 기하로 푼다 | AV AGV |
-| **Regulated Pure Pursuit (RPP)** | Pure Pursuit이 곡률·장애물 근접에서 너무 빠르다 | AGV |
-| Stanley controller | 전륜 기준 횡오차+헤딩오차를 한 식으로 (DARPA 우승 제어기) | AV |
-| Kinematic bicycle model | 4륜 차량을 자전거 2륜으로 줄여야 식이 풀린다 | AV |
-| 차동구동 역기구학 | v·ω를 좌우 바퀴 속도로 | AGV MR |
-| Mecanum / 옴니 역기구학 | 횡이동이 되는 구동계는 식이 다르다 | AGV |
-| LQR / iLQR·DDP | 비용을 최소화하는 피드백 게인을 이론적으로 유도 | AV |
-| 비전 서보 (visual servoing) | 목표가 지도상 좌표가 아니라 카메라에 보이는 것일 때 | AGV |
-| 최종 정렬 / RotationShim | 도착은 했는데 방향이 틀리면 도킹이 안 된다 | AGV |
-| S-curve 가감속 | 사다리꼴 속도 프로파일은 저크가 무한대다 | AGV |
+| 알고리즘 | 유형 | 푸는 문제 | 도메인 |
+|---|:---:|---|:---:|
+| PID | 알고리즘 | 목표와 현재의 차이를 어떻게 명령으로 바꿀 것인가 | 전부 |
+| **Pure Pursuit** | 알고리즘 | 경로 위 전방점 하나만 보고 조향을 기하로 푼다 | AV AGV |
+| **Regulated Pure Pursuit (RPP)** | 알고리즘 | Pure Pursuit이 곡률·장애물 근접에서 너무 빠르다 | AGV |
+| Stanley controller | 알고리즘 | 전륜 기준 횡오차+헤딩오차를 한 식으로 (DARPA 우승 제어기) | AV |
+| Kinematic bicycle model | 수학모델 | 4륜 차량을 자전거 2륜으로 줄여야 식이 풀린다 | AV |
+| 차동구동 역기구학 | 수학모델 | v·ω를 좌우 바퀴 속도로 | AGV MR |
+| Mecanum / 옴니 역기구학 | 수학모델 | 횡이동이 되는 구동계는 식이 다르다 | AGV |
+| LQR / iLQR·DDP | 알고리즘 | 비용을 최소화하는 피드백 게인을 이론적으로 유도 | AV |
+| 비전 서보 (visual servoing) | 알고리즘 | 목표가 지도상 좌표가 아니라 카메라에 보이는 것일 때 | AGV |
+| 최종 정렬 / RotationShim | 구현체 | 도착은 했는데 방향이 틀리면 도킹이 안 된다 | AGV |
+| S-curve 가감속 | 알고리즘 | 사다리꼴 속도 프로파일은 저크가 무한대다 | AGV |
 
 
 ## S7. 다중로봇 · 플릿 (Multi-Robot & Fleet)
 
-| 알고리즘 | 푸는 문제 | 도메인 |
-|---|---|:---:|
-| **CBS / ECBS** | 여러 대의 경로를 따로 풀면 반드시 충돌한다 | MR AGV |
-| Prioritized planning (PBS) | CBS는 대수가 늘면 폭발한다 — 우선순위로 순차 해결 | MR |
-| PIBT / LNS2 / RHCR | 작업이 끊임없이 들어오는 현장은 1회성 MAPF로 안 된다 | AGV |
-| 교차로 예약 (reservation) | 교차 구간을 시간 슬롯으로 잘라 선점시킨다 | AV AGV |
-| 데드락 검출 (자원할당 그래프) | 서로 상대가 비키기를 기다리면 영원히 안 움직인다 | AGV MR |
-| **경매 / 시장기반 배차 (CBBA)** | 누가 어느 일을 할지 중앙이 다 못 정한다 | MR |
-| 헝가리안 알고리즘 | N작업 M로봇 최적 1:1 할당을 다항시간에 | MR |
-| Leader-follower 편대 | 여러 대가 대형을 유지하며 이동해야 한다 | MR |
-| Consensus / Flocking (Reynolds) | 중앙 없이 이웃 정보만으로 군집 거동을 만든다 | MR |
-| 커버리지 (BCD · Spanning Tree) | 한 점이 아니라 영역 전체를 빠짐없이 훑어야 한다 | MR AGV |
-| **Heartbeat / liveness 판정** | 죽은 로봇을 살아 있다고 믿으면 배차가 블랙홀이 된다 | MR |
-| 도메인 격리 / 2-Context 브리지 | 로봇 N대가 한 DDS 도메인에 있으면 discovery가 터진다 | MR |
-| Stale data 보정 | 늦게 도착한 남의 상태로 판단하면 과거를 현재로 착각한다 | MR |
-| **VDA 5050 / OpenRMF** | 벤더가 다른 AGV를 한 관제로 묶는 표준 인터페이스 | AGV MR |
+| 알고리즘 | 유형 | 푸는 문제 | 도메인 |
+|---|:---:|---|:---:|
+| **CBS / ECBS** | 알고리즘 | 여러 대의 경로를 따로 풀면 반드시 충돌한다 | MR AGV |
+| Prioritized planning (PBS) | 알고리즘 | CBS는 대수가 늘면 폭발한다 — 우선순위로 순차 해결 | MR |
+| PIBT / LNS2 / RHCR | 알고리즘 | 작업이 끊임없이 들어오는 현장은 1회성 MAPF로 안 된다 | AGV |
+| 교차로 예약 (reservation) | 알고리즘 | 교차 구간을 시간 슬롯으로 잘라 선점시킨다 | AV AGV |
+| 데드락 검출 (자원할당 그래프) | 알고리즘 | 서로 상대가 비키기를 기다리면 영원히 안 움직인다 | AGV MR |
+| **경매 / 시장기반 배차 (CBBA)** | 알고리즘 | 누가 어느 일을 할지 중앙이 다 못 정한다 | MR |
+| 헝가리안 알고리즘 | 알고리즘 | N작업 M로봇 최적 1:1 할당을 다항시간에 | MR |
+| Leader-follower 편대 | 알고리즘 | 여러 대가 대형을 유지하며 이동해야 한다 | MR |
+| Consensus / Flocking (Reynolds) | 알고리즘 | 중앙 없이 이웃 정보만으로 군집 거동을 만든다 | MR |
+| 커버리지 (BCD · Spanning Tree) | 알고리즘 | 한 점이 아니라 영역 전체를 빠짐없이 훑어야 한다 | MR AGV |
+| **Heartbeat / liveness 판정** | 패턴 | 죽은 로봇을 살아 있다고 믿으면 배차가 블랙홀이 된다 | MR |
+| 도메인 격리 / 2-Context 브리지 | 패턴 | 로봇 N대가 한 DDS 도메인에 있으면 discovery가 터진다 | MR |
+| Stale data 보정 | 패턴 | 늦게 도착한 남의 상태로 판단하면 과거를 현재로 착각한다 | MR |
+| **VDA 5050 / OpenRMF** | 규격 | 벤더가 다른 AGV를 한 관제로 묶는 표준 인터페이스 | AGV MR |
 
 
 ## S8. 학습기반 · 예측 (Learning & Prediction)
 
-| 알고리즘 | 푸는 문제 | 도메인 |
-|---|---|:---:|
-| Behavior Cloning | 규칙으로 못 쓰는 주행을 사람 데이터로 흉내낸다 | AV |
-| **PilotNet (end-to-end IL)** | 인지→계획→제어 파이프라인 전체를 CNN 하나로 | AV |
-| DAgger | BC는 자기가 낸 오차 상태를 학습 데이터에서 본 적이 없다 | AV |
-| DQN / PPO / SAC | 보상만 주고 정책을 스스로 찾게 한다 | AV MR |
-| Sim-to-real | 시뮬에서 배운 게 실물에서 안 된다 | AV MR |
-| Social Force Model | 사람은 장애물이 아니라 의도를 가진 개체다 | MR |
-| Social LSTM / Trajectron++ | 주변 개체의 다음 3초를 확률분포로 예측해야 한다 | AV |
-| VectorNet / TNT / MTR | HD맵과 궤적을 벡터로 넣어 예측 정확도를 올린다 | AV |
-| UniAD / VAD | 인지·예측·계획을 하나의 학습 가능한 그래프로 | AV |
-| World model (Wayve GAIA 등) | 시뮬레이터를 손으로 안 만들고 데이터로 생성한다 | AV |
-| Diffusion policy | 다봉(multi-modal) 행동 분포를 하나의 평균으로 뭉개지 않는다 | MR |
-| VLA (RT-2 · π0) | 언어 지시를 로봇 행동으로 직접 | MR |
+| 알고리즘 | 유형 | 푸는 문제 | 도메인 |
+|---|:---:|---|:---:|
+| Behavior Cloning | 알고리즘 | 규칙으로 못 쓰는 주행을 사람 데이터로 흉내낸다 | AV |
+| **PilotNet (end-to-end IL)** | 학습모델 | 인지→계획→제어 파이프라인 전체를 CNN 하나로 | AV |
+| DAgger | 알고리즘 | BC는 자기가 낸 오차 상태를 학습 데이터에서 본 적이 없다 | AV |
+| DQN / PPO / SAC | 알고리즘 | 보상만 주고 정책을 스스로 찾게 한다 | AV MR |
+| Sim-to-real | 문제 | 시뮬에서 배운 게 실물에서 안 된다 | AV MR |
+| Social Force Model | 수학모델 | 사람은 장애물이 아니라 의도를 가진 개체다 | MR |
+| Social LSTM / Trajectron++ | 학습모델 | 주변 개체의 다음 3초를 확률분포로 예측해야 한다 | AV |
+| VectorNet / TNT / MTR | 학습모델 | HD맵과 궤적을 벡터로 넣어 예측 정확도를 올린다 | AV |
+| UniAD / VAD | 학습모델 | 인지·예측·계획을 하나의 학습 가능한 그래프로 | AV |
+| World model (Wayve GAIA 등) | 학습모델 | 시뮬레이터를 손으로 안 만들고 데이터로 생성한다 | AV |
+| Diffusion policy | 학습모델 | 다봉(multi-modal) 행동 분포를 하나의 평균으로 뭉개지 않는다 | MR |
+| VLA (RT-2 · π0) | 학습모델 | 언어 지시를 로봇 행동으로 직접 | MR |
 
 
 ## S9. 안전 · 검증 (Safety & Validation)
 
-| 알고리즘 | 푸는 문제 | 도메인 |
-|---|---|:---:|
-| **RSS (Mobileye)** | "안전"을 정성 표현이 아니라 수식으로 정의해야 규제가 가능하다 | AV |
-| TTC / Time headway | 지금 속도로 몇 초 뒤 부딪히는가 — 가장 싼 안전 지표 | AV AGV |
-| Safety Shield / SP Aggregator | 여러 모듈이 각자 속도를 내면 아무도 최종 책임을 안 진다 | AV AGV |
-| 소프트 E-STOP 래치 | 정지 명령이 다음 주기 cmd_vel에 덮이면 안 선다 | AGV MR |
-| Collision monitor / 안전 존 | 계획이 틀려도 마지막 센서 한 겹이 막아야 한다 | AGV |
-| Watchdog / bond | 죽은 노드를 계속 믿으면 조용히 실패한다 | MR |
-| MRM (최소위험조작) | 자율이 포기할 때 어디에 어떻게 세울 것인가 | AV |
-| ISO 26262 / SOTIF (21448) | 고장 없이도 위험한 경우(성능 한계)를 다뤄야 한다 | AV |
-| **ISO 3691-4 / ANSI B56.5** | 산업 AGV·AMR 안전 요구의 법적 기준선 | AGV |
-| ODD 정의 (ISO 34503) | "어디까지 자율인가"를 문서로 못 박지 않으면 검증이 불가능 | AV AGV |
-| 시나리오 기반 검증 (OpenSCENARIO) | 주행거리가 아니라 시나리오 커버리지로 증명해야 한다 | AV |
+| 알고리즘 | 유형 | 푸는 문제 | 도메인 |
+|---|:---:|---|:---:|
+| **RSS (Mobileye)** | 수학모델 | "안전"을 정성 표현이 아니라 수식으로 정의해야 규제가 가능하다 | AV |
+| TTC / Time headway | 수학모델 | 지금 속도로 몇 초 뒤 부딪히는가 — 가장 싼 안전 지표 | AV AGV |
+| Safety Shield / SP Aggregator | 패턴 | 여러 모듈이 각자 속도를 내면 아무도 최종 책임을 안 진다 | AV AGV |
+| 소프트 E-STOP 래치 | 패턴 | 정지 명령이 다음 주기 cmd_vel에 덮이면 안 선다 | AGV MR |
+| Collision monitor / 안전 존 | 구현체 | 계획이 틀려도 마지막 센서 한 겹이 막아야 한다 | AGV |
+| Watchdog / bond | 패턴 | 죽은 노드를 계속 믿으면 조용히 실패한다 | MR |
+| MRM (최소위험조작) | 문제 | 자율이 포기할 때 어디에 어떻게 세울 것인가 | AV |
+| ISO 26262 / SOTIF (21448) | 규격 | 고장 없이도 위험한 경우(성능 한계)를 다뤄야 한다 | AV |
+| **ISO 3691-4 / ANSI B56.5** | 규격 | 산업 AGV·AMR 안전 요구의 법적 기준선 | AGV |
+| ODD 정의 (ISO 34503) | 규격 | "어디까지 자율인가"를 문서로 못 박지 않으면 검증이 불가능 | AV AGV |
+| 시나리오 기반 검증 (OpenSCENARIO) | 규격 | 주행거리가 아니라 시나리오 커버리지로 증명해야 한다 | AV |
 
 
 ---
