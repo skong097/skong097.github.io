@@ -8,16 +8,27 @@
 {{- with site.Params.goatCounterCode }}
 <div class="visit-counter" aria-label="{{ i18n "visitorCounterAria" }}">
   <span class="vc-item"><i class="vc-dot"></i>{{ i18n "visitorTotalViews" }}<b id="vc-views">—</b></span>
+  <span class="vc-asof" id="vc-asof"></span>
 </div>
 <script>
 (function () {
+  var ASOF = {{ i18n "visitorAsOf" | jsonify | safeJS }};   // "%s 기준" / "as of %s"
+  function stamp() {
+    var p = function (n) { return (n < 10 ? '0' : '') + n; };
+    var d = new Date();
+    return d.getFullYear() + '-' + p(d.getMonth() + 1) + '-' + p(d.getDate()) +
+           ' ' + p(d.getHours()) + ':' + p(d.getMinutes());
+  }
   fetch('https://{{ . }}.goatcounter.com/counter/TOTAL.json')
     .then(function (r) { if (!r.ok) { throw new Error(r.status); } return r.json(); })
     .then(function (d) {
       var views = document.getElementById('vc-views');
       if (views && d.count) { views.textContent = d.count; }
+      // 누적 총합이며, 값을 받아온 시각을 그대로 밝힌다(GoatCounter 쪽 캐시만큼 늦을 수 있다).
+      var asof = document.getElementById('vc-asof');
+      if (asof && d.count) { asof.textContent = ASOF.replace('%s', stamp()); }
     })
-    .catch(function () { /* 실패하면 '—' 를 그대로 둔다 */ });
+    .catch(function () { /* 실패하면 '—' 와 빈 기준 표기를 그대로 둔다 */ });
 })();
 </script>
 {{- end }}
