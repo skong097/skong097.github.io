@@ -77,6 +77,13 @@ body:has(.about-intro) .main {
   max-width: calc(1100px + var(--gap) * 2) !important;
 }
 
+/* ── 알고리즘 사전 페이지 너비 확장 ──
+   "푸는 문제" 열이 한 줄 요약에서 풀어쓴 설명으로 길어져 기본 720px 폭에서
+   표가 좁고 줄바꿈이 잦다. */
+body:has(.algo-dict) .main {
+  max-width: calc(1200px + var(--gap) * 2) !important;
+}
+
 /* ── 프로젝트 페이지 제목 아래 구분선 ── */
 body:has(.projects-intro) .page-header {
   border-bottom: 1px solid var(--border);
