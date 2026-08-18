@@ -49,7 +49,7 @@ jobs:
         env:
           GOATCOUNTER_TOKEN: ${{ secrets.GOATCOUNTER_TOKEN }}
         run: |
-          bash scripts/fetch_visitor_daily.sh --days 30 || echo "fetch 실패 — 추이 그래프 없이 빌드"
+          bash scripts/fetch_visitor_daily.sh --days 7 || echo "fetch 실패 — 추이 그래프 없이 빌드"
       - name: Build with Hugo
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
