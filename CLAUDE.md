@@ -62,6 +62,7 @@
 - **두 파일의 basename 이 같아야** Hugo 가 번역본으로 연결하고 헤더 토글이 서로를 가리킨다. `translationKey` 는 불필요하다.
 - 한국어 파일 front matter 에 `slug: <한글-슬러그>` 를 넣어 기존 한글 URL 관례를 유지한다.
 - 영어 파일에는 `slug` 를 넣지 않는다 — 영문 basename 이 그대로 URL 이 된다.
+- **섹션 페이지**(`algorithms` · `gallery` · `projects` 등)는 한국어 파일만 `url: /<name>/` 을 명시하고, 영문 파일에는 `url:` 을 **넣지 않는다.** 넣으면 두 언어가 같은 URL 을 다투고, 영문판을 아예 안 만들면 `/en/<name>/` 이 404 가 된다.
 
 ### front matter
 
