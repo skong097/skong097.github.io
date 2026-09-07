@@ -67,6 +67,7 @@ groups:
     keywords:
       - "LLM agent framework"
       - "multi-agent orchestration"
+      - "herdr"
     categories: [paper, article]
     max_per_run: 4
 
@@ -117,5 +118,15 @@ groups:
       - "learning from human demonstration"
       - "egocentric human video robot learning"
       - "human motion capture dataset training"
+    categories: [paper, article, video, person]
+    max_per_run: 6
+
+  - id: agi-frontier
+    name: "AGI · 프런티어 모델"
+    keywords:
+      - "GPT6 Astro"
+      - "GPT-6 Astro"
+      - "AGI"
+      - "artificial general intelligence"
     categories: [paper, article, video, person]
     max_per_run: 6
