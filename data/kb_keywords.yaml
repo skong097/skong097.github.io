@@ -87,8 +87,10 @@ groups:
       - "안드레카파시"
       - "Obsidian"
       - "옵시디언"
+      - "RAG retrieval augmented generation"
+      - "검색증강생성 RAG"
     categories: [paper, article, video, person]
-    max_per_run: 5
+    max_per_run: 7
 
   - id: manufacturing-data-pipeline
     name: "제조 데이터 수집 파이프라인"
@@ -122,7 +124,7 @@ groups:
     max_per_run: 6
 
   - id: agi-frontier
-    name: "AGI · 프런티어 모델"
+    name: "AGI · 프런티어"
     keywords:
       - "GPT6 Astro"
       - "GPT-6 Astro"
