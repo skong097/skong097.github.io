@@ -1,6 +1,6 @@
 # Hugo Blog + Career Dashboard — 운영 가이드
 
-> **블로그**: ~/dev_ws/blog (Hugo + PaperMod)  
+> **블로그**: ~/skong097.github.io (Hugo + PaperMod)  
 > **대시보드 데이터**: data/roadmap_data.yaml  
 > **배포**: GitHub Pages (GitHub Actions 자동 빌드)
 
@@ -9,7 +9,7 @@
 ## 1. 프로젝트 구조
 
 ```
-~/dev_ws/blog/
+~/skong097.github.io/
 ├── hugo.yaml                          # Hugo 설정 (메뉴, 테마, 사이트 정보)
 ├── data/
 │   └── roadmap_data.yaml              # ★ 대시보드 데이터 (이 파일만 수정)
@@ -145,7 +145,7 @@ domains:
 ### 3-1. 새 포스트 생성
 
 ```bash
-cd ~/dev_ws/blog
+cd ~/skong097.github.io
 
 # 카테고리별 포스트 생성
 hugo new posts/ros2/새-포스트-제목.md
@@ -183,7 +183,7 @@ draft: false               # 이것만 바꾸면 공개
 ## 4. 로컬 미리보기
 
 ```bash
-cd ~/dev_ws/blog
+cd ~/skong097.github.io
 
 # draft 포함 미리보기 (개발용)
 hugo server -D
@@ -204,7 +204,7 @@ hugo server
 ### 5-1. 최초 1회 — 저장소 설정
 
 ```bash
-cd ~/dev_ws/blog
+cd ~/skong097.github.io
 
 # Git 초기화 (이미 했으면 생략)
 git init
@@ -229,7 +229,7 @@ git push -u origin main
 ### 5-3. 일상적인 업데이트 → 배포 흐름
 
 ```bash
-cd ~/dev_ws/blog
+cd ~/skong097.github.io
 
 # 1. 데이터 수정 (YAML 편집)
 code data/roadmap_data.yaml
@@ -361,7 +361,7 @@ python3 -c "import yaml; yaml.safe_load(open('data/roadmap_data.yaml')); print('
 
 ```bash
 # ── 작업 시작 ──
-cd ~/dev_ws/blog
+cd ~/skong097.github.io
 
 # ── 프로젝트 작업 후 YAML 업데이트 ──
 code data/roadmap_data.yaml

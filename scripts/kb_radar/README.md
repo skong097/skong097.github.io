@@ -43,7 +43,7 @@ data/kb_items.json      ← 에이전트가 갱신
 저장소 루트에서 실행한다. **`-p`(print) 모드라 실행 중 수 분간 화면이 조용할 수 있다 — 중단하지 말고 기다린다.**
 
 ```bash
-cd ~/dev_ws/blog
+cd ~/skong097.github.io
 
 scripts/run_kb_radar.sh                  # 전체 그룹 수집
 scripts/run_kb_radar.sh --group ai-agent # 특정 그룹만 수집
@@ -121,12 +121,12 @@ groups:
 
 **탭 자동완성** — `~/.bashrc`에 추가 후 `source ~/.bashrc`:
 ```bash
-[ -f "$HOME/dev_ws/blog/scripts/completion.bash" ] && source "$HOME/dev_ws/blog/scripts/completion.bash"
+[ -f "$HOME/skong097.github.io/scripts/completion.bash" ] && source "$HOME/skong097.github.io/scripts/completion.bash"
 ```
 
 **주 2회 cron** — `crontab -e` (예: 월·목 09:00):
 ```
-0 9 * * 1,4 cd $HOME/dev_ws/blog && scripts/run_kb_radar.sh >> $HOME/dev_ws/blog/scripts/kb_radar/collect.log 2>&1
+0 9 * * 1,4 cd $HOME/skong097.github.io && ./scripts/run_kb_radar.sh >> $HOME/skong097.github.io/scripts/kb_radar/cron.log 2>&1
 ```
 > cron은 `data/kb_items.json`만 갱신한다. 주기적으로 `git diff`를 확인하고 직접 커밋·푸시하면 사이트가 재빌드된다.
 

@@ -1,6 +1,6 @@
 # KB Radar bash 자동완성
 # 부트스트랩: ~/.bashrc 에 아래 한 줄 추가
-#   [ -f "$HOME/dev_ws/blog/scripts/completion.bash" ] && source "$HOME/dev_ws/blog/scripts/completion.bash"
+#   [ -f "$HOME/skong097.github.io/scripts/completion.bash" ] && source "$HOME/skong097.github.io/scripts/completion.bash"
 
 _run_kb_radar() {
   local cur prev opts
