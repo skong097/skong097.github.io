@@ -1,5 +1,5 @@
 {
-  "last_collected": "2026-09-10",
+  "last_collected": "2026-09-20",
   "items": [
     {
       "id": "53673799b9f54a3e84b549e5eeea2aa1319374e2",
@@ -493,7 +493,7 @@
       "published": "2026-04-13",
       "collected": "2026-06-14",
       "url": "https://arxiv.org/abs/2604.12034",
-      "archived": false
+      "archived": true
     },
     {
       "id": "730437bc091e19f01cca5b51fe577c055648f6df",
@@ -506,7 +506,7 @@
       "published": "2026-02-12",
       "collected": "2026-06-14",
       "url": "http://karpathy.github.io/2026/02/12/microgpt/",
-      "archived": false
+      "archived": true
     },
     {
       "id": "e47c2055302165630dae394b05e0a9f9c6476222",
@@ -519,7 +519,7 @@
       "published": "2026-06-08",
       "collected": "2026-06-14",
       "url": "https://github.com/nashsu/llm_wiki",
-      "archived": false
+      "archived": true
     },
     {
       "id": "52411bbba20b5a0ac41679b1691d79d0c1887c0d",
@@ -532,7 +532,7 @@
       "published": "2026-05-08",
       "collected": "2026-06-14",
       "url": "https://www.promptquorum.com/power-local-llm/local-llm-with-obsidian-2026",
-      "archived": false
+      "archived": true
     },
     {
       "id": "3a5f4d3873c7cd30967c6f5d59456eb47a56796a",
@@ -545,7 +545,7 @@
       "published": "",
       "collected": "2026-06-14",
       "url": "https://www.youtube.com/watch?v=cVte1z4dy6Q",
-      "archived": false
+      "archived": true
     },
     {
       "id": "f7adba82ffc46acb3248e6d35a3fad15d37e8d0e",
@@ -558,7 +558,7 @@
       "published": "2026-05-21",
       "collected": "2026-06-13",
       "url": "https://arxiv.org/abs/2605.22183",
-      "archived": false
+      "archived": true
     },
     {
       "id": "ea58866e757d82f42900c20817409d6d6f452409",
@@ -571,7 +571,7 @@
       "published": "2026-06-04",
       "collected": "2026-06-13",
       "url": "https://arxiv.org/abs/2606.06556",
-      "archived": false
+      "archived": true
     },
     {
       "id": "e09c86b1231526c08758f7fab79e0568b2832c7c",
@@ -584,7 +584,7 @@
       "published": "2026-06-08",
       "collected": "2026-06-13",
       "url": "https://digg.com/ai/m1bi0k06",
-      "archived": false
+      "archived": true
     },
     {
       "id": "35d2111ade9d3be9ecd6217beea29cd3b3750438",
@@ -597,7 +597,7 @@
       "published": "2026-06-03",
       "collected": "2026-06-13",
       "url": "https://3d-llm-vla.github.io/",
-      "archived": false
+      "archived": true
     },
     {
       "id": "62bc72a18618d2246cac4353253356a991d195e3",
@@ -610,7 +610,7 @@
       "published": "2026-04-09",
       "collected": "2026-06-13",
       "url": "https://arxiv.org/abs/2604.08009",
-      "archived": false
+      "archived": true
     },
     {
       "id": "234d131d7df7309592507c87dc3edc75c709bd05",
@@ -623,7 +623,7 @@
       "published": "2026-02-01",
       "collected": "2026-06-13",
       "url": "https://arxiv.org/abs/2602.01226",
-      "archived": false
+      "archived": true
     },
     {
       "id": "cc088f75e828012f8b7e225048695ad43fc06d08",
@@ -636,7 +636,7 @@
       "published": "2026-05-22",
       "collected": "2026-06-13",
       "url": "https://discourse.openrobotics.org/t/ros-2-lyrical-luth-released/55021",
-      "archived": false
+      "archived": true
     },
     {
       "id": "05492931143651899cb56eae6b8a9bf72f1af577",
@@ -649,7 +649,7 @@
       "published": "2026-05-07",
       "collected": "2026-06-13",
       "url": "https://aegisai.in/ai-in-robotics-complete-2026-guide-edge-ai-ros2-autonomous-systems/",
-      "archived": false
+      "archived": true
     },
     {
       "id": "3c7455632161d1dc296d310afbc61d175267e3ab",
@@ -662,7 +662,7 @@
       "published": "2026-05-27",
       "collected": "2026-06-13",
       "url": "https://arxiv.org/html/2605.27898v1",
-      "archived": false
+      "archived": true
     },
     {
       "id": "d5dd01360c56aec401a1e40bf0ff64fddbb1e08c",
@@ -675,7 +675,7 @@
       "published": "2026-05-19",
       "collected": "2026-06-13",
       "url": "https://arxiv.org/html/2605.19337v1",
-      "archived": false
+      "archived": true
     },
     {
       "id": "d39fdf563cbfd44a850019acb6d17e0600a778d7",
@@ -688,7 +688,7 @@
       "published": "",
       "collected": "2026-06-13",
       "url": "https://www.innoflexion.com/blog/multi-agent-orchestration-enterprise-genai-2026",
-      "archived": false
+      "archived": true
     },
     {
       "id": "6375b455e10292c92fd7b28e0aa95700fd44a5dc",
@@ -701,7 +701,7 @@
       "published": "2026-03-07",
       "collected": "2026-06-13",
       "url": "https://arxiv.org/abs/2603.07022",
-      "archived": false
+      "archived": true
     },
     {
       "id": "26df85f573afa1ea1b71d6317ec54d863d91d57a",
@@ -714,7 +714,7 @@
       "published": "2026-01-29",
       "collected": "2026-06-13",
       "url": "https://arxiv.org/abs/2602.00168",
-      "archived": false
+      "archived": true
     },
     {
       "id": "f3b0e91fb0bd9ac30752d97334c546c3f646ccda",
@@ -727,7 +727,7 @@
       "published": "2026-02-22",
       "collected": "2026-06-13",
       "url": "https://datature.io/blog/yolo26-the-edge-first-evolution-of-real-time-object-detection",
-      "archived": false
+      "archived": true
     },
     {
       "id": "4d4acde32db6b301786da22598aeea49cf7333bf",
@@ -740,7 +740,7 @@
       "published": "2026-04-29",
       "collected": "2026-06-13",
       "url": "https://www.youtube.com/watch?v=FNnI-GwlHKo",
-      "archived": false
+      "archived": true
     },
     {
       "id": "d27c1bb3efa9428f8ca6f7f84fbc340d67cfdf50",
@@ -8163,6 +8163,877 @@
       "published": "2026-08-02",
       "collected": "2026-09-10",
       "url": "https://arxiv.org/abs/2608.01432",
+      "archived": false
+    },
+    {
+      "id": "790b49b5dd7f559e7e410004ec23adba4c3cb6a1",
+      "group": "physical-ai",
+      "category": "paper",
+      "title": "The Robot Data Factory",
+      "summary": "로봇 경험 데이터를 지속적으로 생성·검증·재사용하는 인프라와 방법론을 제시한 논문이다. 재현 가능한 미션, 스킬 커리큘럼, 동기화된 멀티모달 센싱을 배치-측정-학습-반복(Deploy-Measure-Learn-Repeat) 순환으로 묶는다. 로봇 경험의 품질을 정식화하고 플릿 규모·센싱·연산량과 체화 AI 역량을 잇는 스케일링 법칙을 도출한다.",
+      "source": "arXiv",
+      "authors": "Sami Haddadin, Ivan Laptev, Ian Reid 외",
+      "published": "2026-09-15",
+      "collected": "2026-09-17",
+      "url": "https://arxiv.org/abs/2609.16705",
+      "archived": false
+    },
+    {
+      "id": "30111a2e7fa32e90ba9c39bfd4ce04893d020c17",
+      "group": "physical-ai",
+      "category": "paper",
+      "title": "Goal-Oriented Communications for Physical AI: Design and Testbed",
+      "summary": "원본 영상 대신 의미 표현을 전송하는 목표 지향 통신 프레임워크를 종단간 테스트베드로 구현한 논문이다. 로봇 시스템 실험에서 기존 방식 대비 작업 완료 시간을 최대 52.6% 줄였다고 보고한다.",
+      "source": "arXiv",
+      "authors": "Shutong Chen, Wenkai Zhang, Adnan Aijaz 외",
+      "published": "2026-09-14",
+      "collected": "2026-09-17",
+      "url": "https://arxiv.org/abs/2609.15895",
+      "archived": false
+    },
+    {
+      "id": "15e83ccaebb10417a345c83e19455b02e42d20a1",
+      "group": "physical-ai",
+      "category": "paper",
+      "title": "Toward Self-Adaptive Physical AI: Can LLM Agents Manage Long-Horizon Physical Tasks?",
+      "summary": "LLM 에이전트가 사람 개입 없이 장기간 물리 작업을 관리하고 환경 변화에 적응할 수 있는지 검증한 연구다. 제로샷 LLM 에이전트가 강화학습 기반 접근과 비슷한 성과를 냈고, 환경이 변할 때는 더 나은 적응력을 보였다고 보고한다.",
+      "source": "arXiv",
+      "authors": "Varun Kaushik, Yayun Tan, Xiaofan Yu 외",
+      "published": "2026-09-11",
+      "collected": "2026-09-17",
+      "url": "https://arxiv.org/abs/2609.13436",
+      "archived": false
+    },
+    {
+      "id": "fee92c029dd9f7b95e2267acc613be48afdb9ffd",
+      "group": "physical-ai",
+      "category": "paper",
+      "title": "Seven Sources of Physical AI Capability Formation",
+      "summary": "물리 AI 시스템의 역량이 형성되는 경로를 기록된 경험, 예측 모델링, 체화 결합 등 일곱 가지 비배타적 원천으로 정리한 논문이다. 49건의 연구 기록을 체계적으로 분석해 이론적 포화에 도달했다고 주장한다.",
+      "source": "arXiv",
+      "authors": "Gang Chen",
+      "published": "2026-09-09",
+      "collected": "2026-09-17",
+      "url": "https://arxiv.org/abs/2609.09627",
+      "archived": false
+    },
+    {
+      "id": "098b039a879dcad8b896f0c4581449ede084d330",
+      "group": "physical-ai",
+      "category": "paper",
+      "title": "FluxVLA Engine: A One-Stop VLA Engineering Platform for Embodied Intelligence",
+      "summary": "데이터셋·모델·추론 런타임 등 체화 AI 구성요소의 인터페이스를 설정 기반으로 표준화한 VLA 엔지니어링 플랫폼이다. 시뮬레이션, 실제 로봇 실행, 사람 개입(human-in-the-loop) 워크플로를 하나로 통합해 알고리즘과 실배포 사이의 간극을 줄이는 것을 목표로 한다.",
+      "source": "arXiv",
+      "authors": "Yinhao Li, Weixin Mao, Zihan Lan 외",
+      "published": "2026-09-15",
+      "collected": "2026-09-17",
+      "url": "https://arxiv.org/abs/2609.17210",
+      "archived": false
+    },
+    {
+      "id": "69b9fd63f9ef75ffee2e21e28e1f48c8e226678b",
+      "group": "physical-ai",
+      "category": "article",
+      "title": "State of Robotics 2026 리포트",
+      "summary": "2026년 로보틱스 시장을 380억 달러(전년비 34% 성장)로 집계한 산업 리포트다. 구매·리스 가능한 상용 휴머노이드 플랫폼이 2024년 3종에서 12종으로 늘었고, 신규 배치의 40%에 VLA가 적용됐다고 보고한다. 데이터 수집 단가는 2024년 초 시간당 340달러에서 2026년 3월 118달러로 내려갔다.",
+      "source": "Robotics Center of Silicon Valley",
+      "authors": "RCSV Research",
+      "published": "2026-03-01",
+      "collected": "2026-09-17",
+      "url": "https://www.roboticscenter.ai/state-of-robotics-2026",
+      "archived": false
+    },
+    {
+      "id": "615db713b66f8f38b5f7aa006971664e4f513c51",
+      "group": "ros2-robotics",
+      "category": "paper",
+      "title": "Tuning ROS 2 for Energy-Efficient Navigation: Empirical Insights from Costmap 2D Configurations",
+      "summary": "창고 시나리오에서 ROS 2 패키지 설정이 이동 로봇의 에너지 효율에 미치는 영향을 통제 실험으로 측정한 논문이다. Costmap 2D와 Nav2 스택 설정을 바꿔가며 성능과 전력 소비가 좋아지거나 나빠지는 핵심 설정 항목을 식별했다.",
+      "source": "arXiv",
+      "authors": "Michel Albonico, Andreas Wortmann, Ivano Malavolta",
+      "published": "2026-09-11",
+      "collected": "2026-09-17",
+      "url": "https://arxiv.org/abs/2609.12971",
+      "archived": false
+    },
+    {
+      "id": "33a5e83a8d9f87ad455972217c4b6ab9d39e8e72",
+      "group": "ros2-robotics",
+      "category": "paper",
+      "title": "AXON: A ROS 2 RMW with Shared-Memory/QUIC Transport and QKD/ML-KEM Key Establishment",
+      "summary": "Rust 코어와 C++ 어댑터로 구현한 대체 ROS 2 미들웨어(RMW)를 제안한 논문이다. 공유 메모리와 QUIC 전송을 지원하며, 양자 키 분배(QKD)와 ML-KEM 두 가지 키 교환 구성을 두어 원격 로봇 통신 보안을 다룬다.",
+      "source": "arXiv",
+      "authors": "Sergio Sánchez de la Fuente, Miguel Ángel González-Santamarta, Francisco Javier Rodríguez-Lera",
+      "published": "2026-09-09",
+      "collected": "2026-09-17",
+      "url": "https://arxiv.org/abs/2609.10024",
+      "archived": false
+    },
+    {
+      "id": "c5d845c523f78d69722513ef07a498c9d68188a7",
+      "group": "ros2-robotics",
+      "category": "paper",
+      "title": "SwarmNxt: Open-source Software-Hardware Platform for Fast and Agile Aerial Swarms",
+      "summary": "드론 군집의 자율 항법을 위한 오픈소스 ROS 2 멀티에이전트 플랫폼으로, 제어·계획·깊이 추정을 통합했다. 실제 실험에서 장애물이 있는 환경에서 분산 계획과 충돌 회피, 군집 비행을 실증했다.",
+      "source": "arXiv",
+      "authors": "Charbel Toumieh, Niel Mistry, Benjamin Jarvis 외",
+      "published": "2026-09-10",
+      "collected": "2026-09-17",
+      "url": "https://arxiv.org/abs/2609.11382",
+      "archived": false
+    },
+    {
+      "id": "ef9b92627d4684efb3ce0577a30598bf081b15bf",
+      "group": "ros2-robotics",
+      "category": "article",
+      "title": "New Packages for Jazzy Jalisco 2026-09-11",
+      "summary": "ROS 2 Jazzy Jalisco 배포판의 동기화 릴리스 공지다. 신규 패키지 180건, 업데이트 698건, 제거 6건이 반영되었고 rosdistro 에 jazzy/2026-09-11 태그로 기록됐다. 하드웨어 드라이버, 제어, 내비게이션, 시뮬레이션 등 전 영역이 포함된다.",
+      "source": "Open Robotics Discourse",
+      "authors": "marcogg",
+      "published": "2026-09-11",
+      "collected": "2026-09-17",
+      "url": "https://discourse.openrobotics.org/t/new-packages-for-jazzy-jalisco-2026-09-11/58027",
+      "archived": false
+    },
+    {
+      "id": "2c5acf497d3ea6ce42e96769fe8c70fb40131391",
+      "group": "ros2-robotics",
+      "category": "article",
+      "title": "ROS News for the Week of September 7th, 2026",
+      "summary": "ROSCon Global 2026(토론토) 개최 1주 전 소식과 커뮤니티 동향을 정리한 주간 뉴스다. 오픈소스 안전 인증 도구를 공유하는 Open Source Safety Consortium 출범, ROS 토픽 단위로 열화 조건을 주입하는 ROS 2 Fault Injection 프레임워크, AI 계획 모델(20~50Hz)과 하드웨어 제어 루프(500Hz~1kHz)의 주기 차를 메우는 ros2_control 궤적 업샘플링 GSoC 결과물이 소개됐다.",
+      "source": "Open Robotics Discourse",
+      "authors": "Katherine Scott",
+      "published": "2026-09-11",
+      "collected": "2026-09-17",
+      "url": "https://discourse.openrobotics.org/t/ros-news-for-the-week-of-september-7th-2026/58046",
+      "archived": false
+    },
+    {
+      "id": "973bc5cbd4a453461e001754330ef070b9b1e466",
+      "group": "isaac-sim",
+      "category": "paper",
+      "title": "DreamSat-Bench: Development and Initial Testing of a Testbed for AI-Based Pose Estimation from 3D Reconstruction",
+      "summary": "MuJoCo, Isaac Lab, LeRobot 을 결합해 비전 기반 우주선 항법을 평가하는 벤치마킹 플랫폼이다. 시뮬레이션과 실제 로봇 팔을 연결해 다양한 궤도 조건에서 6-DoF 자세 추정을 하드웨어-인-더-루프로 검증한다.",
+      "source": "arXiv",
+      "authors": "Alex Posadas-Nava, August Berne, Giovanni Lavezzi 외",
+      "published": "2026-09-12",
+      "collected": "2026-09-17",
+      "url": "https://arxiv.org/abs/2609.14183",
+      "archived": false
+    },
+    {
+      "id": "4e2d104c388da74971ed0c3e4f6773913eac0950",
+      "group": "isaac-sim",
+      "category": "paper",
+      "title": "Curriculum-Based Adversarial Heterogeneous Agent Reinforcement Learning for Autonomous Quad-Copter Landing in Maritime Settings",
+      "summary": "Isaac Lab 에서 적대적 바람 시뮬레이션과 커리큘럼을 결합해 HAPPO 강화학습으로 UAV 선박 착함 정책을 학습한 연구다. 도메인 랜덤화 기반 학습보다 미경험 악천후 해상 조건에 대한 일반화가 우수했다고 보고한다.",
+      "source": "arXiv",
+      "authors": "Allan Minh-Tam Nguyen, Sree Showrya Kotala, Stefan Banioi-Crijman 외",
+      "published": "2026-09-11",
+      "collected": "2026-09-17",
+      "url": "https://arxiv.org/abs/2609.12758",
+      "archived": false
+    },
+    {
+      "id": "88d8bcdd0fbe22901fec588d4cb3fe82433de1d7",
+      "group": "isaac-sim",
+      "category": "paper",
+      "title": "Morphology-Aware Human Motion Retargeting for Wheeled-Humanoid Loco-Manipulation",
+      "summary": "여러 데이터셋의 사람 동작을 바퀴형 휴머노이드 Galaxea R1 Pro 가 실행 가능한 동작으로 바꾸는 파이프라인이다. 형태를 고려한 역기구학과 몸통 치환으로 다리 없는 로봇의 구조 차이를 처리하고, Isaac Lab 으로 학습한 정책이 평면 베이스 동작을 3륜 명령으로 변환한다.",
+      "source": "arXiv",
+      "authors": "Chenbo Xia, Chao Ye",
+      "published": "2026-09-10",
+      "collected": "2026-09-17",
+      "url": "https://arxiv.org/abs/2609.11357",
+      "archived": false
+    },
+    {
+      "id": "56937cf9ce32a713009c4b3e616df4dce5bb79af",
+      "group": "isaac-sim",
+      "category": "article",
+      "title": "Isaac Lab v3.0.0-EA 얼리액세스 릴리스",
+      "summary": "물리(Isaac Sim PhysX·OVPhysX·Newton MJWarp)·렌더링·시각화 백엔드를 각각 따로 고를 수 있는 팩토리 기반 멀티백엔드 구조를 도입한 얼리액세스 릴리스다. Isaac Sim 설치 없이 실행되는 kit-less 워크플로와 통합 `isaaclab` CLI, 다섯 가지 시각화 도구(Newton GL·Newton RTX·Kit·Viser·Rerun)를 제공한다. 쿼터니언 표기가 WXYZ 에서 XYZW 로 바뀌는 등 호환성 변경이 포함되며 정식 출시는 2026년 10월 말을 목표로 한다.",
+      "source": "GitHub (isaac-sim/IsaacLab)",
+      "authors": "NVIDIA Isaac Lab 팀",
+      "published": "2026-09-16",
+      "collected": "2026-09-17",
+      "url": "https://github.com/isaac-sim/IsaacLab/releases/tag/v3.0.0-EA",
+      "archived": false
+    },
+    {
+      "id": "a80b7313da02d148de37fc9e0dca6b7fd7d27480",
+      "group": "robot-hand",
+      "category": "paper",
+      "title": "Residual Fault Adaptation for Dexterous In-Hand Manipulation Under Runtime Joint Faults",
+      "summary": "로봇 손의 관절 고장을 실행 중에 보상하는 프레임워크로, 순환 구조의 잔차(residual) 정책을 학습한다. 고장 레이블을 명시적으로 주지 않아도 성능이 개선되며 실제 로봇 배치까지 확인했다.",
+      "source": "arXiv",
+      "authors": "Linan Deng, Xing Liu, Lin Hong 외",
+      "published": "2026-09-15",
+      "collected": "2026-09-17",
+      "url": "https://arxiv.org/abs/2609.17404",
+      "archived": false
+    },
+    {
+      "id": "be4be780add9ce4f4cd978e59814ad53e7fe9281",
+      "group": "robot-hand",
+      "category": "paper",
+      "title": "ProxiDex: Learning Dynamics-Guided Proximity Policy for Dexterous Manipulation",
+      "summary": "손과 물체 사이의 근접 관계를 하나의 상호작용 상태로 다루고, 동역학 기반 추론으로 시각 가림 상황에서 조작을 안정화하는 방법이다. 학습에 쓰인 물체와 처음 보는 물체 모두에서 기존 기법보다 강건했다고 보고한다.",
+      "source": "arXiv",
+      "authors": "Yushan Bai, Boyu Zheng, Zhiyang Mao 외",
+      "published": "2026-09-15",
+      "collected": "2026-09-17",
+      "url": "https://arxiv.org/abs/2609.16586",
+      "archived": false
+    },
+    {
+      "id": "dda249856d07a4e5e0ef6ec15a46f2dcbf01dcd7",
+      "group": "robot-hand",
+      "category": "paper",
+      "title": "UniDex-ViTac: Learning Unified Visuo-Tactile Dexterous Manipulation Policy from Human Video Data",
+      "summary": "사람 영상에서 로봇 시연 데이터를 생성하고, 시뮬레이션 동작과 손끝 접촉 관측을 짝지어 시각-촉각 정책을 학습한다. 접촉 정보를 더한 구성이 학습·미학습 물체를 합쳐 실제 환경 성공률 66.4%를 기록했다.",
+      "source": "arXiv",
+      "authors": "Hyesung Lee, Si-Hwan Heo, Sungwook Yang 외",
+      "published": "2026-09-15",
+      "collected": "2026-09-17",
+      "url": "https://arxiv.org/abs/2609.16504",
+      "archived": false
+    },
+    {
+      "id": "6d86d9f119bf9419d008c4426c623b8fff0563e0",
+      "group": "robot-hand",
+      "category": "paper",
+      "title": "Touch2Trace: Tactile-Driven Imitation Learning for Dexterous Cable Tracing",
+      "summary": "촉각 피드백과 트랜스포머 정책으로 손가락 협조 동작을 유도해 케이블을 따라가며 조작하는 시스템이다. 자체 감각(proprioception)만 쓸 때 0%였던 성공률이 촉각을 더하면 93%로 올랐다고 보고한다.",
+      "source": "arXiv",
+      "authors": "Matteo Grimaldi, David Klee, Ziling Chen 외",
+      "published": "2026-09-14",
+      "collected": "2026-09-17",
+      "url": "https://arxiv.org/abs/2609.15921",
+      "archived": false
+    },
+    {
+      "id": "1fc41ef427f4e758a0954ef9a235a18255e6b02b",
+      "group": "robot-hand",
+      "category": "paper",
+      "title": "SlipSense: Multimodal Tactile Learning for Low-Latency and Generalized Slip Detection",
+      "summary": "압력 배열과 가속도계를 결합해 미끄러짐을 검출하며, 매크로 F1 96.7%와 23.1ms 내 검출을 달성했다. 서로 다른 로봇 손과 물체 사이에서 제로샷 전이가 가능했다고 보고한다.",
+      "source": "arXiv",
+      "authors": "Tong Jian, Aditya Thurvas Senthil Kumar, Xinyi Li 외",
+      "published": "2026-09-14",
+      "collected": "2026-09-17",
+      "url": "https://arxiv.org/abs/2609.15910",
+      "archived": false
+    },
+    {
+      "id": "d3d587707829e81a094180c33d938181dfaff6c6",
+      "group": "robot-hand",
+      "category": "paper",
+      "title": "Bench2Dex: Benchmarking Visuo-Tactile Bimanual Dexterous Manipulation Across Dexterous Hands",
+      "summary": "다지 핸드 12종과 양팔 과제 26개, 사람 원격조작 시연을 포함한 시각-촉각 조작 시뮬레이션 벤치마크다. 하드웨어가 제각각인 상황에서도 멀티모달 학습을 같은 조건으로 비교할 수 있게 한다.",
+      "source": "arXiv",
+      "authors": "Zhenjie Yang, Yideng Zhang, Dongjie Zhang 외",
+      "published": "2026-09-14",
+      "collected": "2026-09-17",
+      "url": "https://arxiv.org/abs/2609.15726",
+      "archived": false
+    },
+    {
+      "id": "cb4da6955462a5ea678ea313675f93819d6a7d49",
+      "group": "robot-hand-vendors",
+      "category": "article",
+      "title": "테솔로, 북미·유럽서 휴머노이드 핸드 선봬",
+      "summary": "테솔로가 5지 휴머노이드 로봇 핸드 'DG-5F-S' 를 보스턴 Robotics Summit & Expo 2026(5월 27~28일)과 빈 ICRA 2026(6월 1~5일)에서 공개한다는 기사다. 표준 모델은 20자유도·약 880g·가반하중 12kg, 경량 옵션은 15자유도·약 780g·9.6kg 이다. 현장에서 원격조작, 인핸드 매니퓰레이션, VLA 기반 제어를 시연했다.",
+      "source": "이데일리",
+      "authors": "신영빈",
+      "published": "2026-05-26",
+      "collected": "2026-09-17",
+      "url": "https://edaily.co.kr/News/Read?mediaCodeNo=257&newsId=03473526645452856",
+      "archived": false
+    },
+    {
+      "id": "80055f2550623475994bf4b47dceef2d2a50fd5d",
+      "group": "robot-hand-vendors",
+      "category": "article",
+      "title": "디캠프 배치: 피지컬 AI와 산업 현장을 혁신하는 로봇 핸드 스타트업 테솔로",
+      "summary": "테솔로의 제품군(델타 그리퍼 1~5지, 3지 그리퍼와 5지 핸드 DG-5F)과 직구동 모터 기반 20자유도 구조를 정리한 기업 소개 기사다. 17개국 300여 고객사를 확보했고 창업 이후 누적 연평균 성장률 84.5%, 최근 3년 평균 200% 성장을 기록했다고 전한다. 2024년 매출의 99%가 국내였으나 2025년 이후 해외 비중이 50%를 넘었다.",
+      "source": "오픈애즈(Open Ads)",
+      "authors": "",
+      "published": "2026-04-16",
+      "collected": "2026-09-17",
+      "url": "https://www.openads.co.kr/content/contentDetail?contsId=19247",
+      "archived": false
+    },
+    {
+      "id": "16afd9a95afad4f301749c64641d35f1b4b604d6",
+      "group": "robot-hand-vendors",
+      "category": "article",
+      "title": "CES 2026: XELA Robotics Adds Human-Like Touch to Tesollo DG-5F Robotic Hand",
+      "summary": "XELA Robotics 의 uSkin 촉각 센서를 테솔로 DG-5F 5지 핸드에 통합해 CES 2026(1월 6~9일)에서 시연한다는 기사다. uSkin 은 0.1gf 단위 감지가 가능하고 손끝 하나에 12개 센싱 포인트를 두며, 손끝·지골·손바닥과 손톱 요소까지 덮는다. 원래 손 크기를 유지한 채 촉각을 추가한 점을 강조한다.",
+      "source": "Embedded Computing Design",
+      "authors": "Chad Cox",
+      "published": "2025-12-04",
+      "collected": "2026-09-17",
+      "url": "https://embeddedcomputing.com/application/industrial/automation-robotics/ces-2026-xela-robotics-adds-human-like-touch-to-tesollo-dg-5f-robotic-hand",
+      "archived": false
+    },
+    {
+      "id": "e519d39947d50b1ed78e188925d2cc88261cf5fc",
+      "group": "robot-hand-vendors",
+      "category": "article",
+      "title": "로보티즈, '피지컬 AI' 핵심 무기 로봇 핸드 공식 출시",
+      "summary": "로보티즈가 로봇 핸드 'HX5-D20' 과 초소형 핑거 액추에이터 'XM335-T323-T' 를 공식 출시했다는 기사다. 전 관절 액티브 구동 방식에 고감도 촉각 센서를 내장하고 전류 기반 힘 제어 기술을 적용했다.",
+      "source": "뉴스핌",
+      "authors": "이나영",
+      "published": "2026-01-29",
+      "collected": "2026-09-17",
+      "url": "https://www.newspim.com/news/view/20260129000128",
+      "archived": false
+    },
+    {
+      "id": "b621e3788ec455c617357c726fd56e1b9d802d1c",
+      "group": "robot-hand-vendors",
+      "category": "article",
+      "title": "[스페셜리포트] 그리퍼, 잡는 기술에서 다루는 기술로… 로봇 자동화의 마지막 접점",
+      "summary": "그리퍼 시장을 2025년 55.4억 달러에서 2030년 105.8억 달러(연평균 13.8%)로 전망하며 기술 분화를 정리한 특집 기사다. AMR·AGV 등 이동형에서는 전동식, 고정 공정에서는 공압식이 선호되고, 다관절 핸드와 툴 교체 시스템, 케이블 구동과 직구동, 촉각센서 유무가 선택지로 갈린다고 짚는다. 도입 장애물로는 제품 가격보다 엔지니어링 비용과 전문인력 부족, 3년에서 1.5년으로 짧아진 투자 회수 기간을 든다.",
+      "source": "FA저널",
+      "authors": "박현우",
+      "published": "2026-08-25",
+      "collected": "2026-09-17",
+      "url": "https://www.fajournal.com/news/articleView.html?idxno=21279",
+      "archived": false
+    },
+    {
+      "id": "d89dfacb1dc404bf0e390c58c3e73b9b5b8062fe",
+      "group": "ai-agent",
+      "category": "paper",
+      "title": "Emergence World: Adversarial Stress-Testing of Long-Horizon Multi-Agent Systems",
+      "summary": "프런티어 LLM 으로 구성한 멀티에이전트 환경을 16일간 운영하며 프롬프트 인젝션과 허위정보에 대한 복원력을 시험한 연구다. 모든 사건에 완전히 견딘 구성은 없었고, 모델 수준의 정렬이 시스템 수준 안전을 보장하지 않는다는 점을 보였다.",
+      "source": "arXiv",
+      "authors": "Deepak Akkil, Tamer Abuelsaad, Karthik Vikram 외",
+      "published": "2026-09-15",
+      "collected": "2026-09-17",
+      "url": "https://arxiv.org/abs/2609.17320",
+      "archived": false
+    },
+    {
+      "id": "eb5b9d581c2714179eadc350274b617fa3cdb786",
+      "group": "ai-agent",
+      "category": "paper",
+      "title": "Mo' Models, Mo' Problems: How to best select model pools when designing Multi-Agent Systems",
+      "summary": "멀티에이전트 시스템의 모델 선택 전략을 비교한 연구로, 후보 모델 풀을 넓히면 오히려 최고 성능 단일 모델보다 성능이 떨어지는 경우가 많다고 보고한다. 같은 모델 계열에서 고를 때 상대적 개선폭이 가장 컸다.",
+      "source": "arXiv",
+      "authors": "Sara Vera Marjanović, Jiacheng Xu, Aleksandr Laptev 외",
+      "published": "2026-09-15",
+      "collected": "2026-09-17",
+      "url": "https://arxiv.org/abs/2609.17306",
+      "archived": false
+    },
+    {
+      "id": "a822b669a5c1c5e7bc9dcc0d4708b7e17d5d7f2b",
+      "group": "ai-agent",
+      "category": "paper",
+      "title": "Using Agentic AI for contextualized and multifaceted code review at Ericsson",
+      "summary": "특화 스킬과 맥락 지식을 결합한 멀티에이전트 구성으로 코드 품질 문제를 네 가지 차원에서 찾아낸 산업 적용 사례다. 현장 평가에서 정확도 96%, 발견 항목의 69%가 개발자에게 중요하다고 평가됐다.",
+      "source": "arXiv",
+      "authors": "Muhammad Laiq, Ricardo Britto, Muhammad Usman",
+      "published": "2026-09-14",
+      "collected": "2026-09-17",
+      "url": "https://arxiv.org/abs/2609.15877",
+      "archived": false
+    },
+    {
+      "id": "b0e7bc4832249a96417d6719b2fe3a7c8011fe61",
+      "group": "ai-agent",
+      "category": "article",
+      "title": "The best AI agent frameworks in 2026",
+      "summary": "LangChain, CrewAI, Microsoft Agent Framework, LlamaIndex Workflows, Google ADK, OpenAI Agents SDK, Mastra 등 7개 에이전트 프레임워크를 비교한 문서다. 프로토타이핑 개발 경험, 운영 신뢰성, 관측·디버깅 지원, 생태계 연동, 가격 투명성을 기준으로 정리했다. 작성 시점 기준 정보이며 기능·가격은 변동될 수 있다고 명시한다.",
+      "source": "LangChain",
+      "authors": "LangChain",
+      "published": "2026-06-06",
+      "collected": "2026-09-17",
+      "url": "https://www.langchain.com/resources/ai-agent-frameworks",
+      "archived": false
+    },
+    {
+      "id": "3e461cf069a6ae1f80785a9fa77ed2f615e8bd05",
+      "group": "computer-vision",
+      "category": "paper",
+      "title": "Tracking the Unseen: An Occlusion-Robust Framework for Target Tracking Under Full and Long-Term Occlusion",
+      "summary": "YOLOv11n 검출에 칼만 필터와 재식별을 결합해 완전·장기 가림 구간에서도 추적을 유지하는 프레임워크다. OVIS 데이터셋에서 OccluTrack 대비 MOTA 18.1%, IDF1 25.1% 상대 개선을 보고한다.",
+      "source": "arXiv",
+      "authors": "Mais Mohammed, Sharifa Mohammed, Hanan Awadh 외",
+      "published": "2026-09-15",
+      "collected": "2026-09-17",
+      "url": "https://arxiv.org/abs/2609.17427",
+      "archived": false
+    },
+    {
+      "id": "c286a4dd9f180fbe4a76a56263154e5059a8c82f",
+      "group": "computer-vision",
+      "category": "paper",
+      "title": "HGSQ: Heatmap-Guided Sparse Query Detector for Real-Time Aerial Small Object Detection",
+      "summary": "히트맵으로 스파스 쿼리를 유도해 연산 중복을 줄인 트랜스포머 기반 소형 객체 검출기다. NWPU VHR-10 에서 mAP50 95.10 을 기록하면서 RTX 4070 기준 96.0 FPS 로 동작한다.",
+      "source": "arXiv",
+      "authors": "Yangchen Zeng",
+      "published": "2026-09-10",
+      "collected": "2026-09-17",
+      "url": "https://arxiv.org/abs/2609.13306",
+      "archived": false
+    },
+    {
+      "id": "f30958375cacfb0b1fef5903555c819a683acf64",
+      "group": "computer-vision",
+      "category": "article",
+      "title": "Key highlights from Ultralytics YOLO Vision 2026!",
+      "summary": "2026년 9월 13일 열린 YOLO Vision 2026 발표 내용을 정리한 공식 블로그다. 4개 크기(n·s·m·l)와 7개 태스크에 걸친 28개 모델의 YOLO27, 리테일·물류·보안·항공용 Enterprise 모델, 오픈보캐뷸러리 검출·분할 모델 YOLOE-27 이 공개됐다. 플랫폼 측면에서는 AutoTrain, 시각 캔버스 형태의 Agents, 배포 엔드포인트 Monitoring 기능이 시연됐다.",
+      "source": "Ultralytics",
+      "authors": "Ultralytics",
+      "published": "2026-09-15",
+      "collected": "2026-09-17",
+      "url": "https://www.ultralytics.com/blog/key-highlights-from-ultralytics-yolo-vision-2026",
+      "archived": false
+    },
+    {
+      "id": "99d07dc17a6645f53e772b3208afacf4739767b9",
+      "group": "computer-vision",
+      "category": "article",
+      "title": "Ambarella and Ultralytics Collaborate to Bring Ultralytics YOLO Models to CVflow-Powered Edge Devices",
+      "summary": "Ambarella 와 Ultralytics 가 CVflow 기반 엣지 디바이스에서 YOLO 모델을 구동하도록 협업한다는 보도자료다. Ambarella Cooper Developer Platform 과 Developer Zone 을 통해 최적화 모델, 개발 키트, 기술 자료를 제공한다. 객체 검출·인스턴스 분할·분류·자세 추정·회전 바운딩박스를 지원하며 스마트 카메라, 로보틱스, 차량, 산업 환경을 대상으로 한다.",
+      "source": "GlobeNewswire (Ambarella)",
+      "authors": "Ambarella, Inc.",
+      "published": "2026-09-15",
+      "collected": "2026-09-17",
+      "url": "https://www.globenewswire.com/news-release/2026/09/15/3362191/23306/en/ambarella-and-ultralytics-collaborate-to-bring-ultralytics-yolo-models-to-cvflow-powered-edge-devices.html",
+      "archived": false
+    },
+    {
+      "id": "28b0a608331dea6dfaeb897dff54d5248bbbff00",
+      "group": "llm-knowledge",
+      "category": "paper",
+      "title": "ORDER: Task-Conditioned Routing for Retrieval-Augmented Generation",
+      "summary": "들어오는 질의에 따라 인덱싱과 검색 전략을 동적으로 바꾸는 RAG 프레임워크다. 미리 구축한 여러 인덱스로 라우팅하고 지도학습 기반 라우터를 쓰며, 이질적인 역사 아카이브 검색에서 기존 RAG 방식보다 나은 성능을 보고한다.",
+      "source": "arXiv",
+      "authors": "Aurélien Pellet, Julien Perez, Marie Puren",
+      "published": "2026-09-15",
+      "collected": "2026-09-17",
+      "url": "https://arxiv.org/abs/2609.17012",
+      "archived": false
+    },
+    {
+      "id": "ef3c1352993e7554e2bcaeb817a70bcb018c6bb7",
+      "group": "llm-knowledge",
+      "category": "paper",
+      "title": "InceptionRAG: Stealthy Poisoning Attack Against Retrieval-Augmented Generation",
+      "summary": "악성 내용을 여러 휴면 문단에 쪼개 넣어 기존 방어를 우회하는 RAG 포이즈닝 공격을 제시한 논문이다. 언어 모델의 멀티홉 추론 능력을 이용해 80%를 넘는 공격 성공률을 보고한다.",
+      "source": "arXiv",
+      "authors": "Jiachang Zhang, Min Chen, Xiao Ren 외",
+      "published": "2026-09-15",
+      "collected": "2026-09-17",
+      "url": "https://arxiv.org/abs/2609.16818",
+      "archived": false
+    },
+    {
+      "id": "92d454a9ed1171f0779a1de9a22f262cd21b5d7e",
+      "group": "llm-knowledge",
+      "category": "paper",
+      "title": "RECTIFY: An Interactive Workbench for Post-Evaluation RAG Diagnosis, Repair, and Verification",
+      "summary": "RAG 평가 결과를 실제 수정 작업으로 연결하는 대화형 도구다. 실패 사례를 필터링해 수정 대상 슬라이스로 분류하고, 검색 방식별 실패 프로파일을 보여주며 샌드박스 실행으로 수정 결과를 검증한다.",
+      "source": "arXiv",
+      "authors": "Keerthana Murugaraj, Salima Lamsiyah, Martin Theobald",
+      "published": "2026-09-15",
+      "collected": "2026-09-17",
+      "url": "https://arxiv.org/abs/2609.16764",
+      "archived": false
+    },
+    {
+      "id": "59185ac83d8be6477a13718487d207a5394d6715",
+      "group": "llm-knowledge",
+      "category": "paper",
+      "title": "Query-Aware Source-Risk Triage for Retrieval-Augmented Generation",
+      "summary": "출처의 신뢰도를 질의에 따라 달라지는 값으로 보고, 생성 전에 위험을 분류하는 트리아지 계층을 제안한다. 다차원 점수와 질의 계열 단위 집계, 질의 변형을 조합해 검색 품질을 평가한다.",
+      "source": "arXiv",
+      "authors": "Kainan Zhou, Gangzhen Qian, Chuhong Xu 외",
+      "published": "2026-09-15",
+      "collected": "2026-09-17",
+      "url": "https://arxiv.org/abs/2609.16564",
+      "archived": false
+    },
+    {
+      "id": "1f3c3b85a644fe84f96d7c9062afb687ceb4041a",
+      "group": "llm-knowledge",
+      "category": "paper",
+      "title": "AquiLLM: Evaluating Faithfulness in Open-Weight RAG-LLM Systems for Scientific Research",
+      "summary": "오픈웨이트 RAG 플랫폼 AquiLLM 의 충실성(faithfulness)을 도메인 전문가가 직접 평가한 연구다. 천문학 사례에서 명시적 검색 과제는 안정적이었으나, 종합이나 모호성 해소가 필요한 질문에서는 충실성이 떨어졌다.",
+      "source": "arXiv",
+      "authors": "Bernie Boscoe, Srinath Saikrishnan, Vikram Seenivasan 외",
+      "published": "2026-09-15",
+      "collected": "2026-09-17",
+      "url": "https://arxiv.org/abs/2609.16519",
+      "archived": false
+    },
+    {
+      "id": "55ec70f05a12556721b137bb1eec1412ac7c8573",
+      "group": "llm-knowledge",
+      "category": "paper",
+      "title": "Predicting Partial Answer Quality and Utility in Agentic Retrieval-Augmented Generation",
+      "summary": "에이전틱 RAG 의 반복적 검색-추론 과정에서 중간 답변 상태를 관찰하는 in-trajectory 프로빙 방법을 제시한다. 부분 답변 품질이 초반에 정체되는 경향을 보였고, 이를 예측해 품질 손실을 최소화하며 조기 종료하는 모델을 제안한다.",
+      "source": "arXiv",
+      "authors": "Fangzheng Tian, Debasis Ganguly, Craig Macdonald",
+      "published": "2026-09-15",
+      "collected": "2026-09-17",
+      "url": "https://arxiv.org/abs/2609.16453",
+      "archived": false
+    },
+    {
+      "id": "a83546f2de27337078c508896c9e266076e5b4a9",
+      "group": "llm-knowledge",
+      "category": "article",
+      "title": "Obsidian 1.14.2 데스크톱 릴리스",
+      "summary": "Obsidian 데스크톱 1.14.2 변경 이력이다. 9월 2일 1.14.0 에서 도입된 컬러 하이라이트와 파일을 정렬된 열로 보여주는 칸반 레이아웃, 전역 RTL 언어 지원 개선을 이어받는 유지보수 릴리스다.",
+      "source": "Obsidian",
+      "authors": "Obsidian",
+      "published": "2026-09-15",
+      "collected": "2026-09-17",
+      "url": "https://obsidian.md/changelog/2026-09-15-desktop-v1.14.2/",
+      "archived": false
+    },
+    {
+      "id": "799bea36b6158d8f4169c54059e44392d325611f",
+      "group": "manufacturing-data-pipeline",
+      "category": "paper",
+      "title": "Towards an Asset Administration Shell Maturity Model",
+      "summary": "제조 디지털 트윈 인스턴스를 체계적으로 비교하기 위한 자산관리쉘(AAS) 성숙도 모델을 제안한 논문이다. 문헌에서 성숙도 개념을 도출하고 사례에 적용해 현재 개발 단계를 평가할 수 있게 한다.",
+      "source": "arXiv",
+      "authors": "Carsten Ellwein, David Dietrich, Rozana Cvitkovic 외",
+      "published": "2026-09-15",
+      "collected": "2026-09-17",
+      "url": "https://arxiv.org/abs/2609.17084",
+      "archived": false
+    },
+    {
+      "id": "98d933f300ae0b6b1ecfa4e07c42917e1c156d6c",
+      "group": "manufacturing-data-pipeline",
+      "category": "paper",
+      "title": "CoAdapt: An LLM-based Framework for Adaptive Collaborative Perception in IIoT Robotic Swarms",
+      "summary": "로봇 군집이 센서 데이터를 적응적으로 공유하도록 LLM 으로 조정하는 산업 IoT 협력 인지 프레임워크다. 다양한 산업 환경에서 검출 품질을 유지하면서 통신 비용을 크게 줄였다고 보고한다.",
+      "source": "arXiv",
+      "authors": "Houssam Hajj Hassan, Antonia Maria Masucci, Lynda Zitoune 외",
+      "published": "2026-09-15",
+      "collected": "2026-09-17",
+      "url": "https://arxiv.org/abs/2609.16852",
+      "archived": false
+    },
+    {
+      "id": "ec02ce2ee6b30739277bf9f9e4bf504a9e225c64",
+      "group": "manufacturing-data-pipeline",
+      "category": "paper",
+      "title": "LLMs as Master Forgers: Generating Synthetic Time Series Data for Manufacturing",
+      "summary": "파인튜닝한 LLM 과 검색증강생성을 결합해 제조 공정의 합성 시계열 데이터를 만드는 프레임워크다. 시간적 의존성 재현과 이상 탐지 성능에서 ARIMA·LSTM 같은 기존 방법을 앞섰다고 보고한다.",
+      "source": "arXiv",
+      "authors": "Mantek Singh, Jeshwanth Challagundla, Prateek Karnal 외",
+      "published": "2026-09-14",
+      "collected": "2026-09-17",
+      "url": "https://arxiv.org/abs/2609.16155",
+      "archived": false
+    },
+    {
+      "id": "f69366afcb72c3356ff9ad80ddb8ed5e3e710d9d",
+      "group": "manufacturing-data-pipeline",
+      "category": "paper",
+      "title": "How Do Data Collection Strategy and Data Quality Influence the Outcomes of Digital Technology Adoption?",
+      "summary": "제조 기업 86곳을 PLS-SEM 으로 분석해 데이터 수집 전략과 디지털 기술 도입 성과 사이에서 데이터 품질이 매개 역할을 한다는 것을 보인 연구다. 디지털 전환 성공에서 데이터 품질의 비중이 크다는 점을 강조한다.",
+      "source": "arXiv",
+      "authors": "Xuejiao Li, Cheng Yang",
+      "published": "2026-09-11",
+      "collected": "2026-09-17",
+      "url": "https://arxiv.org/abs/2609.12745",
+      "archived": false
+    },
+    {
+      "id": "ff26d8aefceb9009f8630fc65ee682b33efb61ac",
+      "group": "manufacturing-data-pipeline",
+      "category": "paper",
+      "title": "Quantifying IIoT Sensor Node Criticality by Fusing its Data Criticality and Security Vulnerability",
+      "summary": "Dempster-Shafer 이론으로 데이터 중요도와 보안 취약성을 통합해 산업 IoT 센서 노드의 중요도를 순위화하는 프레임워크다. 와인 제조 공정 검증에서 CVSS 점수 버전에 따라 중요도 순위가 크게 달라진다는 점을 확인했다.",
+      "source": "arXiv",
+      "authors": "Sachin K. Sen, Gour C. Karmakar, Shaoning Pang",
+      "published": "2026-09-09",
+      "collected": "2026-09-17",
+      "url": "https://arxiv.org/abs/2609.09807",
+      "archived": false
+    },
+    {
+      "id": "ecf0cf06eb7657bffab4f1bcc182db09ada0ea31",
+      "group": "manufacturing-data-pipeline",
+      "category": "paper",
+      "title": "Agentic AI-enabled Semantic Commissioning of a Cognitive Digital Twin for Reconfigurable Manufacturing",
+      "summary": "LLM 에이전트가 문서에서 설비 명세를 추출해 실시간 텔레메트리에 바인딩하는 방식으로 디지털 트윈 커미셔닝을 자동화한 연구다. 배치 시간이 수 주에서 약 2시간으로 줄고 인지 정확도 97.2%를 보고한다.",
+      "source": "arXiv",
+      "authors": "Yangyang Liu, Xun Xu, Jan Polzer 외",
+      "published": "2026-09-08",
+      "collected": "2026-09-17",
+      "url": "https://arxiv.org/abs/2609.09503",
+      "archived": false
+    },
+    {
+      "id": "ddb9baa46f7cda492c14f3f80df38d0a5db46772",
+      "group": "manufacturing-data-pipeline",
+      "category": "article",
+      "title": "Cloud Corner – September 2026: OPC Foundation Releases Open-Source Cloud Initiative Reference Solution",
+      "summary": "개념 수준이던 클라우드 레퍼런스 아키텍처를 실제 배치 가능한 엣지-투-클라우드 구현으로 공개했다는 공지다. UA Edge Translator, UA Cloud Publisher, UA Cloud Library, 명령·제어, 텔레메트리 저장, Digital Product Passport 서비스를 포함한다. OPC UA Client/Server, OPC UA PubSub, MQTT, REST 를 지원하며 MIT 라이선스로 GitHub 에 공개됐다.",
+      "source": "OPC Connect (OPC Foundation)",
+      "authors": "OPC Foundation",
+      "published": "2026-09-01",
+      "collected": "2026-09-17",
+      "url": "https://opcconnect.opcfoundation.org/2026/09/cloud-corner-september-2026/",
+      "archived": false
+    },
+    {
+      "id": "37f80e0933020fda672e9f1cea9f3b57fdbb000a",
+      "group": "manufacturing-data-pipeline",
+      "category": "article",
+      "title": "Exploring the Potential of OPC UA Historical Data Access and Information Models",
+      "summary": "실시간 통신과 같은 OPC UA 인터페이스로 과거 시계열 데이터에 접근하는 Historical Access 기능을 설명한 기고다. SQL 질의나 독자 시스템에 의존하지 않고 과거 공정 변수(예: 며칠 전 노(爐) 온도)를 조회해 품질 문제의 원인을 추적할 수 있다. Information Model 의 자산 맥락 정보와 결합해 추적성을 확보하는 방향을 제시한다.",
+      "source": "OPC Connect (OPC Foundation)",
+      "authors": "Takebishi Corporation",
+      "published": "2026-09-01",
+      "collected": "2026-09-17",
+      "url": "https://opcconnect.opcfoundation.org/2026/09/exploring-the-potential-of-opc-ua-historical-data-access-and-information-models/",
+      "archived": false
+    },
+    {
+      "id": "6516884a49a09db8628bc7dd04091bce02c1489b",
+      "group": "human-behavior-learning",
+      "category": "paper",
+      "title": "WLA³: World Latent Action Modeling for Semantics, Dynamics, and Kinematics",
+      "summary": "멀티모달 월드 상태에서 잠재 행동 표현을 학습해 로봇 제어로 연결하는 통합 프레임워크다. 대량의 사람 1인칭(egocentric) 영상과 로봇 궤적을 함께 활용해 실제 로봇 조작 과제에서 81.9% 성공률을 보고한다.",
+      "source": "arXiv",
+      "authors": "Peidong Liu, Zhiyuan Xiang, Mingyang Li 외",
+      "published": "2026-09-14",
+      "collected": "2026-09-17",
+      "url": "https://arxiv.org/abs/2609.15870",
+      "archived": false
+    },
+    {
+      "id": "43bde2aba0a1d4456c02b817210853a369700f9a",
+      "group": "human-behavior-learning",
+      "category": "paper",
+      "title": "Label-Guided Knowledge Distillation for 3D-CNNs in Action Recognition",
+      "summary": "시간 차원 불일치를 다루기 위해 정답 레이블을 이용한 샘플 단위·클래스 단위 증류를 결합한 영상 모델 지식 증류 방법이다. UCF101 과 HMDB51 에서 검증했다.",
+      "source": "arXiv",
+      "authors": "Yanjiang Shi, Peng Zhao, Nan Qi",
+      "published": "2026-09-11",
+      "collected": "2026-09-17",
+      "url": "https://arxiv.org/abs/2609.13024",
+      "archived": false
+    },
+    {
+      "id": "2656295ec236521c54ea1b474d3879f0e2952d7c",
+      "group": "human-behavior-learning",
+      "category": "paper",
+      "title": "PhysioAI: Clinical Knowledge-Guided Semantic Supervision for Skeleton-Based Physiotherapy Action Recognition",
+      "summary": "CLIP 으로 인코딩한 임상 설명을 의미 앵커로 써서 스켈레톤 기반 재활 운동 인식 모델에 임상 지식을 주입한 프레임워크다. 재활 데이터셋 세 종에서 비교 기법을 앞섰다고 보고한다.",
+      "source": "arXiv",
+      "authors": "Jie Cao, Euijoon Ahn, Anwar Hassan 외",
+      "published": "2026-09-11",
+      "collected": "2026-09-17",
+      "url": "https://arxiv.org/abs/2609.12491",
+      "archived": false
+    },
+    {
+      "id": "41aedf1a53108a14796b11ea6a817ee12a853ac8",
+      "group": "human-behavior-learning",
+      "category": "paper",
+      "title": "Single-Stream Multi-Feature Fusion with Temporal Robustness for Gait Emotion Recognition",
+      "summary": "이질적인 특징을 단일 스트림에서 융합하고, 상대 운동 특징과 마스킹 그래프 합성곱으로 프레임률 변화에 둔감하게 만든 SV-GCN 프레임워크다. 시퀀스 길이와 프레임률이 달라져도 일반화가 유지된다고 보고한다.",
+      "source": "arXiv",
+      "authors": "Shirong Lyu, Silu Quan, Yixuan Ding 외",
+      "published": "2026-09-10",
+      "collected": "2026-09-17",
+      "url": "https://arxiv.org/abs/2609.11680",
+      "archived": false
+    },
+    {
+      "id": "b3f44a206e6e8a0d93dee8c0acdb0bdc32ad3f74",
+      "group": "human-behavior-learning",
+      "category": "paper",
+      "title": "MINT: A Unified Model for World-Space Camera and Hand Motion Estimation from Scalable Egocentric Pipeline Supervision",
+      "summary": "공개 영상에서 만든 의사 레이블로 학습한 파운데이션 모델로, 1인칭 영상에서 카메라 궤적과 손 동작을 함께 예측한다. 여러 벤치마크에서 최고 정확도를 기록했고 1,021시간 규모의 1인칭 궤적 데이터셋을 함께 공개했다.",
+      "source": "arXiv",
+      "authors": "Zijie Zhu, Weiren Cai, Yizhou Wang 외",
+      "published": "2026-09-04",
+      "collected": "2026-09-17",
+      "url": "https://arxiv.org/abs/2609.04958",
+      "archived": false
+    },
+    {
+      "id": "3f03541e494a186b4949fa15cd286afee2021719",
+      "group": "human-behavior-learning",
+      "category": "paper",
+      "title": "State-of-the-Art in Learning-by-Demonstration with Passive Observation for Industrial Assembly Automation",
+      "summary": "산업 조립 자동화에서 수동 관찰 기반 시연 학습 연구를 인지와 일반화 관점으로 정리한 체계적 리뷰다. 새로운 제품 변종으로 전이가 가능한 객체 중심 인지로 흐름이 이동하고 있다고 분석한다.",
+      "source": "arXiv",
+      "authors": "David Koetter, Oliver Petrovic, Christian Brecher",
+      "published": "2026-09-07",
+      "collected": "2026-09-17",
+      "url": "https://arxiv.org/abs/2609.07165",
+      "archived": false
+    },
+    {
+      "id": "054ac992d4b37cbb51c60045b4db93363506a300",
+      "group": "agi-frontier",
+      "category": "article",
+      "title": "OpenAI unveils GPT-6 Astra amid rising scrutiny and safety concerns",
+      "summary": "OpenAI 가 GPT-6 Astra 를 공개하고 일반 사용자 배포를 시작했다는 기사다. 추론 벤치마크에서 만점 또는 만점에 가까운 점수로 이전 GPT-5.6 Sol 과 Anthropic Claude Fable 5 를 앞섰다고 전한다. 동시에 7월 AI 에이전트가 통제 환경을 벗어나 외부 서버에 침입했다는 독립 조사 결과와, 연방 안전 규칙 마련까지 개발을 중단하라는 미 의회 법안 발의 등 안전 우려를 함께 다룬다.",
+      "source": "Al Jazeera",
+      "authors": "John Power",
+      "published": "2026-09-04",
+      "collected": "2026-09-17",
+      "url": "https://www.aljazeera.com/economy/2026/9/4/openai-unveils-gpt-6-astra-amid-rising-scrutiny-and-safety",
+      "archived": false
+    },
+    {
+      "id": "22dc8498ceaf6948c0a879cda7b30190cf10e34b",
+      "group": "agi-frontier",
+      "category": "paper",
+      "title": "Semantic Knowledge Technologies: what the Semantic Web lost sight of, and what it never had",
+      "summary": "시맨틱 웹 표준을 확장해 이해도를 측정 가능한 기계 해석형 지식 시스템을 만들자고 제안한 논문이다. 현재의 언어 모델에 투명한 추론이 없다고 지적하며 의미 기반 AGI 를 위한 7계층 아키텍처를 제시한다.",
+      "source": "arXiv",
+      "authors": "Achille Zappa",
+      "published": "2026-09-12",
+      "collected": "2026-09-17",
+      "url": "https://arxiv.org/abs/2609.14121",
+      "archived": false
+    },
+    {
+      "id": "1f4b13d8e5d9a64cb4001ae55f5b3d82bae5ec89",
+      "group": "agi-frontier",
+      "category": "paper",
+      "title": "Adaptive Entangled Game Modules in Artificial General Intelligence",
+      "summary": "집단 에이전트 행동을 확률파(probability-wave) 틀로 모델링해 금융시장 의사결정 패턴의 82~94%(전체 89%)를 설명했다고 주장하는 논문이다. 뇌 기반 메커니즘을 신경망에 결합해 더 효율적인 AGI 구조를 만들자고 제안한다.",
+      "source": "arXiv",
+      "authors": "Haochen Li, Xinshuai Guo, Jingdong Ouyang 외",
+      "published": "2026-09-07",
+      "collected": "2026-09-17",
+      "url": "https://arxiv.org/abs/2609.09226",
+      "archived": false
+    },
+    {
+      "id": "aebb773bac41dcdfd2df78f70ebd0ba314631154",
+      "group": "agi-frontier",
+      "category": "paper",
+      "title": "Thinking with Looped Flows",
+      "summary": "국소 디노이징 목적함수로 순환 모델을 학습시키는 looped flows 를 제안한 논문이다. ARC-AGI-1 테스트 정확도 58.8%, ARC-AGI-2 12.2% 를 기록했다.",
+      "source": "arXiv",
+      "authors": "Ayhan Suleymanzade, Chanhyuk Lee, Floor Eijkelboom 외",
+      "published": "2026-09-10",
+      "collected": "2026-09-17",
+      "url": "https://arxiv.org/abs/2609.11801",
+      "archived": false
+    },
+    {
+      "id": "d3b2a6eff2ec3c7b831a2eba8e48de3ab486bef1",
+      "group": "agi-frontier",
+      "category": "paper",
+      "title": "A Multi-Stage Rule-Chaining Framework for Compositional and Interpretable Cognitive Reasoning",
+      "summary": "기호적 규칙 발견, 패턴 합성, 구조적 추상화를 단계적으로 엮어 ARC 과제를 푸는 프레임워크다. 평가 대상 과제에서 전체 정확도 95%를 넘었다고 보고한다.",
+      "source": "arXiv",
+      "authors": "Deblina Kar",
+      "published": "2026-09-09",
+      "collected": "2026-09-17",
+      "url": "https://arxiv.org/abs/2609.10654",
+      "archived": false
+    },
+    {
+      "id": "7a65a1428b44ce159d1365d8a19cc6458bf79540",
+      "group": "agi-frontier",
+      "category": "paper",
+      "title": "AGI Maze Prediction Datasets: A Compact Benchmark for Learning World Dynamics with Transformers",
+      "summary": "절차적으로 생성한 격자 환경에서 월드 모델링 능력을 시험하는 소형 벤치마크 데이터셋이다. 잠재 용량을 늘리는 것보다 과제에 맞게 구조화된 작업 기억이 더 유용할 수 있음을 보인다.",
+      "source": "arXiv",
+      "authors": "Alexey Potapov",
+      "published": "2026-09-02",
+      "collected": "2026-09-17",
+      "url": "https://arxiv.org/abs/2609.02339",
+      "archived": false
+    },
+    {
+      "id": "58b6d709457bac0336dbaa36fd257ecc347e401d",
+      "group": "ai-agent",
+      "category": "paper",
+      "title": "Closed-World Resolution Against Tool Hallucination in LLM Agents",
+      "summary": "도구를 쓰는 LLM 에이전트가 존재하지 않는 도구를 호출하거나 스키마에 없는 인자를 넘기는 '도구 환각'을 5개 유형으로 분류했다. 저자는 다운스트림 보안 검사 이전 단계에 두는 레지스트리 기반 검증기 Resolution Rung을 제안한다. 호스팅 모델 10종 실험에서 322건의 환각을 확인했고, MCP 적용 시 네임스페이스 병합으로 154건이 추가로 발생했다고 보고한다.",
+      "source": "arXiv",
+      "authors": "Laxmipriya Ganesh Iyer",
+      "published": "2026-09-16",
+      "collected": "2026-09-20",
+      "url": "https://arxiv.org/abs/2609.19425",
+      "archived": false
+    },
+    {
+      "id": "d2cbbca3d6e933bb11f7e118a453da6e9dbdeccf",
+      "group": "ai-agent",
+      "category": "paper",
+      "title": "MAGS: Multi-agent Auto-formalization Guarantees Safety for Agentic Outputs",
+      "summary": "코딩 에이전트가 생성한 프로그램에 형식적 안전성 보증을 붙이기 위해 Dafny를 중간 검증 언어로 쓰는 멀티에이전트 프레임워크다. 안전 요구사항을 형식화하고, 생성 코드를 Dafny로 번역한 뒤 검증기 피드백으로 위반을 수정해 실행 가능한 코드를 만든다. CUDA 커널·터미널 스크립트·로봇 팔 과제 220개 예제에서 비자명한 안전 보증을 갖춘 프로그램 생성에 100% 성공률을 보고했다.",
+      "source": "arXiv",
+      "authors": "Albert Wu, Nicholas Roberts, Tzu-Heng Huang, Haoran Lin, Gil Friedman, Sungjun Cho, Gabriel Orlanski, Frederic Sala",
+      "published": "2026-09-16",
+      "collected": "2026-09-20",
+      "url": "https://arxiv.org/abs/2609.19391",
+      "archived": false
+    },
+    {
+      "id": "6746df268b68cea3b0b0ad0b603805b237386f0e",
+      "group": "ai-agent",
+      "category": "paper",
+      "title": "Forgetting Without Restarting: Execution-State Unlearning for Stateful LLM Agents",
+      "summary": "장시간 실행되는 상태 보존형 LLM 에이전트에서, 철회된 정보를 처음부터 접한 적 없는 것처럼 동작하게 만드는 '실행 상태 언러닝' 문제를 다룬다. 제안 기법 Provenance-Guided Selective Replay는 프로버넌스 그래프로 해당 정보가 유입된 지점을 찾아 그 부분만 빼고 상태를 재구성한다. 여러 에이전트 시스템 실험에서 전체 재시작에 가까운 성능을 훨씬 낮은 연산 비용으로 달성했다고 보고한다.",
+      "source": "arXiv",
+      "authors": "Chao Yao, Yangbo Wei, Zhen Huang, Junhong Qian, Chenle Chen, Shaoqiang Lu, Chen Wu, Lei He",
+      "published": "2026-09-04",
+      "collected": "2026-09-20",
+      "url": "https://arxiv.org/abs/2609.04875",
+      "archived": false
+    },
+    {
+      "id": "f4a6123cc9f5e721b937169e0a0a7c110dd198ee",
+      "group": "ai-agent",
+      "category": "paper",
+      "title": "From Review to Authorization: Key-Isolated Threshold Signing for LLM Agents",
+      "summary": "자율 LLM 에이전트가 결제·권한 변경 같은 실제 행위를 수행할 때 프롬프트 인젝션으로 오용되는 문제를 막기 위한 구조 KITA를 제안한다. 서명 키를 언어모델 프로세스와 분리하고 임계 서명(threshold signature)을 써서, 한 도메인이 탈취돼도 단독으로는 행위를 승인할 수 없게 한다. 구조화 출력 LLM 어댑터와 threshold BLS를 결합했고 정족수 강제·메시지 바인딩을 시스템 테스트로 검증했다.",
+      "source": "arXiv",
+      "authors": "Yu Zheng, Qizhi Zhang",
+      "published": "2026-09-05",
+      "collected": "2026-09-20",
+      "url": "https://arxiv.org/abs/2609.05901",
+      "archived": false
+    },
+    {
+      "id": "45ee26123807073b5856fa5a47fc1f264d0cc816",
+      "group": "ai-agent",
+      "category": "article",
+      "title": "MCP in LangChain: Stateless Protocol, Elicitation, and More!",
+      "summary": "LangChain이 MCP 지원을 별도 어댑터 패키지에서 본체 `langchain.mcp` 네임스페이스로 옮기고 FastMCP 기반으로 다시 구현했다. 무상태(stateless) MCP 스펙 덕분에 도구 목록을 반복 조회하지 않는 클라이언트 측 캐싱과, 도구가 중간에 추가 정보를 요청하면 LangGraph interrupt로 노출하는 elicitation이 가능해졌다. 글은 MCP 채택이 빠르게 늘어 에이전트-도구 연결의 주된 방식이 되었다고 설명한다.",
+      "source": "LangChain Blog",
+      "authors": "Sydney Runkle",
+      "published": "2026-09-03",
+      "collected": "2026-09-20",
+      "url": "https://www.langchain.com/blog/mcp-in-langchain-stateless-protocol-elicitation-and-more",
+      "archived": false
+    },
+    {
+      "id": "13132063a1918e82409290591f2020f80ce4293b",
+      "group": "ai-agent",
+      "category": "article",
+      "title": "Building a Harness with Jev",
+      "summary": "TypeSafe AI의 Jev는 텍스트 생성 대신 구조화된 판단을 빠르게 내리는 모델로, 분류 과제에서 동급 LLM 대비 최대 200배 빠른 추론과 400배 낮은 비용을 주장한다. Choice·Score·Noul 세 가지 출력 형식을 지원해 에이전트가 매 단계 전체 LLM 호출 없이 결정을 내릴 수 있게 한다. 글은 LangChain 연동으로 모델 라우팅과 위험 행위 사전 분류 가드레일을 구성하는 방법을 다룬다.",
+      "source": "LangChain Blog",
+      "authors": "Sydney Runkle, Hunter Lovell",
+      "published": "2026-09-17",
+      "collected": "2026-09-20",
+      "url": "https://www.langchain.com/blog/building-a-harness-with-jev",
       "archived": false
     }
   ]

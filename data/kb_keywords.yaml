@@ -68,8 +68,10 @@ groups:
       - "LLM agent framework"
       - "multi-agent orchestration"
       - "herdr"
+      - "LangGraph"
+      - "LangChain"
     categories: [paper, article]
-    max_per_run: 4
+    max_per_run: 6
 
   - id: computer-vision
     name: "Computer Vision"
