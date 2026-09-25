@@ -70,6 +70,8 @@ groups:
       - "herdr"
       - "LangGraph"
       - "LangChain"
+      - "Jev TypeSafe AI"
+      - "Jev judgment model agent"
     categories: [paper, article]
     max_per_run: 6
 
